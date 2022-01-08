@@ -1,11 +1,23 @@
 import React from 'react';
-import logo from './logo.svg';
+import { useDispatch,useSelector } from 'react-redux';
+import { loginStateInterface } from './reducers/LoginReducer';
+import { RootStateType } from './stores';
+import { LoginAction } from './actions/LoginAction';
 import './App.css';
 
 function App() {
+  const dispatch=useDispatch()
+
+  const {loading,error}=useSelector<RootStateType>(state=>state.userInfo) as loginStateInterface
+
+  const handleLogin:React.MouseEventHandler<HTMLButtonElement> | undefined=()=>{
+    dispatch(LoginAction("yugalkhati570@gmail.com","124"))
+  }
+
   return (
     <div className="App">
-      Hello
+      {loading && <h1>Loading</h1>}
+     <button onClick={handleLogin}>Submit</button>
     </div>
   );
 }
