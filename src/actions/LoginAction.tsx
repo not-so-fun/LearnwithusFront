@@ -13,12 +13,15 @@ export const LoginAction =
   (dispatch: Dispatch<LoginActionType>) => {
     dispatch({ type: LOGIN_REQUEST_STARTED });
 
-    axios.post("/login",{
-        email,password
-    }).then((response)=>{
-        dispatch({type:LOGIN_REQUEST_SUCCESS,payload:response.data})
-    }).catch((error)=>{
-        dispatch({type:LOGIN_REQUEST_ERROR,error:error})
-    })
-
+    axios
+      .post("/login", {
+        email,
+        password,
+      })
+      .then((response) => {
+        dispatch({ type: LOGIN_REQUEST_SUCCESS, payload: response.data });
+      })
+      .catch((error) => {
+        dispatch({ type: LOGIN_REQUEST_ERROR, error: error });
+      });
   };

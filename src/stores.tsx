@@ -2,9 +2,11 @@ import { composeWithDevTools } from "redux-devtools-extension";
 import thunk from "redux-thunk";
 import { combineReducers,createStore,applyMiddleware } from "redux";
 import { LoginReducer } from "./reducers/LoginReducer";
+import { RegisterReducer } from "./reducers/RegisterReducer";
 
 const rootReducer=combineReducers({
-    userInfo:LoginReducer
+    userInfo:LoginReducer,
+    register:RegisterReducer
 })
 
 const store=createStore(rootReducer,composeWithDevTools(applyMiddleware(thunk)))
