@@ -5,7 +5,8 @@ import { RootStateType } from './stores';
 import { LoginAction } from './actions/LoginAction';
 import { Register_Action } from './actions/RegisterAction';
 import './App.css';
-
+import Login from "./auth/Login";
+import "./css/style.css"
 function App() {
   const dispatch=useDispatch()
 
