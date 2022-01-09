@@ -1,0 +1,25 @@
+.Login{
+    // background:black;
+    height:70rem;
+    max-width:120rem;
+    width:120rem;
+    min-width:30rem;
+
+    background:$color-secondary;
+    display:flex;
+    &__Box{
+        background:$color-white;
+        max-width:60rem;
+        width:60rem;
+        min-width:30rem;
+        display:flex;
+        align-items: center;
+        justify-content: center;
+    }
+    &__Side{
+        background:$color-primary;
+        max-width:60rem;
+        width:60rem;
+        min-width:30rem;
+    }
+}
