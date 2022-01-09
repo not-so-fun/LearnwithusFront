@@ -19,9 +19,10 @@ export const LoginAction =
         password,
       })
       .then((response) => {
+        console.log(response.status)
         dispatch({ type: LOGIN_REQUEST_SUCCESS, payload: response.data });
       })
       .catch((error) => {
-        dispatch({ type: LOGIN_REQUEST_ERROR, error: error });
+        dispatch({ type: LOGIN_REQUEST_ERROR, error: error.response.data });
       });
   };
