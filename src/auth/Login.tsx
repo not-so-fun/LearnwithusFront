@@ -12,7 +12,7 @@ type LoginState = {
 };
 
 const Login: React.FunctionComponent = () => {
-  //   const [state, dispatch] = useReducer(reducer, initialState);
+ 
   const [loginForm, setLoginForm] = useState<LoginState>({
     username: "",
     password: "",

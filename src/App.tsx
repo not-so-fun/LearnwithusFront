@@ -22,9 +22,8 @@ function App() {
 
   return (
     <div className="App">
-      {loading && <h1>Loading</h1>}
-     <button onClick={handleLogin}>Submit Login</button>
-     <button onClick={handleRegister}>Submit Register</button>
+      
+     <Login/>
 
     </div>
   );
