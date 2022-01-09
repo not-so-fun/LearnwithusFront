@@ -22,6 +22,7 @@ export const LoginReducer = (state = loginState, action: LoginActionType) => {
     case LOGIN_REQUEST_STARTED:
       return { ...state, loading: true };
     case LOGIN_REQUEST_SUCCESS:
+      localStorage.setItem("userInfo",JSON.stringify(action.payload))
       return { ...state, loading: false, userInfo: action.payload, error: "" };
     case LOGIN_REQUEST_ERROR:
       return { ...state, loading: false, userInfo: null, error: action.error };
