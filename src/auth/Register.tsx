@@ -92,6 +92,7 @@ const Register: React.FunctionComponent<RouteComponentProps<any>> = () => {
       return true;
     };
     const EmailValidated: boolean | undefined = isEmail(email);
+<<<<<<< HEAD
     if (EmailValidated) {
       //dispatch register
 
@@ -108,6 +109,16 @@ const Register: React.FunctionComponent<RouteComponentProps<any>> = () => {
       setTimeout(() => {
         setRegisterForm({ ...registerForm, helperText: "" });
       }, 3000);
+=======
+    if(EmailValidated){
+        //dispatch register
+        
+    } else{
+        setRegisterForm({ ...registerForm, helperText: "Please use a valid email" });
+        setTimeout(() => {
+            setRegisterForm({ ...registerForm, helperText: "" });
+        }, 3000);
+>>>>>>> e8c798f (some changes in login and register)
     }
   };
 
