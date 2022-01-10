@@ -1,18 +1,33 @@
-import React from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { loginStateInterface } from "./reducers/LoginReducer";
-import { RootStateType } from "./stores";
-import { LoginAction } from "./actions/LoginAction";
-import Login from "./auth/Login";
-import { Register_Action } from "./actions/RegisterAction";
-import "./css/style.css";
+import React from 'react';
+import { BrowserRouter, Route, Switch, RouteComponentProps } from 'react-router-dom';
+import './App.css';
+import routes from './config/routes';
+import "./css/style.css"
+
 
 function App() {
   return (
     <div className="App">
-      
-     <Login/>
-
+       <BrowserRouter>
+                <Switch>
+                    {routes.map((route, index) => {
+                        return (
+                            <Route 
+                                key={index}
+                                path={route.path}
+                                exact={route.exact}
+                                render={(props: RouteComponentProps<any>) => (
+                                    <route.component
+                                        name={route.name} 
+                                        {...props}
+                                        {...route.props}
+                                    />
+                                )}
+                            />
+                        );
+                    })}
+                </Switch>
+            </BrowserRouter>
     </div>
   );
 }

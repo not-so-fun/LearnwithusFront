@@ -20,10 +20,10 @@ export const Register_Action =
 
     axios.post("/users", {
         email,username,first_name,last_name,password
-    }).then((response)=>{
+    }).then((response :any)=>{
         console.log(response.data)
         dispatch({type:REGISTER_REQUEST_SUCCESS,message:response.data})
-    }).catch((error)=>{
+    }).catch((error :any)=>{
         console.log(error)
         dispatch({type:REGISTER_REQUEST_ERROR,error:error})
     })
