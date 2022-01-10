@@ -2,6 +2,7 @@ import {
     LOGIN_REQUEST_STARTED,
     LOGIN_REQUEST_SUCCESS,
     LOGIN_REQUEST_ERROR,
+    REMOVE_ERROR
   } from "../constants/LoginConstants";
 
 
@@ -19,4 +20,12 @@ interface loginErrorAction{
     error:string
 }
 
-export type LoginActionType=loginStartingAction|loginSuccessAction|loginErrorAction
+interface loginRemoveErrorAction{
+    type:typeof REMOVE_ERROR,
+    error:""
+}
+
+
+
+
+export type LoginActionType=loginStartingAction|loginSuccessAction|loginErrorAction|loginRemoveErrorAction

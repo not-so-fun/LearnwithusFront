@@ -1,6 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { BsEyeFill, BsEyeSlashFill } from "react-icons/bs";
 import { Link, RouteComponentProps, withRouter } from 'react-router-dom';
+import { LoginAction } from "../actions/LoginAction";
+import { RootStateType } from "../stores";
+import { loginStateInterface } from "../reducers/LoginReducer";
+import { useDispatch, useSelector } from "react-redux";
+import {Progress} from "../components/ReusableComponents/Spinner";
+import {REMOVE_ERROR} from "../constants/LoginConstants"
 
 //state type
 
@@ -15,6 +21,13 @@ type LoginState = {
 
 const Login: React.FunctionComponent<RouteComponentProps<any>> = () => {
   //   const [state, dispatch] = useReducer(reducer, initialState);
+
+  const dispatch = useDispatch();
+
+  const { loading, error } = useSelector<RootStateType>(
+    (state) => state.userInfo
+  ) as loginStateInterface;
+
   const [loginForm, setLoginForm] = useState<LoginState>({
     username: "",
     password: "",
@@ -26,6 +39,7 @@ const Login: React.FunctionComponent<RouteComponentProps<any>> = () => {
 
   const { username, password, helperText, isButtonDisabled, isError, showPassword } =
     loginForm;
+
   useEffect(() => {
     if (username.trim() && password.trim()) {
       setLoginForm({ ...loginForm, isButtonDisabled: false });
@@ -36,14 +50,22 @@ const Login: React.FunctionComponent<RouteComponentProps<any>> = () => {
 
   const handleLogin: React.FormEventHandler<HTMLButtonElement> = (event) => {
     event.preventDefault();
+
+    dispatch(LoginAction(username, password));
+
+    setTimeout(() => {
+      dispatch({type:REMOVE_ERROR})
+    }, 4000);
   };
 
   const handleEvent: React.FormEventHandler<HTMLButtonElement> = (event) => {
     event.preventDefault();
     setLoginForm({ ...loginForm, helperText: "Fill all the input Fields" });
+
     setTimeout(() => {
       setLoginForm({ ...loginForm, helperText: "" });
     }, 3000);
+
   };
   
 
@@ -115,18 +137,20 @@ const Login: React.FunctionComponent<RouteComponentProps<any>> = () => {
                 className="Auth__Box__Buttons__Button"
                 onClick={handleEvent}
               >
-                Login
+                {loading ? <Progress size={25}/> : "Login"}
               </button>
             ) : (
               <button
                 className="Auth__Box__Buttons__Button"
                 onClick={handleLogin}
               >
-                Login
+                {loading ? <Progress size={25}/> : "Login"}
               </button>
             )}
             
             </div>
+            {error && <div style={{ color: "red" }}>{error}</div>}
+
             {helperText ? <div>{helperText}</div> : <></>}
             <div className="Auth__Box__ForgotPassword">
               forgot password?

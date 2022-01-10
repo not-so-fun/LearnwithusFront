@@ -3,8 +3,9 @@ import { BrowserRouter, Route, Switch, RouteComponentProps } from 'react-router-
 import './App.css';
 import routes from './config/routes';
 import "./css/style.css"
-function App() {
 
+
+function App() {
   return (
     <div className="App">
        <BrowserRouter>

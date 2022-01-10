@@ -32,8 +32,7 @@ body {
   align-items: center;
   justify-content: flex-start;
   flex-direction: column;
-  color: #494949;
-  box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.06); }
+  color: #494949; }
 
 .Auth__Box__InputBox {
   display: flex;
