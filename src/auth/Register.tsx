@@ -57,6 +57,7 @@ const Register: React.FunctionComponent<RouteComponentProps<any>> = () => {
     const EmailValidated: boolean | undefined = isEmail(email);
     if(EmailValidated){
         //dispatch register
+        
     } else{
         setRegisterForm({ ...registerForm, helperText: "Please use a valid email" });
         setTimeout(() => {

@@ -17,7 +17,6 @@ export const Register_Action =
   ) =>
   (dispatch: Dispatch<RegisterAction>) => {
     dispatch({ type: REGISTER_REQUEST_STARTED });
-
     axios.post("/users", {
         email,username,first_name,last_name,password
     }).then((response :any)=>{

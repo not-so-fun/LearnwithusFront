@@ -74,95 +74,99 @@ const Login: React.FunctionComponent<RouteComponentProps<any>> = () => {
     setLoginForm({...loginForm, showPassword:!showPassword});
   };
   return (
+
     <div className="Center">
-      <form className="Auth">
-        <div className="Auth__Box">
-          <div className="Auth__Box__Container">
-          
-          <div className="Auth__Box__InputBox">
-          <div className="Auth__Box__InputBox__Header">
-            Login
-          </div>
-            <div className="Auth__Box__InputBox__InputHandler">
-              <div className="Auth__Box__InputBox__InputHandler__Heading">
-                Username or email address
+          <form className="Auth">
+            <div className="Auth__Box">
+              <div className="Auth__Box__Container">
+              
+              <div className="Auth__Box__InputBox">
+              <div className="Auth__Box__InputBox__Header">
+                Login
               </div>
-              <input
-                id="username"
-                className="Auth__Box__InputBox__InputHandler__Input"
-                value={username}
-                name="username"
-                placeholder="Username"
-                onChange={handleChange}
-              />
-            </div>
-            <div className="Auth__Box__InputBox__InputHandler">
-            <div className="Auth__Box__InputBox__InputHandler__Heading">
-                Password
+                <div className="Auth__Box__InputBox__InputHandler">
+                  <div className="Auth__Box__InputBox__InputHandler__Heading">
+                    Username or email address
+                  </div>
+                  <input
+                    id="username"
+                    className="Auth__Box__InputBox__InputHandler__Input"
+                    value={username}
+                    name="username"
+                    placeholder="Username"
+                    onChange={handleChange}
+                  />
+                </div>
+                <div className="Auth__Box__InputBox__InputHandler">
+                <div className="Auth__Box__InputBox__InputHandler__Heading">
+                    Password
+                  </div>
+                  <div className="Auth__Box__InputBox__InputHandler__InputBox">
+                  <input
+                    id="password"
+                    className="Auth__Box__InputBox__InputHandler__InputBox__Input Auth__Box__InputBox__InputHandler__InputBox__Input__Password"
+                    name="password"
+                    value={password}
+                    type={showPassword? "text" :"password"}
+                    placeholder="Password"
+                    onChange={handleChange}
+                  />
+                  {showPassword ? 
+                  <button 
+                  className="Auth__Box__InputBox__InputHandler__InputBox__Logos" onClick={ShowPassword}>
+                  <BsEyeSlashFill 
+                  className="Auth__Box__InputBox__InputHandler__InputBox__Logos__Logo"/>
+                  </button> : 
+                  <button
+                  className="Auth__Box__InputBox__InputHandler__InputBox__Logos"
+                  onClick={ShowPassword}
+                  >
+                  <BsEyeFill 
+                  className="Auth__Box__InputBox__InputHandler__InputBox__Logos__Logo"
+                  />
+                  </button>
+                  }
+                  </div>
+                </div>
               </div>
-              <div className="Auth__Box__InputBox__InputHandler__InputBox">
-              <input
-                id="password"
-                className="Auth__Box__InputBox__InputHandler__InputBox__Input Auth__Box__InputBox__InputHandler__InputBox__Input__Password"
-                name="password"
-                value={password}
-                type={showPassword? "text" :"password"}
-                placeholder="Password"
-                onChange={handleChange}
-              />
-              {showPassword ? 
-              <button 
-              className="Auth__Box__InputBox__InputHandler__InputBox__Logos" onClick={ShowPassword}>
-              <BsEyeSlashFill 
-              className="Auth__Box__InputBox__InputHandler__InputBox__Logos__Logo"/>
-              </button> : 
-              <button
-              className="Auth__Box__InputBox__InputHandler__InputBox__Logos"
-              onClick={ShowPassword}
-              >
-              <BsEyeFill 
-              className="Auth__Box__InputBox__InputHandler__InputBox__Logos__Logo"
-              />
-              </button>
-              }
+              <div className="Auth__Box__Buttons">
+                {isButtonDisabled ? (
+                  <button
+                    className="Auth__Box__Buttons__Button"
+                    onClick={handleEvent}
+                  >
+                    {loading ? <Progress size={25}/> : "Login"}
+                  </button>
+                ) : (
+                  <button
+                    className="Auth__Box__Buttons__Button"
+                    onClick={handleLogin}
+                  >
+                    {loading ? <Progress size={25}/> : "Login"}
+                  </button>
+                )}
+                
+                </div>
+                {error && <div style={{ color: "red" }}>{error}</div>}
+    
+                {helperText ? <div>{helperText}</div> : <></>}
+                <div className="Auth__Box__ForgotPassword">
+                  forgot password?
+                </div>
+                <div className="Auth__Box__Register">
+                  Haven't got an account?
+                   <Link className="Auth__Box__Register__Redirect" to="/register">Sign Up</Link>
+                </div>
               </div>
             </div>
-            <div className="Login__Box__Buttons">
-              {isButtonDisabled ? (
-                <button
-                  className="Login__Box__Buttons__Button"
-                  onClick={handleEvent}
-                >
-                  Login
-                </button>
-              ) : (
-                <button
-                  className="Login__Box__Buttons__Button"
-                  onClick={handleLogin}
-                >
-                  {loading ? <Progress size={25} /> : "Login"}
-                </button>
-              )}
+            <div className="Auth__Side">
+    
             </div>
-            {error && <div style={{ color: "red" }}>{error}</div>}
+          </form>
+        </div>
+      );
 
-            {helperText ? <div>{helperText}</div> : <></>}
-            <div className="Auth__Box__ForgotPassword">
-              forgot password?
-            </div>
-            <div className="Auth__Box__Register">
-              Haven't got an account?
-               <Link className="Auth__Box__Register__Redirect" to="/register">Sign Up</Link>
-            </div>
-          </div>
-        </div>
-        <div className="Auth__Side">
-
-        </div>
-        </div>
-      </form>
-    </div>
-  );
+  
 };
 
 export default withRouter(Login);
