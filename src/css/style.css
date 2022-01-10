@@ -25,9 +25,9 @@ body {
   align-items: center;
   justify-content: center; }
 
-.Login__Box__Container {
+.Auth__Box__Container {
   width: 43rem;
-  height: 50rem;
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -35,7 +35,7 @@ body {
   color: #494949;
   box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.06); }
 
-.Login__Box__InputBox {
+.Auth__Box__InputBox {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -43,59 +43,139 @@ body {
   height: auto;
   width: 100%;
   color: #494949; }
-  .Login__Box__InputBox__Header {
+  .Auth__Box__InputBox__Name {
+    width: 95%;
+    display: flex;
+    justify-content: space-between; }
+    .Auth__Box__InputBox__Name__InputHandler {
+      width: 46%; }
+      .Auth__Box__InputBox__Name__InputHandler__Heading {
+        font-weight: 600;
+        height: 4rem;
+        margin: 0.2rem 0;
+        font-size: 1.7rem;
+        display: flex;
+        align-items: center; }
+      .Auth__Box__InputBox__Name__InputHandler__Input {
+        width: 100%;
+        height: 4rem;
+        font-size: 1.3rem;
+        margin: 0.2rem 0;
+        padding: 1rem;
+        background: #F8F8F8;
+        border: none;
+        outline: none; }
+  .Auth__Box__InputBox__Header {
     font-size: 3rem;
     font-weight: 600;
-    margin: 0.5rem 0;
-    height: 6rem;
+    margin: 0.3rem 0;
+    height: 5rem;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center; }
-  .Login__Box__InputBox__InputHandler {
+  .Auth__Box__InputBox__InputHandler {
     width: 95%; }
-    .Login__Box__InputBox__InputHandler__Heading {
+    .Auth__Box__InputBox__InputHandler__Heading {
+      font-weight: 600;
       height: 4rem;
-      margin: 0.5rem 0;
+      margin: 0.3rem 0;
       font-size: 1.7rem;
       display: flex;
       align-items: center; }
-    .Login__Box__InputBox__InputHandler__Input {
+    .Auth__Box__InputBox__InputHandler__Input {
       width: 100%;
-      height: 5rem;
+      height: 4rem;
       font-size: 1.3rem;
       margin: 0.5rem 0;
       padding: 1rem;
       background: #F8F8F8;
       border: none;
       outline: none; }
+    .Auth__Box__InputBox__InputHandler__InputBox {
+      width: 100%;
+      height: 4rem;
+      font-size: 1.3rem;
+      margin: 0.3rem 0;
+      background: green;
+      border: none;
+      outline: none;
+      display: flex;
+      align-items: center; }
+      .Auth__Box__InputBox__InputHandler__InputBox__Input {
+        width: 100%;
+        height: 4rem;
+        font-size: 1.3rem;
+        padding: 1rem;
+        background: #F8F8F8;
+        border: none;
+        outline: none; }
+        .Auth__Box__InputBox__InputHandler__InputBox__Input__Password {
+          padding-right: 3rem; }
+      .Auth__Box__InputBox__InputHandler__InputBox__Logos {
+        margin-left: -3rem;
+        height: 3rem;
+        width: 3rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        outline: none;
+        background: #F8F8F8; }
+        .Auth__Box__InputBox__InputHandler__InputBox__Logos:hover {
+          cursor: pointer; }
+        .Auth__Box__InputBox__InputHandler__InputBox__Logos__Logo {
+          height: 2.1rem;
+          width: 2.1rem; }
 
-.Login__Box__Buttons {
+.Auth__Box__Buttons {
   width: 100%;
   height: 6rem;
-  margin: 0.5rem 0;
+  margin: 0.3rem 0;
   display: flex;
   align-items: center;
   justify-content: center; }
-  .Login__Box__Buttons__Button {
+  .Auth__Box__Buttons__Button {
     width: 95%;
     height: 5rem;
     background: #048004;
     font-size: 1.9rem;
     color: #fff;
+    border-radius: 5px;
     border: none;
     outline: none; }
-    .Login__Box__Buttons__Button:hover {
+    .Auth__Box__Buttons__Button:hover {
       cursor: pointer; }
 
-.Login {
+.Auth__Box__ForgotPassword {
+  font-size: 1.7rem;
+  color: #32569F;
+  text-decoration: underline;
+  margin: 1rem 0; }
+  .Auth__Box__ForgotPassword:hover {
+    cursor: pointer; }
+
+.Auth__Box__Register {
+  font-size: 1.7rem;
+  margin: 1rem 0;
+  color: #494949;
+  display: flex;
+  align-items: center; }
+  .Auth__Box__Register__Redirect {
+    color: #048004;
+    margin-left: 1rem; }
+    .Auth__Box__Register__Redirect:hover {
+      cursor: pointer;
+      text-decoration: underline; }
+
+.Auth {
   height: 70rem;
   max-width: 120rem;
   width: 120rem;
   min-width: 30rem;
   background: #048004;
   display: flex; }
-  .Login__Box {
+  .Auth__Box {
     background: #fff;
     max-width: 60rem;
     width: 60rem;
@@ -103,7 +183,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center; }
-  .Login__Side {
+  .Auth__Side {
     background: #32569F;
     max-width: 60rem;
     width: 60rem;

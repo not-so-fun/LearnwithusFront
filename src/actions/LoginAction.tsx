@@ -18,11 +18,11 @@ export const LoginAction =
         email,
         password,
       })
-      .then((response) => {
+      .then((response :any) => {
         console.log(response.status)
         dispatch({ type: LOGIN_REQUEST_SUCCESS, payload: response.data });
       })
-      .catch((error) => {
+      .catch((error :any) => {
         dispatch({ type: LOGIN_REQUEST_ERROR, error: error.response.data });
       });
   };
