@@ -5,11 +5,10 @@ import { LoginAction } from "../actions/LoginAction";
 import { RootStateType } from "../stores";
 import { loginStateInterface } from "../reducers/LoginReducer";
 import { useDispatch, useSelector } from "react-redux";
-import {Progress} from "../components/ReusableComponents/Spinner";
-import {REMOVE_ERROR} from "../constants/LoginConstants"
+import { Progress } from "../components/ReusableComponents/Spinner";
+import { REMOVE_ERROR } from "../constants/LoginConstants";
 
 //state type
-
 type LoginState = {
   username: string;
   password: string;
@@ -23,7 +22,6 @@ const Login: React.FunctionComponent<RouteComponentProps<any>> = () => {
   //   const [state, dispatch] = useReducer(reducer, initialState);
 
   const dispatch = useDispatch();
-
   const { loading, error } = useSelector<RootStateType>(
     (state) => state.userInfo
   ) as loginStateInterface;
@@ -54,7 +52,7 @@ const Login: React.FunctionComponent<RouteComponentProps<any>> = () => {
     dispatch(LoginAction(username, password));
 
     setTimeout(() => {
-      dispatch({type:REMOVE_ERROR})
+      dispatch({ type: REMOVE_ERROR });
     }, 4000);
   };
 
@@ -65,7 +63,6 @@ const Login: React.FunctionComponent<RouteComponentProps<any>> = () => {
     setTimeout(() => {
       setLoginForm({ ...loginForm, helperText: "" });
     }, 3000);
-
   };
   
 
@@ -130,24 +127,22 @@ const Login: React.FunctionComponent<RouteComponentProps<any>> = () => {
               }
               </div>
             </div>
-          </div>
-          <div className="Auth__Box__Buttons">
-            {isButtonDisabled ? (
-              <button
-                className="Auth__Box__Buttons__Button"
-                onClick={handleEvent}
-              >
-                {loading ? <Progress size={25}/> : "Login"}
-              </button>
-            ) : (
-              <button
-                className="Auth__Box__Buttons__Button"
-                onClick={handleLogin}
-              >
-                {loading ? <Progress size={25}/> : "Login"}
-              </button>
-            )}
-            
+            <div className="Login__Box__Buttons">
+              {isButtonDisabled ? (
+                <button
+                  className="Login__Box__Buttons__Button"
+                  onClick={handleEvent}
+                >
+                  Login
+                </button>
+              ) : (
+                <button
+                  className="Login__Box__Buttons__Button"
+                  onClick={handleLogin}
+                >
+                  {loading ? <Progress size={25} /> : "Login"}
+                </button>
+              )}
             </div>
             {error && <div style={{ color: "red" }}>{error}</div>}
 
@@ -163,6 +158,7 @@ const Login: React.FunctionComponent<RouteComponentProps<any>> = () => {
         </div>
         <div className="Auth__Side">
 
+        </div>
         </div>
       </form>
     </div>
