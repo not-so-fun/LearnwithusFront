@@ -36,7 +36,6 @@ const Register: React.FunctionComponent<RouteComponentProps<any>> = () => {
   //   const [state, dispatch] = useReducer(reducer, initialState);
 
   const [Error, setError] = useState<ErrorState>({ error: false });
-  // console.log(Error);
   const [registerForm, setRegisterForm] = useState<RegisterState>({
     firstname: "",
     lastname: "",
@@ -79,6 +78,10 @@ const Register: React.FunctionComponent<RouteComponentProps<any>> = () => {
 
   const handleLogin: React.FormEventHandler<HTMLButtonElement> = (event) => {
     event.preventDefault();
+    // if (!firstname) {
+    //   setError({ error: true });
+    // }
+    // console.log(Error);
 
     const isEmail = (val: string): boolean | undefined => {
       let regEmail =
@@ -110,6 +113,11 @@ const Register: React.FunctionComponent<RouteComponentProps<any>> = () => {
 
   const handleEvent: React.FormEventHandler<HTMLButtonElement> = (event) => {
     event.preventDefault();
+    if (!firstname) {
+      setError({ error: true });
+    }
+    // console.log(Error);
+
     setRegisterForm({
       ...registerForm,
       helperText: "Fill all the input Fields",
@@ -149,9 +157,9 @@ const Register: React.FunctionComponent<RouteComponentProps<any>> = () => {
                     id="firstname"
                     // className="Auth__Box__InputBox__Name__InputHandler__Input "
                     className={
-                      firstname
-                        ? "Auth__Box__InputBox__Name__InputHandler__Input "
-                        : "Auth__Box__InputBox__Name__InputHandler__Input  error_input"
+                      Error
+                        ? "Auth__Box__InputBox__Name__InputHandler__Input error_input"
+                        : "Auth__Box__InputBox__Name__InputHandler__Input"
                     }
                     value={firstname}
                     name="firstname"
