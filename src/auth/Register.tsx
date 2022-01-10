@@ -22,6 +22,9 @@ type RegisterState = {
   showPassword: boolean;
   showPassword2: boolean;
 };
+type ErrorState = {
+  error: boolean;
+};
 
 const Register: React.FunctionComponent<RouteComponentProps<any>> = () => {
   const dispatch = useDispatch();
@@ -31,6 +34,9 @@ const Register: React.FunctionComponent<RouteComponentProps<any>> = () => {
   ) as registerInterface;
 
   //   const [state, dispatch] = useReducer(reducer, initialState);
+
+  const [Error, setError] = useState<ErrorState>({ error: false });
+  console.log(Error);
   const [registerForm, setRegisterForm] = useState<RegisterState>({
     firstname: "",
     lastname: "",
