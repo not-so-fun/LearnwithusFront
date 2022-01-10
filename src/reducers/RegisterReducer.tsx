@@ -5,13 +5,13 @@ import {
   REMOVE_ERROR,
 } from "../constants/RegisterConstants";
 import { RegisterAction } from "../types/RegisterActionTypes";
-interface registerInterface {
+export interface registerInterface {
   loading: boolean;
   message: string | null;
   error: string | null;
 }
 
-const registerState: registerInterface = {
+ const registerState: registerInterface = {
   loading: false,
   message: null,
   error: "",

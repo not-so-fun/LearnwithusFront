@@ -7,23 +7,24 @@ import {
 import { Dispatch } from "redux";
 import axios from "../axios";
 import { RegisterAction } from "../types/RegisterActionTypes";
+
 export const Register_Action =
   (
     email: string,
     username: string,
-    first_name: string,
-    last_name: string,
+    firstname: string,
+    lastname: string,
     password: string
   ) =>
   (dispatch: Dispatch<RegisterAction>) => {
     dispatch({ type: REGISTER_REQUEST_STARTED });
-    console.log(email, username, first_name, last_name, password);
+   
     axios
       .post("/users", {
         email,
         username,
-        first_name,
-        last_name,
+        first_name:firstname,
+        last_name:lastname,
         password,
       })
       .then((response: any) => {
@@ -32,6 +33,6 @@ export const Register_Action =
       })
       .catch((error: any) => {
         console.log(error);
-        dispatch({ type: REGISTER_REQUEST_ERROR, error: error });
+        dispatch({ type: REGISTER_REQUEST_ERROR, error: "User with this email already exist!" });
       });
   };

@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { BsEyeFill, BsEyeSlashFill } from "react-icons/bs";
 import { Link, RouteComponentProps, withRouter } from "react-router-dom";
+import { RootStateType } from "../stores";
 import { Register_Action } from "../actions/RegisterAction";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { registerInterface } from "../reducers/RegisterReducer";
 import { REMOVE_ERROR } from "../constants/RegisterConstants";
-
+import { Progress } from "../components/ReusableComponents/Spinner";
 //state type
 
 type RegisterState = {
@@ -23,6 +25,10 @@ type RegisterState = {
 
 const Register: React.FunctionComponent<RouteComponentProps<any>> = () => {
   const dispatch = useDispatch();
+
+  const { loading, error } = useSelector<RootStateType>(
+    (state) => state.register
+  ) as registerInterface;
 
   //   const [state, dispatch] = useReducer(reducer, initialState);
   const [registerForm, setRegisterForm] = useState<RegisterState>({
@@ -264,10 +270,11 @@ const Register: React.FunctionComponent<RouteComponentProps<any>> = () => {
                   className="Auth__Box__Buttons__Button"
                   onClick={handleLogin}
                 >
-                  Register
+                  {loading ? <Progress size={25} /> : "Register"}
                 </button>
               )}
             </div>
+            {error && <div style={{ color: "red" }}>{error}</div>}
             {helperText ? <div>{helperText}</div> : <></>}
             <div className="Auth__Box__Register">
               Already got an account?
