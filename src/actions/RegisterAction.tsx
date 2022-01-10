@@ -32,7 +32,7 @@ export const Register_Action =
         dispatch({ type: REGISTER_REQUEST_SUCCESS, message: response.data });
       })
       .catch((error: any) => {
-        console.log(error);
-        dispatch({ type: REGISTER_REQUEST_ERROR, error: "User with this email already exist!" });
+       
+        dispatch({ type: REGISTER_REQUEST_ERROR, error:error.response.data  });
       });
   };

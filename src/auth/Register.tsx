@@ -36,7 +36,7 @@ const Register: React.FunctionComponent<RouteComponentProps<any>> = () => {
   //   const [state, dispatch] = useReducer(reducer, initialState);
 
   const [Error, setError] = useState<ErrorState>({ error: false });
-  console.log(Error);
+  // console.log(Error);
   const [registerForm, setRegisterForm] = useState<RegisterState>({
     firstname: "",
     lastname: "",
