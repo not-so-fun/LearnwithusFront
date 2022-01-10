@@ -17,14 +17,21 @@ export const Register_Action =
   ) =>
   (dispatch: Dispatch<RegisterAction>) => {
     dispatch({ type: REGISTER_REQUEST_STARTED });
-
-    axios.post("/users", {
-        email,username,first_name,last_name,password
-    }).then((response :any)=>{
-        console.log(response.data)
-        dispatch({type:REGISTER_REQUEST_SUCCESS,message:response.data})
-    }).catch((error :any)=>{
-        console.log(error)
-        dispatch({type:REGISTER_REQUEST_ERROR,error:error})
-    })
+    console.log(email, username, first_name, last_name, password);
+    axios
+      .post("/users", {
+        email,
+        username,
+        first_name,
+        last_name,
+        password,
+      })
+      .then((response: any) => {
+        console.log(response.data);
+        dispatch({ type: REGISTER_REQUEST_SUCCESS, message: response.data });
+      })
+      .catch((error: any) => {
+        console.log(error);
+        dispatch({ type: REGISTER_REQUEST_ERROR, error: error });
+      });
   };
