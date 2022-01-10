@@ -3,6 +3,8 @@ import { LoginAction } from "../actions/LoginAction";
 import { RootStateType } from "../stores";
 import { loginStateInterface } from "../reducers/LoginReducer";
 import { useDispatch, useSelector } from "react-redux";
+import {Progress} from "../components/ReusableComponents/Spinner";
+import {REMOVE_ERROR} from "../constants/LoginConstants"
 
 //state type
 
@@ -16,16 +18,12 @@ type LoginState = {
 };
 
 const Login: React.FunctionComponent = () => {
-<<<<<<< HEAD
- 
-=======
-  const dispatch=useDispatch();
+  const dispatch = useDispatch();
 
   const { loading, error } = useSelector<RootStateType>(
     (state) => state.userInfo
   ) as loginStateInterface;
 
->>>>>>> yugal
   const [loginForm, setLoginForm] = useState<LoginState>({
     username: "",
     password: "",
@@ -49,8 +47,11 @@ const Login: React.FunctionComponent = () => {
   const handleLogin: React.FormEventHandler<HTMLButtonElement> = (event) => {
     event.preventDefault();
 
-    dispatch(LoginAction(username,password));
-    
+    dispatch(LoginAction(username, password));
+
+    setTimeout(() => {
+      dispatch({type:REMOVE_ERROR})
+    }, 4000);
   };
 
   const handleEvent: React.FormEventHandler<HTMLButtonElement> = (event) => {
@@ -60,6 +61,7 @@ const Login: React.FunctionComponent = () => {
     setTimeout(() => {
       setLoginForm({ ...loginForm, helperText: "" });
     }, 3000);
+
   };
 
   const handleChange: React.ChangeEventHandler<HTMLInputElement> = (event) => {
@@ -114,13 +116,12 @@ const Login: React.FunctionComponent = () => {
                   className="Login__Box__Buttons__Button"
                   onClick={handleLogin}
                 >
-                  {loading ? "Loading..." : "Login"}
+                  {loading ? <Progress size={25}/> : "Login"}
                 </button>
               )}
             </div>
-            {error &&
-            <div style={{color:"red"}}>{error}</div> }
-            
+            {error && <div style={{ color: "red" }}>{error}</div>}
+
             {helperText ? <div>{helperText}</div> : <></>}
           </div>
         </div>
