@@ -18,13 +18,16 @@ type RegisterState = {
   password: string;
   confirmPassword: string;
   isButtonDisabled: boolean;
-  helperText: string;
   isError: boolean;
   showPassword: boolean;
   showPassword2: boolean;
 };
 type ErrorState = {
   error: boolean;
+};
+
+type ErrorMessageState = {
+  message: string;
 };
 
 const Register: React.FunctionComponent<RouteComponentProps<any>> = () => {
@@ -36,7 +39,29 @@ const Register: React.FunctionComponent<RouteComponentProps<any>> = () => {
 
   //   const [state, dispatch] = useReducer(reducer, initialState);
 
-  const [Error, setError] = useState<ErrorState>({ error: false });
+  // useState for error message
+  const [errorMessage, setErrorMessage] = useState<ErrorMessageState | null>(
+    null
+  );
+  // useState for error message
+  const [FirstNameError, setFirstNameError] = useState<ErrorState>({
+    error: false,
+  });
+  const [LastNameError, setLastNameError] = useState<ErrorState>({
+    error: false,
+  });
+  const [UserNameError, setUserNameError] = useState<ErrorState>({
+    error: false,
+  });
+  const [EmailError, setEmailError] = useState<ErrorState>({
+    error: false,
+  });
+  const [PasswordError, setPasswordError] = useState<ErrorState>({
+    error: false,
+  });
+  const [ConfirmPasswordError, setConfirmPasswordError] = useState<ErrorState>({
+    error: false,
+  });
   const [registerForm, setRegisterForm] = useState<RegisterState>({
     firstname: "",
     lastname: "",
@@ -44,7 +69,6 @@ const Register: React.FunctionComponent<RouteComponentProps<any>> = () => {
     email: "",
     password: "",
     confirmPassword: "",
-    helperText: "",
     isButtonDisabled: true,
     isError: false,
     showPassword: false,
@@ -58,7 +82,6 @@ const Register: React.FunctionComponent<RouteComponentProps<any>> = () => {
     email,
     password,
     confirmPassword,
-    helperText,
     isButtonDisabled,
     isError,
     showPassword,
@@ -77,12 +100,29 @@ const Register: React.FunctionComponent<RouteComponentProps<any>> = () => {
     }
   }, [firstname, lastname, username, password]);
 
+  useEffect(() => {
+    if (firstname.trim() !== "") {
+      setFirstNameError({ error: false });
+    }
+    if (lastname.trim() !== "") {
+      setLastNameError({ error: false });
+    }
+    if (username.trim() !== "") {
+      setUserNameError({ error: false });
+    }
+    if (email.trim() !== "") {
+      setEmailError({ error: false });
+    }
+    if (password.trim() !== "") {
+      setPasswordError({ error: false });
+    }
+    if (confirmPassword.trim() !== "") {
+      setConfirmPasswordError({ error: false });
+    }
+  }, [firstname, lastname, username, email, password, confirmPassword]);
+
   const handleLogin: React.FormEventHandler<HTMLButtonElement> = (event) => {
     event.preventDefault();
-    // if (!firstname) {
-    //   setError({ error: true });
-    // }
-    // console.log(Error);
 
     const isEmail = (val: string): boolean | undefined => {
       let regEmail =
@@ -102,30 +142,52 @@ const Register: React.FunctionComponent<RouteComponentProps<any>> = () => {
         dispatch({ type: REMOVE_ERROR });
       }, 4000);
     } else {
-      setRegisterForm({
-        ...registerForm,
-        helperText: "Please use a valid email",
+      // setRegisterForm({
+      //   ...registerForm,
+      //   helperText: "Please use a valid email",
+      // });
+      setErrorMessage({
+        message: "Please use a valid email!",
       });
       setTimeout(() => {
-        setRegisterForm({ ...registerForm, helperText: "" });
+        setErrorMessage({
+          message: "",
+        });
       }, 3000);
     }
   };
 
   const handleEvent: React.FormEventHandler<HTMLButtonElement> = (event) => {
     event.preventDefault();
-    if (!firstname) {
-      setError({ error: true });
-    }
-    // console.log(Error);
 
-    setRegisterForm({
-      ...registerForm,
-      helperText: "Fill all the input Fields",
+    if (firstname === "") {
+      setFirstNameError({ error: true });
+    }
+    if (lastname === "") {
+      setLastNameError({ error: true });
+    }
+    if (username === "") {
+      setUserNameError({ error: true });
+    }
+    if (email === "" || !email.includes("@") || !email.includes(".")) {
+      setEmailError({ error: true });
+    }
+    if (password === "") {
+      setPasswordError({ error: true });
+    }
+    if (confirmPassword === "") {
+      setConfirmPasswordError({ error: true });
+    }
+
+    setErrorMessage({
+      message: "Please fill all the input fields",
     });
-    setTimeout(() => {
-      setRegisterForm({ ...registerForm, helperText: "" });
+    const Timer = setTimeout(() => {
+      setErrorMessage({
+        message: "",
+      });
     }, 3000);
+    // clearTimeout(Timer);
   };
 
   const handleChange: React.ChangeEventHandler<HTMLInputElement> = (event) => {
@@ -164,7 +226,7 @@ const Register: React.FunctionComponent<RouteComponentProps<any>> = () => {
                     id="firstname"
                     // className="Auth__Box__InputBox__Name__InputHandler__Input "
                     className={
-                      Error
+                      FirstNameError.error
                         ? "Auth__Box__InputBox__Name__InputHandler__Input error_input"
                         : "Auth__Box__InputBox__Name__InputHandler__Input"
                     }
@@ -180,7 +242,11 @@ const Register: React.FunctionComponent<RouteComponentProps<any>> = () => {
                   </div>
                   <input
                     id="lastname"
-                    className="Auth__Box__InputBox__Name__InputHandler__Input"
+                    className={
+                      LastNameError.error
+                        ? "Auth__Box__InputBox__Name__InputHandler__Input error_input"
+                        : "Auth__Box__InputBox__Name__InputHandler__Input"
+                    }
                     value={lastname}
                     name="lastname"
                     placeholder="Lastname"
@@ -195,7 +261,11 @@ const Register: React.FunctionComponent<RouteComponentProps<any>> = () => {
                 </div>
                 <input
                   id="username"
-                  className="Auth__Box__InputBox__InputHandler__Input"
+                  className={
+                    UserNameError.error
+                      ? "Auth__Box__InputBox__InputHandler__Input error_input"
+                      : "Auth__Box__InputBox__InputHandler__Input"
+                  }
                   value={username}
                   name="username"
                   placeholder="Username"
@@ -208,7 +278,11 @@ const Register: React.FunctionComponent<RouteComponentProps<any>> = () => {
                 </div>
                 <input
                   id="email"
-                  className="Auth__Box__InputBox__InputHandler__Input"
+                  className={
+                    EmailError.error
+                      ? "Auth__Box__InputBox__InputHandler__Input error_input"
+                      : "Auth__Box__InputBox__InputHandler__Input"
+                  }
                   value={email}
                   name="email"
                   placeholder="Please enter a valid email"
@@ -222,7 +296,11 @@ const Register: React.FunctionComponent<RouteComponentProps<any>> = () => {
                 <div className="Auth__Box__InputBox__InputHandler__InputBox">
                   <input
                     id="password"
-                    className="Auth__Box__InputBox__InputHandler__InputBox__Input Auth__Box__InputBox__InputHandler__InputBox__Input__Password"
+                    className={
+                      PasswordError.error
+                        ? "Auth__Box__InputBox__InputHandler__InputBox__Input Auth__Box__InputBox__InputHandler__InputBox__Input__Password error_input"
+                        : "Auth__Box__InputBox__InputHandler__InputBox__Input Auth__Box__InputBox__InputHandler__InputBox__Input__Password"
+                    }
                     name="password"
                     value={password}
                     type={showPassword ? "text" : "password"}
@@ -253,7 +331,11 @@ const Register: React.FunctionComponent<RouteComponentProps<any>> = () => {
                 <div className="Auth__Box__InputBox__InputHandler__InputBox">
                   <input
                     id="confirmPassword"
-                    className="Auth__Box__InputBox__InputHandler__InputBox__Input Auth__Box__InputBox__InputHandler__InputBox__Input__Password"
+                    className={
+                      ConfirmPasswordError.error
+                        ? "Auth__Box__InputBox__InputHandler__InputBox__Input Auth__Box__InputBox__InputHandler__InputBox__Input__Password error_input"
+                        : "Auth__Box__InputBox__InputHandler__InputBox__Input Auth__Box__InputBox__InputHandler__InputBox__Input__Password"
+                    }
                     name="confirmPassword"
                     value={confirmPassword}
                     type={showPassword2 ? "text" : "password"}
@@ -296,7 +378,7 @@ const Register: React.FunctionComponent<RouteComponentProps<any>> = () => {
               )}
             </div>
             {error && <div style={{ color: "red" }}>{error}</div>}
-            {helperText ? <div>{helperText}</div> : <></>}
+            {errorMessage?.message ? <div>{errorMessage.message}</div> : <></>}
             <div className="Auth__Box__Register">
               Already got an account?
               <Link className="Auth__Box__Register__Redirect" to="/login">
