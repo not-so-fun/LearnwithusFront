@@ -5,6 +5,7 @@ import { RootStateType } from "../stores";
 import { Register_Action } from "../actions/RegisterAction";
 import { useDispatch, useSelector } from "react-redux";
 import { registerInterface } from "../reducers/RegisterReducer";
+import { Alert } from "@mui/material";
 import { REMOVE_ERROR } from "../constants/RegisterConstants";
 import { Progress } from "../components/ReusableComponents/Spinner";
 //state type
@@ -29,7 +30,7 @@ type ErrorState = {
 const Register: React.FunctionComponent<RouteComponentProps<any>> = () => {
   const dispatch = useDispatch();
 
-  const { loading, error } = useSelector<RootStateType>(
+  const { loading, message, error } = useSelector<RootStateType>(
     (state) => state.register
   ) as registerInterface;
 
@@ -92,7 +93,6 @@ const Register: React.FunctionComponent<RouteComponentProps<any>> = () => {
       return true;
     };
     const EmailValidated: boolean | undefined = isEmail(email);
-<<<<<<< HEAD
     if (EmailValidated) {
       //dispatch register
 
@@ -109,16 +109,6 @@ const Register: React.FunctionComponent<RouteComponentProps<any>> = () => {
       setTimeout(() => {
         setRegisterForm({ ...registerForm, helperText: "" });
       }, 3000);
-=======
-    if(EmailValidated){
-        //dispatch register
-        
-    } else{
-        setRegisterForm({ ...registerForm, helperText: "Please use a valid email" });
-        setTimeout(() => {
-            setRegisterForm({ ...registerForm, helperText: "" });
-        }, 3000);
->>>>>>> e8c798f (some changes in login and register)
     }
   };
 
@@ -157,6 +147,12 @@ const Register: React.FunctionComponent<RouteComponentProps<any>> = () => {
       <form className="Auth">
         <div className="Auth__Box">
           <div className="Auth__Box__Container">
+            {message && (
+              <Alert icon={false} style={{ fontSize: 15 }} severity="success">
+                {message}
+              </Alert>
+            )}
+
             <div className="Auth__Box__InputBox">
               <div className="Auth__Box__InputBox__Header">Sign Up</div>
               <div className="Auth__Box__InputBox__Name">
