@@ -37,7 +37,7 @@ const Register: React.FunctionComponent<RouteComponentProps<any>> = () => {
   const {firstname,lastname, username,email, password, confirmPassword,helperText, isButtonDisabled, isError, showPassword, showPassword2 } =
     registerForm;
   useEffect(() => {
-    if (firstname.trim()&& lastname.trim() && username.trim() && password.trim()) {
+    if (firstname.trim()&& lastname.trim() && username.trim() && email.trim() && password.trim()) {
       setRegisterForm({ ...registerForm, isButtonDisabled: false });
     } else {
       setRegisterForm({ ...registerForm, isButtonDisabled: true });

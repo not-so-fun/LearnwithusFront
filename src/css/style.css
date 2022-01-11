@@ -187,3 +187,77 @@ body {
     max-width: 60rem;
     width: 60rem;
     min-width: 30rem; }
+
+.Profile {
+  height: 163rem;
+  width: 100vw;
+  background: red;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  .Profile__Box {
+    width: 140rem;
+    height: 155rem;
+    margin: 4rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background: green; }
+    .Profile__Box__Top {
+      background: #32569F;
+      width: 130rem;
+      height: 50rem;
+      margin-bottom: 5rem;
+      display: flex; }
+      .Profile__Box__Top__ImagesAndDatas {
+        background: red;
+        width: 35rem;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: column; }
+        .Profile__Box__Top__ImagesAndDatas__Image {
+          width: 30rem;
+          height: 30rem;
+          margin-top: 4rem;
+          margin-bottom: 1rem;
+          background: #fff;
+          border-radius: 50%; }
+        .Profile__Box__Top__ImagesAndDatas__ProfileName {
+          margin: 1rem 0;
+          height: 6rem;
+          font-size: 2.5rem;
+          font-weight: 600;
+          background: green;
+          display: flex;
+          align-items: center;
+          justify-content: center; }
+        .Profile__Box__Top__ImagesAndDatas__Rating {
+          height: 5rem;
+          display: flex;
+          align-items: center;
+          justify-content: center; }
+          .Profile__Box__Top__ImagesAndDatas__Rating__Star {
+            height: 4rem;
+            width: 4rem;
+            fill: gold;
+            margin: 0 .4rem; }
+      .Profile__Box__Top__Form {
+        background: orange;
+        width: 50rem;
+        height: 100%; }
+    .Profile__Box__Main {
+      background: #C4C4C4;
+      width: 130rem;
+      height: 95rem;
+      margin-bottom: 5rem;
+      display: flex; }
+      .Profile__Box__Main__Newsfeed {
+        height: 100%;
+        width: 90rem;
+        background: red; }
+      .Profile__Box__Main__SideInformation {
+        height: 100%;
+        width: 40rem;
+        background: #32569F; }

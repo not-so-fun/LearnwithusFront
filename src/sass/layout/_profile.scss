@@ -1,0 +1,92 @@
+.Profile{
+    height: 163rem;
+    width: 100vw;
+    background:red;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    
+   
+    &__Box{
+        width:140rem;
+        height:155rem;
+        margin: 4rem 0;
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        background:green;
+        &__Top{
+            background:$color-primary;
+            width:130rem;
+            height:50rem;
+            margin-bottom:5rem;
+            display:flex;
+            &__ImagesAndDatas{
+                background:red;
+                width:35rem;
+                height:100%;
+                display:flex;
+                align-items: center;
+                flex-direction:column;
+                &__Image{
+                    width:30rem;
+                    height:30rem;
+                    margin-top:4rem;
+                    margin-bottom:1rem;
+                    background:#fff;
+                    border-radius:50%;
+                }
+                &__ProfileName{
+                    margin:1rem 0;
+                    height:6rem;
+                    font-size:2.5rem;
+                    font-weight:600;
+                    background:green;
+                    display:flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+                &__Rating{
+               
+                    height:5rem;
+                    display:flex;
+                    align-items:center;
+                    justify-content: center;
+                    &__Star{
+                        height:4rem;
+                        width:4rem;
+                        fill:gold;
+                        margin:0 .4rem;
+                    }
+                }
+            }
+            &__Form{
+                background:orange;
+                width:50rem;
+                height:100%;
+            }
+        }
+        &__Main{
+            background:$color-grey-light-2;
+            width:130rem;
+            height:95rem;
+            margin-bottom: 5rem;
+            display:flex;
+            &__Newsfeed{
+                height: 100%;
+                width:90rem;
+                background:red;
+            }
+            &__SideInformation{
+                height: 100%;
+                width:40rem;
+                background:$color-primary;
+
+            }
+        }
+
+    }
+    
+   
+}
