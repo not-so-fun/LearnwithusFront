@@ -2,6 +2,7 @@ import IRoute from '../interfaces/route';
 import Login from '../auth/Login';
 import Register from '../auth/Register';
 import Profile from '../Layout/Profile';
+import AccountActivationScreen from '../Screens/AccountActivationScreen';
 
 
 const routes: IRoute[] = [
@@ -22,6 +23,12 @@ const routes: IRoute[] = [
         name:'Profile',
         component: Profile,
         exact: true
+    },
+    {
+        path:'/activate_account',
+        name:"Account_Activate",
+        component:AccountActivationScreen,
+        exact:false
     }
 ]
 

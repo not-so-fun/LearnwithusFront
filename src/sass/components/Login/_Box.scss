@@ -1,178 +1,179 @@
-.Auth__Box{
-    &__Container{
-        width:43rem;
-        height:auto;
-        display:flex;
-        align-items: center;
-        justify-content: flex-start;
-        flex-direction: column;
-        color:$color-grey-light-3;
-        // box-shadow:$shadow-light;
+.Auth__Box {
+  &__Container {
+    width: 43rem;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+
+    color: $color-grey-light-3;
+    // box-shadow:$shadow-light;
+  }
+  &__InputBox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+    color: $color-grey-light-3;
+    &__Name {
+      width: 95%;
+      display: flex;
+      justify-content: space-between;
+      &__InputHandler {
+        width: 46%;
+        &__Heading {
+          font-weight: 600;
+          height: 3rem;
+          margin: 0.2rem 0;
+          font-size: 1.7rem;
+          display: flex;
+          align-items: center;
+        }
+        &__Input {
+          width: 100%;
+          height: 4rem;
+          font-size: 1.3rem;
+          margin: 0.4rem 0;
+          margin-bottom: 1rem;
+
+          padding: 1rem;
+          background: $color-grey-light-1;
+          border: none;
+          outline: none;
+        }
+      }
     }
-    &__InputBox{
-        display:flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        height:auto;
-        width:100%;
-        color:$color-grey-light-3;
-        &__Name{
-            width:95%;
-            display:flex;
-            justify-content: space-between;
-            &__InputHandler{
-                width:46%;
-                &__Heading{
-                    font-weight:600;
-                    height:4rem;
-                    margin:0.2rem 0;
-                    font-size:1.7rem;
-                    display:flex;
-                    align-items: center;
-                    
-                }
-                &__Input{
-                    width:100%;
-                    height:4rem;
-                    font-size:1.3rem;
-                    margin:0.2rem 0;
-                    padding:1rem;
-                    background:$color-grey-light-1;
-                    border:none;
-                    outline:none;
-                    
-                }
-        }
-        }
-        &__Header{
-            
-            font-size:3rem;
-            font-weight:600;
-            margin:0.3rem 0;
-            height:5rem;
-            width:100%;
-            display:flex;
-            align-items: center;
-            justify-content: center;
-        }
-        &__InputHandler{
-            width:95%;
-            &__Heading{
-                font-weight:600;
-                height:4rem;
-                margin:0.3rem 0;
-                font-size:1.7rem;
-                display:flex;
-                align-items: center;
-                
-            }
-            &__Input{
-                width:100%;
-                height:4rem;
-                font-size:1.3rem;
-                margin:0.5rem 0;
-                padding:1rem;
-                background:$color-grey-light-1;
-                border:none;
-                outline:none;
-                
-            }
-            &__InputBox{
-                width:100%;
-                height:4rem;
-                font-size:1.3rem;
-                margin:0.3rem 0;
-                background:green;
-                border:none;
-                outline:none;
-                display:flex;
-                align-items: center;
-                // position:relative;
-                &__Input{
-                    width:100%;
-                    height:4rem;
-                    font-size:1.3rem;
-                    padding:1rem;
-                    background:$color-grey-light-1;
-                    border:none;
-                    outline:none;
-                    &__Password{
-                        padding-right:3rem;
-                    }
-                    // position:absolute;
-                    // top:0;
-                    // left:0;
-                }
-                &__Logos{
-                    margin-left:-3rem;
-                    height:3rem;
-                    width:3rem;
-                    display:flex;
-                    align-items: center;
-                    justify-content: center;
-                    border:none;
-                    outline:none;
-                    background:$color-grey-light-1;
-                    &:hover{
-                        cursor:pointer;
-                    }
-                    &__Logo{
-                        height:2.1rem;
-                        width:2.1rem;
-                    }
-                }
-            }
-        }
-        
+    &__Header {
+      font-size: 3rem;
+      font-weight: 600;
+      margin: 0.3rem 0;
+      height: 5rem;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
-    &__Buttons{
-        width:100%;
-        height:6rem;
-        margin:0.3rem 0;
+    &__InputHandler {
+      width: 95%;
+      &__Heading {
+        font-weight: 600;
+        height: 3rem;
+        margin: 0.3rem 0;
+        font-size: 1.7rem;
         display: flex;
         align-items: center;
-        justify-content: center;
-        
-        &__Button{
-            width:95%;
-            height:5rem;
-            background:$color-secondary;
-            font-size:1.9rem;
-            color:$color-white;
-            border-radius:5px;
-            border:none;
-            outline:none;
-            &:hover{
-                cursor:pointer;
-            }
-        }
-    }
-    &__ForgotPassword{
-        font-size:1.7rem;
-        color:$color-primary;
-        text-decoration: underline;
-        margin:1rem 0;
-        &:hover{
-            cursor:pointer;
-        }
-    }
-    &__Register{
-        font-size:1.7rem;
-        margin:1rem 0;
-        color:$color-grey-light-3;
-        display:flex;
+      }
+      &__Input {
+        width: 100%;
+        height: 4rem;
+        font-size: 1.3rem;
+        margin: 0.5rem 0;
+        padding: 1rem;
+        background: $color-grey-light-1;
+        border: none;
+        margin-bottom: 1rem;
+        outline: none;
+      }
+      &__InputBox {
+        width: 100%;
+        height: 4rem;
+        font-size: 1.3rem;
+        margin: 0.3rem 0;
+        background: green;
+        border: none;
+        outline: none;
+        display: flex;
         align-items: center;
-
-        &__Redirect{
-            color:$color-secondary;
-            margin-left: 1rem;
-            &:hover{
-                cursor:pointer;
-                text-decoration: underline;
-            }
+        // position:relative;
+        &__Input {
+          width: 100%;
+          height: 4rem;
+          font-size: 1.3rem;
+          padding: 1rem;
+          background: $color-grey-light-1;
+          border: none;
+          outline: none;
+          &__Password {
+            padding-right: 3rem;
+          }
+          // position:absolute;
+          // top:0;
+          // left:0;
         }
+        &__Logos {
+          margin-left: -3rem;
+          height: 3rem;
+          width: 3rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border: none;
+          outline: none;
+          background: $color-grey-light-1;
+          &:hover {
+            cursor: pointer;
+          }
+          &__Logo {
+            height: 2.1rem;
+            width: 2.1rem;
+          }
+        }
+      }
     }
+  }
+  &__Buttons {
+    width: 100%;
+    height: 6rem;
+    margin: 0.3rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
+    &__Button {
+      width: 95%;
+      height: 5rem;
+      background: $color-secondary;
+      font-size: 1.9rem;
+      color: $color-white;
+      border-radius: 5px;
+      border: none;
+      outline: none;
+      &:hover {
+        cursor: pointer;
+        background-color: darken($color-secondary, 5%);
+      }
+    }
+  }
+  &__ForgotPassword {
+    font-size: 1.7rem;
+    color: $color-primary;
+    text-decoration: underline;
+    margin: 1rem 0;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  &__Register {
+    font-size: 1.7rem;
+    margin: 1rem 0;
+    color: $color-grey-light-3;
+    display: flex;
+    align-items: center;
 
+    &__Redirect {
+      color: $color-secondary;
+      margin-left: 1rem;
+      &:hover {
+        cursor: pointer;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.error_input {
+  background-color: #ffeeee;
 }
