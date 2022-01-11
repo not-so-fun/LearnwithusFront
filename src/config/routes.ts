@@ -1,6 +1,7 @@
 import IRoute from '../interfaces/route';
 import Login from '../auth/Login';
 import Register from '../auth/Register';
+import AccountActivationScreen from '../Screens/AccountActivationScreen';
 
 
 const routes: IRoute[] = [
@@ -15,6 +16,12 @@ const routes: IRoute[] = [
         name: 'Register',
         component: Register,
         exact: true
+    },
+    {
+        path:'/activate_account',
+        name:"Account_Activate",
+        component:AccountActivationScreen,
+        exact:false
     }
 ]
 

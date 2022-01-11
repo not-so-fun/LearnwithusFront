@@ -5,7 +5,7 @@ import { LoginAction } from "../actions/LoginAction";
 import { RootStateType } from "../stores";
 import { loginStateInterface } from "../reducers/LoginReducer";
 import { useDispatch, useSelector } from "react-redux";
-import { Progress } from "../components/ReusableComponents/Spinner";
+import { Progress } from "../components/ReusableUIComponents/Spinner";
 import { REMOVE_ERROR } from "../constants/LoginConstants";
 
 //state type
@@ -164,6 +164,7 @@ const Login: React.FunctionComponent<RouteComponentProps<any>> = () => {
                 </div>
               </div>
             </div>
+
             <div className="Auth__Side">
     
             </div>

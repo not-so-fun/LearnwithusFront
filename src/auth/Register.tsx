@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { registerInterface } from "../reducers/RegisterReducer";
 import { Alert } from "@mui/material";
 import { REMOVE_ERROR } from "../constants/RegisterConstants";
-import { Progress } from "../components/ReusableComponents/Spinner";
+import { Progress } from "../components/ReusableUIComponents/Spinner";
 //state type
 
 type RegisterState = {
