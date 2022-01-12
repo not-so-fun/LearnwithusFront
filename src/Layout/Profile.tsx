@@ -40,7 +40,8 @@ const Profile: FC<RouteComponentProps<any>> = ({ match }) => {
   return (
     <>
       <div className="Profile">
-      
+        <Navbar />
+
         <div className="Profile__Box">
           {loading ? (
             <h2 style={{ color: "black" }}>
