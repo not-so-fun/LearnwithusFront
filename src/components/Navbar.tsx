@@ -1,7 +1,10 @@
 import React, { FC } from "react";
+import useTokenAndId from "./ReusableLogicComponents/useTokenAndId";
 import { Link } from "react-router-dom";
 
 const Navbar: FC = () => {
+  const { user_id } = useTokenAndId();
+
   return (
     <div className="Navbar">
       <div className="Navbar__Links">
@@ -14,7 +17,7 @@ const Navbar: FC = () => {
         >
           Login
         </Link>
-        <Link to="/" className="Navbar__Links__content">
+        <Link to={`/profile/${user_id}`} className="Navbar__Links__content">
           Profile
         </Link>
       </div>
