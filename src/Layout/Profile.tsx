@@ -10,7 +10,7 @@ const Profile: FC = () => {
                 <div className="Profile__Box__Top">
                     <ProfileImageAndData/>
                     <ProfileForm/>
-                
+                    
                 </div>
                 <div className="Profile__Box__Main">
                     <div className="Profile__Box__Main__Newsfeed" >
