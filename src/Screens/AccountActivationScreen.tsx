@@ -8,6 +8,7 @@ const AccountActivationScreen: React.FunctionComponent<
   RouteComponentProps<any>
 > = ({ location }) => {
   const [loading, setLoading] = useState<boolean>(false);
+  const [message, setMessage] = useState<string>("");
   const [error, setError] = useState<string>("");
 
   const handleActivateAccount:
@@ -23,6 +24,7 @@ const AccountActivationScreen: React.FunctionComponent<
       .then((response) => {
         console.log(response.data);
         setLoading(false);
+        setMessage(response.data)
       })
       .catch((error) => {
         console.log(error);
@@ -53,8 +55,11 @@ const AccountActivationScreen: React.FunctionComponent<
                 Activate
               </button>
             )}
+
+            {message && <div>{message}</div>}
           </div>
         </div>
+        {message}Hello
       </form>
     </div>
   );
