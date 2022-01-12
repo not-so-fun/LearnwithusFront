@@ -19,7 +19,7 @@ const routes: IRoute[] = [
         exact: true
     },
     {
-        path:'/profile',
+        path:'/profile/:id',
         name:'Profile',
         component: Profile,
         exact: true

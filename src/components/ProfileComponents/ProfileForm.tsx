@@ -1,18 +1,23 @@
-import React, { FC } from "react";
+import React, { FC, useEffect } from "react";
+import {profileUserDataInterface} from  "../../reducers/ProfileReducer"
 
-const ProfileForm: FC = () => {
-  //state type
+interface ProfileFormInterface{
+  profile_data:profileUserDataInterface
+}
+
+const ProfileForm: FC<ProfileFormInterface> = ({profile_data}) => {
+
 
   return (
     <div className="Profile__Box__Top__Information">
       <div className="Profile__Box__Top__Information__Name">
         <div className="Profile__Box__Top__Information__Name__firstName">
           <p>Firstname</p>
-          <h4>Pasang</h4>
+          <h4>{profile_data.first_name}</h4>
         </div>
         <div className="Profile__Box__Top__Information__Name__lastName">
           <p>Lastname</p>
-          <h4>Sherpa</h4>
+          <h4>{profile_data.last_name}</h4>
         </div>
       </div>
       <div className="Profile__Box__Top__Information__BasicInfo">
