@@ -1,9 +1,5 @@
-import { useState } from "react";
-
 
 const useTokenAndId = () => {
-  const [userInfoState, setUserInfo] =
-    useState<any>({ user_id: "", token: "" });
 
   const userInfo = localStorage.getItem("userInfo");
 

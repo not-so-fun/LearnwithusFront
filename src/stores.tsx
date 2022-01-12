@@ -3,10 +3,12 @@ import thunk from "redux-thunk";
 import { combineReducers,createStore,applyMiddleware } from "redux";
 import { LoginReducer } from "./reducers/LoginReducer";
 import { RegisterReducer } from "./reducers/RegisterReducer";
+import { ProfileReducer } from "./reducers/ProfileReducer";
 
 const rootReducer=combineReducers({
     userInfo:LoginReducer,
-    register:RegisterReducer
+    register:RegisterReducer,
+    profile_info_data:ProfileReducer
 })
 
 const store=createStore(rootReducer,composeWithDevTools(applyMiddleware(thunk)))
