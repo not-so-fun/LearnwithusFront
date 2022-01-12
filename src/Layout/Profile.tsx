@@ -10,6 +10,7 @@ import { ProfileAction } from "../actions/ProfileAction";
 import { RootStateType } from "../stores";
 import useTokenAndId from "../components/ReusableLogicComponents/useTokenAndId";
 import { Progress } from "../components/ReusableUIComponents/Spinner";
+import Navbar from "../components/Navbar";
 
 // const answerStats = [
 //   {
@@ -39,6 +40,7 @@ const Profile: FC<RouteComponentProps<any>> = ({ match }) => {
   return (
     <>
       <div className="Profile">
+        <Navbar />
         <div className="Profile__Box">
           {loading ? (
             <h2 style={{ color: "black" }}>
@@ -47,7 +49,7 @@ const Profile: FC<RouteComponentProps<any>> = ({ match }) => {
           ) : (
             <>
               {error ? (
-                <h1 style={{color:"black"}}>{error}</h1>
+                <h1 style={{ color: "black" }}>{error}</h1>
               ) : (
                 <>
                   <div className="Profile__Box__Top">
