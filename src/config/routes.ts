@@ -10,25 +10,29 @@ const routes: IRoute[] = [
         path: '/login',
         name: 'Login',
         component: Login,
-        exact: true
+        exact: true,
+        private:false
     },
     {
         path: '/register',
         name: 'Register',
         component: Register,
-        exact: true
+        exact: true,
+        private:false
     },
     {
         path:'/profile/:id',
         name:'Profile',
         component: Profile,
-        exact: true
+        exact: true,
+        private:true
     },
     {
         path:'/activate_account',
         name:"Account_Activate",
         component:AccountActivationScreen,
-        exact:false
+        exact:false,
+        private:false
     }
 ]
 

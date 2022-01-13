@@ -22,9 +22,15 @@ const Login: React.FunctionComponent<RouteComponentProps<any>> = () => {
   //   const [state, dispatch] = useReducer(reducer, initialState);
 
   const dispatch = useDispatch();
-  const { loading, error } = useSelector<RootStateType>(
+  const { loading, error,userInfo } = useSelector<RootStateType>(
     (state) => state.userInfo
   ) as loginStateInterface;
+
+  useEffect(() => {
+console.log(userInfo);
+    
+    
+  }, [])
   
 
   const [loginForm, setLoginForm] = useState<LoginState>({
