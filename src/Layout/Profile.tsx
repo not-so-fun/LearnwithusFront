@@ -11,7 +11,7 @@ import { RootStateType } from "../stores";
 import useTokenAndId from "../components/ReusableLogicComponents/useTokenAndId";
 import { Progress } from "../components/ReusableUIComponents/Spinner";
 import Navbar from "../components/Navbar";
-
+import ProfileNewsFeed from "../components/ProfileComponents/ProfileNewsFeed";
 
 // const answerStats = [
 //   {
@@ -30,16 +30,17 @@ const Profile: FC<RouteComponentProps<any>> = ({ match }) => {
   const dispatch = useDispatch();
   const { token } = useTokenAndId();
 
-  const {userInfo}=useSelector<RootStateType>(state=>state.userInfo) as any
+  const { userInfo } = useSelector<RootStateType>(
+    (state) => state.userInfo
+  ) as any;
 
   useEffect(() => {
-    if(userInfo){
+    if (userInfo) {
       dispatch(ProfileAction(match.params.id, userInfo.token));
-    }else{
+    } else {
       dispatch(ProfileAction(match.params.id, token));
-
     }
-  }, [match,token,userInfo]);
+  }, [match, token, userInfo]);
 
   const { loading, profile_data, error } = useSelector<RootStateType>(
     (state) => state.profile_info_data
@@ -49,7 +50,6 @@ const Profile: FC<RouteComponentProps<any>> = ({ match }) => {
     <>
       <div className="Profile">
         <div className="Profile__Box">
-          
           {loading ? (
             <h2 style={{ color: "black" }}>
               <Progress size={50} />
@@ -66,7 +66,9 @@ const Profile: FC<RouteComponentProps<any>> = ({ match }) => {
                     <ProfileStats />
                   </div>
                   <div className="Profile__Box__Main">
-                    <div className="Profile__Box__Main__Newsfeed"></div>
+                    <div className="Profile__Box__Main__Newsfeed">
+                      <ProfileNewsFeed />
+                    </div>
                     <div className="Profile__Box__Main__SideInformation">
                       <ProfileQAStatus />
                       <ProfileQAStatus />
