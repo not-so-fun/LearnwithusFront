@@ -7,13 +7,18 @@ import {
 } from "react-router-dom";
 import "./App.css";
 import routes from "./config/routes";
+import Navbar from "./components/Navbar";
+import "./css/style.css";
 
 import PrivateRoute from "./utilities/PrivateRoute";
-import "./css/style.css";
 function App() {
   return (
+    <>
+
     <div className="App">
       <BrowserRouter>
+      <Navbar/>
+
         <Switch>
           {routes.map((route, index) => {
             // const {private} = route;
@@ -48,8 +53,10 @@ function App() {
             );
           })}
         </Switch>
+        
       </BrowserRouter>
     </div>
+    </>
   );
 }
 

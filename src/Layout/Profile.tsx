@@ -10,6 +10,8 @@ import { ProfileAction } from "../actions/ProfileAction";
 import { RootStateType } from "../stores";
 import useTokenAndId from "../components/ReusableLogicComponents/useTokenAndId";
 import { Progress } from "../components/ReusableUIComponents/Spinner";
+import Navbar from "../components/Navbar";
+
 
 // const answerStats = [
 //   {
@@ -28,9 +30,16 @@ const Profile: FC<RouteComponentProps<any>> = ({ match }) => {
   const dispatch = useDispatch();
   const { token } = useTokenAndId();
 
+  const {userInfo}=useSelector<RootStateType>(state=>state.userInfo) as any
+
   useEffect(() => {
-    dispatch(ProfileAction(match.params.id, token));
-  }, [match, token]);
+    if(userInfo){
+      dispatch(ProfileAction(match.params.id, userInfo.token));
+    }else{
+      dispatch(ProfileAction(match.params.id, token));
+
+    }
+  }, [match,token,userInfo]);
 
   const { loading, profile_data, error } = useSelector<RootStateType>(
     (state) => state.profile_info_data
@@ -40,6 +49,7 @@ const Profile: FC<RouteComponentProps<any>> = ({ match }) => {
     <>
       <div className="Profile">
         <div className="Profile__Box">
+          
           {loading ? (
             <h2 style={{ color: "black" }}>
               <Progress size={50} />
@@ -47,7 +57,7 @@ const Profile: FC<RouteComponentProps<any>> = ({ match }) => {
           ) : (
             <>
               {error ? (
-                <h1 style={{color:"black"}}>{error}</h1>
+                <h1 style={{ color: "black" }}>{error}</h1>
               ) : (
                 <>
                   <div className="Profile__Box__Top">

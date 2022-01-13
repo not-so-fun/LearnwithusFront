@@ -1,7 +1,9 @@
+import { useEffect } from "react";
 
 const useTokenAndId = () => {
 
-  const userInfo = localStorage.getItem("userInfo");
+  let userInfo = localStorage.getItem("userInfo");
+
 
   if (userInfo !== null) {
     const { user_id, token } = JSON.parse(userInfo!);

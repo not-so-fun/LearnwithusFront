@@ -173,6 +173,47 @@ body {
 .error_input {
   background-color: #ffeeee; }
 
+.ForgetPassword {
+  margin: 2rem;
+  display: flex;
+  justify-content: center; }
+  .ForgetPassword__InnerDiv {
+    display: flex;
+    border: 2px solid lightgrey;
+    padding: 2rem;
+    flex-direction: column;
+    text-align: left;
+    width: 30%; }
+    .ForgetPassword__InnerDiv__Heading {
+      color: #000;
+      font-size: 26px; }
+    .ForgetPassword__InnerDiv__Form {
+      margin: 1rem 0; }
+      .ForgetPassword__InnerDiv__Form__Heading {
+        font-size: 16px; }
+      .ForgetPassword__InnerDiv__Form__Input {
+        margin-top: 0.2rem;
+        width: 100%;
+        height: 4rem;
+        font-size: 1.3rem;
+        padding: 1rem; }
+      .ForgetPassword__InnerDiv__Form__Button {
+        width: 100%;
+        height: 5rem;
+        background: #048004;
+        font-size: 1.9rem;
+        color: #fff;
+        border-radius: 5px;
+        border: none;
+        outline: none; }
+        .ForgetPassword__InnerDiv__Form__Button:hover {
+          cursor: pointer;
+          background-color: #036703; }
+    .ForgetPassword__InnerDiv__text {
+      font-size: 16px;
+      margin-top: 1rem;
+      text-align: left; }
+
 .Auth {
   height: 70rem;
   max-width: 120rem;
@@ -196,8 +237,7 @@ body {
 
 .Profile {
   height: 163rem;
-  width: 99vw;
-  border: 1px solid black;
+  width: 98vw;
   display: flex;
   flex-direction: column;
   align-items: center; }
@@ -372,3 +412,28 @@ body {
                 display: flex;
                 justify-content: center;
                 align-items: center; }
+
+.Navbar {
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+  background-color: #32569F;
+  width: 100%;
+  display: flex;
+  height: 6rem;
+  justify-content: flex-end; }
+  .Navbar__Links {
+    margin-right: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    float: right; }
+    .Navbar__Links__center {
+      padding: 0rem 2rem; }
+    .Navbar__Links__content {
+      transition: all 0.4s ease;
+      color: #fff;
+      text-decoration: none; }
+    .Navbar__Links__content:hover {
+      cursor: pointer;
+      color: #9b9bf9; }
