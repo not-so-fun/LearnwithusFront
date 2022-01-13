@@ -173,6 +173,47 @@ body {
 .error_input {
   background-color: #ffeeee; }
 
+.ForgetPassword {
+  margin: 2rem;
+  display: flex;
+  justify-content: center; }
+  .ForgetPassword__InnerDiv {
+    display: flex;
+    border: 2px solid lightgrey;
+    padding: 2rem;
+    flex-direction: column;
+    text-align: left;
+    width: 30%; }
+    .ForgetPassword__InnerDiv__Heading {
+      color: #000;
+      font-size: 26px; }
+    .ForgetPassword__InnerDiv__Form {
+      margin: 1rem 0; }
+      .ForgetPassword__InnerDiv__Form__Heading {
+        font-size: 16px; }
+      .ForgetPassword__InnerDiv__Form__Input {
+        margin-top: 0.2rem;
+        width: 100%;
+        height: 4rem;
+        font-size: 1.3rem;
+        padding: 1rem; }
+      .ForgetPassword__InnerDiv__Form__Button {
+        width: 100%;
+        height: 5rem;
+        background: #048004;
+        font-size: 1.9rem;
+        color: #fff;
+        border-radius: 5px;
+        border: none;
+        outline: none; }
+        .ForgetPassword__InnerDiv__Form__Button:hover {
+          cursor: pointer;
+          background-color: #036703; }
+    .ForgetPassword__InnerDiv__text {
+      font-size: 16px;
+      margin-top: 1rem;
+      text-align: left; }
+
 .Auth {
   height: 70rem;
   max-width: 120rem;
