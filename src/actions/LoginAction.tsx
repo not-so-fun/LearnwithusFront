@@ -11,6 +11,7 @@ import { Dispatch } from "redux";
 export const LoginAction =
   (email: string, password: string) =>
   (dispatch: Dispatch<LoginActionType>) => {
+    
     dispatch({ type: LOGIN_REQUEST_STARTED });
 
     axios
