@@ -40,11 +40,6 @@ const Profile: FC<RouteComponentProps<any>> = ({ match }) => {
   return (
     <>
       <div className="Profile">
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 84bc33b (pulled new)
         <div className="Profile__Box">
           {loading ? (
             <h2 style={{ color: "black" }}>

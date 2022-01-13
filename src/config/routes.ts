@@ -26,13 +26,13 @@ const routes: IRoute[] = [
     exact: true,
   },
   {
-    path: "/forgotpassword",
+    path: "/forgot-password",
     name: "ForgotPassword",
     component: ForgotPassword,
     exact: true,
   },
   {
-    path: "/resetpassword",
+    path: "/reset-password",
     name: "ResetPassword",
     component: ResetPassword,
     exact: true,

@@ -5,12 +5,14 @@ import { LoginReducer } from "./reducers/LoginReducer";
 import { RegisterReducer } from "./reducers/RegisterReducer";
 import { ProfileReducer } from "./reducers/ProfileReducer";
 import { ForgotPassowrdReducer } from "./reducers/ForgotPasswordReducer";
+import { ResetPassowrdReducer } from "./reducers/ResetPasswordReducer";
 
 const rootReducer = combineReducers({
   userInfo: LoginReducer,
   register: RegisterReducer,
   profile_info_data: ProfileReducer,
   forgot_password: ForgotPassowrdReducer,
+  reset_password:ResetPassowrdReducer
 });
 
 const store = createStore(

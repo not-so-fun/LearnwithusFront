@@ -150,7 +150,9 @@ const Login: React.FunctionComponent<RouteComponentProps<any>> = () => {
             {error && <div style={{ color: "red" }}>{error}</div>}
 
             {helperText ? <div>{helperText}</div> : <></>}
-            <div className="Auth__Box__ForgotPassword">forgot password?</div>
+            <Link className="Auth__Box__ForgotPassword" to="forgot-password">
+              forgot password?
+              </Link>
             <div className="Auth__Box__Register">
               Haven't got an account?
               <Link className="Auth__Box__Register__Redirect" to="/register">
