@@ -8,7 +8,7 @@ import { LoginActionType } from "../types/LoginActionTypes";
 
 export interface loginStateInterface {
   loading: boolean;
-  userInfo: { id: string; token: string } | null;
+  userInfo: { user_id: string; token: string } | null;
   error: string;
 }
 

@@ -7,7 +7,7 @@ import { loginStateInterface } from "../reducers/LoginReducer";
 import { useDispatch, useSelector } from "react-redux";
 import { Progress } from "../components/ReusableUIComponents/Spinner";
 import { REMOVE_ERROR } from "../constants/LoginConstants";
-
+import useTokenAndId from "../components/ReusableLogicComponents/useTokenAndId"
 //state type
 type LoginState = {
   username: string;
@@ -18,8 +18,16 @@ type LoginState = {
   showPassword: boolean;
 };
 
-const Login: React.FunctionComponent<RouteComponentProps<any>> = () => {
-  //   const [state, dispatch] = useReducer(reducer, initialState);
+const Login: React.FunctionComponent<RouteComponentProps<any>> = ({history}) => {
+
+  const {user_id,token}=useTokenAndId()
+  useEffect(()=>{
+    if(user_id===null || token===null)
+    {
+    }else{
+      history.push("/")
+    }
+  },[history,user_id,token])
 
   const dispatch = useDispatch();
   const { loading, error } = useSelector<RootStateType>(
@@ -55,11 +63,14 @@ const Login: React.FunctionComponent<RouteComponentProps<any>> = () => {
   const handleLogin: React.FormEventHandler<HTMLButtonElement> = (event) => {
     event.preventDefault();
 
-    dispatch(LoginAction(username, password));
+    dispatch(LoginAction(username, password,history));
+    
+
 
     setTimeout(() => {
       dispatch({ type: REMOVE_ERROR });
     }, 4000);
+
   };
 
   const handleEvent: React.FormEventHandler<HTMLButtonElement> = (event) => {
