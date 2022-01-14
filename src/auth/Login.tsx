@@ -22,12 +22,12 @@ const Login: React.FunctionComponent<RouteComponentProps<any>> = ({history}) => 
 
   const {user_id,token}=useTokenAndId()
   useEffect(()=>{
-    if(user_id===null || token===null)
-    {
-    }else{
-      history.push("/")
+    document.title= "LearnWithUs | login";
+    const token = localStorage.getItem("userInfo");
+    if(token){
+      history.push("/");
     }
-  },[history,user_id,token])
+  },[]);
 
   const dispatch = useDispatch();
   const { loading, error,userInfo } = useSelector<RootStateType>(

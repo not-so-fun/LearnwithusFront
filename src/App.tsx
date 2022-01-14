@@ -12,6 +12,7 @@ import "./css/style.css";
 
 import PrivateRoute from "./utilities/PrivateRoute";
 function App() {
+  
   return (
     <>
 

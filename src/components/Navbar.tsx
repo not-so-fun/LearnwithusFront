@@ -3,23 +3,23 @@ import { useSelector } from "react-redux";
 import useTokenAndId from "./ReusableLogicComponents/useTokenAndId";
 import { RootStateType } from "../stores";
 import { Link, useHistory } from "react-router-dom";
-
 const Navbar: FC = () => {
   const { userInfo } = useSelector<RootStateType>(
     (state) => state.userInfo
   ) as any;
 
   const {user_id}=useTokenAndId()
-    const history=useHistory()
+    const history=useHistory();
   // console.log(user_id)
 
   const handleLogout=()=>{
     localStorage.clear();
-    history.push("/")
+    history.push("/login");
     window.location.reload()
 
   }
 
+  
   
   return (
     <div className="Navbar">
@@ -30,7 +30,7 @@ const Navbar: FC = () => {
               Logout
             </div>
             <Link
-              to={`/profile/${userInfo && userInfo.user_id}`}
+              to={`/profile/${userInfo && userInfo.user_id || user_id}`}
               className="Navbar__Links__content"
             >
               Profile

@@ -28,16 +28,22 @@ import Navbar from "../components/Navbar";
 
 const Profile: FC<RouteComponentProps<any>> = ({ match }) => {
   const dispatch = useDispatch();
-  const { token } = useTokenAndId();
+  const { token, user_id} = useTokenAndId();
 
-  const {userInfo}=useSelector<RootStateType>(state=>state.userInfo) as any
+  const {userInfo}=useSelector<RootStateType>(state=>state.userInfo) as any;
+  useEffect(() => {
+    document.title = "LearnWithUs | Profile";
+    
+  }, [])
 
   useEffect(() => {
-    if(userInfo){
+    console.log(userInfo);
+    if(userInfo && userInfo?.token ){
+
       dispatch(ProfileAction(match.params.id, userInfo.token));
     }else{
-      dispatch(ProfileAction(match.params.id, token));
-
+      dispatch(ProfileAction(user_id, token));
+      console.log(token);
     }
   }, [match,token,userInfo]);
 

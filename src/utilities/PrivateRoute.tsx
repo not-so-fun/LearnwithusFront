@@ -12,7 +12,7 @@ const PrivateRoute: React.FC<PrivateRouteProps> = ({component: Component, ...res
      localStorage.getItem("userInfo") ? (
         <Component {...props} />
       ) : (
-        <Redirect to={{pathname: '/', state: {from: props.location}}}/>
+        <Redirect to={{pathname: '/login', state: {from: props.location}}}/>
       )
     )}/>
   );
