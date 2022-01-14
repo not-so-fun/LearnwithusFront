@@ -11,7 +11,7 @@ import { RootStateType } from "../stores";
 import useTokenAndId from "../components/ReusableLogicComponents/useTokenAndId";
 import { Progress } from "../components/ReusableUIComponents/Spinner";
 import Navbar from "../components/Navbar";
-import ProfileNewsFeed from "../components/ProfileComponents/ProfileNewsFeed";
+import ProfileNewsFeed from "../components/ProfileComponents/NewsFeed";
 
 // const answerStats = [
 //   {

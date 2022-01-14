@@ -167,8 +167,9 @@
         height: 100%;
         width: 90rem;
         background: #d1d1d1;
+        // border: 2px solid black;
         &__Div {
-          background-color: $color-white;
+          background-color: $color-grey-light-1;
           color: $color-black;
           margin: 2rem 10rem;
           text-align: left;
