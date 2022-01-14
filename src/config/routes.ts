@@ -3,6 +3,7 @@ import Login from "../auth/Login";
 import Register from "../auth/Register";
 import Profile from "../Layout/Profile";
 import ForgotPassword from "../components/ResetPassword/ForgotPassword";
+import HomePage from "../Layout/HomePage";
 import ResetPassword from "../components/ResetPassword/ResetPassword";
 import AccountActivationScreen from "../Screens/AccountActivationScreen";
 
@@ -12,42 +13,49 @@ const routes: IRoute[] = [
     name: "Login",
     component: Login,
     exact: true,
-    private:false
+    private: false,
+  },
+  {
+    path: "/home",
+    name: "Home",
+    component: HomePage,
+    exact: true,
+    private: false,
   },
   {
     path: "/register",
     name: "Register",
     component: Register,
     exact: true,
-    private:false
+    private: false,
   },
   {
     path: "/profile/:id",
     name: "Profile",
     component: Profile,
     exact: true,
-    private:true
+    private: true,
   },
   {
     path: "/forgot-password",
     name: "ForgotPassword",
     component: ForgotPassword,
     exact: true,
-    private:false
+    private: false,
   },
   {
     path: "/reset-password",
     name: "ResetPassword",
     component: ResetPassword,
     exact: true,
-    private:false
+    private: false,
   },
   {
     path: "/activate_account",
     name: "Account_Activate",
     component: AccountActivationScreen,
     exact: false,
-    private:false
+    private: false,
   },
 ];
 
