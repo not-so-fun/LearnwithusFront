@@ -184,6 +184,8 @@ body {
     flex-direction: column;
     text-align: left;
     width: 30%; }
+    .ForgetPassword__InnerDiv__ConfirmImageDiv {
+      margin-top: 10px; }
     .ForgetPassword__InnerDiv__Heading {
       color: #000;
       font-size: 26px; }
@@ -199,6 +201,9 @@ body {
         padding: 1rem; }
       .ForgetPassword__InnerDiv__Form__Button {
         width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         height: 5rem;
         background: #048004;
         font-size: 1.9rem;
@@ -236,7 +241,7 @@ body {
     min-width: 30rem; }
 
 .Profile {
-  height: 163rem;
+  height: 100vh;
   width: 98vw;
   display: flex;
   flex-direction: column;
@@ -248,8 +253,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    background: green; }
+    justify-content: space-between; }
     .Profile__Box__Top {
       background: #32569F;
       width: 130rem;
@@ -373,7 +377,34 @@ body {
       .Profile__Box__Main__Newsfeed {
         height: 100%;
         width: 90rem;
-        background: red; }
+        background: #d1d1d1; }
+        .Profile__Box__Main__Newsfeed__Div {
+          background-color: #fff;
+          color: #000;
+          margin: 2rem 10rem;
+          text-align: left;
+          padding: 8px;
+          border-radius: 5px; }
+          .Profile__Box__Main__Newsfeed__Div__Header {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-bottom: 0.7rem; }
+            .Profile__Box__Main__Newsfeed__Div__Header p {
+              margin-left: 1rem;
+              font-size: 18px; }
+            .Profile__Box__Main__Newsfeed__Div__Header__image {
+              height: 50px;
+              width: 50px; }
+          .Profile__Box__Main__Newsfeed__Div__Question {
+            background-color: #C4C4C4;
+            margin-bottom: 1rem;
+            font-size: 14px;
+            padding: 1px 8px; }
+          .Profile__Box__Main__Newsfeed__Div__QuestionDetails {
+            font-size: 14px;
+            padding: 1px 8px;
+            background-color: #C4C4C4; }
       .Profile__Box__Main__SideInformation {
         height: 100%;
         width: 40rem;

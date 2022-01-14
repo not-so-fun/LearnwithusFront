@@ -7,7 +7,7 @@ import { loginStateInterface } from "../reducers/LoginReducer";
 import { useDispatch, useSelector } from "react-redux";
 import { Progress } from "../components/ReusableUIComponents/Spinner";
 import { REMOVE_ERROR } from "../constants/LoginConstants";
-import useTokenAndId from "../components/ReusableLogicComponents/useTokenAndId"
+import useTokenAndId from "../components/ReusableLogicComponents/useTokenAndId";
 //state type
 type LoginState = {
   username: string;
@@ -30,7 +30,7 @@ const Login: React.FunctionComponent<RouteComponentProps<any>> = ({history}) => 
   },[]);
 
   const dispatch = useDispatch();
-  const { loading, error,userInfo } = useSelector<RootStateType>(
+  const { loading, error, userInfo } = useSelector<RootStateType>(
     (state) => state.userInfo
   ) as loginStateInterface;
 
@@ -63,14 +63,11 @@ const Login: React.FunctionComponent<RouteComponentProps<any>> = ({history}) => 
   const handleLogin: React.FormEventHandler<HTMLButtonElement> = (event) => {
     event.preventDefault();
 
-    dispatch(LoginAction(username, password,history));
-    
-
+    dispatch(LoginAction(username, password, history));
 
     setTimeout(() => {
       dispatch({ type: REMOVE_ERROR });
     }, 4000);
-
   };
 
   const handleEvent: React.FormEventHandler<HTMLButtonElement> = (event) => {
@@ -85,7 +82,7 @@ const Login: React.FunctionComponent<RouteComponentProps<any>> = ({history}) => 
   const handleChange: React.ChangeEventHandler<HTMLInputElement> = (event) => {
     setLoginForm({ ...loginForm, [event.target.name]: event.target.value });
   };
-  const ShowPassword: React.FormEventHandler<HTMLButtonElement> = (event) => {
+  const ShowPassword = (event: any) => {
     event.preventDefault();
     setLoginForm({ ...loginForm, showPassword: !showPassword });
   };
@@ -124,19 +121,19 @@ const Login: React.FunctionComponent<RouteComponentProps<any>> = ({history}) => 
                     onChange={handleChange}
                   />
                   {showPassword ? (
-                    <button
+                    <div
                       className="Auth__Box__InputBox__InputHandler__InputBox__Logos"
                       onClick={ShowPassword}
                     >
                       <BsEyeSlashFill className="Auth__Box__InputBox__InputHandler__InputBox__Logos__Logo" />
-                    </button>
+                    </div>
                   ) : (
-                    <button
+                    <div
                       className="Auth__Box__InputBox__InputHandler__InputBox__Logos"
                       onClick={ShowPassword}
                     >
                       <BsEyeFill className="Auth__Box__InputBox__InputHandler__InputBox__Logos__Logo" />
-                    </button>
+                    </div>
                   )}
                 </div>
               </div>
@@ -163,7 +160,7 @@ const Login: React.FunctionComponent<RouteComponentProps<any>> = ({history}) => 
             {helperText ? <div>{helperText}</div> : <></>}
             <Link className="Auth__Box__ForgotPassword" to="forgot-password">
               forgot password?
-              </Link>
+            </Link>
             <div className="Auth__Box__Register">
               Haven't got an account?
               <Link className="Auth__Box__Register__Redirect" to="/register">
