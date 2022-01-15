@@ -5,7 +5,7 @@ import { RootStateType } from "../stores";
 import { Link, useHistory } from "react-router-dom";
 import { Avatar } from "@mui/material";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
-import NotificationsIcon from '@material-ui/icons/Notifications';
+// import NotificationsIcon from '@material-ui/icons/Notifications';
 
 const Navbar: FC = () => {
   const { userInfo } = useSelector<RootStateType>(
@@ -60,7 +60,7 @@ const Navbar: FC = () => {
               src="https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png"
               style={{ width: 40, height: 40 }}
             /> */}
-            <NotificationsIcon style={{fontSize:25,marginLeft:10}} />
+            {/* <NotificationsIcon style={{fontSize:25,marginLeft:10}} /> */}
           </div>
           <div className="Navbar__Links__content__Avatar">
             <Avatar
