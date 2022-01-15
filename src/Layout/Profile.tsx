@@ -53,8 +53,12 @@ const Profile: FC<RouteComponentProps<any>> = ({ match }) => {
   return (
     <>
       <div className="Profile">
+      
         <div className="Profile__Box">
-          <Navbar />
+          <div className="Profile__Box__Navbar">
+          <Navbar/>
+          </div>
+          
           {loading ? (
             <>
               <div className="Profile__Box__Top">
