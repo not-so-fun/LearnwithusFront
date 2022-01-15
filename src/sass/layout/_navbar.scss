@@ -24,6 +24,19 @@
       transition: all 0.4s ease;
       color: $color-white;
       text-decoration: none;
+      display: flex;
+      &__Avatar {
+        position: relative;
+        margin-left: 1.5rem;
+        &__Drop {
+          position: absolute;
+
+          top: 16px;
+          left: 14px;
+          color: $color-white !important;
+          font-size: 34px !important;
+        }
+      }
     }
     &__content:hover {
       cursor: pointer;

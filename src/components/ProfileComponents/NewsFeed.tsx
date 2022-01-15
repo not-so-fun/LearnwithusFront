@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import { Avatar } from "@mui/material";
 
-const ProfileNewsFeed: FC = () => {
+const NewsFeed: FC = () => {
   return (
     <div className="Profile__Box__Main__Newsfeed__Div">
       <div className="Profile__Box__Main__Newsfeed__Div__Header">
@@ -33,4 +33,4 @@ const ProfileNewsFeed: FC = () => {
   );
 };
 
-export default ProfileNewsFeed;
+export default NewsFeed;

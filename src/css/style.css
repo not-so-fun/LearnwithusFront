@@ -379,7 +379,7 @@ body {
         width: 90rem;
         background: #d1d1d1; }
         .Profile__Box__Main__Newsfeed__Div {
-          background-color: #fff;
+          background-color: #F8F8F8;
           color: #000;
           margin: 2rem 10rem;
           text-align: left;
@@ -464,7 +464,135 @@ body {
     .Navbar__Links__content {
       transition: all 0.4s ease;
       color: #fff;
-      text-decoration: none; }
+      text-decoration: none;
+      display: flex; }
+      .Navbar__Links__content__Avatar {
+        position: relative;
+        margin-left: 1.5rem; }
+        .Navbar__Links__content__Avatar__Drop {
+          position: absolute;
+          top: 16px;
+          left: 14px;
+          color: #fff !important;
+          font-size: 34px !important; }
     .Navbar__Links__content:hover {
       cursor: pointer;
       color: #9b9bf9; }
+
+.HomePage {
+  margin-top: 1rem;
+  height: 100vh;
+  display: flex;
+  background-color: #ededed; }
+  .HomePage__Left {
+    background-color: #32569F;
+    color: #fff;
+    flex: 0.2;
+    margin-right: 1rem; }
+    .HomePage__Left__SideBar {
+      margin-top: 1rem; }
+      .HomePage__Left__SideBar__Header {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center; }
+        .HomePage__Left__SideBar__Header p {
+          margin-left: 1rem;
+          font-size: 22px;
+          font-weight: 600;
+          letter-spacing: 0.01rem; }
+      .HomePage__Left__SideBar__Links {
+        margin-top: 4rem; }
+        .HomePage__Left__SideBar__Links__Link {
+          font-size: 18px;
+          margin-bottom: 3rem;
+          padding: 1rem 0;
+          transition: all 0.3s ease; }
+          .HomePage__Left__SideBar__Links__Link:hover {
+            cursor: pointer;
+            box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.1); }
+  .HomePage__Right {
+    flex: 1; }
+    .HomePage__Right__MainBody {
+      display: flex;
+      background-color: #fff;
+      margin-top: 1rem;
+      padding: 1rem;
+      height: 90vh; }
+      .HomePage__Right__MainBody__NewsFeed {
+        flex: 0.8; }
+      .HomePage__Right__MainBody__Notification {
+        flex: 0.35; }
+        .HomePage__Right__MainBody__Notification__Box {
+          border: 2px solid lightgrey;
+          text-align: left;
+          padding: 0.9rem; }
+          .HomePage__Right__MainBody__Notification__Box__Header {
+            font-size: 18px;
+            font-weight: 600;
+            color: #000;
+            margin-bottom: 1rem; }
+            .HomePage__Right__MainBody__Notification__Box__Header__Underline {
+              border: 1px solid lightgrey;
+              margin-bottom: 1rem; }
+          .HomePage__Right__MainBody__Notification__Box__InnerDiv {
+            border: 2px solid lightgrey;
+            border-radius: 5px;
+            padding: 8px; }
+            .HomePage__Right__MainBody__Notification__Box__InnerDiv__Underline {
+              margin-top: 1rem;
+              border-bottom: 2px solid lightgrey; }
+            .HomePage__Right__MainBody__Notification__Box__InnerDiv__Header {
+              display: flex;
+              flex-direction: row;
+              align-items: center; }
+              .HomePage__Right__MainBody__Notification__Box__InnerDiv__Header__Div {
+                margin-left: 7px; }
+                .HomePage__Right__MainBody__Notification__Box__InnerDiv__Header__Div > p:first-child {
+                  color: #000;
+                  font-weight: 600;
+                  font-size: 14px; }
+            .HomePage__Right__MainBody__Notification__Box__InnerDiv__Button {
+              display: flex;
+              justify-content: flex-end;
+              margin: 1rem 0rem; }
+              .HomePage__Right__MainBody__Notification__Box__InnerDiv__Button__Accept {
+                border: none;
+                background-color: #32569F;
+                color: #fff;
+                font-size: 16px;
+                padding: 7px 17px;
+                border-radius: 5px; }
+              .HomePage__Right__MainBody__Notification__Box__InnerDiv__Button__Decline {
+                border: 2px solid lightgrey;
+                background-color: transparent;
+                color: #000;
+                font-size: 16px;
+                padding: 7px 17px;
+                border-radius: 5px;
+                margin-left: 2rem; }
+        .HomePage__Right__MainBody__Notification__Below {
+          display: flex;
+          flex-direction: column;
+          border: 2px solid lightgrey;
+          margin-top: 1rem;
+          padding: 0.8rem; }
+          .HomePage__Right__MainBody__Notification__Below button:first-child {
+            background-color: #32569F;
+            color: #fff;
+            font-size: 15px;
+            padding: 8px 0px;
+            border: none;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer; }
+          .HomePage__Right__MainBody__Notification__Below button:last-child {
+            cursor: pointer;
+            background-color: transparent;
+            font-weight: 600;
+            color: #000;
+            border: 2px solid lightgrey;
+            font-size: 15px;
+            padding: 6px 0px;
+            margin-top: 1rem;
+            border-radius: 4px; }

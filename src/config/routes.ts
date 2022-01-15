@@ -3,6 +3,7 @@ import Login from "../auth/Login";
 import Register from "../auth/Register";
 import Profile from "../Layout/Profile";
 import ForgotPassword from "../components/ResetPassword/ForgotPassword";
+import HomePage from "../Layout/HomePage";
 import ResetPassword from "../components/ResetPassword/ResetPassword";
 import AccountActivationScreen from "../Screens/AccountActivationScreen";
 
