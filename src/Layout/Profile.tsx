@@ -53,9 +53,12 @@ const Profile: FC<RouteComponentProps<any>> = ({ match }) => {
   return (
     <>
       <div className="Profile">
-       
+      
         <div className="Profile__Box">
+          <div className="Profile__Box__Navbar">
           <Navbar/>
+          </div>
+          
           {loading ? (
             <h2 style={{ color: "black" }}>
               <Progress size={50} />
