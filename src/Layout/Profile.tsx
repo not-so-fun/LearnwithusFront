@@ -31,20 +31,19 @@ const Profile: FC<RouteComponentProps<any>> = ({ match }) => {
   const { token, user_id} = useTokenAndId();
 
   const {userInfo}=useSelector<RootStateType>(state=>state.userInfo) as any;
+
   useEffect(() => {
     document.title = "LearnWithUs | Profile";
-    
   }, [])
 
   useEffect(() => {
-    console.log(userInfo);
-    if(userInfo && userInfo?.token ){
 
+    if(userInfo && userInfo?.token ){
       dispatch(ProfileAction(match.params.id, userInfo.token));
     }else{
       dispatch(ProfileAction(user_id, token));
     }
-  }, [match, token, userInfo]);
+  }, [match, token, userInfo,user_id]);
 
   const { loading, profile_data, error } = useSelector<RootStateType>(
     (state) => state.profile_info_data

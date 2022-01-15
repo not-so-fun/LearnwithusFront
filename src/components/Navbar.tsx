@@ -11,19 +11,24 @@ const Navbar: FC = () => {
     (state) => state.userInfo
   ) as any;
 
-  const {user_id}=useTokenAndId()
-    const history=useHistory();
+  const { user_id } = useTokenAndId();
+  const history = useHistory();
+<<<<<<< HEAD
+>>>>>>> b1cc97c (minor changes)
+=======
+>>>>>>> 2e54ae7 (added)
   // console.log(user_id)
 
   const handleLogout = () => {
     localStorage.clear();
-    history.push("/login");
-    window.location.reload()
+    history.push("/");
+    window.location.reload();
+  };
 
-  }
-
-  
-  
+<<<<<<< HEAD
+>>>>>>> b1cc97c (minor changes)
+=======
+>>>>>>> 2e54ae7 (added)
   return (
     <div className="Navbar">
       <div className="Navbar__Links">
