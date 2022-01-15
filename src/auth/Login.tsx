@@ -21,13 +21,14 @@ type LoginState = {
 const Login: React.FunctionComponent<RouteComponentProps<any>> = ({history}) => {
 
   const {user_id,token}=useTokenAndId()
+
   useEffect(()=>{
     document.title= "LearnWithUs | login";
     const token = localStorage.getItem("userInfo");
     if(token){
       history.push("/");
     }
-  },[]);
+  },[history]);
 
   const dispatch = useDispatch();
   const { loading, error, userInfo } = useSelector<RootStateType>(

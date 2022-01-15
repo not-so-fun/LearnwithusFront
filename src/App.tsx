@@ -19,7 +19,7 @@ function App() {
           {/* <Navbar /> */}
           <Switch>
 
-            <Navbar/>
+            {/* <Navbar/> */}
 
             {routes.map((route, index) => {
              
