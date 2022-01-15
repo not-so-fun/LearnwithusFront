@@ -12,42 +12,48 @@ const routes: IRoute[] = [
     name: "Login",
     component: Login,
     exact: true,
-    private:false
+    private:false,
+    showNav:false
   },
   {
     path: "/register",
     name: "Register",
     component: Register,
     exact: true,
-    private:false
+    private:false,
+    showNav:false
   },
   {
     path: "/profile/:id",
     name: "Profile",
     component: Profile,
     exact: true,
-    private:true
+    private:true,
+    showNav:true
   },
   {
     path: "/forgot-password",
     name: "ForgotPassword",
     component: ForgotPassword,
     exact: true,
-    private:false
+    private:false,
+    showNav:false
   },
   {
     path: "/reset-password",
     name: "ResetPassword",
     component: ResetPassword,
     exact: true,
-    private:false
+    private:false,
+    showNav:false
   },
   {
     path: "/activate_account",
     name: "Account_Activate",
     component: AccountActivationScreen,
     exact: false,
-    private:false
+    private:false,
+    showNav:false
   },
 ];
 

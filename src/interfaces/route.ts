@@ -5,4 +5,5 @@ export default interface IRoute {
     component: any;
     props?: any;
     private:boolean;
+    showNav:boolean;
 }
