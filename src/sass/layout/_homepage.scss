@@ -82,6 +82,7 @@
             border: 2px solid lightgrey;
             border-radius: 5px;
             padding: 8px;
+            
 
             &__Underline {
               margin-top: 1rem;
@@ -115,6 +116,7 @@
                 color: $color-white;
                 font-size: 16px;
                 padding: 7px 17px;
+                width:48%;
                 border-radius: 5px;
               }
               &__Decline {
@@ -124,6 +126,7 @@
                 font-size: 16px;
                 padding: 7px 17px;
                 border-radius: 5px;
+                width:48%;
                 margin-left: 2rem;
               }
             }

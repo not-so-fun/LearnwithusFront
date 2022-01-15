@@ -17,18 +17,19 @@ function App() {
     <>
 
     <div className="App">
+    
       <BrowserRouter>
-      
-    <Navbar/>
+
+
         <Switch>
           {routes.map((route, index) => {
             // const {private} = route;
             
-            return (<>
-            {/* {route.showNav ?  <Navbar/> : <></>} */}
-             
-              {route.private ? 
+            
+            return (
               
+              route.private ?
+           
               <PrivateRoute
                 key={index}
                 path={route.path}
@@ -41,7 +42,8 @@ function App() {
                 //     {...route.props}
                 //   />
                 // )}
-              />:
+              />
+              :
               <Route
                 key={index}
                 path={route.path}
@@ -53,8 +55,9 @@ function App() {
                     {...route.props}
                   />
                 )}
-              />}
-              </>
+              />
+              
+            
             );
             
           })

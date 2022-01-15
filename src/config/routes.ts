@@ -56,6 +56,14 @@ const routes: IRoute[] = [
     private:false,
     showNav:false
   },
+  {
+    path: "/",
+    name: "Home",
+    component: HomePage,
+    exact: false,
+    private:true,
+    showNav:false
+  }
 ];
 
 export default routes;

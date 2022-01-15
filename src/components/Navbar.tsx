@@ -3,29 +3,20 @@ import { useSelector } from "react-redux";
 import useTokenAndId from "./ReusableLogicComponents/useTokenAndId";
 import { RootStateType } from "../stores";
 import { Link, useHistory } from "react-router-dom";
-<<<<<<< HEAD
-=======
 import { Avatar } from "@mui/material";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 
->>>>>>> sujan
 const Navbar: FC = () => {
   const { userInfo } = useSelector<RootStateType>(
     (state) => state.userInfo
   ) as any;
 
-<<<<<<< HEAD
   const {user_id}=useTokenAndId()
     const history=useHistory();
-=======
-  const { user_id } = useTokenAndId();
-  const history = useHistory();
->>>>>>> sujan
   // console.log(user_id)
 
   const handleLogout = () => {
     localStorage.clear();
-<<<<<<< HEAD
     history.push("/login");
     window.location.reload()
 
@@ -33,12 +24,6 @@ const Navbar: FC = () => {
 
   
   
-=======
-    history.push("/");
-    window.location.reload();
-  };
-
->>>>>>> sujan
   return (
     <div className="Navbar">
       <div className="Navbar__Links">

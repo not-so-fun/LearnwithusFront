@@ -1,10 +1,13 @@
-import { FC } from "react";
+import { FC, useEffect } from "react";
 import Notification from "../components/HomePageComponent/Notification";
 import SideBar from "../components/HomePageComponent/SideBar";
 import Navbar from "../components/Navbar";
 import ProfileNewsFeed from "../components/ProfileComponents/NewsFeed";
 
-const Profile: FC = () => {
+const HomePage: FC = () => {
+  useEffect(() => {
+    document.title ="Learn with us | Home"
+  }, [])
   return (
     <>
       <div className="HomePage">
@@ -36,4 +39,4 @@ const Profile: FC = () => {
   );
 };
 
-export default Profile;
+export default HomePage;

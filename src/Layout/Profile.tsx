@@ -43,7 +43,6 @@ const Profile: FC<RouteComponentProps<any>> = ({ match }) => {
       dispatch(ProfileAction(match.params.id, userInfo.token));
     }else{
       dispatch(ProfileAction(user_id, token));
-      console.log(token);
     }
   }, [match, token, userInfo]);
 
@@ -54,7 +53,9 @@ const Profile: FC<RouteComponentProps<any>> = ({ match }) => {
   return (
     <>
       <div className="Profile">
+       
         <div className="Profile__Box">
+          <Navbar/>
           {loading ? (
             <h2 style={{ color: "black" }}>
               <Progress size={50} />
