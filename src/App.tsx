@@ -12,60 +12,52 @@ import "./css/style.css";
 
 import PrivateRoute from "./utilities/PrivateRoute";
 function App() {
-  
   return (
     <>
+      <div className="App">
+        <BrowserRouter>
+          {/* <Navbar /> */}
+          <Switch>
 
-    <div className="App">
-    
-      <BrowserRouter>
+            <Navbar/>
 
-
-        <Switch>
-          {routes.map((route, index) => {
-            // const {private} = route;
-            
-            
-            return (
+            {routes.map((route, index) => {
+             
               
-              route.private ?
-           
-              <PrivateRoute
-                key={index}
-                path={route.path}
-                exact={route.exact}
-                component ={route.component}
-                // render={(props: RouteComponentProps<any>) => (
-                //   <route.component
-                //     name={route.name}
-                //     {...props}
-                //     {...route.props}
-                //   />
-                // )}
-              />
-              :
-              <Route
-                key={index}
-                path={route.path}
-                exact={route.exact}
-                render={(props: RouteComponentProps<any>) => (
-                  <route.component
-                    name={route.name}
-                    {...props}
-                    {...route.props}
-                  />
-                )}
-              />
-              
+
+              return route.private ? (
+                <PrivateRoute
+                  key={index}
+                  path={route.path}
+                  exact={route.exact}
+                  component={route.component}
+                  // render={(props: RouteComponentProps<any>) => (
+                  //   <route.component
+                  //     name={route.name}
+                  //     {...props}
+                  //     {...route.props}
+                  //   />
+                  // )}
+                />
+              ) : (
+                <Route
+                  key={index}
+                  path={route.path}
+                  exact={route.exact}
+                  render={(props: RouteComponentProps<any>) => (
+                    <route.component
+                      name={route.name}
+                      {...props}
+                      {...route.props}
+                    />
+                  )}
+                />
+              );
+            })}
             
-            );
-            
-          })
-          }
-        </Switch>
-        
-      </BrowserRouter>
-    </div>
+          </Switch>
+        </BrowserRouter>
+      </div>
     </>
   );
 }
