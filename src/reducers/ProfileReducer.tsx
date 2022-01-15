@@ -17,12 +17,12 @@ export interface profileUserDataInterface {
 
 const profileUserData: profileUserDataInterface = {
   email: "",
-  first_name: "",
-  last_name: "",
+  first_name: "....",
+  last_name: "....",
   image: "",
   status: null,
-  user_id: "",
-  username: "",
+  user_id: "....",
+  username: "....",
 };
 
 export interface profileDataInterface {

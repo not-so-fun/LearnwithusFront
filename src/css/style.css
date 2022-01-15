@@ -457,7 +457,7 @@ body {
   .Navbar__Links {
     margin-right: 60px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     float: right; }
     .Navbar__Links__center {
@@ -467,6 +467,10 @@ body {
       color: #fff;
       text-decoration: none;
       display: flex; }
+      .Navbar__Links__content__Icon {
+        display: flex;
+        justify-content: center;
+        align-items: center; }
       .Navbar__Links__content__Avatar {
         position: relative;
         margin-left: 1.5rem; }
