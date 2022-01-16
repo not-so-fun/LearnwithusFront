@@ -17,13 +17,7 @@ function App() {
         <BrowserRouter>
           {/* <Navbar /> */}
           <Switch>
-
-          
-
             {routes.map((route, index) => {
-             console.log(route);
-              
-
               return route.private ? (
                 <PrivateRoute
                   key={index}
@@ -53,7 +47,6 @@ function App() {
                 />
               );
             })}
-            
           </Switch>
         </BrowserRouter>
       </div>

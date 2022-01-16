@@ -227,6 +227,8 @@ body {
     width: 100%;
     height: 7rem;
     display: flex;
+    flex-direction: column;
+    padding-top: 5rem;
     align-items: center;
     justify-content: center;
     color: #000; }
@@ -296,10 +298,10 @@ body {
         .AskQuestionForm__TitleInput__InputBox__Title:not(:last-child) {
           margin-right: .5rem; }
   .AskQuestionForm__Body {
-    height: 53rem;
+    height: fit-content;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; }
+    justify-content: flex-start; }
     .AskQuestionForm__Body__Heading {
       width: 10rem;
       height: 4rem;
@@ -311,7 +313,7 @@ body {
       justify-content: flex-start;
       margin: 0 1rem; }
     .AskQuestionForm__Body__Input {
-      height: 48rem;
+      height: 28rem;
       padding: 1rem;
       border: none;
       outline: none;

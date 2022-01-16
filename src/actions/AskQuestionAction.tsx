@@ -18,7 +18,6 @@ export const AskQuestionAction =
   ) =>
   (dispatch: Dispatch<RootDispatchType>) => {
     dispatch({ type: ASK_QUESTION_STARTED });
-
     axios
       .post(
         "/questions",
@@ -35,9 +34,10 @@ export const AskQuestionAction =
         }
       )
       .then((response) => {
-        console.log(response.data);
+        dispatch({ type: ASK_QUESTION_SUCCESS, message: response.data });
       })
       .catch((error) => {
-        console.log(error);
+        // console.log(error.response)
+        dispatch({ type: ASK_QUESTION_ERROR, error: error.response.data });
       });
   };
