@@ -13,8 +13,8 @@ const rootReducer = combineReducers({
   register: RegisterReducer,
   profile_info_data: ProfileReducer,
   forgot_password: ForgotPassowrdReducer,
-  reset_password:ResetPassowrdReducer,
-  ask_question:AskQuestionReducer
+  reset_password: ResetPassowrdReducer,
+  ask_question: AskQuestionReducer,
 });
 
 const store = createStore(
