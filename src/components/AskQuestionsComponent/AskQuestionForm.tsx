@@ -131,6 +131,7 @@ const AskQuesForm: FC = () => {
                         className="AskQuestionForm__TitleInput__InputBox__Title__Logos__Logo"/>
                         }
                         </button>
+                        {subTopic && <AskQuestionFormTitle/>}
                     </div>
                    
                 </div>
