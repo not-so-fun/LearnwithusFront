@@ -62,9 +62,9 @@ const Navbar: FC = () => {
               style={{ width: 40, height: 40 }}
             /> */}
             <IoNotificationsSharp style={{fontSize:25,marginLeft:10}} />
-            <div className="Navbar__Links__content__Notification">
+            {/* <div className="Navbar__Links__content__Notification">
                 <Notification />
-              </div>
+              </div> */}
           </div>
           <div className="Navbar__Links__content__Avatar">
             <Avatar

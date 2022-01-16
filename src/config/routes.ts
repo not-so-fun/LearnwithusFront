@@ -6,6 +6,7 @@ import ForgotPassword from "../components/ResetPassword/ForgotPassword";
 import HomePage from "../Layout/HomePage";
 import ResetPassword from "../components/ResetPassword/ResetPassword";
 import AccountActivationScreen from "../Screens/AccountActivationScreen";
+import AskQuestion from "../Layout/AskQuestions";
 
 const routes: IRoute[] = [
   {
@@ -57,21 +58,21 @@ const routes: IRoute[] = [
     showNav:false
   },
   {
+    path: "/question/ask",
+    name: "questions",
+    component: AskQuestion,
+    exact: true,
+    private:true,
+    showNav:false
+  },
+  {
     path: "/",
     name: "Home",
     component: HomePage,
     exact: false,
     private:true,
     showNav:false
-  },
-  {
-    path: "/questions/ask",
-    name: "Questions",
-    component: Login,
-    exact: true,
-    private:false,
-    showNav:false
-  },
+  }
 ];
 
 export default routes;

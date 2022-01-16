@@ -3,6 +3,7 @@ import { FC, useEffect } from "react";
 import SideBar from "../components/HomePageComponent/SideBar";
 import Navbar from "../components/Navbar";
 import ProfileNewsFeed from "../components/ProfileComponents/NewsFeed";
+import { Link} from "react-router-dom";
 
 const HomePage: FC = () => {
   useEffect(() => {
@@ -32,7 +33,7 @@ const HomePage: FC = () => {
             <div className="HomePage__Right__MainBody__Notification">
               
               <div className="HomePage__Right__MainBody__Notification__Below">
-                <button >Having a doubt, ask a question?</button>
+                <Link to="/question/ask" className="HomePage__Right__MainBody__Notification__Below__Links">Having a doubt, ask a question?</Link>
                 <button >Saved Questions</button>
               </div>
             </div>

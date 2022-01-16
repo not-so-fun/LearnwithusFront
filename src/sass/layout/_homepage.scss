@@ -163,21 +163,21 @@
 
         &__Below {
           display: flex;
-
           flex-direction: column;
           border: 2px solid lightgrey;
           margin-top: 1rem;
           padding: 0.8rem;
-          & button:first-child {
+          &__Links{
             background-color: $color-primary;
             color: $color-white;
             font-size: 15px;
-            padding: 8px 0px;
+            padding:.5rem 1rem;
             border: none;
             border-radius: 4px;
             font-weight: 600;
             height:4rem;
             cursor: pointer;
+            text-decoration: none;
           }
           & button:last-child {
             cursor: pointer;

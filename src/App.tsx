@@ -19,10 +19,10 @@ function App() {
           {/* <Navbar /> */}
           <Switch>
 
-            {/* <Navbar/> */}
+          
 
             {routes.map((route, index) => {
-             
+             console.log(route);
               
 
               return route.private ? (

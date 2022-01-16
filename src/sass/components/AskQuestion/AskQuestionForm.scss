@@ -1,0 +1,147 @@
+.AskQuestionForm{
+    background:$color-primary;
+    width: 100%;
+    height:auto;
+    &__Heading{
+        // background:green;
+        width:100%;
+        height:7rem;
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        color:$color-black;
+        &__Title{
+            height:5rem;
+            // background:red;
+            width:20rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size:2rem;
+            font-weight:600;
+        }
+    }
+    &__Title{
+        height:9rem;
+        // background:pink;
+        display:flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        &__Heading{
+            height:6rem;
+            font-size:2rem;
+            font-weight:600;
+            // background:red;
+            padding:0 1rem;
+            width:10rem;
+            color:$color-black;
+            display:flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
+        &__HelperText{
+            font-size:1.6rem;
+            color:$color-black;
+            padding:0 1rem;
+            // background:green;
+            
+        }
+    }
+    &__TitleInput{
+        // background:yellow;
+        height:14rem;
+        width:100%;
+        display:flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        margin-top:.5rem;
+        padding:1rem;
+        &__Title{
+            background:$color-white;
+            border:none;
+            outline:none;
+            border-radius:5px;
+            height:5rem;
+            width:100%;
+            padding:0 1rem;
+            font-size:1.5rem;
+        }
+        &__InputBox{
+            // background:red;
+            height:7rem;
+            width:100%;
+            display:flex;
+            justify-content: flex-start;
+            align-items: center;
+            &__Title{
+                background:$color-white;
+                border:none;
+                outline:none;
+                border-radius:5px;
+                height:5rem;
+                flex:1;
+                padding:0 1rem;
+                font-size:1.5rem;
+                &:not(:first-child){
+                    margin-left:.5rem;
+
+                }
+                &:not(:last-child){
+                    margin-right:.5rem;
+                }
+            }
+        }
+    }
+    &__Body{
+        // background:red;
+        height:53rem;
+        display:flex;
+        flex-direction: column;
+        justify-content:space-between;
+        &__Heading{
+            // background:red;
+            width:10rem;
+            height:4rem;
+            color:$color-black;
+            font-size:1.5rem;
+            font-weight:600;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            margin:0 1rem;
+        }
+        &__Input{
+            height:48rem;
+            padding:1rem;
+            border:none;
+            outline:none;
+            font-size:1.5rem;
+            border:5px;
+            margin:0 1rem;
+        }
+    }
+    &__Footer{
+        // background:;
+        height:5rem;
+        width:100%;
+        display:flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding:0 1rem;
+        &__Button{
+            height:4rem;
+            border-radius:5px;
+            padding:0 1rem;
+            border:none;
+            font-size:1.5rem;
+            font-weight:600;
+            background:$color-grey-light-2;
+            &:hover{
+                cursor:pointer;
+                background:$color-grey-light-1;
+            }
+        }
+    }
+}
