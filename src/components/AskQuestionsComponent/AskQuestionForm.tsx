@@ -5,6 +5,7 @@ import useTokenAndId from "../ReusableLogicComponents/useTokenAndId";
 import { RootStateType } from "../../stores";
 import { askQuestionInterface } from "../../reducers/AskQuestionReducer";
 import { Progress } from "../ReusableUIComponents/Spinner";
+import { TopicAction } from "../../actions/TopicAction";
 import Alert from "@mui/material/Alert";
 import AskQuestionFormTitle from "./AskQuestionFormTitle";
 import {AiOutlineCaretDown, AiOutlineCaretUp} from "react-icons/ai";
@@ -43,108 +44,74 @@ const AskQuesForm: FC = () => {
   const handleQuestionAsk:
     | React.MouseEventHandler<HTMLButtonElement>
     | undefined = () => {
-
     dispatch(AskQuestionAction(token, topic_id, sub_topic_id, title, question));
-
   };
-    return (
-        <div className="AskQuestionForm">
-            <div className="AskQuestionForm__Heading">
-                <div className="AskQuestionForm__Heading__Title"> 
-                    Ask a question
-                </div>
-                {message && (
-                <Alert style={{ fontSize: 15 }} icon={false}>
-                {message}
-                </Alert>
-                )}
 
-                {error && 
+  const handleTopicsList = () => {
+    dispatch(TopicAction(token));
+  };
 
-                  <div style={{color:"red",fontSize:15}}>{error}</div>
+  return (
+    <div className="AskQuestionForm">
+      <div className="AskQuestionForm__Heading">
         
-                 }
-            </div>
-            <div className='AskQuestionForm__Title'>
-                <div className="AskQuestionForm__Title__Heading">
-                    Title
-                </div>
-                <p className="AskQuestionForm__Title__HelperText">
-                    Be specific to the question
-                </p>
-            </div>
-            <div className="AskQuestionForm__TitleInput">
-                
-                <input 
-                type="text" 
-                className="AskQuestionForm__TitleInput__Title" 
-                placeholder='Put the title that enlightens'
-                name="title"
-                value={title}
-                onChange={(e) => handleChange(e)}
-                >    
-                </input>
-                <div className="AskQuestionForm__TitleInput__InputBox">
-                    <div className="AskQuestionForm__TitleInput__InputBox__Title">
-                        <input 
-                        type="text" 
-                        placeholder='Topic' 
-                        className="AskQuestionForm__TitleInput__InputBox__Title__Input" 
-                        name="topic_id"
-                        value={topic_id}
-                        onChange={(e) => handleChange(e)}
-                        />
-                        <button 
-                        className="AskQuestionForm__TitleInput__InputBox__Title__Logos"
-                        name="topic"
-                        onClick={()=>{setTopic(!topic)}}
-                        >
-                        {topic ?   <AiOutlineCaretUp 
-                        className="AskQuestionForm__TitleInput__InputBox__Title__Logos__Logo"/>
-                        :
-                        <AiOutlineCaretDown 
-                        className="AskQuestionForm__TitleInput__InputBox__Title__Logos__Logo"/>
-                        }
-                      
-                        </button>
-                        {topic && <AskQuestionFormTitle/>}
-                    </div>
-                    <div className="AskQuestionForm__TitleInput__InputBox__Title">
-                        <input 
-                        type="text" 
-                        placeholder='SubTopic' 
-                        className="AskQuestionForm__TitleInput__InputBox__Title__Input" 
-                        name="sub_topic_id"
-                        value={sub_topic_id}
-                        onChange={(e) => handleChange(e)}/>
-                        <button 
-                        className="AskQuestionForm__TitleInput__InputBox__Title__Logos"
-                        name="subTopic"
-                        onClick={()=>{setSubTopic(!subTopic)}}
-                        >
+        <div className="AskQuestionForm__Heading__Title">Ask a question</div>
 
-                        {subTopic ?   
-                        <AiOutlineCaretUp 
-                        className="AskQuestionForm__TitleInput__InputBox__Title__Logos__Logo"/>
-                        :
-                        <AiOutlineCaretDown 
-                        className="AskQuestionForm__TitleInput__InputBox__Title__Logos__Logo"/>
-                        }
-                        </button>
-                    </div>
-                   
-                </div>
-            </div>
-            <div className='AskQuestionForm__Body'>
-                <div className="AskQuestionForm__Body__Heading">Body</div>
-                <textarea className="AskQuestionForm__Body__Input" placeholder='Body'
-                name="question"
-                value={question}
-                onChange={(e) => handleChange(e)}
-                ></textarea>
-            </div>
-            <div className='AskQuestionForm__Footer'>
-            {loading ? (
+        {message && (
+          <Alert style={{ fontSize: 15 }} icon={false}>
+            {message}
+          </Alert>
+        )}
+
+        {error && <div style={{ color: "red", fontSize: 15 }}>{error}</div>}
+      </div>
+      <div className="AskQuestionForm__Title">
+        <div className="AskQuestionForm__Title__Heading">Title</div>
+        <p className="AskQuestionForm__Title__HelperText">
+          Be specific to the question
+        </p>
+      </div>
+      <div className="AskQuestionForm__TitleInput">
+        <input
+          type="text"
+          className="AskQuestionForm__TitleInput__Title"
+          placeholder="Put the title that enlightens"
+          name="title"
+          value={title}
+          onChange={(e) => handleChange(e)}
+        ></input>
+        <div className="AskQuestionForm__TitleInput__InputBox">
+          <input
+            type="text"
+            placeholder="Topic"
+            className="AskQuestionForm__TitleInput__InputBox__Title"
+            name="topic_id"
+            value={topic_id}
+            onChange={(e) => handleChange(e)}
+          />
+          <input
+            type="text"
+            placeholder="SubTopic"
+            className="AskQuestionForm__TitleInput__InputBox__Title"
+            name="sub_topic_id"
+            value={sub_topic_id}
+            onChange={(e) => handleChange(e)}
+          />
+        </div>
+      </div>
+      <div className="AskQuestionForm__Body">
+        <div className="AskQuestionForm__Body__Heading">Body</div>
+        <textarea
+          className="AskQuestionForm__Body__Input"
+          placeholder="Body"
+          name="question"
+          value={question}
+          onChange={(e) => handleChange(e)}
+        ></textarea>
+      </div>
+
+      <div className="AskQuestionForm__Footer">
+        {loading ? (
           <button
             style={{ width: 140 }}
             onClick={handleQuestionAsk}
