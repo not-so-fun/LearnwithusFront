@@ -63,7 +63,15 @@ const routes: IRoute[] = [
     exact: false,
     private:true,
     showNav:false
-  }
+  },
+  {
+    path: "/questions/ask",
+    name: "Questions",
+    component: Login,
+    exact: true,
+    private:false,
+    showNav:false
+  },
 ];
 
 export default routes;

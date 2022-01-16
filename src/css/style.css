@@ -249,7 +249,6 @@ body {
   .Profile__Box {
     width: 140rem;
     height: 125rem;
-    margin: 4rem 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -265,7 +264,7 @@ body {
       background: #32569F;
       width: 130rem;
       height: 50rem;
-      margin-bottom: 5rem;
+      margin-bottom: 2rem;
       display: flex; }
       .Profile__Box__Top__ImagesAndDatas {
         width: 35rem;
@@ -379,16 +378,16 @@ body {
       background: #C4C4C4;
       width: 130rem;
       height: 95rem;
-      margin-bottom: 5rem;
+      margin-bottom: 2rem;
       display: flex; }
       .Profile__Box__Main__Newsfeed {
         height: 100%;
         width: 90rem;
-        background: #d1d1d1; }
+        overflow-y: scroll; }
         .Profile__Box__Main__Newsfeed__Div {
           background-color: #F8F8F8;
           color: #000;
-          margin: 2rem 10rem;
+          margin: 2rem;
           text-align: left;
           padding: 8px;
           border-radius: 5px; }
@@ -461,7 +460,7 @@ body {
   height: 6rem;
   justify-content: flex-end; }
   .Navbar__Links {
-    margin-right: 60px;
+    margin-right: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -472,7 +471,13 @@ body {
       transition: all 0.4s ease;
       color: #fff;
       text-decoration: none;
-      display: flex; }
+      display: flex;
+      position: relative; }
+      .Navbar__Links__content__Notification {
+        position: absolute;
+        top: 5rem;
+        left: -14.2rem;
+        background: red; }
       .Navbar__Links__content__Icon {
         display: flex;
         justify-content: center;
@@ -491,49 +496,66 @@ body {
       color: #9b9bf9; }
 
 .HomePage {
-  margin-top: 1rem;
   height: 100vh;
   display: flex;
   background-color: #ededed; }
   .HomePage__Left {
     background-color: #32569F;
     color: #fff;
-    flex: 0.2;
-    margin-right: 1rem; }
+    flex: 0.3;
+    margin: 1rem 0;
+    margin-left: 1rem; }
     .HomePage__Left__SideBar {
-      margin-top: 1rem; }
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100%; }
       .HomePage__Left__SideBar__Header {
         display: flex;
         flex-direction: row;
-        justify-content: center;
-        align-items: center; }
+        justify-content: flex-start;
+        align-items: center;
+        margin-top: 1rem;
+        width: 95%; }
+        .HomePage__Left__SideBar__Header:hover {
+          cursor: pointer; }
         .HomePage__Left__SideBar__Header p {
           margin-left: 1rem;
           font-size: 22px;
           font-weight: 600;
           letter-spacing: 0.01rem; }
       .HomePage__Left__SideBar__Links {
-        margin-top: 4rem; }
+        margin-top: 3rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%; }
         .HomePage__Left__SideBar__Links__Link {
           font-size: 18px;
-          margin-bottom: 3rem;
-          padding: 1rem 0;
+          width: 95%;
+          margin-bottom: 1rem;
+          padding: 1rem;
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
           transition: all 0.3s ease; }
           .HomePage__Left__SideBar__Links__Link:hover {
             cursor: pointer;
             box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.1); }
   .HomePage__Right {
-    flex: 1; }
+    flex: 1;
+    padding: 1rem; }
+    .HomePage__Right__TopBar {
+      height: 8.8vh; }
     .HomePage__Right__MainBody {
       display: flex;
       background-color: #fff;
-      margin-top: 1rem;
-      padding: 1rem;
       height: 90vh; }
       .HomePage__Right__MainBody__NewsFeed {
-        flex: 0.8; }
+        flex: 1;
+        overflow-y: scroll; }
       .HomePage__Right__MainBody__Notification {
-        flex: 0.35; }
+        flex: 0 0 30rem; }
         .HomePage__Right__MainBody__Notification__Box {
           border: 2px solid lightgrey;
           text-align: left;
@@ -575,6 +597,8 @@ body {
                 padding: 7px 17px;
                 width: 48%;
                 border-radius: 5px; }
+                .HomePage__Right__MainBody__Notification__Box__InnerDiv__Button__Accept:hover {
+                  cursor: pointer; }
               .HomePage__Right__MainBody__Notification__Box__InnerDiv__Button__Decline {
                 border: 2px solid lightgrey;
                 background-color: transparent;
@@ -584,6 +608,8 @@ body {
                 border-radius: 5px;
                 width: 48%;
                 margin-left: 2rem; }
+                .HomePage__Right__MainBody__Notification__Box__InnerDiv__Button__Decline:hover {
+                  cursor: pointer; }
         .HomePage__Right__MainBody__Notification__Below {
           display: flex;
           flex-direction: column;
@@ -598,6 +624,7 @@ body {
             border: none;
             border-radius: 4px;
             font-weight: 600;
+            height: 4rem;
             cursor: pointer; }
           .HomePage__Right__MainBody__Notification__Below button:last-child {
             cursor: pointer;
@@ -607,5 +634,6 @@ body {
             border: 2px solid lightgrey;
             font-size: 15px;
             padding: 6px 0px;
+            height: 4rem;
             margin-top: 1rem;
             border-radius: 4px; }
