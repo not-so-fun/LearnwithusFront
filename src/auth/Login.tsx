@@ -88,6 +88,7 @@ const Login: React.FunctionComponent<RouteComponentProps<any>> = ({history}) => 
     setLoginForm({ ...loginForm, showPassword: !showPassword });
   };
   return (
+
     <div className="Center">
       <form className="Auth">
         <div className="Auth__Box">
