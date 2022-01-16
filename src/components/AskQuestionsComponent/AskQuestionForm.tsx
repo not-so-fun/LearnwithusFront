@@ -1,6 +1,10 @@
-import React from 'react'
+import React,{FC,useState} from 'react';
+import AskQuestionFormTitle from "./AskQuestionFormTitle";
+import {AiOutlineCaretDown, AiOutlineCaretUp} from "react-icons/ai";
 
-const AskQuesForm = () => {
+const AskQuesForm: FC = () => {
+    const [topic, setTopic] = useState(false);
+    const [subTopic, setSubTopic] = useState(false);
     return (
         <div className="AskQuestionForm">
             <div className="AskQuestionForm__Heading">
@@ -17,6 +21,7 @@ const AskQuesForm = () => {
                 </p>
             </div>
             <div className="AskQuestionForm__TitleInput">
+                
                 <input 
                 type="text" 
                 className="AskQuestionForm__TitleInput__Title" 
@@ -24,19 +29,48 @@ const AskQuesForm = () => {
                 >    
                 </input>
                 <div className="AskQuestionForm__TitleInput__InputBox">
-                  <input 
-                  type="text" 
-                  placeholder='Topic' 
-                  className="AskQuestionForm__TitleInput__InputBox__Title" 
-                  />
-                  <input 
-                  type="text" 
-                  placeholder='SubTopic' 
-                  className="AskQuestionForm__TitleInput__InputBox__Title" />
-                  <input 
-                  type="text" 
-                  placeholder='SmallTopic' 
-                  className="AskQuestionForm__TitleInput__InputBox__Title" />
+                    <div className="AskQuestionForm__TitleInput__InputBox__Title">
+                        <input 
+                        type="text" 
+                        placeholder='Topic' 
+                        className="AskQuestionForm__TitleInput__InputBox__Title__Input" 
+                        />
+                        <button 
+                        className="AskQuestionForm__TitleInput__InputBox__Title__Logos"
+                        name="topic"
+                        onClick={()=>{setTopic(!topic)}}
+                        >
+                        {topic ?   <AiOutlineCaretUp 
+                        className="AskQuestionForm__TitleInput__InputBox__Title__Logos__Logo"/>
+                        :
+                        <AiOutlineCaretDown 
+                        className="AskQuestionForm__TitleInput__InputBox__Title__Logos__Logo"/>
+                        }
+                      
+                        </button>
+                        {topic && <AskQuestionFormTitle/>}
+                    </div>
+                    <div className="AskQuestionForm__TitleInput__InputBox__Title">
+                        <input 
+                        type="text" 
+                        placeholder='SubTopic' 
+                        className="AskQuestionForm__TitleInput__InputBox__Title__Input" />
+                        <button 
+                        className="AskQuestionForm__TitleInput__InputBox__Title__Logos"
+                        name="subTopic"
+                        onClick={()=>{setSubTopic(!subTopic)}}
+                        >
+
+                        {subTopic ?   
+                        <AiOutlineCaretUp 
+                        className="AskQuestionForm__TitleInput__InputBox__Title__Logos__Logo"/>
+                        :
+                        <AiOutlineCaretDown 
+                        className="AskQuestionForm__TitleInput__InputBox__Title__Logos__Logo"/>
+                        }
+                        </button>
+                    </div>
+                   
                 </div>
             </div>
             <div className='AskQuestionForm__Body'>
