@@ -1,4 +1,4 @@
-import { FC, useEffect } from "react";
+import { FC, useEffect, useState } from "react";
 import { RouteComponentProps } from "react-router-dom";
 import ProfileImageAndData from "../components/ProfileComponents/ProfileImageAndData";
 import ProfileForm from "../components/ProfileComponents/ProfileForm";
@@ -53,12 +53,11 @@ const Profile: FC<RouteComponentProps<any>> = ({ match }) => {
   return (
     <>
       <div className="Profile">
-      
         <div className="Profile__Box">
           <div className="Profile__Box__Navbar">
-          <Navbar/>
+            <Navbar />
           </div>
-          
+
           {loading ? (
             <>
               <div className="Profile__Box__Top">
@@ -94,11 +93,11 @@ const Profile: FC<RouteComponentProps<any>> = ({ match }) => {
                   </div>
                   <div className="Profile__Box__Main">
                     <div className="Profile__Box__Main__Newsfeed">
-                    <ProfileNewsFeed />
-                    <ProfileNewsFeed />
-                    <ProfileNewsFeed />
-                    <ProfileNewsFeed />
-                    <ProfileNewsFeed />
+                      <ProfileNewsFeed />
+                      <ProfileNewsFeed />
+                      <ProfileNewsFeed />
+                      <ProfileNewsFeed />
+                      <ProfileNewsFeed />
                     </div>
                     <div className="Profile__Box__Main__SideInformation">
                       <ProfileQAStatus />
