@@ -2,13 +2,13 @@ import { FC, useEffect } from "react";
 
 import SideBar from "../components/HomePageComponent/SideBar";
 import Navbar from "../components/Navbar";
-import ProfileNewsFeed from "../components/ProfileComponents/NewsFeed";
-import { Link} from "react-router-dom";
+import NewsFeed from "../components/ProfileComponents/NewsFeed";
+import { Link } from "react-router-dom";
 
 const HomePage: FC = () => {
   useEffect(() => {
-    document.title ="Learn with us | Home"
-  }, [])
+    document.title = "Learn with us | Home";
+  }, []);
   return (
     <>
       <div className="HomePage">
@@ -22,19 +22,22 @@ const HomePage: FC = () => {
           </div>
           <div className="HomePage__Right__MainBody">
             <div className="HomePage__Right__MainBody__NewsFeed">
-              <ProfileNewsFeed />
-              <ProfileNewsFeed />
-              <ProfileNewsFeed />
-              <ProfileNewsFeed />
-              <ProfileNewsFeed />
-              <ProfileNewsFeed />
-
+              <NewsFeed />
+              <NewsFeed />
+              <NewsFeed />
+              <NewsFeed />
+              <NewsFeed />
+              <NewsFeed />
             </div>
             <div className="HomePage__Right__MainBody__Notification">
-              
               <div className="HomePage__Right__MainBody__Notification__Below">
-                <Link to="/question/ask" className="HomePage__Right__MainBody__Notification__Below__Links">Having a doubt, ask a question?</Link>
-                <button >Saved Questions</button>
+                <Link
+                  to="/question/ask"
+                  className="HomePage__Right__MainBody__Notification__Below__Links"
+                >
+                  Having a doubt, ask a question?
+                </Link>
+                <button>Saved Questions</button>
               </div>
             </div>
           </div>

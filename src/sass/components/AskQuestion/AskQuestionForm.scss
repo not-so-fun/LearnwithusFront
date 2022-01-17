@@ -1,234 +1,253 @@
-.AskQuestionForm{
-    background:$color-primary;
+.AskQuestionForm {
+  background: $color-primary;
+  width: 100%;
+  height: auto;
+  border: 5px solid black;
+  &__Heading {
+    // background:green;
     width: 100%;
-    height:auto;
-    &__Heading{
-        // background:green;
-        width:100%;
-        height:7rem;
-        display:flex;
-        flex-direction: column;
-        padding-top:5rem;
+    border: 2px solid red;
+    height: 7rem;
+    display: flex;
+    flex-direction: column;
+    padding-top: 5rem;
+    align-items: center;
+    justify-content: center;
+    color: $color-white;
+
+    &__Title {
+      height: 5rem;
+      // background:red;
+      width: 20rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      color: $color-white;
+
+      font-weight: 600;
+    }
+  }
+  &__Title {
+    height: 9rem;
+    // background:pink;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    color: $color-white;
+
+    &__Heading {
+      height: 6rem;
+      font-size: 2rem;
+      font-weight: 600;
+      // background:red;
+      padding: 0 1rem;
+      width: 10rem;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      color: $color-white;
+    }
+    &__HelperText {
+      font-size: 1.6rem;
+      color: $color-black;
+      padding: 0 1rem;
+      color: $color-white;
+
+      // background:green;
+    }
+  }
+  &__TitleInput {
+    // background:yellow;
+    height: 14rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.5rem;
+    padding: 1rem;
+    &__Title {
+      background: $color-white;
+      border-radius: 5px;
+      height: 5rem;
+      width: 100%;
+      padding: 0 1rem;
+      font-size: 1.5rem;
+      display: flex;
+      align-items: center;
+      border: none;
+      outline: none;
+
+      &__Logos {
+        height: 4rem;
+        width: 4rem;
+
+        margin-left: -4rem;
+      }
+    }
+    &__InputBox {
+      // background:red;
+      height: 7rem;
+      width: 100%;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+
+      &__Div {
+        // width: 100px;
+        // border: 2px solid red;
+        display: flex;
+
+        &__Select {
+          width: 500px;
+          background: $color-white;
+
+          border-radius: 5px;
+          height: 5rem;
+          //   flex: 1;
+          display: flex;
+          align-items: center;
+          padding: 0px 1rem;
+          cursor: pointer;
+          color: $color-grey-dark;
+          &:last-child {
+            // color: red;
+            margin-left: 5px;
+          }
+        }
+      }
+
+      &__Title {
+        background: $color-white;
+
+        border-radius: 5px;
+        height: 5rem;
+        flex: 1;
+        display: flex;
         align-items: center;
-        justify-content: center;
-        color:$color-white;
+        position: relative;
+        &:not(:first-child) {
+          margin-left: 0.5rem;
+        }
+        &:not(:last-child) {
+          margin-right: 0.5rem;
+        }
 
-        &__Title{
-            height:5rem;
+        &__Box {
+          width: 100%;
+          height: 30rem;
+          background: $color-grey-light-2;
+          // border-radius:5px;
+          position: absolute;
+          top: 5.6rem;
+          left: 0;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: flex-start;
+          overflow-y: scroll;
+          &__Topics {
+            font-size: 2rem;
+            color: $color-black;
             // background:red;
-            width:20rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size:2rem;
-            color:$color-white;
+            height: 5rem;
+            width: 95%;
+            margin: 0.5rem 0;
 
-            font-weight:600;
-        }
-    }
-    &__Title{
-        height:9rem;
-        // background:pink;
-        display:flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: flex-start;
-        color:$color-white;
-
-        &__Heading{
-            height:6rem;
-            font-size:2rem;
-            font-weight:600;
-            // background:red;
-            padding:0 1rem;
-            width:10rem;
-            display:flex;
-            align-items: center;
-            justify-content: flex-start;
-            color:$color-white;
-
-        }
-        &__HelperText{
-            font-size:1.6rem;
-            color:$color-black;
-            padding:0 1rem;
-            color:$color-white;
-
-            
-            // background:green;
-            
-        }
-        
-    }
-    &__TitleInput{
-        // background:yellow;
-        height:14rem;
-        width:100%;
-        display:flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-        margin-top:.5rem;
-        padding:1rem;
-        &__Title{
-            background:$color-white;
-           border-radius:5px;
-            height:5rem;
-            width:100%;
-            padding:0 1rem;
-            font-size:1.5rem;
-            display:flex;
-            align-items: center;
-            border:none;
-            outline:none;
-           
-            &__Logos{
-                height:4rem;
-                width:4rem;
-                background:red;
-                margin-left:-4rem;
-            }
-        }
-        &__InputBox{
-            // background:red;
-            height:7rem;
-            width:100%;
-            display:flex;
-            justify-content: flex-start;
-            align-items: center;
-            &__Title{
-                background:$color-white;
-               
-                border-radius:5px;
-                height:5rem;
-                flex:1;
-                display:flex;
-                align-items: center;
-                position:relative;
-                &:not(:first-child){
-                    margin-left:.5rem;
-
-                }
-                &:not(:last-child){
-                    margin-right:.5rem;
-                }
-
-                &__Box{
-                    width:100%;
-                    height:30rem;
-                    background:$color-grey-light-2;
-                    // border-radius:5px;
-                    position:absolute;
-                    top:5.6rem;
-                    left:0;
-                    display:flex;
-                    flex-direction: column;
-                    align-items:center;
-                    justify-content: flex-start;
-                    overflow-y: scroll;
-                    &__Topics{
-                        font-size:2rem;
-                        color:$color-black;
-                        // background:red;
-                        height:5rem;
-                        width:95%;
-                        margin:.5rem 0;
-                        
-                        display:flex;
-                        align-items: center;
-                        justify-content: flex-start;
-                       padding:.4rem 1rem;
-                        &:hover{
-                            cursor: pointer;
-                            background:$color-grey-light-1;
-                        }
-
-                    }
-
-                }
-                &__Input{
-                    font-size:1.5rem;
-                    width: 100%;
-                    height:5rem;
-                    border:none;
-                    outline:none;
-                    border-radius:5px;
-                    padding-right:3.5rem;
-                    // background:green;
-                    padding-left: 1rem;
-                }
-                &__Logos{
-                    height:3rem;
-                    width:3rem;
-                    margin-left:-3rem;
-                    display:flex;
-                    align-items:center;
-                    justify-content: center;
-                    border:none;
-                    outline:none;
-                    background:$color-white;
-                    &:hover{
-                        cursor:pointer;
-                    }
-                    &__Logo{
-                        height:2.5rem;
-                        width:2.5rem;
-                        background:$color-white;
-                    }
-                }
-            }
-        }
-    }
-    &__Body{
-        // background:red;
-        height:auto;
-        display:flex;
-        flex-direction: column;
-        justify-content:flex-start;
-        
-        &__Heading{
-            // background:red;
-            width:10rem;
-            height:4rem;
-            font-size:1.7rem;
-            font-weight:600;
             display: flex;
             align-items: center;
             justify-content: flex-start;
-            margin:0 1rem;
-            color:$color-white;
-
-        }
-        &__Input{
-            height:40rem;
-            padding:1rem;
-            border:none;
-            outline:none;
-            font-size:1.5rem;
-            border:5px;
-            margin:0 1rem;
-        }
-    }
-    &__Footer{
-        // background:;
-        height:5rem;
-        width:100%;
-        display:flex;
-        align-items: center;
-        justify-content: flex-end;
-        padding:0 1rem;
-        &__Button{
-            height:4rem;
-            border-radius:5px;
-            padding:0 1rem;
-            border:none;
-            font-size:1.5rem;
-            font-weight:600;
-            background:$color-grey-light-2;
-            &:hover{
-                cursor:pointer;
-                background:$color-grey-light-1;
+            padding: 0.4rem 1rem;
+            &:hover {
+              cursor: pointer;
+              background: $color-grey-light-1;
             }
+          }
         }
+        &__Input {
+          font-size: 1.5rem;
+          width: 100%;
+          height: 5rem;
+          border: none;
+          outline: none;
+          border-radius: 5px;
+          padding-right: 3.5rem;
+          // background:green;
+          padding-left: 1rem;
+        }
+        &__Logos {
+          height: 3rem;
+          width: 3rem;
+          margin-left: -3rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border: none;
+          outline: none;
+          background: $color-white;
+          &:hover {
+            cursor: pointer;
+          }
+          &__Logo {
+            height: 2.5rem;
+            width: 2.5rem;
+            background: $color-white;
+          }
+        }
+      }
     }
+  }
+  &__Body {
+    // background:red;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    &__Heading {
+      // background:red;
+      width: 10rem;
+      height: 4rem;
+      font-size: 1.7rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      margin: 0 1rem;
+      color: $color-white;
+    }
+    &__Input {
+      height: 40rem;
+      padding: 1rem;
+      border: none;
+      outline: none;
+      font-size: 1.5rem;
+      border: 5px;
+      margin: 0 1rem;
+    }
+  }
+  &__Footer {
+    // background:;
+    height: 5rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 1rem;
+    &__Button {
+      height: 4rem;
+      border-radius: 5px;
+      padding: 0 1rem;
+      border: none;
+      font-size: 1.5rem;
+      font-weight: 600;
+      background: $color-grey-light-2;
+      &:hover {
+        cursor: pointer;
+        background: $color-grey-light-1;
+      }
+    }
+  }
 }
