@@ -1,4 +1,4 @@
-import React,{FC,ChangeEvent,useState} from 'react';
+import React, { FC, ChangeEvent, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { AskQuestionAction } from "../../actions/AskQuestionAction";
 import useTokenAndId from "../ReusableLogicComponents/useTokenAndId";
@@ -8,8 +8,8 @@ import { Progress } from "../ReusableUIComponents/Spinner";
 import { TopicAction } from "../../actions/TopicAction";
 import Alert from "@mui/material/Alert";
 import AskQuestionFormTitle from "./AskQuestionFormTitle";
-import {AiOutlineCaretDown, AiOutlineCaretUp} from "react-icons/ai";
-import { CircularProgress } from '@mui/material';
+import { AiOutlineCaretDown, AiOutlineCaretUp } from "react-icons/ai";
+import { CircularProgress } from "@mui/material";
 
 interface formDataInterface {
   title: string;
@@ -18,9 +18,10 @@ interface formDataInterface {
   question: string;
 }
 const AskQuesForm: FC = () => {
-    const [topic, setTopic] = useState(false);
-    const [subTopic, setSubTopic] = useState(false);
-    const dispatch = useDispatch();
+  
+  const [topic, setTopic] = useState(false);
+  const [subTopic, setSubTopic] = useState(false);
+  const dispatch = useDispatch();
 
   const { loading, message, error } = useSelector<RootStateType>(
     (state) => state.ask_question
@@ -55,7 +56,6 @@ const AskQuesForm: FC = () => {
   return (
     <div className="AskQuestionForm">
       <div className="AskQuestionForm__Heading">
-        
         <div className="AskQuestionForm__Heading__Title">Ask a question</div>
 
         {message && (
@@ -73,6 +73,7 @@ const AskQuesForm: FC = () => {
         </p>
       </div>
       <div className="AskQuestionForm__TitleInput">
+
         <input
           type="text"
           className="AskQuestionForm__TitleInput__Title"
@@ -81,6 +82,7 @@ const AskQuesForm: FC = () => {
           value={title}
           onChange={(e) => handleChange(e)}
         ></input>
+
         <div className="AskQuestionForm__TitleInput__InputBox">
           <input
             type="text"
@@ -100,6 +102,7 @@ const AskQuesForm: FC = () => {
           />
         </div>
       </div>
+
       <div className="AskQuestionForm__Body">
         <div className="AskQuestionForm__Body__Heading">Body</div>
         <textarea
@@ -118,7 +121,7 @@ const AskQuesForm: FC = () => {
             onClick={handleQuestionAsk}
             className="AskQuestionForm__Footer__Button"
           >
-            <CircularProgress size={25} style={{color:"black"}} />
+            <CircularProgress size={25} style={{ color: "black" }} />
           </button>
         ) : (
           <button
@@ -129,9 +132,9 @@ const AskQuesForm: FC = () => {
             Post your Question
           </button>
         )}
-            </div> 
-        </div>
-    )
-}
+      </div>
+    </div>
+  );
+};
 
 export default AskQuesForm;

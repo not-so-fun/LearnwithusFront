@@ -7,6 +7,7 @@ import { ProfileReducer } from "./reducers/ProfileReducer";
 import { ForgotPassowrdReducer } from "./reducers/ForgotPasswordReducer";
 import { ResetPassowrdReducer } from "./reducers/ResetPasswordReducer";
 import { AskQuestionReducer } from "./reducers/AskQuestionReducer";
+import { ExpertiseReducer } from "./reducers/ExpertiseReducer";
 import { TopicReducer } from "./reducers/TopicReducer";
 
 const rootReducer = combineReducers({
@@ -16,7 +17,8 @@ const rootReducer = combineReducers({
   forgot_password: ForgotPassowrdReducer,
   reset_password: ResetPassowrdReducer,
   ask_question: AskQuestionReducer,
-  topics:TopicReducer
+  topics:TopicReducer,
+  expertises:ExpertiseReducer
 });
 
 const store = createStore(

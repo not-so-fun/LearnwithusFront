@@ -62,17 +62,9 @@ const Navbar: FC = () => {
             </Link>
           </>
         )}
+
         <div className="Navbar__Links__content">
           <div className="Navbar__Links__content__Icon">
-            {/* <Avatar
-              alt="user"
-              src="https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png"
-              style={{ width: 40, height: 40 }}
-            /> */}
-            <IoNotificationsSharp style={{ fontSize: 25, marginLeft: 10 }} />
-            {/* <div className="Navbar__Links__content__Notification">
-                <Notification />
-              </div> */}
             <IoNotificationsSharp
               style={{ fontSize: 25, marginLeft: 10 }}
               onClick={() => {
@@ -83,15 +75,19 @@ const Navbar: FC = () => {
               {showNotification.show && <Notification />}
             </div>
           </div>
+
           <div className="Navbar__Links__content__Avatar">
             <Avatar
               alt="user"
               src="https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png"
               style={{ width: 40, height: 40 }}
             />
+
             <ArrowDropDownIcon className="Navbar__Links__content__Avatar__Drop" />
+
           </div>
         </div>
+        
       </div>
     </div>
   );

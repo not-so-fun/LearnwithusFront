@@ -40,6 +40,7 @@ const ModalOverlay: React.FC<ClickProp> = ({ onClick, heading }) => {
             }}
           />
         </div>
+        
         {showTopic.show && (
           <div className="modal__selects__dropdown">
             <div className="modal__selects__dropdown__item">
@@ -126,7 +127,7 @@ const ModalOverlay: React.FC<ClickProp> = ({ onClick, heading }) => {
   );
 };
 
-const PopUpModal: React.FC<PropState> = ({ modalHandler, heading }) => {
+const WishesModal: React.FC<PropState> = ({ modalHandler, heading }) => {
   return (
     <React.Fragment>
       {createPortal(
@@ -141,4 +142,4 @@ const PopUpModal: React.FC<PropState> = ({ modalHandler, heading }) => {
   );
 };
 
-export default PopUpModal;
+export default WishesModal;

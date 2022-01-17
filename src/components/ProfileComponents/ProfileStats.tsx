@@ -1,5 +1,6 @@
 import React, { FC, useState } from "react";
-import PopUpModal from "./PopUpModal";
+import ExpertiseModal from "./ExpertiseModal";
+import WishesModal from "./WishesModal";
 
 export type ModalState = {
   open: boolean;
@@ -42,9 +43,11 @@ const ProfileStats: FC = () => {
         >
           Expertise
         </button>
+
         {openModal.open && (
-          <PopUpModal modalHandler={modalHandler} heading="Expertise" />
+          <ExpertiseModal modalHandler={modalHandler} heading="Expertise" />
         )}
+
         <button
           className="Profile__Box__Top__Statistics__Botton__Wishes"
           onClick={() => {
@@ -53,8 +56,9 @@ const ProfileStats: FC = () => {
         >
           Wishes
         </button>
+
         {openModal.wishes && (
-          <PopUpModal modalHandler={wishHandler} heading="Wishes" />
+          <WishesModal modalHandler={wishHandler} heading="Wishes" />
         )}
       </div>
     </div>
