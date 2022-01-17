@@ -231,7 +231,7 @@ body {
     padding-top: 5rem;
     align-items: center;
     justify-content: center;
-    color: #000; }
+    color: #fff; }
     .AskQuestionForm__Heading__Title {
       height: 5rem;
       width: 20rem;
@@ -239,27 +239,30 @@ body {
       align-items: center;
       justify-content: center;
       font-size: 2rem;
+      color: #fff;
       font-weight: 600; }
   .AskQuestionForm__Title {
     height: 9rem;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: flex-start; }
+    align-items: flex-start;
+    color: #fff; }
     .AskQuestionForm__Title__Heading {
       height: 6rem;
       font-size: 2rem;
       font-weight: 600;
       padding: 0 1rem;
       width: 10rem;
-      color: #000;
       display: flex;
       align-items: center;
-      justify-content: flex-start; }
+      justify-content: flex-start;
+      color: #fff; }
     .AskQuestionForm__Title__HelperText {
       font-size: 1.6rem;
       color: #000;
-      padding: 0 1rem; }
+      padding: 0 1rem;
+      color: #fff; }
   .AskQuestionForm__TitleInput {
     height: 14rem;
     width: 100%;
@@ -361,13 +364,13 @@ body {
     .AskQuestionForm__Body__Heading {
       width: 10rem;
       height: 4rem;
-      color: #000;
       font-size: 1.7rem;
       font-weight: 600;
       display: flex;
       align-items: center;
       justify-content: flex-start;
-      margin: 0 1rem; }
+      margin: 0 1rem;
+      color: #fff; }
     .AskQuestionForm__Body__Input {
       height: 40rem;
       padding: 1rem;

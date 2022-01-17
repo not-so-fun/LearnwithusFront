@@ -9,6 +9,7 @@ import { TopicAction } from "../../actions/TopicAction";
 import Alert from "@mui/material/Alert";
 import AskQuestionFormTitle from "./AskQuestionFormTitle";
 import {AiOutlineCaretDown, AiOutlineCaretUp} from "react-icons/ai";
+import { CircularProgress } from '@mui/material';
 
 interface formDataInterface {
   title: string;
@@ -117,7 +118,7 @@ const AskQuesForm: FC = () => {
             onClick={handleQuestionAsk}
             className="AskQuestionForm__Footer__Button"
           >
-            <Progress size={25} />
+            <CircularProgress size={25} style={{color:"black"}} />
           </button>
         ) : (
           <button
