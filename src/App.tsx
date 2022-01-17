@@ -15,7 +15,6 @@ function App() {
     <>
       <div className="App">
         <BrowserRouter>
-          {/* <Navbar /> */}
           <Switch>
             {routes.map((route, index) => {
               return route.private ? (
