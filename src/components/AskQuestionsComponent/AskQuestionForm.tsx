@@ -10,6 +10,10 @@ import Alert from "@mui/material/Alert";
 import AskQuestionFormTitle from "./AskQuestionFormTitle";
 import { AiOutlineCaretDown, AiOutlineCaretUp } from "react-icons/ai";
 import { CircularProgress } from "@mui/material";
+<<<<<<< HEAD
+=======
+import AskQuestionSelect from "./AskQuestionSelect";
+>>>>>>> sujan
 
 interface formDataInterface {
   title: string;
@@ -18,7 +22,10 @@ interface formDataInterface {
   question: string;
 }
 const AskQuesForm: FC = () => {
+<<<<<<< HEAD
   
+=======
+>>>>>>> sujan
   const [topic, setTopic] = useState(false);
   const [subTopic, setSubTopic] = useState(false);
   const dispatch = useDispatch();
@@ -84,7 +91,7 @@ const AskQuesForm: FC = () => {
         ></input>
 
         <div className="AskQuestionForm__TitleInput__InputBox">
-          <input
+          {/* <input
             type="text"
             placeholder="Topic"
             className="AskQuestionForm__TitleInput__InputBox__Title"
@@ -99,7 +106,9 @@ const AskQuesForm: FC = () => {
             name="sub_topic_id"
             value={sub_topic_id}
             onChange={(e) => handleChange(e)}
-          />
+          /> */}
+
+          <AskQuestionSelect />
         </div>
       </div>
 
