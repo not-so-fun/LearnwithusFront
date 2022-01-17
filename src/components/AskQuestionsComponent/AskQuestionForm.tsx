@@ -4,30 +4,19 @@ import { AskQuestionAction } from "../../actions/AskQuestionAction";
 import useTokenAndId from "../ReusableLogicComponents/useTokenAndId";
 import { RootStateType } from "../../stores";
 import { askQuestionInterface } from "../../reducers/AskQuestionReducer";
-import { Progress } from "../ReusableUIComponents/Spinner";
-import { TopicAction } from "../../actions/TopicAction";
 import Alert from "@mui/material/Alert";
 import AskQuestionFormTitle from "./AskQuestionFormTitle";
 import { AiOutlineCaretDown, AiOutlineCaretUp } from "react-icons/ai";
 import { CircularProgress } from "@mui/material";
-<<<<<<< HEAD
-=======
 import AskQuestionSelect from "./AskQuestionSelect";
->>>>>>> sujan
 
-interface formDataInterface {
+export interface formDataInterface {
   title: string;
   topic_id: string;
   sub_topic_id: string;
   question: string;
 }
 const AskQuesForm: FC = () => {
-<<<<<<< HEAD
-  
-=======
->>>>>>> sujan
-  const [topic, setTopic] = useState(false);
-  const [subTopic, setSubTopic] = useState(false);
   const dispatch = useDispatch();
 
   const { loading, message, error } = useSelector<RootStateType>(
@@ -56,10 +45,6 @@ const AskQuesForm: FC = () => {
     dispatch(AskQuestionAction(token, topic_id, sub_topic_id, title, question));
   };
 
-  const handleTopicsList = () => {
-    dispatch(TopicAction(token));
-  };
-
   return (
     <div className="AskQuestionForm">
       <div className="AskQuestionForm__Heading">
@@ -80,7 +65,6 @@ const AskQuesForm: FC = () => {
         </p>
       </div>
       <div className="AskQuestionForm__TitleInput">
-
         <input
           type="text"
           className="AskQuestionForm__TitleInput__Title"
@@ -91,24 +75,7 @@ const AskQuesForm: FC = () => {
         ></input>
 
         <div className="AskQuestionForm__TitleInput__InputBox">
-          {/* <input
-            type="text"
-            placeholder="Topic"
-            className="AskQuestionForm__TitleInput__InputBox__Title"
-            name="topic_id"
-            value={topic_id}
-            onChange={(e) => handleChange(e)}
-          />
-          <input
-            type="text"
-            placeholder="SubTopic"
-            className="AskQuestionForm__TitleInput__InputBox__Title"
-            name="sub_topic_id"
-            value={sub_topic_id}
-            onChange={(e) => handleChange(e)}
-          /> */}
-
-          <AskQuestionSelect />
+          <AskQuestionSelect setFormData={setFormData} formData={formData} />
         </div>
       </div>
 

@@ -226,7 +226,6 @@ body {
   border: 5px solid black; }
   .AskQuestionForm__Heading {
     width: 100%;
-    border: 2px solid red;
     height: 7rem;
     display: flex;
     flex-direction: column;

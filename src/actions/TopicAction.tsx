@@ -20,8 +20,11 @@ export const TopicAction =
       })
       .then((response) => {
         console.log(response.data);
+        dispatch({type:TOPIC_FETCHING_SUCCESS,topics:response.data})
       })
       .catch((error) => {
         console.log(error);
+        dispatch({type:TOPIC_FETCHING_ERROR,error:error.response.data})
+
       });
   };

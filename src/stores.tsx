@@ -9,6 +9,7 @@ import { ResetPassowrdReducer } from "./reducers/ResetPasswordReducer";
 import { AskQuestionReducer } from "./reducers/AskQuestionReducer";
 import { ExpertiseReducer } from "./reducers/ExpertiseReducer";
 import { TopicReducer } from "./reducers/TopicReducer";
+import { SubTopicReducer } from "./reducers/SubTopicReducer";
 
 const rootReducer = combineReducers({
   userInfo: LoginReducer,
@@ -18,6 +19,7 @@ const rootReducer = combineReducers({
   reset_password: ResetPassowrdReducer,
   ask_question: AskQuestionReducer,
   topics:TopicReducer,
+  subtopics:SubTopicReducer,
   expertises:ExpertiseReducer
 });
 
