@@ -1,7 +1,24 @@
-import React, { FC } from "react";
+import React, { FC, useState } from "react";
+import PopUpModal from "./PopUpModal";
 
+export type ModalState = {
+  open: boolean;
+  wishes: boolean;
+};
 const ProfileStats: FC = () => {
   //state type
+
+  const [openModal, setOpenModal] = useState<ModalState>({
+    open: false,
+    wishes: false,
+  });
+
+  const modalHandler = () => {
+    setOpenModal({ ...openModal, open: !openModal.open });
+  };
+  const wishHandler = () => {
+    setOpenModal({ ...openModal, wishes: !openModal.wishes });
+  };
 
   return (
     <div className="Profile__Box__Top__Statistics">
@@ -14,6 +31,31 @@ const ProfileStats: FC = () => {
           <p>Number of questions answered</p>
           <h1>1200</h1>
         </div>
+      </div>
+
+      <div className="Profile__Box__Top__Statistics__Botton">
+        <button
+          className="Profile__Box__Top__Statistics__Botton__Expertise"
+          onClick={() => {
+            setOpenModal({ ...openModal, open: !openModal.open });
+          }}
+        >
+          Expertise
+        </button>
+        {openModal.open && (
+          <PopUpModal modalHandler={modalHandler} heading="Expertise" />
+        )}
+        <button
+          className="Profile__Box__Top__Statistics__Botton__Wishes"
+          onClick={() => {
+            setOpenModal({ ...openModal, wishes: !openModal.wishes });
+          }}
+        >
+          Wishes
+        </button>
+        {openModal.wishes && (
+          <PopUpModal modalHandler={wishHandler} heading="Wishes" />
+        )}
       </div>
     </div>
   );
