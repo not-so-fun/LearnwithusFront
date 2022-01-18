@@ -28,7 +28,7 @@ import ProfileNewsFeed from "../components/ProfileComponents/NewsFeed";
 
 const Profile: FC<RouteComponentProps<any>> = ({ match }) => {
   const dispatch = useDispatch();
-  const { token, user_id } = useTokenAndId();
+  const { token } = useTokenAndId();
 
   const { userInfo } = useSelector<RootStateType>(
     (state) => state.userInfo
@@ -42,9 +42,9 @@ const Profile: FC<RouteComponentProps<any>> = ({ match }) => {
     if (userInfo && userInfo?.token) {
       dispatch(ProfileAction(match.params.id, userInfo.token));
     } else {
-      dispatch(ProfileAction(user_id, token));
+      dispatch(ProfileAction(match.params.id, token));
     }
-  }, [match, token, userInfo, user_id]);
+  }, [match, token, userInfo]);
 
   const { loading, profile_data, error } = useSelector<RootStateType>(
     (state) => state.profile_info_data
