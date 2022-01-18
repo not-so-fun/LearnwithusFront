@@ -9,7 +9,7 @@ import { QuestionFeedTypes } from "../types/QuestionfeedTypes";
 export interface questionFeedListInterface {
   question_id:string,
   topic_id: string;
-  sub_topic_id: string;
+  topic_title:string,
   title: string;
   question: string;
   user_id: string;

@@ -1,13 +1,16 @@
 import React, { FC } from "react";
-import { Avatar } from "@mui/material";
+import { Avatar, Chip } from "@mui/material";
 import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import { questionFeedListInterface } from "../../reducers/QuestionFeedReducers";
 import { Link } from "react-router-dom";
+
 interface quesInterface {
   question: questionFeedListInterface;
 }
+
 const NewsFeed: FC<quesInterface> = ({ question }) => {
+
   return (
     <div className="Profile__Box__Main__Newsfeed__Div">
       <div className="Profile__Box__Main__Newsfeed__Div__Header">
@@ -18,7 +21,11 @@ const NewsFeed: FC<quesInterface> = ({ question }) => {
             style={{ width: 40, height: 40 }}
           />
           <Link style={{textDecoration:"none"}} to={`/profile/${question.user_id}`}>
-            <p>{question.username}</p>
+            <p>{question.username}
+
+            <Chip style={{fontSize:15}} variant="outlined" label={question.topic_title}/>
+
+            </p>
           </Link>
         </div>
         <div className="Profile__Box__Main__Newsfeed__Div__Header__Right">
