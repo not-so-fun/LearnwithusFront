@@ -1,19 +1,32 @@
 import React, { FC } from "react";
-import { Avatar } from "@mui/material";
+import { Avatar, Chip } from "@mui/material";
 import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
-const NewsFeed: FC = () => {
+import { questionFeedListInterface } from "../../reducers/QuestionFeedReducers";
+import { Link } from "react-router-dom";
+
+interface quesInterface {
+  question: questionFeedListInterface;
+}
+
+const NewsFeed: FC<quesInterface> = ({ question }) => {
+
   return (
     <div className="Profile__Box__Main__Newsfeed__Div">
       <div className="Profile__Box__Main__Newsfeed__Div__Header">
         <div className="Profile__Box__Main__Newsfeed__Div__Header__Left">
           <Avatar
             alt="user"
-            src="https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png"
+            src={question.image}
             style={{ width: 40, height: 40 }}
           />
+          <Link style={{textDecoration:"none"}} to={`/profile/${question.user_id}`}>
+            <p>{question.username}
 
-          <p>Pasang Sherpa</p>
+            <Chip style={{fontSize:15}} variant="outlined" label={question.topic_title}/>
+
+            </p>
+          </Link>
         </div>
         <div className="Profile__Box__Main__Newsfeed__Div__Header__Right">
           <p>Answered: Today</p>
@@ -30,9 +43,11 @@ const NewsFeed: FC = () => {
         </div>
         <div className="Profile__Box__Main__Newsfeed__Div__InnerDiv__Questions">
           <div className="Profile__Box__Main__Newsfeed__Div__InnerDiv__Questions__Question">
-            <p>How are your dreams?</p>
+            <p>{question.title}</p>
           </div>
           <div className="Profile__Box__Main__Newsfeed__Div__InnerDiv__Questions__QuestionDetails">
+            <h3>{question.question}</h3>
+
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
               Blanditiis sed laboriosam sit? Quisquam qui optio voluptatum et

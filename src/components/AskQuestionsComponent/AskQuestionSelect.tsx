@@ -42,9 +42,10 @@ const AskQuestionSelect: FC<AskQuestionSelectPropsType> = ({
   }, [token]);
 
   const handleSelectTopic = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    // setTopicId(e.target.value)
     dispatch(SubTopicAction(token, e.target.value));
     setFormData({ ...formData, topic_id: e.target.value });
+    // setFormData({ ...formData, sub_topic_id: '0'});
+
   };
 
   const handleSelectSubTopic = (e: React.ChangeEvent<HTMLSelectElement>) => {
