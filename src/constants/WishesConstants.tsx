@@ -1,0 +1,3 @@
+export const WISHES_LOADING = "WISHES_LOADING";
+export const WISHES_SUCCESS = "WISHES_SUCCESS";
+export const WISHES_ERROR = "WISHES_ERROR";

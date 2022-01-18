@@ -11,6 +11,7 @@ import { ExpertiseReducer } from "./reducers/ExpertiseReducer";
 import { TopicReducer } from "./reducers/TopicReducer";
 import { SubTopicReducer } from "./reducers/SubTopicReducer";
 import { QuestionFeedReducer } from "./reducers/QuestionFeedReducers";
+import { WishesReducer } from "./reducers/WishesReducer";
 
 const rootReducer = combineReducers({
   userInfo: LoginReducer,
@@ -19,10 +20,11 @@ const rootReducer = combineReducers({
   forgot_password: ForgotPassowrdReducer,
   reset_password: ResetPassowrdReducer,
   ask_question: AskQuestionReducer,
-  topics:TopicReducer,
-  subtopics:SubTopicReducer,
-  expertises:ExpertiseReducer,
-  questionFeed:QuestionFeedReducer
+  topics: TopicReducer,
+  subtopics: SubTopicReducer,
+  expertises: ExpertiseReducer,
+  wishes: WishesReducer,
+  questionFeed: QuestionFeedReducer,
 });
 
 const store = createStore(
