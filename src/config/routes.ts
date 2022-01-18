@@ -7,6 +7,7 @@ import HomePage from "../Layout/HomePage";
 import ResetPassword from "../components/ResetPassword/ResetPassword";
 import AccountActivationScreen from "../Screens/AccountActivationScreen";
 import AskQuestion from "../Layout/AskQuestions";
+import MainQA from "../Layout/MainQA";
 
 const routes: IRoute[] = [
   {
@@ -58,6 +59,14 @@ const routes: IRoute[] = [
     showNav:false
   },
   {
+    path: "/questions/:id",
+    name: "MainQuestionAnswer",
+    component: MainQA,
+    exact: false,
+    private:true,
+    showNav:false
+  },
+  {
     path: "/question/ask",
     name: "questions",
     component: AskQuestion,
@@ -72,7 +81,8 @@ const routes: IRoute[] = [
     exact: false,
     private:true,
     showNav:false
-  }
+  },
+  
 ];
 
 export default routes;

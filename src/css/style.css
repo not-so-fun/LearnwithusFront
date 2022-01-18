@@ -373,63 +373,47 @@ body {
           .AskQuestionForm__TitleInput__InputBox__Footer__Button:hover {
             cursor: pointer;
             background: #F8F8F8; }
-          .AskQuestionForm__TitleInput__InputBox__Footer__Button__Logos {
-            height: 3rem;
-            width: 3rem;
-            margin-left: -3rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: none;
-            outline: none;
-            background: #fff; }
-            .AskQuestionForm__TitleInput__InputBox__Footer__Button__Logos:hover {
-              cursor: pointer; }
-            .AskQuestionForm__TitleInput__InputBox__Footer__Button__Logos__Logo {
-              height: 2.5rem;
-              width: 2.5rem;
-              background: #fff; }
-    .AskQuestionForm__TitleInput__Body {
-      height: auto;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start; }
-      .AskQuestionForm__TitleInput__Body__Heading {
-        width: 10rem;
-        height: 4rem;
-        font-size: 1.7rem;
-        font-weight: 600;
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        margin: 0 1rem;
-        color: #fff; }
-      .AskQuestionForm__TitleInput__Body__Input {
-        height: 40rem;
-        padding: 1rem;
-        border: none;
-        outline: none;
-        font-size: 1.5rem;
-        border: 5px;
-        margin: 0 1rem; }
-    .AskQuestionForm__TitleInput__Footer {
-      height: 5rem;
-      width: 100%;
+  .AskQuestionForm__Body {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; }
+    .AskQuestionForm__Body__Heading {
+      width: 10rem;
+      height: 4rem;
+      font-size: 1.7rem;
+      font-weight: 600;
       display: flex;
       align-items: center;
-      justify-content: flex-end;
-      padding: 0 1rem; }
-      .AskQuestionForm__TitleInput__Footer__Button {
-        height: 4rem;
-        border-radius: 5px;
-        padding: 0 1rem;
-        border: none;
-        font-size: 1.5rem;
-        font-weight: 600;
-        background: #C4C4C4; }
-        .AskQuestionForm__TitleInput__Footer__Button:hover {
-          cursor: pointer;
-          background: #F8F8F8; }
+      justify-content: flex-start;
+      margin: 0 1rem;
+      color: #fff; }
+    .AskQuestionForm__Body__Input {
+      height: 40rem;
+      padding: 1rem;
+      border: none;
+      outline: none;
+      font-size: 1.5rem;
+      border: 5px;
+      margin: 0 1rem; }
+  .AskQuestionForm__Footer {
+    height: 5rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 1rem; }
+    .AskQuestionForm__Footer__Button {
+      height: 4rem;
+      border-radius: 5px;
+      padding: 0 1rem;
+      border: none;
+      font-size: 1.5rem;
+      font-weight: 600;
+      background: #C4C4C4; }
+      .AskQuestionForm__Footer__Button:hover {
+        cursor: pointer;
+        background: #F8F8F8; }
 
 .Auth {
   height: 70rem;
@@ -992,3 +976,8 @@ body {
   .AskQuestion__Main__Side {
     background: yellow;
     flex: 0 0 30%; }
+
+.MainQA {
+  height: 100vh;
+  width: 100vw;
+  background: red; }

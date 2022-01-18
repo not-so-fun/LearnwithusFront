@@ -200,24 +200,6 @@
                 cursor:pointer;
                 background:$color-grey-light-1;
             }
-        &__Logos {
-          height: 3rem;
-          width: 3rem;
-          margin-left: -3rem;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          border: none;
-          outline: none;
-          background: $color-white;
-          &:hover {
-            cursor: pointer;
-          }
-          &__Logo {
-            height: 2.5rem;
-            width: 2.5rem;
-            background: $color-white;
-          }
         }
       }
     }
@@ -273,5 +255,4 @@
       }
     }
   }
-}
 }

@@ -48,6 +48,12 @@ const Navbar: FC = () => {
             >
               Profile
             </Link>
+            <Link
+              to="/questions/:id"
+              className="Navbar__Links__content Navbar__Links__center"
+            >
+              MainQA
+            </Link>
           </>
         ) : (
           <>
@@ -60,6 +66,7 @@ const Navbar: FC = () => {
             >
               Login
             </Link>
+            
           </>
         )}
 
