@@ -67,11 +67,11 @@ const Profile: FC<RouteComponentProps<any>> = ({ match }) => {
               </div>
               <div className="Profile__Box__Main">
                 <div className="Profile__Box__Main__Newsfeed">
+                  {/* <ProfileNewsFeed />
                   <ProfileNewsFeed />
                   <ProfileNewsFeed />
                   <ProfileNewsFeed />
-                  <ProfileNewsFeed />
-                  <ProfileNewsFeed />
+                  <ProfileNewsFeed /> */}
                 </div>
 
                 <div className="Profile__Box__Main__SideInformation">
@@ -93,11 +93,11 @@ const Profile: FC<RouteComponentProps<any>> = ({ match }) => {
                   </div>
                   <div className="Profile__Box__Main">
                     <div className="Profile__Box__Main__Newsfeed">
+                      {/* <ProfileNewsFeed />
                       <ProfileNewsFeed />
                       <ProfileNewsFeed />
                       <ProfileNewsFeed />
-                      <ProfileNewsFeed />
-                      <ProfileNewsFeed />
+                      <ProfileNewsFeed /> */}
                     </div>
                     <div className="Profile__Box__Main__SideInformation">
                       <ProfileQAStatus />
