@@ -833,7 +833,7 @@ body {
 
 .HomePage {
   height: 100vh;
-  width: 98.9vw;
+  width: 100vw;
   display: flex;
   background-color: #ededed;
   position: relative; }
@@ -841,8 +841,8 @@ body {
     background-color: #32569f;
     color: #fff;
     flex: 0.3;
-    height: 680px;
-    width: 325px;
+    height: 98vh;
+    width: 33rem;
     position: fixed;
     top: 0;
     left: 0;
@@ -887,20 +887,20 @@ body {
             cursor: pointer;
             box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.1); }
   .HomePage__Right {
-    flex: 1;
-    padding: 1rem; }
+    width: calc(100vw - 37rem);
+    margin: 1rem;
+    position: fixed;
+    height: 98vh;
+    top: 0;
+    left: 34.5rem; }
     .HomePage__Right__TopBar {
-      height: 8.8vh;
-      width: 73vw;
-      position: relative;
-      left: 350px; }
+      height: 7rem;
+      width: 100%; }
     .HomePage__Right__MainBody {
-      position: relative;
-      left: 350px;
       display: flex;
       background-color: #fff;
-      width: 73vw;
-      height: 90vh;
+      width: 100%;
+      height: calc(100% - 8rem);
       margin-top: 1rem; }
       .HomePage__Right__MainBody__NewsFeed {
         flex: 1;
@@ -1056,11 +1056,7 @@ body {
     margin: 1rem auto;
     height: 50rem;
     width: 90rem;
-
     border: 1px solid #c4c4c4;
-
-    
-
     background: #fff;
     display: flex;
     align-items: center; }

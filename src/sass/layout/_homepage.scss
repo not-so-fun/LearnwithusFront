@@ -1,6 +1,6 @@
 .HomePage {
   height: 100vh;
-  width: 98.9vw;
+  width: 100vw;
   display: flex;
   background-color: #ededed;
   position: relative;
@@ -9,9 +9,8 @@
     background-color: $color-primary;
     color: $color-white;
     flex: 0.3;
-
-    height: 680px;
-    width: 325px;
+    height: 98vh;
+    width: 33rem;
     position: fixed;
     top: 0;
     left: 0;
@@ -70,23 +69,27 @@
     }
   }
   &__Right {
-    flex: 1;
-    padding: 1rem;
-
+    // flex: 1;
+    // padding: 1rem;
+    width:calc(100vw - 37rem) ;
+    margin:1rem;
+    position: fixed;
+    height:98vh;
+    top: 0;
+    left: 34.5rem;
     &__TopBar {
-      height: 8.8vh;
-
-      width: 73vw;
-      position: relative;
-      left: 350px;
+      height: 7rem;
+      width: 100%;
+      // position: relative;
+      // left: 350px;
     }
     &__MainBody {
-      position: relative;
-      left: 350px;
+      // position: relative;
+      // left: 350px;
       display: flex;
       background-color: $color-white;
-      width: 73vw;
-      height: 90vh;
+      width: 100%;
+      height: calc(100% - 8rem);
       margin-top: 1rem;
 
       &__NewsFeed {
