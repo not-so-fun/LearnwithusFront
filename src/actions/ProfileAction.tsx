@@ -11,7 +11,7 @@ export const ProfileAction =
   (user_id: string, token: string) =>
   (dispatch: Dispatch<RootDispatchType>) => {
     dispatch({ type: PROFILE_DATA_LOADING });
-
+    console.log(user_id)
     axios
       .get(`/users/${user_id}`, {
         headers: {

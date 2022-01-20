@@ -28,6 +28,7 @@ export const RegisterReducer = (
       return { ...state, loading: false, message: action.message, error: null };
     case REGISTER_REQUEST_ERROR:
       return { ...state, loading: false, error: action.error, message: null };
+      
     case REMOVE_ERROR:
       return { ...state, error: "" };
     default:

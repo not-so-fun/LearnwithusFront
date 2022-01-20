@@ -3,6 +3,13 @@ import { createPortal } from "react-dom";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import { ModalState } from "./ProfileStats";
 import CloseIcon from "@mui/icons-material/Close";
+import { useDispatch, useSelector } from "react-redux";
+import useTokenAndId from "../ReusableLogicComponents/useTokenAndId";
+import { RootStateType } from "../../stores";
+import { wishesInterface } from "../../reducers/WishesReducer";
+import { WishesAction } from "../../actions/WishesAction";
+import { Progress } from "../ReusableUIComponents/Spinner";
+import WishesDropDownListItem from "./ModalComponents/WishesDropDownListItem";
 
 type ShowState = {
   show: boolean;
@@ -23,6 +30,19 @@ const Backdrop: React.FC<ClickProp> = ({ onClick }) => {
 const ModalOverlay: React.FC<ClickProp> = ({ onClick, heading }) => {
   const [showTopic, setShowTopic] = useState<ShowState>({ show: false });
   const [showSubTopic, setShowSubTopic] = useState<ShowState>({ show: false });
+  const dispatch = useDispatch();
+  const { token } = useTokenAndId();
+
+  const { loading, wishes, error } = useSelector<RootStateType>(
+    (state) => state.wishes
+  ) as wishesInterface;
+
+  const handleShowTopics:
+    | React.MouseEventHandler<SVGSVGElement>
+    | undefined = () => {
+    setShowTopic({ ...showTopic, show: !showTopic.show });
+    dispatch(WishesAction(token));
+  };
 
   return (
     <div className="modal">
@@ -35,50 +55,38 @@ const ModalOverlay: React.FC<ClickProp> = ({ onClick, heading }) => {
           <p className="modal__selects__header__text">Topic</p>
           <ArrowDropDownIcon
             className="modal__selects__header__arrow"
-            onClick={() => {
-              setShowTopic({ show: !showTopic.show });
-            }}
+            onClick={handleShowTopics}
           />
         </div>
-        
+
         {showTopic.show && (
           <div className="modal__selects__dropdown">
-            <div className="modal__selects__dropdown__item">
-              <input
-                type="checkbox"
-                className="modal__selects__dropdown__item__checkbox"
-              />{" "}
-              <p className="modal__selects__dropdown__item__text">
-                Electrostat
-              </p>
-            </div>
-            <div className="modal__selects__dropdown__item">
-              <input
-                type="checkbox"
-                className="modal__selects__dropdown__item__checkbox"
-              />{" "}
-              <p className="modal__selects__dropdown__item__text">
-                Electrostat
-              </p>
-            </div>
-            <div className="modal__selects__dropdown__item">
-              <input
-                type="checkbox"
-                className="modal__selects__dropdown__item__checkbox"
-              />{" "}
-              <p className="modal__selects__dropdown__item__text">
-                Electrostat
-              </p>
-            </div>
-            <div className="modal__selects__dropdown__item">
-              <input
-                type="checkbox"
-                className="modal__selects__dropdown__item__checkbox"
-              />{" "}
-              <p className="modal__selects__dropdown__item__text">
-                Electrostat
-              </p>
-            </div>
+            {loading ? (
+              <Progress size={25} />
+            ) : (
+              <>
+                {wishes &&
+                  wishes.map(
+                    (exp: {
+                      topic_id: string;
+                      title: string;
+                      user_id: string | null;
+                    }) => (
+                      <div key={exp.topic_id}>
+                        {/* <TopicDropDownListItem
+
+                          title={exp.title}
+                          user_id={exp.user_id}
+                        /> */}
+                        <WishesDropDownListItem
+                          title={exp.title}
+                          user_id={exp.user_id}
+                        />
+                      </div>
+                    )
+                  )}
+              </>
+            )}
           </div>
         )}
       </div>

@@ -2,7 +2,8 @@ import { FC, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import SideBar from "../components/HomePageComponent/SideBar";
 import Navbar from "../components/Navbar";
-import NewsFeed from "../components/ProfileComponents/NewsFeed";
+// import Home from "../components/ProfileComponents/NewsFeed";
+import HomeNewsFeed from "../components/HomePageComponent/HomeNewsFeed";
 import { Link } from "react-router-dom";
 import { QuestionFeedAction } from "../actions/QuestionFeedAction";
 import {
@@ -44,7 +45,7 @@ const HomePage: FC = () => {
               {questions &&
                 questions.map((question: questionFeedListInterface) => (
                   <div key={question.question_id}>
-                    <NewsFeed question={question} />
+                    <HomeNewsFeed question={question} />
                   </div>
                 ))}
             </div>

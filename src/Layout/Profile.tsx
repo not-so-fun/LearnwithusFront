@@ -12,6 +12,7 @@ import useTokenAndId from "../components/ReusableLogicComponents/useTokenAndId";
 import { Progress } from "../components/ReusableUIComponents/Spinner";
 import Navbar from "../components/Navbar";
 import ProfileNewsFeed from "../components/ProfileComponents/NewsFeed";
+import { RESET_USER_INFO } from "../constants/ProfileConstants";
 
 // const answerStats = [
 //   {
@@ -28,7 +29,7 @@ import ProfileNewsFeed from "../components/ProfileComponents/NewsFeed";
 
 const Profile: FC<RouteComponentProps<any>> = ({ match }) => {
   const dispatch = useDispatch();
-  const { token, user_id } = useTokenAndId();
+  const { token } = useTokenAndId();
 
   const { userInfo } = useSelector<RootStateType>(
     (state) => state.userInfo
@@ -42,9 +43,24 @@ const Profile: FC<RouteComponentProps<any>> = ({ match }) => {
     if (userInfo && userInfo?.token) {
       dispatch(ProfileAction(match.params.id, userInfo.token));
     } else {
-      dispatch(ProfileAction(user_id, token));
+      dispatch(ProfileAction(match.params.id, token));
     }
-  }, [match, token, userInfo, user_id]);
+
+    return () => {
+      dispatch({
+        type: RESET_USER_INFO,
+        reset_info: {
+          email: "",
+          first_name: "....",
+          last_name: "....",
+          image: "",
+          status: null,
+          user_id: "....",
+          username: "....",
+        },
+      });
+    };
+  }, [match, token, userInfo]);
 
   const { loading, profile_data, error } = useSelector<RootStateType>(
     (state) => state.profile_info_data

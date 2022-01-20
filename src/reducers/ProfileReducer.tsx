@@ -2,6 +2,7 @@ import {
   PROFILE_DATA_LOADING,
   PROFILE_DATA_SUCCESS,
   PROFILE_DATA_ERROR,
+  RESET_USER_INFO
 } from "../constants/ProfileConstants";
 import { ProfileActionTypes } from "../types/ProfileActionTypes";
 
@@ -48,6 +49,8 @@ export const ProfileReducer = (
       return { ...state,loading:false, profile_data: action.profile_data };
     case PROFILE_DATA_ERROR:
       return { ...state,loading:false, error: action.error };
+    case RESET_USER_INFO:
+      return {...state,profile_data:action.reset_info}
     default:
       return { ...state };
   }
