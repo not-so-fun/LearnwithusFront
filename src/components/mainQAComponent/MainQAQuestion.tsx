@@ -16,9 +16,11 @@ const MainQAQuestion: FC<MainQAQuestionInterface> = ({ question }) => {
           <div className="MainQA__Question__Top">
             <div className="MainQA__Question__Top__ProfileData">
               <div className="MainQA__Question__Top__ProfileData__ProfilePhoto">
-                <img src={question.image} className='MainQA__Question__Top__ProfileData__ProfilePhoto__Image'/>
+                <img src={question.image} className="MainQA__Question__Top__ProfileData__ProfilePhoto__Image" alt=""/>
               </div>
-              <div className="MainQA__Question__Top__ProfileData__ProfileName"></div>
+              <div className="MainQA__Question__Top__ProfileData__ProfileName">
+                  {question.username}
+              </div>
             </div>
             <div className="MainQA__Question__Top__QuestionData">
               <div className="MainQA__Question__Top__QuestionData__Views">
@@ -46,12 +48,18 @@ const MainQAQuestion: FC<MainQAQuestionInterface> = ({ question }) => {
             </div>
             <div className="MainQA__Question__MainQuestionData__QuestionTitleAndBody">
               <div className="MainQA__Question__MainQuestionData__QuestionTitleAndBody__Title">
-                hello world
+                {question.title}
               </div>
-              <div className="MainQA__Question__MainQuestionData__QuestionTitleAndBody__Body"></div>
+              <div className="MainQA__Question__MainQuestionData__QuestionTitleAndBody__Body">
+                {question.question}
+              </div>
+              <div className="MainQA__Question__MainQuestionData__QuestionTitleAndBody__Tag">
+                  <div className="MainQA__Question__MainQuestionData__QuestionTitleAndBody__Tag__TagName">{question.topic_title}</div>
+              </div>
             </div>
           </div>
         </div>
+        
       )
     }
     </>
