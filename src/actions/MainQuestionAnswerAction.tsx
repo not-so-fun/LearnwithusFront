@@ -25,10 +25,11 @@ import {
           }
         )
         .then((response) => {
-          dispatch({ type: MAIN_QUESTION_ANSWER_SUCCESS, question: response.data[0]});
+          // console.log(response.data)
+          dispatch({ type: MAIN_QUESTION_ANSWER_SUCCESS, question: response.data});
         })
         .catch((error) => {
-          console.log(error.response);
+          // console.log(error.response);
 
           dispatch({ type: MAIN_QUESTION_ANSWER_ERROR, error: error.response.data });
         });

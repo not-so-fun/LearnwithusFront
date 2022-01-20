@@ -20,7 +20,7 @@ body {
 .Center {
   height: 100vh;
   width: 100vw;
-  background: #EDEDED;
+  background: #ededed;
   display: flex;
   align-items: center;
   justify-content: center; }
@@ -62,7 +62,7 @@ body {
         margin: 0.4rem 0;
         margin-bottom: 1rem;
         padding: 1rem;
-        background: #F8F8F8;
+        background: #f8f8f8;
         border: none;
         outline: none; }
   .Auth__Box__InputBox__Header {
@@ -89,7 +89,7 @@ body {
       font-size: 1.3rem;
       margin: 0.5rem 0;
       padding: 1rem;
-      background: #F8F8F8;
+      background: #f8f8f8;
       border: none;
       margin-bottom: 1rem;
       outline: none; }
@@ -108,7 +108,7 @@ body {
         height: 4rem;
         font-size: 1.3rem;
         padding: 1rem;
-        background: #F8F8F8;
+        background: #f8f8f8;
         border: none;
         outline: none; }
         .Auth__Box__InputBox__InputHandler__InputBox__Input__Password {
@@ -122,7 +122,7 @@ body {
         justify-content: center;
         border: none;
         outline: none;
-        background: #F8F8F8; }
+        background: #f8f8f8; }
         .Auth__Box__InputBox__InputHandler__InputBox__Logos:hover {
           cursor: pointer; }
         .Auth__Box__InputBox__InputHandler__InputBox__Logos__Logo {
@@ -151,7 +151,7 @@ body {
 
 .Auth__Box__ForgotPassword {
   font-size: 1.7rem;
-  color: #32569F;
+  color: #32569f;
   text-decoration: underline;
   margin: 1rem 0; }
   .Auth__Box__ForgotPassword:hover {
@@ -220,7 +220,7 @@ body {
       text-align: left; }
 
 .AskQuestionForm {
-  background: #32569F;
+  background: #32569f;
   width: 100%;
   height: auto;
   border: 5px solid black; }
@@ -323,7 +323,7 @@ body {
         .AskQuestionForm__TitleInput__InputBox__Title__Box {
           width: 100%;
           height: 30rem;
-          background: #C4C4C4;
+          background: #c4c4c4;
           position: absolute;
           top: 5.6rem;
           left: 0;
@@ -344,7 +344,7 @@ body {
             padding: 0.4rem 1rem; }
             .AskQuestionForm__TitleInput__InputBox__Title__Box__Topics:hover {
               cursor: pointer;
-              background: #F8F8F8; }
+              background: #f8f8f8; }
         .AskQuestionForm__TitleInput__InputBox__Title__Input {
           font-size: 1.5rem;
           width: 100%;
@@ -410,10 +410,10 @@ body {
       border: none;
       font-size: 1.5rem;
       font-weight: 600;
-      background: #C4C4C4; }
+      background: #c4c4c4; }
       .AskQuestionForm__Footer__Button:hover {
         cursor: pointer;
-        background: #F8F8F8; }
+        background: #f8f8f8; }
 
 .Auth {
   height: 70rem;
@@ -431,19 +431,27 @@ body {
     align-items: center;
     justify-content: center; }
   .Auth__Side {
-    background: #32569F;
+    background: #32569f;
     max-width: 60rem;
     width: 60rem;
     min-width: 30rem; }
 
+.Main {
+  display: flex;
+  position: relative; }
+
 .Profile {
+  flex: 1;
   height: 100vh;
-  width: 98vw;
+  width: 100rem;
   display: flex;
   flex-direction: column;
-  align-items: center; }
+  align-items: center;
+  position: absolute;
+  left: 210px; }
   .Profile__Box {
-    width: 140rem;
+    flex: 0.1;
+    width: 100rem;
     height: 125rem;
     display: flex;
     flex-direction: column;
@@ -451,19 +459,22 @@ body {
     justify-content: space-between; }
     .Profile__Box__Navbar {
       height: 10rem;
-      width: 130rem;
-      margin: 1rem 0;
+      width: 105rem;
       display: flex;
       align-items: center;
-      justify-content: center; }
+      justify-content: center;
+      position: relative;
+      left: 170px; }
     .Profile__Box__Top {
-      background: #32569F;
-      width: 130rem;
+      background: #32569f;
+      width: 105rem;
       height: 50rem;
       margin-bottom: 2rem;
-      display: flex; }
+      display: flex;
+      position: relative;
+      left: 170px; }
       .Profile__Box__Top__ImagesAndDatas {
-        width: 35rem;
+        width: 30rem;
         height: 100%;
         display: flex;
         align-items: center;
@@ -499,7 +510,7 @@ body {
             fill: gold;
             margin: 0 0.2rem; }
       .Profile__Box__Top__Information {
-        width: 50rem;
+        width: 40rem;
         height: 100%;
         text-align: left;
         padding: 2rem;
@@ -510,7 +521,7 @@ body {
           margin: 2rem 0; }
           .Profile__Box__Top__Information__Name__firstName {
             display: inline-block;
-            width: 200px; }
+            width: 150px; }
           .Profile__Box__Top__Information__Name__firstName p {
             font-size: 14px;
             letter-spacing: 0.08rem;
@@ -523,7 +534,7 @@ body {
             padding: 0 0.5rem;
             color: #000; }
           .Profile__Box__Top__Information__Name__lastName {
-            width: 200px;
+            width: 150px;
             display: inline-block; }
           .Profile__Box__Top__Information__Name__lastName p {
             font-size: 14px;
@@ -573,7 +584,7 @@ body {
             transition: all 0.4s ease; }
             .Profile__Box__Top__Statistics__Botton__Expertise:hover, .Profile__Box__Top__Statistics__Botton__Wishes:hover {
               background-color: #fff;
-              color: #32569F; }
+              color: #32569f; }
         .Profile__Box__Top__Statistics__Div {
           width: 70%;
           padding: 2rem;
@@ -587,9 +598,11 @@ body {
             line-height: 70px;
             color: #4f9b13; }
     .Profile__Box__Main {
-      background: #C4C4C4;
-      width: 130rem;
+      background: #c4c4c4;
+      width: 105rem;
       height: 95rem;
+      position: relative;
+      left: 170px;
       margin-bottom: 2rem;
       display: flex; }
       .Profile__Box__Main__Newsfeed {
@@ -597,7 +610,7 @@ body {
         width: 90rem;
         overflow-y: scroll; }
         .Profile__Box__Main__Newsfeed__Div {
-          background-color: #F8F8F8;
+          background-color: #f8f8f8;
           color: #000;
           margin: 2rem;
           text-align: left;
@@ -637,6 +650,7 @@ body {
               .Profile__Box__Main__Newsfeed__Div__InnerDiv__Votes__Up, .Profile__Box__Main__Newsfeed__Div__InnerDiv__Votes__Down {
                 font-size: 50px !important;
                 cursor: pointer; }
+<<<<<<< HEAD
             .Profile__Box__Main__Newsfeed__Div__InnerDiv__Questions {
               text-decoration: none;
               color: #000; }
@@ -653,16 +667,27 @@ body {
                 padding: 1px 8px;
                 background-color: #C4C4C4;
                 text-decoration: none; }
+=======
+            .Profile__Box__Main__Newsfeed__Div__InnerDiv__Questions__Question {
+              background-color: #c4c4c4;
+              margin-bottom: 1rem;
+              font-size: 14px;
+              padding: 1px 8px; }
+            .Profile__Box__Main__Newsfeed__Div__InnerDiv__Questions__QuestionDetails {
+              font-size: 14px;
+              padding: 1px 8px;
+              background-color: #c4c4c4; }
+>>>>>>> sujan
       .Profile__Box__Main__SideInformation {
         height: 100%;
         width: 40rem;
-        background: #32569F; }
+        background: #32569f; }
         .Profile__Box__Main__SideInformation__Status {
           border: 2px solid black;
           background: #f6f6f6;
           margin: 1rem; }
           .Profile__Box__Main__SideInformation__Status__InnerDiv {
-            background: #C4C4C4;
+            background: #c4c4c4;
             padding: 0.5rem 0.5rem;
             display: flex;
             justify-content: space-between; }
@@ -676,7 +701,7 @@ body {
                 width: 115px;
                 padding: 1px 2px;
                 margin-bottom: 1rem;
-                background: #32569F;
+                background: #32569f;
                 display: flex;
                 justify-content: center;
                 align-items: center; }
@@ -710,7 +735,7 @@ body {
   z-index: 100;
   max-height: 40rem;
   overflow: scroll;
-  background-color: #32569F;
+  background-color: #32569f;
   color: #fff;
   overflow-x: hidden; }
   .modal__header {
@@ -777,7 +802,7 @@ body {
   font-size: 18px;
   font-weight: 600;
   color: #fff;
-  background-color: #32569F;
+  background-color: #32569f;
   width: 100%;
   display: flex;
   height: 6rem;
@@ -799,8 +824,9 @@ body {
       .Navbar__Links__content__Notification {
         position: absolute;
         top: 5rem;
-        left: -14.2rem;
-        background: red; }
+        left: -30rem;
+        background: #999;
+        width: 400px; }
       .Navbar__Links__content__Icon {
         display: flex;
         justify-content: center;
@@ -815,17 +841,23 @@ body {
           color: #fff !important;
           font-size: 34px !important; }
     .Navbar__Links__content:hover {
-      cursor: pointer;
-      color: #9b9bf9; }
+      cursor: pointer; }
 
 .HomePage {
   height: 100vh;
+  width: 98.9vw;
   display: flex;
-  background-color: #ededed; }
+  background-color: #ededed;
+  position: relative; }
   .HomePage__Left {
-    background-color: #32569F;
+    background-color: #32569f;
     color: #fff;
     flex: 0.3;
+    height: 680px;
+    width: 325px;
+    position: fixed;
+    top: 0;
+    left: 0;
     margin: 1rem 0;
     margin-left: 1rem; }
     .HomePage__Left__SideBar {
@@ -841,7 +873,8 @@ body {
         margin-top: 1rem;
         width: 95%; }
         .HomePage__Left__SideBar__Header:hover {
-          cursor: pointer; }
+          cursor: pointer;
+          box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.1); }
         .HomePage__Left__SideBar__Header p {
           margin-left: 1rem;
           font-size: 22px;
@@ -869,11 +902,18 @@ body {
     flex: 1;
     padding: 1rem; }
     .HomePage__Right__TopBar {
-      height: 8.8vh; }
+      height: 8.8vh;
+      width: 73vw;
+      position: relative;
+      left: 350px; }
     .HomePage__Right__MainBody {
+      position: relative;
+      left: 350px;
       display: flex;
       background-color: #fff;
-      height: 90vh; }
+      width: 73vw;
+      height: 90vh;
+      margin-top: 1rem; }
       .HomePage__Right__MainBody__NewsFeed {
         flex: 1;
         overflow-y: scroll; }
@@ -882,7 +922,9 @@ body {
         .HomePage__Right__MainBody__Notification__Box {
           border: 2px solid lightgrey;
           text-align: left;
-          padding: 0.9rem; }
+          padding: 0.9rem;
+          height: 539px;
+          overflow-y: scroll; }
           .HomePage__Right__MainBody__Notification__Box__Header {
             font-size: 18px;
             font-weight: 600;
@@ -897,7 +939,8 @@ body {
             padding: 8px; }
             .HomePage__Right__MainBody__Notification__Box__InnerDiv__Underline {
               margin-top: 1rem;
-              border-bottom: 2px solid lightgrey; }
+              border-bottom: 2px solid lightgrey;
+              margin-bottom: 1rem; }
             .HomePage__Right__MainBody__Notification__Box__InnerDiv__Header {
               display: flex;
               flex-direction: row;
@@ -907,18 +950,20 @@ body {
                 .HomePage__Right__MainBody__Notification__Box__InnerDiv__Header__Div > p:first-child {
                   color: #000;
                   font-weight: 600;
-                  font-size: 14px; }
+                  font-size: 13px; }
+                .HomePage__Right__MainBody__Notification__Box__InnerDiv__Header__Div > p:last-child {
+                  font-size: 13px; }
             .HomePage__Right__MainBody__Notification__Box__InnerDiv__Button {
               display: flex;
               justify-content: flex-end;
               margin: 1rem 0rem; }
               .HomePage__Right__MainBody__Notification__Box__InnerDiv__Button__Accept {
                 border: none;
-                background-color: #32569F;
+                background-color: #32569f;
                 color: #fff;
                 font-size: 16px;
                 padding: 7px 17px;
-                width: 48%;
+                width: 28%;
                 border-radius: 5px; }
                 .HomePage__Right__MainBody__Notification__Box__InnerDiv__Button__Accept:hover {
                   cursor: pointer; }
@@ -929,7 +974,7 @@ body {
                 font-size: 16px;
                 padding: 7px 17px;
                 border-radius: 5px;
-                width: 48%;
+                width: 28%;
                 margin-left: 2rem; }
                 .HomePage__Right__MainBody__Notification__Box__InnerDiv__Button__Decline:hover {
                   cursor: pointer; }
@@ -940,10 +985,10 @@ body {
           margin-top: 1rem;
           padding: 0.8rem; }
           .HomePage__Right__MainBody__Notification__Below__Links {
-            background-color: #32569F;
+            background-color: #32569f;
             color: #fff;
             font-size: 15px;
-            padding: .5rem 1rem;
+            padding: 0.5rem 1rem;
             border: none;
             border-radius: 4px;
             font-weight: 600;
@@ -978,7 +1023,7 @@ body {
   display: flex;
   padding: 1rem; }
   .AskQuestion__Main__Form {
-    background: #32569F;
+    background: #32569f;
     flex: 1; }
   .AskQuestion__Main__Side {
     background: yellow;
