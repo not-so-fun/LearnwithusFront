@@ -1,12 +1,24 @@
+.Main {
+  display: flex;
+  position: relative;
+}
+
 .Profile {
+  flex: 1;
   height: 100vh;
-  width: 98vw;
+  width: 100rem;
+
   display: flex;
   flex-direction: column;
   align-items: center;
 
+  position: absolute;
+  left: 210px;
+
   &__Box {
-    width: 140rem;
+    flex: 0.1;
+    width: 100rem;
+
     height: 125rem;
     display: flex;
     flex-direction: column;
@@ -15,21 +27,26 @@
 
     &__Navbar {
       height: 10rem;
-      width: 130rem;
-      margin: 1rem 0;
+      width: 105rem;
+
       display: flex;
       align-items: center;
       justify-content: center;
+      // border: 2px solid red;
+      position: relative;
+      left: 170px;
     }
     &__Top {
       background: $color-primary;
-      width: 130rem;
+      width: 105rem;
       height: 50rem;
       margin-bottom: 2rem;
       display: flex;
+      position: relative;
+      left: 170px;
 
       &__ImagesAndDatas {
-        width: 35rem;
+        width: 30rem;
         height: 100%;
         display: flex;
         align-items: center;
@@ -72,7 +89,7 @@
         }
       }
       &__Information {
-        width: 50rem;
+        width: 40rem;
         height: 100%;
         text-align: left;
         padding: 2rem;
@@ -86,7 +103,7 @@
           &__firstName {
             display: inline-block;
 
-            width: 200px;
+            width: 150px;
           }
           &__firstName p {
             font-size: 14px;
@@ -103,7 +120,7 @@
           }
 
           &__lastName {
-            width: 200px;
+            width: 150px;
             display: inline-block;
           }
           &__lastName p {
@@ -189,8 +206,11 @@
     }
     &__Main {
       background: $color-grey-light-2;
-      width: 130rem;
+      width: 105rem;
       height: 95rem;
+      position: relative;
+      left: 170px;
+
       margin-bottom: 2rem;
       display: flex;
       &__Newsfeed {
