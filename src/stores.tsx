@@ -11,6 +11,7 @@ import { ExpertiseReducer } from "./reducers/ExpertiseReducer";
 import { TopicReducer } from "./reducers/TopicReducer";
 import { SubTopicReducer } from "./reducers/SubTopicReducer";
 import { QuestionFeedReducer } from "./reducers/QuestionFeedReducers";
+import { MainQuestionAnswerReducer } from "./reducers/MainQuestionAnswerReducer";
 
 const rootReducer = combineReducers({
   userInfo: LoginReducer,
@@ -22,7 +23,8 @@ const rootReducer = combineReducers({
   topics:TopicReducer,
   subtopics:SubTopicReducer,
   expertises:ExpertiseReducer,
-  questionFeed:QuestionFeedReducer
+  questionFeed:QuestionFeedReducer,
+  mainQA: MainQuestionAnswerReducer
 });
 
 const store = createStore(

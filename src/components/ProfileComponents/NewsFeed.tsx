@@ -41,7 +41,7 @@ const NewsFeed: FC<quesInterface> = ({ question }) => {
           </h1>
           <ArrowDropDownIcon className="Profile__Box__Main__Newsfeed__Div__InnerDiv__Votes__Down" />
         </div>
-        <div className="Profile__Box__Main__Newsfeed__Div__InnerDiv__Questions">
+        <Link to={`/questions/${question.question_id}`} className="Profile__Box__Main__Newsfeed__Div__InnerDiv__Questions">
           <div className="Profile__Box__Main__Newsfeed__Div__InnerDiv__Questions__Question">
             <p>{question.title}</p>
           </div>
@@ -61,7 +61,7 @@ const NewsFeed: FC<quesInterface> = ({ question }) => {
               sit nam incidunt explicabo ullam.
             </p>
           </div>
-        </div>
+        </Link>
       </div>
     </div>
   );

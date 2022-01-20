@@ -637,15 +637,20 @@ body {
               .Profile__Box__Main__Newsfeed__Div__InnerDiv__Votes__Up, .Profile__Box__Main__Newsfeed__Div__InnerDiv__Votes__Down {
                 font-size: 50px !important;
                 cursor: pointer; }
-            .Profile__Box__Main__Newsfeed__Div__InnerDiv__Questions__Question {
-              background-color: #C4C4C4;
-              margin-bottom: 1rem;
-              font-size: 14px;
-              padding: 1px 8px; }
-            .Profile__Box__Main__Newsfeed__Div__InnerDiv__Questions__QuestionDetails {
-              font-size: 14px;
-              padding: 1px 8px;
-              background-color: #C4C4C4; }
+            .Profile__Box__Main__Newsfeed__Div__InnerDiv__Questions {
+              text-decoration: none;
+              color: #000; }
+              .Profile__Box__Main__Newsfeed__Div__InnerDiv__Questions__Question {
+                background-color: #C4C4C4;
+                margin-bottom: 1rem;
+                font-size: 14px;
+                padding: 1px 8px;
+                text-decoration: none; }
+              .Profile__Box__Main__Newsfeed__Div__InnerDiv__Questions__QuestionDetails {
+                font-size: 14px;
+                padding: 1px 8px;
+                background-color: #C4C4C4;
+                text-decoration: none; }
       .Profile__Box__Main__SideInformation {
         height: 100%;
         width: 40rem;
@@ -978,6 +983,307 @@ body {
     flex: 0 0 30%; }
 
 .MainQA {
-  height: 100vh;
+  height: auto;
   width: 100vw;
-  background: red; }
+  background: #32569F;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  overflow-y: scroll; }
+  .MainQA__Heading {
+    margin: 0 auto;
+    height: 5rem;
+    color: #fff;
+    padding: 0 1rem;
+    margin: .4rem 0;
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.4rem;
+    font-weight: 600; }
+  .MainQA__Answers {
+    background: white;
+    height: auto;
+    width: 140rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+  .MainQA__Answer {
+    margin: 1rem auto;
+    height: 50rem;
+    width: 130rem;
+    border: 1px solid #C4C4C4;
+    background: #fff;
+    display: flex;
+    align-items: center; }
+    .MainQA__Answer__AnswerLikes {
+      flex: 0 0 10rem;
+      height: 96%;
+      margin: 0 .5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+      .MainQA__Answer__AnswerLikes__Box {
+        height: 20rem;
+        width: 7rem;
+        border: 1px solid #C4C4C4;
+        border-radius: .5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly; }
+        .MainQA__Answer__AnswerLikes__Box__Upvote {
+          height: 5rem;
+          width: 5rem;
+          display: flex;
+          justify-content: center;
+          align-items: center; }
+        .MainQA__Answer__AnswerLikes__Box__TotalLikes {
+          height: 7rem;
+          width: 6rem;
+          background: white;
+          font-size: 2.3rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: #000; }
+        .MainQA__Answer__AnswerLikes__Box__Downvote {
+          height: 5rem;
+          width: 5rem;
+          display: flex;
+          justify-content: center;
+          align-items: center; }
+    .MainQA__Answer__AnswerData {
+      flex: 1;
+      height: 95%;
+      margin: 1rem .5rem;
+      border: 1px solid #C4C4C4;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly; }
+      .MainQA__Answer__AnswerData__Top {
+        height: 7rem;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between; }
+        .MainQA__Answer__AnswerData__Top__Answered {
+          height: 5rem;
+          width: auto;
+          margin: 0 1rem;
+          display: flex;
+          align-items: center;
+          justify-content: space-between; }
+          .MainQA__Answer__AnswerData__Top__Answered__ProfilePhoto {
+            height: 5rem;
+            width: 5rem;
+            border-radius: 50%;
+            background: #C4C4C4; }
+          .MainQA__Answer__AnswerData__Top__Answered__Heading {
+            flex: 1;
+            height: 5rem;
+            margin: 0 .5rem;
+            background: white;
+            border: 1px solid #C4C4C4;
+            border-radius: 5px;
+            font-size: 2rem;
+            color: #000;
+            padding: 0 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start; }
+            .MainQA__Answer__AnswerData__Top__Answered__Heading__Bold {
+              font-size: 2rem;
+              font-weight: 600;
+              margin-right: .4rem; }
+        .MainQA__Answer__AnswerData__Top__AnsweredData {
+          height: 5rem;
+          width: auto;
+          margin: 0 .5rem;
+          display: flex;
+          align-items: center;
+          justify-content: flex-start; }
+          .MainQA__Answer__AnswerData__Top__AnsweredData__Data {
+            flex: 1;
+            height: 5rem;
+            margin-left: .5rem;
+            border-radius: 5px;
+            background: white;
+            border: 1px solid #C4C4C4;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 0 1rem;
+            font-size: 2rem;
+            color: #000; }
+          .MainQA__Answer__AnswerData__Top__AnsweredData__Delete {
+            width: 5rem;
+            height: 5rem;
+            background: white;
+            margin: 0 1rem;
+            border-radius: 50%;
+            border: 1px solid #C4C4C4;
+            display: flex;
+            align-items: center;
+            justify-content: center; }
+            .MainQA__Answer__AnswerData__Top__AnsweredData__Delete:hover {
+              cursor: pointer;
+              background: #C4C4C4; }
+            .MainQA__Answer__AnswerData__Top__AnsweredData__Delete__Icon {
+              height: 3rem;
+              width: 3rem; }
+      .MainQA__Answer__AnswerData__Body {
+        width: 99%;
+        height: 38rem;
+        background: #C4C4C4;
+        border-radius: 5px; }
+  .MainQA__Question {
+    height: auto;
+    width: 140rem;
+    background: #fff;
+    margin: 1rem auto;
+    border-radius: 5px; }
+    .MainQA__Question__Top {
+      height: 7rem;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 1rem 0; }
+      .MainQA__Question__Top__ProfileData {
+        height: 6rem;
+        width: 25rem;
+        background: #C4C4C4;
+        margin: 0 1rem;
+        border-radius: 5px;
+        display: flex;
+        align-items: center; }
+        .MainQA__Question__Top__ProfileData__ProfilePhoto {
+          height: 5rem;
+          width: 5rem;
+          border-radius: 50%;
+          margin: 0 .5rem;
+          background: #fff; }
+        .MainQA__Question__Top__ProfileData__ProfileName {
+          flex: 1;
+          height: 5rem;
+          margin: 0 .5rem;
+          background: #fff;
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          font-size: 2rem;
+          color: #000;
+          padding-left: .3rem; }
+      .MainQA__Question__Top__QuestionData {
+        height: 5rem;
+        width: 45rem;
+        margin: 0 1rem;
+        display: flex;
+        align-items: center; }
+        .MainQA__Question__Top__QuestionData__Views {
+          flex: 1;
+          height: 5rem;
+          background: white;
+          border-radius: 5px;
+          border: 1px solid #C4C4C4;
+          margin: 0 .5rem;
+          display: flex;
+          justify-content: space-between;
+          padding: 0 .5rem;
+          align-items: center;
+          font-size: 1.8rem;
+          color: #000; }
+        .MainQA__Question__Top__QuestionData__Delete {
+          height: 5rem;
+          width: 5rem;
+          border-radius: 50%;
+          border: 1px solid #C4C4C4;
+          background: white;
+          margin: 0 1rem;
+          display: flex;
+          align-items: center;
+          justify-content: center; }
+          .MainQA__Question__Top__QuestionData__Delete:hover {
+            cursor: pointer;
+            background: #C4C4C4; }
+          .MainQA__Question__Top__QuestionData__Delete__Icon {
+            height: 3rem;
+            width: 3rem; }
+    .MainQA__Question__MainQuestionData {
+      width: 100%;
+      height: 50rem;
+      margin: 1rem 0;
+      display: flex;
+      align-items: center; }
+      .MainQA__Question__MainQuestionData__QuestionLikes {
+        height: 96%;
+        flex: 0 0 10rem;
+        margin: 0 .5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center; }
+        .MainQA__Question__MainQuestionData__QuestionLikes__LikesBox {
+          height: 18rem;
+          width: 8rem;
+          border: 1px solid #C4C4C4;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: space-evenly; }
+          .MainQA__Question__MainQuestionData__QuestionLikes__LikesBox__Upvote {
+            height: 5rem;
+            width: 5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center; }
+          .MainQA__Question__MainQuestionData__QuestionLikes__LikesBox__Data {
+            height: 4rem;
+            width: 7rem;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.3rem;
+            font-weight: 600;
+            color: #000; }
+          .MainQA__Question__MainQuestionData__QuestionLikes__LikesBox__Downvote {
+            height: 5rem;
+            width: 5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center; }
+            .MainQA__Question__MainQuestionData__QuestionLikes__LikesBox__Downvote__Logo {
+              width: 5rem;
+              height: 5rem; }
+              .MainQA__Question__MainQuestionData__QuestionLikes__LikesBox__Downvote__Logo:hover {
+                cursor: pointer; }
+      .MainQA__Question__MainQuestionData__QuestionTitleAndBody {
+        background: white;
+        height: 96%;
+        flex: 1;
+        margin: 0 .5rem;
+        display: flex;
+        flex-direction: column; }
+        .MainQA__Question__MainQuestionData__QuestionTitleAndBody__Title {
+          height: 10rem;
+          background: #C4C4C4;
+          width: 96%;
+          margin: .5rem auto;
+          border-radius: 1rem;
+          font-size: 2rem;
+          font-weight: 600;
+          color: #000;
+          padding: 1rem;
+          display: flex;
+          align-items: flex-start;
+          justify-content: flex-start; }
+        .MainQA__Question__MainQuestionData__QuestionTitleAndBody__Body {
+          height: calc(100% - 10rem);
+          background: #C4C4C4;
+          width: 96%;
+          margin: .5rem auto;
+          border-radius: 1rem; }

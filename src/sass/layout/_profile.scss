@@ -256,17 +256,21 @@
             }
 
             &__Questions {
+              text-decoration: none;
+              color:$color-black;
               &__Question {
                 background-color: $color-grey-light-2;
                 margin-bottom: 1rem;
                 font-size: 14px;
                 padding: 1px 8px;
+                text-decoration: none;
               }
 
               &__QuestionDetails {
                 font-size: 14px;
                 padding: 1px 8px;
                 background-color: $color-grey-light-2;
+                text-decoration: none;
               }
             }
           }
