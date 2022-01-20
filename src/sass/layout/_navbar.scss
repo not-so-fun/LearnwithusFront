@@ -29,9 +29,10 @@
         position: absolute;
         top: 5rem;
         left: -30rem;
-        background: $color-grey-dark-2;
+        background: #fdfdfd;
 
         width: 400px;
+        z-index: 1;
       }
 
       &__Icon {
