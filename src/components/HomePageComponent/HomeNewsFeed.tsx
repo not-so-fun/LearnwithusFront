@@ -3,22 +3,43 @@ import { Avatar } from "@mui/material";
 import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import { questionFeedListInterface } from "../../reducers/QuestionFeedReducers";
+import useTokenAndId from "../ReusableLogicComponents/useTokenAndId";
+import axios from "../../axios"
 import { Link } from "react-router-dom";
 interface quesInterface {
   question: questionFeedListInterface;
 }
 const HomeNewsFeed: FC<quesInterface> = ({ question }) => {
   const [upvote, setUpvote] = useState<boolean | null>(null);
+  const {token}=useTokenAndId()
 
   useEffect(() => {
     setUpvote(question.upvote);
   }, [question]);
+
+  const upVote=()=>{
+    axios.post(`/question-upvote`,{
+      upvote:true,
+      question_id:question.question_id
+    },{
+      headers:{
+        "x-auth-token":token
+      }
+    })
+    .then((response)=>{
+      console.log(response.data)
+    })
+    .catch((error)=>{
+      console.log(error)
+    })
+  }
 
   const handleChangeUpvoteUp:
     | React.MouseEventHandler<SVGSVGElement>
     | undefined = () => {
     if (upvote === null) {
       setUpvote(true);
+      upVote()
     } else {
       if (upvote === true) {
         setUpvote(null);
