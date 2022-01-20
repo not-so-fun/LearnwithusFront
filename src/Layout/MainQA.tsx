@@ -41,6 +41,7 @@ const MainQA: FC<RouteComponentProps<any>> = ({ match }) => {
   }, [match, token]);
 
   return (
+    
     <div className="MainQA">
       <div className="MainQA__Heading">Main Question Answer</div>
 
@@ -50,6 +51,7 @@ const MainQA: FC<RouteComponentProps<any>> = ({ match }) => {
         {answers && answers.map((ans) => <MainQAAnswer ans={ans} />)}
       </div>
     </div>
+    
   );
 };
 

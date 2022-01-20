@@ -4,21 +4,10 @@
 }
 
 .Profile {
-  flex: 1;
-  height: 100vh;
-  width: 100rem;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  position: absolute;
-  left: 210px;
+ 
 
   &__Box {
-    flex: 0.1;
-    width: 100rem;
-
+    width: 100%;
     height: 125rem;
     display: flex;
     flex-direction: column;
@@ -27,7 +16,7 @@
 
     &__Navbar {
       height: 10rem;
-      width: 105rem;
+      width: 100%;
 
       display: flex;
       align-items: center;
@@ -38,15 +27,16 @@
     }
     &__Top {
       background: $color-primary;
-      width: 105rem;
+      width:100%;
       height: 50rem;
       margin-bottom: 2rem;
       display: flex;
-      position: relative;
-      left: 170px;
+      // position: relative;
+      // left: 170px;
 
       &__ImagesAndDatas {
-        width: 30rem;
+        // width: 30rem;
+        flex: 0 0 30%;
         height: 100%;
         display: flex;
         align-items: center;
@@ -89,7 +79,7 @@
         }
       }
       &__Information {
-        width: 40rem;
+        flex: 0 0 40%;
         height: 100%;
         text-align: left;
         padding: 2rem;
@@ -158,7 +148,7 @@
         }
       }
       &__Statistics {
-        width: 450px;
+        flex:1;
         color: $color-white;
         display: flex;
         flex-direction: column;
@@ -206,10 +196,10 @@
     }
     &__Main {
       background: $color-grey-light-2;
-      width: 105rem;
+      width: 100%;
       height: 95rem;
-      position: relative;
-      left: 170px;
+      // position: relative;
+      // left: 170px;
 
       margin-bottom: 2rem;
       display: flex;

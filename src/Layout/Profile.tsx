@@ -68,16 +68,9 @@ const Profile: FC<RouteComponentProps<any>> = ({ match }) => {
   ) as profileDataInterface;
 
   return (
-    <div className="Main">
-      <div className="HomePage__Left">
-        <SideBar />
-      </div>
-      <div className="Profile">
+    
+      // <div className="Profile">
         <div className="Profile__Box">
-          <div className="Profile__Box__Navbar">
-            <Navbar />
-          </div>
-
           {loading ? (
             <>
               <div className="Profile__Box__Top">
@@ -129,8 +122,7 @@ const Profile: FC<RouteComponentProps<any>> = ({ match }) => {
             </>
           )}
         </div>
-      </div>
-    </div>
+      // </div>
   );
 };
 

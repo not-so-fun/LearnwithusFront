@@ -439,270 +439,256 @@ body {
   display: flex;
   position: relative; }
 
-.Profile {
-  flex: 1;
-  height: 100vh;
-  width: 100rem;
+.Profile__Box {
+  width: 100%;
+  height: 125rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: absolute;
-  left: 210px; }
-  .Profile__Box {
-    flex: 0.1;
-    width: 100rem;
-    height: 125rem;
+  justify-content: space-between; }
+  .Profile__Box__Navbar {
+    height: 10rem;
+    width: 100%;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: space-between; }
-    .Profile__Box__Navbar {
-      height: 10rem;
-      width: 105rem;
+    justify-content: center;
+    position: relative;
+    left: 170px; }
+  .Profile__Box__Top {
+    background: #32569f;
+    width: 100%;
+    height: 50rem;
+    margin-bottom: 2rem;
+    display: flex; }
+    .Profile__Box__Top__ImagesAndDatas {
+      flex: 0 0 30%;
+      height: 100%;
       display: flex;
       align-items: center;
-      justify-content: center;
-      position: relative;
-      left: 170px; }
-    .Profile__Box__Top {
-      background: #32569f;
-      width: 105rem;
-      height: 50rem;
-      margin-bottom: 2rem;
-      display: flex;
-      position: relative;
-      left: 170px; }
-      .Profile__Box__Top__ImagesAndDatas {
-        width: 30rem;
-        height: 100%;
+      flex-direction: column; }
+      .Profile__Box__Top__ImagesAndDatas__Image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 20rem;
+        height: 20rem;
+        margin-top: 4rem;
+        margin-bottom: 0.5rem;
+        background: #fff;
+        border-radius: 50%; }
+      .Profile__Box__Top__ImagesAndDatas__ProfileName {
+        margin: 0.2rem 0;
+        height: 5rem;
+        font-size: 2rem;
+        letter-spacing: 0.05rem;
+        font-weight: 600;
         display: flex;
         align-items: center;
-        flex-direction: column; }
-        .Profile__Box__Top__ImagesAndDatas__Image {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          width: 20rem;
-          height: 20rem;
-          margin-top: 4rem;
-          margin-bottom: 0.5rem;
-          background: #fff;
-          border-radius: 50%; }
-        .Profile__Box__Top__ImagesAndDatas__ProfileName {
-          margin: 0.2rem 0;
-          height: 5rem;
-          font-size: 2rem;
-          letter-spacing: 0.05rem;
-          font-weight: 600;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          color: #fff; }
-        .Profile__Box__Top__ImagesAndDatas__Rating {
-          height: 5rem;
-          display: flex;
-          align-items: center;
-          justify-content: center; }
-          .Profile__Box__Top__ImagesAndDatas__Rating__Star {
-            height: 3rem;
-            width: 3rem;
-            fill: gold;
-            margin: 0 0.2rem; }
-      .Profile__Box__Top__Information {
-        width: 40rem;
-        height: 100%;
-        text-align: left;
-        padding: 2rem;
+        justify-content: center;
         color: #fff; }
-        .Profile__Box__Top__Information__Name {
-          display: flex;
-          justify-content: space-between;
-          margin: 2rem 0; }
-          .Profile__Box__Top__Information__Name__firstName {
-            display: inline-block;
-            width: 150px; }
-          .Profile__Box__Top__Information__Name__firstName p {
-            font-size: 14px;
-            letter-spacing: 0.08rem;
-            margin-bottom: 0.5rem; }
-          .Profile__Box__Top__Information__Name__firstName h4 {
-            font-size: 18px;
-            font-weight: 500;
-            letter-spacing: 0.03rem;
-            background-color: #fff;
-            padding: 0 0.5rem;
-            color: #000; }
-          .Profile__Box__Top__Information__Name__lastName {
-            width: 150px;
-            display: inline-block; }
-          .Profile__Box__Top__Information__Name__lastName p {
-            font-size: 14px;
-            letter-spacing: 0.08rem;
-            margin-bottom: 0.1rem;
-            margin-bottom: 0.5rem; }
-          .Profile__Box__Top__Information__Name__lastName h4 {
-            font-size: 18px;
-            font-weight: 500;
-            letter-spacing: 0.03rem;
-            background-color: #fff;
-            padding: 0 0.5rem;
-            color: #000; }
-        .Profile__Box__Top__Information__BasicInfo {
-          margin-bottom: 2rem; }
-        .Profile__Box__Top__Information__BasicInfo p {
+      .Profile__Box__Top__ImagesAndDatas__Rating {
+        height: 5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center; }
+        .Profile__Box__Top__ImagesAndDatas__Rating__Star {
+          height: 3rem;
+          width: 3rem;
+          fill: gold;
+          margin: 0 0.2rem; }
+    .Profile__Box__Top__Information {
+      flex: 0 0 40%;
+      height: 100%;
+      text-align: left;
+      padding: 2rem;
+      color: #fff; }
+      .Profile__Box__Top__Information__Name {
+        display: flex;
+        justify-content: space-between;
+        margin: 2rem 0; }
+        .Profile__Box__Top__Information__Name__firstName {
+          display: inline-block;
+          width: 150px; }
+        .Profile__Box__Top__Information__Name__firstName p {
           font-size: 14px;
           letter-spacing: 0.08rem;
-          margin-bottom: 0.1rem;
           margin-bottom: 0.5rem; }
-        .Profile__Box__Top__Information__BasicInfo h4 {
+        .Profile__Box__Top__Information__Name__firstName h4 {
           font-size: 18px;
           font-weight: 500;
           letter-spacing: 0.03rem;
           background-color: #fff;
           padding: 0 0.5rem;
           color: #000; }
-      .Profile__Box__Top__Statistics {
-        width: 450px;
-        color: #fff;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center; }
-        .Profile__Box__Top__Statistics__Botton {
-          margin-top: 2rem; }
-          .Profile__Box__Top__Statistics__Botton__Expertise, .Profile__Box__Top__Statistics__Botton__Wishes {
-            margin-left: 2rem;
-            border: none;
-            padding: 6px 12px;
-            background-color: transparent;
-            border: 2px solid #fff;
-            color: #fff;
-            font-weight: 600;
-            letter-spacing: 0.09rem;
-            cursor: pointer;
-            transition: all 0.4s ease; }
-            .Profile__Box__Top__Statistics__Botton__Expertise:hover, .Profile__Box__Top__Statistics__Botton__Wishes:hover {
-              background-color: #fff;
-              color: #32569f; }
-        .Profile__Box__Top__Statistics__Div {
-          width: 70%;
-          padding: 2rem;
-          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); }
-          .Profile__Box__Top__Statistics__Div__Data p {
-            font-size: 14px;
-            letter-spacing: 0.08rem; }
-          .Profile__Box__Top__Statistics__Div__Data h1 {
-            font-weight: bold;
-            font-size: 55px;
-            line-height: 70px;
-            color: #4f9b13; }
-    .Profile__Box__Main {
-      background: #c4c4c4;
-      width: 105rem;
-      height: 95rem;
-      position: relative;
-      left: 170px;
-      margin-bottom: 2rem;
-      display: flex; }
-      .Profile__Box__Main__Newsfeed {
-        height: 100%;
-        width: 90rem;
-        overflow-y: scroll; }
-        .Profile__Box__Main__Newsfeed__Div {
-          background-color: #f8f8f8;
-          color: #000;
-          margin: 2rem;
-          text-align: left;
-          padding: 8px;
-          border-radius: 5px; }
-          .Profile__Box__Main__Newsfeed__Div__Header {
+        .Profile__Box__Top__Information__Name__lastName {
+          width: 150px;
+          display: inline-block; }
+        .Profile__Box__Top__Information__Name__lastName p {
+          font-size: 14px;
+          letter-spacing: 0.08rem;
+          margin-bottom: 0.1rem;
+          margin-bottom: 0.5rem; }
+        .Profile__Box__Top__Information__Name__lastName h4 {
+          font-size: 18px;
+          font-weight: 500;
+          letter-spacing: 0.03rem;
+          background-color: #fff;
+          padding: 0 0.5rem;
+          color: #000; }
+      .Profile__Box__Top__Information__BasicInfo {
+        margin-bottom: 2rem; }
+      .Profile__Box__Top__Information__BasicInfo p {
+        font-size: 14px;
+        letter-spacing: 0.08rem;
+        margin-bottom: 0.1rem;
+        margin-bottom: 0.5rem; }
+      .Profile__Box__Top__Information__BasicInfo h4 {
+        font-size: 18px;
+        font-weight: 500;
+        letter-spacing: 0.03rem;
+        background-color: #fff;
+        padding: 0 0.5rem;
+        color: #000; }
+    .Profile__Box__Top__Statistics {
+      flex: 1;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center; }
+      .Profile__Box__Top__Statistics__Botton {
+        margin-top: 2rem; }
+        .Profile__Box__Top__Statistics__Botton__Expertise, .Profile__Box__Top__Statistics__Botton__Wishes {
+          margin-left: 2rem;
+          border: none;
+          padding: 6px 12px;
+          background-color: transparent;
+          border: 2px solid #fff;
+          color: #fff;
+          font-weight: 600;
+          letter-spacing: 0.09rem;
+          cursor: pointer;
+          transition: all 0.4s ease; }
+          .Profile__Box__Top__Statistics__Botton__Expertise:hover, .Profile__Box__Top__Statistics__Botton__Wishes:hover {
+            background-color: #fff;
+            color: #32569f; }
+      .Profile__Box__Top__Statistics__Div {
+        width: 70%;
+        padding: 2rem;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); }
+        .Profile__Box__Top__Statistics__Div__Data p {
+          font-size: 14px;
+          letter-spacing: 0.08rem; }
+        .Profile__Box__Top__Statistics__Div__Data h1 {
+          font-weight: bold;
+          font-size: 55px;
+          line-height: 70px;
+          color: #4f9b13; }
+  .Profile__Box__Main {
+    background: #c4c4c4;
+    width: 100%;
+    height: 95rem;
+    margin-bottom: 2rem;
+    display: flex; }
+    .Profile__Box__Main__Newsfeed {
+      height: 100%;
+      width: 90rem;
+      overflow-y: scroll; }
+      .Profile__Box__Main__Newsfeed__Div {
+        background-color: #f8f8f8;
+        color: #000;
+        margin: 2rem;
+        text-align: left;
+        padding: 8px;
+        border-radius: 5px; }
+        .Profile__Box__Main__Newsfeed__Div__Header {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          margin-bottom: 0.7rem;
+          justify-content: space-between; }
+          .Profile__Box__Main__Newsfeed__Div__Header__Left {
             display: flex;
             flex-direction: row;
-            align-items: center;
-            margin-bottom: 0.7rem;
-            justify-content: space-between; }
-            .Profile__Box__Main__Newsfeed__Div__Header__Left {
-              display: flex;
-              flex-direction: row;
-              align-items: center; }
-              .Profile__Box__Main__Newsfeed__Div__Header__Left p {
-                margin-left: 1rem;
-                font-size: 18px; }
-            .Profile__Box__Main__Newsfeed__Div__Header__Right {
-              border: 2px solid lightgray;
-              border-radius: 5px;
-              padding: 4px 5px;
-              display: flex;
-              font-size: 12px; }
-            .Profile__Box__Main__Newsfeed__Div__Header__image {
-              height: 50px;
-              width: 50px; }
-          .Profile__Box__Main__Newsfeed__Div__InnerDiv {
-            display: flex; }
-            .Profile__Box__Main__Newsfeed__Div__InnerDiv__Votes {
-              display: flex;
-              flex-direction: column;
-              align-items: center;
-              justify-content: center;
-              padding: 0rem 1rem;
-              color: #777; }
-              .Profile__Box__Main__Newsfeed__Div__InnerDiv__Votes__Up, .Profile__Box__Main__Newsfeed__Div__InnerDiv__Votes__Down {
-                font-size: 50px !important;
-                cursor: pointer; }
-            .Profile__Box__Main__Newsfeed__Div__InnerDiv__Questions {
-              text-decoration: none;
-              color: #000; }
-              .Profile__Box__Main__Newsfeed__Div__InnerDiv__Questions:hover {
-                cursor: pointer; }
-              .Profile__Box__Main__Newsfeed__Div__InnerDiv__Questions__Question {
-                background-color: #c4c4c4;
-                margin-bottom: 1rem;
-                font-size: 14px;
-                padding: 1px 8px;
-                text-decoration: none; }
-              .Profile__Box__Main__Newsfeed__Div__InnerDiv__Questions__QuestionDetails {
-                font-size: 14px;
-                padding: 1px 8px;
-                background-color: #c4c4c4;
-                text-decoration: none; }
-      .Profile__Box__Main__SideInformation {
-        height: 100%;
-        width: 40rem;
-        background: #32569f; }
-        .Profile__Box__Main__SideInformation__Status {
-          border: 2px solid black;
-          background: #f6f6f6;
-          margin: 1rem; }
-          .Profile__Box__Main__SideInformation__Status__InnerDiv {
-            background: #c4c4c4;
-            padding: 0.5rem 0.5rem;
+            align-items: center; }
+            .Profile__Box__Main__Newsfeed__Div__Header__Left p {
+              margin-left: 1rem;
+              font-size: 18px; }
+          .Profile__Box__Main__Newsfeed__Div__Header__Right {
+            border: 2px solid lightgray;
+            border-radius: 5px;
+            padding: 4px 5px;
             display: flex;
-            justify-content: space-between; }
-            .Profile__Box__Main__SideInformation__Status__InnerDiv__Box {
+            font-size: 12px; }
+          .Profile__Box__Main__Newsfeed__Div__Header__image {
+            height: 50px;
+            width: 50px; }
+        .Profile__Box__Main__Newsfeed__Div__InnerDiv {
+          display: flex; }
+          .Profile__Box__Main__Newsfeed__Div__InnerDiv__Votes {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 0rem 1rem;
+            color: #777; }
+            .Profile__Box__Main__Newsfeed__Div__InnerDiv__Votes__Up, .Profile__Box__Main__Newsfeed__Div__InnerDiv__Votes__Down {
+              font-size: 50px !important;
+              cursor: pointer; }
+          .Profile__Box__Main__Newsfeed__Div__InnerDiv__Questions {
+            text-decoration: none;
+            color: #000; }
+            .Profile__Box__Main__Newsfeed__Div__InnerDiv__Questions:hover {
+              cursor: pointer; }
+            .Profile__Box__Main__Newsfeed__Div__InnerDiv__Questions__Question {
+              background-color: #c4c4c4;
+              margin-bottom: 1rem;
+              font-size: 14px;
+              padding: 1px 8px;
+              text-decoration: none; }
+            .Profile__Box__Main__Newsfeed__Div__InnerDiv__Questions__QuestionDetails {
+              font-size: 14px;
+              padding: 1px 8px;
+              background-color: #c4c4c4;
+              text-decoration: none; }
+    .Profile__Box__Main__SideInformation {
+      height: 100%;
+      width: 40rem;
+      background: #32569f; }
+      .Profile__Box__Main__SideInformation__Status {
+        border: 2px solid black;
+        background: #f6f6f6;
+        margin: 1rem; }
+        .Profile__Box__Main__SideInformation__Status__InnerDiv {
+          background: #c4c4c4;
+          padding: 0.5rem 0.5rem;
+          display: flex;
+          justify-content: space-between; }
+          .Profile__Box__Main__SideInformation__Status__InnerDiv__Box {
+            display: flex;
+            flex-direction: column; }
+            .Profile__Box__Main__SideInformation__Status__InnerDiv__Box__Header {
+              font-size: 20px;
+              color: #fff;
+              height: 35px;
+              width: 115px;
+              padding: 1px 2px;
+              margin-bottom: 1rem;
+              background: #32569f;
               display: flex;
-              flex-direction: column; }
-              .Profile__Box__Main__SideInformation__Status__InnerDiv__Box__Header {
-                font-size: 20px;
-                color: #fff;
-                height: 35px;
-                width: 115px;
-                padding: 1px 2px;
-                margin-bottom: 1rem;
-                background: #32569f;
-                display: flex;
-                justify-content: center;
-                align-items: center; }
-              .Profile__Box__Main__SideInformation__Status__InnerDiv__Box__Stats {
-                height: 35px;
-                font-size: 17px;
-                color: #000;
-                width: 115px;
-                padding: 1px 2px;
-                margin-bottom: 1rem;
-                background: #fff;
-                display: flex;
-                justify-content: center;
-                align-items: center; }
+              justify-content: center;
+              align-items: center; }
+            .Profile__Box__Main__SideInformation__Status__InnerDiv__Box__Stats {
+              height: 35px;
+              font-size: 17px;
+              color: #000;
+              width: 115px;
+              padding: 1px 2px;
+              margin-bottom: 1rem;
+              background: #fff;
+              display: flex;
+              justify-content: center;
+              align-items: center; }
 
 .backdrop {
   position: fixed;
@@ -832,11 +818,11 @@ body {
       cursor: pointer; }
 
 .HomePage {
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
   display: flex;
-  background-color: #ededed;
-  position: relative; }
+  background-color: #fff;
+  overflow-y: scroll; }
   .HomePage__Left {
     background-color: #32569f;
     color: #fff;
@@ -898,7 +884,6 @@ body {
       width: 100%; }
     .HomePage__Right__MainBody {
       display: flex;
-      background-color: #fff;
       width: 100%;
       height: calc(100% - 8rem);
       margin-top: 1rem; }
@@ -1025,9 +1010,9 @@ body {
         flex: 0.3; }
 
 .MainQA {
-  height: auto;
-  width: 100vw;
-  background: #32569f;
+  height: 100%;
+  width: 100%;
+  background: #f8f8f8;
   display: flex;
   flex-direction: column;
   align-items: center;

@@ -29,8 +29,16 @@ const routes: IRoute[] = [
   {
     path: "/profile/:id",
     name: "Profile",
-    component: Profile,
+    component:Profile,
     exact: true,
+    private:true,
+    showNav:true
+  },
+  {
+    path: "/",
+    name: "Home",
+    component:HomePage,
+    exact: false,
     private:true,
     showNav:true
   },
@@ -74,14 +82,7 @@ const routes: IRoute[] = [
     private:true,
     showNav:false
   },
-  {
-    path: "/",
-    name: "Home",
-    component: HomePage,
-    exact: false,
-    private:true,
-    showNav:false
-  },
+  
   
 ];
 
