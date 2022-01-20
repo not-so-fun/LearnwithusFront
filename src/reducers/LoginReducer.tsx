@@ -6,9 +6,17 @@ import {
 } from "../constants/LoginConstants";
 import { LoginActionType } from "../types/LoginActionTypes";
 
+export interface  UserInfoInterface{
+  userInfo:{
+    user_id: string,
+    token: string
+  }
+  
+}
+
 export interface loginStateInterface {
   loading: boolean;
-  userInfo: { user_id: string; token: string } | null;
+  userInfo: {user_id: string,token: string} | null;
   error: string;
 }
 

@@ -1,4 +1,4 @@
-import React, { FC, useEffect,useState } from "react";
+import React, { FC, useEffect, useState } from "react";
 import { Avatar } from "@mui/material";
 import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
@@ -8,43 +8,39 @@ interface quesInterface {
   question: questionFeedListInterface;
 }
 const HomeNewsFeed: FC<quesInterface> = ({ question }) => {
+  const [upvote, setUpvote] = useState<boolean | null>(null);
 
-  const [upvote,setUpvote]=useState<boolean|null>(null)
+  useEffect(() => {
+    setUpvote(question.upvote);
+  }, [question]);
 
-
-  useEffect(()=>{
-    setUpvote(question.upvote)
-  },[question])
-
-  const handleChangeUpvoteUp:React.MouseEventHandler<SVGSVGElement> | undefined=()=>{
-    if(upvote===null)
-    {
-      setUpvote(true)
-    }else{
-      // console.log(upvote)
-      if(upvote===true)
-      {
-        setUpvote(null)
-      }else{
-        setUpvote(true)
+  const handleChangeUpvoteUp:
+    | React.MouseEventHandler<SVGSVGElement>
+    | undefined = () => {
+    if (upvote === null) {
+      setUpvote(true);
+    } else {
+      if (upvote === true) {
+        setUpvote(null);
+      } else {
+        setUpvote(true);
       }
     }
-  }
+  };
 
-  const handleChangeUpvoteDown:React.MouseEventHandler<SVGSVGElement> | undefined=()=>{
-    if(upvote===null)
-    {
-      setUpvote(false)
-    }else{
-      
-      if(upvote===false)
-      {
-        setUpvote(null)
-      }else{
-        setUpvote(false)
+  const handleChangeUpvoteDown:
+    | React.MouseEventHandler<SVGSVGElement>
+    | undefined = () => {
+    if (upvote === null) {
+      setUpvote(false);
+    } else {
+      if (upvote === false) {
+        setUpvote(null);
+      } else {
+        setUpvote(false);
       }
     }
-  }
+  };
 
   return (
     <div className="Profile__Box__Main__Newsfeed__Div">
@@ -71,36 +67,46 @@ const HomeNewsFeed: FC<quesInterface> = ({ question }) => {
         <div className="Profile__Box__Main__Newsfeed__Div__InnerDiv__Votes">
           {upvote == null ? (
             <>
-              <ArrowDropUpIcon onClick={handleChangeUpvoteUp} className="Profile__Box__Main__Newsfeed__Div__InnerDiv__Votes__Up" />
+              <ArrowDropUpIcon
+                onClick={handleChangeUpvoteUp}
+                className="Profile__Box__Main__Newsfeed__Div__InnerDiv__Votes__Up"
+              />
               <h1 className="Profile__Box__Main__Newsfeed__Div__InnerDiv__Votes__Text">
                 20k
               </h1>
-              <ArrowDropDownIcon onClick={handleChangeUpvoteDown} className="Profile__Box__Main__Newsfeed__Div__InnerDiv__Votes__Down" />
+              <ArrowDropDownIcon
+                onClick={handleChangeUpvoteDown}
+                className="Profile__Box__Main__Newsfeed__Div__InnerDiv__Votes__Down"
+              />
             </>
           ) : (
             <>
               {upvote === true ? (
-
                 <>
                   <ArrowDropUpIcon
-                  onClick={handleChangeUpvoteUp}
+                    onClick={handleChangeUpvoteUp}
                     style={{ color: "blue" }}
                     className="Profile__Box__Main__Newsfeed__Div__InnerDiv__Votes__Up"
                   />
                   <h1 className="Profile__Box__Main__Newsfeed__Div__InnerDiv__Votes__Text">
                     20k
                   </h1>
-                  <ArrowDropDownIcon onClick={handleChangeUpvoteDown} className="Profile__Box__Main__Newsfeed__Div__InnerDiv__Votes__Down" />
+                  <ArrowDropDownIcon
+                    onClick={handleChangeUpvoteDown}
+                    className="Profile__Box__Main__Newsfeed__Div__InnerDiv__Votes__Down"
+                  />
                 </>
-
               ) : (
                 <>
-                  <ArrowDropUpIcon onClick={handleChangeUpvoteUp} className="Profile__Box__Main__Newsfeed__Div__InnerDiv__Votes__Up" />
+                  <ArrowDropUpIcon
+                    onClick={handleChangeUpvoteUp}
+                    className="Profile__Box__Main__Newsfeed__Div__InnerDiv__Votes__Up"
+                  />
                   <h1 className="Profile__Box__Main__Newsfeed__Div__InnerDiv__Votes__Text">
                     20k
                   </h1>
                   <ArrowDropDownIcon
-                  onClick={handleChangeUpvoteDown}
+                    onClick={handleChangeUpvoteDown}
                     style={{ color: "red" }}
                     className="Profile__Box__Main__Newsfeed__Div__InnerDiv__Votes__Down"
                   />
@@ -116,18 +122,20 @@ const HomeNewsFeed: FC<quesInterface> = ({ question }) => {
           <div className="Profile__Box__Main__Newsfeed__Div__InnerDiv__Questions__QuestionDetails">
             <h3>{question.question}</h3>
 
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Blanditiis sed laboriosam sit? Quisquam qui optio voluptatum et
-              incidunt non ea impedit nulla ullam veniam? Tempora qui rem
-              architecto eligendi voluptate animi, ut in deleniti doloremque
-              itaque, quod illo voluptatibus facere saepe minus, inventore
-              accusamus omnis vero. Ratione perferendis a nihil possimus ipsum
-              optio, eligendi quae temporibus eius beatae. Nesciunt aperiam
-              perspiciatis impedit perferendis eum rem animi voluptatum,
-              delectus tenetur consequatur laboriosam vel! Quia assumenda nemo
-              sit nam incidunt explicabo ullam.
-            </p>
+            <Link style={{textDecoration:"none",textEmphasisColor:"none"}} to={`/questions/${question && question.question_id}`}>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Blanditiis sed laboriosam sit? Quisquam qui optio voluptatum et
+                incidunt non ea impedit nulla ullam veniam? Tempora qui rem
+                architecto eligendi voluptate animi, ut in deleniti doloremque
+                itaque, quod illo voluptatibus facere saepe minus, inventore
+                accusamus omnis vero. Ratione perferendis a nihil possimus ipsum
+                optio, eligendi quae temporibus eius beatae. Nesciunt aperiam
+                perspiciatis impedit perferendis eum rem animi voluptatum,
+                delectus tenetur consequatur laboriosam vel! Quia assumenda nemo
+                sit nam incidunt explicabo ullam.
+              </p>
+            </Link>
           </div>
         </div>
       </div>
