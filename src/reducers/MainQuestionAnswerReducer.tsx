@@ -4,17 +4,8 @@ import {
     MAIN_QUESTION_ANSWER_ERROR,
   } from "../constants/MainQuestionAnswerConstants";
 import {mainQuestionAnswerTypes} from "../types/MainQuestionAnswerTypes";
-export interface questionFeedListInterface {
-  image: string;
-  question: string;  
-  question_id:string,
-  title: string;
-  topic_id: string;
-  topic_title:string,
-  user_id: string;
-  username: string;
-    
-  }
+import {questionFeedListInterface} from "../reducers/QuestionFeedReducers"
+
   interface answered{
     answer_id: string;
     question_id:string;

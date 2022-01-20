@@ -4,63 +4,89 @@ import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import { questionFeedListInterface } from "../../reducers/QuestionFeedReducers";
 import useTokenAndId from "../ReusableLogicComponents/useTokenAndId";
-import axios from "../../axios"
+import axios from "../../axios";
 import { Link } from "react-router-dom";
+
 interface quesInterface {
   question: questionFeedListInterface;
 }
+
+interface lastStateInterface {
+  upvote: boolean | null;
+}
+
 const HomeNewsFeed: FC<quesInterface> = ({ question }) => {
   const [upvote, setUpvote] = useState<boolean | null>(null);
-  const {token}=useTokenAndId()
+  const [lastState, setLastState] = useState<lastStateInterface>({
+    upvote: null,
+  });
+  const { token } = useTokenAndId();
 
   useEffect(() => {
     setUpvote(question.upvote);
+    setLastState({upvote:question.upvote})
   }, [question]);
 
-  const upVote=()=>{
-    axios.post(`/question-upvote`,{
-      upvote:true,
-      question_id:question.question_id
-    },{
-      headers:{
-        "x-auth-token":token
-      }
-    })
-    .then((response)=>{
-      console.log(response.data)
-    })
-    .catch((error)=>{
-      console.log(error)
-    })
-  }
+  const upVote = (upvote: boolean) => {
+    axios
+      .post(
+        `/question-upvote`,
+        {
+          upvote,
+          question_id: question.question_id,
+        },
+        {
+          headers: {
+            "x-auth-token": token,
+          },
+        }
+      )
+      .then((response) => {
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+        // console.log(lastState)
+        setUpvote(lastState.upvote);
+      });
+  };
 
   const handleChangeUpvoteUp:
     | React.MouseEventHandler<SVGSVGElement>
     | undefined = () => {
     if (upvote === null) {
+      setLastState({ ...lastState, upvote: upvote });
       setUpvote(true);
-      upVote()
     } else {
       if (upvote === true) {
+        setLastState({ ...lastState, upvote: upvote });
         setUpvote(null);
       } else {
+        setLastState({ ...lastState, upvote: upvote });
         setUpvote(true);
       }
     }
+    upVote(true);
   };
 
   const handleChangeUpvoteDown:
     | React.MouseEventHandler<SVGSVGElement>
     | undefined = () => {
     if (upvote === null) {
+      setLastState({ ...lastState, upvote: upvote });
+
       setUpvote(false);
     } else {
       if (upvote === false) {
+        setLastState({ ...lastState, upvote: upvote });
+
         setUpvote(null);
       } else {
+        setLastState({ ...lastState, upvote: upvote });
         setUpvote(false);
       }
     }
+    upVote(false);
   };
 
   return (
@@ -143,7 +169,10 @@ const HomeNewsFeed: FC<quesInterface> = ({ question }) => {
           <div className="Profile__Box__Main__Newsfeed__Div__InnerDiv__Questions__QuestionDetails">
             <h3>{question.question}</h3>
 
-            <Link style={{textDecoration:"none",textEmphasisColor:"none"}} to={`/questions/${question && question.question_id}`}>
+            <Link
+              style={{ textDecoration: "none", textEmphasisColor: "none" }}
+              to={`/questions/${question && question.question_id}`}
+            >
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Blanditiis sed laboriosam sit? Quisquam qui optio voluptatum et

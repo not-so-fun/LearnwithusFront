@@ -7,9 +7,10 @@ import useTokenAndId from "../components/ReusableLogicComponents/useTokenAndId";
 import { MainQuestionAnswerAction } from "../actions/MainQuestionAnswerAction";
 import { RootStateType } from "../stores";
 import { UserInfoInterface } from "../reducers/LoginReducer";
+import { questionFeedListInterface } from "../reducers/QuestionFeedReducers";
 
 import {
-  questionFeedListInterface,
+  
   MainQuestionAnswerInterface,
 } from "../reducers/MainQuestionAnswerReducer";
 
@@ -31,14 +32,15 @@ const MainQA: FC<RouteComponentProps<any>> = ({ match }) => {
 
   useEffect(() => {
     dispatch(MainQuestionAnswerAction(token, match.params.id));
-  }, [match, token, user_id]);
+  }, [match, token]);
 
 
   return (
     <div className="MainQA">
       <div className="MainQA__Heading">Main Question Answer</div>
-      {/* <div className="MainQA__"></div> */}
+    
       <MainQAQuestion question={question} />
+
       <div className="MainQA__Answers">
         <MainQAAnswer />
         <MainQAAnswer />

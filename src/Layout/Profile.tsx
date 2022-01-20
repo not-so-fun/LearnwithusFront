@@ -12,11 +12,8 @@ import useTokenAndId from "../components/ReusableLogicComponents/useTokenAndId";
 import { Progress } from "../components/ReusableUIComponents/Spinner";
 import Navbar from "../components/Navbar";
 import ProfileNewsFeed from "../components/ProfileComponents/NewsFeed";
-<<<<<<< HEAD
 import { RESET_USER_INFO } from "../constants/ProfileConstants";
-=======
 import SideBar from "../components/HomePageComponent/SideBar";
->>>>>>> sujan
 
 // const answerStats = [
 //   {
