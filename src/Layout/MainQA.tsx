@@ -1,4 +1,4 @@
-import React, { FC, useEffect } from "react";
+import React, { FC, useEffect,lazy, Suspense } from "react";
 import { RouteComponentProps } from "react-router-dom";
 import MainQAQuestion from "../components/mainQAComponent/MainQAQuestion";
 import MainQAAnswer from "../components/mainQAComponent/MainQAAnswer";
@@ -11,6 +11,8 @@ import { UserInfoInterface } from "../reducers/LoginReducer";
 import { questionFeedListInterface } from "../reducers/QuestionFeedReducers";
 import { answersInterface } from "../reducers/AnsweresOnlyReducer";
 import { MainQuestionAnswerInterface } from "../reducers/MainQuestionAnswerReducer";
+// const MainQAAnswer=lazy(()=>import("../components/mainQAComponent/MainQAAnswer"))
+
 
 const MainQA: FC<RouteComponentProps<any>> = ({ match }) => {
   const dispatch = useDispatch();
@@ -34,11 +36,9 @@ const MainQA: FC<RouteComponentProps<any>> = ({ match }) => {
 
   useEffect(() => {
     dispatch(MainQuestionAnswerAction(token, match.params.id));
-  }, [match, token]);
-
-  useEffect(() => {
     dispatch(AnswersOnlyAction(token, match.params.id));
   }, [match, token]);
+
 
   return (
     <div className="MainQA">
@@ -47,8 +47,12 @@ const MainQA: FC<RouteComponentProps<any>> = ({ match }) => {
       <MainQAQuestion question={question} />
 
       <div className="MainQA__Answers">
+     
         {answers && answers.map((ans) => <MainQAAnswer ans={ans} />)}
+
+      
       </div>
+
     </div>
   );
 };
