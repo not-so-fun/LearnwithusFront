@@ -112,6 +112,7 @@ const HomeNewsFeed: FC<quesInterface> = ({ question }) => {
       </div>
       <div className="Profile__Box__Main__Newsfeed__Div__InnerDiv">
         <div className="Profile__Box__Main__Newsfeed__Div__InnerDiv__Votes">
+          
           {upvote == null ? (
             <>
               <ArrowDropUpIcon

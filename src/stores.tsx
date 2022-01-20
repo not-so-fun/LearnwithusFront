@@ -13,6 +13,7 @@ import { SubTopicReducer } from "./reducers/SubTopicReducer";
 import { QuestionFeedReducer } from "./reducers/QuestionFeedReducers";
 import { MainQuestionAnswerReducer } from "./reducers/MainQuestionAnswerReducer";
 import { WishesReducer } from "./reducers/WishesReducer";
+import {AnswersOnlyReducer} from "./reducers/AnsweresOnlyReducer"
 
 const rootReducer = combineReducers({
   userInfo: LoginReducer,
@@ -27,6 +28,7 @@ const rootReducer = combineReducers({
   questionFeed:QuestionFeedReducer,
   mainQA: MainQuestionAnswerReducer,
   wishes: WishesReducer,
+  answers:AnswersOnlyReducer
 });
 
 const store = createStore(

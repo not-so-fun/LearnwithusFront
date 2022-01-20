@@ -47,7 +47,6 @@ const MainQAQuestion: FC<MainQAQuestionInterface> = ({ question }) => {
       })
       .catch((error) => {
         console.log(error);
-        // console.log(lastState)
         setUpvote(lastState.upvote);
       });
   };
@@ -75,7 +74,6 @@ const MainQAQuestion: FC<MainQAQuestionInterface> = ({ question }) => {
     | undefined = () => {
     if (upvote === null) {
       setLastState({ ...lastState, upvote: upvote });
-
       setUpvote(false);
     } else {
       if (upvote === false) {
@@ -97,10 +95,14 @@ const MainQAQuestion: FC<MainQAQuestionInterface> = ({ question }) => {
           <div className="MainQA__Question__Top">
             <div className="MainQA__Question__Top__ProfileData">
               <div className="MainQA__Question__Top__ProfileData__ProfilePhoto">
-                <img src={question.image} className="MainQA__Question__Top__ProfileData__ProfilePhoto__Image" alt=""/>
+                <img
+                  src={question.image}
+                  className="MainQA__Question__Top__ProfileData__ProfilePhoto__Image"
+                  alt=""
+                />
               </div>
               <div className="MainQA__Question__Top__ProfileData__ProfileName">
-                  {question.username}
+                {question.username}
               </div>
             </div>
             <div className="MainQA__Question__Top__QuestionData">
@@ -118,48 +120,51 @@ const MainQAQuestion: FC<MainQAQuestionInterface> = ({ question }) => {
               <div className="MainQA__Question__MainQuestionData__QuestionLikes__LikesBox">
                 {upvote == null ? (
                   <>
-                    <ArrowDropUpIcon
+                    <BsCaretUpFill
                       onClick={handleChangeUpvoteUp}
-                      className="Profile__Box__Main__Newsfeed__Div__InnerDiv__Votes__Up"
+                      className="MainQA__Question__MainQuestionData__QuestionLikes__LikesBox__Downvote__Logo"
                     />
+
                     <h1 className="Profile__Box__Main__Newsfeed__Div__InnerDiv__Votes__Text">
                       20k
                     </h1>
-                    <ArrowDropDownIcon
+
+                    <BsCaretDownFill
                       onClick={handleChangeUpvoteDown}
-                      className="Profile__Box__Main__Newsfeed__Div__InnerDiv__Votes__Down"
+                      className="MainQA__Question__MainQuestionData__QuestionLikes__LikesBox__Downvote__Logo"
                     />
                   </>
                 ) : (
                   <>
                     {upvote === true ? (
                       <>
-                        <ArrowDropUpIcon
+                        <BsCaretUpFill
                           onClick={handleChangeUpvoteUp}
                           style={{ color: "blue" }}
-                          className="Profile__Box__Main__Newsfeed__Div__InnerDiv__Votes__Up"
+                          className="MainQA__Question__MainQuestionData__QuestionLikes__LikesBox__Downvote__Logo"
                         />
+
                         <h1 className="Profile__Box__Main__Newsfeed__Div__InnerDiv__Votes__Text">
                           20k
                         </h1>
-                        <ArrowDropDownIcon
+                        <BsCaretDownFill
                           onClick={handleChangeUpvoteDown}
-                          className="Profile__Box__Main__Newsfeed__Div__InnerDiv__Votes__Down"
+                          className="MainQA__Question__MainQuestionData__QuestionLikes__LikesBox__Downvote__Logo"
                         />
                       </>
                     ) : (
                       <>
-                        <ArrowDropUpIcon
+                        <BsCaretUpFill
                           onClick={handleChangeUpvoteUp}
-                          className="Profile__Box__Main__Newsfeed__Div__InnerDiv__Votes__Up"
+                          className="MainQA__Question__MainQuestionData__QuestionLikes__LikesBox__Downvote__Logo"
                         />
                         <h1 className="Profile__Box__Main__Newsfeed__Div__InnerDiv__Votes__Text">
                           20k
                         </h1>
-                        <ArrowDropDownIcon
+                        <BsCaretDownFill
                           onClick={handleChangeUpvoteDown}
                           style={{ color: "red" }}
-                          className="Profile__Box__Main__Newsfeed__Div__InnerDiv__Votes__Down"
+                          className="MainQA__Question__MainQuestionData__QuestionLikes__LikesBox__Downvote__Logo"
                         />
                       </>
                     )}
@@ -175,14 +180,14 @@ const MainQAQuestion: FC<MainQAQuestionInterface> = ({ question }) => {
                 {question.question}
               </div>
               <div className="MainQA__Question__MainQuestionData__QuestionTitleAndBody__Tag">
-                  <div className="MainQA__Question__MainQuestionData__QuestionTitleAndBody__Tag__TagName">{question.topic_title}</div>
+                <div className="MainQA__Question__MainQuestionData__QuestionTitleAndBody__Tag__TagName">
+                  {question.topic_title}
+                </div>
               </div>
             </div>
           </div>
         </div>
-        
-      )
-    }
+      )}
     </>
   );
 };
