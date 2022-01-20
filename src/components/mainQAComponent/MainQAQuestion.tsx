@@ -9,14 +9,12 @@ import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import axios from "../../axios";
 
 interface MainQAQuestionInterface {
-  question: questionFeedListInterface|null;
+  question: questionFeedListInterface | null;
 }
 
 interface lastStateInterface {
   upvote: boolean | null;
 }
-
-
 
 const MainQAQuestion: FC<MainQAQuestionInterface> = ({ question }) => {
   const [upvote, setUpvote] = useState<boolean | null>(null);
@@ -118,11 +116,10 @@ const MainQAQuestion: FC<MainQAQuestionInterface> = ({ question }) => {
           <div className="MainQA__Question__MainQuestionData">
             <div className="MainQA__Question__MainQuestionData__QuestionLikes">
               <div className="MainQA__Question__MainQuestionData__QuestionLikes__LikesBox">
-                {upvote === true ? (
+                {upvote == null ? (
                   <>
                     <ArrowDropUpIcon
                       onClick={handleChangeUpvoteUp}
-                      style={{ color: "blue" }}
                       className="Profile__Box__Main__Newsfeed__Div__InnerDiv__Votes__Up"
                     />
                     <h1 className="Profile__Box__Main__Newsfeed__Div__InnerDiv__Votes__Text">
@@ -135,18 +132,37 @@ const MainQAQuestion: FC<MainQAQuestionInterface> = ({ question }) => {
                   </>
                 ) : (
                   <>
-                    <ArrowDropUpIcon
-                      onClick={handleChangeUpvoteUp}
-                      className="Profile__Box__Main__Newsfeed__Div__InnerDiv__Votes__Up"
-                    />
-                    <h1 className="Profile__Box__Main__Newsfeed__Div__InnerDiv__Votes__Text">
-                      20k
-                    </h1>
-                    <ArrowDropDownIcon
-                      onClick={handleChangeUpvoteDown}
-                      style={{ color: "red" }}
-                      className="Profile__Box__Main__Newsfeed__Div__InnerDiv__Votes__Down"
-                    />
+                    {upvote === true ? (
+                      <>
+                        <ArrowDropUpIcon
+                          onClick={handleChangeUpvoteUp}
+                          style={{ color: "blue" }}
+                          className="Profile__Box__Main__Newsfeed__Div__InnerDiv__Votes__Up"
+                        />
+                        <h1 className="Profile__Box__Main__Newsfeed__Div__InnerDiv__Votes__Text">
+                          20k
+                        </h1>
+                        <ArrowDropDownIcon
+                          onClick={handleChangeUpvoteDown}
+                          className="Profile__Box__Main__Newsfeed__Div__InnerDiv__Votes__Down"
+                        />
+                      </>
+                    ) : (
+                      <>
+                        <ArrowDropUpIcon
+                          onClick={handleChangeUpvoteUp}
+                          className="Profile__Box__Main__Newsfeed__Div__InnerDiv__Votes__Up"
+                        />
+                        <h1 className="Profile__Box__Main__Newsfeed__Div__InnerDiv__Votes__Text">
+                          20k
+                        </h1>
+                        <ArrowDropDownIcon
+                          onClick={handleChangeUpvoteDown}
+                          style={{ color: "red" }}
+                          className="Profile__Box__Main__Newsfeed__Div__InnerDiv__Votes__Down"
+                        />
+                      </>
+                    )}
                   </>
                 )}
               </div>
