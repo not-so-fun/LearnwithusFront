@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, useEffect,useState } from "react";
 import { Avatar } from "@mui/material";
 import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
@@ -8,6 +8,44 @@ interface quesInterface {
   question: questionFeedListInterface;
 }
 const HomeNewsFeed: FC<quesInterface> = ({ question }) => {
+
+  const [upvote,setUpvote]=useState<boolean|null>(null)
+
+
+  useEffect(()=>{
+    setUpvote(question.upvote)
+  },[question])
+
+  const handleChangeUpvoteUp:React.MouseEventHandler<SVGSVGElement> | undefined=()=>{
+    if(upvote===null)
+    {
+      setUpvote(true)
+    }else{
+      // console.log(upvote)
+      if(upvote===true)
+      {
+        setUpvote(null)
+      }else{
+        setUpvote(true)
+      }
+    }
+  }
+
+  const handleChangeUpvoteDown:React.MouseEventHandler<SVGSVGElement> | undefined=()=>{
+    if(upvote===null)
+    {
+      setUpvote(false)
+    }else{
+      
+      if(upvote===false)
+      {
+        setUpvote(null)
+      }else{
+        setUpvote(false)
+      }
+    }
+  }
+
   return (
     <div className="Profile__Box__Main__Newsfeed__Div">
       <div className="Profile__Box__Main__Newsfeed__Div__Header">
@@ -31,11 +69,45 @@ const HomeNewsFeed: FC<quesInterface> = ({ question }) => {
       </div>
       <div className="Profile__Box__Main__Newsfeed__Div__InnerDiv">
         <div className="Profile__Box__Main__Newsfeed__Div__InnerDiv__Votes">
-          <ArrowDropUpIcon className="Profile__Box__Main__Newsfeed__Div__InnerDiv__Votes__Up" />
-          <h1 className="Profile__Box__Main__Newsfeed__Div__InnerDiv__Votes__Text">
-            20k
-          </h1>
-          <ArrowDropDownIcon className="Profile__Box__Main__Newsfeed__Div__InnerDiv__Votes__Down" />
+          {upvote == null ? (
+            <>
+              <ArrowDropUpIcon onClick={handleChangeUpvoteUp} className="Profile__Box__Main__Newsfeed__Div__InnerDiv__Votes__Up" />
+              <h1 className="Profile__Box__Main__Newsfeed__Div__InnerDiv__Votes__Text">
+                20k
+              </h1>
+              <ArrowDropDownIcon onClick={handleChangeUpvoteDown} className="Profile__Box__Main__Newsfeed__Div__InnerDiv__Votes__Down" />
+            </>
+          ) : (
+            <>
+              {upvote === true ? (
+
+                <>
+                  <ArrowDropUpIcon
+                  onClick={handleChangeUpvoteUp}
+                    style={{ color: "blue" }}
+                    className="Profile__Box__Main__Newsfeed__Div__InnerDiv__Votes__Up"
+                  />
+                  <h1 className="Profile__Box__Main__Newsfeed__Div__InnerDiv__Votes__Text">
+                    20k
+                  </h1>
+                  <ArrowDropDownIcon onClick={handleChangeUpvoteDown} className="Profile__Box__Main__Newsfeed__Div__InnerDiv__Votes__Down" />
+                </>
+
+              ) : (
+                <>
+                  <ArrowDropUpIcon onClick={handleChangeUpvoteUp} className="Profile__Box__Main__Newsfeed__Div__InnerDiv__Votes__Up" />
+                  <h1 className="Profile__Box__Main__Newsfeed__Div__InnerDiv__Votes__Text">
+                    20k
+                  </h1>
+                  <ArrowDropDownIcon
+                  onClick={handleChangeUpvoteDown}
+                    style={{ color: "red" }}
+                    className="Profile__Box__Main__Newsfeed__Div__InnerDiv__Votes__Down"
+                  />
+                </>
+              )}
+            </>
+          )}
         </div>
         <div className="Profile__Box__Main__Newsfeed__Div__InnerDiv__Questions">
           <div className="Profile__Box__Main__Newsfeed__Div__InnerDiv__Questions__Question">

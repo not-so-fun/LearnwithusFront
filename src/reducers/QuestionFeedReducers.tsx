@@ -10,6 +10,7 @@ export interface questionFeedListInterface {
   question_id:string,
   topic_id: string;
   topic_title:string,
+  upvote:boolean,
   title: string;
   question: string;
   user_id: string;

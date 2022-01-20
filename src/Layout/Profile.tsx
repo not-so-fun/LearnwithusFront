@@ -12,6 +12,7 @@ import useTokenAndId from "../components/ReusableLogicComponents/useTokenAndId";
 import { Progress } from "../components/ReusableUIComponents/Spinner";
 import Navbar from "../components/Navbar";
 import ProfileNewsFeed from "../components/ProfileComponents/NewsFeed";
+import { RESET_USER_INFO } from "../constants/ProfileConstants";
 
 // const answerStats = [
 //   {
@@ -44,6 +45,21 @@ const Profile: FC<RouteComponentProps<any>> = ({ match }) => {
     } else {
       dispatch(ProfileAction(match.params.id, token));
     }
+
+    return () => {
+      dispatch({
+        type: RESET_USER_INFO,
+        reset_info: {
+          email: "",
+          first_name: "....",
+          last_name: "....",
+          image: "",
+          status: null,
+          user_id: "....",
+          username: "....",
+        },
+      });
+    };
   }, [match, token, userInfo]);
 
   const { loading, profile_data, error } = useSelector<RootStateType>(
