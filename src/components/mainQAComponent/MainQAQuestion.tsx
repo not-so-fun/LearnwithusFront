@@ -8,9 +8,9 @@ interface MainQAQuestionInterface {
     question:questionFeedListInterface | null
 }
 const MainQAQuestion: FC<MainQAQuestionInterface>  = ({question}) => {
-    if(question !==null){
-    return (
-        <div className="MainQA__Question">
+    
+    return (<>
+    {question &&   <div className="MainQA__Question">
             <div className="MainQA__Question__Top">
                 <div className="MainQA__Question__Top__ProfileData">
                     <div className="MainQA__Question__Top__ProfileData__ProfilePhoto">
@@ -58,8 +58,10 @@ const MainQAQuestion: FC<MainQAQuestionInterface>  = ({question}) => {
             </div>
             
         </div>
-    )
     }
+    </>
+    )
+    
 }
 
 export default MainQAQuestion

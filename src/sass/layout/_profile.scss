@@ -258,6 +258,9 @@
             &__Questions {
               text-decoration: none;
               color:$color-black;
+              &:hover{
+                cursor:pointer;
+              }
               &__Question {
                 background-color: $color-grey-light-2;
                 margin-bottom: 1rem;
