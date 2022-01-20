@@ -72,6 +72,7 @@
   &__Right {
     flex: 1;
     padding: 1rem;
+
     &__TopBar {
       height: 8.8vh;
 
@@ -100,6 +101,7 @@
 
         &__Box {
           border: 2px solid lightgrey;
+          // position: relative;
           text-align: left;
           padding: 0.9rem;
           height: 539px;
