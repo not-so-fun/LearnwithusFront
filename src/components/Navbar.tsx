@@ -66,7 +66,6 @@ const Navbar: FC = () => {
             >
               Login
             </Link>
-            
           </>
         )}
 
@@ -91,10 +90,8 @@ const Navbar: FC = () => {
             />
 
             <ArrowDropDownIcon className="Navbar__Links__content__Avatar__Drop" />
-
           </div>
         </div>
-        
       </div>
     </div>
   );

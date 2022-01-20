@@ -1,11 +1,12 @@
 .AskQuestionForm {
   background: $color-primary;
-  width: 100%;
-  height: auto;
-  border: 5px solid black;
+  width: 750px;
+  height: 100%;
+  // height: auto;
+
   &__Heading {
     // background:green;
-    width: 100%;
+    // width: 100%;
     height: 7rem;
     display: flex;
     flex-direction: column;
@@ -100,7 +101,7 @@
         display: flex;
 
         &__Select {
-          width: 500px;
+          width: 363 px;
           background: $color-white;
 
           border-radius: 5px;
@@ -176,30 +177,30 @@
           // background:green;
           padding-left: 1rem;
         }
-    }
-    &__Footer{
+      }
+      &__Footer {
         // background:green;
-        height:5rem;
-        width:100%;
-        display:flex;
+        height: 5rem;
+        width: 100%;
+        display: flex;
         align-items: center;
         justify-content: flex-end;
-        padding:0 1rem;
-        &__Button{
-            height:4rem;
-            border-radius:5px;
-            padding:0 1rem;
-            flex: 0 0 20%;
-            border:none;
-            font-size:1.5rem;
-            
-            font-weight:600;
-            background:$color-grey-light-2;
-            // background:red;
-            &:hover{
-                cursor:pointer;
-                background:$color-grey-light-1;
-            }
+        padding: 0 1rem;
+        &__Button {
+          height: 4rem;
+          border-radius: 5px;
+          padding: 0 1rem;
+          flex: 0 0 20%;
+          border: none;
+          font-size: 1.5rem;
+
+          font-weight: 600;
+          background: $color-grey-light-2;
+          // background:red;
+          &:hover {
+            cursor: pointer;
+            background: $color-grey-light-1;
+          }
         }
       }
     }
@@ -224,7 +225,8 @@
       color: $color-white;
     }
     &__Input {
-      height: 40rem;
+      height: 21.5rem;
+      overflow-y: scroll;
       padding: 1rem;
       border: none;
       outline: none;

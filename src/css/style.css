@@ -221,11 +221,9 @@ body {
 
 .AskQuestionForm {
   background: #32569f;
-  width: 100%;
-  height: auto;
-  border: 5px solid black; }
+  width: 750px;
+  height: 100%; }
   .AskQuestionForm__Heading {
-    width: 100%;
     height: 7rem;
     display: flex;
     flex-direction: column;
@@ -297,7 +295,7 @@ body {
       .AskQuestionForm__TitleInput__InputBox__Div {
         display: flex; }
         .AskQuestionForm__TitleInput__InputBox__Div__Select {
-          width: 500px;
+          width: 363 px;
           background: #fff;
           border-radius: 5px;
           height: 5rem;
@@ -369,10 +367,10 @@ body {
           border: none;
           font-size: 1.5rem;
           font-weight: 600;
-          background: #C4C4C4; }
+          background: #c4c4c4; }
           .AskQuestionForm__TitleInput__InputBox__Footer__Button:hover {
             cursor: pointer;
-            background: #F8F8F8; }
+            background: #f8f8f8; }
   .AskQuestionForm__Body {
     height: auto;
     display: flex;
@@ -389,7 +387,8 @@ body {
       margin: 0 1rem;
       color: #fff; }
     .AskQuestionForm__Body__Input {
-      height: 40rem;
+      height: 21.5rem;
+      overflow-y: scroll;
       padding: 1rem;
       border: none;
       outline: none;
@@ -650,14 +649,13 @@ body {
               .Profile__Box__Main__Newsfeed__Div__InnerDiv__Votes__Up, .Profile__Box__Main__Newsfeed__Div__InnerDiv__Votes__Down {
                 font-size: 50px !important;
                 cursor: pointer; }
-<<<<<<< HEAD
             .Profile__Box__Main__Newsfeed__Div__InnerDiv__Questions {
               text-decoration: none;
               color: #000; }
               .Profile__Box__Main__Newsfeed__Div__InnerDiv__Questions:hover {
                 cursor: pointer; }
               .Profile__Box__Main__Newsfeed__Div__InnerDiv__Questions__Question {
-                background-color: #C4C4C4;
+                background-color: #c4c4c4;
                 margin-bottom: 1rem;
                 font-size: 14px;
                 padding: 1px 8px;
@@ -665,19 +663,8 @@ body {
               .Profile__Box__Main__Newsfeed__Div__InnerDiv__Questions__QuestionDetails {
                 font-size: 14px;
                 padding: 1px 8px;
-                background-color: #C4C4C4;
+                background-color: #c4c4c4;
                 text-decoration: none; }
-=======
-            .Profile__Box__Main__Newsfeed__Div__InnerDiv__Questions__Question {
-              background-color: #c4c4c4;
-              margin-bottom: 1rem;
-              font-size: 14px;
-              padding: 1px 8px; }
-            .Profile__Box__Main__Newsfeed__Div__InnerDiv__Questions__QuestionDetails {
-              font-size: 14px;
-              padding: 1px 8px;
-              background-color: #c4c4c4; }
->>>>>>> sujan
       .Profile__Box__Main__SideInformation {
         height: 100%;
         width: 40rem;
@@ -825,8 +812,9 @@ body {
         position: absolute;
         top: 5rem;
         left: -30rem;
-        background: #999;
-        width: 400px; }
+        background: #fdfdfd;
+        width: 400px;
+        z-index: 1; }
       .Navbar__Links__content__Icon {
         display: flex;
         justify-content: center;
@@ -1007,32 +995,39 @@ body {
             margin-top: 1rem;
             border-radius: 4px; }
 
-.AskQuestion__Top {
-  margin: 0 auto;
-  padding: 1rem;
-  height: 8rem;
-  width: 140rem;
+.AskQuestion {
+  padding-right: 1rem;
+  height: 100vh;
   display: flex;
-  justify-content: center;
-  align-items: center; }
-
-.AskQuestion__Main {
-  height: auto;
-  width: 140rem;
-  margin: 0 auto;
-  display: flex;
-  padding: 1rem; }
-  .AskQuestion__Main__Form {
-    background: #32569f;
-    flex: 1; }
-  .AskQuestion__Main__Side {
-    background: yellow;
-    flex: 0 0 30%; }
+  overflow-y: hidden; }
+  .AskQuestion__Left {
+    flex: 0.24; }
+  .AskQuestion__Right {
+    flex: 0.76;
+    margin-top: 1rem;
+    width: fit-content; }
+    .AskQuestion__Right__Bottom {
+      margin-top: 1rem;
+      display: flex; }
+      .AskQuestion__Right__Bottom__Left {
+        flex: 0.7; }
+        .AskQuestion__Right__Bottom__Left__Main {
+          height: auto;
+          margin: 0 auto;
+          display: flex;
+          padding: 1rem; }
+          .AskQuestion__Right__Bottom__Left__Main__Form {
+            background: #32569f;
+            flex: 1; }
+      .AskQuestion__Right__Bottom__Right {
+        border: 2px solid blue;
+        margin-left: 1rem;
+        flex: 0.3; }
 
 .MainQA {
   height: auto;
   width: 100vw;
-  background: #32569F;
+  background: #32569f;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1060,8 +1055,13 @@ body {
   .MainQA__Answer {
     margin: 1rem auto;
     height: 50rem;
+<<<<<<< HEAD
     width: 90rem;
     border: 1px solid #C4C4C4;
+=======
+    width: 130rem;
+    border: 1px solid #c4c4c4;
+>>>>>>> sujan
     background: #fff;
     display: flex;
     align-items: center; }
@@ -1075,7 +1075,7 @@ body {
       .MainQA__Answer__AnswerLikes__Box {
         height: 20rem;
         width: 7rem;
-        border: 1px solid #C4C4C4;
+        border: 1px solid #c4c4c4;
         border-radius: .5rem;
         display: flex;
         flex-direction: column;
@@ -1106,7 +1106,7 @@ body {
       flex: 1;
       height: 95%;
       margin: 1rem .5rem;
-      border: 1px solid #C4C4C4;
+      border: 1px solid #c4c4c4;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -1128,13 +1128,13 @@ body {
             height: 5rem;
             width: 5rem;
             border-radius: 50%;
-            background: #C4C4C4; }
+            background: #c4c4c4; }
           .MainQA__Answer__AnswerData__Top__Answered__Heading {
             flex: 1;
             height: 5rem;
             margin: 0 .5rem;
             background: white;
-            border: 1px solid #C4C4C4;
+            border: 1px solid #c4c4c4;
             border-radius: 5px;
             font-size: 2rem;
             color: #000;
@@ -1159,7 +1159,7 @@ body {
             margin-left: .5rem;
             border-radius: 5px;
             background: white;
-            border: 1px solid #C4C4C4;
+            border: 1px solid #c4c4c4;
             display: flex;
             align-items: center;
             justify-content: flex-start;
@@ -1172,20 +1172,20 @@ body {
             background: white;
             margin: 0 1rem;
             border-radius: 50%;
-            border: 1px solid #C4C4C4;
+            border: 1px solid #c4c4c4;
             display: flex;
             align-items: center;
             justify-content: center; }
             .MainQA__Answer__AnswerData__Top__AnsweredData__Delete:hover {
               cursor: pointer;
-              background: #C4C4C4; }
+              background: #c4c4c4; }
             .MainQA__Answer__AnswerData__Top__AnsweredData__Delete__Icon {
               height: 3rem;
               width: 3rem; }
       .MainQA__Answer__AnswerData__Body {
         width: 99%;
         height: 38rem;
-        background: #C4C4C4;
+        background: #c4c4c4;
         border-radius: 5px; }
   .MainQA__Question {
     height: auto;
@@ -1203,7 +1203,7 @@ body {
       .MainQA__Question__Top__ProfileData {
         height: 6rem;
         width: 25rem;
-        background: #C4C4C4;
+        background: #c4c4c4;
         margin: 0 1rem;
         border-radius: 5px;
         display: flex;
@@ -1240,7 +1240,7 @@ body {
           height: 5rem;
           background: white;
           border-radius: 5px;
-          border: 1px solid #C4C4C4;
+          border: 1px solid #c4c4c4;
           margin: 0 .5rem;
           display: flex;
           justify-content: space-between;
@@ -1252,7 +1252,7 @@ body {
           height: 5rem;
           width: 5rem;
           border-radius: 50%;
-          border: 1px solid #C4C4C4;
+          border: 1px solid #c4c4c4;
           background: white;
           margin: 0 1rem;
           display: flex;
@@ -1260,7 +1260,7 @@ body {
           justify-content: center; }
           .MainQA__Question__Top__QuestionData__Delete:hover {
             cursor: pointer;
-            background: #C4C4C4; }
+            background: #c4c4c4; }
           .MainQA__Question__Top__QuestionData__Delete__Icon {
             height: 3rem;
             width: 3rem; }
@@ -1280,7 +1280,7 @@ body {
         .MainQA__Question__MainQuestionData__QuestionLikes__LikesBox {
           height: 18rem;
           width: 8rem;
-          border: 1px solid #C4C4C4;
+          border: 1px solid #c4c4c4;
           display: flex;
           flex-direction: column;
           align-items: center;
@@ -1320,7 +1320,12 @@ body {
         display: flex;
         flex-direction: column; }
         .MainQA__Question__MainQuestionData__QuestionTitleAndBody__Title {
+<<<<<<< HEAD
           height: auto;
+=======
+          height: 10rem;
+          background: #c4c4c4;
+>>>>>>> sujan
           width: 96%;
           margin: .5rem auto;
           font-size: 2rem;
@@ -1332,8 +1337,13 @@ body {
           justify-content: flex-start;
           border-bottom: 1px solid #C4C4C4; }
         .MainQA__Question__MainQuestionData__QuestionTitleAndBody__Body {
+<<<<<<< HEAD
           height: auto;
           min-height: calc(100% - 15rem);
+=======
+          height: calc(100% - 10rem);
+          background: #c4c4c4;
+>>>>>>> sujan
           width: 96%;
           margin: .5rem auto;
           padding: .5rem;
