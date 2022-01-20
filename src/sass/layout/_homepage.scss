@@ -1,32 +1,40 @@
 .HomePage {
-
   height: 100vh;
+  width: 98.9vw;
   display: flex;
   background-color: #ededed;
+  position: relative;
 
   &__Left {
     background-color: $color-primary;
     color: $color-white;
     flex: 0.3;
-    margin:1rem 0;
-    margin-left:1rem;
+
+    height: 680px;
+    width: 325px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 1rem 0;
+    margin-left: 1rem;
 
     &__SideBar {
-      display:flex;
+      display: flex;
       flex-direction: column;
       align-items: center;
-      height:100%;
+
+      height: 100%;
 
       &__Header {
         display: flex;
         flex-direction: row;
         justify-content: flex-start;
         align-items: center;
-        margin-top:1rem;
-        width:95%;
-        &:hover{
+        margin-top: 1rem;
+        width: 95%;
+        &:hover {
           cursor: pointer;
-          // box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.1);
+          box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.1);
         }
         & p {
           margin-left: 1rem;
@@ -41,17 +49,17 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        width:100%;
+        width: 100%;
 
         &__Link {
           font-size: 18px;
-          width:95%;
-          margin-bottom:1rem;
+          width: 95%;
+          margin-bottom: 1rem;
           padding: 1rem;
-          display:flex;
+          display: flex;
           justify-content: flex-start;
           align-items: center;
-          
+
           transition: all 0.3s ease;
           &:hover {
             cursor: pointer;
@@ -63,31 +71,39 @@
   }
   &__Right {
     flex: 1;
-    padding:1rem;
-    &__TopBar{
-      height:8.8vh;
+    padding: 1rem;
+    &__TopBar {
+      height: 8.8vh;
+
+      width: 73vw;
+      position: relative;
+      left: 350px;
     }
     &__MainBody {
-      //   border: 2px solid green;
+      position: relative;
+      left: 350px;
       display: flex;
       background-color: $color-white;
-    
+      width: 73vw;
       height: 90vh;
+      margin-top: 1rem;
 
       &__NewsFeed {
         flex: 1;
         overflow-y: scroll;
 
+        // width: 8rem;
         // margin-right: 1rem;
       }
       &__Notification {
         flex: 0 0 30rem;
-  
 
         &__Box {
           border: 2px solid lightgrey;
           text-align: left;
           padding: 0.9rem;
+          height: 539px;
+          overflow-y: scroll;
 
           &__Header {
             font-size: 18px;
@@ -104,11 +120,11 @@
             border: 2px solid lightgrey;
             border-radius: 5px;
             padding: 8px;
-            
 
             &__Underline {
               margin-top: 1rem;
               border-bottom: 2px solid lightgrey;
+              margin-bottom: 1rem;
             }
 
             &__Header {
@@ -121,7 +137,10 @@
                 & > p:first-child {
                   color: $color-black;
                   font-weight: 600;
-                  font-size: 14px;
+                  font-size: 13px;
+                }
+                & > p:last-child {
+                  font-size: 13px;
                 }
               }
             }
@@ -138,10 +157,10 @@
                 color: $color-white;
                 font-size: 16px;
                 padding: 7px 17px;
-                width:48%;
+                width: 28%;
                 border-radius: 5px;
-                &:hover{
-                  cursor:pointer;
+                &:hover {
+                  cursor: pointer;
                 }
               }
               &__Decline {
@@ -151,10 +170,10 @@
                 font-size: 16px;
                 padding: 7px 17px;
                 border-radius: 5px;
-                width:48%;
+                width: 28%;
                 margin-left: 2rem;
-                &:hover{
-                  cursor:pointer;
+                &:hover {
+                  cursor: pointer;
                 }
               }
             }
@@ -167,15 +186,15 @@
           border: 2px solid lightgrey;
           margin-top: 1rem;
           padding: 0.8rem;
-          &__Links{
+          &__Links {
             background-color: $color-primary;
             color: $color-white;
             font-size: 15px;
-            padding:.5rem 1rem;
+            padding: 0.5rem 1rem;
             border: none;
             border-radius: 4px;
             font-weight: 600;
-            height:4rem;
+            height: 4rem;
             cursor: pointer;
             text-decoration: none;
           }
@@ -187,7 +206,7 @@
             border: 2px solid lightgrey;
             font-size: 15px;
             padding: 6px 0px;
-            height:4rem;
+            height: 4rem;
             margin-top: 1rem;
             border-radius: 4px;
           }

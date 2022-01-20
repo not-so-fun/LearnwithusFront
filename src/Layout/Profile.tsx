@@ -12,7 +12,11 @@ import useTokenAndId from "../components/ReusableLogicComponents/useTokenAndId";
 import { Progress } from "../components/ReusableUIComponents/Spinner";
 import Navbar from "../components/Navbar";
 import ProfileNewsFeed from "../components/ProfileComponents/NewsFeed";
+<<<<<<< HEAD
 import { RESET_USER_INFO } from "../constants/ProfileConstants";
+=======
+import SideBar from "../components/HomePageComponent/SideBar";
+>>>>>>> sujan
 
 // const answerStats = [
 //   {
@@ -67,7 +71,10 @@ const Profile: FC<RouteComponentProps<any>> = ({ match }) => {
   ) as profileDataInterface;
 
   return (
-    <>
+    <div className="Main">
+      <div className="HomePage__Left">
+        <SideBar />
+      </div>
       <div className="Profile">
         <div className="Profile__Box">
           <div className="Profile__Box__Navbar">
@@ -126,7 +133,7 @@ const Profile: FC<RouteComponentProps<any>> = ({ match }) => {
           )}
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
