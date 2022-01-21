@@ -24,7 +24,9 @@ const MainQAAnswer: FC<MainQAAnswerInterface> = ({ ans }) => {
       <div className="MainQA__Answer__AnswerData">
         <div className="MainQA__Answer__AnswerData__Top">
           <div className="MainQA__Answer__AnswerData__Top__Answered">
-            <div className="MainQA__Answer__AnswerData__Top__Answered__ProfilePhoto"></div>
+            <div className="MainQA__Answer__AnswerData__Top__Answered__ProfilePhoto">
+              
+            </div>
             <div className="MainQA__Answer__AnswerData__Top__Answered__Heading">
               <p className="MainQA__Answer__AnswerData__Top__Answered__Heading__Bold">
                 {ans.username}

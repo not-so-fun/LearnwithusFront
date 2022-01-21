@@ -32,6 +32,7 @@
     &__Answer{
         margin: 1rem auto;
         height:auto;
+        min-height:22rem;
         width:95%;
         border:1px solid $color-grey-light-2;
         background:$color-white;
@@ -40,7 +41,7 @@
         &__AnswerLikes{
             flex: 0 0 10rem;
             // background:red;
-            height:96%;
+            height:95%;
             margin:0 .5rem;
             display:flex;
             align-items: center;
@@ -183,9 +184,10 @@
             }
             &__Body{
                 width:99%;
-                height:38rem;
-                background:$color-grey-light-2;
-                border-radius:5px;
+                height:auto;
+                font-size:2rem;
+                color:$color-black;
+               
             }
         }
     }

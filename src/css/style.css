@@ -589,11 +589,13 @@ body {
     background: #c4c4c4;
     width: 100%;
     height: 95rem;
+    display: flex;
+    align-items: center;
     margin-bottom: 2rem;
     display: flex; }
     .Profile__Box__Main__Newsfeed {
       height: 100%;
-      width: 90rem;
+      flex: 1;
       overflow-y: scroll; }
       .Profile__Box__Main__Newsfeed__Div {
         background-color: #f8f8f8;
@@ -654,7 +656,7 @@ body {
               text-decoration: none; }
     .Profile__Box__Main__SideInformation {
       height: 100%;
-      width: 40rem;
+      flex: 0 0 30%;
       background: #32569f; }
       .Profile__Box__Main__SideInformation__Status {
         border: 2px solid black;
@@ -876,10 +878,11 @@ body {
   .HomePage__Right {
     width: calc(100vw - 37rem);
     margin: 1rem;
-    position: fixed;
+    position: absolute;
     height: 98vh;
     top: 0;
-    left: 34.5rem; }
+    left: 34.5rem;
+    position: relative; }
     .HomePage__Right__TopBar {
       height: 7rem;
       width: 100%; }
@@ -1042,6 +1045,7 @@ body {
   .MainQA__Answer {
     margin: 1rem auto;
     height: auto;
+    min-height: 22rem;
     width: 95%;
     border: 1px solid #c4c4c4;
     background: #fff;
@@ -1049,7 +1053,7 @@ body {
     align-items: center; }
     .MainQA__Answer__AnswerLikes {
       flex: 0 0 10rem;
-      height: 96%;
+      height: 95%;
       margin: 0 .5rem;
       display: flex;
       align-items: center;
@@ -1166,9 +1170,9 @@ body {
               width: 3rem; }
       .MainQA__Answer__AnswerData__Body {
         width: 99%;
-        height: 38rem;
-        background: #c4c4c4;
-        border-radius: 5px; }
+        height: auto;
+        font-size: 2rem;
+        color: #000; }
   .MainQA__Question {
     height: auto;
     width: 95%;
@@ -1345,3 +1349,18 @@ body {
             border-radius: 5rem;
             margin: 0 1rem;
             background: #c4c4c4; }
+
+.Answered {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #fff; }
+  .Answered__Heading {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #000;
+    margin-top: 1rem; }
+  .Answered__Newsfeed {
+    overflow-y: scroll; }

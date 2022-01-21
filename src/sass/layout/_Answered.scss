@@ -1,0 +1,22 @@
+.Answered{
+    height: 100%;
+    width: 100%;
+    // background:red;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    background:$color-white;
+    &__Heading{
+        
+        font-size:2.5rem;
+        font-weight:600;
+        color:$color-black;
+        // background:green;
+        margin-top: 1rem;
+        
+    }
+    &__Newsfeed{
+        overflow-y: scroll;
+    }
+
+}
