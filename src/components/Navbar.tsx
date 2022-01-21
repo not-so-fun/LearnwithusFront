@@ -7,7 +7,7 @@ import { Avatar } from "@mui/material";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import { IoNotificationsSharp } from "react-icons/io5";
 import Notification from "./HomePageComponent/Notification";
-import { AiFillHome } from "react-icons/ai"; 
+import { AiFillHome } from "react-icons/ai";
 
 type NotificaitonState = {
   show: boolean;
@@ -35,7 +35,11 @@ const Navbar: FC = () => {
   return (
     <div className="Navbar">
       <div className="Navbar__Links">
-        <AiFillHome onClick={()=>history.push("/")} style={{width:30,height:30}}/>
+        <AiFillHome
+          
+          onClick={() => history.push("/")}
+          style={{ width: 30, height: 30,cursor:"pointer"}}
+        />
         {(userInfo && userInfo.user_id) || user_id ? (
           <>
             <div

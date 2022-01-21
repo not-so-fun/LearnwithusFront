@@ -17,7 +17,6 @@ function App() {
           <Switch>
 
             {routes.map((route, index) => {
-
               return route.private ? (
                 
                       <PrivateRoute
