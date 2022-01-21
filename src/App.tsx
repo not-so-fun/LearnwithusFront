@@ -8,10 +8,8 @@ import {
 import "./App.css";
 import routes from "./config/routes";
 import "./css/style.css";
-
 import PrivateRoute from "./utilities/PrivateRoute";
-import SideBar from "./components/HomePageComponent/SideBar";
-import Navbar from "./components/Navbar";
+
 function App() {
   return (
     <>

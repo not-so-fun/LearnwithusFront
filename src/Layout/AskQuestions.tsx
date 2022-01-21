@@ -9,25 +9,8 @@ const AskQuestions = () => {
     document.title = "Learn with us | Ask question";
   }, []);
   return (
-    // <>
-    //   <div className="AskQuestion__Top">
-    //     <Navbar />
-    //   </div>
-    //   <div className="AskQuestion__Main">
-
-    //     <div className="AskQuestion__Main__Side"></div>
-    //   </div>
-    // </>
     <div className="AskQuestion">
-      <div className="AskQuestion__Left">
-        <div className="HomePage__Left">
-          <SideBar />
-        </div>
-      </div>
       <div className="AskQuestion__Right">
-        <div className="AskQuestion__Right__Top">
-          <Navbar />
-        </div>
         <div className="AskQuestion__Right__Bottom">
           <div className="AskQuestion__Right__Bottom__Left">
             <div className="AskQuestion__Right__Bottom__Left__Main__Form">
