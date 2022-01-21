@@ -48,9 +48,12 @@ const MainQA: FC<RouteComponentProps<any>> = ({ match }) => {
   useEffect(() => {
     dispatch(MainQuestionAnswerAction(token, match.params.id));
     dispatch(AnswersOnlyAction(token, match.params.id));
-  }, [match, token]);
+  }, [match,token]);
+
+
 
   return (
+    
     <div className="MainQA">
       <div className="MainQA__Heading">Main Question Answer</div>
 
@@ -64,6 +67,7 @@ const MainQA: FC<RouteComponentProps<any>> = ({ match }) => {
         {answers && answers.map((ans) => <MainQAAnswer ans={ans} />)}
       </div>
     </div>
+    
   );
 };
 

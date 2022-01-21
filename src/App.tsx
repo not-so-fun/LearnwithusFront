@@ -8,8 +8,8 @@ import {
 import "./App.css";
 import routes from "./config/routes";
 import "./css/style.css";
-
 import PrivateRoute from "./utilities/PrivateRoute";
+
 function App() {
   return (
     <>
@@ -17,19 +17,14 @@ function App() {
         <BrowserRouter>
           <Switch>
             {routes.map((route, index) => {
+   
+
               return route.private ? (
                 <PrivateRoute
                   key={index}
                   path={route.path}
                   exact={route.exact}
                   component={route.component}
-                  // render={(props: RouteComponentProps<any>) => (
-                  //   <route.component
-                  //     name={route.name}
-                  //     {...props}
-                  //     {...route.props}
-                  //   />
-                  // )}
                 />
               ) : (
                 <Route

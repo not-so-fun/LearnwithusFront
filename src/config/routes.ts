@@ -11,6 +11,14 @@ import MainQA from "../Layout/MainQA";
 
 const routes: IRoute[] = [
   {
+    path: "/",
+    name: "Home",
+    component:HomePage,
+    exact: true,
+    private:true,
+    showNav:true
+  },
+  {
     path: "/login",
     name: "Login",
     component: Login,
@@ -29,11 +37,12 @@ const routes: IRoute[] = [
   {
     path: "/profile/:id",
     name: "Profile",
-    component: Profile,
+    component:Profile,
     exact: true,
     private:true,
     showNav:true
   },
+ 
   {
     path: "/forgot-password",
     name: "ForgotPassword",
@@ -54,7 +63,7 @@ const routes: IRoute[] = [
     path: "/activate_account",
     name: "Account_Activate",
     component: AccountActivationScreen,
-    exact: false,
+    exact: true,
     private:false,
     showNav:false
   },
@@ -62,7 +71,7 @@ const routes: IRoute[] = [
     path: "/questions/:id",
     name: "MainQuestionAnswer",
     component: MainQA,
-    exact: false,
+    exact: true,
     private:true,
     showNav:false
   },
@@ -74,14 +83,7 @@ const routes: IRoute[] = [
     private:true,
     showNav:false
   },
-  {
-    path: "/",
-    name: "Home",
-    component: HomePage,
-    exact: false,
-    private:true,
-    showNav:false
-  },
+  
   
 ];
 
