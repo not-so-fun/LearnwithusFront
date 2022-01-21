@@ -871,6 +871,8 @@ body {
           display: flex;
           justify-content: flex-start;
           align-items: center;
+          text-decoration: none;
+          color: #fff;
           transition: all 0.3s ease; }
           .HomePage__Left__SideBar__Links__Link:hover {
             cursor: pointer;

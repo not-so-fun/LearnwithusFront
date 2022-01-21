@@ -20,7 +20,7 @@ const Answered: FC = () => {
   ) as questionFeedInterface;
 
   useEffect(() => {
-    document.title = "Learn with us | Home";
+    document.title = "Learn with us | Answered";
   }, []);
 
   useEffect(() => {

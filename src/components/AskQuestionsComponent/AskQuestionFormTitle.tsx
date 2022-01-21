@@ -32,4 +32,4 @@ const AskQuestionFormTitle: FC = () => {
     )
 }
 
-export default AskQuestionFormTitle
+export default AskQuestionFormTitle;
