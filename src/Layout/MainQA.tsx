@@ -32,13 +32,14 @@ const MainQA: FC<RouteComponentProps<any>> = ({ match }) => {
     document.title = "Learn with us | Main QA";
   }, []);
 
+
+  
   useEffect(() => {
     dispatch(MainQuestionAnswerAction(token, match.params.id));
-  }, [match, token]);
-
-  useEffect(() => {
     dispatch(AnswersOnlyAction(token, match.params.id));
-  }, [match, token]);
+  }, [match,token]);
+
+
 
   return (
     

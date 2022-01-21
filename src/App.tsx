@@ -8,44 +8,24 @@ import {
 import "./App.css";
 import routes from "./config/routes";
 import "./css/style.css";
-
 import PrivateRoute from "./utilities/PrivateRoute";
-import SideBar from "./components/HomePageComponent/SideBar";
-import Navbar from "./components/Navbar";
+
 function App() {
   return (
     <>
       <div className="App">
-         
-          
-         
-          
-
-         
         <BrowserRouter>
           <Switch>
             {routes.map((route, index) => {
-              console.log(route);
+   
+
               return route.private ? (
-                <>
-                     <div className="HomePage__Left">
-                        <SideBar />
-                    </div>
-             
-                    <div className="HomePage__Right">
-                      <div className="HomePage__Right__TopBar">
-                        <Navbar />
-                      </div> 
-                    <div className="HomePage__Right__MainBody"> 
-                      <PrivateRoute
-                        key={index}
-                        path={route.path}
-                        exact={route.exact}
-                        component={route.component}
-                      />
-                    </div>
-                  </div>
-                </>
+                <PrivateRoute
+                  key={index}
+                  path={route.path}
+                  exact={route.exact}
+                  component={route.component}
+                />
               ) : (
                 <Route
                   key={index}
@@ -63,7 +43,7 @@ function App() {
             })}
           </Switch>
         </BrowserRouter>
-        </div>
+      </div>
     </>
   );
 }
