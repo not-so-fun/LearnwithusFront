@@ -13,41 +13,33 @@ import PrivateRoute from "./utilities/PrivateRoute";
 function App() {
   return (
     <>
-     <BrowserRouter>
-          <Switch>
-
-            {routes.map((route, index) => {
-
-              return route.private ? (
-                
-                      <PrivateRoute
-                        key={index}
-                        path={route.path}
-                        exact={route.exact}
-                        component={route.component}
-                      />
-                     
-                   
-              ) : (
-               
-                <Route
-                  key={index}
-                  path={route.path}
-                  exact={route.exact}
-                  render={(props: RouteComponentProps<any>) => (
-                    <route.component
-                      name={route.name}
-                      {...props}
-                      {...route.props}
-                    />
-                  )}
-                />
-               
-               
-              );
-            })}
-          </Switch>
-        </BrowserRouter>
+      <BrowserRouter>
+        <Switch>
+          {routes.map((route, index) => {
+            return route.private ? (
+              <PrivateRoute
+                key={index}
+                path={route.path}
+                exact={route.exact}
+                component={route.component}
+              />
+            ) : (
+              <Route
+                key={index}
+                path={route.path}
+                exact={route.exact}
+                render={(props: RouteComponentProps<any>) => (
+                  <route.component
+                    name={route.name}
+                    {...props}
+                    {...route.props}
+                  />
+                )}
+              />
+            );
+          })}
+        </Switch>
+      </BrowserRouter>
     </>
   );
 }
