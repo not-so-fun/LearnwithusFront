@@ -15,38 +15,23 @@ import Navbar from "./components/Navbar";
 function App() {
   return (
     <>
-      <div className="App">
-         
-          
-         
-          
-
-         
-        <BrowserRouter>
+     <BrowserRouter>
           <Switch>
+
             {routes.map((route, index) => {
-              console.log(route);
+
               return route.private ? (
-                <>
-                     <div className="HomePage__Left">
-                        <SideBar />
-                    </div>
-             
-                    <div className="HomePage__Right">
-                      <div className="HomePage__Right__TopBar">
-                        <Navbar />
-                      </div> 
-                    <div className="HomePage__Right__MainBody"> 
+                
                       <PrivateRoute
                         key={index}
                         path={route.path}
                         exact={route.exact}
                         component={route.component}
                       />
-                    </div>
-                  </div>
-                </>
+                     
+                   
               ) : (
+               
                 <Route
                   key={index}
                   path={route.path}
@@ -59,11 +44,12 @@ function App() {
                     />
                   )}
                 />
+               
+               
               );
             })}
           </Switch>
         </BrowserRouter>
-        </div>
     </>
   );
 }

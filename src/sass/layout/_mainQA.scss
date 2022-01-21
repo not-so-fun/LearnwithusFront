@@ -1,38 +1,38 @@
 .MainQA{
     height: 100%;
     width:100%;
-    background:$color-grey-light-1;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
     overflow-y: scroll;
+    background: $color-white;
+    border:1px solid $color-grey-light-2;
     &__Heading{
-       
         margin: 0 auto;
         height: 8rem;
-        color:$color-white;
+        color:$color-black;
         padding: 0 1rem;
         margin:.4rem 0;
         width:auto;
         display:flex;
         align-items: center;
         justify-content: center;
-        font-size:2.4rem;
+        font-size:4rem;
         font-weight:600;
     }
     &__Answers{
         background:white;
         height:auto;
-        width:100rem;
+        width:100%;
         display:flex;
         flex-direction: column;
         align-items: center;
     }
     &__Answer{
         margin: 1rem auto;
-        height:50rem;
-        width:90rem;
+        height:auto;
+        width:95%;
         border:1px solid $color-grey-light-2;
         background:$color-white;
         display:flex;
@@ -191,10 +191,11 @@
     }
     &__Question{
         height:auto;
-        width:100rem;
+        width:95%;
         background:$color-white;
         margin:1rem auto;
         border-radius:5px;
+        border:1px solid $color-grey-light-2;
         &__Top{
             height:7rem;
             width: 100%;
@@ -205,7 +206,7 @@
             &__ProfileData{
                 height:6rem;
                 width:25rem;
-                background:$color-grey-light-2;
+                // background:$color-grey-light-2;
                 margin: 0 1rem;
                 border-radius:5px;
                 display:flex;
@@ -220,6 +221,7 @@
                     &__Image{
                         height:5rem;
                         width:5rem;
+                        object-fit: cover;
                     }
                 }
                 &__ProfileName{
@@ -231,8 +233,11 @@
                     align-items: center;
                     justify-content: flex-start;
                     font-size:2rem;
+                    font-weight:600;
                     color: $color-black;
                     padding-left:.3rem;
+                   
+                    
                 }
             }
             &__QuestionData{
@@ -282,7 +287,7 @@
         }
         &__MainQuestionData{
             width:100%;
-            height:50rem;
+            height:auto;
             margin:1rem 0;
             // background:green;
             display:flex;
@@ -359,7 +364,7 @@
                     color:$color-black;
                     padding:.5rem;
                     display:flex;
-                    align-items: flex-start;
+                    align-items:center;
                     justify-content: flex-start;
                     border-bottom: 1px solid $color-grey-light-2;
                 }
@@ -383,7 +388,6 @@
                     display:flex;
                     align-items: center;
                     justify-content: flex-start;
-                    border: 1px solid $color-grey-light-2;
                     &__TagName{
                         height:3rem;
                         width:auto;

@@ -15,7 +15,8 @@ body {
   font-family: "Lato", sans-serif;
   font-weight: 400;
   line-height: 1.7;
-  color: #777; }
+  color: #777;
+  background: #EEEEEE; }
 
 .Center {
   height: 100vh;
@@ -1012,35 +1013,36 @@ body {
 .MainQA {
   height: 100%;
   width: 100%;
-  background: #f8f8f8;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  overflow-y: scroll; }
+  overflow-y: scroll;
+  background: #fff;
+  border: 1px solid #c4c4c4; }
   .MainQA__Heading {
     margin: 0 auto;
     height: 8rem;
-    color: #fff;
+    color: #000;
     padding: 0 1rem;
     margin: .4rem 0;
     width: auto;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 2.4rem;
+    font-size: 4rem;
     font-weight: 600; }
   .MainQA__Answers {
     background: white;
     height: auto;
-    width: 100rem;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center; }
   .MainQA__Answer {
     margin: 1rem auto;
-    height: 50rem;
-    width: 90rem;
+    height: auto;
+    width: 95%;
     border: 1px solid #c4c4c4;
     background: #fff;
     display: flex;
@@ -1169,10 +1171,11 @@ body {
         border-radius: 5px; }
   .MainQA__Question {
     height: auto;
-    width: 100rem;
+    width: 95%;
     background: #fff;
     margin: 1rem auto;
-    border-radius: 5px; }
+    border-radius: 5px;
+    border: 1px solid #c4c4c4; }
     .MainQA__Question__Top {
       height: 7rem;
       width: 100%;
@@ -1183,7 +1186,6 @@ body {
       .MainQA__Question__Top__ProfileData {
         height: 6rem;
         width: 25rem;
-        background: #c4c4c4;
         margin: 0 1rem;
         border-radius: 5px;
         display: flex;
@@ -1197,7 +1199,8 @@ body {
           overflow: hidden; }
           .MainQA__Question__Top__ProfileData__ProfilePhoto__Image {
             height: 5rem;
-            width: 5rem; }
+            width: 5rem;
+            object-fit: cover; }
         .MainQA__Question__Top__ProfileData__ProfileName {
           flex: 1;
           height: 5rem;
@@ -1207,6 +1210,7 @@ body {
           align-items: center;
           justify-content: flex-start;
           font-size: 2rem;
+          font-weight: 600;
           color: #000;
           padding-left: .3rem; }
       .MainQA__Question__Top__QuestionData {
@@ -1246,7 +1250,7 @@ body {
             width: 3rem; }
     .MainQA__Question__MainQuestionData {
       width: 100%;
-      height: 50rem;
+      height: auto;
       margin: 1rem 0;
       display: flex;
       align-items: center; }
@@ -1308,7 +1312,7 @@ body {
           color: #000;
           padding: .5rem;
           display: flex;
-          align-items: flex-start;
+          align-items: center;
           justify-content: flex-start;
           border-bottom: 1px solid #c4c4c4; }
         .MainQA__Question__MainQuestionData__QuestionTitleAndBody__Body {
@@ -1327,8 +1331,7 @@ body {
           height: 5rem;
           display: flex;
           align-items: center;
-          justify-content: flex-start;
-          border: 1px solid #c4c4c4; }
+          justify-content: flex-start; }
           .MainQA__Question__MainQuestionData__QuestionTitleAndBody__Tag__TagName {
             height: 3rem;
             width: auto;

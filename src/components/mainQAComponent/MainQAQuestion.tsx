@@ -173,17 +173,22 @@ const MainQAQuestion: FC<MainQAQuestionInterface> = ({ question }) => {
               </div>
             </div>
             <div className="MainQA__Question__MainQuestionData__QuestionTitleAndBody">
+             
               <div className="MainQA__Question__MainQuestionData__QuestionTitleAndBody__Title">
                 {question.title}
-              </div>
-              <div className="MainQA__Question__MainQuestionData__QuestionTitleAndBody__Body">
-                {question.question}
+                
               </div>
               <div className="MainQA__Question__MainQuestionData__QuestionTitleAndBody__Tag">
                 <div className="MainQA__Question__MainQuestionData__QuestionTitleAndBody__Tag__TagName">
                   {question.topic_title}
                 </div>
               </div>
+            
+              
+              <div className="MainQA__Question__MainQuestionData__QuestionTitleAndBody__Body">
+                {question.question}
+              </div>
+              
             </div>
           </div>
         </div>
