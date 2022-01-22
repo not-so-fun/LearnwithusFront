@@ -9,6 +9,7 @@ import { IoNotificationsSharp } from "react-icons/io5";
 import Notification from "./HomePageComponent/Notification";
 import { AiFillHome } from "react-icons/ai";
 import { FiLogOut } from "react-icons/fi";
+import { IoCreate } from "react-icons/io5";
 
 type NotificaitonState = {
   show: boolean;
@@ -26,8 +27,6 @@ const Navbar: FC = () => {
   const { user_id } = useTokenAndId();
   const history = useHistory();
 
-  // console.log(user_id)
-
   const handleLogout = () => {
     localStorage.clear();
     history.push("/login");
@@ -42,6 +41,11 @@ const Navbar: FC = () => {
         />
         {(userInfo && userInfo.user_id) || user_id ? (
           <>
+            <IoCreate
+              onClick={() => history.push("/question/ask")}
+              style={{ fontSize: 25, marginLeft: 20, cursor: "pointer" }}
+            />
+
             <FiLogOut
               onClick={handleLogout}
               style={{ fontSize: 25, marginLeft: 20, cursor: "pointer" }}
