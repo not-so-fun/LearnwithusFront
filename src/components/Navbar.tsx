@@ -24,7 +24,7 @@ const Navbar: FC = () => {
     (state) => state.userInfo
   ) as any;
 
-  const { user_id } = useTokenAndId();
+  const { user_id,image } = useTokenAndId();
   const history = useHistory();
 
   const handleLogout = () => {
@@ -69,7 +69,7 @@ const Navbar: FC = () => {
                 <div className="Navbar__Links__content__Avatar">
                   <Avatar
                     alt="user"
-                    src="https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png"
+                    src={`${(userInfo && userInfo.image) || image }`}
                     style={{ width: 40, height: 40 }}
                   />
 

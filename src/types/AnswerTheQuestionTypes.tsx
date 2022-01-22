@@ -11,7 +11,7 @@ interface answerQuestionLoad {
 
 interface answerQuestionSucess {
   type: typeof ANSWER_THE_QUESTION_SUCCESS;
-  answer: answerInterface|null;
+  // answer: answerInterface|null;
 }
 
 interface answerQuestionError {

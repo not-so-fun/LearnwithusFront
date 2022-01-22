@@ -1,22 +1,54 @@
-import * as React from "react";
+import React,{FC,useState} from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { RootStateType } from "../../stores";
+import { AnswerTheQuestionAction } from "../../actions/AnswerTheQuestionAction";
+import { answerTheQuestionInterface } from "../../reducers/AnswerTheQuestionReducer";
+import { Progress } from "../ReusableUIComponents/Spinner";
+import useTokenAndId from "../ReusableLogicComponents/useTokenAndId";
 
-const AnswerComponent = () => {
+interface answerComponentInterface{
+  question_id:string
+}
+
+const AnswerComponent:FC<answerComponentInterface> = ({question_id}) => {
+  const dispatch=useDispatch()
+  const {token}=useTokenAndId()
+  const { loading, answer, error } = useSelector<RootStateType>(
+    (state) => state.answer_question
+  ) as answerTheQuestionInterface;
+
+  const [answerType,setAnswerType]=useState<string>("")
+
+  const handleAnswerSubmit:React.MouseEventHandler<HTMLButtonElement> | undefined=()=>{
+    dispatch(AnswerTheQuestionAction(token,question_id,answerType))
+  }
   return (
     <div className="MainQA__AnswerInput__Box">
-       <div className="MainQA__AnswerInput__Box__Heading">
+      <div className="MainQA__AnswerInput__Box__Heading">
         <h1>Your Answer</h1>
-       </div>
-       <div className="MainQA__AnswerInput__Box__InputBox">
-       <textarea className="MainQA__AnswerInput__Box__InputBox__Input" placeholder="Your Answer"/>
+      </div>
+      <div className="MainQA__AnswerInput__Box__InputBox">
+        <textarea
+          className="MainQA__AnswerInput__Box__InputBox__Input"
+          placeholder="Your Answer"
+          value={answerType}
+          onChange={(e)=>setAnswerType(e.target.value)}
+        />
       </div>
       <div className="MainQA__AnswerInput__Box__ButtonBox">
-        <button className="MainQA__AnswerInput__Box__ButtonBox__Button">
-          Post your answer
-        </button>
+        {loading ? (
+          <button
+            disabled
+            className="MainQA__AnswerInput__Box__ButtonBox__Button"
+          >
+            <Progress size={25} />
+          </button>
+        ) : (
+          <button onClick={handleAnswerSubmit} className="MainQA__AnswerInput__Box__ButtonBox__Button">
+            Post your answer
+          </button>
+        )}
       </div>
-     
-      
-    
     </div>
   );
 };

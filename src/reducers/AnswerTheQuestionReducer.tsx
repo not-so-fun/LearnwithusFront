@@ -4,9 +4,9 @@ import {
   ANSWER_THE_QUESTION_ERROR,
 } from "../constants/AnswerTheQuestionConstants";
 import { AnswerTheQuestionType } from "../types/AnswerTheQuestionTypes";
-import { answerInterface } from "../reducers/AnsweresOnlyReducer";
+import { answerInterface } from "./AnsweresOnlyReducer";
 
-interface answerTheQuestionInterface {
+export interface answerTheQuestionInterface {
   loading: boolean;
   answer: answerInterface | null;
   error: string;
@@ -26,7 +26,7 @@ export const AnswerTheQuestionReducer = (
     case ANSWER_THE_QUESTION_LOAD:
       return { ...state, loading: true };
     case ANSWER_THE_QUESTION_SUCCESS:
-      return { ...state, loading: false, answer: action.answer };
+      return { ...state, loading: false};
     case ANSWER_THE_QUESTION_ERROR:
       return { ...state, loading: false };
     default:
