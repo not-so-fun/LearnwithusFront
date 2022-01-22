@@ -1029,6 +1029,48 @@ body {
   overflow-y: scroll;
   background: #fff;
   border: 1px solid #c4c4c4; }
+  .MainQA__AnswerInput {
+    width: 95%;
+    margin-top: rem;
+    margin: 2rem auto;
+    border: 1px solid #c4c4c4;
+    border-radius: 5px; }
+    .MainQA__AnswerInput__Box {
+      padding: 0 1rem;
+      width: 100%; }
+      .MainQA__AnswerInput__Box__Heading {
+        font-size: 1.4rem;
+        color: #000; }
+      .MainQA__AnswerInput__Box__InputBox {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 10rem; }
+        .MainQA__AnswerInput__Box__InputBox__Input {
+          width: 100%;
+          height: 90%;
+          padding: 1rem;
+          border: none;
+          outline: none;
+          background: #c4c4c4;
+          border-radius: 5px; }
+      .MainQA__AnswerInput__Box__ButtonBox {
+        height: 5rem;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding: 0 1rem; }
+        .MainQA__AnswerInput__Box__ButtonBox__Button {
+          height: 4rem;
+          border: none;
+          outline: none;
+          background: #32569f;
+          padding: 0 1rem;
+          font-size: 2rem;
+          border-radius: 5px; }
+          .MainQA__AnswerInput__Box__ButtonBox__Button:hover {
+            cursor: pointer;
+            background: #c4c4c4; }
   .MainQA__Heading {
     margin: 0 auto;
     height: 8rem;

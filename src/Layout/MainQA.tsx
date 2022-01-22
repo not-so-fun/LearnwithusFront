@@ -55,7 +55,7 @@ const MainQA: FC<RouteComponentProps<any>> = ({ match }) => {
     <div className="MainQA">
       <div className="MainQA__Heading">
         Main Question Answer
-        <AnswerComponent />
+        
       </div>
       {questionLoading ? (
         <MainQASkeletion />
@@ -66,6 +66,7 @@ const MainQA: FC<RouteComponentProps<any>> = ({ match }) => {
       <div className="MainQA__Answers">
         {answers && answers.map((ans) => <MainQAAnswer ans={ans} />)}
       </div>
+      <div className="MainQA__AnswerInput"><AnswerComponent /></div>
     </div>
   );
 };
