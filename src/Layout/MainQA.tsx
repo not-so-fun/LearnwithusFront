@@ -12,6 +12,7 @@ import { questionFeedListInterface } from "../reducers/QuestionFeedReducers";
 import { answersInterface } from "../reducers/AnsweresOnlyReducer";
 import { MainQuestionAnswerInterface } from "../reducers/MainQuestionAnswerReducer";
 import MainQASkeletion from "../components/mainQAComponent/MainQASkeletion";
+import AnswerComponent from "../components/AnswerComponent/AnswerComponent";
 // const MainQAAnswer=lazy(()=>import("../components/mainQAComponent/MainQAAnswer"))
 
 const MainQA: FC<RouteComponentProps<any>> = ({ match }) => {
@@ -52,8 +53,10 @@ const MainQA: FC<RouteComponentProps<any>> = ({ match }) => {
 
   return (
     <div className="MainQA">
-      <div className="MainQA__Heading">Main Question Answer</div>
-
+      <div className="MainQA__Heading">
+        Main Question Answer
+        <AnswerComponent />
+      </div>
       {questionLoading ? (
         <MainQASkeletion />
       ) : (

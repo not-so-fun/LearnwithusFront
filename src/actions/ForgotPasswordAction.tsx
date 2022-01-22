@@ -17,13 +17,15 @@ export const ForgotPasswordAction =
       .post("/passwords/forgot-password", {
         email,
       })
-      .then((response: any) => {
+      .then((response) => {
+        console.log(response.data)
         dispatch({
           type: ForgotPassword_REQUEST_SUCCESS,
           message: response.data,
         });
       })
-      .catch((error: any) => {
+      .catch((error) => {
+        console.log(error.response)
         dispatch({
           type: ForgotPassword_REQUEST_ERROR,
           error: error.response.data,

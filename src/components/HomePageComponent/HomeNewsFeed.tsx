@@ -1,7 +1,7 @@
 import React, { FC, useEffect, useState } from "react";
 import { Avatar } from "@mui/material";
-import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
-import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
+import { BsCaretDownFill, BsCaretUpFill } from "react-icons/bs";
+
 import { questionFeedListInterface } from "../../reducers/QuestionFeedReducers";
 import useTokenAndId from "../ReusableLogicComponents/useTokenAndId";
 import axios from "../../axios";
@@ -115,14 +115,14 @@ const HomeNewsFeed: FC<quesInterface> = ({ question }) => {
           
           {upvote == null ? (
             <>
-              <ArrowDropUpIcon
+              <BsCaretUpFill
                 onClick={handleChangeUpvoteUp}
                 className="Profile__Box__Main__Newsfeed__Div__InnerDiv__Votes__Up"
               />
               <h1 className="Profile__Box__Main__Newsfeed__Div__InnerDiv__Votes__Text">
                 20k
               </h1>
-              <ArrowDropDownIcon
+              <BsCaretDownFill
                 onClick={handleChangeUpvoteDown}
                 className="Profile__Box__Main__Newsfeed__Div__InnerDiv__Votes__Down"
               />
@@ -131,7 +131,7 @@ const HomeNewsFeed: FC<quesInterface> = ({ question }) => {
             <>
               {upvote === true ? (
                 <>
-                  <ArrowDropUpIcon
+                  <BsCaretUpFill
                     onClick={handleChangeUpvoteUp}
                     style={{ color: "blue" }}
                     className="Profile__Box__Main__Newsfeed__Div__InnerDiv__Votes__Up"
@@ -139,21 +139,21 @@ const HomeNewsFeed: FC<quesInterface> = ({ question }) => {
                   <h1 className="Profile__Box__Main__Newsfeed__Div__InnerDiv__Votes__Text">
                     20k
                   </h1>
-                  <ArrowDropDownIcon
+                  <BsCaretDownFill
                     onClick={handleChangeUpvoteDown}
                     className="Profile__Box__Main__Newsfeed__Div__InnerDiv__Votes__Down"
                   />
                 </>
               ) : (
                 <>
-                  <ArrowDropUpIcon
+                  <BsCaretUpFill
                     onClick={handleChangeUpvoteUp}
                     className="Profile__Box__Main__Newsfeed__Div__InnerDiv__Votes__Up"
                   />
                   <h1 className="Profile__Box__Main__Newsfeed__Div__InnerDiv__Votes__Text">
                     20k
                   </h1>
-                  <ArrowDropDownIcon
+                  <BsCaretDownFill
                     onClick={handleChangeUpvoteDown}
                     style={{ color: "red" }}
                     className="Profile__Box__Main__Newsfeed__Div__InnerDiv__Votes__Down"

@@ -8,6 +8,7 @@ import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import { IoNotificationsSharp } from "react-icons/io5";
 import Notification from "./HomePageComponent/Notification";
 import { AiFillHome } from "react-icons/ai";
+import { FiLogOut } from "react-icons/fi";
 
 type NotificaitonState = {
   show: boolean;
@@ -36,30 +37,42 @@ const Navbar: FC = () => {
     <div className="Navbar">
       <div className="Navbar__Links">
         <AiFillHome
-          
           onClick={() => history.push("/")}
-          style={{ width: 30, height: 30,cursor:"pointer"}}
+          style={{ fontSize: 25, marginLeft: 20, cursor: "pointer" }}
         />
         {(userInfo && userInfo.user_id) || user_id ? (
           <>
-            <div
+            <FiLogOut
               onClick={handleLogout}
-              className="Navbar__Links__content Navbar__Links__center"
-            >
-              Logout
+              style={{ fontSize: 25, marginLeft: 20, cursor: "pointer" }}
+            />
+
+            <div className="Navbar__Links__content">
+              <div className="Navbar__Links__content__Icon">
+                <IoNotificationsSharp
+                  style={{ fontSize: 25, marginLeft: 20 }}
+                  onClick={() => {
+                    setShowNotification({ show: !showNotification.show });
+                  }}
+                />
+                <div className="Navbar__Links__content__Notification">
+                  {showNotification.show && <Notification />}
+                </div>
+              </div>
+              <Link
+                to={`/profile/${(userInfo && userInfo.user_id) || user_id}`}
+              >
+                <div className="Navbar__Links__content__Avatar">
+                  <Avatar
+                    alt="user"
+                    src="https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png"
+                    style={{ width: 40, height: 40 }}
+                  />
+
+                  <ArrowDropDownIcon className="Navbar__Links__content__Avatar__Drop" />
+                </div>
+              </Link>
             </div>
-            <Link
-              to={`/profile/${(userInfo && userInfo.user_id) || user_id}`}
-              className="Navbar__Links__content"
-            >
-              Profile
-            </Link>
-            <Link
-              to="/questions/:id"
-              className="Navbar__Links__content Navbar__Links__center"
-            >
-              MainQA
-            </Link>
           </>
         ) : (
           <>
@@ -74,30 +87,6 @@ const Navbar: FC = () => {
             </Link>
           </>
         )}
-
-        <div className="Navbar__Links__content">
-          <div className="Navbar__Links__content__Icon">
-            <IoNotificationsSharp
-              style={{ fontSize: 25, marginLeft: 10 }}
-              onClick={() => {
-                setShowNotification({ show: !showNotification.show });
-              }}
-            />
-            <div className="Navbar__Links__content__Notification">
-              {showNotification.show && <Notification />}
-            </div>
-          </div>
-
-          <div className="Navbar__Links__content__Avatar">
-            <Avatar
-              alt="user"
-              src="https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png"
-              style={{ width: 40, height: 40 }}
-            />
-
-            <ArrowDropDownIcon className="Navbar__Links__content__Avatar__Drop" />
-          </div>
-        </div>
       </div>
     </div>
   );
