@@ -388,12 +388,15 @@
       border: 2px solid lightgrey;
       border-radius: 5px;
       margin: 0.5rem;
+      background-color: white;
+      color:black;
 
       padding: 1rem;
       &__item {
         display: flex;
         flex-direction: row;
         // justify-content: center;
+       
 
         align-items: center;
         margin-bottom: 1rem;
@@ -404,6 +407,7 @@
         }
         &__checkbox {
           cursor: pointer;
+          
         }
 
         &:last-child {
