@@ -6,6 +6,7 @@ import Navbar from "../components/Navbar";
 import HomeNewsFeed from "../components/HomePageComponent/HomeNewsFeed";
 import { Link } from "react-router-dom";
 import { QuestionFeedAction } from "../actions/QuestionFeedAction";
+import HomeNewsFeedSkeleton from "../components/HomePageComponent/HomeNewsFeedSkeleton";
 import {
   questionFeedInterface,
   questionFeedListInterface,
@@ -32,28 +33,27 @@ const HomePage: FC = () => {
   return (
     <>
       <div className="HomePage">
-          {/* <div className="HomePage__Right__MainBody"> */}
-            <div className="HomePage__Right__MainBody__NewsFeed">
-              {questions &&
-                questions.map((question: questionFeedListInterface) => (
-                  <div key={question.question_id}>
-                    <HomeNewsFeed question={question} />
-                  </div>
-                ))}
-            </div>
-            <div className="HomePage__Right__MainBody__Notification">
-              <div className="HomePage__Right__MainBody__Notification__Below">
-                <Link
-                  to="/question/ask"
-                  className="HomePage__Right__MainBody__Notification__Below__Links"
-                >
-                  Having a doubt, ask a question?
-                </Link>
-                <button>Saved Questions</button>
+        <div className="HomePage__Right__MainBody__NewsFeed">
+          {loading && <div>Loading........</div>}
+          {questions &&
+            questions.map((question: questionFeedListInterface) => (
+              <div key={question.question_id}>
+                <HomeNewsFeed question={question} />
               </div>
-            </div>
+            ))}
+        </div>
+        <div className="HomePage__Right__MainBody__Notification">
+          <div className="HomePage__Right__MainBody__Notification__Below">
+            <Link
+              to="/question/ask"
+              className="HomePage__Right__MainBody__Notification__Below__Links"
+            >
+              Having a doubt, ask a question?
+            </Link>
+            <button>Saved Questions</button>
           </div>
-        {/* </div> */}
+        </div>
+      </div>
     </>
   );
 };

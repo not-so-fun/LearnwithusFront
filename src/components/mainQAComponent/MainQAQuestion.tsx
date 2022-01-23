@@ -119,6 +119,7 @@ const MainQAQuestion: FC<MainQAQuestionInterface> = ({ question }) => {
             <div className="MainQA__Question__MainQuestionData__QuestionLikes">
               {upvote !==undefined && 
               <div className="MainQA__Question__MainQuestionData__QuestionLikes__LikesBox">
+                
                 {upvote == null ? (
                   <>
                     <BsCaretUpFill

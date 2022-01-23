@@ -6,10 +6,10 @@ const useTokenAndId = () => {
 
 
   if (userInfo !== null) {
-    const { user_id, token } = JSON.parse(userInfo!);
-    return {user_id,token};
+    const { user_id, token,image } = JSON.parse(userInfo!);
+    return {user_id,token,image};
   }else{
-    return {user_id:null,token:null}
+    return {user_id:null,token:null,image:null}
   }
 };
 export default useTokenAndId

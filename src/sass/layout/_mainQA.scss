@@ -8,6 +8,60 @@
     overflow-y: scroll;
     background: $color-white;
     border:1px solid $color-grey-light-2;
+    &__AnswerInput{
+        width:95%;
+        margin-top:rem;
+        // background: red;
+        margin:2rem auto;
+        border: 1px solid $color-grey-light-2;
+        border-radius: 5px;
+        &__Box{
+            padding: 0 1rem;
+        
+            width:100%;
+            &__Heading{
+                font-size:1.4rem;
+                color:$color-black;
+            }
+            &__InputBox{
+                display:flex;
+                align-items: center;
+                justify-content: center;
+                height:10rem;
+                &__Input{
+                    width:100%;
+                    height:90%;
+                    padding:1rem;
+                    border: none;
+                    outline:none;
+                    background:$color-grey-light-2; 
+                    border-radius: 5px;
+                    resize: none;
+                }
+            }
+            &__ButtonBox{
+                height:5rem;
+                display:flex;
+                align-items: center;
+                justify-content: flex-end;
+                padding:0 1rem;
+               
+                &__Button{
+                    height:4rem;
+                    border:none;
+                    outline: none;
+                    background:$color-primary;
+                    padding:0 1rem;
+                    font-size:2rem;
+                    border-radius:5px;
+                    &:hover{
+                        cursor: pointer;
+                        background:$color-grey-light-2;
+                    }
+                }
+            }
+        }
+    }
     &__Heading{
         margin: 0 auto;
         height: 8rem;
@@ -32,6 +86,7 @@
     &__Answer{
         margin: 1rem auto;
         height:auto;
+        min-height:22rem;
         width:95%;
         border:1px solid $color-grey-light-2;
         background:$color-white;
@@ -40,7 +95,7 @@
         &__AnswerLikes{
             flex: 0 0 10rem;
             // background:red;
-            height:96%;
+            height:95%;
             margin:0 .5rem;
             display:flex;
             align-items: center;
@@ -183,9 +238,10 @@
             }
             &__Body{
                 width:99%;
-                height:38rem;
-                background:$color-grey-light-2;
-                border-radius:5px;
+                height:auto;
+                font-size:2rem;
+                color:$color-black;
+               
             }
         }
     }

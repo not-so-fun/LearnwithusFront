@@ -6,7 +6,10 @@ export type ModalState = {
   open: boolean;
   wishes: boolean;
 };
-const ProfileStats: FC = () => {
+interface ProfileStatsInterface{
+  page_user_id:string
+}
+const ProfileStats: FC<ProfileStatsInterface> = ({page_user_id}) => {
   //state type
 
   const [openModal, setOpenModal] = useState<ModalState>({
@@ -58,7 +61,7 @@ const ProfileStats: FC = () => {
         </button>
 
         {openModal.wishes && (
-          <WishesModal modalHandler={wishHandler} heading="Wishes" />
+          <WishesModal page_user_id={page_user_id} modalHandler={wishHandler} heading="Wishes" />
         )}
       </div>
     </div>

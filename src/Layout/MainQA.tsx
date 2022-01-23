@@ -12,6 +12,7 @@ import { questionFeedListInterface } from "../reducers/QuestionFeedReducers";
 import { answersInterface } from "../reducers/AnsweresOnlyReducer";
 import { MainQuestionAnswerInterface } from "../reducers/MainQuestionAnswerReducer";
 import MainQASkeletion from "../components/mainQAComponent/MainQASkeletion";
+import AnswerComponent from "../components/AnswerComponent/AnswerComponent";
 // const MainQAAnswer=lazy(()=>import("../components/mainQAComponent/MainQAAnswer"))
 
 const MainQA: FC<RouteComponentProps<any>> = ({ match }) => {
@@ -21,7 +22,7 @@ const MainQA: FC<RouteComponentProps<any>> = ({ match }) => {
   const [data, setData] = useState<any>({
     answer_id: "",
     question_id: "",
-    title:"...",
+    title: "...",
     question: "....",
     user_id: "",
     username: "....",
@@ -48,26 +49,25 @@ const MainQA: FC<RouteComponentProps<any>> = ({ match }) => {
   useEffect(() => {
     dispatch(MainQuestionAnswerAction(token, match.params.id));
     dispatch(AnswersOnlyAction(token, match.params.id));
-  }, [match,token]);
-
-
+  }, [match, token]);
 
   return (
-    
     <div className="MainQA">
-      <div className="MainQA__Heading">Main Question Answer</div>
-
-      {questionLoading ? (
+      <div className="MainQA__Heading">
+        Main Question Answer
+        
+      </div>
+      {/* {questionLoading ? (
         <MainQASkeletion />
-      ) : (
+      ) : ( */}
         <MainQAQuestion question={question} />
-      )}
+      {/* )} */}
 
       <div className="MainQA__Answers">
         {answers && answers.map((ans) => <MainQAAnswer ans={ans} />)}
       </div>
+      <div className="MainQA__AnswerInput"><AnswerComponent question_id={match.params.id} /></div>
     </div>
-    
   );
 };
 

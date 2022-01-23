@@ -18,7 +18,7 @@ export const AnswersOnlyAction =
         },
       })
       .then((response) => {
-        console.log(response.data);
+        // console.log(response.data);
         dispatch({type:ANSWERS_LOAD_SUCCESS,answers:response.data})
       })
       .catch((error) => {

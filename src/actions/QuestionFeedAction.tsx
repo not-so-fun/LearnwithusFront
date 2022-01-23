@@ -12,13 +12,13 @@ export const QuestionFeedAction =
   (token: string) => (dispatch: Dispatch<RootDispatchType>) => {
     dispatch({ type: QUESTION_FEED_LOAD_STARTED });
     axios
-      .get("/questions", {
+      .get(`/questions?set=${0}`, {
         headers: {
           "x-auth-token": token,
         },
       })
       .then((response) => {
-          console.log(response.data)
+          
         dispatch({
           type: QUESTION_FEED_LOAD_SUCCESS,
           questions: response.data,

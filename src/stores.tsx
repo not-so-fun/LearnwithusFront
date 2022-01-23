@@ -14,6 +14,8 @@ import { QuestionFeedReducer } from "./reducers/QuestionFeedReducers";
 import { MainQuestionAnswerReducer } from "./reducers/MainQuestionAnswerReducer";
 import { WishesReducer } from "./reducers/WishesReducer";
 import {AnswersOnlyReducer} from "./reducers/AnsweresOnlyReducer"
+import { AnswerTheQuestionReducer } from "./reducers/AnswerTheQuestionReducer";
+import { WishesEditReducer } from "./reducers/WishesEditReducer";
 
 const rootReducer = combineReducers({
   userInfo: LoginReducer,
@@ -28,7 +30,9 @@ const rootReducer = combineReducers({
   questionFeed:QuestionFeedReducer,
   mainQA: MainQuestionAnswerReducer,
   wishes: WishesReducer,
-  answers:AnswersOnlyReducer
+  answers:AnswersOnlyReducer,
+  answer_question:AnswerTheQuestionReducer,
+  edit_wishes:WishesEditReducer
 });
 
 const store = createStore(

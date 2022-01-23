@@ -36,8 +36,8 @@ const PrivateRoute: React.FC<PrivateRouteProps> = ({
             }
           />
         </div>
-      </div>
-    </>
+        </div>
+      </>
   );
 };
 

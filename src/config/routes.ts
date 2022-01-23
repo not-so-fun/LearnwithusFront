@@ -8,12 +8,20 @@ import ResetPassword from "../components/ResetPassword/ResetPassword";
 import AccountActivationScreen from "../Screens/AccountActivationScreen";
 import AskQuestion from "../Layout/AskQuestions";
 import MainQA from "../Layout/MainQA";
-
+import Answered from "../Layout/Answered";
 const routes: IRoute[] = [
   {
     path: "/",
     name: "Home",
     component:HomePage,
+    exact: true,
+    private:true,
+    showNav:true
+  },
+  {
+    path: "/answered",
+    name: "Answered",
+    component:Answered,
     exact: true,
     private:true,
     showNav:true

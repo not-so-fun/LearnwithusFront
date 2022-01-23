@@ -2,6 +2,7 @@ import {
   ANSWERS_LOAD_START,
   ANSWERS_LOAD_SUCCESS,
   ANSWERS_LOAD_ERROR,
+  NEW_ANSWERS_ADDED,
 } from "../constants/OnlyAnswersContants";
 
 import { AnswersOnlyTypes } from "../types/AnswersOnlyTypes";
@@ -11,9 +12,9 @@ export interface answerInterface {
   question_id: string;
   upvote: boolean;
   answer: string;
-  user_id:string,
-  username:string,
-  image:string
+  user_id: string;
+  username: string;
+  image: string;
 }
 
 export interface answersInterface {
@@ -39,6 +40,17 @@ export const AnswersOnlyReducer = (
       return { ...state, loading: false, answers: action.answers };
     case ANSWERS_LOAD_ERROR:
       return { ...state, loading: false, error: action.error };
+    case NEW_ANSWERS_ADDED:
+      if (state.answers === null) {
+        return { ...state, loading: false, answers: [action.answer] };
+      } else {
+        return {
+          ...state,
+          loading: false,
+          answers: [...state.answers, action.answer],
+        };
+      }
+
     default:
       return { ...state };
   }

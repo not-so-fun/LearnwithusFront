@@ -76,7 +76,7 @@ const Profile: FC<RouteComponentProps<any>> = ({ match }) => {
               <div className="Profile__Box__Top">
                 <ProfileImageAndData profile_data={profile_data} />
                 <ProfileForm profile_data={profile_data} />
-                <ProfileStats />
+                <ProfileStats page_user_id={match.params.id} />
               </div>
               <div className="Profile__Box__Main">
                 <div className="Profile__Box__Main__Newsfeed">
@@ -102,7 +102,7 @@ const Profile: FC<RouteComponentProps<any>> = ({ match }) => {
                   <div className="Profile__Box__Top">
                     <ProfileImageAndData profile_data={profile_data} />
                     <ProfileForm profile_data={profile_data} />
-                    <ProfileStats />
+                    <ProfileStats page_user_id={match.params.id} />
                   </div>
                   <div className="Profile__Box__Main">
                     <div className="Profile__Box__Main__Newsfeed">
