@@ -10,6 +10,7 @@ import Notification from "./HomePageComponent/Notification";
 import { AiFillHome } from "react-icons/ai";
 import { FiLogOut } from "react-icons/fi";
 import NavbarShowMore from "./NavbarComponent/NavbarShowMore";
+import { IoCreate } from "react-icons/io5";
 
 type NotificaitonState = {
   show: boolean;
@@ -28,10 +29,8 @@ const Navbar: FC = () => {
     (state) => state.userInfo
   ) as any;
 
-  const { user_id } = useTokenAndId();
+  const { user_id,image } = useTokenAndId();
   const history = useHistory();
-
-  // console.log(user_id)
 
   const handleLogout = () => {
     localStorage.clear();
@@ -47,6 +46,11 @@ const Navbar: FC = () => {
         />
         {(userInfo && userInfo.user_id) || user_id ? (
           <>
+            <IoCreate
+              onClick={() => history.push("/question/ask")}
+              style={{ fontSize: 25, marginLeft: 20, cursor: "pointer" }}
+            />
+
             <FiLogOut
               onClick={handleLogout}
               style={{ fontSize: 25, marginLeft: 20, cursor: "pointer" }}
@@ -68,7 +72,7 @@ const Navbar: FC = () => {
                 <div className="Navbar__Links__content__Avatar">
                   <Avatar
                     alt="user"
-                    src="https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png"
+                    src={`${(userInfo && userInfo.image) || image }`}
                     style={{ width: 40, height: 40 }}
                   />
 

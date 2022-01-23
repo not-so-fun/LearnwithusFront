@@ -17,7 +17,8 @@ export const LoginAction =
         email,
         password,
       })
-      .then((response :any) => {
+      .then((response) => {
+        console.log(response.data)
         dispatch({ type: LOGIN_REQUEST_SUCCESS, payload: response.data });
         history.push('/')
 

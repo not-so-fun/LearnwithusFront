@@ -9,14 +9,15 @@ import { LoginActionType } from "../types/LoginActionTypes";
 export interface  UserInfoInterface{
   userInfo:{
     user_id: string,
-    token: string
+    token: string,
+    image:string
   }
   
 }
 
 export interface loginStateInterface {
   loading: boolean;
-  userInfo: {user_id: string,token: string} | null;
+  userInfo: {user_id: string,token: string,image:string} | null;
   error: string;
 }
 
