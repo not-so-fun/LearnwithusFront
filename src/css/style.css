@@ -223,6 +223,7 @@ body {
 .AskQuestionForm {
   background: #fff;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+<<<<<<< HEAD
   width: 100%;
   height: 100%; }
   .AskQuestionForm__Heading {
@@ -231,6 +232,16 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
+=======
+  width: 780px;
+  height: 100%; }
+  .AskQuestionForm__Heading {
+    height: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+>>>>>>> c899f71 (pulling content)
     color: #4b4b4b; }
     .AskQuestionForm__Heading__Title {
       height: 5rem;
@@ -388,7 +399,11 @@ body {
       margin: 0 1rem;
       color: #4b4b4b; }
     .AskQuestionForm__Body__Input {
+<<<<<<< HEAD
       height: 30rem;
+=======
+      height: 25rem;
+>>>>>>> c899f71 (pulling content)
       border-radius: 5px;
       overflow-y: scroll;
       padding: 1rem;
@@ -397,8 +412,12 @@ body {
       font-size: 1.5rem;
       border: 5px;
       background-color: #e3e3e3;
+<<<<<<< HEAD
       margin: 0 1rem;
       resize: none; }
+=======
+      margin: 0 1rem; }
+>>>>>>> c899f71 (pulling content)
   .AskQuestionForm__Footer {
     height: 5rem;
     width: 100%;
@@ -420,6 +439,7 @@ body {
       .AskQuestionForm__Footer__Button:hover {
         cursor: pointer;
         box-shadow: inset 5em 5em rgba(0, 0, 0, 0.2); }
+<<<<<<< HEAD
 
 .QuestionFeed {
   width: 100%;
@@ -680,6 +700,8 @@ body {
         .QuestionFeed__Bottom__Right__Content__Logos {
           height: 2.5rem;
           width: 2.5rem; }
+=======
+>>>>>>> c899f71 (pulling content)
 
 .Auth {
   height: 70rem;
@@ -1198,7 +1220,7 @@ body {
     left: 34.5rem;
     position: relative; }
     .HomePage__Right__TopBar {
-      height: 7rem;
+      height: 6rem;
       width: 100%; }
     .HomePage__Right__MainBody {
       display: flex;
@@ -1312,6 +1334,7 @@ body {
   .AskQuestion__Left {
     flex: 0.24; }
   .AskQuestion__Right {
+<<<<<<< HEAD
     flex: 1;
     display: flex;
     align-items: center; }
@@ -1319,6 +1342,12 @@ body {
       display: flex;
       width: 100%;
       height: 100%; }
+=======
+    flex: 0.76; }
+    .AskQuestion__Right__Bottom {
+      display: flex;
+      width: 100%; }
+>>>>>>> c899f71 (pulling content)
       .AskQuestion__Right__Bottom__Left {
         flex: 0.7;
         height: 100%; }
@@ -1330,8 +1359,12 @@ body {
           .AskQuestion__Right__Bottom__Left__Main__Form {
             background: #32569f;
             height: 61.7rem;
+<<<<<<< HEAD
             flex: 1;
             height: 100%; }
+=======
+            flex: 1; }
+>>>>>>> c899f71 (pulling content)
       .AskQuestion__Right__Bottom__Right {
         border: 2px solid blue;
         margin-left: 1rem;

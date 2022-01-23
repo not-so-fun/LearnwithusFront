@@ -2,7 +2,7 @@
   height: 100%;
   width: 100%;
   display: flex;
-  background:#EEEEEE;
+  background: #eeeeee;
   overflow-y: scroll;
 
   &__Left {
@@ -59,7 +59,7 @@
           justify-content: flex-start;
           align-items: center;
           text-decoration: none;
-          color:$color-white;
+          color: $color-white;
 
           transition: all 0.3s ease;
           &:hover {
@@ -71,25 +71,23 @@
     }
   }
   &__Right {
-    
-    width:calc(100vw - 37rem) ;
-    margin:1rem;
-    position:absolute;
-    height:98vh;
+    width: calc(100vw - 37rem);
+    margin: 1rem;
+    position: absolute;
+    height: 98vh;
     top: 0;
     left: 34.5rem;
-    position:relative;
+    position: relative;
     &__TopBar {
-      height: 7rem;
+      height: 6rem;
       width: 100%;
       // position:fixed;
       // top:0;
       // left:0;
     }
     &__MainBody {
-   
       display: flex;
-      background:$color-grey-light-2;
+      background: $color-grey-light-2;
       width: 100%;
       height: calc(100% - 8rem);
       margin-top: 1rem;
@@ -97,16 +95,16 @@
       &__NewsFeed {
         flex: 1;
         overflow-y: scroll;
-        margin-right:2rem;
-        background:$color-white;
+        margin-right: 2rem;
+        background: $color-white;
 
         // width: 8rem;
         // margin-right: 1rem;
       }
       &__Notification {
         flex: 0 0 32rem;
-        padding:0 1rem;
-        background:$color-white;
+        padding: 0 1rem;
+        background: $color-white;
         &__Box {
           border: 2px solid lightgrey;
           // position: relative;
