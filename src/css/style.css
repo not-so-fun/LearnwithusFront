@@ -427,6 +427,7 @@ body {
   height: auto;
   border-bottom: 2px solid #c4c4c4;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 4rem 0; }
@@ -497,8 +498,8 @@ body {
           align-items: center;
           justify-content: center; }
           .QuestionFeed__Box__Main__Upvotes__Likes__Logo {
-            height: 2.3rem;
-            width: 2.3rem; }
+            height: 3rem;
+            width: 3rem; }
             .QuestionFeed__Box__Main__Upvotes__Likes__Logo:hover {
               cursor: pointer; }
         .QuestionFeed__Box__Main__Upvotes__Box {
@@ -515,8 +516,8 @@ body {
           align-items: center;
           justify-content: center; }
           .QuestionFeed__Box__Main__Upvotes__Dislikes__Logo {
-            height: 2.3rem;
-            width: 2.3rem; }
+            height: 3rem;
+            width: 3rem; }
             .QuestionFeed__Box__Main__Upvotes__Dislikes__Logo:hover {
               cursor: pointer; }
       .QuestionFeed__Box__Main__AboutQuestion {
@@ -535,6 +536,7 @@ body {
         .QuestionFeed__Box__Main__AboutQuestion__QuestionStatistics {
           flex: 0 0 7rem;
           width: 100%;
+          background: #f8f8f8;
           display: flex;
           align-items: center;
           justify-content: space-between; }
@@ -548,7 +550,7 @@ body {
             .QuestionFeed__Box__Main__AboutQuestion__QuestionStatistics__Left__Answers {
               width: auto;
               height: 5rem;
-              border: 1px solid #c4c4c4;
+              border: 1px solid #494949;
               border-radius: 5px;
               display: flex;
               align-items: center;
@@ -572,7 +574,7 @@ body {
               margin-left: 2rem;
               height: 5rem;
               width: auto;
-              border: 1px solid #c4c4c4;
+              border: 1px solid #494949;
               border-radius: 5px;
               display: flex;
               align-items: center;
@@ -609,6 +611,75 @@ body {
               border: none;
               outline: none;
               border-radius: 5px; }
+              .QuestionFeed__Box__Main__AboutQuestion__QuestionStatistics__Right__Button:hover {
+                cursor: pointer; }
+  .QuestionFeed__Bottom {
+    width: 90%;
+    height: 7rem;
+    border-top: 3px solid #c4c4c4;
+    margin-top: 2rem;
+    padding-top: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; }
+    .QuestionFeed__Bottom__Left {
+      height: 5rem;
+      flex: 0 0 auto;
+      display: flex;
+      align-items: center; }
+      .QuestionFeed__Bottom__Left__Content {
+        width: auto;
+        height: 3rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 1.4rem;
+        padding: 0 1rem; }
+        .QuestionFeed__Bottom__Left__Content:not(:last-child) {
+          border-right: 1px solid #494949; }
+        .QuestionFeed__Bottom__Left__Content:hover {
+          cursor: pointer;
+          background: #c4c4c4; }
+        .QuestionFeed__Bottom__Left__Content__Logo {
+          width: 3rem;
+          height: 3rem;
+          margin-right: .5rem;
+          display: flex;
+          align-items: center;
+          justify-content: center; }
+          .QuestionFeed__Bottom__Left__Content__Logo__Logo {
+            width: 2.5rem;
+            height: 2.5rem; }
+    .QuestionFeed__Bottom__Right {
+      height: 6rem;
+      flex: 0 0 auto;
+      display: flex;
+      align-items: center; }
+      .QuestionFeed__Bottom__Right__Content {
+        width: auto;
+        height: 4rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 1.4rem;
+        padding: 0 1rem;
+        margin: 0 .3rem; }
+        .QuestionFeed__Bottom__Right__Content:hover {
+          cursor: pointer;
+          background: #c4c4c4; }
+        .QuestionFeed__Bottom__Right__Content__Logo {
+          width: 3rem;
+          height: 3rem;
+          margin-right: .5rem;
+          display: flex;
+          align-items: center;
+          justify-content: center; }
+          .QuestionFeed__Bottom__Right__Content__Logo__Logo {
+            width: 2.5rem;
+            height: 2.5rem; }
+        .QuestionFeed__Bottom__Right__Content__Logos {
+          height: 2.5rem;
+          width: 2.5rem; }
 
 .Auth {
   height: 70rem;
@@ -1269,7 +1340,7 @@ body {
 
 .MainQA {
   height: 100%;
-  width: 100%;
+  width: 90rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1339,6 +1410,10 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center; }
+  .MainQA__Questions {
+    width: 100%;
+    height: 2px;
+    border: 1px solid #c4c4c4; }
   .MainQA__Answer {
     margin: 1rem auto;
     height: auto;

@@ -1,6 +1,6 @@
 .MainQA{
     height: 100%;
-    width:100%;
+    width:90rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -74,6 +74,7 @@
         justify-content: center;
         font-size:4rem;
         font-weight:600;
+        // border-bottom: 3px solid $color-grey-light-3;
     }
     &__Answers{
         background:white;
@@ -82,6 +83,12 @@
         display:flex;
         flex-direction: column;
         align-items: center;
+    }
+    &__Questions{
+        width: 100%;
+        height:2px;
+        border: 1px solid $color-grey-light-2;
+        
     }
     &__Answer{
         margin: 1rem auto;
@@ -94,7 +101,6 @@
         align-items: center;
         &__AnswerLikes{
             flex: 0 0 10rem;
-            // background:red;
             height:95%;
             margin:0 .5rem;
             display:flex;

@@ -6,7 +6,7 @@ import { MdMessage } from "react-icons/md";
 import { questionFeedListInterface } from "../../reducers/QuestionFeedReducers";
 import useTokenAndId from "../ReusableLogicComponents/useTokenAndId";
 import axios from "../../axios";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 interface quesInterface {
   question: questionFeedListInterface;
@@ -18,6 +18,7 @@ interface lastStateInterface {
 
 const QuestionFeed: FC<quesInterface> = ({question}) => {
     const [upvote, setUpvote] = useState<boolean | null>(null);
+    const history = useHistory();
   const [lastState, setLastState] = useState<lastStateInterface>({
     upvote: null,
   });
@@ -89,6 +90,10 @@ const QuestionFeed: FC<quesInterface> = ({question}) => {
     }
     upVote(false);
   };
+  const redirectToMainQA =() => {
+    history.push(`/questions/${question.question_id}`);
+  }
+  
   return (
   <div className="QuestionFeed">
       <div className="QuestionFeed__Box">
@@ -218,7 +223,7 @@ const QuestionFeed: FC<quesInterface> = ({question}) => {
 
                        </div>
                        <div className="QuestionFeed__Box__Main__AboutQuestion__QuestionStatistics__Right">
-                           <button className="QuestionFeed__Box__Main__AboutQuestion__QuestionStatistics__Right__Button">
+                           <button className="QuestionFeed__Box__Main__AboutQuestion__QuestionStatistics__Right__Button" onClick={redirectToMainQA}>
                                Answer
                            </button>
                        </div>
