@@ -2,8 +2,7 @@
   height: 100%;
   width: 100%;
   display: flex;
-  background-color: $color-white;
-  
+  background:#EEEEEE;
   overflow-y: scroll;
 
   &__Left {
@@ -88,11 +87,9 @@
       // left:0;
     }
     &__MainBody {
-      // position: relative;
-      // left: 350px;
+   
       display: flex;
-      // background-color: $color-white;
-      // background:red;
+      background:$color-grey-light-2;
       width: 100%;
       height: calc(100% - 8rem);
       margin-top: 1rem;
@@ -100,13 +97,16 @@
       &__NewsFeed {
         flex: 1;
         overflow-y: scroll;
+        margin-right:2rem;
+        background:$color-white;
 
         // width: 8rem;
         // margin-right: 1rem;
       }
       &__Notification {
-        flex: 0 0 30rem;
-
+        flex: 0 0 32rem;
+        padding:0 1rem;
+        background:$color-white;
         &__Box {
           border: 2px solid lightgrey;
           // position: relative;

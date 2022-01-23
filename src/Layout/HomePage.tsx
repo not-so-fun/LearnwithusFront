@@ -13,6 +13,7 @@ import {
 } from "../reducers/QuestionFeedReducers";
 import useTokenAndId from "../components/ReusableLogicComponents/useTokenAndId";
 import { RootStateType } from "../stores";
+import QuestionFeed from "../components/HomePageComponent/QuestionFeed";
 
 const HomePage: FC = () => {
   const dispatch = useDispatch();
@@ -38,9 +39,11 @@ const HomePage: FC = () => {
           {questions &&
             questions.map((question: questionFeedListInterface) => (
               <div key={question.question_id}>
-                <HomeNewsFeed question={question} />
+                <QuestionFeed question={question} />
               </div>
             ))}
+         
+            
         </div>
         <div className="HomePage__Right__MainBody__Notification">
           <div className="HomePage__Right__MainBody__Notification__Below">
