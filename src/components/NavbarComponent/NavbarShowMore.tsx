@@ -1,17 +1,22 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import { FiLogOut} from "react-icons/fi";
-
+import { Link } from 'react-router-dom';
+import { UserInfoInterface } from '../../reducers/LoginReducer';
+import useTokenAndId from "../ReusableLogicComponents/useTokenAndId";
 const NavbarShowMore = () => {
+  
+   const {user_id} = useTokenAndId();
+   console.log(user_id);
   return (
   <div className="Navbar__Links__Content__Box">
     <div className="Navbar__Links__Content__Box__Content">
         <div className="Navbar__Links__Content__Box__Content__ProfilePhoto">
 
         </div>
-        <div className="Navbar__Links__Content__Box__Content__ProfileName">
+        <Link to={`/profile/${user_id}`} className="Navbar__Links__Content__Box__Content__ProfileName">
             Pasang Sherpa
-        </div>
+        </Link>
 
       </div>
       <div className="Navbar__Links__Content__Box__Content">

@@ -223,10 +223,10 @@ body {
 .AskQuestionForm {
   background: #fff;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
-  width: 780px;
+  width: 100%;
   height: 100%; }
   .AskQuestionForm__Heading {
-    height: 5rem;
+    height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -388,7 +388,7 @@ body {
       margin: 0 1rem;
       color: #4b4b4b; }
     .AskQuestionForm__Body__Input {
-      height: 25rem;
+      height: 30rem;
       border-radius: 5px;
       overflow-y: scroll;
       padding: 1rem;
@@ -397,7 +397,8 @@ body {
       font-size: 1.5rem;
       border: 5px;
       background-color: #e3e3e3;
-      margin: 0 1rem; }
+      margin: 0 1rem;
+      resize: none; }
   .AskQuestionForm__Footer {
     height: 5rem;
     width: 100%;
@@ -407,6 +408,7 @@ body {
     padding: 0 1rem; }
     .AskQuestionForm__Footer__Button {
       height: 4rem;
+      width: auto;
       border-radius: 5px;
       margin-top: 2rem;
       padding: 0 1rem;
@@ -816,6 +818,7 @@ body {
           width: 95%;
           display: flex;
           align-items: center;
+          text-decoration: none;
           padding: 0 1rem; }
           .Navbar__Links__Content__Box__Content:hover {
             cursor: pointer;
@@ -827,7 +830,8 @@ body {
             width: 4rem;
             margin-right: .5rem; }
           .Navbar__Links__Content__Box__Content__ProfileName {
-            color: #000; }
+            color: #000;
+            text-decoration: none; }
           .Navbar__Links__Content__Box__Content__LogoutLogo {
             width: 4rem;
             height: 4rem;
@@ -1036,27 +1040,33 @@ body {
 
 .AskQuestion {
   padding-right: 1rem;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   display: flex;
   overflow-y: hidden; }
   .AskQuestion__Left {
     flex: 0.24; }
   .AskQuestion__Right {
-    flex: 0.76; }
+    flex: 1;
+    display: flex;
+    align-items: center; }
     .AskQuestion__Right__Bottom {
       display: flex;
-      width: 100%; }
+      width: 100%;
+      height: 100%; }
       .AskQuestion__Right__Bottom__Left {
-        flex: 0.7; }
+        flex: 0.7;
+        height: 100%; }
         .AskQuestion__Right__Bottom__Left__Main {
-          height: auto;
+          height: 100%;
           margin: 0 auto;
           display: flex;
           padding: 1rem; }
           .AskQuestion__Right__Bottom__Left__Main__Form {
             background: #32569f;
             height: 61.7rem;
-            flex: 1; }
+            flex: 1;
+            height: 100%; }
       .AskQuestion__Right__Bottom__Right {
         border: 2px solid blue;
         margin-left: 1rem;

@@ -101,7 +101,6 @@ const AskQuesForm: FC = () => {
           </button>
         ) : (
           <button
-            style={{ width: 140 }}
             onClick={handleQuestionAsk}
             className="AskQuestionForm__Footer__Button"
           >

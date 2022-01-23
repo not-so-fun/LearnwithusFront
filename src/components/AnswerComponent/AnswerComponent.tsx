@@ -23,6 +23,7 @@ const AnswerComponent: FC<answerComponentInterface> = ({ question_id }) => {
     | React.MouseEventHandler<HTMLButtonElement>
     | undefined = () => {
     dispatch(AnswerTheQuestionAction(token, question_id, answerType));
+    setAnswerType("");
   };
   return (
     <div className="MainQA__AnswerInput__Box">
