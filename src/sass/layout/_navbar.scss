@@ -15,7 +15,59 @@
     align-items: center;
     float: right;
     // width: 150px;
-
+    &__Content{
+      position:relative;
+      color:$color-black;
+      &__Box{
+        position:absolute;
+        top: 5rem;
+        right:0;
+        background:$color-grey-light-1;
+        border: 1px solid $color-grey-light-2;
+        height:auto;
+        width:30rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        &__Content{
+          margin:.5rem 0;
+          // background:red;
+          height:5rem;
+          width:95%;
+          display: flex;
+          align-items: center;
+          
+          padding: 0 1rem;
+          &:hover{
+            cursor: pointer;
+            background: $color-grey-light-2;
+          }
+          &__ProfilePhoto{
+            background:grey;
+            border-radius:50%;
+            height:4rem;
+            width:4rem;
+            margin-right:.5rem;
+          }
+          &__ProfileName{
+            color:$color-black;
+          }
+          &__LogoutLogo{
+            width:4rem;
+            height:4rem;
+            // background: red;
+            display:flex;
+            align-items: center;
+            justify-content: center;
+            &__Logo{
+              height:3rem;
+              width:3rem;
+            }
+          }
+        }
+      }
+    }
     &__center {
       padding: 0rem 2rem;
     }

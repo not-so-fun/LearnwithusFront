@@ -793,6 +793,48 @@ body {
     justify-content: center;
     align-items: center;
     float: right; }
+    .Navbar__Links__Content {
+      position: relative;
+      color: #000; }
+      .Navbar__Links__Content__Box {
+        position: absolute;
+        top: 5rem;
+        right: 0;
+        background: #f8f8f8;
+        border: 1px solid #c4c4c4;
+        height: auto;
+        width: 30rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start; }
+        .Navbar__Links__Content__Box__Content {
+          margin: .5rem 0;
+          height: 5rem;
+          width: 95%;
+          display: flex;
+          align-items: center;
+          padding: 0 1rem; }
+          .Navbar__Links__Content__Box__Content:hover {
+            cursor: pointer;
+            background: #c4c4c4; }
+          .Navbar__Links__Content__Box__Content__ProfilePhoto {
+            background: grey;
+            border-radius: 50%;
+            height: 4rem;
+            width: 4rem;
+            margin-right: .5rem; }
+          .Navbar__Links__Content__Box__Content__ProfileName {
+            color: #000; }
+          .Navbar__Links__Content__Box__Content__LogoutLogo {
+            width: 4rem;
+            height: 4rem;
+            display: flex;
+            align-items: center;
+            justify-content: center; }
+            .Navbar__Links__Content__Box__Content__LogoutLogo__Logo {
+              height: 3rem;
+              width: 3rem; }
     .Navbar__Links__center {
       padding: 0rem 2rem; }
     .Navbar__Links__content {
@@ -1053,7 +1095,8 @@ body {
           border: none;
           outline: none;
           background: #c4c4c4;
-          border-radius: 5px; }
+          border-radius: 5px;
+          resize: none; }
       .MainQA__AnswerInput__Box__ButtonBox {
         height: 5rem;
         display: flex;

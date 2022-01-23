@@ -9,15 +9,20 @@ import { IoNotificationsSharp } from "react-icons/io5";
 import Notification from "./HomePageComponent/Notification";
 import { AiFillHome } from "react-icons/ai";
 import { FiLogOut } from "react-icons/fi";
+import NavbarShowMore from "./NavbarComponent/NavbarShowMore";
 
 type NotificaitonState = {
   show: boolean;
 };
 
+
 const Navbar: FC = () => {
   const [showNotification, setShowNotification] = useState<NotificaitonState>({
-    show: false,
+    show: false
   });
+  const [showMore, setShowMore]= useState<boolean>(false);
+
+  
 
   const { userInfo } = useSelector<RootStateType>(
     (state) => state.userInfo
@@ -59,9 +64,7 @@ const Navbar: FC = () => {
                   {showNotification.show && <Notification />}
                 </div>
               </div>
-              <Link
-                to={`/profile/${(userInfo && userInfo.user_id) || user_id}`}
-              >
+              <div className="Navbar__Links__Content">
                 <div className="Navbar__Links__content__Avatar">
                   <Avatar
                     alt="user"
@@ -69,9 +72,13 @@ const Navbar: FC = () => {
                     style={{ width: 40, height: 40 }}
                   />
 
-                  <ArrowDropDownIcon className="Navbar__Links__content__Avatar__Drop" />
+                  <ArrowDropDownIcon 
+                  className="Navbar__Links__content__Avatar__Drop" 
+                  onClick={()=>{setShowMore(!showMore)}}
+                  />
                 </div>
-              </Link>
+                {showMore && <NavbarShowMore /> }
+              </div>
             </div>
           </>
         ) : (
