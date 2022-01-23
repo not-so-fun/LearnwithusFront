@@ -3,7 +3,7 @@
   width: 100%;
   display: flex;
   background-color: $color-white;
-  
+
   overflow-y: scroll;
 
   &__Left {
@@ -72,14 +72,14 @@
   &__Right {
     // flex: 1;
     // padding: 1rem;
-    width:calc(100vw - 37rem) ;
-    margin:1rem;
+    width: calc(100vw - 37rem);
+    margin: 1rem;
     position: fixed;
-    height:98vh;
+    height: 98vh;
     top: 0;
     left: 34.5rem;
     &__TopBar {
-      height: 7rem;
+      height: 6rem;
       width: 100%;
       // position: relative;
       // left: 350px;
