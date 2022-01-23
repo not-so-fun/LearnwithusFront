@@ -755,16 +755,43 @@ body {
       display: flex;
       align-items: center;
       flex-direction: column; }
+      .Profile__Box__Top__ImagesAndDatas__Button {
+        padding: 1rem 2rem;
+        color: #fff;
+        background-color: #008000;
+        border: none;
+        cursor: pointer;
+        transition: all 0.4s ease; }
+        .Profile__Box__Top__ImagesAndDatas__Button:hover {
+          box-shadow: inset 0 0 20px 20px rgba(0, 0, 0, 0.25); }
       .Profile__Box__Top__ImagesAndDatas__Image {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 20rem;
-        height: 20rem;
         margin-top: 4rem;
         margin-bottom: 0.5rem;
-        background: #fff;
-        border-radius: 50%; }
+        position: relative; }
+        .Profile__Box__Top__ImagesAndDatas__Image__Icon {
+          border: 2px solid #ffffff1a;
+          background-color: #ffffff1a;
+          border-radius: 50%;
+          padding: 0.5rem;
+          width: fit-content;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          position: absolute;
+          top: 155px;
+          right: 13px;
+          font-size: 20px;
+          color: #fff; }
+          .Profile__Box__Top__ImagesAndDatas__Image__Icon__Camera {
+            font-size: 20px !important; }
+        .Profile__Box__Top__ImagesAndDatas__Image__Avatar {
+          margin-bottom: 0.5rem;
+          width: 20rem;
+          height: 20rem; }
+      .Profile__Box__Top__ImagesAndDatas__Icon {
+        top: 0;
+        right: 0px;
+        color: red; }
       .Profile__Box__Top__ImagesAndDatas__ProfileName {
         margin: 0.2rem 0;
         height: 5rem;
@@ -1059,8 +1086,70 @@ body {
   display: flex;
   justify-content: flex-end; }
 
+.editModal {
+  position: fixed;
+  padding: 2rem;
+  top: 30vh;
+  left: 10%;
+  width: 80%;
+  z-index: 100;
+  max-height: 40rem;
+  background-color: #32569f;
+  color: #fff; }
+  .editModal__Header {
+    font-size: 26px;
+    letter-spacing: 0.06rem; }
+
+.editModal__Form {
+  margin-top: 1rem; }
+  .editModal__Form__Control__Button {
+    display: flex;
+    justify-content: flex-end; }
+    .editModal__Form__Control__Button__Edit {
+      background-color: #008000;
+      margin-left: 1rem;
+      font-size: 18px;
+      padding: 5px 25px;
+      color: #fff;
+      border: none;
+      width: 10rem;
+      transition: all 0.3s ease; }
+      .editModal__Form__Control__Button__Edit:hover {
+        box-shadow: inset 0 0 15px 15px rgba(0, 0, 0, 0.25);
+        cursor: pointer; }
+    .editModal__Form__Control__Button__Cancel {
+      width: 10rem;
+      background-color: #9b9b9b;
+      margin-left: 1rem;
+      font-size: 18px;
+      padding: 5px 25px;
+      color: #fff;
+      border: none;
+      transition: all 0.3s ease; }
+      .editModal__Form__Control__Button__Cancel:hover {
+        box-shadow: inset 0 0 15px 15px rgba(0, 0, 0, 0.25);
+        cursor: pointer; }
+  .editModal__Form__Control__Label {
+    display: flex;
+    font-size: 16px;
+    margin-bottom: 0.8rem; }
+  .editModal__Form__Control__Input {
+    width: 100%;
+    font-size: 16px;
+    padding: 2px 3px;
+    height: 3.5rem; }
+  .editModal__Form__Control__Div {
+    margin-bottom: 2rem; }
+    .editModal__Form__Control__Div__Name {
+      margin-bottom: 2rem;
+      display: flex;
+      justify-content: space-between; }
+
 @media (min-width: 768px) {
   .modal {
+    left: calc(50% - 20rem);
+    width: 40rem; }
+  .editModal {
     left: calc(50% - 20rem);
     width: 40rem; } }
 
@@ -1081,12 +1170,13 @@ body {
     float: right; }
     .Navbar__Links__Content {
       position: relative;
-      color: #000; }
+      color: #777; }
       .Navbar__Links__Content__Box {
         position: absolute;
+        padding: 0rem 1rem;
         top: 5rem;
         right: 0;
-        background: #f8f8f8;
+        background: #fff;
         border: 1px solid #c4c4c4;
         height: auto;
         width: 30rem;
@@ -1094,26 +1184,48 @@ body {
         flex-direction: column;
         align-items: center;
         justify-content: flex-start; }
+        .Navbar__Links__Content__Box:before {
+          content: "";
+          position: absolute;
+          top: 1px;
+          right: 0;
+          width: 0;
+          height: 0;
+          transform: translate(-1rem, -100%);
+          border-left: 0.75rem solid transparent;
+          border-right: 0.75rem solid transparent;
+          border-bottom: 0.75rem solid white; }
         .Navbar__Links__Content__Box__Content {
-          margin: .5rem 0;
+          margin: 0.5rem 0;
           height: 5rem;
           width: 95%;
           display: flex;
           align-items: center;
+<<<<<<< HEAD
           text-decoration: none;
           padding: 0 1rem; }
+=======
+          border-top: 2px solid lightgrey;
+          padding: 0 1rem;
+          transition: all 0.4s ease-out; }
+>>>>>>> sujan
           .Navbar__Links__Content__Box__Content:hover {
             cursor: pointer;
-            background: #c4c4c4; }
+            box-shadow: inset 0 0 25px 25px rgba(0, 0, 0, 0.25);
+            transform: scale(1.08); }
           .Navbar__Links__Content__Box__Content__ProfilePhoto {
             background: grey;
             border-radius: 50%;
             height: 4rem;
             width: 4rem;
-            margin-right: .5rem; }
+            margin-right: 0.5rem; }
           .Navbar__Links__Content__Box__Content__ProfileName {
+<<<<<<< HEAD
             color: #000;
             text-decoration: none; }
+=======
+            color: #777; }
+>>>>>>> sujan
           .Navbar__Links__Content__Box__Content__LogoutLogo {
             width: 4rem;
             height: 4rem;
@@ -1137,7 +1249,8 @@ body {
         left: -30rem;
         background: #fdfdfd;
         width: 400px;
-        z-index: 1; }
+        z-index: 1;
+        border-radius: 0.5rem; }
       .Navbar__Links__content__Icon {
         display: flex;
         justify-content: center;
@@ -1234,19 +1347,102 @@ body {
         margin-right: 2rem;
         background: #fff; }
       .HomePage__Right__MainBody__Notification {
+<<<<<<< HEAD
         flex: 0 0 32rem;
         padding: 0 1rem;
         background: #fff; }
+=======
+        flex: 0 0 30rem;
+        border-radius: 0.5rem; }
+>>>>>>> sujan
         .HomePage__Right__MainBody__Notification__Box {
-          border: 2px solid lightgrey;
+          background-color: #fff;
+          cursor: default;
           text-align: left;
-          padding: 0.9rem;
-          height: 539px;
-          overflow-y: scroll; }
+          height: fit-content;
+          border-radius: 0.5rem;
+          border: 2px solid lightgrey; }
+          .HomePage__Right__MainBody__Notification__Box :before {
+            content: "";
+            position: absolute;
+            top: 1px;
+            right: 50px;
+            width: 10px;
+            height: 0;
+            transform: translate(-1rem, -100%);
+            border-left: 0.75rem solid transparent;
+            border-right: 0.75rem solid transparent;
+            border-bottom: 0.75rem solid white; }
+          .HomePage__Right__MainBody__Notification__Box__NormalNotification {
+            border-top: 2px solid lightgrey;
+            color: #000;
+            padding: 5px 25px;
+            font-size: 14px;
+            font-weight: 400;
+            width: 100%; }
+            .HomePage__Right__MainBody__Notification__Box__NormalNotification__Noti {
+              display: flex;
+              align-items: center; }
+              .HomePage__Right__MainBody__Notification__Box__NormalNotification__Noti__Text {
+                padding: 1rem 0;
+                margin-left: 1rem; }
+              .HomePage__Right__MainBody__Notification__Box__NormalNotification__Noti__Avatar {
+                cursor: pointer; }
+          .HomePage__Right__MainBody__Notification__Box__RequestNotification {
+            border-top: 2px solid lightgrey;
+            color: #000;
+            padding: 6px 25px;
+            font-size: 14px;
+            font-weight: 400;
+            width: 100%; }
+            .HomePage__Right__MainBody__Notification__Box__RequestNotification__Noti {
+              display: flex;
+              justify-content: space-between;
+              align-items: center; }
+              .HomePage__Right__MainBody__Notification__Box__RequestNotification__Noti__Left {
+                display: flex;
+                align-items: center; }
+                .HomePage__Right__MainBody__Notification__Box__RequestNotification__Noti__Left__Avatar {
+                  cursor: pointer; }
+                .HomePage__Right__MainBody__Notification__Box__RequestNotification__Noti__Left__Text {
+                  width: 220px;
+                  margin-left: 1rem; }
+              .HomePage__Right__MainBody__Notification__Box__RequestNotification__Noti__Right {
+                display: flex;
+                align-items: center;
+                justify-content: space-between; }
+                .HomePage__Right__MainBody__Notification__Box__RequestNotification__Noti__Right__Reject {
+                  cursor: pointer;
+                  transition: all 0.4s ease;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  padding: 0.4rem; }
+                  .HomePage__Right__MainBody__Notification__Box__RequestNotification__Noti__Right__Reject__Icon {
+                    font-size: 24px !important; }
+                  .HomePage__Right__MainBody__Notification__Box__RequestNotification__Noti__Right__Reject:hover {
+                    background: #983131;
+                    color: #fff;
+                    border-radius: 50%; }
+                .HomePage__Right__MainBody__Notification__Box__RequestNotification__Noti__Right__Accept {
+                  cursor: pointer;
+                  transition: all 0.4s ease;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  margin-left: 0.5rem;
+                  padding: 0.4rem; }
+                  .HomePage__Right__MainBody__Notification__Box__RequestNotification__Noti__Right__Accept__Icon {
+                    font-size: 24px !important; }
+                  .HomePage__Right__MainBody__Notification__Box__RequestNotification__Noti__Right__Accept:hover {
+                    background: #008000;
+                    color: #fff;
+                    border-radius: 50%; }
           .HomePage__Right__MainBody__Notification__Box__Header {
+            padding: 5px 25px;
             font-size: 18px;
             font-weight: 600;
-            color: #000;
+            color: #84929f;
             margin-bottom: 1rem; }
             .HomePage__Right__MainBody__Notification__Box__Header__Underline {
               border: 1px solid lightgrey;

@@ -106,17 +106,120 @@
         padding: 0 1rem;
         background: $color-white;
         &__Box {
-          border: 2px solid lightgrey;
+          background-color: $color-white;
+          cursor: default;
           // position: relative;
           text-align: left;
-          padding: 0.9rem;
-          height: 539px;
-          overflow-y: scroll;
 
+          height: fit-content;
+
+          border-radius: 0.5rem;
+          border: 2px solid lightgrey;
+          :before {
+            content: "";
+            position: absolute;
+            top: 1px;
+            right: 50px;
+            width: 10px;
+            height: 0;
+            transform: translate(-1rem, -100%);
+            border-left: 0.75rem solid transparent;
+            border-right: 0.75rem solid transparent;
+            border-bottom: 0.75rem solid white;
+          }
+
+          &__NormalNotification {
+            border-top: 2px solid lightgrey;
+            color: $color-black;
+            padding: 5px 25px;
+            font-size: 14px;
+            font-weight: 400;
+            width: 100%;
+
+            &__Noti {
+              display: flex;
+
+              align-items: center;
+
+              &__Text {
+                padding: 1rem 0;
+                margin-left: 1rem;
+              }
+              &__Avatar {
+                cursor: pointer;
+              }
+            }
+          }
+          &__RequestNotification {
+            border-top: 2px solid lightgrey;
+            color: $color-black;
+            padding: 6px 25px;
+            font-size: 14px;
+            font-weight: 400;
+            width: 100%;
+            &__Noti {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              &__Left {
+                display: flex;
+                align-items: center;
+
+                &__Avatar {
+                  cursor: pointer;
+                }
+
+                &__Text {
+                  width: 220px;
+                  margin-left: 1rem;
+                }
+              }
+
+              &__Right {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                &__Reject {
+                  cursor: pointer;
+                  transition: all 0.4s ease;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  padding: 0.4rem;
+                  &__Icon {
+                    font-size: 24px !important;
+                  }
+                  &:hover {
+                    background: rgb(152, 49, 49);
+                    color: $color-white;
+                    border-radius: 50%;
+                  }
+                }
+                &__Accept {
+                  cursor: pointer;
+                  transition: all 0.4s ease;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  margin-left: 0.5rem;
+                  padding: 0.4rem;
+                  &__Icon {
+                    font-size: 24px !important;
+                  }
+                  &:hover {
+                    background: #008000;
+                    color: $color-white;
+                    border-radius: 50%;
+                  }
+                }
+              }
+            }
+          }
           &__Header {
+            padding: 5px 25px;
             font-size: 18px;
             font-weight: 600;
-            color: $color-black;
+            color: #84929f;
             margin-bottom: 1rem;
             &__Underline {
               border: 1px solid lightgrey;
