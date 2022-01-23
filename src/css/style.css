@@ -736,6 +736,8 @@ body {
       border: 2px solid lightgrey;
       border-radius: 5px;
       margin: 0.5rem;
+      background-color: white;
+      color: black;
       padding: 1rem; }
       .modal__selects__dropdown__item {
         display: flex;

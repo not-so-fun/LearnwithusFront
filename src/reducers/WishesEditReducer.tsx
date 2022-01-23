@@ -3,8 +3,8 @@ import {
   WISHES_EDIT_SUCCESS,
   WISHES_EDIT_ERROR,
   WISHES_EDIT_TEMP,
-} from "../constants/WishesConstants";
-import { WishesEditTypes } from "../types/";
+} from "../constants/WishesEditConstants";
+import { WishesEditTypes } from "../types/WishesEditTypes";
 
 export interface wishesEditInterface {
   topic_id: string;
