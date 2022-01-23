@@ -4,8 +4,6 @@
 }
 
 .Profile {
- 
-
   &__Box {
     width: 100%;
     height: 125rem;
@@ -27,7 +25,7 @@
     }
     &__Top {
       background: $color-primary;
-      width:100%;
+      width: 100%;
       height: 50rem;
       margin-bottom: 2rem;
       display: flex;
@@ -41,17 +39,54 @@
         display: flex;
         align-items: center;
         flex-direction: column;
+
+        &__Button {
+          padding: 1rem 2rem;
+          color: $color-white;
+          background-color: #008000;
+          border: none;
+          cursor: pointer;
+          transition: all 0.4s ease;
+          &:hover {
+            box-shadow: inset 0 0 20px 20px rgba(0, 0, 0, 0.25);
+          }
+        }
         &__Image {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          width: 20rem;
-          height: 20rem;
           margin-top: 4rem;
           margin-bottom: 0.5rem;
-          background: $color-white;
-          border-radius: 50%;
+
+          // border-radius: 50%;
+          position: relative;
+          &__Icon {
+            border: 2px solid #ffffff1a;
+            background-color: #ffffff1a;
+            border-radius: 50%;
+            padding: 0.5rem;
+            width: fit-content;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 155px;
+            right: 13px;
+            font-size: 20px;
+            color: $color-white;
+            &__Camera {
+              font-size: 20px !important;
+            }
+          }
+          &__Avatar {
+            margin-bottom: 0.5rem;
+            width: 20rem;
+            height: 20rem;
+          }
         }
+        &__Icon {
+          top: 0;
+          right: 0px;
+          color: red;
+        }
+
         &__ProfileName {
           margin: 0.2rem 0;
           height: 5rem;
@@ -148,7 +183,7 @@
         }
       }
       &__Statistics {
-        flex:1;
+        flex: 1;
         color: $color-white;
         display: flex;
         flex-direction: column;
@@ -198,14 +233,14 @@
       background: $color-grey-light-2;
       width: 100%;
       height: 95rem;
-   
-      display:flex;
+
+      display: flex;
       align-items: center;
       margin-bottom: 2rem;
       display: flex;
       &__Newsfeed {
         height: 100%;
-        flex:1;
+        flex: 1;
         overflow-y: scroll;
         &__Div {
           background-color: $color-grey-light-1;
@@ -265,9 +300,9 @@
 
             &__Questions {
               text-decoration: none;
-              color:$color-black;
-              &:hover{
-                cursor:pointer;
+              color: $color-black;
+              &:hover {
+                cursor: pointer;
               }
               &__Question {
                 background-color: $color-grey-light-2;
@@ -289,7 +324,7 @@
       }
       &__SideInformation {
         height: 100%;
-        flex:0 0 30%;
+        flex: 0 0 30%;
         background: $color-primary;
         &__Status {
           border: 2px solid black;
@@ -389,14 +424,13 @@
       border-radius: 5px;
       margin: 0.5rem;
       background-color: white;
-      color:black;
+      color: black;
 
       padding: 1rem;
       &__item {
         display: flex;
         flex-direction: row;
         // justify-content: center;
-       
 
         align-items: center;
         margin-bottom: 1rem;
@@ -407,7 +441,6 @@
         }
         &__checkbox {
           cursor: pointer;
-          
         }
 
         &:last-child {
@@ -447,8 +480,98 @@
   justify-content: flex-end;
 }
 
+.editModal {
+  position: fixed;
+  padding: 2rem;
+  top: 30vh;
+  left: 10%;
+  width: 80%;
+  z-index: 100;
+  max-height: 40rem;
+
+  background-color: $color-primary;
+  color: $color-white;
+  &__Header {
+    font-size: 26px;
+    letter-spacing: 0.06rem;
+  }
+}
+
+// edit form css
+.editModal__Form {
+  // border: 2px solid red;
+  margin-top: 1rem;
+
+  &__Control {
+    // border: 2px solid grey;
+
+    &__Button {
+      // border: 2px solid red;
+      display: flex;
+      justify-content: flex-end;
+
+      &__Edit {
+        background-color: #008000;
+        margin-left: 1rem;
+        font-size: 18px;
+        padding: 5px 25px;
+        color: #fff;
+        border: none;
+        width: 10rem;
+        transition: all 0.3s ease;
+        &:hover {
+          box-shadow: inset 0 0 15px 15px rgba(0, 0, 0, 0.25);
+          cursor: pointer;
+        }
+      }
+      &__Cancel {
+        width: 10rem;
+        background-color: #9b9b9b;
+        margin-left: 1rem;
+        font-size: 18px;
+        padding: 5px 25px;
+        color: #fff;
+        border: none;
+        transition: all 0.3s ease;
+        &:hover {
+          box-shadow: inset 0 0 15px 15px rgba(0, 0, 0, 0.25);
+          cursor: pointer;
+        }
+      }
+    }
+
+    &__Label {
+      display: flex;
+      font-size: 16px;
+      margin-bottom: 0.8rem;
+    }
+    &__Input {
+      width: 100%;
+      font-size: 16px;
+      padding: 2px 3px;
+      height: 3.5rem;
+    }
+
+    &__Div {
+      // border: 2px solid green;
+      margin-bottom: 2rem;
+      &__Name {
+        margin-bottom: 2rem;
+        // border: 2px solid blue;
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+  }
+}
+// edit form css
+
 @media (min-width: 768px) {
   .modal {
+    left: calc(50% - 20rem);
+    width: 40rem;
+  }
+  .editModal {
     left: calc(50% - 20rem);
     width: 40rem;
   }

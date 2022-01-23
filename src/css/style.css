@@ -3,24 +3,20 @@
 *::before {
   margin: 0;
   padding: 0;
-  box-sizing: inherit;
-}
+  box-sizing: inherit; }
 
 html {
-  font-size: 62.5%;
-}
+  font-size: 62.5%; }
 
 body {
-  box-sizing: border-box;
-}
+  box-sizing: border-box; }
 
 body {
   font-family: "Lato", sans-serif;
   font-weight: 400;
   line-height: 1.7;
   color: #777;
-  background: #eeeeee;
-}
+  background: #EEEEEE; }
 
 .Center {
   height: 100vh;
@@ -28,8 +24,7 @@ body {
   background: #ededed;
   display: flex;
   align-items: center;
-  justify-content: center;
-}
+  justify-content: center; }
 
 .Auth__Box__Container {
   width: 43rem;
@@ -38,8 +33,7 @@ body {
   align-items: center;
   justify-content: flex-start;
   flex-direction: column;
-  color: #494949;
-}
+  color: #494949; }
 
 .Auth__Box__InputBox {
   display: flex;
@@ -48,108 +42,93 @@ body {
   flex-direction: column;
   height: auto;
   width: 100%;
-  color: #494949;
-}
-.Auth__Box__InputBox__Name {
-  width: 95%;
-  display: flex;
-  justify-content: space-between;
-}
-.Auth__Box__InputBox__Name__InputHandler {
-  width: 46%;
-}
-.Auth__Box__InputBox__Name__InputHandler__Heading {
-  font-weight: 600;
-  height: 3rem;
-  margin: 0.2rem 0;
-  font-size: 1.7rem;
-  display: flex;
-  align-items: center;
-}
-.Auth__Box__InputBox__Name__InputHandler__Input {
-  width: 100%;
-  height: 4rem;
-  font-size: 1.3rem;
-  margin: 0.4rem 0;
-  margin-bottom: 1rem;
-  padding: 1rem;
-  background: #f8f8f8;
-  border: none;
-  outline: none;
-}
-.Auth__Box__InputBox__Header {
-  font-size: 3rem;
-  font-weight: 600;
-  margin: 0.3rem 0;
-  height: 5rem;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.Auth__Box__InputBox__InputHandler {
-  width: 95%;
-}
-.Auth__Box__InputBox__InputHandler__Heading {
-  font-weight: 600;
-  height: 3rem;
-  margin: 0.3rem 0;
-  font-size: 1.7rem;
-  display: flex;
-  align-items: center;
-}
-.Auth__Box__InputBox__InputHandler__Input {
-  width: 100%;
-  height: 4rem;
-  font-size: 1.3rem;
-  margin: 0.5rem 0;
-  padding: 1rem;
-  background: #f8f8f8;
-  border: none;
-  margin-bottom: 1rem;
-  outline: none;
-}
-.Auth__Box__InputBox__InputHandler__InputBox {
-  width: 100%;
-  height: 4rem;
-  font-size: 1.3rem;
-  margin: 0.3rem 0;
-  background: green;
-  border: none;
-  outline: none;
-  display: flex;
-  align-items: center;
-}
-.Auth__Box__InputBox__InputHandler__InputBox__Input {
-  width: 100%;
-  height: 4rem;
-  font-size: 1.3rem;
-  padding: 1rem;
-  background: #f8f8f8;
-  border: none;
-  outline: none;
-}
-.Auth__Box__InputBox__InputHandler__InputBox__Input__Password {
-  padding-right: 3rem;
-}
-.Auth__Box__InputBox__InputHandler__InputBox__Logos {
-  margin-left: -3rem;
-  height: 3rem;
-  width: 3rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: none;
-  outline: none;
-  background: #f8f8f8;
-}
-.Auth__Box__InputBox__InputHandler__InputBox__Logos:hover {
-  cursor: pointer;
-}
-.Auth__Box__InputBox__InputHandler__InputBox__Logos__Logo {
-  height: 2.1rem;
-  width: 2.1rem;
-}
+  color: #494949; }
+  .Auth__Box__InputBox__Name {
+    width: 95%;
+    display: flex;
+    justify-content: space-between; }
+    .Auth__Box__InputBox__Name__InputHandler {
+      width: 46%; }
+      .Auth__Box__InputBox__Name__InputHandler__Heading {
+        font-weight: 600;
+        height: 3rem;
+        margin: 0.2rem 0;
+        font-size: 1.7rem;
+        display: flex;
+        align-items: center; }
+      .Auth__Box__InputBox__Name__InputHandler__Input {
+        width: 100%;
+        height: 4rem;
+        font-size: 1.3rem;
+        margin: 0.4rem 0;
+        margin-bottom: 1rem;
+        padding: 1rem;
+        background: #f8f8f8;
+        border: none;
+        outline: none; }
+  .Auth__Box__InputBox__Header {
+    font-size: 3rem;
+    font-weight: 600;
+    margin: 0.3rem 0;
+    height: 5rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+  .Auth__Box__InputBox__InputHandler {
+    width: 95%; }
+    .Auth__Box__InputBox__InputHandler__Heading {
+      font-weight: 600;
+      height: 3rem;
+      margin: 0.3rem 0;
+      font-size: 1.7rem;
+      display: flex;
+      align-items: center; }
+    .Auth__Box__InputBox__InputHandler__Input {
+      width: 100%;
+      height: 4rem;
+      font-size: 1.3rem;
+      margin: 0.5rem 0;
+      padding: 1rem;
+      background: #f8f8f8;
+      border: none;
+      margin-bottom: 1rem;
+      outline: none; }
+    .Auth__Box__InputBox__InputHandler__InputBox {
+      width: 100%;
+      height: 4rem;
+      font-size: 1.3rem;
+      margin: 0.3rem 0;
+      background: green;
+      border: none;
+      outline: none;
+      display: flex;
+      align-items: center; }
+      .Auth__Box__InputBox__InputHandler__InputBox__Input {
+        width: 100%;
+        height: 4rem;
+        font-size: 1.3rem;
+        padding: 1rem;
+        background: #f8f8f8;
+        border: none;
+        outline: none; }
+        .Auth__Box__InputBox__InputHandler__InputBox__Input__Password {
+          padding-right: 3rem; }
+      .Auth__Box__InputBox__InputHandler__InputBox__Logos {
+        margin-left: -3rem;
+        height: 3rem;
+        width: 3rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        outline: none;
+        background: #f8f8f8; }
+        .Auth__Box__InputBox__InputHandler__InputBox__Logos:hover {
+          cursor: pointer; }
+        .Auth__Box__InputBox__InputHandler__InputBox__Logos__Logo {
+          height: 2.1rem;
+          width: 2.1rem; }
 
 .Auth__Box__Buttons {
   width: 100%;
@@ -157,336 +136,288 @@ body {
   margin: 0.3rem 0;
   display: flex;
   align-items: center;
-  justify-content: center;
-}
-.Auth__Box__Buttons__Button {
-  width: 95%;
-  height: 5rem;
-  background: #048004;
-  font-size: 1.9rem;
-  color: #fff;
-  border-radius: 5px;
-  border: none;
-  outline: none;
-}
-.Auth__Box__Buttons__Button:hover {
-  cursor: pointer;
-  background-color: #036703;
-}
+  justify-content: center; }
+  .Auth__Box__Buttons__Button {
+    width: 95%;
+    height: 5rem;
+    background: #048004;
+    font-size: 1.9rem;
+    color: #fff;
+    border-radius: 5px;
+    border: none;
+    outline: none; }
+    .Auth__Box__Buttons__Button:hover {
+      cursor: pointer;
+      background-color: #036703; }
 
 .Auth__Box__ForgotPassword {
   font-size: 1.7rem;
   color: #32569f;
   text-decoration: underline;
-  margin: 1rem 0;
-}
-.Auth__Box__ForgotPassword:hover {
-  cursor: pointer;
-}
+  margin: 1rem 0; }
+  .Auth__Box__ForgotPassword:hover {
+    cursor: pointer; }
 
 .Auth__Box__Register {
   font-size: 1.7rem;
   margin: 1rem 0;
   color: #494949;
   display: flex;
-  align-items: center;
-}
-.Auth__Box__Register__Redirect {
-  color: #048004;
-  margin-left: 1rem;
-}
-.Auth__Box__Register__Redirect:hover {
-  cursor: pointer;
-  text-decoration: underline;
-}
+  align-items: center; }
+  .Auth__Box__Register__Redirect {
+    color: #048004;
+    margin-left: 1rem; }
+    .Auth__Box__Register__Redirect:hover {
+      cursor: pointer;
+      text-decoration: underline; }
 
 .error_input {
-  background-color: #ffeeee;
-}
+  background-color: #ffeeee; }
 
 .ForgetPassword {
   margin: 2rem;
   display: flex;
-  justify-content: center;
-}
-.ForgetPassword__InnerDiv {
-  display: flex;
-  border: 2px solid lightgrey;
-  padding: 2rem;
-  flex-direction: column;
-  text-align: left;
-  width: 30%;
-}
-.ForgetPassword__InnerDiv__ConfirmImageDiv {
-  margin-top: 10px;
-}
-.ForgetPassword__InnerDiv__Heading {
-  color: #000;
-  font-size: 26px;
-}
-.ForgetPassword__InnerDiv__Form {
-  margin: 1rem 0;
-}
-.ForgetPassword__InnerDiv__Form__Heading {
-  font-size: 16px;
-}
-.ForgetPassword__InnerDiv__Form__Input {
-  margin-top: 0.2rem;
-  width: 100%;
-  height: 4rem;
-  font-size: 1.3rem;
-  padding: 1rem;
-}
-.ForgetPassword__InnerDiv__Form__Button {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 5rem;
-  background: #048004;
-  font-size: 1.9rem;
-  color: #fff;
-  border-radius: 5px;
-  border: none;
-  outline: none;
-}
-.ForgetPassword__InnerDiv__Form__Button:hover {
-  cursor: pointer;
-  background-color: #036703;
-}
-.ForgetPassword__InnerDiv__text {
-  font-size: 16px;
-  margin-top: 1rem;
-  text-align: left;
-}
+  justify-content: center; }
+  .ForgetPassword__InnerDiv {
+    display: flex;
+    border: 2px solid lightgrey;
+    padding: 2rem;
+    flex-direction: column;
+    text-align: left;
+    width: 30%; }
+    .ForgetPassword__InnerDiv__ConfirmImageDiv {
+      margin-top: 10px; }
+    .ForgetPassword__InnerDiv__Heading {
+      color: #000;
+      font-size: 26px; }
+    .ForgetPassword__InnerDiv__Form {
+      margin: 1rem 0; }
+      .ForgetPassword__InnerDiv__Form__Heading {
+        font-size: 16px; }
+      .ForgetPassword__InnerDiv__Form__Input {
+        margin-top: 0.2rem;
+        width: 100%;
+        height: 4rem;
+        font-size: 1.3rem;
+        padding: 1rem; }
+      .ForgetPassword__InnerDiv__Form__Button {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 5rem;
+        background: #048004;
+        font-size: 1.9rem;
+        color: #fff;
+        border-radius: 5px;
+        border: none;
+        outline: none; }
+        .ForgetPassword__InnerDiv__Form__Button:hover {
+          cursor: pointer;
+          background-color: #036703; }
+    .ForgetPassword__InnerDiv__text {
+      font-size: 16px;
+      margin-top: 1rem;
+      text-align: left; }
 
 .AskQuestionForm {
   background: #fff;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
   width: 780px;
-  height: 100%;
-}
-.AskQuestionForm__Heading {
-  height: 5rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-end;
-  color: #4b4b4b;
-}
-.AskQuestionForm__Heading__Title {
-  height: 5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2.5rem;
-  color: #4b4b4b;
-  font-weight: 600;
-}
-.AskQuestionForm__Title {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  color: #4b4b4b;
-}
-.AskQuestionForm__Title__Heading {
-  font-size: 2.3rem;
-  font-weight: 600;
-  padding: 0 1rem;
-  letter-spacing: 0.07rem;
-  width: 10rem;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  color: #4b4b4b;
-}
-.AskQuestionForm__Title__HelperText {
-  font-size: 1.5rem;
-  color: #000;
-  padding: 0 1rem;
-  color: #4b4b4b;
-}
-.AskQuestionForm__TitleInput {
-  height: 14rem;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 0.5rem;
-  padding: 1rem;
-}
-.AskQuestionForm__TitleInput__Title {
-  border: 2px solid lightgrey;
-  border-radius: 5px;
-  height: 5rem;
-  width: 100%;
-  padding: 0 1rem;
-  font-size: 1.5rem;
-  display: flex;
-  align-items: center;
-  outline: none;
-}
-.AskQuestionForm__TitleInput__Title__Logos {
-  height: 4rem;
-  width: 4rem;
-  margin-left: -4rem;
-}
-.AskQuestionForm__TitleInput__InputBox {
-  height: 7rem;
-  width: 100%;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-}
-.AskQuestionForm__TitleInput__InputBox__Div {
-  width: 100%;
-  display: flex;
-}
-.AskQuestionForm__TitleInput__InputBox__Div__Select {
-  width: 363 px;
-  background: #fff;
-  width: 100%;
-  border-radius: 5px;
-  height: 5rem;
-  display: flex;
-  align-items: center;
-  padding: 0px 1rem;
-  border: 2px solid lightgrey;
-  cursor: pointer;
-  color: #777;
-}
-.AskQuestionForm__TitleInput__InputBox__Div__Select:last-child {
-  margin-left: 5px;
-}
-.AskQuestionForm__TitleInput__InputBox__Title {
-  background: #4b4b4b;
-  border-radius: 5px;
-  height: 5rem;
-  flex: 1;
-  display: flex;
-  align-items: center;
-  position: relative;
-}
-.AskQuestionForm__TitleInput__InputBox__Title:not(:first-child) {
-  margin-left: 0.5rem;
-}
-.AskQuestionForm__TitleInput__InputBox__Title:not(:last-child) {
-  margin-right: 0.5rem;
-}
-.AskQuestionForm__TitleInput__InputBox__Title__Box {
-  width: 100%;
-  height: 30rem;
-  background: #c4c4c4;
-  position: absolute;
-  top: 5.6rem;
-  left: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  overflow-y: scroll;
-}
-.AskQuestionForm__TitleInput__InputBox__Title__Box__Topics {
-  font-size: 2rem;
-  color: #000;
-  height: 5rem;
-  width: 95%;
-  margin: 0.5rem 0;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  padding: 0.4rem 1rem;
-}
-.AskQuestionForm__TitleInput__InputBox__Title__Box__Topics:hover {
-  cursor: pointer;
-  background: #f8f8f8;
-}
-.AskQuestionForm__TitleInput__InputBox__Title__Input {
-  font-size: 1.5rem;
-  width: 100%;
-  height: 5rem;
-  border: none;
-  outline: none;
-  border-radius: 5px;
-  padding-right: 3.5rem;
-  padding-left: 1rem;
-}
-.AskQuestionForm__TitleInput__InputBox__Footer {
-  height: 5rem;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  padding: 0 1rem;
-}
-.AskQuestionForm__TitleInput__InputBox__Footer__Button {
-  height: 4rem;
-  border-radius: 5px;
-  padding: 0 1rem;
-  flex: 0 0 20%;
-  border: none;
-  font-size: 1.5rem;
-  font-weight: 600;
-  background: #c4c4c4;
-}
-.AskQuestionForm__TitleInput__InputBox__Footer__Button:hover {
-  cursor: pointer;
-  background: #f8f8f8;
-}
-.AskQuestionForm__Body {
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-}
-.AskQuestionForm__Body__Heading {
-  width: 10rem;
-  height: 4rem;
-  font-size: 2.3rem;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  margin: 0 1rem;
-  color: #4b4b4b;
-}
-.AskQuestionForm__Body__Input {
-  height: 25rem;
-  border-radius: 5px;
-  overflow-y: scroll;
-  padding: 1rem;
-  outline: none;
-  color: #4b4b4b;
-  font-size: 1.5rem;
-  border: 5px;
-  background-color: #e3e3e3;
-  margin: 0 1rem;
-}
-.AskQuestionForm__Footer {
-  height: 5rem;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  padding: 0 1rem;
-}
-.AskQuestionForm__Footer__Button {
-  height: 4rem;
-  border-radius: 5px;
-  margin-top: 2rem;
-  padding: 0 1rem;
-  border: none;
-  font-size: 1.5rem;
-  font-weight: 600;
-  background: #32569f;
-  color: #f7f7f7;
-}
-.AskQuestionForm__Footer__Button:hover {
-  cursor: pointer;
-  box-shadow: inset 5em 5em rgba(0, 0, 0, 0.2);
-}
+  height: 100%; }
+  .AskQuestionForm__Heading {
+    height: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    color: #4b4b4b; }
+    .AskQuestionForm__Heading__Title {
+      height: 5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+      color: #4b4b4b;
+      font-weight: 600; }
+  .AskQuestionForm__Title {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    color: #4b4b4b; }
+    .AskQuestionForm__Title__Heading {
+      font-size: 2.3rem;
+      font-weight: 600;
+      padding: 0 1rem;
+      letter-spacing: 0.07rem;
+      width: 10rem;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      color: #4b4b4b; }
+    .AskQuestionForm__Title__HelperText {
+      font-size: 1.5rem;
+      color: #000;
+      padding: 0 1rem;
+      color: #4b4b4b; }
+  .AskQuestionForm__TitleInput {
+    height: 14rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.5rem;
+    padding: 1rem; }
+    .AskQuestionForm__TitleInput__Title {
+      border: 2px solid lightgrey;
+      border-radius: 5px;
+      height: 5rem;
+      width: 100%;
+      padding: 0 1rem;
+      font-size: 1.5rem;
+      display: flex;
+      align-items: center;
+      outline: none; }
+      .AskQuestionForm__TitleInput__Title__Logos {
+        height: 4rem;
+        width: 4rem;
+        margin-left: -4rem; }
+    .AskQuestionForm__TitleInput__InputBox {
+      height: 7rem;
+      width: 100%;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center; }
+      .AskQuestionForm__TitleInput__InputBox__Div {
+        width: 100%;
+        display: flex; }
+        .AskQuestionForm__TitleInput__InputBox__Div__Select {
+          width: 363 px;
+          background: #fff;
+          width: 100%;
+          border-radius: 5px;
+          height: 5rem;
+          display: flex;
+          align-items: center;
+          padding: 0px 1rem;
+          border: 2px solid lightgrey;
+          cursor: pointer;
+          color: #777; }
+          .AskQuestionForm__TitleInput__InputBox__Div__Select:last-child {
+            margin-left: 5px; }
+      .AskQuestionForm__TitleInput__InputBox__Title {
+        background: #4b4b4b;
+        border-radius: 5px;
+        height: 5rem;
+        flex: 1;
+        display: flex;
+        align-items: center;
+        position: relative; }
+        .AskQuestionForm__TitleInput__InputBox__Title:not(:first-child) {
+          margin-left: 0.5rem; }
+        .AskQuestionForm__TitleInput__InputBox__Title:not(:last-child) {
+          margin-right: 0.5rem; }
+        .AskQuestionForm__TitleInput__InputBox__Title__Box {
+          width: 100%;
+          height: 30rem;
+          background: #c4c4c4;
+          position: absolute;
+          top: 5.6rem;
+          left: 0;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: flex-start;
+          overflow-y: scroll; }
+          .AskQuestionForm__TitleInput__InputBox__Title__Box__Topics {
+            font-size: 2rem;
+            color: #000;
+            height: 5rem;
+            width: 95%;
+            margin: 0.5rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 0.4rem 1rem; }
+            .AskQuestionForm__TitleInput__InputBox__Title__Box__Topics:hover {
+              cursor: pointer;
+              background: #f8f8f8; }
+        .AskQuestionForm__TitleInput__InputBox__Title__Input {
+          font-size: 1.5rem;
+          width: 100%;
+          height: 5rem;
+          border: none;
+          outline: none;
+          border-radius: 5px;
+          padding-right: 3.5rem;
+          padding-left: 1rem; }
+      .AskQuestionForm__TitleInput__InputBox__Footer {
+        height: 5rem;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding: 0 1rem; }
+        .AskQuestionForm__TitleInput__InputBox__Footer__Button {
+          height: 4rem;
+          border-radius: 5px;
+          padding: 0 1rem;
+          flex: 0 0 20%;
+          border: none;
+          font-size: 1.5rem;
+          font-weight: 600;
+          background: #c4c4c4; }
+          .AskQuestionForm__TitleInput__InputBox__Footer__Button:hover {
+            cursor: pointer;
+            background: #f8f8f8; }
+  .AskQuestionForm__Body {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; }
+    .AskQuestionForm__Body__Heading {
+      width: 10rem;
+      height: 4rem;
+      font-size: 2.3rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      margin: 0 1rem;
+      color: #4b4b4b; }
+    .AskQuestionForm__Body__Input {
+      height: 25rem;
+      border-radius: 5px;
+      overflow-y: scroll;
+      padding: 1rem;
+      outline: none;
+      color: #4b4b4b;
+      font-size: 1.5rem;
+      border: 5px;
+      background-color: #e3e3e3;
+      margin: 0 1rem; }
+  .AskQuestionForm__Footer {
+    height: 5rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 1rem; }
+    .AskQuestionForm__Footer__Button {
+      height: 4rem;
+      border-radius: 5px;
+      margin-top: 2rem;
+      padding: 0 1rem;
+      border: none;
+      font-size: 1.5rem;
+      font-weight: 600;
+      background: #32569f;
+      color: #f7f7f7; }
+      .AskQuestionForm__Footer__Button:hover {
+        cursor: pointer;
+        box-shadow: inset 5em 5em rgba(0, 0, 0, 0.2); }
 
 .Auth {
   height: 70rem;
@@ -494,28 +425,24 @@ body {
   width: 120rem;
   min-width: 30rem;
   background: #048004;
-  display: flex;
-}
-.Auth__Box {
-  background: #fff;
-  max-width: 60rem;
-  width: 60rem;
-  min-width: 30rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.Auth__Side {
-  background: #32569f;
-  max-width: 60rem;
-  width: 60rem;
-  min-width: 30rem;
-}
+  display: flex; }
+  .Auth__Box {
+    background: #fff;
+    max-width: 60rem;
+    width: 60rem;
+    min-width: 30rem;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+  .Auth__Side {
+    background: #32569f;
+    max-width: 60rem;
+    width: 60rem;
+    min-width: 30rem; }
 
 .Main {
   display: flex;
-  position: relative;
-}
+  position: relative; }
 
 .Profile__Box {
   width: 100%;
@@ -523,302 +450,279 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-}
-.Profile__Box__Navbar {
-  height: 10rem;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  left: 170px;
-}
-.Profile__Box__Top {
-  background: #32569f;
-  width: 100%;
-  height: 50rem;
-  margin-bottom: 2rem;
-  display: flex;
-}
-.Profile__Box__Top__ImagesAndDatas {
-  flex: 0 0 30%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-.Profile__Box__Top__ImagesAndDatas__Image {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 20rem;
-  height: 20rem;
-  margin-top: 4rem;
-  margin-bottom: 0.5rem;
-  background: #fff;
-  border-radius: 50%;
-}
-.Profile__Box__Top__ImagesAndDatas__ProfileName {
-  margin: 0.2rem 0;
-  height: 5rem;
-  font-size: 2rem;
-  letter-spacing: 0.05rem;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-}
-.Profile__Box__Top__ImagesAndDatas__Rating {
-  height: 5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.Profile__Box__Top__ImagesAndDatas__Rating__Star {
-  height: 3rem;
-  width: 3rem;
-  fill: gold;
-  margin: 0 0.2rem;
-}
-.Profile__Box__Top__Information {
-  flex: 0 0 40%;
-  height: 100%;
-  text-align: left;
-  padding: 2rem;
-  color: #fff;
-}
-.Profile__Box__Top__Information__Name {
-  display: flex;
-  justify-content: space-between;
-  margin: 2rem 0;
-}
-.Profile__Box__Top__Information__Name__firstName {
-  display: inline-block;
-  width: 150px;
-}
-.Profile__Box__Top__Information__Name__firstName p {
-  font-size: 14px;
-  letter-spacing: 0.08rem;
-  margin-bottom: 0.5rem;
-}
-.Profile__Box__Top__Information__Name__firstName h4 {
-  font-size: 18px;
-  font-weight: 500;
-  letter-spacing: 0.03rem;
-  background-color: #fff;
-  padding: 0 0.5rem;
-  color: #000;
-}
-.Profile__Box__Top__Information__Name__lastName {
-  width: 150px;
-  display: inline-block;
-}
-.Profile__Box__Top__Information__Name__lastName p {
-  font-size: 14px;
-  letter-spacing: 0.08rem;
-  margin-bottom: 0.1rem;
-  margin-bottom: 0.5rem;
-}
-.Profile__Box__Top__Information__Name__lastName h4 {
-  font-size: 18px;
-  font-weight: 500;
-  letter-spacing: 0.03rem;
-  background-color: #fff;
-  padding: 0 0.5rem;
-  color: #000;
-}
-.Profile__Box__Top__Information__BasicInfo {
-  margin-bottom: 2rem;
-}
-.Profile__Box__Top__Information__BasicInfo p {
-  font-size: 14px;
-  letter-spacing: 0.08rem;
-  margin-bottom: 0.1rem;
-  margin-bottom: 0.5rem;
-}
-.Profile__Box__Top__Information__BasicInfo h4 {
-  font-size: 18px;
-  font-weight: 500;
-  letter-spacing: 0.03rem;
-  background-color: #fff;
-  padding: 0 0.5rem;
-  color: #000;
-}
-.Profile__Box__Top__Statistics {
-  flex: 1;
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.Profile__Box__Top__Statistics__Botton {
-  margin-top: 2rem;
-}
-.Profile__Box__Top__Statistics__Botton__Expertise,
-.Profile__Box__Top__Statistics__Botton__Wishes {
-  margin-left: 2rem;
-  border: none;
-  padding: 6px 12px;
-  background-color: transparent;
-  border: 2px solid #fff;
-  color: #fff;
-  font-weight: 600;
-  letter-spacing: 0.09rem;
-  cursor: pointer;
-  transition: all 0.4s ease;
-}
-.Profile__Box__Top__Statistics__Botton__Expertise:hover,
-.Profile__Box__Top__Statistics__Botton__Wishes:hover {
-  background-color: #fff;
-  color: #32569f;
-}
-.Profile__Box__Top__Statistics__Div {
-  width: 70%;
-  padding: 2rem;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
-.Profile__Box__Top__Statistics__Div__Data p {
-  font-size: 14px;
-  letter-spacing: 0.08rem;
-}
-.Profile__Box__Top__Statistics__Div__Data h1 {
-  font-weight: bold;
-  font-size: 55px;
-  line-height: 70px;
-  color: #4f9b13;
-}
-.Profile__Box__Main {
-  background: #c4c4c4;
-  width: 100%;
-  height: 95rem;
-  display: flex;
-  align-items: center;
-  margin-bottom: 2rem;
-  display: flex;
-}
-.Profile__Box__Main__Newsfeed {
-  height: 100%;
-  flex: 1;
-  overflow-y: scroll;
-}
-.Profile__Box__Main__Newsfeed__Div {
-  background-color: #f8f8f8;
-  color: #000;
-  margin: 2rem;
-  text-align: left;
-  padding: 8px;
-  border-radius: 5px;
-}
-.Profile__Box__Main__Newsfeed__Div__Header {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin-bottom: 0.7rem;
-  justify-content: space-between;
-}
-.Profile__Box__Main__Newsfeed__Div__Header__Left {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-.Profile__Box__Main__Newsfeed__Div__Header__Left p {
-  margin-left: 1rem;
-  font-size: 18px;
-}
-.Profile__Box__Main__Newsfeed__Div__Header__Right {
-  border: 2px solid lightgray;
-  border-radius: 5px;
-  padding: 4px 5px;
-  display: flex;
-  font-size: 12px;
-}
-.Profile__Box__Main__Newsfeed__Div__Header__image {
-  height: 50px;
-  width: 50px;
-}
-.Profile__Box__Main__Newsfeed__Div__InnerDiv {
-  display: flex;
-}
-.Profile__Box__Main__Newsfeed__Div__InnerDiv__Votes {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 0rem 1rem;
-  color: #777;
-}
-.Profile__Box__Main__Newsfeed__Div__InnerDiv__Votes__Up,
-.Profile__Box__Main__Newsfeed__Div__InnerDiv__Votes__Down {
-  font-size: 50px !important;
-  cursor: pointer;
-}
-.Profile__Box__Main__Newsfeed__Div__InnerDiv__Questions {
-  text-decoration: none;
-  color: #000;
-}
-.Profile__Box__Main__Newsfeed__Div__InnerDiv__Questions:hover {
-  cursor: pointer;
-}
-.Profile__Box__Main__Newsfeed__Div__InnerDiv__Questions__Question {
-  background-color: #c4c4c4;
-  margin-bottom: 1rem;
-  font-size: 14px;
-  padding: 1px 8px;
-  text-decoration: none;
-}
-.Profile__Box__Main__Newsfeed__Div__InnerDiv__Questions__QuestionDetails {
-  font-size: 14px;
-  padding: 1px 8px;
-  background-color: #c4c4c4;
-  text-decoration: none;
-}
-.Profile__Box__Main__SideInformation {
-  height: 100%;
-  flex: 0 0 30%;
-  background: #32569f;
-}
-.Profile__Box__Main__SideInformation__Status {
-  border: 2px solid black;
-  background: #f6f6f6;
-  margin: 1rem;
-}
-.Profile__Box__Main__SideInformation__Status__InnerDiv {
-  background: #c4c4c4;
-  padding: 0.5rem 0.5rem;
-  display: flex;
-  justify-content: space-between;
-}
-.Profile__Box__Main__SideInformation__Status__InnerDiv__Box {
-  display: flex;
-  flex-direction: column;
-}
-.Profile__Box__Main__SideInformation__Status__InnerDiv__Box__Header {
-  font-size: 20px;
-  color: #fff;
-  height: 35px;
-  width: 115px;
-  padding: 1px 2px;
-  margin-bottom: 1rem;
-  background: #32569f;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.Profile__Box__Main__SideInformation__Status__InnerDiv__Box__Stats {
-  height: 35px;
-  font-size: 17px;
-  color: #000;
-  width: 115px;
-  padding: 1px 2px;
-  margin-bottom: 1rem;
-  background: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+  justify-content: space-between; }
+  .Profile__Box__Navbar {
+    height: 10rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    left: 170px; }
+  .Profile__Box__Top {
+    background: #32569f;
+    width: 100%;
+    height: 50rem;
+    margin-bottom: 2rem;
+    display: flex; }
+    .Profile__Box__Top__ImagesAndDatas {
+      flex: 0 0 30%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      flex-direction: column; }
+      .Profile__Box__Top__ImagesAndDatas__Button {
+        padding: 1rem 2rem;
+        color: #fff;
+        background-color: #008000;
+        border: none;
+        cursor: pointer;
+        transition: all 0.4s ease; }
+        .Profile__Box__Top__ImagesAndDatas__Button:hover {
+          box-shadow: inset 0 0 20px 20px rgba(0, 0, 0, 0.25); }
+      .Profile__Box__Top__ImagesAndDatas__Image {
+        margin-top: 4rem;
+        margin-bottom: 0.5rem;
+        position: relative; }
+        .Profile__Box__Top__ImagesAndDatas__Image__Icon {
+          border: 2px solid #ffffff1a;
+          background-color: #ffffff1a;
+          border-radius: 50%;
+          padding: 0.5rem;
+          width: fit-content;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          position: absolute;
+          top: 155px;
+          right: 13px;
+          font-size: 20px;
+          color: #fff; }
+          .Profile__Box__Top__ImagesAndDatas__Image__Icon__Camera {
+            font-size: 20px !important; }
+        .Profile__Box__Top__ImagesAndDatas__Image__Avatar {
+          margin-bottom: 0.5rem;
+          width: 20rem;
+          height: 20rem; }
+      .Profile__Box__Top__ImagesAndDatas__Icon {
+        top: 0;
+        right: 0px;
+        color: red; }
+      .Profile__Box__Top__ImagesAndDatas__ProfileName {
+        margin: 0.2rem 0;
+        height: 5rem;
+        font-size: 2rem;
+        letter-spacing: 0.05rem;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff; }
+      .Profile__Box__Top__ImagesAndDatas__Rating {
+        height: 5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center; }
+        .Profile__Box__Top__ImagesAndDatas__Rating__Star {
+          height: 3rem;
+          width: 3rem;
+          fill: gold;
+          margin: 0 0.2rem; }
+    .Profile__Box__Top__Information {
+      flex: 0 0 40%;
+      height: 100%;
+      text-align: left;
+      padding: 2rem;
+      color: #fff; }
+      .Profile__Box__Top__Information__Name {
+        display: flex;
+        justify-content: space-between;
+        margin: 2rem 0; }
+        .Profile__Box__Top__Information__Name__firstName {
+          display: inline-block;
+          width: 150px; }
+        .Profile__Box__Top__Information__Name__firstName p {
+          font-size: 14px;
+          letter-spacing: 0.08rem;
+          margin-bottom: 0.5rem; }
+        .Profile__Box__Top__Information__Name__firstName h4 {
+          font-size: 18px;
+          font-weight: 500;
+          letter-spacing: 0.03rem;
+          background-color: #fff;
+          padding: 0 0.5rem;
+          color: #000; }
+        .Profile__Box__Top__Information__Name__lastName {
+          width: 150px;
+          display: inline-block; }
+        .Profile__Box__Top__Information__Name__lastName p {
+          font-size: 14px;
+          letter-spacing: 0.08rem;
+          margin-bottom: 0.1rem;
+          margin-bottom: 0.5rem; }
+        .Profile__Box__Top__Information__Name__lastName h4 {
+          font-size: 18px;
+          font-weight: 500;
+          letter-spacing: 0.03rem;
+          background-color: #fff;
+          padding: 0 0.5rem;
+          color: #000; }
+      .Profile__Box__Top__Information__BasicInfo {
+        margin-bottom: 2rem; }
+      .Profile__Box__Top__Information__BasicInfo p {
+        font-size: 14px;
+        letter-spacing: 0.08rem;
+        margin-bottom: 0.1rem;
+        margin-bottom: 0.5rem; }
+      .Profile__Box__Top__Information__BasicInfo h4 {
+        font-size: 18px;
+        font-weight: 500;
+        letter-spacing: 0.03rem;
+        background-color: #fff;
+        padding: 0 0.5rem;
+        color: #000; }
+    .Profile__Box__Top__Statistics {
+      flex: 1;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center; }
+      .Profile__Box__Top__Statistics__Botton {
+        margin-top: 2rem; }
+        .Profile__Box__Top__Statistics__Botton__Expertise, .Profile__Box__Top__Statistics__Botton__Wishes {
+          margin-left: 2rem;
+          border: none;
+          padding: 6px 12px;
+          background-color: transparent;
+          border: 2px solid #fff;
+          color: #fff;
+          font-weight: 600;
+          letter-spacing: 0.09rem;
+          cursor: pointer;
+          transition: all 0.4s ease; }
+          .Profile__Box__Top__Statistics__Botton__Expertise:hover, .Profile__Box__Top__Statistics__Botton__Wishes:hover {
+            background-color: #fff;
+            color: #32569f; }
+      .Profile__Box__Top__Statistics__Div {
+        width: 70%;
+        padding: 2rem;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); }
+        .Profile__Box__Top__Statistics__Div__Data p {
+          font-size: 14px;
+          letter-spacing: 0.08rem; }
+        .Profile__Box__Top__Statistics__Div__Data h1 {
+          font-weight: bold;
+          font-size: 55px;
+          line-height: 70px;
+          color: #4f9b13; }
+  .Profile__Box__Main {
+    background: #c4c4c4;
+    width: 100%;
+    height: 95rem;
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+    display: flex; }
+    .Profile__Box__Main__Newsfeed {
+      height: 100%;
+      flex: 1;
+      overflow-y: scroll; }
+      .Profile__Box__Main__Newsfeed__Div {
+        background-color: #f8f8f8;
+        color: #000;
+        margin: 2rem;
+        text-align: left;
+        padding: 8px;
+        border-radius: 5px; }
+        .Profile__Box__Main__Newsfeed__Div__Header {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          margin-bottom: 0.7rem;
+          justify-content: space-between; }
+          .Profile__Box__Main__Newsfeed__Div__Header__Left {
+            display: flex;
+            flex-direction: row;
+            align-items: center; }
+            .Profile__Box__Main__Newsfeed__Div__Header__Left p {
+              margin-left: 1rem;
+              font-size: 18px; }
+          .Profile__Box__Main__Newsfeed__Div__Header__Right {
+            border: 2px solid lightgray;
+            border-radius: 5px;
+            padding: 4px 5px;
+            display: flex;
+            font-size: 12px; }
+          .Profile__Box__Main__Newsfeed__Div__Header__image {
+            height: 50px;
+            width: 50px; }
+        .Profile__Box__Main__Newsfeed__Div__InnerDiv {
+          display: flex; }
+          .Profile__Box__Main__Newsfeed__Div__InnerDiv__Votes {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 0rem 1rem;
+            color: #777; }
+            .Profile__Box__Main__Newsfeed__Div__InnerDiv__Votes__Up, .Profile__Box__Main__Newsfeed__Div__InnerDiv__Votes__Down {
+              font-size: 50px !important;
+              cursor: pointer; }
+          .Profile__Box__Main__Newsfeed__Div__InnerDiv__Questions {
+            text-decoration: none;
+            color: #000; }
+            .Profile__Box__Main__Newsfeed__Div__InnerDiv__Questions:hover {
+              cursor: pointer; }
+            .Profile__Box__Main__Newsfeed__Div__InnerDiv__Questions__Question {
+              background-color: #c4c4c4;
+              margin-bottom: 1rem;
+              font-size: 14px;
+              padding: 1px 8px;
+              text-decoration: none; }
+            .Profile__Box__Main__Newsfeed__Div__InnerDiv__Questions__QuestionDetails {
+              font-size: 14px;
+              padding: 1px 8px;
+              background-color: #c4c4c4;
+              text-decoration: none; }
+    .Profile__Box__Main__SideInformation {
+      height: 100%;
+      flex: 0 0 30%;
+      background: #32569f; }
+      .Profile__Box__Main__SideInformation__Status {
+        border: 2px solid black;
+        background: #f6f6f6;
+        margin: 1rem; }
+        .Profile__Box__Main__SideInformation__Status__InnerDiv {
+          background: #c4c4c4;
+          padding: 0.5rem 0.5rem;
+          display: flex;
+          justify-content: space-between; }
+          .Profile__Box__Main__SideInformation__Status__InnerDiv__Box {
+            display: flex;
+            flex-direction: column; }
+            .Profile__Box__Main__SideInformation__Status__InnerDiv__Box__Header {
+              font-size: 20px;
+              color: #fff;
+              height: 35px;
+              width: 115px;
+              padding: 1px 2px;
+              margin-bottom: 1rem;
+              background: #32569f;
+              display: flex;
+              justify-content: center;
+              align-items: center; }
+            .Profile__Box__Main__SideInformation__Status__InnerDiv__Box__Stats {
+              height: 35px;
+              font-size: 17px;
+              color: #000;
+              width: 115px;
+              padding: 1px 2px;
+              margin-bottom: 1rem;
+              background: #fff;
+              display: flex;
+              justify-content: center;
+              align-items: center; }
 
 .backdrop {
   position: fixed;
@@ -827,8 +731,7 @@ body {
   width: 100%;
   height: 100vh;
   z-index: 10;
-  background: rgba(0, 0, 0, 0.75);
-}
+  background: rgba(0, 0, 0, 0.75); }
 
 .modal {
   position: fixed;
@@ -841,86 +744,130 @@ body {
   overflow: scroll;
   background-color: #32569f;
   color: #fff;
-  overflow-x: hidden;
-}
-.modal__header {
-  font-size: 20px;
-  letter-spacing: 0.1rem;
-  display: flex;
-}
-.modal__selects {
-  margin-top: 1rem;
-}
-.modal__selects__header {
-  display: flex;
-  align-items: center;
-}
-.modal__selects__header__text {
-  font-size: 24px;
-}
-.modal__selects__header__arrow {
-  font-size: 28px !important;
-  cursor: pointer;
-}
-.modal__selects__dropdown {
-  border: 2px solid lightgrey;
-  border-radius: 5px;
-  margin: 0.5rem;
-  background-color: white;
-  color: black;
-  padding: 1rem;
-}
-.modal__selects__dropdown__item {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin-bottom: 1rem;
-}
-.modal__selects__dropdown__item__text {
-  margin-left: 1rem;
-  font-size: 20px;
-}
-.modal__selects__dropdown__item__checkbox {
-  cursor: pointer;
-}
-.modal__selects__dropdown__item:last-child {
-  margin-bottom: 0;
-}
-.modal__close {
-  position: absolute;
-  top: 7px;
-  right: 6px;
-  font-size: 26px !important;
-  color: #fff;
-  cursor: pointer;
-}
+  overflow-x: hidden; }
+  .modal__header {
+    font-size: 20px;
+    letter-spacing: 0.1rem;
+    display: flex; }
+  .modal__selects {
+    margin-top: 1rem; }
+    .modal__selects__header {
+      display: flex;
+      align-items: center; }
+      .modal__selects__header__text {
+        font-size: 24px; }
+      .modal__selects__header__arrow {
+        font-size: 28px !important;
+        cursor: pointer; }
+    .modal__selects__dropdown {
+      border: 2px solid lightgrey;
+      border-radius: 5px;
+      margin: 0.5rem;
+      background-color: white;
+      color: black;
+      padding: 1rem; }
+      .modal__selects__dropdown__item {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: 1rem; }
+        .modal__selects__dropdown__item__text {
+          margin-left: 1rem;
+          font-size: 20px; }
+        .modal__selects__dropdown__item__checkbox {
+          cursor: pointer; }
+        .modal__selects__dropdown__item:last-child {
+          margin-bottom: 0; }
+  .modal__close {
+    position: absolute;
+    top: 7px;
+    right: 6px;
+    font-size: 26px !important;
+    color: #fff;
+    cursor: pointer; }
 
 .header {
   background: #4f005f;
-  padding: 1rem;
-}
+  padding: 1rem; }
 
 .header h2 {
   margin: 0;
-  color: white;
-}
+  color: white; }
 
 .content {
-  padding: 1rem;
-}
+  padding: 1rem; }
 
 .actions {
   padding: 1rem;
   display: flex;
-  justify-content: flex-end;
-}
+  justify-content: flex-end; }
+
+.editModal {
+  position: fixed;
+  padding: 2rem;
+  top: 30vh;
+  left: 10%;
+  width: 80%;
+  z-index: 100;
+  max-height: 40rem;
+  background-color: #32569f;
+  color: #fff; }
+  .editModal__Header {
+    font-size: 26px;
+    letter-spacing: 0.06rem; }
+
+.editModal__Form {
+  margin-top: 1rem; }
+  .editModal__Form__Control__Button {
+    display: flex;
+    justify-content: flex-end; }
+    .editModal__Form__Control__Button__Edit {
+      background-color: #008000;
+      margin-left: 1rem;
+      font-size: 18px;
+      padding: 5px 25px;
+      color: #fff;
+      border: none;
+      width: 10rem;
+      transition: all 0.3s ease; }
+      .editModal__Form__Control__Button__Edit:hover {
+        box-shadow: inset 0 0 15px 15px rgba(0, 0, 0, 0.25);
+        cursor: pointer; }
+    .editModal__Form__Control__Button__Cancel {
+      width: 10rem;
+      background-color: #9b9b9b;
+      margin-left: 1rem;
+      font-size: 18px;
+      padding: 5px 25px;
+      color: #fff;
+      border: none;
+      transition: all 0.3s ease; }
+      .editModal__Form__Control__Button__Cancel:hover {
+        box-shadow: inset 0 0 15px 15px rgba(0, 0, 0, 0.25);
+        cursor: pointer; }
+  .editModal__Form__Control__Label {
+    display: flex;
+    font-size: 16px;
+    margin-bottom: 0.8rem; }
+  .editModal__Form__Control__Input {
+    width: 100%;
+    font-size: 16px;
+    padding: 2px 3px;
+    height: 3.5rem; }
+  .editModal__Form__Control__Div {
+    margin-bottom: 2rem; }
+    .editModal__Form__Control__Div__Name {
+      margin-bottom: 2rem;
+      display: flex;
+      justify-content: space-between; }
 
 @media (min-width: 768px) {
   .modal {
     left: calc(50% - 20rem);
-    width: 40rem;
-  }
-}
+    width: 40rem; }
+  .editModal {
+    left: calc(50% - 20rem);
+    width: 40rem; } }
 
 .Navbar {
   font-size: 18px;
@@ -930,338 +877,375 @@ body {
   width: 100%;
   display: flex;
   height: 6rem;
-  justify-content: flex-end;
-}
-.Navbar__Links {
-  margin-right: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  float: right;
-}
-.Navbar__Links__Content {
-  position: relative;
-  color: #000;
-}
-.Navbar__Links__Content__Box {
-  position: absolute;
-  top: 5rem;
-  right: 0;
-  background: #f8f8f8;
-  border: 1px solid #c4c4c4;
-  height: auto;
-  width: 30rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-}
-.Navbar__Links__Content__Box__Content {
-  margin: 0.5rem 0;
-  height: 5rem;
-  width: 95%;
-  display: flex;
-  align-items: center;
-  padding: 0 1rem;
-}
-.Navbar__Links__Content__Box__Content:hover {
-  cursor: pointer;
-  background: #c4c4c4;
-}
-.Navbar__Links__Content__Box__Content__ProfilePhoto {
-  background: grey;
-  border-radius: 50%;
-  height: 4rem;
-  width: 4rem;
-  margin-right: 0.5rem;
-}
-.Navbar__Links__Content__Box__Content__ProfileName {
-  color: #000;
-}
-.Navbar__Links__Content__Box__Content__LogoutLogo {
-  width: 4rem;
-  height: 4rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.Navbar__Links__Content__Box__Content__LogoutLogo__Logo {
-  height: 3rem;
-  width: 3rem;
-}
-.Navbar__Links__center {
-  padding: 0rem 2rem;
-}
-.Navbar__Links__content {
-  transition: all 0.4s ease;
-  color: #fff;
-  text-decoration: none;
-  display: flex;
-  position: relative;
-}
-.Navbar__Links__content__Notification {
-  position: absolute;
-  top: 5rem;
-  left: -30rem;
-  background: #fdfdfd;
-  width: 400px;
-  z-index: 1;
-}
-.Navbar__Links__content__Icon {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.Navbar__Links__content__Avatar {
-  position: relative;
-  margin-left: 1.5rem;
-}
-.Navbar__Links__content__Avatar__Drop {
-  position: absolute;
-  top: 16px;
-  left: 14px;
-  color: #fff !important;
-  font-size: 34px !important;
-}
-.Navbar__Links__content:hover {
-  cursor: pointer;
-}
+  justify-content: flex-end; }
+  .Navbar__Links {
+    margin-right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    float: right; }
+    .Navbar__Links__Content {
+      position: relative;
+      color: #777; }
+      .Navbar__Links__Content__Box {
+        position: absolute;
+        padding: 0rem 1rem;
+        top: 5rem;
+        right: 0;
+        background: #fff;
+        border: 1px solid #c4c4c4;
+        height: auto;
+        width: 30rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start; }
+        .Navbar__Links__Content__Box:before {
+          content: "";
+          position: absolute;
+          top: 1px;
+          right: 0;
+          width: 0;
+          height: 0;
+          transform: translate(-1rem, -100%);
+          border-left: 0.75rem solid transparent;
+          border-right: 0.75rem solid transparent;
+          border-bottom: 0.75rem solid white; }
+        .Navbar__Links__Content__Box__Content {
+          margin: 0.5rem 0;
+          height: 5rem;
+          width: 95%;
+          display: flex;
+          align-items: center;
+          border-top: 2px solid lightgrey;
+          padding: 0 1rem;
+          transition: all 0.4s ease-out; }
+          .Navbar__Links__Content__Box__Content:hover {
+            cursor: pointer;
+            box-shadow: inset 0 0 25px 25px rgba(0, 0, 0, 0.25);
+            transform: scale(1.08); }
+          .Navbar__Links__Content__Box__Content__ProfilePhoto {
+            background: grey;
+            border-radius: 50%;
+            height: 4rem;
+            width: 4rem;
+            margin-right: 0.5rem; }
+          .Navbar__Links__Content__Box__Content__ProfileName {
+            color: #777; }
+          .Navbar__Links__Content__Box__Content__LogoutLogo {
+            width: 4rem;
+            height: 4rem;
+            display: flex;
+            align-items: center;
+            justify-content: center; }
+            .Navbar__Links__Content__Box__Content__LogoutLogo__Logo {
+              height: 3rem;
+              width: 3rem; }
+    .Navbar__Links__center {
+      padding: 0rem 2rem; }
+    .Navbar__Links__content {
+      transition: all 0.4s ease;
+      color: #fff;
+      text-decoration: none;
+      display: flex;
+      position: relative; }
+      .Navbar__Links__content__Notification {
+        position: absolute;
+        top: 5rem;
+        left: -30rem;
+        background: #fdfdfd;
+        width: 400px;
+        z-index: 1;
+        border-radius: 0.5rem; }
+      .Navbar__Links__content__Icon {
+        display: flex;
+        justify-content: center;
+        align-items: center; }
+      .Navbar__Links__content__Avatar {
+        position: relative;
+        margin-left: 1.5rem; }
+        .Navbar__Links__content__Avatar__Drop {
+          position: absolute;
+          top: 16px;
+          left: 14px;
+          color: #fff !important;
+          font-size: 34px !important; }
+    .Navbar__Links__content:hover {
+      cursor: pointer; }
 
 .HomePage {
   height: 100%;
   width: 100%;
   display: flex;
   background-color: #fff;
-  overflow-y: scroll;
-}
-.HomePage__Left {
-  background-color: #32569f;
-  color: #fff;
-  flex: 0.3;
-  height: 98vh;
-  width: 33rem;
-  position: fixed;
-  top: 0;
-  left: 0;
-  margin: 1rem 0;
-  margin-left: 1rem;
-}
-.HomePage__Left__SideBar {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 100%;
-}
-.HomePage__Left__SideBar__Header {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  margin-top: 1rem;
-  width: 95%;
-}
-.HomePage__Left__SideBar__Header:hover {
-  cursor: pointer;
-  box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.1);
-}
-.HomePage__Left__SideBar__Header p {
-  margin-left: 1rem;
-  font-size: 22px;
-  font-weight: 600;
-  letter-spacing: 0.01rem;
-}
-.HomePage__Left__SideBar__Links {
-  margin-top: 3rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-}
-.HomePage__Left__SideBar__Links__Link {
-  font-size: 18px;
-  width: 95%;
-  margin-bottom: 1rem;
-  padding: 1rem;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  text-decoration: none;
-  color: #fff;
-  transition: all 0.3s ease;
-}
-.HomePage__Left__SideBar__Links__Link:hover {
-  cursor: pointer;
-  box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.1);
-}
-.HomePage__Right {
-  width: calc(100vw - 37rem);
-  margin: 1rem;
-  position: absolute;
-  height: 98vh;
-  top: 0;
-  left: 34.5rem;
-  position: relative;
-}
-.HomePage__Right__TopBar {
-  height: 6rem;
-  width: 100%;
-}
-.HomePage__Right__MainBody {
-  display: flex;
-  width: 100%;
-  height: calc(100% - 8rem);
-  margin-top: 1rem;
-}
-.HomePage__Right__MainBody__NewsFeed {
-  flex: 1;
-  overflow-y: scroll;
-}
-.HomePage__Right__MainBody__Notification {
-  flex: 0 0 30rem;
-}
-.HomePage__Right__MainBody__Notification__Box {
-  border: 2px solid lightgrey;
-  text-align: left;
-  padding: 0.9rem;
-  height: 539px;
-  overflow-y: scroll;
-}
-.HomePage__Right__MainBody__Notification__Box__Header {
-  font-size: 18px;
-  font-weight: 600;
-  color: #000;
-  margin-bottom: 1rem;
-}
-.HomePage__Right__MainBody__Notification__Box__Header__Underline {
-  border: 1px solid lightgrey;
-  margin-bottom: 1rem;
-}
-.HomePage__Right__MainBody__Notification__Box__InnerDiv {
-  border: 2px solid lightgrey;
-  border-radius: 5px;
-  padding: 8px;
-}
-.HomePage__Right__MainBody__Notification__Box__InnerDiv__Underline {
-  margin-top: 1rem;
-  border-bottom: 2px solid lightgrey;
-  margin-bottom: 1rem;
-}
-.HomePage__Right__MainBody__Notification__Box__InnerDiv__Header {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-.HomePage__Right__MainBody__Notification__Box__InnerDiv__Header__Div {
-  margin-left: 7px;
-}
-.HomePage__Right__MainBody__Notification__Box__InnerDiv__Header__Div
-  > p:first-child {
-  color: #000;
-  font-weight: 600;
-  font-size: 13px;
-}
-.HomePage__Right__MainBody__Notification__Box__InnerDiv__Header__Div
-  > p:last-child {
-  font-size: 13px;
-}
-.HomePage__Right__MainBody__Notification__Box__InnerDiv__Button {
-  display: flex;
-  justify-content: flex-end;
-  margin: 1rem 0rem;
-}
-.HomePage__Right__MainBody__Notification__Box__InnerDiv__Button__Accept {
-  border: none;
-  background-color: #32569f;
-  color: #fff;
-  font-size: 16px;
-  padding: 7px 17px;
-  width: 28%;
-  border-radius: 5px;
-}
-.HomePage__Right__MainBody__Notification__Box__InnerDiv__Button__Accept:hover {
-  cursor: pointer;
-}
-.HomePage__Right__MainBody__Notification__Box__InnerDiv__Button__Decline {
-  border: 2px solid lightgrey;
-  background-color: transparent;
-  color: #000;
-  font-size: 16px;
-  padding: 7px 17px;
-  border-radius: 5px;
-  width: 28%;
-  margin-left: 2rem;
-}
-.HomePage__Right__MainBody__Notification__Box__InnerDiv__Button__Decline:hover {
-  cursor: pointer;
-}
-.HomePage__Right__MainBody__Notification__Below {
-  display: flex;
-  flex-direction: column;
-  border: 2px solid lightgrey;
-  margin-top: 1rem;
-  padding: 0.8rem;
-}
-.HomePage__Right__MainBody__Notification__Below__Links {
-  background-color: #32569f;
-  color: #fff;
-  font-size: 15px;
-  padding: 0.5rem 1rem;
-  border: none;
-  border-radius: 4px;
-  font-weight: 600;
-  height: 4rem;
-  cursor: pointer;
-  text-decoration: none;
-}
-.HomePage__Right__MainBody__Notification__Below button:last-child {
-  cursor: pointer;
-  background-color: transparent;
-  font-weight: 600;
-  color: #000;
-  border: 2px solid lightgrey;
-  font-size: 15px;
-  padding: 6px 0px;
-  height: 4rem;
-  margin-top: 1rem;
-  border-radius: 4px;
-}
+  overflow-y: scroll; }
+  .HomePage__Left {
+    background-color: #32569f;
+    color: #fff;
+    flex: 0.3;
+    height: 98vh;
+    width: 33rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 1rem 0;
+    margin-left: 1rem; }
+    .HomePage__Left__SideBar {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100%; }
+      .HomePage__Left__SideBar__Header {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        margin-top: 1rem;
+        width: 95%; }
+        .HomePage__Left__SideBar__Header:hover {
+          cursor: pointer;
+          box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.1); }
+        .HomePage__Left__SideBar__Header p {
+          margin-left: 1rem;
+          font-size: 22px;
+          font-weight: 600;
+          letter-spacing: 0.01rem; }
+      .HomePage__Left__SideBar__Links {
+        margin-top: 3rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%; }
+        .HomePage__Left__SideBar__Links__Link {
+          font-size: 18px;
+          width: 95%;
+          margin-bottom: 1rem;
+          padding: 1rem;
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          text-decoration: none;
+          color: #fff;
+          transition: all 0.3s ease; }
+          .HomePage__Left__SideBar__Links__Link:hover {
+            cursor: pointer;
+            box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.1); }
+  .HomePage__Right {
+    width: calc(100vw - 37rem);
+    margin: 1rem;
+    position: absolute;
+    height: 98vh;
+    top: 0;
+    left: 34.5rem;
+    position: relative; }
+    .HomePage__Right__TopBar {
+      height: 6rem;
+      width: 100%; }
+    .HomePage__Right__MainBody {
+      display: flex;
+      width: 100%;
+      height: calc(100% - 8rem);
+      margin-top: 1rem; }
+      .HomePage__Right__MainBody__NewsFeed {
+        flex: 1;
+        overflow-y: scroll; }
+      .HomePage__Right__MainBody__Notification {
+        flex: 0 0 30rem;
+        border-radius: 0.5rem; }
+        .HomePage__Right__MainBody__Notification__Box {
+          background-color: #fff;
+          cursor: default;
+          text-align: left;
+          height: fit-content;
+          border-radius: 0.5rem;
+          border: 2px solid lightgrey; }
+          .HomePage__Right__MainBody__Notification__Box :before {
+            content: "";
+            position: absolute;
+            top: 1px;
+            right: 50px;
+            width: 10px;
+            height: 0;
+            transform: translate(-1rem, -100%);
+            border-left: 0.75rem solid transparent;
+            border-right: 0.75rem solid transparent;
+            border-bottom: 0.75rem solid white; }
+          .HomePage__Right__MainBody__Notification__Box__NormalNotification {
+            border-top: 2px solid lightgrey;
+            color: #000;
+            padding: 5px 25px;
+            font-size: 14px;
+            font-weight: 400;
+            width: 100%; }
+            .HomePage__Right__MainBody__Notification__Box__NormalNotification__Noti {
+              display: flex;
+              align-items: center; }
+              .HomePage__Right__MainBody__Notification__Box__NormalNotification__Noti__Text {
+                padding: 1rem 0;
+                margin-left: 1rem; }
+              .HomePage__Right__MainBody__Notification__Box__NormalNotification__Noti__Avatar {
+                cursor: pointer; }
+          .HomePage__Right__MainBody__Notification__Box__RequestNotification {
+            border-top: 2px solid lightgrey;
+            color: #000;
+            padding: 6px 25px;
+            font-size: 14px;
+            font-weight: 400;
+            width: 100%; }
+            .HomePage__Right__MainBody__Notification__Box__RequestNotification__Noti {
+              display: flex;
+              justify-content: space-between;
+              align-items: center; }
+              .HomePage__Right__MainBody__Notification__Box__RequestNotification__Noti__Left {
+                display: flex;
+                align-items: center; }
+                .HomePage__Right__MainBody__Notification__Box__RequestNotification__Noti__Left__Avatar {
+                  cursor: pointer; }
+                .HomePage__Right__MainBody__Notification__Box__RequestNotification__Noti__Left__Text {
+                  width: 220px;
+                  margin-left: 1rem; }
+              .HomePage__Right__MainBody__Notification__Box__RequestNotification__Noti__Right {
+                display: flex;
+                align-items: center;
+                justify-content: space-between; }
+                .HomePage__Right__MainBody__Notification__Box__RequestNotification__Noti__Right__Reject {
+                  cursor: pointer;
+                  transition: all 0.4s ease;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  padding: 0.4rem; }
+                  .HomePage__Right__MainBody__Notification__Box__RequestNotification__Noti__Right__Reject__Icon {
+                    font-size: 24px !important; }
+                  .HomePage__Right__MainBody__Notification__Box__RequestNotification__Noti__Right__Reject:hover {
+                    background: #983131;
+                    color: #fff;
+                    border-radius: 50%; }
+                .HomePage__Right__MainBody__Notification__Box__RequestNotification__Noti__Right__Accept {
+                  cursor: pointer;
+                  transition: all 0.4s ease;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  margin-left: 0.5rem;
+                  padding: 0.4rem; }
+                  .HomePage__Right__MainBody__Notification__Box__RequestNotification__Noti__Right__Accept__Icon {
+                    font-size: 24px !important; }
+                  .HomePage__Right__MainBody__Notification__Box__RequestNotification__Noti__Right__Accept:hover {
+                    background: #008000;
+                    color: #fff;
+                    border-radius: 50%; }
+          .HomePage__Right__MainBody__Notification__Box__Header {
+            padding: 5px 25px;
+            font-size: 18px;
+            font-weight: 600;
+            color: #84929f;
+            margin-bottom: 1rem; }
+            .HomePage__Right__MainBody__Notification__Box__Header__Underline {
+              border: 1px solid lightgrey;
+              margin-bottom: 1rem; }
+          .HomePage__Right__MainBody__Notification__Box__InnerDiv {
+            border: 2px solid lightgrey;
+            border-radius: 5px;
+            padding: 8px; }
+            .HomePage__Right__MainBody__Notification__Box__InnerDiv__Underline {
+              margin-top: 1rem;
+              border-bottom: 2px solid lightgrey;
+              margin-bottom: 1rem; }
+            .HomePage__Right__MainBody__Notification__Box__InnerDiv__Header {
+              display: flex;
+              flex-direction: row;
+              align-items: center; }
+              .HomePage__Right__MainBody__Notification__Box__InnerDiv__Header__Div {
+                margin-left: 7px; }
+                .HomePage__Right__MainBody__Notification__Box__InnerDiv__Header__Div > p:first-child {
+                  color: #000;
+                  font-weight: 600;
+                  font-size: 13px; }
+                .HomePage__Right__MainBody__Notification__Box__InnerDiv__Header__Div > p:last-child {
+                  font-size: 13px; }
+            .HomePage__Right__MainBody__Notification__Box__InnerDiv__Button {
+              display: flex;
+              justify-content: flex-end;
+              margin: 1rem 0rem; }
+              .HomePage__Right__MainBody__Notification__Box__InnerDiv__Button__Accept {
+                border: none;
+                background-color: #32569f;
+                color: #fff;
+                font-size: 16px;
+                padding: 7px 17px;
+                width: 28%;
+                border-radius: 5px; }
+                .HomePage__Right__MainBody__Notification__Box__InnerDiv__Button__Accept:hover {
+                  cursor: pointer; }
+              .HomePage__Right__MainBody__Notification__Box__InnerDiv__Button__Decline {
+                border: 2px solid lightgrey;
+                background-color: transparent;
+                color: #000;
+                font-size: 16px;
+                padding: 7px 17px;
+                border-radius: 5px;
+                width: 28%;
+                margin-left: 2rem; }
+                .HomePage__Right__MainBody__Notification__Box__InnerDiv__Button__Decline:hover {
+                  cursor: pointer; }
+        .HomePage__Right__MainBody__Notification__Below {
+          display: flex;
+          flex-direction: column;
+          border: 2px solid lightgrey;
+          margin-top: 1rem;
+          padding: 0.8rem; }
+          .HomePage__Right__MainBody__Notification__Below__Links {
+            background-color: #32569f;
+            color: #fff;
+            font-size: 15px;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 4px;
+            font-weight: 600;
+            height: 4rem;
+            cursor: pointer;
+            text-decoration: none; }
+          .HomePage__Right__MainBody__Notification__Below button:last-child {
+            cursor: pointer;
+            background-color: transparent;
+            font-weight: 600;
+            color: #000;
+            border: 2px solid lightgrey;
+            font-size: 15px;
+            padding: 6px 0px;
+            height: 4rem;
+            margin-top: 1rem;
+            border-radius: 4px; }
 
 .AskQuestion {
   padding-right: 1rem;
   height: 100vh;
   display: flex;
-  overflow-y: hidden;
-}
-.AskQuestion__Left {
-  flex: 0.24;
-}
-.AskQuestion__Right {
-  flex: 0.76;
-}
-.AskQuestion__Right__Bottom {
-  display: flex;
-  width: 100%;
-}
-.AskQuestion__Right__Bottom__Left {
-  flex: 0.7;
-}
-.AskQuestion__Right__Bottom__Left__Main {
-  height: auto;
-  margin: 0 auto;
-  display: flex;
-  padding: 1rem;
-}
-.AskQuestion__Right__Bottom__Left__Main__Form {
-  background: #32569f;
-  height: 61.7rem;
-  flex: 1;
-}
-.AskQuestion__Right__Bottom__Right {
-  border: 2px solid blue;
-  margin-left: 1rem;
-  flex: 0.3;
-  width: 270px;
-}
+  overflow-y: hidden; }
+  .AskQuestion__Left {
+    flex: 0.24; }
+  .AskQuestion__Right {
+    flex: 0.76; }
+    .AskQuestion__Right__Bottom {
+      display: flex;
+      width: 100%; }
+      .AskQuestion__Right__Bottom__Left {
+        flex: 0.7; }
+        .AskQuestion__Right__Bottom__Left__Main {
+          height: auto;
+          margin: 0 auto;
+          display: flex;
+          padding: 1rem; }
+          .AskQuestion__Right__Bottom__Left__Main__Form {
+            background: #32569f;
+            height: 61.7rem;
+            flex: 1; }
+      .AskQuestion__Right__Bottom__Right {
+        border: 2px solid blue;
+        margin-left: 1rem;
+        flex: 0.3;
+        width: 270px; }
 
 .MainQA {
   height: 100%;
@@ -1272,429 +1256,376 @@ body {
   justify-content: flex-start;
   overflow-y: scroll;
   background: #fff;
-  border: 1px solid #c4c4c4;
-}
-.MainQA__AnswerInput {
-  width: 95%;
-  margin-top: rem;
-  margin: 2rem auto;
-  border: 1px solid #c4c4c4;
-  border-radius: 5px;
-}
-.MainQA__AnswerInput__Box {
-  padding: 0 1rem;
-  width: 100%;
-}
-.MainQA__AnswerInput__Box__Heading {
-  font-size: 1.4rem;
-  color: #000;
-}
-.MainQA__AnswerInput__Box__InputBox {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 10rem;
-}
-.MainQA__AnswerInput__Box__InputBox__Input {
-  width: 100%;
-  height: 90%;
-  padding: 1rem;
-  border: none;
-  outline: none;
-  background: #c4c4c4;
-  border-radius: 5px;
-  resize: none;
-}
-.MainQA__AnswerInput__Box__ButtonBox {
-  height: 5rem;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  padding: 0 1rem;
-}
-.MainQA__AnswerInput__Box__ButtonBox__Button {
-  height: 4rem;
-  border: none;
-  outline: none;
-  background: #32569f;
-  padding: 0 1rem;
-  font-size: 2rem;
-  border-radius: 5px;
-}
-.MainQA__AnswerInput__Box__ButtonBox__Button:hover {
-  cursor: pointer;
-  background: #c4c4c4;
-}
-.MainQA__Heading {
-  margin: 0 auto;
-  height: 8rem;
-  color: #000;
-  padding: 0 1rem;
-  margin: 0.4rem 0;
-  width: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 4rem;
-  font-weight: 600;
-}
-.MainQA__Answers {
-  background: white;
-  height: auto;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.MainQA__Answer {
-  margin: 1rem auto;
-  height: auto;
-  min-height: 22rem;
-  width: 95%;
-  border: 1px solid #c4c4c4;
-  background: #fff;
-  display: flex;
-  align-items: center;
-}
-.MainQA__Answer__AnswerLikes {
-  flex: 0 0 10rem;
-  height: 95%;
-  margin: 0 0.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.MainQA__Answer__AnswerLikes__Box {
-  height: 20rem;
-  width: 7rem;
-  border: 1px solid #c4c4c4;
-  border-radius: 0.5rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
-}
-.MainQA__Answer__AnswerLikes__Box__Upvote {
-  height: 5rem;
-  width: 5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.MainQA__Answer__AnswerLikes__Box__TotalLikes {
-  height: 7rem;
-  width: 6rem;
-  background: white;
-  font-size: 2.3rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #000;
-}
-.MainQA__Answer__AnswerLikes__Box__Downvote {
-  height: 5rem;
-  width: 5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.MainQA__Answer__AnswerData {
-  flex: 1;
-  height: 95%;
-  margin: 1rem 0.5rem;
-  border: 1px solid #c4c4c4;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
-}
-.MainQA__Answer__AnswerData__Top {
-  height: 7rem;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.MainQA__Answer__AnswerData__Top__Answered {
-  height: 5rem;
-  width: auto;
-  margin: 0 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.MainQA__Answer__AnswerData__Top__Answered__ProfilePhoto {
-  height: 5rem;
-  width: 5rem;
-  border-radius: 50%;
-  background: #c4c4c4;
-}
-.MainQA__Answer__AnswerData__Top__Answered__Heading {
-  flex: 1;
-  height: 5rem;
-  margin: 0 0.5rem;
-  background: white;
-  border: 1px solid #c4c4c4;
-  border-radius: 5px;
-  font-size: 2rem;
-  color: #000;
-  padding: 0 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-}
-.MainQA__Answer__AnswerData__Top__Answered__Heading__Bold {
-  font-size: 2rem;
-  font-weight: 600;
-  margin-right: 0.4rem;
-}
-.MainQA__Answer__AnswerData__Top__AnsweredData {
-  height: 5rem;
-  width: auto;
-  margin: 0 0.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-}
-.MainQA__Answer__AnswerData__Top__AnsweredData__Data {
-  flex: 1;
-  height: 5rem;
-  margin-left: 0.5rem;
-  border-radius: 5px;
-  background: white;
-  border: 1px solid #c4c4c4;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  padding: 0 1rem;
-  font-size: 2rem;
-  color: #000;
-}
-.MainQA__Answer__AnswerData__Top__AnsweredData__Delete {
-  width: 5rem;
-  height: 5rem;
-  background: white;
-  margin: 0 1rem;
-  border-radius: 50%;
-  border: 1px solid #c4c4c4;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.MainQA__Answer__AnswerData__Top__AnsweredData__Delete:hover {
-  cursor: pointer;
-  background: #c4c4c4;
-}
-.MainQA__Answer__AnswerData__Top__AnsweredData__Delete__Icon {
-  height: 3rem;
-  width: 3rem;
-}
-.MainQA__Answer__AnswerData__Body {
-  width: 99%;
-  height: auto;
-  font-size: 2rem;
-  color: #000;
-}
-.MainQA__Question {
-  height: auto;
-  width: 95%;
-  background: #fff;
-  margin: 1rem auto;
-  border-radius: 5px;
-  border: 1px solid #c4c4c4;
-}
-.MainQA__Question__Top {
-  height: 7rem;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin: 1rem 0;
-}
-.MainQA__Question__Top__ProfileData {
-  height: 6rem;
-  width: 25rem;
-  margin: 0 1rem;
-  border-radius: 5px;
-  display: flex;
-  align-items: center;
-}
-.MainQA__Question__Top__ProfileData__ProfilePhoto {
-  height: 5rem;
-  width: 5rem;
-  border-radius: 50%;
-  margin: 0 0.5rem;
-  background: #fff;
-  overflow: hidden;
-}
-.MainQA__Question__Top__ProfileData__ProfilePhoto__Image {
-  height: 5rem;
-  width: 5rem;
-  object-fit: cover;
-}
-.MainQA__Question__Top__ProfileData__ProfileName {
-  flex: 1;
-  height: 5rem;
-  margin: 0 0.5rem;
-  background: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  font-size: 2rem;
-  font-weight: 600;
-  color: #000;
-  padding-left: 0.3rem;
-}
-.MainQA__Question__Top__QuestionData {
-  height: 5rem;
-  width: 45rem;
-  margin: 0 1rem;
-  display: flex;
-  align-items: center;
-}
-.MainQA__Question__Top__QuestionData__Views {
-  flex: 1;
-  height: 5rem;
-  background: white;
-  border-radius: 5px;
-  border: 1px solid #c4c4c4;
-  margin: 0 0.5rem;
-  display: flex;
-  justify-content: space-between;
-  padding: 0 0.5rem;
-  align-items: center;
-  font-size: 1.8rem;
-  color: #000;
-}
-.MainQA__Question__Top__QuestionData__Delete {
-  height: 5rem;
-  width: 5rem;
-  border-radius: 50%;
-  border: 1px solid #c4c4c4;
-  background: white;
-  margin: 0 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.MainQA__Question__Top__QuestionData__Delete:hover {
-  cursor: pointer;
-  background: #c4c4c4;
-}
-.MainQA__Question__Top__QuestionData__Delete__Icon {
-  height: 3rem;
-  width: 3rem;
-}
-.MainQA__Question__MainQuestionData {
-  width: 100%;
-  height: auto;
-  margin: 1rem 0;
-  display: flex;
-  align-items: center;
-}
-.MainQA__Question__MainQuestionData__QuestionLikes {
-  height: 96%;
-  flex: 0 0 10rem;
-  margin: 0 0.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.MainQA__Question__MainQuestionData__QuestionLikes__LikesBox {
-  height: 18rem;
-  width: 8rem;
-  border: 1px solid #c4c4c4;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
-}
-.MainQA__Question__MainQuestionData__QuestionLikes__LikesBox__Upvote {
-  height: 5rem;
-  width: 5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.MainQA__Question__MainQuestionData__QuestionLikes__LikesBox__Data {
-  height: 4rem;
-  width: 7rem;
-  background: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2.3rem;
-  font-weight: 600;
-  color: #000;
-}
-.MainQA__Question__MainQuestionData__QuestionLikes__LikesBox__Downvote {
-  height: 5rem;
-  width: 5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.MainQA__Question__MainQuestionData__QuestionLikes__LikesBox__Downvote__Logo {
-  width: 5rem;
-  height: 5rem;
-}
-.MainQA__Question__MainQuestionData__QuestionLikes__LikesBox__Downvote__Logo:hover {
-  cursor: pointer;
-}
-.MainQA__Question__MainQuestionData__QuestionTitleAndBody {
-  background: white;
-  height: 96%;
-  flex: 1;
-  margin: 0 0.5rem;
-  display: flex;
-  flex-direction: column;
-}
-.MainQA__Question__MainQuestionData__QuestionTitleAndBody__Title {
-  height: auto;
-  width: 96%;
-  margin: 0.5rem auto;
-  font-size: 2rem;
-  font-weight: 600;
-  color: #000;
-  padding: 0.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  border-bottom: 1px solid #c4c4c4;
-}
-.MainQA__Question__MainQuestionData__QuestionTitleAndBody__Body {
-  height: auto;
-  min-height: calc(100% - 15rem);
-  width: 96%;
-  margin: 0.5rem auto;
-  padding: 0.5rem;
-  font-size: 1.7rem;
-  color: #000;
-  border-radius: 1rem;
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-}
-.MainQA__Question__MainQuestionData__QuestionTitleAndBody__Tag {
-  height: 5rem;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-}
-.MainQA__Question__MainQuestionData__QuestionTitleAndBody__Tag__TagName {
-  height: 3rem;
-  width: auto;
-  padding: 0 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: #000;
-  border-radius: 5rem;
-  margin: 0 1rem;
-  background: #c4c4c4;
-}
+  border: 1px solid #c4c4c4; }
+  .MainQA__AnswerInput {
+    width: 95%;
+    margin-top: rem;
+    margin: 2rem auto;
+    border: 1px solid #c4c4c4;
+    border-radius: 5px; }
+    .MainQA__AnswerInput__Box {
+      padding: 0 1rem;
+      width: 100%; }
+      .MainQA__AnswerInput__Box__Heading {
+        font-size: 1.4rem;
+        color: #000; }
+      .MainQA__AnswerInput__Box__InputBox {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 10rem; }
+        .MainQA__AnswerInput__Box__InputBox__Input {
+          width: 100%;
+          height: 90%;
+          padding: 1rem;
+          border: none;
+          outline: none;
+          background: #c4c4c4;
+          border-radius: 5px;
+          resize: none; }
+      .MainQA__AnswerInput__Box__ButtonBox {
+        height: 5rem;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding: 0 1rem; }
+        .MainQA__AnswerInput__Box__ButtonBox__Button {
+          height: 4rem;
+          border: none;
+          outline: none;
+          background: #32569f;
+          padding: 0 1rem;
+          font-size: 2rem;
+          border-radius: 5px; }
+          .MainQA__AnswerInput__Box__ButtonBox__Button:hover {
+            cursor: pointer;
+            background: #c4c4c4; }
+  .MainQA__Heading {
+    margin: 0 auto;
+    height: 8rem;
+    color: #000;
+    padding: 0 1rem;
+    margin: .4rem 0;
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    font-weight: 600; }
+  .MainQA__Answers {
+    background: white;
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+  .MainQA__Answer {
+    margin: 1rem auto;
+    height: auto;
+    min-height: 22rem;
+    width: 95%;
+    border: 1px solid #c4c4c4;
+    background: #fff;
+    display: flex;
+    align-items: center; }
+    .MainQA__Answer__AnswerLikes {
+      flex: 0 0 10rem;
+      height: 95%;
+      margin: 0 .5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+      .MainQA__Answer__AnswerLikes__Box {
+        height: 20rem;
+        width: 7rem;
+        border: 1px solid #c4c4c4;
+        border-radius: .5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly; }
+        .MainQA__Answer__AnswerLikes__Box__Upvote {
+          height: 5rem;
+          width: 5rem;
+          display: flex;
+          justify-content: center;
+          align-items: center; }
+        .MainQA__Answer__AnswerLikes__Box__TotalLikes {
+          height: 7rem;
+          width: 6rem;
+          background: white;
+          font-size: 2.3rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: #000; }
+        .MainQA__Answer__AnswerLikes__Box__Downvote {
+          height: 5rem;
+          width: 5rem;
+          display: flex;
+          justify-content: center;
+          align-items: center; }
+    .MainQA__Answer__AnswerData {
+      flex: 1;
+      height: 95%;
+      margin: 1rem .5rem;
+      border: 1px solid #c4c4c4;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly; }
+      .MainQA__Answer__AnswerData__Top {
+        height: 7rem;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between; }
+        .MainQA__Answer__AnswerData__Top__Answered {
+          height: 5rem;
+          width: auto;
+          margin: 0 1rem;
+          display: flex;
+          align-items: center;
+          justify-content: space-between; }
+          .MainQA__Answer__AnswerData__Top__Answered__ProfilePhoto {
+            height: 5rem;
+            width: 5rem;
+            border-radius: 50%;
+            background: #c4c4c4; }
+          .MainQA__Answer__AnswerData__Top__Answered__Heading {
+            flex: 1;
+            height: 5rem;
+            margin: 0 .5rem;
+            background: white;
+            border: 1px solid #c4c4c4;
+            border-radius: 5px;
+            font-size: 2rem;
+            color: #000;
+            padding: 0 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start; }
+            .MainQA__Answer__AnswerData__Top__Answered__Heading__Bold {
+              font-size: 2rem;
+              font-weight: 600;
+              margin-right: .4rem; }
+        .MainQA__Answer__AnswerData__Top__AnsweredData {
+          height: 5rem;
+          width: auto;
+          margin: 0 .5rem;
+          display: flex;
+          align-items: center;
+          justify-content: flex-start; }
+          .MainQA__Answer__AnswerData__Top__AnsweredData__Data {
+            flex: 1;
+            height: 5rem;
+            margin-left: .5rem;
+            border-radius: 5px;
+            background: white;
+            border: 1px solid #c4c4c4;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 0 1rem;
+            font-size: 2rem;
+            color: #000; }
+          .MainQA__Answer__AnswerData__Top__AnsweredData__Delete {
+            width: 5rem;
+            height: 5rem;
+            background: white;
+            margin: 0 1rem;
+            border-radius: 50%;
+            border: 1px solid #c4c4c4;
+            display: flex;
+            align-items: center;
+            justify-content: center; }
+            .MainQA__Answer__AnswerData__Top__AnsweredData__Delete:hover {
+              cursor: pointer;
+              background: #c4c4c4; }
+            .MainQA__Answer__AnswerData__Top__AnsweredData__Delete__Icon {
+              height: 3rem;
+              width: 3rem; }
+      .MainQA__Answer__AnswerData__Body {
+        width: 99%;
+        height: auto;
+        font-size: 2rem;
+        color: #000; }
+  .MainQA__Question {
+    height: auto;
+    width: 95%;
+    background: #fff;
+    margin: 1rem auto;
+    border-radius: 5px;
+    border: 1px solid #c4c4c4; }
+    .MainQA__Question__Top {
+      height: 7rem;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 1rem 0; }
+      .MainQA__Question__Top__ProfileData {
+        height: 6rem;
+        width: 25rem;
+        margin: 0 1rem;
+        border-radius: 5px;
+        display: flex;
+        align-items: center; }
+        .MainQA__Question__Top__ProfileData__ProfilePhoto {
+          height: 5rem;
+          width: 5rem;
+          border-radius: 50%;
+          margin: 0 .5rem;
+          background: #fff;
+          overflow: hidden; }
+          .MainQA__Question__Top__ProfileData__ProfilePhoto__Image {
+            height: 5rem;
+            width: 5rem;
+            object-fit: cover; }
+        .MainQA__Question__Top__ProfileData__ProfileName {
+          flex: 1;
+          height: 5rem;
+          margin: 0 .5rem;
+          background: #fff;
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          font-size: 2rem;
+          font-weight: 600;
+          color: #000;
+          padding-left: .3rem; }
+      .MainQA__Question__Top__QuestionData {
+        height: 5rem;
+        width: 45rem;
+        margin: 0 1rem;
+        display: flex;
+        align-items: center; }
+        .MainQA__Question__Top__QuestionData__Views {
+          flex: 1;
+          height: 5rem;
+          background: white;
+          border-radius: 5px;
+          border: 1px solid #c4c4c4;
+          margin: 0 .5rem;
+          display: flex;
+          justify-content: space-between;
+          padding: 0 .5rem;
+          align-items: center;
+          font-size: 1.8rem;
+          color: #000; }
+        .MainQA__Question__Top__QuestionData__Delete {
+          height: 5rem;
+          width: 5rem;
+          border-radius: 50%;
+          border: 1px solid #c4c4c4;
+          background: white;
+          margin: 0 1rem;
+          display: flex;
+          align-items: center;
+          justify-content: center; }
+          .MainQA__Question__Top__QuestionData__Delete:hover {
+            cursor: pointer;
+            background: #c4c4c4; }
+          .MainQA__Question__Top__QuestionData__Delete__Icon {
+            height: 3rem;
+            width: 3rem; }
+    .MainQA__Question__MainQuestionData {
+      width: 100%;
+      height: auto;
+      margin: 1rem 0;
+      display: flex;
+      align-items: center; }
+      .MainQA__Question__MainQuestionData__QuestionLikes {
+        height: 96%;
+        flex: 0 0 10rem;
+        margin: 0 .5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center; }
+        .MainQA__Question__MainQuestionData__QuestionLikes__LikesBox {
+          height: 18rem;
+          width: 8rem;
+          border: 1px solid #c4c4c4;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: space-evenly; }
+          .MainQA__Question__MainQuestionData__QuestionLikes__LikesBox__Upvote {
+            height: 5rem;
+            width: 5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center; }
+          .MainQA__Question__MainQuestionData__QuestionLikes__LikesBox__Data {
+            height: 4rem;
+            width: 7rem;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.3rem;
+            font-weight: 600;
+            color: #000; }
+          .MainQA__Question__MainQuestionData__QuestionLikes__LikesBox__Downvote {
+            height: 5rem;
+            width: 5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center; }
+            .MainQA__Question__MainQuestionData__QuestionLikes__LikesBox__Downvote__Logo {
+              width: 5rem;
+              height: 5rem; }
+              .MainQA__Question__MainQuestionData__QuestionLikes__LikesBox__Downvote__Logo:hover {
+                cursor: pointer; }
+      .MainQA__Question__MainQuestionData__QuestionTitleAndBody {
+        background: white;
+        height: 96%;
+        flex: 1;
+        margin: 0 .5rem;
+        display: flex;
+        flex-direction: column; }
+        .MainQA__Question__MainQuestionData__QuestionTitleAndBody__Title {
+          height: auto;
+          width: 96%;
+          margin: .5rem auto;
+          font-size: 2rem;
+          font-weight: 600;
+          color: #000;
+          padding: .5rem;
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          border-bottom: 1px solid #c4c4c4; }
+        .MainQA__Question__MainQuestionData__QuestionTitleAndBody__Body {
+          height: auto;
+          min-height: calc(100% - 15rem);
+          width: 96%;
+          margin: .5rem auto;
+          padding: .5rem;
+          font-size: 1.7rem;
+          color: #000;
+          border-radius: 1rem;
+          display: flex;
+          align-items: flex-start;
+          justify-content: flex-start; }
+        .MainQA__Question__MainQuestionData__QuestionTitleAndBody__Tag {
+          height: 5rem;
+          display: flex;
+          align-items: center;
+          justify-content: flex-start; }
+          .MainQA__Question__MainQuestionData__QuestionTitleAndBody__Tag__TagName {
+            height: 3rem;
+            width: auto;
+            padding: 0 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #000;
+            border-radius: 5rem;
+            margin: 0 1rem;
+            background: #c4c4c4; }
 
 .Answered {
   height: 100%;
@@ -1702,14 +1633,11 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: #fff;
-}
-.Answered__Heading {
-  font-size: 2.5rem;
-  font-weight: 600;
-  color: #000;
-  margin-top: 1rem;
-}
-.Answered__Newsfeed {
-  overflow-y: scroll;
-}
+  background: #fff; }
+  .Answered__Heading {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #000;
+    margin-top: 1rem; }
+  .Answered__Newsfeed {
+    overflow-y: scroll; }
