@@ -4,7 +4,9 @@
 
   width: 100%;
   height: 100%;
+  // overflow: scroll;
   // height: auto;
+  // border: 2px solid red;
 
   &__Heading {
     height: auto;
@@ -184,11 +186,10 @@
           border-radius: 5px;
           padding: 0 1rem;
           flex: 0 0 20%;
-          border: none;
           font-size: 1.5rem;
-
           font-weight: 600;
           background: $color-grey-light-2;
+          margin-bottom: 1rem;
           // background:red;
           &:hover {
             cursor: pointer;
@@ -218,7 +219,7 @@
       color: #4b4b4b;
     }
     &__Input {
-      height: 30rem;
+      height: 25rem;
       border-radius: 5px;
       overflow-y: scroll;
       padding: 1rem;
@@ -245,6 +246,7 @@
       width: auto;
       border-radius: 5px;
       margin-top: 2rem;
+      margin-bottom: 1rem;
       padding: 0 1rem;
       border: none;
       font-size: 1.5rem;
