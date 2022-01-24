@@ -31,7 +31,7 @@ export const ExpertisesEditAction =
         }
       )
       .then((response) => {
-        console.log(response.data);
+        // console.log(response.data);
         dispatch({ type: EXPERTISE_EDIT_SUCCESS });
         onClick();
       })

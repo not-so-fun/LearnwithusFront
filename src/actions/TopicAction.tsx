@@ -19,7 +19,7 @@ export const TopicAction =
         },
       })
       .then((response) => {
-        console.log(response.data);
+        // console.log(response.data);
         dispatch({type:TOPIC_FETCHING_SUCCESS,topics:response.data})
       })
       .catch((error) => {

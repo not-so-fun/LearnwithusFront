@@ -28,7 +28,7 @@ export const Register_Action =
         password,
       })
       .then((response: any) => {
-        console.log(response.data);
+        // console.log(response.data);
         dispatch({ type: REGISTER_REQUEST_SUCCESS, message: response.data });
       })
       .catch((error: any) => {

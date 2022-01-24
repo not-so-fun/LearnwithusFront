@@ -27,7 +27,7 @@ export const WishesEditAction =
         }
       )
       .then((response) => {
-        console.log(response.data);
+        // console.log(response.data);
         dispatch({ type: WISHES_EDIT_SUCCESS });
         onClick()
       })

@@ -20,7 +20,7 @@ export const SubTopicAction =
         },
       })
       .then((response) => {
-        console.log(response.data);
+        // console.log(response.data);
         dispatch({type:SUB_TOPIC_FETCHING_SUCCESS,sub_topics:response.data})
       })
       .catch((error) => {

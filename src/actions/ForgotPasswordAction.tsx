@@ -18,7 +18,7 @@ export const ForgotPasswordAction =
         email,
       })
       .then((response) => {
-        console.log(response.data)
+        // console.log(response.data)
         dispatch({
           type: ForgotPassword_REQUEST_SUCCESS,
           message: response.data,
