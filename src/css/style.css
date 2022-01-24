@@ -152,7 +152,7 @@ body {
 
 .Auth__Box__ForgotPassword {
   font-size: 1.7rem;
-  color: #32569f;
+  color: #057777;
   text-decoration: underline;
   margin: 1rem 0; }
   .Auth__Box__ForgotPassword:hover {
@@ -415,7 +415,7 @@ body {
       border: none;
       font-size: 1.5rem;
       font-weight: 600;
-      background: #32569f;
+      background: #057777;
       color: #f7f7f7; }
       .AskQuestionForm__Footer__Button:hover {
         cursor: pointer;
@@ -447,7 +447,7 @@ body {
         border-radius: 50%;
         background: #fff;
         margin-right: 2rem;
-        border: 3px solid #32569f;
+        border: 3px solid #057777;
         display: flex;
         align-items: center;
         justify-content: center; }
@@ -471,7 +471,7 @@ body {
             .QuestionFeed__Box__Top__AboutQuestion__Top__QuestionData__Time {
               margin-right: 3rem; }
             .QuestionFeed__Box__Top__AboutQuestion__Top__QuestionData__Title {
-              color: #32569f; }
+              color: #057777; }
         .QuestionFeed__Box__Top__AboutQuestion__Title {
           color: #000;
           font-size: 1.5rem; }
@@ -604,7 +604,7 @@ body {
             .QuestionFeed__Box__Main__AboutQuestion__QuestionStatistics__Right__Button {
               height: 5rem;
               width: auto;
-              background: #32569f;
+              background: #057777;
               padding: 0 2rem;
               font-size: 2rem;
               color: #fff;
@@ -697,7 +697,7 @@ body {
     align-items: center;
     justify-content: center; }
   .Auth__Side {
-    background: #32569f;
+    background: #057777;
     max-width: 60rem;
     width: 60rem;
     min-width: 30rem; }
@@ -722,7 +722,7 @@ body {
     position: relative;
     left: 170px; }
   .Profile__Box__Top {
-    background: #32569f;
+    background: #057777;
     width: 100%;
     height: 50rem;
     margin-bottom: 2rem;
@@ -733,16 +733,43 @@ body {
       display: flex;
       align-items: center;
       flex-direction: column; }
+      .Profile__Box__Top__ImagesAndDatas__Button {
+        padding: 1rem 2rem;
+        color: #fff;
+        background-color: #008000;
+        border: none;
+        cursor: pointer;
+        transition: all 0.4s ease; }
+        .Profile__Box__Top__ImagesAndDatas__Button:hover {
+          box-shadow: inset 0 0 20px 20px rgba(0, 0, 0, 0.25); }
       .Profile__Box__Top__ImagesAndDatas__Image {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 20rem;
-        height: 20rem;
         margin-top: 4rem;
         margin-bottom: 0.5rem;
-        background: #fff;
-        border-radius: 50%; }
+        position: relative; }
+        .Profile__Box__Top__ImagesAndDatas__Image__Icon {
+          border: 2px solid #ffffff1a;
+          background-color: #ffffff1a;
+          border-radius: 50%;
+          padding: 0.5rem;
+          width: fit-content;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          position: absolute;
+          top: 155px;
+          right: 13px;
+          font-size: 20px;
+          color: #fff; }
+          .Profile__Box__Top__ImagesAndDatas__Image__Icon__Camera {
+            font-size: 20px !important; }
+        .Profile__Box__Top__ImagesAndDatas__Image__Avatar {
+          margin-bottom: 0.5rem;
+          width: 20rem;
+          height: 20rem; }
+      .Profile__Box__Top__ImagesAndDatas__Icon {
+        top: 0;
+        right: 0px;
+        color: red; }
       .Profile__Box__Top__ImagesAndDatas__ProfileName {
         margin: 0.2rem 0;
         height: 5rem;
@@ -838,7 +865,7 @@ body {
           transition: all 0.4s ease; }
           .Profile__Box__Top__Statistics__Botton__Expertise:hover, .Profile__Box__Top__Statistics__Botton__Wishes:hover {
             background-color: #fff;
-            color: #32569f; }
+            color: #057777; }
       .Profile__Box__Top__Statistics__Div {
         width: 70%;
         padding: 2rem;
@@ -923,7 +950,7 @@ body {
     .Profile__Box__Main__SideInformation {
       height: 100%;
       flex: 0 0 30%;
-      background: #32569f; }
+      background: #057777; }
       .Profile__Box__Main__SideInformation__Status {
         border: 2px solid black;
         background: #f6f6f6;
@@ -943,7 +970,7 @@ body {
               width: 115px;
               padding: 1px 2px;
               margin-bottom: 1rem;
-              background: #32569f;
+              background: #057777;
               display: flex;
               justify-content: center;
               align-items: center; }
@@ -977,7 +1004,7 @@ body {
   z-index: 100;
   max-height: 40rem;
   overflow: scroll;
-  background-color: #32569f;
+  background-color: #057777;
   color: #fff;
   overflow-x: hidden; }
   .modal__header {
@@ -1037,8 +1064,70 @@ body {
   display: flex;
   justify-content: flex-end; }
 
+.editModal {
+  position: fixed;
+  padding: 2rem;
+  top: 30vh;
+  left: 10%;
+  width: 80%;
+  z-index: 100;
+  max-height: 40rem;
+  background-color: #057777;
+  color: #fff; }
+  .editModal__Header {
+    font-size: 26px;
+    letter-spacing: 0.06rem; }
+
+.editModal__Form {
+  margin-top: 1rem; }
+  .editModal__Form__Control__Button {
+    display: flex;
+    justify-content: flex-end; }
+    .editModal__Form__Control__Button__Edit {
+      background-color: #008000;
+      margin-left: 1rem;
+      font-size: 18px;
+      padding: 5px 25px;
+      color: #fff;
+      border: none;
+      width: 10rem;
+      transition: all 0.3s ease; }
+      .editModal__Form__Control__Button__Edit:hover {
+        box-shadow: inset 0 0 15px 15px rgba(0, 0, 0, 0.25);
+        cursor: pointer; }
+    .editModal__Form__Control__Button__Cancel {
+      width: 10rem;
+      background-color: #9b9b9b;
+      margin-left: 1rem;
+      font-size: 18px;
+      padding: 5px 25px;
+      color: #fff;
+      border: none;
+      transition: all 0.3s ease; }
+      .editModal__Form__Control__Button__Cancel:hover {
+        box-shadow: inset 0 0 15px 15px rgba(0, 0, 0, 0.25);
+        cursor: pointer; }
+  .editModal__Form__Control__Label {
+    display: flex;
+    font-size: 16px;
+    margin-bottom: 0.8rem; }
+  .editModal__Form__Control__Input {
+    width: 100%;
+    font-size: 16px;
+    padding: 2px 3px;
+    height: 3.5rem; }
+  .editModal__Form__Control__Div {
+    margin-bottom: 2rem; }
+    .editModal__Form__Control__Div__Name {
+      margin-bottom: 2rem;
+      display: flex;
+      justify-content: space-between; }
+
 @media (min-width: 768px) {
   .modal {
+    left: calc(50% - 20rem);
+    width: 40rem; }
+  .editModal {
     left: calc(50% - 20rem);
     width: 40rem; } }
 
@@ -1046,7 +1135,7 @@ body {
   font-size: 18px;
   font-weight: 600;
   color: #fff;
-  background-color: #32569f;
+  background-color: #057777;
   width: 100%;
   display: flex;
   height: 6rem;
@@ -1059,12 +1148,13 @@ body {
     float: right; }
     .Navbar__Links__Content {
       position: relative;
-      color: #000; }
+      color: #777; }
       .Navbar__Links__Content__Box {
         position: absolute;
+        padding: 0rem 1rem;
         top: 5rem;
         right: 0;
-        background: #f8f8f8;
+        background: #fff;
         border: 1px solid #c4c4c4;
         height: auto;
         width: 30rem;
@@ -1072,23 +1162,36 @@ body {
         flex-direction: column;
         align-items: center;
         justify-content: flex-start; }
+        .Navbar__Links__Content__Box:before {
+          content: "";
+          position: absolute;
+          top: 1px;
+          right: 0;
+          width: 0;
+          height: 0;
+          transform: translate(-1rem, -100%);
+          border-left: 0.75rem solid transparent;
+          border-right: 0.75rem solid transparent;
+          border-bottom: 0.75rem solid white; }
         .Navbar__Links__Content__Box__Content {
-          margin: .5rem 0;
+          margin: 0.5rem 0;
           height: 5rem;
           width: 95%;
           display: flex;
           align-items: center;
           text-decoration: none;
-          padding: 0 1rem; }
+          padding: 0 1rem;
+          transition: all 0.4s ease-out; }
           .Navbar__Links__Content__Box__Content:hover {
             cursor: pointer;
-            background: #c4c4c4; }
+            box-shadow: inset 0 0 25px 25px rgba(0, 0, 0, 0.25);
+            transform: scale(1.08); }
           .Navbar__Links__Content__Box__Content__ProfilePhoto {
             background: grey;
             border-radius: 50%;
             height: 4rem;
             width: 4rem;
-            margin-right: .5rem; }
+            margin-right: 0.5rem; }
           .Navbar__Links__Content__Box__Content__ProfileName {
             color: #000;
             text-decoration: none; }
@@ -1115,7 +1218,8 @@ body {
         left: -30rem;
         background: #fdfdfd;
         width: 400px;
-        z-index: 1; }
+        z-index: 1;
+        border-radius: 0.5rem; }
       .Navbar__Links__content__Icon {
         display: flex;
         justify-content: center;
@@ -1136,10 +1240,10 @@ body {
   height: 100%;
   width: 100%;
   display: flex;
-  background: #EEEEEE;
+  background: #eeeeee;
   overflow-y: scroll; }
   .HomePage__Left {
-    background-color: #32569f;
+    background-color: #057777;
     color: #fff;
     flex: 0.3;
     height: 98vh;
@@ -1198,7 +1302,7 @@ body {
     left: 34.5rem;
     position: relative; }
     .HomePage__Right__TopBar {
-      height: 7rem;
+      height: 6rem;
       width: 100%; }
     .HomePage__Right__MainBody {
       display: flex;
@@ -1216,15 +1320,93 @@ body {
         padding: 0 1rem;
         background: #fff; }
         .HomePage__Right__MainBody__Notification__Box {
-          border: 2px solid lightgrey;
+          background-color: #fff;
+          cursor: default;
           text-align: left;
-          padding: 0.9rem;
-          height: 539px;
-          overflow-y: scroll; }
+          height: fit-content;
+          border-radius: 0.5rem;
+          border: 2px solid lightgrey; }
+          .HomePage__Right__MainBody__Notification__Box :before {
+            content: "";
+            position: absolute;
+            top: 1px;
+            right: 50px;
+            width: 10px;
+            height: 0;
+            transform: translate(-1rem, -100%);
+            border-left: 0.75rem solid transparent;
+            border-right: 0.75rem solid transparent;
+            border-bottom: 0.75rem solid white; }
+          .HomePage__Right__MainBody__Notification__Box__NormalNotification {
+            border-top: 2px solid lightgrey;
+            color: #000;
+            padding: 5px 25px;
+            font-size: 14px;
+            font-weight: 400;
+            width: 100%; }
+            .HomePage__Right__MainBody__Notification__Box__NormalNotification__Noti {
+              display: flex;
+              align-items: center; }
+              .HomePage__Right__MainBody__Notification__Box__NormalNotification__Noti__Text {
+                padding: 1rem 0;
+                margin-left: 1rem; }
+              .HomePage__Right__MainBody__Notification__Box__NormalNotification__Noti__Avatar {
+                cursor: pointer; }
+          .HomePage__Right__MainBody__Notification__Box__RequestNotification {
+            border-top: 2px solid lightgrey;
+            color: #000;
+            padding: 6px 25px;
+            font-size: 14px;
+            font-weight: 400;
+            width: 100%; }
+            .HomePage__Right__MainBody__Notification__Box__RequestNotification__Noti {
+              display: flex;
+              justify-content: space-between;
+              align-items: center; }
+              .HomePage__Right__MainBody__Notification__Box__RequestNotification__Noti__Left {
+                display: flex;
+                align-items: center; }
+                .HomePage__Right__MainBody__Notification__Box__RequestNotification__Noti__Left__Avatar {
+                  cursor: pointer; }
+                .HomePage__Right__MainBody__Notification__Box__RequestNotification__Noti__Left__Text {
+                  width: 220px;
+                  margin-left: 1rem; }
+              .HomePage__Right__MainBody__Notification__Box__RequestNotification__Noti__Right {
+                display: flex;
+                align-items: center;
+                justify-content: space-between; }
+                .HomePage__Right__MainBody__Notification__Box__RequestNotification__Noti__Right__Reject {
+                  cursor: pointer;
+                  transition: all 0.4s ease;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  padding: 0.4rem; }
+                  .HomePage__Right__MainBody__Notification__Box__RequestNotification__Noti__Right__Reject__Icon {
+                    font-size: 24px !important; }
+                  .HomePage__Right__MainBody__Notification__Box__RequestNotification__Noti__Right__Reject:hover {
+                    background: #983131;
+                    color: #fff;
+                    border-radius: 50%; }
+                .HomePage__Right__MainBody__Notification__Box__RequestNotification__Noti__Right__Accept {
+                  cursor: pointer;
+                  transition: all 0.4s ease;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  margin-left: 0.5rem;
+                  padding: 0.4rem; }
+                  .HomePage__Right__MainBody__Notification__Box__RequestNotification__Noti__Right__Accept__Icon {
+                    font-size: 24px !important; }
+                  .HomePage__Right__MainBody__Notification__Box__RequestNotification__Noti__Right__Accept:hover {
+                    background: #008000;
+                    color: #fff;
+                    border-radius: 50%; }
           .HomePage__Right__MainBody__Notification__Box__Header {
+            padding: 5px 25px;
             font-size: 18px;
             font-weight: 600;
-            color: #000;
+            color: #84929f;
             margin-bottom: 1rem; }
             .HomePage__Right__MainBody__Notification__Box__Header__Underline {
               border: 1px solid lightgrey;
@@ -1255,7 +1437,7 @@ body {
               margin: 1rem 0rem; }
               .HomePage__Right__MainBody__Notification__Box__InnerDiv__Button__Accept {
                 border: none;
-                background-color: #32569f;
+                background-color: #057777;
                 color: #fff;
                 font-size: 16px;
                 padding: 7px 17px;
@@ -1281,7 +1463,7 @@ body {
           margin-top: 1rem;
           padding: 0.8rem; }
           .HomePage__Right__MainBody__Notification__Below__Links {
-            background-color: #32569f;
+            background-color: #057777;
             color: #fff;
             font-size: 15px;
             padding: 0.5rem 1rem;
@@ -1328,7 +1510,7 @@ body {
           display: flex;
           padding: 1rem; }
           .AskQuestion__Right__Bottom__Left__Main__Form {
-            background: #32569f;
+            background: #057777;
             height: 61.7rem;
             flex: 1;
             height: 100%; }
@@ -1428,7 +1610,7 @@ body {
           height: 4rem;
           border: none;
           outline: none;
-          background: #32569f;
+          background: #057777;
           padding: 0 1rem;
           font-size: 2rem;
           border-radius: 5px; }
@@ -1486,7 +1668,7 @@ body {
             height: 6rem;
             width: 6rem;
             border-radius: 50%;
-            border: 3px solid #32569f;
+            border: 3px solid #057777;
             display: flex;
             justify-content: center;
             align-items: center; }
@@ -1505,7 +1687,7 @@ body {
             align-items: flex-start;
             justify-content: center; }
             .MainQA__Answer__Box__Top__Left__AnswerData__UserName {
-              color: #32569f; }
+              color: #057777; }
             .MainQA__Answer__Box__Top__Left__AnswerData__AnswerData {
               font-size: 1.3rem;
               margin-top: .5rem; }

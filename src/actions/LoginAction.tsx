@@ -18,7 +18,7 @@ export const LoginAction =
         password,
       })
       .then((response) => {
-        console.log(response.data)
+        // console.log(response.data)
         dispatch({ type: LOGIN_REQUEST_SUCCESS, payload: response.data });
         history.push('/')
 

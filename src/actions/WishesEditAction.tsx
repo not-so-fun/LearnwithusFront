@@ -6,7 +6,7 @@ import {
   WISHES_EDIT_SUCCESS,
   WISHES_EDIT_ERROR,
 } from "../constants/WishesEditConstants";
-import { tokenToString } from "typescript";
+
 import { wishesEditInterface } from "../reducers/WishesEditReducer";
 
 export const WishesEditAction =
@@ -27,7 +27,7 @@ export const WishesEditAction =
         }
       )
       .then((response) => {
-        console.log(response.data);
+        // console.log(response.data);
         dispatch({ type: WISHES_EDIT_SUCCESS });
         onClick()
       })

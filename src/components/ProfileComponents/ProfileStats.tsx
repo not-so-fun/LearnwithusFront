@@ -26,6 +26,7 @@ const ProfileStats: FC<ProfileStatsInterface> = ({page_user_id}) => {
 
   return (
     <div className="Profile__Box__Top__Statistics">
+      
       <div className="Profile__Box__Top__Statistics__Div">
         <div className="Profile__Box__Top__Statistics__Div__Data">
           <p>Number of questions asked</p>
@@ -48,7 +49,7 @@ const ProfileStats: FC<ProfileStatsInterface> = ({page_user_id}) => {
         </button>
 
         {openModal.open && (
-          <ExpertiseModal modalHandler={modalHandler} heading="Expertise" />
+          <ExpertiseModal modalHandler={modalHandler} page_user_id={page_user_id} heading="Expertise" />
         )}
 
         <button

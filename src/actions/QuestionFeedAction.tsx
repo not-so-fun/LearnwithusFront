@@ -18,14 +18,13 @@ export const QuestionFeedAction =
         },
       })
       .then((response) => {
-          
         dispatch({
           type: QUESTION_FEED_LOAD_SUCCESS,
           questions: response.data,
         });
       })
       .catch((error) => {
-          console.log(error)
+          // console.log(error)
         dispatch({
           type: QUESTION_FEED_LOAD_ERROR,
           error: error.response.data,

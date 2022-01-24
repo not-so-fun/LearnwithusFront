@@ -36,7 +36,7 @@ import {questionFeedListInterface} from "../reducers/QuestionFeedReducers"
       case MAIN_QUESTION_ANSWER_STARTED:
         return { ...state, loading: true };
       case MAIN_QUESTION_ANSWER_SUCCESS:
-        console.log(action.question);
+        // console.log(action.question);
         return { 
           ...state, 
           loading: false, 

@@ -9,6 +9,7 @@ import AskQuestionFormTitle from "./AskQuestionFormTitle";
 import { AiOutlineCaretDown, AiOutlineCaretUp } from "react-icons/ai";
 import { CircularProgress } from "@mui/material";
 import AskQuestionSelect from "./AskQuestionSelect";
+import { Progress } from "../ReusableUIComponents/Spinner";
 
 export interface formDataInterface {
   title: string;
@@ -39,21 +40,35 @@ const AskQuesForm: FC = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+
+
   const handleQuestionAsk:
-    | React.MouseEventHandler<HTMLButtonElement>
-    | undefined = () => {
-    dispatch(AskQuestionAction(token, topic_id, sub_topic_id, title, question));
+    | React.FormEventHandler<HTMLFormElement> | undefined
+    | undefined = (e) => {
+      e.preventDefault()
+    dispatch(
+      AskQuestionAction(
+        token,
+        topic_id,
+        sub_topic_id,
+        title,
+        question,
+        setFormData
+      )
+    );
   };
 
   return (
-    <div className="AskQuestionForm">
+    <form onSubmit={e=>handleQuestionAsk(e)} className="AskQuestionForm">
       <div className="AskQuestionForm__Heading">
         <div className="AskQuestionForm__Heading__Title">Ask a question</div>
 
         {message && (
-          <Alert style={{ fontSize: 15 }} icon={false}>
-            {message}
-          </Alert>
+          <>
+            <Alert style={{ fontSize: 15 }} icon={false}>
+              {message}
+            </Alert>
+          </>
         )}
 
         {error && <div style={{ color: "red", fontSize: 15 }}>{error}</div>}
@@ -71,6 +86,7 @@ const AskQuesForm: FC = () => {
           placeholder="Put the title that enlightens"
           name="title"
           value={title}
+          required
           onChange={(e) => handleChange(e)}
         ></input>
 
@@ -87,6 +103,7 @@ const AskQuesForm: FC = () => {
           name="question"
           value={question}
           onChange={(e) => handleChange(e)}
+          required
         ></textarea>
       </div>
 
@@ -94,21 +111,20 @@ const AskQuesForm: FC = () => {
         {loading ? (
           <button
             style={{ width: 140 }}
-            onClick={handleQuestionAsk}
             className="AskQuestionForm__Footer__Button"
           >
-            <CircularProgress size={25} style={{ color: "black" }} />
+            <Progress size={25} />
           </button>
         ) : (
           <button
-            onClick={handleQuestionAsk}
+            style={{ width: 140 }}
             className="AskQuestionForm__Footer__Button"
           >
-            Post your Question
+            Post Question
           </button>
         )}
       </div>
-    </div>
+    </form>
   );
 };
 

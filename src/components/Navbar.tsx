@@ -14,22 +14,24 @@ import { IoCreate } from "react-icons/io5";
 
 type NotificaitonState = {
   show: boolean;
+  showProfile: boolean;
 };
-
 
 const Navbar: FC = () => {
   const [showNotification, setShowNotification] = useState<NotificaitonState>({
-    show: false
+    show: false,
+    showProfile: false,
   });
-  const [showMore, setShowMore]= useState<boolean>(false);
-
-  
+  const [showMore, setShowMore] = useState<NotificaitonState>({
+    show: false,
+    showProfile: false,
+  });
 
   const { userInfo } = useSelector<RootStateType>(
     (state) => state.userInfo
   ) as any;
 
-  const { user_id,image } = useTokenAndId();
+  const { user_id, image } = useTokenAndId();
   const history = useHistory();
 
   const handleLogout = () => {
@@ -37,6 +39,7 @@ const Navbar: FC = () => {
     history.push("/login");
     window.location.reload();
   };
+
   return (
     <div className="Navbar">
       <div className="Navbar__Links">
@@ -61,7 +64,10 @@ const Navbar: FC = () => {
                 <IoNotificationsSharp
                   style={{ fontSize: 25, marginLeft: 20 }}
                   onClick={() => {
-                    setShowNotification({ show: !showNotification.show });
+                    setShowNotification({
+                      show: !showNotification.show,
+                      showProfile: false,
+                    });
                   }}
                 />
                 <div className="Navbar__Links__content__Notification">
@@ -71,17 +77,23 @@ const Navbar: FC = () => {
               <div className="Navbar__Links__Content">
                 <div className="Navbar__Links__content__Avatar">
                   <Avatar
+                  onClick={()=>history.push(`/profile/${userInfo && userInfo.user_id || user_id}`)}
                     alt="user"
-                    src={`${(userInfo && userInfo.image) || image }`}
+                    src={`${(userInfo && userInfo.image) || image}`}
                     style={{ width: 40, height: 40 }}
                   />
 
-                  <ArrowDropDownIcon 
-                  className="Navbar__Links__content__Avatar__Drop" 
-                  onClick={()=>{setShowMore(!showMore)}}
+                  <ArrowDropDownIcon
+                    className="Navbar__Links__content__Avatar__Drop"
+                    onClick={() => {
+                      setShowMore({
+                        show: false,
+                        showProfile: !showMore.showProfile,
+                      });
+                    }}
                   />
                 </div>
-                {showMore && <NavbarShowMore /> }
+                {showMore.showProfile && <NavbarShowMore />}
               </div>
             </div>
           </>

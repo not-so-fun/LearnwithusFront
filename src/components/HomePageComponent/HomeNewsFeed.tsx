@@ -24,7 +24,7 @@ const HomeNewsFeed: FC<quesInterface> = ({ question }) => {
 
   useEffect(() => {
     setUpvote(question.upvote);
-    setLastState({upvote:question.upvote})
+    setLastState({ upvote: question.upvote });
   }, [question]);
 
   const upVote = (upvote: boolean) => {
@@ -112,7 +112,6 @@ const HomeNewsFeed: FC<quesInterface> = ({ question }) => {
       </div>
       <div className="Profile__Box__Main__Newsfeed__Div__InnerDiv">
         <div className="Profile__Box__Main__Newsfeed__Div__InnerDiv__Votes">
-          
           {upvote == null ? (
             <>
               <BsCaretUpFill

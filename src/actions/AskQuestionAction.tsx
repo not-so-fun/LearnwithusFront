@@ -2,11 +2,14 @@ import {
   ASK_QUESTION_STARTED,
   ASK_QUESTION_SUCCESS,
   ASK_QUESTION_ERROR,
+  ASK_QUESTION_REMOVE_MESSAGE
 } from "../constants/AskQuestionConstants";
 
 import { RootDispatchType } from "../stores";
 import { Dispatch } from "redux";
 import axios from "../axios";
+
+import { formDataInterface } from "../components/AskQuestionsComponent/AskQuestionForm";
 
 export const AskQuestionAction =
   (
@@ -14,10 +17,12 @@ export const AskQuestionAction =
     topic_id: string,
     sub_topic_id: string,
     title: string,
-    question: string
+    question: string,
+    setFormData:React.Dispatch<React.SetStateAction<formDataInterface>>
   ) =>
   (dispatch: Dispatch<RootDispatchType>) => {
     dispatch({ type: ASK_QUESTION_STARTED });
+    // console.log(sub_topic_id)
     axios
       .post(
         "/questions",
@@ -35,6 +40,11 @@ export const AskQuestionAction =
       )
       .then((response) => {
         dispatch({ type: ASK_QUESTION_SUCCESS, message: response.data });
+        setFormData({topic_id:"",sub_topic_id:"",title:"",question:""})
+        setTimeout(()=>{
+          // console.log("Removed")
+          dispatch({type:ASK_QUESTION_REMOVE_MESSAGE})
+        },3000)
       })
       .catch((error) => {
         // console.log(error.response)

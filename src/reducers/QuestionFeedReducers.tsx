@@ -16,6 +16,9 @@ export interface questionFeedListInterface {
   user_id: string;
   username: string;
   image: string;
+  total_upvotes:string
+  total_downvotes:string
+
 }
 
 export interface questionFeedInterface {

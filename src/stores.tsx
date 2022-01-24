@@ -16,6 +16,7 @@ import { WishesReducer } from "./reducers/WishesReducer";
 import {AnswersOnlyReducer} from "./reducers/AnsweresOnlyReducer"
 import { AnswerTheQuestionReducer } from "./reducers/AnswerTheQuestionReducer";
 import { WishesEditReducer } from "./reducers/WishesEditReducer";
+import { ExpertisesEditReducer } from "./reducers/ExpertiseEditReducer";
 
 const rootReducer = combineReducers({
   userInfo: LoginReducer,
@@ -32,7 +33,9 @@ const rootReducer = combineReducers({
   wishes: WishesReducer,
   answers:AnswersOnlyReducer,
   answer_question:AnswerTheQuestionReducer,
-  edit_wishes:WishesEditReducer
+  edit_wishes:WishesEditReducer,
+  edit_expertises:ExpertisesEditReducer
+
 });
 
 const store = createStore(

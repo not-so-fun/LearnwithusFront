@@ -16,7 +16,7 @@ export const ExpertiseAction = (token: string) => (dispatch: any) => {
       },
     })
     .then((response) => {
-    //   console.log(response.data);
+      // console.log(response.data);
       dispatch({type:EXPERTISE_SUCCESS,expertises:response.data})
     })
     .catch((error) => {

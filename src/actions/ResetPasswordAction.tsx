@@ -18,7 +18,7 @@ export const ResetPasswordActions =
         token,
       })
       .then((response) => {
-        console.log(response.data);
+        // console.log(response.data);
         dispatch({ type: RESET_PASSWORD_REQUEST_SUCCESS,message:response.data });
 
       })

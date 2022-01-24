@@ -16,7 +16,7 @@ export const WishesAction = (token: string) => (dispatch: any) => {
       },
     })
     .then((response) => {
-      console.log(response.data);
+      // console.log(response.data);
       dispatch({ type: WISHES_SUCCESS, wishes: response.data });
     })
     .catch((error) => {
