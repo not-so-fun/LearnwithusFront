@@ -1,7 +1,8 @@
 import React, { FC, useEffect, useState, lazy, Suspense } from "react";
 import { RouteComponentProps } from "react-router-dom";
 import MainQAQuestion from "../components/mainQAComponent/MainQAQuestion";
-import MainQAAnswer from "../components/mainQAComponent/MainQAAnswer";
+import MainQAAnswers from "../components/mainQAComponent/MainQAAnswers";
+import MainQAAnswerTypes from "../components/mainQAComponent/MainQAAnswerTypes";
 import { useDispatch, useSelector } from "react-redux";
 import useTokenAndId from "../components/ReusableLogicComponents/useTokenAndId";
 import { MainQuestionAnswerAction } from "../actions/MainQuestionAnswerAction";
@@ -58,16 +59,25 @@ const MainQA: FC<RouteComponentProps<any>> = ({ match }) => {
         Main Question Answer
         
       </div>
-      <div className="MainQA__Questions"></div>
+      <div className="MainQA__Questions">
+
+      </div>
         <MainQAQuestion question={question} />
-      
+      <div className="MainQA__Types">
+        <MainQAAnswerTypes />
+        </div>
+
 
       <div className="MainQA__Answers">
-        {answers && answers.map((ans) => <MainQAAnswer ans={ans} />)}
+        {answers && answers.map((ans) => <MainQAAnswers ans={ans} />)}
+       
+      
+        
       </div>
-      <div className="MainQA__AnswerInput"><AnswerComponent question_id={match.params.id} /></div>
+      <div className="MainQA__AnswerInput">
+        <AnswerComponent question_id={match.params.id} /></div>
+    
     </div>
-    // </div>
   );
 };
 

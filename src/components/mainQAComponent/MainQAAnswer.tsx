@@ -152,7 +152,7 @@ const MainQAAnswer: FC<MainQAAnswerInterface> = ({ ans }) => {
             <div className="MainQA__Answer__AnswerData__Top__Answered__ProfilePhoto">
               <img
                 src={ans.image}
-                className="MainQA__Question__Top__ProfileData__ProfilePhoto__Image"
+                className="MainQA__Answer__AnswerData__Top__Answered__ProfilePhoto__Image"
                 alt=""
               />
             </div>
