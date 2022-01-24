@@ -77,13 +77,13 @@ const ModalOverlay: React.FC<ClickProp> = ({
           </div>
 
           {editWishesLoading ? (
-            <Button variant="outlined" color="inherit">
+            <button style={{width:90}} className="Profile__Box__Top__Statistics__Botton__Expertise">
               <Progress size={15} />
-            </Button>
+            </button>
           ) : (
-            <Button onClick={handleEditWish} variant="outlined" color="inherit">
-              Edit
-            </Button>
+            <button style={{width:90}} onClick={handleEditWish} className="Profile__Box__Top__Statistics__Botton__Expertise">
+              Wishes
+            </button>
           )}
         </div>
 
@@ -98,7 +98,7 @@ const ModalOverlay: React.FC<ClickProp> = ({
                 <div key={`${exp.topic_id}`}>
                   {/* <p>{exp.topic_id}</p> */}
                   <WishesDropDownListItem
-                    disabled={user_id == page_user_id ? false : true}
+                    disabled={user_id === page_user_id ? false : true}
                     topic_id={exp.topic_id}
                     title={exp.title}
                     user_id={exp.user_id}
