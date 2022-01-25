@@ -108,6 +108,7 @@ const QuestionFeed: FC<quesInterface> = ({ question }) => {
             className="QuestionFeed__Box__Top__ProfileImage"
           >
             <img
+              alt={question.username}
               src={question.image}
               className="QuestionFeed__Box__Top__ProfileImage__Image"
             />

@@ -1,6 +1,7 @@
 import React, { FC } from "react";
 import { Avatar } from "@mui/material";
 import { Link, useHistory } from "react-router-dom";
+import {FaSearch} from "react-icons/fa"
 
 const SideBar: FC = () => {
   const history=useHistory()
@@ -16,9 +17,10 @@ const SideBar: FC = () => {
         </Link>
         <div className="HomePage__Left__SideBar__Links__Link">
           Replied Questions
-        </div>
+        </div> 
         <div className="HomePage__Left__SideBar__Links__Link">
-          Search Tutors
+        Search <FaSearch style={{marginLeft:10}} size={25}/>
+         
         </div>
       </div>
     </div>
