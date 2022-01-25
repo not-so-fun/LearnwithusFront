@@ -7,21 +7,17 @@ import {
 import { ProfileActionTypes } from "../types/ProfileActionTypes";
 
 export interface profileUserDataInterface {
-  email: string;
-  first_name: string;
-  image: string;
-  last_name: string;
-  status: boolean | null;
   user_id: string;
+  first_name: string;
+  last_name: string;
   username: string;
+  image: string;
 }
 
 const profileUserData: profileUserDataInterface = {
-  email: "",
   first_name: "....",
   last_name: "....",
   image: "",
-  status: null,
   user_id: "....",
   username: "....",
 };
