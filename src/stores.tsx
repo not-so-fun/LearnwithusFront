@@ -18,7 +18,6 @@ import { AnswerTheQuestionReducer } from "./reducers/AnswerTheQuestionReducer";
 import { WishesEditReducer } from "./reducers/WishesEditReducer";
 import { ExpertisesEditReducer } from "./reducers/ExpertiseEditReducer";
 import { UpdateProfileReducer } from "./reducers/UpdateProfileReducer";
-import { ReplyAnswerReducer } from "./reducers/ReplyAnswerReducer";
 
 const rootReducer = combineReducers({
   userInfo: LoginReducer,
@@ -34,7 +33,6 @@ const rootReducer = combineReducers({
   mainQA: MainQuestionAnswerReducer,
   wishes: WishesReducer,
   answers:AnswersOnlyReducer,
-  replies:ReplyAnswerReducer,
   answer_question:AnswerTheQuestionReducer,
   edit_wishes:WishesEditReducer,
   edit_expertises:ExpertisesEditReducer,

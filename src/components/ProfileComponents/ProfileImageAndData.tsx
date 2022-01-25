@@ -4,6 +4,13 @@ import { AiFillStar } from "react-icons/ai";
 import Avatar from "@mui/material/Avatar";
 import EditModal from "../ProfileComponents/EditModal";
 import PhotoCameraIcon from "@mui/icons-material/PhotoCamera";
+import storage from "../../Firebase";
+import { ref, getDownloadURL, uploadBytesResumable } from "firebase/storage";
+import { Progress } from "../ReusableUIComponents/Spinner";
+import {UpdateImageAction} from "../../actions/UpdateImageAction"
+import useTokenAndId from "../ReusableLogicComponents/useTokenAndId";
+import { useDispatch } from "react-redux";
+
 
 interface ProfileFormInterface {
   profile_data: profileUserDataInterface;
@@ -17,8 +24,44 @@ const ProfileImageAndData: FC<ProfileFormInterface> = ({ profile_data }) => {
     open: false,
   });
 
+  const dispatch=useDispatch()
+
+  const [progress, setProgess] = useState<number>(0);
+  const {token}=useTokenAndId()
+
   const modalHandler = () => {
     setOpenModal({ ...openModal, open: !openModal.open });
+  };
+
+  const formHandler = (e: any) => {
+    e.preventDefault();
+    const file = e.target[0].files[0];
+    uploadFiles(file);
+  };
+
+  const uploadFiles = (file: any) => {
+    //
+    if (!file) return;
+    const sotrageRef = ref(storage, `files/${file.name}`);
+    const uploadTask = uploadBytesResumable(sotrageRef, file);
+
+    uploadTask.on(
+      "state_changed",
+      (snapshot) => {
+        const prog = Math.round(
+          (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+        );
+        setProgess(prog);
+      },
+      (error) => console.log(error),
+      () => {
+        getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+          // console.log("File available at", downloadURL);
+          dispatch(UpdateImageAction(token,downloadURL))
+
+        });
+      }
+    );
   };
 
   return (
@@ -31,6 +74,7 @@ const ProfileImageAndData: FC<ProfileFormInterface> = ({ profile_data }) => {
           className="Profile__Box__Top__ImagesAndDatas__Image__Avatar"
         />
         <div className="Profile__Box__Top__ImagesAndDatas__Image__Icon">
+          {/* <Progress size={15} /> */}
           <PhotoCameraIcon className="Profile__Box__Top__ImagesAndDatas__Image__Icon__Camera" />
         </div>
       </div>
