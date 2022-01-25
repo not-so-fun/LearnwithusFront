@@ -17,6 +17,7 @@ import {AnswersOnlyReducer} from "./reducers/AnsweresOnlyReducer"
 import { AnswerTheQuestionReducer } from "./reducers/AnswerTheQuestionReducer";
 import { WishesEditReducer } from "./reducers/WishesEditReducer";
 import { ExpertisesEditReducer } from "./reducers/ExpertiseEditReducer";
+import { UpdateProfileReducer } from "./reducers/UpdateProfileReducer";
 
 const rootReducer = combineReducers({
   userInfo: LoginReducer,
@@ -34,7 +35,8 @@ const rootReducer = combineReducers({
   answers:AnswersOnlyReducer,
   answer_question:AnswerTheQuestionReducer,
   edit_wishes:WishesEditReducer,
-  edit_expertises:ExpertisesEditReducer
+  edit_expertises:ExpertisesEditReducer,
+  updateUserInfo:UpdateProfileReducer
 
 });
 

@@ -19,7 +19,7 @@ export const ProfileAction =
         },
       })
       .then((response) => {
-        // console.log(response.data);
+        console.log(response.data);
         dispatch({ type: PROFILE_DATA_SUCCESS, profile_data: response.data });
       })
       .catch((error) => {
