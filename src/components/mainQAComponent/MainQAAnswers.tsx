@@ -17,10 +17,12 @@ interface MainQAAnswerInterface {
   }
 
 const MainQAAnswers: FC<MainQAAnswerInterface> = ({ans}) => {
+
     const [upvote, setUpvote] = useState<boolean | null>(null);
   const [lastState, setLastState] = useState<lastStateInterface>({
     upvote: null,
   });
+  const [totalUpvotes, setTotalUpvote] = useState<number>(parseInt(ans.total_upvotes)-parseInt(ans.total_downvotes));
   const { token } = useTokenAndId();
 
   useEffect(() => {
@@ -55,38 +57,39 @@ const MainQAAnswers: FC<MainQAAnswerInterface> = ({ans}) => {
   const handleChangeUpvoteUp:
     | React.MouseEventHandler<SVGSVGElement>
     | undefined = () => {
-    if (upvote === null) {
-      setLastState({ ...lastState, upvote: upvote });
-      setUpvote(true);
-    } else {
-      if (upvote === true) {
-        setLastState({ ...lastState, upvote: upvote });
-        setUpvote(null);
-      } else {
+      if (upvote === null || upvote === false) {
         setLastState({ ...lastState, upvote: upvote });
         setUpvote(true);
+        if (upvote !== null) {
+          setTotalUpvote(totalUpvotes + 2);
+        }else{
+          setTotalUpvote(totalUpvotes + 1);
+        }
+      } else {
+        setLastState({ ...lastState, upvote: upvote });
+        setUpvote(null);
+        setTotalUpvote(totalUpvotes - 1);
       }
-    }
-    upVote(true);
+      upVote(true);
   };
 
   const handleChangeUpvoteDown:
     | React.MouseEventHandler<SVGSVGElement>
     | undefined = () => {
-    if (upvote === null) {
-      setLastState({ ...lastState, upvote: upvote });
-      setUpvote(false);
-    } else {
-      if (upvote === false) {
-        setLastState({ ...lastState, upvote: upvote });
-
-        setUpvote(null);
-      } else {
+      if (upvote === null || upvote === true) {
         setLastState({ ...lastState, upvote: upvote });
         setUpvote(false);
+        if (upvote !== null){ 
+          setTotalUpvote(totalUpvotes - 2);
+        }else{
+          setTotalUpvote(totalUpvotes - 1);
+        }
+      } else {
+        setLastState({ ...lastState, upvote: upvote });
+        setUpvote(null);
+        if (totalUpvotes !== null) setTotalUpvote(totalUpvotes + 1);
       }
-    }
-    upVote(false);
+      upVote(false);
   };
   return (
   <div key={ans.answer_id} className="MainQA__Answer">
@@ -118,29 +121,33 @@ const MainQAAnswers: FC<MainQAAnswerInterface> = ({ans}) => {
                 </div>
           </div>
           <div className="MainQA__Answer__Box__Main">
+            <div className="MainQA__Answer__Box__Main__Likes">
+                  {/* Upvote started */}
+               <div className="MainQA__Answer__Box__Main__Likes__Upvote">
+                  <AiOutlineCaretUp
+               className="MainQA__Answer__Box__Main__Likes__Upvote__Logo" style={(upvote===true)?{color: "blue"}:{}} onClick={handleChangeUpvoteUp}/> 
+               </div>
+              
+                   
+                
+                <div className="MainQA__Answer__Box__Main__Likes__Total">{totalUpvotes}</div>
+                <div className="MainQA__Answer__Box__Main__Likes__Downvote">
+               
+                 
+               <AiOutlineCaretDown
+               className="MainQA__Answer__Box__Main__Likes__Downvote__Logo" style={(upvote===false)?{color:"red"}:{}}  onClick={handleChangeUpvoteDown}/>
+                </div> 
+                </div> 
+
+            
               <div className='MainQA__Answer__Box__Main__AnswerText'>
+                <div className='MainQA__Answer__Box__Main__AnswerText__Text'>
                   <p>
                       {ans.answer + "     "}
                       If it is difficult fo you to quit cold turkey then try adding 2 or 3 vegeterian or vegan meals per week to see how you feel. The most important thing is to read, read, read anything you can find on the subject to keep yourself informed and to find recipes so that you'll have a variety and won't get bored with the same old thing. I wish you Good Luck!
                   </p>
-              </div>
-              <div className='MainQA__Answer__Box__Main__Bottom'>
-               <div className="MainQA__Answer__Box__Main__Bottom__Function">
-               <div className="MainQA__Answer__Box__Main__Bottom__Function__Logo">
-               <AiOutlineCaretUp
-               className="MainQA__Answer__Box__Main__Bottom__Function__Logo__Logo" />
-               </div>
-               <p className="MainQA__Answer__Box__Main__Bottom__Function__Text">Upvote (9)</p>
-                   
-                </div> 
-                <div className="MainQA__Answer__Box__Main__Bottom__Function">
-               <div className="MainQA__Answer__Box__Main__Bottom__Function__Logo">
-               <AiOutlineCaretDown
-               className="MainQA__Answer__Box__Main__Bottom__Function__Logo__Logo" />
-               </div>
-               <p className="MainQA__Answer__Box__Main__Bottom__Function__Text">DownVote (9)</p>
-                   
-                </div> 
+                  </div>
+                  <div className='MainQA__Answer__Box__Main__Bottom'>
                 <div className="MainQA__Answer__Box__Main__Bottom__Function">
                
                 <div className="MainQA__Answer__Box__Main__Bottom__Function__Logo">
@@ -164,6 +171,8 @@ const MainQAAnswers: FC<MainQAAnswerInterface> = ({ans}) => {
                 </div> 
               </div>
           </div>
+        </div>
+              
       </div>
 
   </div>);

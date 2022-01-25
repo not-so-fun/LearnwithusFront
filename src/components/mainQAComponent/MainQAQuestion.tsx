@@ -21,10 +21,15 @@ interface lastStateInterface {
 }
 
 const MainQAQuestion: FC<MainQAQuestionInterface> = ({ question }) => {
+  console.log(question);
   const [upvote, setUpvote] = useState<boolean | null>(null);
   const [lastState, setLastState] = useState<lastStateInterface>({
     upvote: null,
   });
+
+  // let data = parseInt(question.total_upvotes) - parseInt(question.total_downvotes);
+  
+  // const [totalUpvotes, setTotalUpvote] = useState<number>(data);
   const { token } = useTokenAndId();
 
   useEffect(() => {

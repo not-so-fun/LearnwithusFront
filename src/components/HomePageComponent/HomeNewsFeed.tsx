@@ -132,7 +132,7 @@ const HomeNewsFeed: FC<quesInterface> = ({ question }) => {
                 <>
                   <BsCaretUpFill
                     onClick={handleChangeUpvoteUp}
-                    style={{ color: "blue" }}
+                    style={(upvote==true)?{ color: "blue" }:{}}
                     className="Profile__Box__Main__Newsfeed__Div__InnerDiv__Votes__Up"
                   />
                   <h1 className="Profile__Box__Main__Newsfeed__Div__InnerDiv__Votes__Text">

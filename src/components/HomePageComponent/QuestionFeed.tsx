@@ -18,9 +18,10 @@ interface lastStateInterface {
 
 const QuestionFeed: FC<quesInterface> = ({ question }) => {
   const [upvote, setUpvote] = useState<boolean | null>(null);
-  const [totalUpvotes, setTotalUpvote] = useState<number | null>(0);
+  let data = parseInt(question.total_upvotes) - parseInt(question.total_downvotes);
+  const [totalUpvotes, setTotalUpvote] = useState<number>(data);
 
-  console.log(typeof question.total_upvotes);
+  
 
   const history = useHistory();
   const [lastState, setLastState] = useState<lastStateInterface>({
@@ -30,8 +31,7 @@ const QuestionFeed: FC<quesInterface> = ({ question }) => {
 
   useEffect(() => {
     setUpvote(question.upvote);
-    setTotalUpvote(parseInt(question.total_upvotes));
-    // setLastState({upvote:question.upvote})
+    setLastState({upvote:question.upvote})
   }, [question]);
 
   const upVote = (upvote: boolean) => {
@@ -64,11 +64,15 @@ const QuestionFeed: FC<quesInterface> = ({ question }) => {
     if (upvote === null || upvote === false) {
       setLastState({ ...lastState, upvote: upvote });
       setUpvote(true);
-      if (totalUpvotes !== null) setTotalUpvote(totalUpvotes + 1);
+      if (upvote !== null) {
+        setTotalUpvote(totalUpvotes + 2);
+      }else{
+        setTotalUpvote(totalUpvotes + 1);
+      }
     } else {
       setLastState({ ...lastState, upvote: upvote });
       setUpvote(null);
-      if (totalUpvotes !== null) setTotalUpvote(totalUpvotes - 1);
+      setTotalUpvote(totalUpvotes - 1);
     }
     upVote(true);
   };
@@ -79,7 +83,11 @@ const QuestionFeed: FC<quesInterface> = ({ question }) => {
     if (upvote === null || upvote === true) {
       setLastState({ ...lastState, upvote: upvote });
       setUpvote(false);
-      if (totalUpvotes !== null) setTotalUpvote(totalUpvotes - 1);
+      if (upvote !== null){ 
+        setTotalUpvote(totalUpvotes - 2);
+      }else{
+        setTotalUpvote(totalUpvotes - 1);
+      }
     } else {
       setLastState({ ...lastState, upvote: upvote });
       setUpvote(null);
@@ -122,32 +130,11 @@ const QuestionFeed: FC<quesInterface> = ({ question }) => {
         </div>
         <div className="QuestionFeed__Box__Main">
           <div className="QuestionFeed__Box__Main__Upvotes">
-            {upvote == null ? (
-              <>
-                <div className="QuestionFeed__Box__Main__Upvotes__Likes">
-                  <AiFillCaretUp
-                    onClick={handleChangeUpvoteUp}
-                    className="QuestionFeed__Box__Main__Upvotes__Likes__Logo"
-                  />
-                </div>
-                <div className="QuestionFeed__Box__Main__Upvotes__Box">
-                  <h1>{totalUpvotes}</h1>
-                </div>
-                <div className="QuestionFeed__Box__Main__Upvotes__Dislikes">
-                  <AiFillCaretDown
-                    onClick={handleChangeUpvoteDown}
-                    className="QuestionFeed__Box__Main__Upvotes__Dislikes__Logo"
-                  />
-                </div>
-              </>
-            ) : (
-              <>
-                {upvote === true ? (
-                  <>
+            
                     <div className="QuestionFeed__Box__Main__Upvotes__Likes">
                       <AiFillCaretUp
                         onClick={handleChangeUpvoteUp}
-                        style={{ color: "blue" }}
+                        style={(upvote===true)?{ color: "blue" }:{}}
                         className="QuestionFeed__Box__Main__Upvotes__Likes__Logo"
                       />
                     </div>
@@ -156,33 +143,11 @@ const QuestionFeed: FC<quesInterface> = ({ question }) => {
                     </div>
                     <div className="QuestionFeed__Box__Main__Upvotes__Dislikes">
                       <AiFillCaretDown
+                        style={(upvote===false)?{ color: "red" }:{}}
                         onClick={handleChangeUpvoteDown}
                         className="QuestionFeed__Box__Main__Upvotes__Dislikes__Logo"
                       />
-                    </div>
-                  </>
-                ) : (
-                  <>
-                    <div className="QuestionFeed__Box__Main__Upvotes__Likes">
-                      <AiFillCaretUp
-                        onClick={handleChangeUpvoteUp}
-                        className="QuestionFeed__Box__Main__Upvotes__Likes__Logo"
-                      />
-                    </div>
-                    <div className="QuestionFeed__Box__Main__Upvotes__Box">
-                      <h1>{totalUpvotes}</h1>
-                    </div>
-                    <div className="QuestionFeed__Box__Main__Upvotes__Dislikes">
-                      <AiFillCaretDown
-                        style={{ color: "red" }}
-                        onClick={handleChangeUpvoteDown}
-                        className="QuestionFeed__Box__Main__Upvotes__Dislikes__Logo"
-                      />
-                    </div>
-                  </>
-                )}
-              </>
-            )}
+                    </div>    
           </div>
 
           <div className="QuestionFeed__Box__Main__AboutQuestion">

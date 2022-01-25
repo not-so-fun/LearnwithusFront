@@ -1707,13 +1707,50 @@ body {
             align-items: center;
             padding: 0 1rem; }
       .MainQA__Answer__Box__Main {
-        margin-left: 8rem;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start; }
+        display: flex; }
+        .MainQA__Answer__Box__Main__Likes {
+          height: 13rem;
+          width: 10rem;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          margin-right: 3.5rem; }
+          .MainQA__Answer__Box__Main__Likes__Upvote {
+            height: 4rem;
+            width: 4rem;
+            display: flex;
+            align-items: center;
+            justify-content: center; }
+            .MainQA__Answer__Box__Main__Likes__Upvote__Logo {
+              height: 3.3rem;
+              width: 3.3rem; }
+              .MainQA__Answer__Box__Main__Likes__Upvote__Logo:hover {
+                cursor: pointer; }
+          .MainQA__Answer__Box__Main__Likes__Total {
+            height: 5rem;
+            width: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem; }
+          .MainQA__Answer__Box__Main__Likes__Downvote {
+            height: 4rem;
+            width: 4rem;
+            display: flex;
+            align-items: center;
+            justify-content: center; }
+            .MainQA__Answer__Box__Main__Likes__Downvote__Logo {
+              height: 3.3rem;
+              width: 3.3rem; }
+              .MainQA__Answer__Box__Main__Likes__Downvote__Logo:hover {
+                cursor: pointer; }
         .MainQA__Answer__Box__Main__AnswerText {
-          font-size: 1.6rem;
-          padding: 0 .5rem; }
+          display: flex;
+          flex-direction: column; }
+          .MainQA__Answer__Box__Main__AnswerText__Text {
+            font-size: 1.6rem;
+            padding: 0 .5rem; }
         .MainQA__Answer__Box__Main__Bottom {
           display: flex;
           align-items: center;
