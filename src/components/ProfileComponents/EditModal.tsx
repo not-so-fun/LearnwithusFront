@@ -47,6 +47,7 @@ const ModalOverlay: React.FC<ClickProp> = ({ onClick }) => {
                 type="text"
                 name="firstname"
                 className="editModal__Form__Control__Input"
+                placeholder="First Name"
               />
             </div>
             <div className="editModal__Form__Control__Div__Name__Last">
@@ -60,6 +61,7 @@ const ModalOverlay: React.FC<ClickProp> = ({ onClick }) => {
                 type="text"
                 name="lastname"
                 className="editModal__Form__Control__Input"
+                placeholder="Last Name"
               />
             </div>
           </div>
@@ -74,19 +76,7 @@ const ModalOverlay: React.FC<ClickProp> = ({ onClick }) => {
               type="text"
               name="username"
               className="editModal__Form__Control__Input"
-            />
-          </div>
-          <div className="editModal__Form__Control__Div">
-            <label
-              htmlFor="location"
-              className="editModal__Form__Control__Label"
-            >
-              Location
-            </label>
-            <input
-              type="text"
-              name="location"
-              className="editModal__Form__Control__Input"
+              placeholder="Username"
             />
           </div>
 
