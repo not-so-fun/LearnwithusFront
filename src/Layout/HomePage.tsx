@@ -41,7 +41,7 @@ const HomePage: FC = () => {
           {loading && <div>Loading........</div>}
           {questions &&
             questions.map((question: questionFeedListInterface) => (
-              <div key={question.question_id}>
+              <div style={{display:"flex",justifyContent:"center"}} key={question.question_id}>
                 <QuestionFeed question={question} />
               </div>
             ))}

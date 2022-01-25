@@ -1,8 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
+import useTokenAndId from "../ReusableLogicComponents/useTokenAndId";
 import CloseIcon from "@mui/icons-material/Close";
-
-// import { Progress } from "../ReusableUIComponents/Spinner";
+import { RootStateOrAny, useDispatch, useSelector } from "react-redux";
+import { updateProfileReducerInterface } from "../../reducers/UpdateProfileReducer";
+import { UpdateProfileAction } from "../../actions/UpdateProfileAction";
+import { RootStateType } from "../../stores";
+import { profileDataInterface } from "../../reducers/ProfileReducer";
+import { Progress } from "../ReusableUIComponents/Spinner";
 
 type ShowState = {
   show: boolean;
@@ -14,27 +19,64 @@ type ClickProp = {
   onClick: () => void;
 };
 
+interface userEditInterface {
+  username: string;
+  first_name: string;
+  last_name: string;
+}
+
 const Backdrop: React.FC<ClickProp> = ({ onClick }) => {
   return <div className="backdrop" onClick={onClick} />;
 };
 
 const ModalOverlay: React.FC<ClickProp> = ({ onClick }) => {
-  //   const dispatch = useDispatch();
-  //   const { token } = useTokenAndId();
+  const dispatch = useDispatch();
+  const { token } = useTokenAndId();
 
-  //   const { loading, expertises, error } = useSelector<RootStateType>(
-  //     (state) => state.expertises
-  //   ) as expertiseInterface;
+  const [userData, setUserData] = useState<userEditInterface>({
+    username: "",
+    first_name: "",
+    last_name: "",
+  });
 
-  //   useEffect(() => {
-  //     dispatch(ExpertiseAction(token));
-  //   }, [token]);
+  const { username, first_name, last_name } = userData;
+
+  const { profile_data } = useSelector<RootStateType>(
+    (state) => state.profile_info_data
+  ) as profileDataInterface;
+
+  useEffect(() => {
+    setUserData({
+      ...userData,
+      username: profile_data.username,
+      first_name: profile_data.first_name,
+      last_name: profile_data.last_name,
+    });
+  }, [profile_data]);
+
+  const { loading, error } = useSelector<RootStateType>(
+    (state) => state.updateUserInfo
+  ) as updateProfileReducerInterface;
+
+  const handleUpdateProfileData:
+    | React.ChangeEventHandler<HTMLInputElement>
+    | undefined = (e) => {
+    setUserData({ ...userData, [e.target.name]: e.target.value });
+  };
+
+  const handleUpdateProfile:
+  React.FormEventHandler<HTMLFormElement> | undefined = (e) => {
+    e.preventDefault()
+    dispatch(
+      UpdateProfileAction(token, username, first_name, last_name, onClick)
+    );
+  };
 
   return (
     <div className="editModal">
       <h1 className="editModal__Header">Edit Your Profile</h1>
       <div className="editModal__Form">
-        <form className="editModal__Form__Control">
+        <form onSubmit={handleUpdateProfile} className="editModal__Form__Control">
           <div className="editModal__Form__Control__Div__Name">
             <div className="editModal__Form__Control__Div__Name__First">
               <label
@@ -45,9 +87,15 @@ const ModalOverlay: React.FC<ClickProp> = ({ onClick }) => {
               </label>
               <input
                 type="text"
-                name="firstname"
+                value={first_name}
+                onChange={(e) => handleUpdateProfileData(e)}
+                name="first_name"
                 className="editModal__Form__Control__Input"
+<<<<<<< HEAD
                 placeholder="First Name"
+=======
+                required
+>>>>>>> c7cfa7e4e5d2f87abfbbfb6cef1ced19424dd3d7
               />
             </div>
             <div className="editModal__Form__Control__Div__Name__Last">
@@ -59,9 +107,16 @@ const ModalOverlay: React.FC<ClickProp> = ({ onClick }) => {
               </label>
               <input
                 type="text"
-                name="lastname"
+                value={last_name}
+                onChange={(e) => handleUpdateProfileData(e)}
+                name="last_name"
                 className="editModal__Form__Control__Input"
+<<<<<<< HEAD
                 placeholder="Last Name"
+=======
+                required
+
+>>>>>>> c7cfa7e4e5d2f87abfbbfb6cef1ced19424dd3d7
               />
             </div>
           </div>
@@ -74,9 +129,16 @@ const ModalOverlay: React.FC<ClickProp> = ({ onClick }) => {
             </label>
             <input
               type="text"
+              value={username}
+              onChange={(e) => handleUpdateProfileData(e)}
               name="username"
               className="editModal__Form__Control__Input"
+<<<<<<< HEAD
               placeholder="Username"
+=======
+              required
+
+>>>>>>> c7cfa7e4e5d2f87abfbbfb6cef1ced19424dd3d7
             />
           </div>
 
@@ -88,9 +150,18 @@ const ModalOverlay: React.FC<ClickProp> = ({ onClick }) => {
             >
               Cancel
             </button>
-            <button className="editModal__Form__Control__Button__Edit">
-              Edit
-            </button>
+            {loading ? (
+              <button className="editModal__Form__Control__Button__Edit">
+                <Progress size={15} />
+              </button>
+            ) : (
+              <button
+               
+                className="editModal__Form__Control__Button__Edit"
+              >
+                Edit
+              </button>
+            )}
           </div>
         </form>
       </div>
