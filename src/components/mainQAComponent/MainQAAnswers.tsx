@@ -8,6 +8,7 @@ import { MdReportProblem} from "react-icons/md";
 import { answerInterface } from "../../reducers/AnsweresOnlyReducer";
 import useTokenAndId from "../ReusableLogicComponents/useTokenAndId";
 import axios from "../../axios";
+import MainQAReplies from "./MainQAReplies";
 
 interface MainQAAnswerInterface {
     ans: answerInterface;
@@ -169,6 +170,22 @@ const MainQAAnswers: FC<MainQAAnswerInterface> = ({ans}) => {
                 </div>
                <p className="MainQA__Answer__Box__Main__Bottom__Function__Text">Report</p>
                 </div> 
+              </div>
+              <div className="MainQA__Replies">
+              <div className="MainQA__Replies__Replys">
+                <MainQAReplies/>
+                </div>
+                <div className="MainQA__Replies__Replays">
+                <MainQAReplies/>
+                </div>
+                <div className="MainQA__Replies__Replys">
+                <MainQAReplies/>
+                </div>
+                <div className="MainQA__Replies__Replys">
+                <MainQAReplies/>
+                </div>
+                
+                
               </div>
           </div>
         </div>
