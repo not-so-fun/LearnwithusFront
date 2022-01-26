@@ -230,11 +230,11 @@
             &__Button {
               height: 5rem;
               width: auto;
-              background: $color-primary;
+              background: $color-white;
               padding: 0 2rem;
               font-size: 2rem;
-              color: $color-white;
-              border: none;
+              color: $color-secondary;
+              border: 2px solid $color-secondary;
               outline: none;
               border-radius: 5px;
               &:hover {

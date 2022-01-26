@@ -608,11 +608,11 @@ body {
             .QuestionFeed__Box__Main__AboutQuestion__QuestionStatistics__Right__Button {
               height: 5rem;
               width: auto;
-              background: #057777;
+              background: #fff;
               padding: 0 2rem;
               font-size: 2rem;
-              color: #fff;
-              border: none;
+              color: #048004;
+              border: 2px solid #048004;
               outline: none;
               border-radius: 5px; }
               .QuestionFeed__Box__Main__AboutQuestion__QuestionStatistics__Right__Button:hover {
