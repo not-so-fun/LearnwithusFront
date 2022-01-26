@@ -65,8 +65,9 @@ const ModalOverlay: React.FC<ClickProp> = ({ onClick }) => {
   };
 
   const handleUpdateProfile:
-  React.FormEventHandler<HTMLFormElement> | undefined = (e) => {
-    e.preventDefault()
+    | React.FormEventHandler<HTMLFormElement>
+    | undefined = (e) => {
+    e.preventDefault();
     dispatch(
       UpdateProfileAction(token, username, first_name, last_name, onClick)
     );
@@ -76,7 +77,10 @@ const ModalOverlay: React.FC<ClickProp> = ({ onClick }) => {
     <div className="editModal">
       <h1 className="editModal__Header">Edit Your Profile</h1>
       <div className="editModal__Form">
-        <form onSubmit={handleUpdateProfile} className="editModal__Form__Control">
+        <form
+          onSubmit={handleUpdateProfile}
+          className="editModal__Form__Control"
+        >
           <div className="editModal__Form__Control__Div__Name">
             <div className="editModal__Form__Control__Div__Name__First">
               <label
@@ -91,11 +95,7 @@ const ModalOverlay: React.FC<ClickProp> = ({ onClick }) => {
                 onChange={(e) => handleUpdateProfileData(e)}
                 name="first_name"
                 className="editModal__Form__Control__Input"
-<<<<<<< HEAD
                 placeholder="First Name"
-=======
-                required
->>>>>>> c7cfa7e4e5d2f87abfbbfb6cef1ced19424dd3d7
               />
             </div>
             <div className="editModal__Form__Control__Div__Name__Last">
@@ -111,12 +111,7 @@ const ModalOverlay: React.FC<ClickProp> = ({ onClick }) => {
                 onChange={(e) => handleUpdateProfileData(e)}
                 name="last_name"
                 className="editModal__Form__Control__Input"
-<<<<<<< HEAD
                 placeholder="Last Name"
-=======
-                required
-
->>>>>>> c7cfa7e4e5d2f87abfbbfb6cef1ced19424dd3d7
               />
             </div>
           </div>
@@ -133,12 +128,7 @@ const ModalOverlay: React.FC<ClickProp> = ({ onClick }) => {
               onChange={(e) => handleUpdateProfileData(e)}
               name="username"
               className="editModal__Form__Control__Input"
-<<<<<<< HEAD
               placeholder="Username"
-=======
-              required
-
->>>>>>> c7cfa7e4e5d2f87abfbbfb6cef1ced19424dd3d7
             />
           </div>
 
@@ -155,10 +145,7 @@ const ModalOverlay: React.FC<ClickProp> = ({ onClick }) => {
                 <Progress size={15} />
               </button>
             ) : (
-              <button
-               
-                className="editModal__Form__Control__Button__Edit"
-              >
+              <button className="editModal__Form__Control__Button__Edit">
                 Edit
               </button>
             )}

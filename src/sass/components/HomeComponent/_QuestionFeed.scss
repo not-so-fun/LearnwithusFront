@@ -1,346 +1,335 @@
-.QuestionFeed{
-    width:60%;
-    min-width: 30rem;
-    height:auto;
-    border-bottom: 2px solid $color-grey-light-2;
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding:4rem 0;
-    &__Box{
-        // background:green;
-        width: 90%;
-        height:100%;
-        &__Top{
-            min-height:10rem;
-            height:auto;
-            // background:red;
-            display:flex;
+.QuestionFeed {
+  width: 100%;
+  min-width: 30rem;
+  height: auto;
+  border-bottom: 2px solid $color-grey-light-2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 0;
+  &__Box {
+    // background:green;
+    width: 90%;
+    height: 100%;
+    &__Top {
+      min-height: 10rem;
+      height: auto;
+      // background:red;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 0 1rem;
+      &__ProfileImage {
+        width: 6rem;
+        height: 6rem;
+        border-radius: 50%;
+        background: $color-white;
+        margin-right: 2rem;
+        border: 3px solid $color-primary;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &__Image {
+          height: 5rem;
+          width: 5rem;
+          border-radius: 50%;
+          object-fit: cover;
+        }
+      }
+      &__AboutQuestion {
+        // background:orange;
+        flex: 1;
+        height: auto;
+        &__Top {
+          width: auto;
+          height: auto;
+          font-size: 1.6rem;
+
+          &__QuestionData {
+            width: auto;
+            display: flex;
+            //    background:red;
             align-items: center;
             justify-content: flex-start;
-            padding:0 1rem;
-            &__ProfileImage{
-                width:6rem;
-                height:6rem;
-                border-radius: 50%;
-                background:$color-white;
-                margin-right: 2rem;
-                border: 3px solid $color-primary;
+            &__Time {
+              margin-right: 3rem;
+            }
+            &__Title {
+              color: $color-primary;
+              text-align: left;
+            }
+          }
+        }
+        &__Title {
+          color: $color-black;
+          font-size: 1.5rem;
+          // background:green;
+          text-align: left;
+        }
+      }
+    }
+    &__Main {
+      // background:red;
+      margin-top: 1rem;
+      height: auto;
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+      &__Upvotes {
+        // background:#008000;
+        flex: 0 0 auto;
+        min-width: 5rem;
+        height: auto;
+        min-height: 12rem;
+        margin-right: 3rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        &__Likes {
+          height: 3rem;
+          width: 3rem;
+          // background:red;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          &__Logo {
+            height: 3rem;
+            width: 3rem;
+            &:hover {
+              cursor: pointer;
+            }
+          }
+        }
+        &__Box {
+          // background:orange;
+          height: 4rem;
+          width: auto;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 1.4rem;
+        }
+        &__Dislikes {
+          height: 3rem;
+          width: 3rem;
+          // background:black;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          &__Logo {
+            height: 3rem;
+            width: 3rem;
+            &:hover {
+              cursor: pointer;
+            }
+          }
+        }
+      }
+      &__AboutQuestion {
+        // background:orange;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        flex: 1;
+        &__Question {
+          flex: 1;
+          width: 100%;
+          // background:green;
+          margin-bottom: 2rem;
+          color: $color-grey-light-3;
+          font-size: 1.6rem;
+        }
+        &__QuestionStatistics {
+          flex: 0 0 7rem;
+          width: 100%;
+          background: $color-grey-light-1;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          &__Left {
+            // background:green;
+            height: 7rem;
+            flex: 0 0 auto;
+            justify-self: stretch;
+            display: flex;
+            align-items: center;
+            padding: 0 1rem;
+
+            &__Answers {
+              // background:red;
+              width: auto;
+              height: 5rem;
+              border: 1px solid $color-grey-light-3;
+              border-radius: 5px;
+              display: flex;
+              align-items: center;
+              justify-content: flex-start;
+
+              &__Logo {
+                height: 4rem;
+                width: 4rem;
+                margin: 0 1rem;
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                &__Image{
-                    height:5rem;
-                    width:5rem;
-                    border-radius: 50%;
-                    object-fit: cover;
+                &__Logo {
+                  height: 3rem;
+                  width: 3rem;
                 }
+              }
+              &__Text {
+                font-size: 1.7rem;
+                color: $color-grey-light-3;
+                margin-right: 1rem;
+                width: auto;
+              }
             }
-            &__AboutQuestion{
-                // background:orange;
-                flex:1;
-                height:auto;
-                &__Top{
-                    width:auto;
-                    height:auto;
-                    font-size:1.6rem;
-                    
-                   &__QuestionData{
-                       width:auto;
-                       display:flex;
-                    //    background:red;
-                       align-items: center;
-                       justify-content: flex-start;
-                       &__Time{
-                           margin-right: 3rem;
-                       }
-                       &__Title{
-                           color:$color-primary;
-                       }
-                   } 
-                }
-                &__Title{
-                    color:$color-black;
-                    font-size:1.5rem;
-                    // background:green;
-                }
-            }
-        }
-        &__Main{
-            // background:red;
-            margin-top: 2rem;
-            height:auto;
-            display:flex;
-            align-items: flex-start;
-            justify-content: flex-start;
-            &__Upvotes{
-                // background:#008000;
-                flex: 0 0 auto;
-                min-width:5rem;
-                height:auto;
-                min-height:12rem;
-                margin-right:3rem;
-                display:flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: space-around;
-                &__Likes{
-                    height:3rem;
-                    width:3rem;
-                    // background:red;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    &__Logo{
-                        height:3rem;
-                        width:3rem;
-                        &:hover{
-                            cursor:pointer;
-                        }
-                    }
-
-                }
-                &__Box{
-                    // background:orange;
-                    height:4rem;
-                    width:auto;
-                    display:flex;
-                    align-items: center;
-                    justify-content: center;
-                    font-size:1.4rem;
-
-                }
-                &__Dislikes{
-                    height:3rem;
-                    width:3rem;
-                    // background:black;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    &__Logo{
-                        height:3rem;
-                        width:3rem;
-                        &:hover{
-                            cursor:pointer;
-                        }
-                    }
-                }
-            }
-            &__AboutQuestion{
-                // background:orange;
-                height:100%;
+            &__Views {
+              margin-left: 2rem;
+              // background:rebeccapurple;
+              height: 5rem;
+              width: auto;
+              border: 1px solid $color-grey-light-3;
+              border-radius: 5px;
+              display: flex;
+              align-items: center;
+              justify-content: flex-start;
+              &__Logo {
+                height: 4rem;
+                width: 4rem;
+                margin: 0 1rem;
                 display: flex;
-                flex-direction: column;
-                justify-content: flex-start;
                 align-items: center;
-                flex:1;
-                &__Question{
-                    flex:1;
-                    width:100%;
-                    // background:green;
-                    margin-bottom: 2rem;
-                    color:$color-grey-light-3;
-                    font-size: 1.6rem;
+                justify-content: center;
+                &__Logo {
+                  height: 3rem;
+                  width: 3rem;
                 }
-                &__QuestionStatistics{
-                    flex: 0 0 7rem;
-                    width:100%;
-                    background: $color-grey-light-1;
-                    display:flex;
-                    align-items: center;
-                    justify-content: space-between;
-                    &__Left{
-                        // background:green;
-                        height:7rem;
-                        flex: 0 0 auto;
-                        justify-self: stretch;
-                        display:flex;
-                        align-items: center;
-                        padding: 0 1rem;
-            
-                        &__Answers{
-                            // background:red;
-                            width:auto;
-                            height:5rem;
-                            border: 1px solid $color-grey-light-3;
-                            border-radius: 5px;
-                            display:flex;
-                            align-items: center;
-                            justify-content: flex-start;
-                            
-                            &__Logo{
-                                
-                                height:4rem;
-                                width:4rem;
-                                margin:0 1rem;
-                                display:flex;
-                                align-items: center;
-                                justify-content: center;
-                                &__Logo{
-                                    height:3rem;
-                                    width:3rem;
-                                }
-
-                            }
-                            &__Text{
-                                font-size:1.7rem;
-                                color:$color-grey-light-3;
-                                margin-right:1rem;
-                                width:auto;
-                            }
-                            
-                        }
-                        &__Views{
-                            margin-left:2rem;
-                            // background:rebeccapurple;
-                            height:5rem;
-                            width:auto;
-                            border:1px solid $color-grey-light-3;
-                            border-radius: 5px;
-                            display:flex;
-                            align-items: center;
-                            justify-content: flex-start;
-                            &__Logo{
-                                height:4rem;
-                                width:4rem;
-                                margin: 0 1rem;
-                                display: flex;
-                                align-items: center;
-                                justify-content: center;
-                                &__Logo{
-                                    height:3rem;
-                                    width:3rem;
-                                }
-                            }
-                            &__Text{
-                                font-size:1.7rem;
-                                color:$color-grey-light-3;
-                                margin-right:1rem;
-                                width:auto;
-                            }
-                        }
-                        
-                        
-                    }
-                    &__Right{
-                        // background:red;
-                        flex:0 0 auto;
-                        height:6rem;
-                        margin-right:1rem;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        &__Button{
-                            height:5rem;
-                            width:auto;
-                            background:$color-primary;
-                            padding:0 2rem;
-                            font-size:2rem;
-                            color:$color-white;
-                            border:none;
-                            outline: none;
-                            border-radius: 5px;
-                            &:hover{
-                                cursor:pointer;
-                            }
-                        }
-                    }
-                }
-
+              }
+              &__Text {
+                font-size: 1.7rem;
+                color: $color-grey-light-3;
+                margin-right: 1rem;
+                width: auto;
+              }
             }
+          }
+          &__Right {
+            // background:red;
+            flex: 0 0 auto;
+            height: 6rem;
+            margin-right: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            &__Button {
+              height: 5rem;
+              width: auto;
+              background: $color-primary;
+              padding: 0 2rem;
+              font-size: 2rem;
+              color: $color-white;
+              border: none;
+              outline: none;
+              border-radius: 5px;
+              &:hover {
+                cursor: pointer;
+              }
+            }
+          }
         }
+      }
     }
-    &__Bottom{
-        width: 90%;
-        height: 7rem;
-        // background-color: red;
-        border-top:3px solid $color-grey-light-2;
-        margin-top:2rem;
-        padding-top:4rem;
-        display:flex;
+  }
+  &__Bottom {
+    width: 90%;
+    height: 7rem;
+    // background-color: red;
+    border-top: 3px solid $color-grey-light-2;
+    margin-top: 2rem;
+    padding-top: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &__Left {
+      height: 5rem;
+      // background:green;
+      flex: 0 0 auto;
+      display: flex;
+      align-items: center;
+      &__Content {
+        width: auto;
+        height: 3rem;
+        // background:red;
+        display: flex;
         align-items: center;
         justify-content: space-between;
-       
-        &__Left{
-            height:5rem;
-            // background:green;
-            flex: 0 0 auto;
-            display:flex;
-            align-items: center;
-            &__Content{
-                width: auto;
-                height:3rem;
-                // background:red;
-                display:flex;
-                align-items: center;
-                justify-content: space-between;
-                font-size:1.4rem;
-                padding:0 1rem;
-                &:not(:last-child){
-                    border-right:1px solid $color-grey-light-3;
-                  
-                }
-                &:hover{
-                    cursor:pointer;
-                    background:$color-grey-light-2;
-                }
-                &__Logo{
-                    width:3rem;
-                    height:3rem;
-                    margin-right:.5rem;
-                    display:flex;
-                    align-items: center;
-                    justify-content: center;
-                    &__Logo{
-                        width:2.5rem;
-                        height:2.5rem;
-
-                    }
-                    
-                }
-            }
-            
+        font-size: 1.4rem;
+        padding: 0 1rem;
+        &:not(:last-child) {
+          border-right: 1px solid $color-grey-light-3;
         }
-        &__Right{
-            height:6rem;
-            // background:orange;
-            flex: 0 0 auto;
-            display:flex;
-            align-items: center;
-            
-            &__Content{
-                width: auto;
-                height:4rem;
-                // background:red;
-                display:flex;
-                align-items: center;
-                justify-content: space-between;
-                font-size:1.4rem;
-                padding:0 1rem;
-                margin:0 .3rem;
-                &:hover{
-                    cursor:pointer;
-                    background:$color-grey-light-2;
-                }
-                &__Logo{
-                    width:3rem;
-                    height:3rem;
-                    margin-right:.5rem;
-                    display:flex;
-                    align-items: center;
-                    justify-content: center;
-                    &__Logo{
-                        width:2.5rem;
-                        height:2.5rem;
-
-                    }
-                }
-                &__Logos{
-                    height:2.5rem;
-                    width:2.5rem;
-                }
-            }
+        &:hover {
+          cursor: pointer;
+          background: $color-grey-light-2;
         }
+        &__Logo {
+          width: 3rem;
+          height: 3rem;
+          margin-right: 0.5rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          &__Logo {
+            width: 2.5rem;
+            height: 2.5rem;
+          }
+        }
+      }
     }
+    &__Right {
+      height: 6rem;
+      // background:orange;
+      flex: 0 0 auto;
+      display: flex;
+      align-items: center;
+
+      &__Content {
+        width: auto;
+        height: 4rem;
+        // background:red;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 1.4rem;
+        padding: 0 1rem;
+        margin: 0 0.3rem;
+        &:hover {
+          cursor: pointer;
+          background: $color-grey-light-2;
+        }
+        &__Logo {
+          width: 3rem;
+          height: 3rem;
+          margin-right: 0.5rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          &__Logo {
+            width: 2.5rem;
+            height: 2.5rem;
+          }
+        }
+        &__Logos {
+          height: 2.5rem;
+          width: 2.5rem;
+        }
+      }
+    }
+  }
 }
