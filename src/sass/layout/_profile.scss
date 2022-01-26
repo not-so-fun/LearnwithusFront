@@ -4,9 +4,8 @@
 }
 
 .Profile {
-  
   &__Box {
-    background:$color-white;
+    background: $color-white;
     width: 100%;
     height: auto;
     display: flex;
@@ -50,7 +49,7 @@
           position: relative;
           &__Icon {
             border: 2px solid #ffffff1a;
-            background-color: #ffffff1a;
+            background-color: #0e0e0e1a;
             border-radius: 50%;
             padding: 0.5rem;
             width: fit-content;
@@ -110,7 +109,6 @@
         text-align: left;
         padding: 2rem;
         color: $color-black;
-        
 
         &__Name {
           display: flex;
@@ -119,10 +117,10 @@
           &__firstName {
             display: inline-block;
             width: 49%;
-            &__Box{
-              height:auto;
-              padding:.3rem;
-              width:100%;
+            &__Box {
+              height: auto;
+              padding: 0.3rem;
+              width: 100%;
             }
           }
           &__firstName p {
@@ -134,18 +132,18 @@
             font-size: 18px;
             font-weight: 500;
             letter-spacing: 0.03rem;
-            background-color: $color-grey-light-2;
-            padding: 0 0.5rem;
+            background-color: #ebebeb;
+            padding: 0.5rem 0.5rem;
             color: $color-black;
           }
 
           &__lastName {
-            width:49%;
+            width: 49%;
             display: inline-block;
-            &__Box{
-              height:auto;
-              padding:.3rem;
-              width:100%;
+            &__Box {
+              height: auto;
+              padding: 0.3rem;
+              width: 100%;
             }
           }
           &__lastName p {
@@ -158,11 +156,10 @@
             font-size: 18px;
             font-weight: 500;
             letter-spacing: 0.03rem;
-            background-color: $color-grey-light-2;
-            padding: 0 0.5rem;
+            background-color: #ebebeb;
+            padding: 0.5rem 0.5rem;
             color: $color-black;
           }
-
         }
 
         &__BasicInfo {
@@ -178,8 +175,8 @@
           font-size: 18px;
           font-weight: 500;
           letter-spacing: 0.03rem;
-          background-color: $color-white;
-          padding: 0 0.5rem;
+          background-color: #ebebeb;
+          padding: 0.5rem 0.5rem;
           color: $color-black;
         }
       }
@@ -215,10 +212,12 @@
         &__Div {
           width: 70%;
           padding: 2rem;
-          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          border: 2px solid lightgrey;
+
           &__Data p {
             font-size: 14px;
             letter-spacing: 0.08rem;
+            color: $color-black;
           }
           &__Data h1 {
             font-weight: bold;
@@ -231,14 +230,14 @@
       }
     }
     &__Main {
-      background: $color-grey-light-2;
+      background: #ffffff;
       width: 100%;
       height: 95rem;
-
       display: flex;
       align-items: center;
-      margin-bottom: 2rem;
+      margin-bottom: 0rem;
       display: flex;
+      border: 2px solid lightgrey;
       &__Newsfeed {
         height: 100%;
         flex: 1;
@@ -326,7 +325,7 @@
       &__SideInformation {
         height: 100%;
         flex: 0 0 30%;
-        background: $color-primary;
+        background: white;
         &__Status {
           border: 2px solid black;
           background: #f6f6f6;

@@ -68,64 +68,57 @@ const Profile: FC<RouteComponentProps<any>> = ({ match }) => {
   ) as profileDataInterface;
 
   return (
-    
-      // <div className="Profile">
-        <div className="Profile__Box">
-          {loading ? (
+    // <div className="Profile">
+    <div className="Profile__Box">
+      {loading ? (
+        <>
+          <div className="Profile__Box__Top">
+            <ProfileImageAndData profile_data={profile_data} />
+            <ProfileForm profile_data={profile_data} />
+            <ProfileStats page_user_id={match.params.id} />
+          </div>
+          <div className="Profile__Box__Main">
+            <div className="Profile__Box__Main__Newsfeed">
+              {/* <ProfileNewsFeed />
+                  <ProfileNewsFeed />
+                  <ProfileNewsFeed />
+                  <ProfileNewsFeed />
+                  <ProfileNewsFeed /> */}
+            </div>
+
+            <div className="Profile__Box__Main__SideInformation">
+              <ProfileQAStatus />
+              <ProfileQAStatus />
+            </div>
+          </div>
+        </>
+      ) : (
+        <>
+          {error ? (
+            <h1 style={{ color: "black" }}>{error}</h1>
+          ) : (
             <>
               <div className="Profile__Box__Top">
                 <ProfileImageAndData profile_data={profile_data} />
                 <ProfileForm profile_data={profile_data} />
                 <ProfileStats page_user_id={match.params.id} />
               </div>
+
               <div className="Profile__Box__Main">
                 <div className="Profile__Box__Main__Newsfeed">
                   {/* <ProfileNewsFeed />
-                  <ProfileNewsFeed />
-                  <ProfileNewsFeed />
-                  <ProfileNewsFeed />
-                  <ProfileNewsFeed /> */}
-                </div>
-
-                <div className="Profile__Box__Main__SideInformation">
-                  <ProfileQAStatus />
-                  <ProfileQAStatus />
-                </div>
-              </div>
-            </>
-          ) : (
-            <>
-              {error ? (
-                <h1 style={{ color: "black" }}>{error}</h1>
-              ) : (
-                <>
-                
-                  <div className="Profile__Box__Top">
-                    <ProfileImageAndData profile_data={profile_data} />
-                    <ProfileForm profile_data={profile_data} />
-                    <ProfileStats page_user_id={match.params.id} />
-                  </div>
-
-                  <div className="Profile__Box__Main">
-                    <div className="Profile__Box__Main__Newsfeed">
-                      {/* <ProfileNewsFeed />
                       <ProfileNewsFeed />
                       <ProfileNewsFeed />
                       <ProfileNewsFeed />
                       <ProfileNewsFeed /> */}
-                    </div>
-                    <div className="Profile__Box__Main__SideInformation">
-                      <ProfileQAStatus />
-                      <ProfileQAStatus />
-                    </div>
-                  </div>
-                  
-                </>
-              )}
+                </div>
+              </div>
             </>
           )}
-        </div>
-      // </div>
+        </>
+      )}
+    </div>
+    // </div>
   );
 };
 
