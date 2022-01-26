@@ -1,6 +1,7 @@
 import React, { FC } from "react";
 import { Avatar } from "@mui/material";
 import { Link, useHistory } from "react-router-dom";
+import { FaSearch } from "react-icons/fa";
 
 // const SideBar: FC = () => {
 //   const history=useHistory()

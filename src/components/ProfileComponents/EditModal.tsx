@@ -82,6 +82,7 @@ const ModalOverlay: React.FC<ClickProp> = ({ onClick }) => {
           className="editModal__Form__Control"
         >
           <div className="editModal__Form__Control__Div__Name">
+            {/* {JSON.stringify(profile_data)} */}
             <div className="editModal__Form__Control__Div__Name__First">
               <label
                 htmlFor="firstname"

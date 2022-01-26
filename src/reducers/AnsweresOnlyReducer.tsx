@@ -15,6 +15,8 @@ export interface answerInterface {
   user_id: string;
   username: string;
   image: string;
+  total_downvotes: string
+  total_upvotes: string
 }
 
 export interface answersInterface {

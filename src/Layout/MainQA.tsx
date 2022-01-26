@@ -12,7 +12,6 @@ import { UserInfoInterface } from "../reducers/LoginReducer";
 import { questionFeedListInterface } from "../reducers/QuestionFeedReducers";
 import { answersInterface } from "../reducers/AnsweresOnlyReducer";
 import { MainQuestionAnswerInterface } from "../reducers/MainQuestionAnswerReducer";
-import MainQASkeletion from "../components/mainQAComponent/MainQASkeletion";
 import AnswerComponent from "../components/AnswerComponent/AnswerComponent";
 // const MainQAAnswer=lazy(()=>import("../components/mainQAComponent/MainQAAnswer"))
 
