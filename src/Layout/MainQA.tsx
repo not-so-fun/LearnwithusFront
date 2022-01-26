@@ -54,28 +54,19 @@ const MainQA: FC<RouteComponentProps<any>> = ({ match }) => {
   return (
     // <div className="">
     <div className="MainQA">
-      <div className="MainQA__Heading">
-        Main Question Answer
-        
-      </div>
-      <div className="MainQA__Questions">
-
-      </div>
-        <MainQAQuestion question={question} />
+      <div className="MainQA__Heading">Main Question Answer</div>
+      <div className="MainQA__Questions"></div>
+      <MainQAQuestion question={question} />
       <div className="MainQA__Types">
-        <MainQAAnswerTypes />
-        </div>
-
+        <MainQAAnswerTypes question_id={match.params.id} />
+      </div>
 
       <div className="MainQA__Answers">
         {answers && answers.map((ans) => <MainQAAnswers ans={ans} />)}
-       
-      
-        
       </div>
       <div className="MainQA__AnswerInput">
-        <AnswerComponent question_id={match.params.id} /></div>
-    
+        <AnswerComponent question_id={match.params.id} />
+      </div>
     </div>
   );
 };

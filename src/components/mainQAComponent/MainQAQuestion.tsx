@@ -207,11 +207,11 @@ const MainQAQuestion: FC<MainQAQuestionInterface> = ({ question }) => {
                       </p>
                     </div>
                   </div>
-                  <div className="QuestionFeed__Box__Main__AboutQuestion__QuestionStatistics__Right">
+                  {/* <div className="QuestionFeed__Box__Main__AboutQuestion__QuestionStatistics__Right">
                     <button className="QuestionFeed__Box__Main__AboutQuestion__QuestionStatistics__Right__Button">
                       Answer
                     </button>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>

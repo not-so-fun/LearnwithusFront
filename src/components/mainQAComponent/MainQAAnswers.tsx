@@ -34,21 +34,24 @@ export interface MainRepliesInterface {
 
 const MainQAAnswers: FC<MainQAAnswerInterface> = ({ ans }) => {
   const [upvote, setUpvote] = useState<boolean | null>(null);
+
   const [lastState, setLastState] = useState<lastStateInterface>({
     upvote: null,
   });
-  const [totalUpvotes, setTotalUpvote] = useState<number>(
-    parseInt(ans.total_upvotes) - parseInt(ans.total_downvotes)
-  );
+  const [totalUpvotes, setTotalUpvote] = useState<number>(0);
   const [showReplies, setShowReplies] = useState<boolean>(false);
+
   const [reply, showReply] = useState<boolean>(false);
   const [replies, setReplies] = useState<MainRepliesInterface[]>([]);
   const { token } = useTokenAndId();
   const [replyText, setReplyText] = useState<string>("");
+  
 
   useEffect(() => {
     setUpvote(ans?.upvote!);
-    setLastState({ upvote: ans?.upvote! });
+    setTotalUpvote(parseInt(ans.total_upvotes) - parseInt(ans.total_downvotes));
+    // setLastState({ upvote: ans?.upvote! });
+    setShowReplies(false)
   }, [ans]);
 
   //UPVOTE_POST
@@ -85,50 +88,42 @@ const MainQAAnswers: FC<MainQAAnswerInterface> = ({ ans }) => {
         },
       })
       .then((response) => {
-        console.log(response.data);
+        // console.log(response.data);
         setReplies(response.data);
         setShowReplies(true);
+
       })
       .catch((error) => {
         console.log(error);
       });
   };
-   //POST_REPLY
+  //POST_REPLY
 
-   const replyAnswer =() =>{
-
-// image: "https://scontent.fktm9-2.fna.fbcdn.net/v/t1.6435-9/78926899_2502210946768426_4018728429884014592_n.jpg?_nc_cat=106&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=xNzi4-KOtrwAX8lkamW&_nc_ht=scontent.fktm9-2.fna&oh=00_AT9A3oot9d6QznkN745yoLDEqBtnh6xhfFArkFQ0nr5o6w&oe=620AD7F4"
-// reply: "FUck off man"
-// reply_id: "1b3f4947-b422-4dc0-98ea-0f1e6a1dbaaa"
-// total_downvotes: "0"
-// total_upvotes: "0"
-// upvote: null
-// user_id: "9f6c187e-78fd-4048-87b3-c8b74b18e1aa"
-// username: "hero_aayo_hero"
-     if(replyText !==""){
-    axios
-    .post('/replies', {
-        reply:replyText,
-        answer_id: ans?.answer_id,
-      },
-      {
-      headers: {
-        "x-auth-token": token,
-      }
-    }, 
-    )
-    .then((response) => {
-      console.log(response.data);
-      // setReplies({...replies,response.data});
-      setReplies(replies => [...replies, response.data]);
-    })
-    .catch((error) => {
-      console.log(error);
-    });
-  }
-     
-   }
-   
+  const replyAnswer = () => {
+    if (replyText !== "") {
+      axios
+        .post(
+          "/replies",
+          {
+            reply: replyText,
+            answer_id: ans?.answer_id,
+          },
+          {
+            headers: {
+              "x-auth-token": token,
+            },
+          }
+        )
+        .then((response) => {
+          console.log(response.data);
+          // setReplies({...replies,response.data});
+          setReplies((replies) => [...replies, response.data]);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
+  };
 
   const handleChangeUpvoteUp:
     | React.MouseEventHandler<SVGSVGElement>
@@ -290,9 +285,12 @@ const MainQAAnswers: FC<MainQAAnswerInterface> = ({ ans }) => {
                 <textarea
                   className="MainQA__ShowReply__Input"
                   placeholder="Reply to this question"
-                  onChange={(e)=>setReplyText(e.target.value)}
+                  onChange={(e) => setReplyText(e.target.value)}
                 ></textarea>
-                <button className="MainQA__ShowReply__Reply" onClick={replyAnswer}>
+                <button
+                  className="MainQA__ShowReply__Reply"
+                  onClick={replyAnswer}
+                >
                   <h3>Reply</h3>
                 </button>
               </div>
@@ -311,6 +309,7 @@ const MainQAAnswers: FC<MainQAAnswerInterface> = ({ ans }) => {
                   ))}
               </div>
             )}
+
           </div>
         </div>
       </div>
