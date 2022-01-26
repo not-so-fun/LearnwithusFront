@@ -37,7 +37,6 @@ const rootReducer = combineReducers({
   edit_wishes:WishesEditReducer,
   edit_expertises:ExpertisesEditReducer,
   updateUserInfo:UpdateProfileReducer
-
 });
 
 const store = createStore(
