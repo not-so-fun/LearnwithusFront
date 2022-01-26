@@ -16,11 +16,7 @@ export const ExpertiseAction = (token: string) => (dispatch: any) => {
       },
     })
     .then((response) => {
-<<<<<<< HEAD
       // console.log(response.data);
-=======
-      console.log(response.data);
->>>>>>> 2e1b2dc (added reducers for expertise add and remove)
       dispatch({type:EXPERTISE_SUCCESS,expertises:response.data})
     })
     .catch((error) => {

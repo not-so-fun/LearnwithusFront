@@ -31,11 +31,7 @@ export const ExpertisesEditAction =
         }
       )
       .then((response) => {
-<<<<<<< HEAD
         // console.log(response.data);
-=======
-        console.log(response.data);
->>>>>>> 2e1b2dc (added reducers for expertise add and remove)
         dispatch({ type: EXPERTISE_EDIT_SUCCESS });
         onClick();
       })
