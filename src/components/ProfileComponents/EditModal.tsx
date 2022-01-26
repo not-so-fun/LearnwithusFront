@@ -95,15 +95,8 @@ const ModalOverlay: React.FC<ClickProp> = ({ onClick }) => {
                 onChange={(e) => handleUpdateProfileData(e)}
                 name="first_name"
                 className="editModal__Form__Control__Input"
-<<<<<<< HEAD
-<<<<<<< HEAD
                 required
-=======
                 placeholder="First Name"
->>>>>>> sujan
-=======
-                placeholder="First Name"
->>>>>>> sujan
               />
             </div>
             <div className="editModal__Form__Control__Div__Name__Last">
@@ -119,16 +112,8 @@ const ModalOverlay: React.FC<ClickProp> = ({ onClick }) => {
                 onChange={(e) => handleUpdateProfileData(e)}
                 name="last_name"
                 className="editModal__Form__Control__Input"
-<<<<<<< HEAD
-<<<<<<< HEAD
                 required
-
-=======
                 placeholder="Last Name"
->>>>>>> sujan
-=======
-                placeholder="Last Name"
->>>>>>> sujan
               />
             </div>
           </div>
@@ -145,16 +130,8 @@ const ModalOverlay: React.FC<ClickProp> = ({ onClick }) => {
               onChange={(e) => handleUpdateProfileData(e)}
               name="username"
               className="editModal__Form__Control__Input"
-<<<<<<< HEAD
-<<<<<<< HEAD
               required
-
-=======
               placeholder="Username"
->>>>>>> sujan
-=======
-              placeholder="Username"
->>>>>>> sujan
             />
           </div>
 
