@@ -65,8 +65,9 @@ const ModalOverlay: React.FC<ClickProp> = ({ onClick }) => {
   };
 
   const handleUpdateProfile:
-  React.FormEventHandler<HTMLFormElement> | undefined = (e) => {
-    e.preventDefault()
+    | React.FormEventHandler<HTMLFormElement>
+    | undefined = (e) => {
+    e.preventDefault();
     dispatch(
       UpdateProfileAction(token, username, first_name, last_name, onClick)
     );
@@ -76,7 +77,10 @@ const ModalOverlay: React.FC<ClickProp> = ({ onClick }) => {
     <div className="editModal">
       <h1 className="editModal__Header">Edit Your Profile</h1>
       <div className="editModal__Form">
-        <form onSubmit={handleUpdateProfile} className="editModal__Form__Control">
+        <form
+          onSubmit={handleUpdateProfile}
+          className="editModal__Form__Control"
+        >
           <div className="editModal__Form__Control__Div__Name">
             <div className="editModal__Form__Control__Div__Name__First">
               <label
@@ -92,7 +96,11 @@ const ModalOverlay: React.FC<ClickProp> = ({ onClick }) => {
                 name="first_name"
                 className="editModal__Form__Control__Input"
 <<<<<<< HEAD
+<<<<<<< HEAD
                 required
+=======
+                placeholder="First Name"
+>>>>>>> sujan
 =======
                 placeholder="First Name"
 >>>>>>> sujan
@@ -112,8 +120,12 @@ const ModalOverlay: React.FC<ClickProp> = ({ onClick }) => {
                 name="last_name"
                 className="editModal__Form__Control__Input"
 <<<<<<< HEAD
+<<<<<<< HEAD
                 required
 
+=======
+                placeholder="Last Name"
+>>>>>>> sujan
 =======
                 placeholder="Last Name"
 >>>>>>> sujan
@@ -134,8 +146,12 @@ const ModalOverlay: React.FC<ClickProp> = ({ onClick }) => {
               name="username"
               className="editModal__Form__Control__Input"
 <<<<<<< HEAD
+<<<<<<< HEAD
               required
 
+=======
+              placeholder="Username"
+>>>>>>> sujan
 =======
               placeholder="Username"
 >>>>>>> sujan
@@ -155,10 +171,7 @@ const ModalOverlay: React.FC<ClickProp> = ({ onClick }) => {
                 <Progress size={15} />
               </button>
             ) : (
-              <button
-               
-                className="editModal__Form__Control__Button__Edit"
-              >
+              <button className="editModal__Form__Control__Button__Edit">
                 Edit
               </button>
             )}

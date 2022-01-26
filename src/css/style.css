@@ -262,9 +262,9 @@ body {
 
 .AskQuestionForm {
   background: #fff;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
   width: 100%;
   height: 100%;
+  border-radius: 6px;
 }
 .AskQuestionForm__Heading {
   height: auto;
@@ -453,7 +453,7 @@ body {
   color: #4b4b4b;
 }
 .AskQuestionForm__Body__Input {
-  height: 25rem;
+  height: 33rem;
   border-radius: 5px;
   overflow-y: scroll;
   padding: 1rem;
@@ -492,7 +492,7 @@ body {
 }
 
 .QuestionFeed {
-  width: 60%;
+  width: 100%;
   min-width: 30rem;
   height: auto;
   border-bottom: 2px solid #c4c4c4;
@@ -551,13 +551,15 @@ body {
 }
 .QuestionFeed__Box__Top__AboutQuestion__Top__QuestionData__Title {
   color: #057777;
+  text-align: left;
 }
 .QuestionFeed__Box__Top__AboutQuestion__Title {
   color: #000;
   font-size: 1.5rem;
+  text-align: left;
 }
 .QuestionFeed__Box__Main {
-  margin-top: 2rem;
+  margin-top: 1rem;
   height: auto;
   display: flex;
   align-items: flex-start;
@@ -1353,10 +1355,12 @@ body {
   font-weight: 600;
   color: #fff;
   background-color: #057777;
-  width: 100%;
   display: flex;
   height: 6.5rem;
   justify-content: flex-end;
+  position: fixed;
+  z-index: 100;
+  width: 100%;
 }
 .Navbar__Links {
   margin-right: 10px;
@@ -1382,6 +1386,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+  z-index: 100;
 }
 .Navbar__Links__Content__Box:before {
   content: "";
@@ -1407,7 +1412,7 @@ body {
 }
 .Navbar__Links__Content__Box__Content:hover {
   cursor: pointer;
-  box-shadow: inset 0 0 25px 25px rgba(0, 0, 0, 0.25);
+  box-shadow: inset 0 0 100px 100px rgba(227, 227, 227, 0.5);
   transform: scale(1.08);
 }
 .Navbar__Links__Content__Box__Content__ProfilePhoto {
@@ -1484,7 +1489,6 @@ body {
   flex: 0.3;
   height: 98vh;
   width: 33rem;
-  position: fixed;
   top: 0;
   left: 0;
   margin: 1rem 0;
@@ -1566,7 +1570,6 @@ body {
 .HomePage__Right__MainBody__Notification {
   flex: 0 0 32rem;
   padding: 0 1rem;
-  background: #fff;
 }
 .HomePage__Right__MainBody__Notification__Box {
   background-color: #fff;
@@ -1784,6 +1787,7 @@ body {
   margin-top: 1rem;
   padding: 0.8rem;
   margin-bottom: 1rem;
+  background-color: #e6e6e6;
 }
 .HomePage__Right__MainBody__Notification__Below__Links {
   background-color: #057777;
@@ -1796,6 +1800,10 @@ body {
   height: 4rem;
   cursor: pointer;
   text-decoration: none;
+  transition: all 0.3s ease;
+}
+.HomePage__Right__MainBody__Notification__Below__Links:hover {
+  box-shadow: inset 0 0 50px 50px #0c6363;
 }
 .HomePage__Right__MainBody__Notification__Below button:last-child {
   cursor: pointer;
@@ -1808,6 +1816,10 @@ body {
   height: 4rem;
   margin-top: 1rem;
   border-radius: 4px;
+  transition: all 0.3s ease;
+}
+.HomePage__Right__MainBody__Notification__Below button:last-child:hover {
+  box-shadow: inset 0 0 50px 50px lightgray;
 }
 
 .AskQuestion {
@@ -2326,4 +2338,83 @@ body {
 }
 .Answered__Newsfeed {
   overflow-y: scroll;
+}
+
+.App__Top {
+  height: 100%;
+}
+.App__Top__Bar {
+  height: 100%;
+}
+
+.App__Bottom {
+  margin-top: 6.5rem;
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  width: 100%;
+}
+.App__Bottom__Left {
+  flex: 0.2;
+  position: fixed;
+  width: 20%;
+  height: 100%;
+}
+.App__Bottom__Left__SideBar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+.App__Bottom__Left__SideBar__Header {
+  display: flex;
+  flex-direction: row;
+  color: black;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 1rem;
+  width: 95%;
+  padding: 1rem 0;
+}
+.App__Bottom__Left__SideBar__Header:hover {
+  cursor: pointer;
+  box-shadow: inset 0 0 100px 100px rgba(118, 118, 118, 0.1);
+  border-radius: 4px;
+  padding: 1rem 0;
+}
+.App__Bottom__Left__SideBar__Header p {
+  margin-left: 1rem;
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 0.01rem;
+}
+.App__Bottom__Left__SideBar__Links {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.App__Bottom__Left__SideBar__Links__Link {
+  font-size: 18px;
+  width: 95%;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  text-decoration: none;
+  color: black;
+  transition: all 0.3s ease;
+}
+.App__Bottom__Left__SideBar__Links__Link:hover {
+  cursor: pointer;
+  box-shadow: inset 0 0 100px 100px rgba(118, 118, 118, 0.1);
+  border-radius: 4px;
+}
+.App__Bottom__MainBody {
+  flex: 0.8;
+  position: relative;
+  left: 20%;
+  height: calc(100vh - 6.5rem);
 }
