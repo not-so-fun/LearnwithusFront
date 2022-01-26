@@ -45,7 +45,6 @@ const ModalOverlay: React.FC<ClickProp> = ({ onClick }) => {
     (state) => state.profile_info_data
   ) as profileDataInterface;
 
-
   useEffect(() => {
     setUserData({
       ...userData,
@@ -98,6 +97,7 @@ const ModalOverlay: React.FC<ClickProp> = ({ onClick }) => {
                 name="first_name"
                 className="editModal__Form__Control__Input"
                 required
+                placeholder="First Name"
               />
             </div>
             <div className="editModal__Form__Control__Div__Name__Last">
@@ -114,6 +114,7 @@ const ModalOverlay: React.FC<ClickProp> = ({ onClick }) => {
                 name="last_name"
                 className="editModal__Form__Control__Input"
                 required
+                placeholder="Last Name"
               />
             </div>
           </div>
@@ -131,6 +132,7 @@ const ModalOverlay: React.FC<ClickProp> = ({ onClick }) => {
               name="username"
               className="editModal__Form__Control__Input"
               required
+              placeholder="Username"
             />
           </div>
 

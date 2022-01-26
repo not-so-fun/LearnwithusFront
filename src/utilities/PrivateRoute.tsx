@@ -13,17 +13,21 @@ const PrivateRoute: React.FC<PrivateRouteProps> = ({
   ...rest
 }) => {
   return (
-    <>
-  
-      <div className="HomePage__Left">
-        <SideBar />
+    <div className="App">
+      {/* <div className="HomePage__Right__TopBar"> */}
+      <div className="App__Top__Bar">
+        <Navbar />
       </div>
 
-      <div className="HomePage__Right">
-        <div className="HomePage__Right__TopBar">
-          <Navbar />
+      {/* <div className="HomePage__Right"> */}
+      <div className="App__Bottom">
+        {/* <div className="HomePage__Left"> */}
+        <div className="App__Bottom__Left">
+          <SideBar />
         </div>
-        <div className="HomePage__Right__MainBody">
+
+        {/* <div className="HomePage__Right__MainBody"> */}
+        <div className="App__Bottom__MainBody">
           <Route
             {...rest}
             render={(props) =>
@@ -37,10 +41,8 @@ const PrivateRoute: React.FC<PrivateRouteProps> = ({
             }
           />
         </div>
-        </div>
-        
-       
-      </>
+      </div>
+    </div>
   );
 };
 

@@ -4,6 +4,7 @@
   display: flex;
   background: #eeeeee;
   overflow-y: scroll;
+  // border: 2px solid red;
 
   &__Left {
     background-color: $color-primary;
@@ -11,7 +12,7 @@
     flex: 0.3;
     height: 98vh;
     width: 33rem;
-    position: fixed;
+    // position: fixed;
     top: 0;
     left: 0;
     margin: 1rem 0;
@@ -30,6 +31,7 @@
         align-items: center;
         margin-top: 1rem;
         width: 95%;
+
         &:hover {
           cursor: pointer;
           box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.1);
@@ -70,8 +72,8 @@
     }
   }
   &__Right {
-    width: calc(100vw - 37rem);
-    margin: 1rem;
+    width: calc(100vw - 36rem);
+    margin: 1rem 0rem;
     position: absolute;
     height: 98vh;
     top: 0;
@@ -107,7 +109,7 @@
       &__Notification {
         flex: 0 0 32rem;
         padding: 0 1rem;
-        background: $color-white;
+        // background: $color-white;
         &__Box {
           background-color: $color-white;
           cursor: default;
@@ -293,6 +295,48 @@
             }
           }
         }
+        &__Active {
+          margin-top: 2rem;
+          border-top: 2px solid lightgrey;
+          padding-top: 2rem;
+          &__Person {
+            // border: 2px solid red;
+            display: flex;
+            align-items: center;
+            margin-bottom: 2rem;
+
+            &__Avatar {
+              position: relative;
+              &__Icon {
+                position: absolute;
+                top: 23px;
+                right: -2px;
+                color: #31a24c;
+              }
+            }
+
+            &__Name {
+              font-size: 16px;
+              margin-left: 1rem;
+              color: black;
+            }
+            &__Approach {
+              font-size: 14px;
+              margin-left: 4rem;
+              color: rgb(81, 81, 81);
+              padding: 4px 7px;
+              font-weight: 500;
+              transition: all 0.4s ease;
+              &:hover {
+                color: red;
+                cursor: pointer;
+                background-color: #008000;
+                color: white;
+                border-radius: 4px;
+              }
+            }
+          }
+        }
 
         &__Below {
           display: flex;
@@ -300,6 +344,8 @@
           border: 2px solid lightgrey;
           margin-top: 1rem;
           padding: 0.8rem;
+          margin-bottom: 1rem;
+          background-color: #e6e6e6;
           &__Links {
             background-color: $color-primary;
             color: $color-white;
@@ -311,6 +357,11 @@
             height: 4rem;
             cursor: pointer;
             text-decoration: none;
+            transition: all 0.3s ease;
+
+            &:hover {
+              box-shadow: inset 0 0 50px 50px rgb(12, 99, 99);
+            }
           }
           & button:last-child {
             cursor: pointer;
@@ -323,6 +374,10 @@
             height: 4rem;
             margin-top: 1rem;
             border-radius: 4px;
+            transition: all 0.3s ease;
+            &:hover {
+              box-shadow: inset 0 0 50px 50px rgb(211, 211, 211);
+            }
           }
         }
       }
