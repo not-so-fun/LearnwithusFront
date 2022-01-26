@@ -383,9 +383,12 @@
                     // background:orange;
                     display:flex;
                     align-items: center;
-                    justify-content: flex-start;
+                    justify-content: space-between;
                     height:7rem;
                     width:100%;
+                    &__Aligning{
+                        display: flex;
+                    }
                     &__Function{
                         width:auto;
                         height:3rem;
@@ -396,6 +399,14 @@
                         padding:0 1rem;
                         &:not(:last-child){
                             border-right: 1px solid $color-grey-light-2;
+                        }
+                        &__Text{
+                            &__RepliesIcons{
+                                display: flex;
+                                align-items: center;
+                                font-size: 15px;
+                                cursor: pointer;
+                            }
                         }
                         &__Logo{
                             height:3rem;
