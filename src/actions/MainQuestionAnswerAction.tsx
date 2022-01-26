@@ -25,7 +25,7 @@ import {
           }
         )
         .then((response) => {
-          // console.log(response.data)
+          console.log(response.data)
           dispatch({ type: MAIN_QUESTION_ANSWER_SUCCESS, question: response.data});
         })
         .catch((error) => {

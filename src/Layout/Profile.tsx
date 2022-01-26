@@ -99,11 +99,13 @@ const Profile: FC<RouteComponentProps<any>> = ({ match }) => {
                 <h1 style={{ color: "black" }}>{error}</h1>
               ) : (
                 <>
+                
                   <div className="Profile__Box__Top">
                     <ProfileImageAndData profile_data={profile_data} />
                     <ProfileForm profile_data={profile_data} />
                     <ProfileStats page_user_id={match.params.id} />
                   </div>
+
                   <div className="Profile__Box__Main">
                     <div className="Profile__Box__Main__Newsfeed">
                       {/* <ProfileNewsFeed />
@@ -117,6 +119,7 @@ const Profile: FC<RouteComponentProps<any>> = ({ match }) => {
                       <ProfileQAStatus />
                     </div>
                   </div>
+                  
                 </>
               )}
             </>

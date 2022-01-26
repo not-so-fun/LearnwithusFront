@@ -9,7 +9,7 @@ import { RootDispatchType } from "../stores";
 import axios from "../axios";
 
 export const UpdateProfileAction =
-  (token: string, first_name: string, last_name: string, username: string,onClick: () => void) =>
+  (token: string,username:string, first_name: string, last_name: string,onClick: () => void) =>
   (dispatch: Dispatch<RootDispatchType>) => {
     dispatch({ type: UPDATE_PROFILE_LOAD });
 
@@ -24,7 +24,7 @@ export const UpdateProfileAction =
         },
       })
       .then((response) => {
-        console.log(response.data);
+        // console.log(response.data);
         dispatch({type:UPDATE_PROFILE_SUCCESS})
         dispatch({type:PROFILE_DATA_SUCCESS,profile_data:response.data})
         onClick()
