@@ -14,6 +14,7 @@ const PrivateRoute: React.FC<PrivateRouteProps> = ({
 }) => {
   return (
     <>
+  
       <div className="HomePage__Left">
         <SideBar />
       </div>
@@ -37,6 +38,8 @@ const PrivateRoute: React.FC<PrivateRouteProps> = ({
           />
         </div>
         </div>
+        
+       
       </>
   );
 };

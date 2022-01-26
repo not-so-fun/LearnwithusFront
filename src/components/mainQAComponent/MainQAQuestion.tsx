@@ -21,8 +21,11 @@ interface lastStateInterface {
 }
 
 const MainQAQuestion: FC<MainQAQuestionInterface> = ({ question }) => {
-  console.log(question);
+  
   const [upvote, setUpvote] = useState<boolean | null>(null);
+  const [totalUpvotes, setTotalUpvote] = useState<number>(0);
+
+ 
   const [lastState, setLastState] = useState<lastStateInterface>({
     upvote: null,
   });
@@ -35,6 +38,10 @@ const MainQAQuestion: FC<MainQAQuestionInterface> = ({ question }) => {
   useEffect(() => {
     setUpvote(question?.upvote!);
     setLastState({ upvote: question?.upvote! });
+    if(question!==null){
+      setTotalUpvote(parseInt(question?.total_upvotes) - parseInt(question?.total_downvotes));
+      }
+      
   }, [question]);
 
   const upVote = (upvote: boolean) => {
@@ -63,44 +70,54 @@ const MainQAQuestion: FC<MainQAQuestionInterface> = ({ question }) => {
   const handleChangeUpvoteUp:
     | React.MouseEventHandler<SVGSVGElement>
     | undefined = () => {
-    if (upvote === null) {
-      setLastState({ ...lastState, upvote: upvote });
-      setUpvote(true);
-    } else {
-      if (upvote === true) {
-        setLastState({ ...lastState, upvote: upvote });
-        setUpvote(null);
-      } else {
+      if (upvote === null || upvote === false) {
+        console.log(typeof(totalUpvotes));
         setLastState({ ...lastState, upvote: upvote });
         setUpvote(true);
+        if (upvote !== null) {
+          console.log(typeof(totalUpvotes));
+          setTotalUpvote(totalUpvotes + 2);
+        }else{
+          console.log(typeof(totalUpvotes));
+
+          setTotalUpvote(totalUpvotes + 1);
+        }
+      } else {
+        console.log(typeof(totalUpvotes));
+        setLastState({ ...lastState, upvote: upvote });
+        setUpvote(null);
+        setTotalUpvote(totalUpvotes - 1);
       }
-    }
-    upVote(true);
+      upVote(true);
   };
 
   const handleChangeUpvoteDown:
     | React.MouseEventHandler<SVGSVGElement>
     | undefined = () => {
-    if (upvote === null) {
-      setLastState({ ...lastState, upvote: upvote });
-      setUpvote(false);
-    } else {
-      if (upvote === false) {
-        setLastState({ ...lastState, upvote: upvote });
-
-        setUpvote(null);
-      } else {
+      if (upvote === null || upvote === true) {
+        console.log(typeof(totalUpvotes));
         setLastState({ ...lastState, upvote: upvote });
         setUpvote(false);
+        if (upvote !== null){ 
+          console.log(typeof(totalUpvotes));
+          setTotalUpvote(totalUpvotes - 2);
+        }else{
+          console.log(typeof(totalUpvotes));
+          setTotalUpvote(totalUpvotes - 1);
+        }
+      } else {
+        console.log(typeof(totalUpvotes));
+        setLastState({ ...lastState, upvote: upvote });
+        setUpvote(null);
+        if (totalUpvotes !== null) setTotalUpvote(totalUpvotes + 1);
       }
-    }
-    upVote(false);
+      upVote(false);
   };
 
   return (
     <>
       {question && (
-        <div className="QuestionFeed">
+        <div className="QuestionFeed" key={question.question_id}>
         <div className="QuestionFeed__Box">
               <div className="QuestionFeed__Box__Top">
                   <Link to={`/profile/${question.user_id}`}className="QuestionFeed__Box__Top__ProfileImage">
@@ -127,26 +144,28 @@ const MainQAQuestion: FC<MainQAQuestionInterface> = ({ question }) => {
               </div>
               <div className="QuestionFeed__Box__Main">
                   <div className="QuestionFeed__Box__Main__Upvotes">
-                      {upvote == null ? (
-                          <>
+                      {/* {upvote == null ? (
+                          <> */}
                       <div className="QuestionFeed__Box__Main__Upvotes__Likes">
                           <AiFillCaretUp 
                           onClick={handleChangeUpvoteUp}
-                          
+                          style={(upvote===true)?{color:"blue"}:{}}
                           className="QuestionFeed__Box__Main__Upvotes__Likes__Logo"/>
   
                       </div>
                       <div className="QuestionFeed__Box__Main__Upvotes__Box">
-                      <h1>22</h1>
+                      <h1>{totalUpvotes}</h1>
+                      
   
                       </div>
                       <div className="QuestionFeed__Box__Main__Upvotes__Dislikes">
                       
                       <AiFillCaretDown
                       onClick={handleChangeUpvoteDown}
+                      style={(upvote===false)?{color:"red"}:{}}
                        className="QuestionFeed__Box__Main__Upvotes__Dislikes__Logo"/>
                       </div>
-                      </>
+                      {/* </>
                       ) :(<>
                       {upvote === true ? (
                       <>
@@ -176,7 +195,7 @@ const MainQAQuestion: FC<MainQAQuestionInterface> = ({ question }) => {
   
                       </div>
                       <div className="QuestionFeed__Box__Main__Upvotes__Box">
-                      <h1>22</h1>
+                      <h1></h1>
   
                       </div>
                       <div className="QuestionFeed__Box__Main__Upvotes__Dislikes">
@@ -187,7 +206,7 @@ const MainQAQuestion: FC<MainQAQuestionInterface> = ({ question }) => {
                        className="QuestionFeed__Box__Main__Upvotes__Dislikes__Logo"/>
                       </div>
   
-                      </>)}</>)}
+                      </>)}</>)} */}
                       
   
                   </div>

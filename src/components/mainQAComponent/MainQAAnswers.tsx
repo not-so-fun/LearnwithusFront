@@ -19,11 +19,13 @@ interface MainQAAnswerInterface {
 
 const MainQAAnswers: FC<MainQAAnswerInterface> = ({ans}) => {
 
-    const [upvote, setUpvote] = useState<boolean | null>(null);
+  const [upvote, setUpvote] = useState<boolean | null>(null);
   const [lastState, setLastState] = useState<lastStateInterface>({
     upvote: null,
   });
   const [totalUpvotes, setTotalUpvote] = useState<number>(parseInt(ans.total_upvotes)-parseInt(ans.total_downvotes));
+  const [showReplies, setShowReplies] = useState<boolean>(false);
+  const [reply, showReply] = useState<boolean>(false);
   const { token } = useTokenAndId();
 
   useEffect(() => {
@@ -153,7 +155,8 @@ const MainQAAnswers: FC<MainQAAnswerInterface> = ({ans}) => {
                
                 <div className="MainQA__Answer__Box__Main__Bottom__Function__Logo">
                 < BsFillReplyAllFill
-                className="MainQA__Answer__Box__Main__Bottom__Function__Logo__Logo"/>
+                className="MainQA__Answer__Box__Main__Bottom__Function__Logo__Logo"
+                onClick={()=>{showReply(!reply)}}/>
                 </div>
                <p className="MainQA__Answer__Box__Main__Bottom__Function__Text">Reply</p>
                    
@@ -171,11 +174,29 @@ const MainQAAnswers: FC<MainQAAnswerInterface> = ({ans}) => {
                <p className="MainQA__Answer__Box__Main__Bottom__Function__Text">Report</p>
                 </div> 
               </div>
+              {reply &&
+              <div className="MainQA__ShowReply">
+                <textarea className="MainQA__ShowReply__Input"
+                placeholder='Reply to this question'></textarea>
+                <button className="MainQA__ShowReply__Reply">
+                  <h3>Reply</h3></button>
+                  <button className="MainQA__ShowReply__ReplyButton" 
+                onClick={()=>{setShowReplies(!showReplies)}}
+                >
+                  <h3>View Replies</h3>
+                </button>
+                
+
+
+              </div>
+            } 
+           
+              {showReplies && 
               <div className="MainQA__Replies">
-              <div className="MainQA__Replies__Replys">
+                <div className="MainQA__Replies__Replys">
                 <MainQAReplies/>
                 </div>
-                <div className="MainQA__Replies__Replays">
+                <div className="MainQA__Replies__Replys">
                 <MainQAReplies/>
                 </div>
                 <div className="MainQA__Replies__Replys">
@@ -187,6 +208,7 @@ const MainQAAnswers: FC<MainQAAnswerInterface> = ({ans}) => {
                 
                 
               </div>
+              }
           </div>
         </div>
               
