@@ -4,27 +4,18 @@
 }
 
 .Profile {
+  
   &__Box {
+    background:$color-white;
     width: 100%;
-    height: 125rem;
+    height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
 
-    &__Navbar {
-      height: 10rem;
-      width: 100%;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      // border: 2px solid red;
-      position: relative;
-      left: 170px;
-    }
     &__Top {
-      background: $color-primary;
+      background: $color-white;
       width: 100%;
       height: 50rem;
       margin-bottom: 2rem;
@@ -97,7 +88,7 @@
           display: flex;
           align-items: center;
           justify-content: center;
-          color: $color-white;
+          color: $color-black;
         }
         &__Rating {
           height: 5rem;
@@ -118,17 +109,21 @@
         height: 100%;
         text-align: left;
         padding: 2rem;
-        color: $color-white;
+        color: $color-black;
+        
 
         &__Name {
           display: flex;
           justify-content: space-between;
           margin: 2rem 0;
-
           &__firstName {
             display: inline-block;
-
-            width: 150px;
+            width: 49%;
+            &__Box{
+              height:auto;
+              padding:.3rem;
+              width:100%;
+            }
           }
           &__firstName p {
             font-size: 14px;
@@ -139,14 +134,19 @@
             font-size: 18px;
             font-weight: 500;
             letter-spacing: 0.03rem;
-            background-color: $color-white;
+            background-color: $color-grey-light-2;
             padding: 0 0.5rem;
             color: $color-black;
           }
 
           &__lastName {
-            width: 150px;
+            width:49%;
             display: inline-block;
+            &__Box{
+              height:auto;
+              padding:.3rem;
+              width:100%;
+            }
           }
           &__lastName p {
             font-size: 14px;
@@ -158,10 +158,11 @@
             font-size: 18px;
             font-weight: 500;
             letter-spacing: 0.03rem;
-            background-color: $color-white;
+            background-color: $color-grey-light-2;
             padding: 0 0.5rem;
             color: $color-black;
           }
+
         }
 
         &__BasicInfo {

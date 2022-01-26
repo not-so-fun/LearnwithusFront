@@ -711,22 +711,15 @@ body {
   position: relative; }
 
 .Profile__Box {
+  background: #fff;
   width: 100%;
-  height: 125rem;
+  height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between; }
-  .Profile__Box__Navbar {
-    height: 10rem;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    left: 170px; }
   .Profile__Box__Top {
-    background: #057777;
+    background: #fff;
     width: 100%;
     height: 50rem;
     margin-bottom: 2rem;
@@ -783,7 +776,7 @@ body {
         display: flex;
         align-items: center;
         justify-content: center;
-        color: #fff; }
+        color: #000; }
       .Profile__Box__Top__ImagesAndDatas__Rating {
         height: 5rem;
         display: flex;
@@ -799,14 +792,18 @@ body {
       height: 100%;
       text-align: left;
       padding: 2rem;
-      color: #fff; }
+      color: #000; }
       .Profile__Box__Top__Information__Name {
         display: flex;
         justify-content: space-between;
         margin: 2rem 0; }
         .Profile__Box__Top__Information__Name__firstName {
           display: inline-block;
-          width: 150px; }
+          width: 49%; }
+          .Profile__Box__Top__Information__Name__firstName__Box {
+            height: auto;
+            padding: .3rem;
+            width: 100%; }
         .Profile__Box__Top__Information__Name__firstName p {
           font-size: 14px;
           letter-spacing: 0.08rem;
@@ -815,12 +812,16 @@ body {
           font-size: 18px;
           font-weight: 500;
           letter-spacing: 0.03rem;
-          background-color: #fff;
+          background-color: #c4c4c4;
           padding: 0 0.5rem;
           color: #000; }
         .Profile__Box__Top__Information__Name__lastName {
-          width: 150px;
+          width: 49%;
           display: inline-block; }
+          .Profile__Box__Top__Information__Name__lastName__Box {
+            height: auto;
+            padding: .3rem;
+            width: 100%; }
         .Profile__Box__Top__Information__Name__lastName p {
           font-size: 14px;
           letter-spacing: 0.08rem;
@@ -830,7 +831,7 @@ body {
           font-size: 18px;
           font-weight: 500;
           letter-spacing: 0.03rem;
-          background-color: #fff;
+          background-color: #c4c4c4;
           padding: 0 0.5rem;
           color: #000; }
       .Profile__Box__Top__Information__BasicInfo {
