@@ -195,7 +195,7 @@ const MainQAQuestion: FC<MainQAQuestionInterface> = ({ question }) => {
                         <MdMessage className="QuestionFeed__Box__Main__AboutQuestion__QuestionStatistics__Left__Answers__Logo__Logo" />
                       </div>
                       <p className="QuestionFeed__Box__Main__AboutQuestion__QuestionStatistics__Left__Answers__Text">
-                        14 Answers
+                        18 Answers
                       </p>
                     </div>
                     <div className="QuestionFeed__Box__Main__AboutQuestion__QuestionStatistics__Left__Views">

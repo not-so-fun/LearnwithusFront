@@ -1519,7 +1519,7 @@ body {
 
 .MainQA {
   height: 100%;
-  width: 90rem;
+  width: 70%;
   display: flex;
   flex-direction: column;
   align-items: center;

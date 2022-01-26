@@ -18,6 +18,7 @@ const MainQAReplies: FC<replyInterface> = ({ reply }) => {
   const [totalUpvotes, setTotalUpvote] = useState<number>(
     parseInt(reply.total_upvotes) - parseInt(reply.total_downvotes)
   );
+  console.log(reply);
 
   useEffect(() => {
     setUpvote(reply?.upvote!);
