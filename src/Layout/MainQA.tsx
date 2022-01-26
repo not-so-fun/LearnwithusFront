@@ -58,7 +58,7 @@ const MainQA: FC<RouteComponentProps<any>> = ({ match }) => {
       <div className="MainQA__Questions"></div>
       <MainQAQuestion question={question} />
       <div className="MainQA__Types">
-        <MainQAAnswerTypes />
+        <MainQAAnswerTypes question_id={match.params.id} />
       </div>
 
       <div className="MainQA__Answers">
