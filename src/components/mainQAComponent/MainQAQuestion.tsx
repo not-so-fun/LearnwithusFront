@@ -1,5 +1,6 @@
 import React, { FC, useEffect, useState } from "react";
 import { RouteComponentProps, Link } from "react-router-dom";
+import { Markup } from "interweave";
 
 import { questionFeedListInterface } from "../../reducers/QuestionFeedReducers";
 import useTokenAndId from "../ReusableLogicComponents/useTokenAndId";
@@ -16,6 +17,7 @@ import {
 import { MdMessage, MdReportProblem } from "react-icons/md";
 
 import { BsPencil, BsShare, BsFacebook, BsTwitter } from "react-icons/bs";
+import { Server } from "http";
 
 interface MainQAQuestionInterface {
   question: questionFeedListInterface | null;
@@ -32,10 +34,6 @@ const MainQAQuestion: FC<MainQAQuestionInterface> = ({ question }) => {
   const [lastState, setLastState] = useState<lastStateInterface>({
     upvote: null,
   });
-
-  // let data = parseInt(question.total_upvotes) - parseInt(question.total_downvotes);
-
-  // const [totalUpvotes, setTotalUpvote] = useState<number>(data);
   const { token } = useTokenAndId();
 
   useEffect(() => {
@@ -175,18 +173,10 @@ const MainQAQuestion: FC<MainQAQuestionInterface> = ({ question }) => {
 
               <div className="QuestionFeed__Box__Main__AboutQuestion">
                 <div className="QuestionFeed__Box__Main__AboutQuestion__Question">
-                  <p>
+                  <div>
                     {" "}
-                    {question.question}
-                    When you create a regular .NET 5 or 6 API project, you get
-                    some basic classes such as Program.cs and Startup.cs. I want
-                    to replicate that in a class project, because I want to be
-                    able to configure my services for dependency injection, but
-                    I don't want any controllers or HTTP in my project. As an
-                    example, let's assume I want to create a .NET 6 project
-                    using minimal API/hosting, and I want to check for file
-                    changes in a directory:
-                  </p>
+                    <Markup content={question.question} />
+                  </div>
                 </div>
                 <div className="QuestionFeed__Box__Main__AboutQuestion__QuestionStatistics">
                   <div className="QuestionFeed__Box__Main__AboutQuestion__QuestionStatistics__Left">

@@ -33,18 +33,18 @@ const MainQAAnswerTypes: FC<mainAnswerQATypest> = ({ question_id }) => {
     | React.ChangeEventHandler<HTMLSelectElement>
     | undefined = (e) => {
     axios
-    .get(`/answers/${e.target.value}/${question_id}`, {
-      headers: {
-        "x-auth-token": token,
-      },
-    })
-    .then((response) => {
-      // console.log(response.data);
-      dispatch({ type: ANSWERS_LOAD_SUCCESS, answers: response.data });
-    })
-    .catch((error) => {
-      console.log(error);
-    });
+      .get(`/answers/${e.target.value}/${question_id}`, {
+        headers: {
+          "x-auth-token": token,
+        },
+      })
+      .then((response) => {
+        // console.log(response.data);
+        dispatch({ type: ANSWERS_LOAD_SUCCESS, answers: response.data });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   return (
@@ -61,10 +61,11 @@ const MainQAAnswerTypes: FC<mainAnswerQATypest> = ({ question_id }) => {
 
         <span className="MainQA__Types__Box__Custom_Dropdown">
           <select onChange={(e) => handleShowAnswersSort(e)}>
-            <option value="by_oldest">Oldest</option>
-            <option value="by_recent">Recent</option>
+            <option value="by_oldest"> Oldest</option>
+            <option value="by_recent"> Recent</option>
           </select>
         </span>
+        
       </div>
     </>
   );

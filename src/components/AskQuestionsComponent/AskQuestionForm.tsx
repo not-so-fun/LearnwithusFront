@@ -5,11 +5,9 @@ import useTokenAndId from "../ReusableLogicComponents/useTokenAndId";
 import { RootStateType } from "../../stores";
 import { askQuestionInterface } from "../../reducers/AskQuestionReducer";
 import Alert from "@mui/material/Alert";
-import AskQuestionFormTitle from "./AskQuestionFormTitle";
-import { AiOutlineCaretDown, AiOutlineCaretUp } from "react-icons/ai";
-import { CircularProgress } from "@mui/material";
 import AskQuestionSelect from "./AskQuestionSelect";
 import { Progress } from "../ReusableUIComponents/Spinner";
+import TextEditor from "./TextEditor";
 
 export interface formDataInterface {
   title: string;
@@ -40,12 +38,11 @@ const AskQuesForm: FC = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-
-
   const handleQuestionAsk:
-    | React.FormEventHandler<HTMLFormElement> | undefined
+    | React.FormEventHandler<HTMLFormElement>
+    | undefined
     | undefined = (e) => {
-      e.preventDefault()
+    e.preventDefault();
     dispatch(
       AskQuestionAction(
         token,
@@ -59,7 +56,7 @@ const AskQuesForm: FC = () => {
   };
 
   return (
-    <form onSubmit={e=>handleQuestionAsk(e)} className="AskQuestionForm">
+    <form onSubmit={(e) => handleQuestionAsk(e)} className="AskQuestionForm">
       <div className="AskQuestionForm__Heading">
         <div className="AskQuestionForm__Heading__Title">Ask a question</div>
 
@@ -97,14 +94,7 @@ const AskQuesForm: FC = () => {
 
       <div className="AskQuestionForm__Body">
         <div className="AskQuestionForm__Body__Heading">Body</div>
-        <textarea
-          className="AskQuestionForm__Body__Input"
-          placeholder="Body"
-          name="question"
-          value={question}
-          onChange={(e) => handleChange(e)}
-          required
-        ></textarea>
+        <TextEditor formData={formData} setFormData={setFormData} />
       </div>
 
       <div className="AskQuestionForm__Footer">

@@ -1,5 +1,5 @@
 import React, { FC, useState, useEffect } from "react";
-
+import ReplyTextEditor from "./ReplyTextEditor";
 import {
   AiOutlineCaretDown,
   AiOutlineCaretUp,
@@ -12,7 +12,7 @@ import { answerInterface } from "../../reducers/AnsweresOnlyReducer";
 import useTokenAndId from "../ReusableLogicComponents/useTokenAndId";
 import axios from "../../axios";
 import MainQAReplies from "./MainQAReplies";
-
+import { Markup } from "interweave";
 interface MainQAAnswerInterface {
   ans: answerInterface;
 }
@@ -45,13 +45,12 @@ const MainQAAnswers: FC<MainQAAnswerInterface> = ({ ans }) => {
   const [replies, setReplies] = useState<MainRepliesInterface[]>([]);
   const { token } = useTokenAndId();
   const [replyText, setReplyText] = useState<string>("");
-  
 
   useEffect(() => {
     setUpvote(ans?.upvote!);
     setTotalUpvote(parseInt(ans.total_upvotes) - parseInt(ans.total_downvotes));
     // setLastState({ upvote: ans?.upvote! });
-    setShowReplies(false)
+    setShowReplies(false);
   }, [ans]);
 
   //UPVOTE_POST
@@ -91,7 +90,6 @@ const MainQAAnswers: FC<MainQAAnswerInterface> = ({ ans }) => {
         // console.log(response.data);
         setReplies(response.data);
         setShowReplies(true);
-
       })
       .catch((error) => {
         console.log(error);
@@ -216,7 +214,7 @@ const MainQAAnswers: FC<MainQAAnswerInterface> = ({ ans }) => {
           <div className="MainQA__Answer__Box__Main__AnswerText">
             <div className="MainQA__Answer__Box__Main__AnswerText__Text">
               <p>
-                {ans.answer + "     "}
+                <Markup content={ans.answer} />
                 If it is difficult fo you to quit cold turkey then try adding 2
                 or 3 vegeterian or vegan meals per week to see how you feel. The
                 most important thing is to read, read, read anything you can
@@ -281,12 +279,12 @@ const MainQAAnswers: FC<MainQAAnswerInterface> = ({ ans }) => {
             </div>
 
             {reply && (
-              <div className="MainQA__ShowReply">
-                <textarea
-                  className="MainQA__ShowReply__Input"
-                  placeholder="Reply to this question"
-                  onChange={(e) => setReplyText(e.target.value)}
-                ></textarea>
+              <div>
+                <ReplyTextEditor
+                  replyText={replyText}
+                  setReplyText={setReplyText}
+                />
+
                 <button
                   className="MainQA__ShowReply__Reply"
                   onClick={replyAnswer}
@@ -309,7 +307,6 @@ const MainQAAnswers: FC<MainQAAnswerInterface> = ({ ans }) => {
                   ))}
               </div>
             )}
-
           </div>
         </div>
       </div>

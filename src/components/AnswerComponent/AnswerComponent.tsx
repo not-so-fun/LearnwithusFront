@@ -5,6 +5,7 @@ import { AnswerTheQuestionAction } from "../../actions/AnswerTheQuestionAction";
 import { answerTheQuestionInterface } from "../../reducers/AnswerTheQuestionReducer";
 import { Progress } from "../ReusableUIComponents/Spinner";
 import useTokenAndId from "../ReusableLogicComponents/useTokenAndId";
+import AnswerTextEditor from "./AnswerTextEditor"
 
 interface answerComponentInterface {
   question_id: string;
@@ -26,18 +27,19 @@ const AnswerComponent: FC<answerComponentInterface> = ({ question_id }) => {
     setAnswerType("");
   };
   return (
+
+    <>
+
     <div className="MainQA__AnswerInput__Box">
+
       <div className="MainQA__AnswerInput__Box__Heading">
         <h1>Your Answer</h1>
       </div>
-      <div className="MainQA__AnswerInput__Box__InputBox">
-        <textarea
-          className="MainQA__AnswerInput__Box__InputBox__Input"
-          placeholder="Your Answer"
-          value={answerType}
-          onChange={(e) => setAnswerType(e.target.value)}
-        />
-      </div>
+
+<AnswerTextEditor answerType={answerType} setAnswerType={setAnswerType}/>
+
+
+
       <div className="MainQA__AnswerInput__Box__ButtonBox">
         {loading ? (
           <button
@@ -56,6 +58,7 @@ const AnswerComponent: FC<answerComponentInterface> = ({ question_id }) => {
         )}
       </div>
     </div>
+    </>
   );
 };
 

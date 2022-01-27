@@ -6,7 +6,6 @@ import EditModal from "../ProfileComponents/EditModal";
 import PhotoCameraIcon from "@mui/icons-material/PhotoCamera";
 import storage from "../../Firebase";
 import { ref, getDownloadURL, uploadBytesResumable } from "firebase/storage";
-import { Progress } from "../ReusableUIComponents/Spinner";
 import {UpdateImageAction} from "../../actions/UpdateImageAction"
 import useTokenAndId from "../ReusableLogicComponents/useTokenAndId";
 import { useDispatch,useSelector } from "react-redux";
