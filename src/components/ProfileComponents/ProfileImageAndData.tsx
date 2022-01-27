@@ -9,9 +9,12 @@ import { ref, getDownloadURL, uploadBytesResumable } from "firebase/storage";
 import { Progress } from "../ReusableUIComponents/Spinner";
 import {UpdateImageAction} from "../../actions/UpdateImageAction"
 import useTokenAndId from "../ReusableLogicComponents/useTokenAndId";
-import { useDispatch } from "react-redux";
-
-
+import { useDispatch,useSelector } from "react-redux";
+import { CircularProgress } from '@mui/material';
+import CircularProgressWithLabel from "../ReusableUIComponents/CircularProgressWithLabel";
+import {CHANGE_IMAGE,START_IMAGE_UPLOAD,IMAGE_UPLOAD_SUCCESS} from "../../constants/ProfileConstants";
+import { profileDataInterface } from "../../reducers/ProfileReducer";
+import { RootStateType } from "../../stores";
 interface ProfileFormInterface {
   profile_data: profileUserDataInterface;
 }
@@ -24,7 +27,10 @@ const ProfileImageAndData: FC<ProfileFormInterface> = ({ profile_data }) => {
     open: false,
   });
 
-  const dispatch=useDispatch()
+  const dispatch=useDispatch();
+  const {imageUploading} = useSelector<RootStateType>(
+    (state) => state.profile_info_data
+  ) as profileDataInterface;
 
   const [progress, setProgess] = useState<number>(0);
   const {token}=useTokenAndId()
@@ -53,13 +59,19 @@ const ProfileImageAndData: FC<ProfileFormInterface> = ({ profile_data }) => {
           (snapshot.bytesTransferred / snapshot.totalBytes) * 100
         );
         setProgess(prog);
+
       },
       (error) => console.log(error),
       () => {
+        dispatch({type:START_IMAGE_UPLOAD});
         getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-          console.log("File available at", downloadURL);
-          dispatch(UpdateImageAction(token,downloadURL))
-
+          
+          const body= {...profile_data, image:downloadURL}
+          dispatch(UpdateImageAction(token,downloadURL));
+          dispatch({type:CHANGE_IMAGE, image:downloadURL});
+          
+          
+          
         });
       }
     );
@@ -75,10 +87,22 @@ const ProfileImageAndData: FC<ProfileFormInterface> = ({ profile_data }) => {
           className="Profile__Box__Top__ImagesAndDatas__Image__Avatar"
         />
         <div className="Profile__Box__Top__ImagesAndDatas__Image__Icon">
-          {/* <Progress size={15} /> */}
-          <input type="file" className="Profile__Box__Top__ImagesAndDatas__Image__Icon__Input"
+          
+          {(progress>0 && progress<100) 
+          && 
+          <CircularProgressWithLabel 
+          className="Profile__Box__Top__ImagesAndDatas__Image__Icon__CircularIcon" 
+          value={progress}
+          />}
+          { imageUploading&&<CircularProgress
+          className="Profile__Box__Top__ImagesAndDatas__Image__Icon__CircularIcon" 
+          />}
+          <input type="file" className="Profile__Box__Top__ImagesAndDatas__Image__Icon__Input custom-file-input"
           onChange={formHandler}/>
-          <PhotoCameraIcon className="Profile__Box__Top__ImagesAndDatas__Image__Icon__Camera" />
+          <PhotoCameraIcon 
+          className="Profile__Box__Top__ImagesAndDatas__Image__Icon__Camera" 
+          style={(progress>0 && progress<100) ? {display:"none"}:{}}
+          />
         </div>
       </div>
 

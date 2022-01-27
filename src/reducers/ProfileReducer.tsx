@@ -2,7 +2,10 @@ import {
   PROFILE_DATA_LOADING,
   PROFILE_DATA_SUCCESS,
   PROFILE_DATA_ERROR,
-  RESET_USER_INFO
+  RESET_USER_INFO,
+  CHANGE_IMAGE,
+  START_IMAGE_UPLOAD,
+  IMAGE_UPLOAD_SUCCESS
 } from "../constants/ProfileConstants";
 import { ProfileActionTypes } from "../types/ProfileActionTypes";
 
@@ -26,12 +29,14 @@ export interface profileDataInterface {
   loading: boolean;
   profile_data: profileUserDataInterface;
   error: string;
+  imageUploading:boolean
 }
 
 const profileDataState = {
   loading: false,
   profile_data: profileUserData,
   error: "",
+  imageUploading:false
 };
 
 export const ProfileReducer = (
@@ -42,11 +47,16 @@ export const ProfileReducer = (
     case PROFILE_DATA_LOADING:
       return { ...state, loading: true };
     case PROFILE_DATA_SUCCESS:
-      return { ...state,loading:false, profile_data: action.profile_data };
+      return { ...state,loading:false, profile_data: action.profile_data, imageUploading:false };
     case PROFILE_DATA_ERROR:
       return { ...state,loading:false, error: action.error };
     case RESET_USER_INFO:
       return {...state,profile_data:action.reset_info}
+    case START_IMAGE_UPLOAD:
+      return {...state, imageUploading:true}
+    case CHANGE_IMAGE:
+      return {...state,profile_data:action.image, imageUploading:false}
+
     default:
       return { ...state };
   }
