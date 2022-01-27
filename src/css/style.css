@@ -540,10 +540,9 @@ body {
         .QuestionFeed__Box__Main__AboutQuestion__QuestionStatistics {
           flex: 0 0 7rem;
           width: 100%;
-          background: #f8f8f8;
           display: flex;
           align-items: center;
-          justify-content: space-between; }
+          justify-content: flex-start; }
           .QuestionFeed__Box__Main__AboutQuestion__QuestionStatistics__Left {
             height: 7rem;
             flex: 0 0 auto;
@@ -555,6 +554,7 @@ body {
               width: auto;
               height: 5rem;
               border: 1px solid #494949;
+              cursor: pointer;
               border-radius: 5px;
               display: flex;
               align-items: center;
@@ -562,7 +562,6 @@ body {
               .QuestionFeed__Box__Main__AboutQuestion__QuestionStatistics__Left__Answers__Logo {
                 height: 4rem;
                 width: 4rem;
-                margin: 0 1rem;
                 display: flex;
                 align-items: center;
                 justify-content: center; }
@@ -586,7 +585,6 @@ body {
               .QuestionFeed__Box__Main__AboutQuestion__QuestionStatistics__Left__Views__Logo {
                 height: 4rem;
                 width: 4rem;
-                margin: 0 1rem;
                 display: flex;
                 align-items: center;
                 justify-content: center; }
@@ -1662,8 +1660,56 @@ body {
       height: 8rem;
       width: 100%;
       display: flex;
-      align-items: flex-end;
+      align-items: center;
       justify-content: space-between; }
+      .MainQA__Types__Box__Custom_Dropdown {
+        position: relative;
+        display: inline-block;
+        vertical-align: middle;
+        margin: 10px;
+        /* demo only */
+        font-size: 2em; }
+      .MainQA__Types__Box__Custom_Dropdown select {
+        background-color: #1abc9c;
+        color: #fff;
+        font-size: inherit;
+        padding: .5em;
+        padding-right: 2.5em;
+        border: 0;
+        margin: 0;
+        border-radius: 3px;
+        text-indent: 0.01px;
+        text-overflow: '';
+        -webkit-appearance: button;
+        /* hide default arrow in chrome OSX */ }
+      .MainQA__Types__Box__Custom_Dropdown::before, .MainQA__Types__Box__Custom_Dropdown::after {
+        content: "";
+        position: absolute;
+        pointer-events: none; }
+      .MainQA__Types__Box__Custom_Dropdown::after {
+        /*  Custom dropdown arrow */
+        content: "\25BC";
+        height: 1em;
+        font-size: .625em;
+        line-height: 1;
+        right: 1.2em;
+        top: 50%;
+        margin-top: -.5em; }
+      .MainQA__Types__Box__Custom_Dropdown::before {
+        /*  Custom dropdown arrow cover */
+        width: 2em;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        border-radius: 0 3px 3px 0; }
+      .MainQA__Types__Box__Custom_Dropdown select[disabled] {
+        color: rgba(0, 0, 0, 0.3); }
+      .MainQA__Types__Box__Custom_Dropdown select[disabled]::after {
+        color: rgba(0, 0, 0, 0.1); }
+      .MainQA__Types__Box__Custom_Dropdown::before {
+        background-color: rgba(0, 0, 0, 0.15); }
+      .MainQA__Types__Box__Custom_Dropdown::after {
+        color: rgba(0, 0, 0, 0.4); }
       .MainQA__Types__Box__Left {
         height: 8rem;
         flex: 0 0 auto;
