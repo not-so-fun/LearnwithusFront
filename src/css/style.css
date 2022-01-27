@@ -742,23 +742,35 @@ body {
       .Profile__Box__Top__ImagesAndDatas__Image {
         margin-top: 4rem;
         margin-bottom: 0.5rem;
+        height: auto;
+        width: auto;
         position: relative; }
         .Profile__Box__Top__ImagesAndDatas__Image__Icon {
           border: 2px solid #ffffff1a;
-          background-color: #ffffff1a;
+          background: #c4c4c4;
           border-radius: 50%;
-          padding: 0.5rem;
-          width: fit-content;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          position: absolute;
-          top: 155px;
-          right: 13px;
-          font-size: 20px;
-          color: #fff; }
+          height: 5rem;
+          width: 5rem;
+          margin-left: auto;
+          margin-top: -5rem;
+          color: #fff;
+          position: relative; }
           .Profile__Box__Top__ImagesAndDatas__Image__Icon__Camera {
-            font-size: 20px !important; }
+            font-size: 20px !important;
+            position: absolute;
+            top: 25%;
+            left: 25%;
+            z-index: 1;
+            opacity: 1; }
+          .Profile__Box__Top__ImagesAndDatas__Image__Icon__Input {
+            height: 100%;
+            width: 100%;
+            z-index: 10;
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-radius: 50%;
+            opacity: 0; }
         .Profile__Box__Top__ImagesAndDatas__Image__Avatar {
           margin-bottom: 0.5rem;
           width: 20rem;

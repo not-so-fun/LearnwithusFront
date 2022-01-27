@@ -35,7 +35,8 @@ const ProfileImageAndData: FC<ProfileFormInterface> = ({ profile_data }) => {
 
   const formHandler = (e: any) => {
     e.preventDefault();
-    const file = e.target[0].files[0];
+    const file = e.target.files[0];
+    
     uploadFiles(file);
   };
 
@@ -56,7 +57,7 @@ const ProfileImageAndData: FC<ProfileFormInterface> = ({ profile_data }) => {
       (error) => console.log(error),
       () => {
         getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-          // console.log("File available at", downloadURL);
+          console.log("File available at", downloadURL);
           dispatch(UpdateImageAction(token,downloadURL))
 
         });
@@ -75,6 +76,8 @@ const ProfileImageAndData: FC<ProfileFormInterface> = ({ profile_data }) => {
         />
         <div className="Profile__Box__Top__ImagesAndDatas__Image__Icon">
           {/* <Progress size={15} /> */}
+          <input type="file" className="Profile__Box__Top__ImagesAndDatas__Image__Icon__Input"
+          onChange={formHandler}/>
           <PhotoCameraIcon className="Profile__Box__Top__ImagesAndDatas__Image__Icon__Camera" />
         </div>
       </div>
