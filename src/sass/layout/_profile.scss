@@ -17,10 +17,11 @@
       background: $color-white;
       width: 100%;
       height: 50rem;
-      margin-bottom: 2rem;
+      // margin-bottom: 2rem;
       display: flex;
       // position: relative;
       // left: 170px;
+      border: 2px solid lightgrey;
 
       &__ImagesAndDatas {
         // width: 30rem;
@@ -44,49 +45,44 @@
         &__Image {
           margin-top: 4rem;
           margin-bottom: 0.5rem;
-          height:auto;
-          width:auto;
-          
+          height: auto;
+          width: auto;
+
           position: relative;
           &__Icon {
             border: 2px solid #ffffff1a;
             background-color: #0e0e0e1a;
-           
-            border-radius: 50%;
-            height:5rem;
-            width:5rem;
-            margin-left:auto;
-            margin-top:-5rem;
-            color: $color-white;
-            position:relative;
-            
 
-           
+            border-radius: 50%;
+            height: 5rem;
+            width: 5rem;
+            margin-left: auto;
+            margin-top: -5rem;
+            color: $color-white;
+            position: relative;
+
             // background:red;
             &__Camera {
               font-size: 20px !important;
-              position:absolute;
-              top:25%;
-              left:25%;
-              z-index:1;
-              opacity:1;
-
-              
+              position: absolute;
+              top: 25%;
+              left: 25%;
+              z-index: 1;
+              opacity: 1;
             }
-            &__Input{
-              height:100%;
+            &__Input {
+              height: 100%;
               width: 100%;
-              z-index:10;
-              position:absolute;
-              top:0;
-              left:0;
+              z-index: 10;
+              position: absolute;
+              top: 0;
+              left: 0;
               border-radius: 50%;
-              opacity:0;
-              &:hover{
-                cursor:pointer;
+              opacity: 0;
+              &:hover {
+                cursor: pointer;
               }
             }
-
           }
           &__Avatar {
             margin-bottom: 0.5rem;
@@ -607,12 +603,11 @@
   }
 }
 
-
 .custom-file-input::-webkit-file-upload-button {
   visibility: hidden;
 }
 .custom-file-input::before {
-  content: 'Select some files';
+  content: "Select some files";
   display: inline-block;
   background: linear-gradient(top, #f9f9f9, #e3e3e3);
   border: 1px solid #999;
@@ -625,7 +620,7 @@
   text-shadow: 1px 1px #fff;
   font-weight: 700;
   font-size: 10pt;
-  opacity:0;
+  opacity: 0;
 }
 .custom-file-input:hover::before {
   border-color: black;

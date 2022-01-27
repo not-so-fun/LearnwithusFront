@@ -111,6 +111,9 @@ const QuestionFeed: FC<quesInterface> = ({ question }) => {
               src={question.image}
               className="QuestionFeed__Box__Top__ProfileImage__Image"
             />
+            <figcaption className="QuestionFeed__Box__Top__ProfileImage__Caption">
+              {question.username}
+            </figcaption>
           </Link>
           <div className="QuestionFeed__Box__Top__AboutQuestion">
             <div className="QuestionFeed__Box__Top__AboutQuestion__Top">
