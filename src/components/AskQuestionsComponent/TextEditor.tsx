@@ -14,10 +14,11 @@ const TextEditor: FC<TextEditorInterface> = ({ formData, setFormData }) => {
       <Editor
         apiKey="7nzeo0sns30q6e2rn3uxbkx4baqhmo5ok21zhy1c47kede0a"
         value={formData.question}
-        onChange={(e) =>{ setFormData({ ...formData, question: e.target.value })
+        onChange={(e) => {
+          setFormData({ ...formData, question: e.target.value });
 
-        console.log(e.target)
-    }}
+          console.log(e.target);
+        }}
         init={{
           height: "500",
           plugins: "link image code",

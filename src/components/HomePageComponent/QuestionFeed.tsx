@@ -110,6 +110,9 @@ const QuestionFeed: FC<quesInterface> = ({ question }) => {
               src={question.image}
               className="QuestionFeed__Box__Top__ProfileImage__Image"
             />
+            <figcaption className="QuestionFeed__Box__Top__ProfileImage__Caption">
+              {question.username}
+            </figcaption>
           </Link>
           <div className="QuestionFeed__Box__Top__AboutQuestion">
             <div className="QuestionFeed__Box__Top__AboutQuestion__Top">
@@ -177,7 +180,6 @@ const QuestionFeed: FC<quesInterface> = ({ question }) => {
                   <p className="QuestionFeed__Box__Main__AboutQuestion__QuestionStatistics__Left__Answers__Text">
                     14
                   </p>
-                  
                 </div>
                 <div className="QuestionFeed__Box__Main__AboutQuestion__QuestionStatistics__Left__Views">
                   <div className="QuestionFeed__Box__Main__AboutQuestion__QuestionStatistics__Left__Views__Logo">

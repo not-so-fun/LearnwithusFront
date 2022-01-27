@@ -1,730 +1,710 @@
+.MainQA {
+  height: 100%;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  overflow-y: scroll;
+  background: $color-white;
+  border: 1px solid $color-grey-light-2;
+  &__ShowReply {
+    height: auto;
+    width: 100%;
+    // background: red;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    flex-direction: column;
+    &__Input {
+      height: 20rem;
+      width: 100%;
+      margin: 1rem 0;
+      padding: 1rem;
+      background: $color-grey-light-2;
+      color: $color-black;
+      border: none;
+      outline: none;
+      font-size: 1.5rem;
+      border-radius: 5px;
+      resize: none;
+    }
+    &__Reply {
+      background: #ffffff;
+      width: auto;
+      padding: 0 2rem;
+      height: 4rem;
+      margin: 0.4rem 0;
 
+      outline: none;
+      border-radius: 5px;
+      font-size: 1.5rem;
+      color: $color-secondary;
+      border: 1px solid $color-secondary;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    &__ReplyButton {
+      width: 100%;
+      height: 4rem;
+      padding: 0 2rem;
+      margin: 0.4rem 0;
+      font-size: 1.4rem;
+      border: none;
+      outline: none;
+      background: $color-white;
+      border: 1px solid $color-grey-light-2;
 
+      color: $color-black;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+  &__Types {
+    // background:red;
+    height: 10rem;
+    width: 100%;
+    margin: 0 1rem;
+    display: flex;
+    align-items: center;
+    // border:1px solid black;
+    border-bottom: 2px solid $color-grey-light-2;
+    &__Box {
+      height: 8rem;
+      // background:green;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
 
-.MainQA{
-    height: 100%;
-    width:70%;
+      &__Custom_Dropdown {
+        position: relative;
+        display: inline-block;
+        vertical-align: middle;
+        margin: 10px; /* demo only */
+        font-size: 2em;
+      }
+
+      &__Custom_Dropdown select {
+        background-color: #1abc9c;
+        color: #fff;
+        font-size: inherit;
+        padding: 0.5em;
+        padding-right: 2.5em;
+        border: 0;
+        margin: 0;
+        border-radius: 3px;
+        text-indent: 0.01px;
+        text-overflow: "";
+        -webkit-appearance: button; /* hide default arrow in chrome OSX */
+      }
+
+      &__Custom_Dropdown::before,
+      &__Custom_Dropdown::after {
+        content: "";
+        position: absolute;
+        pointer-events: none;
+      }
+
+      &__Custom_Dropdown::after {
+        /*  Custom dropdown arrow */
+        content: "\25BC";
+        height: 1em;
+        font-size: 0.625em;
+        line-height: 1;
+        right: 1.2em;
+        top: 50%;
+        margin-top: -0.5em;
+      }
+
+      &__Custom_Dropdown::before {
+        /*  Custom dropdown arrow cover */
+        width: 2em;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        border-radius: 0 3px 3px 0;
+      }
+
+      &__Custom_Dropdown select[disabled] {
+        color: rgba(0, 0, 0, 0.3);
+      }
+
+      &__Custom_Dropdown select[disabled]::after {
+        color: rgba(0, 0, 0, 0.1);
+      }
+
+      &__Custom_Dropdown::before {
+        background-color: rgba(0, 0, 0, 0.15);
+      }
+
+      &__Custom_Dropdown::after {
+        color: rgba(0, 0, 0, 0.4);
+      }
+
+      &__Left {
+        height: 8rem;
+        // background:red;
+        flex: 0 0 auto;
+        margin-left: 3rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &__Data {
+          color: $color-grey-light-2;
+          // background:green;
+          height: 5rem;
+          font-size: 1.2rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          &__Number {
+            color: $color-black;
+            margin-left: 1rem;
+          }
+        }
+      }
+      &__Right {
+        height: 3rem;
+        // background:orange;
+        flex: 0 0 auto;
+        margin-right: 5rem;
+        display: flex;
+        &__Button {
+          justify-self: stretch;
+          flex: 1;
+          font-size: 1.5rem;
+          background: white;
+          border: 1px solid $color-grey-light-2;
+          padding: 0 1rem;
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+  &__AnswerInput {
+    width: 95%;
+    margin-top: rem;
+    // background: red;
+    margin: 2rem auto;
+    border: 1px solid $color-grey-light-2;
+    border-radius: 5px;
+    &__Box {
+      padding: 0 1rem;
+
+      width: 100%;
+      &__Heading {
+        font-size: 1.4rem;
+        color: $color-black;
+      }
+      &__InputBox {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 10rem;
+        &__Input {
+          width: 100%;
+          height: 90%;
+          padding: 1rem;
+          border: none;
+          outline: none;
+          background: $color-grey-light-2;
+          border-radius: 5px;
+          resize: none;
+        }
+      }
+      &__ButtonBox {
+        height: 5rem;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding: 0 1rem;
+
+        &__Button {
+          height: 4rem;
+          border: none;
+          outline: none;
+          background: $color-primary;
+          padding: 0 1rem;
+          font-size: 2rem;
+          border-radius: 5px;
+          color: $color-white;
+          transition: all 0.4s;
+          &:hover {
+            cursor: pointer;
+            box-shadow: inset 0 0 150px 150px rgba(40, 101, 99, 0.8);
+            transform: translateY(-1px);
+          }
+          &:active {
+            cursor: pointer;
+            box-shadow: inset 0 0 150px 150px rgba(40, 101, 99, 0.8);
+            transform: translateY(2px);
+          }
+        }
+      }
+    }
+  }
+  &__Heading {
+    margin: 0 auto;
+    height: 8rem;
+    color: $color-black;
+    padding: 0 1rem;
+    margin: 0.4rem 0;
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    font-weight: 600;
+    // border-bottom: 3px solid $color-grey-light-3;
+  }
+  &__Answers {
+    background: white;
+    height: auto;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
-    overflow-y: scroll;
-    background: $color-white;
-    border:1px solid $color-grey-light-2;
-    &__ShowReply{
-        height:auto;
-        width: 100%;
-        // background: red;
-        display: flex;
-        align-items: flex-end;
-        justify-content: flex-start;
-        flex-direction: column;
-        &__Input{
-            height:20rem;
-            width:100%;
-            margin:1rem 0;
-            padding:1rem;
-            background:$color-grey-light-2;
-            color:$color-black;
-            border:none;
-            outline:none;
-            font-size:1.5rem;
-            border-radius: 5px;
-            resize: none;
+  }
+  &__Replies {
+    height: auto;
+    width: 100%;
 
+    &__Replys {
+      &:not(:last-child) {
+        border-bottom: 2px solid $color-grey-light-2;
+      }
+    }
+    &__Reply {
+      height: auto;
+      width: 100%;
+      padding: 1rem;
+    }
+  }
+  &__Questions {
+    width: 100%;
+    height: 2px;
+    border: 1px solid $color-grey-light-2;
+  }
+  &__Answer {
+    height: auto;
+    width: 100%;
+    padding: 3rem;
+    border-bottom: 2px solid $color-grey-light-2;
+    &__Box {
+      width: 100%;
+      height: 100%;
+      // background-color: green;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+
+      &__Top {
+        width: 100%;
+        height: 10rem;
+        // background:orange;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        &__Left {
+          flex: 0 0 auto;
+          // background:purple;
+          height: 8rem;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 0 1rem;
+          &__ProfilePhoto {
+            height: 6rem;
+            width: 6rem;
+            border-radius: 50%;
+            // background:$color-grey-light-3;
+            border: 3px solid $color-primary;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            &__Image {
+              height: 5rem;
+              width: 5rem;
+              object-fit: cover;
+              border-radius: 50%;
+              //   padding: 10px;
+            }
+          }
+          &__AnswerData {
+            height: 100%;
+            width: auto;
+            // background:red;
+            font-size: 1.3rem;
+            margin-left: 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            &__UserName {
+              // background:green;
+              color: $color-primary;
+            }
+            &__AnswerData {
+              // background:orange;
+              font-size: 1.3rem;
+              margin-top: 0.5rem;
+            }
+          }
         }
-        &__Reply{
-            background:#ffffff;
-            width:auto;
-            padding:0 2rem;
-            height:4rem;
-            margin:.4rem 0;
-            
-            outline:none;
-            border-radius: 5px;
-            font-size:1.5rem;
+        &__Right {
+          // background:red;
+          height: 100%;
+          flex: 0 0 auto;
+          padding: 0 1rem;
+          display: flex;
+          align-items: center;
+
+          &__AnswerQuality {
+            height: 3rem;
+            width: auto;
+            font-size: 1.3rem;
+            // background:green;
             color: $color-secondary;
             border: 1px solid $color-secondary;
-            &:hover{
-                cursor: pointer;
-            }
-        }
-        &__ReplyButton{
-            width:100%;
-            height:4rem;
-            padding:0 2rem;
-            margin:.4rem 0;
-            font-size:1.4rem;
-            border:none;
-            outline:none;
-            background:$color-white;
-            border:1px solid $color-grey-light-2;
-            
-            color:$color-black;
-            &:hover{
-                cursor:pointer;
-            }
-        }
-    }
-    &__Types{
-        // background:red;
-        height:10rem;
-        width:100%;
-        margin:0 1rem;
-        display:flex;
-        align-items: center;
-        // border:1px solid black;
-        border-bottom: 2px solid $color-grey-light-2;
-        &__Box{
-            height:8rem;
-            // background:green;
-            width:100%;
-            display:flex;
+            display: flex;
             align-items: center;
-            justify-content: space-between;
-
-            &__Custom_Dropdown{
-
-                position: relative;
-                display: inline-block;
-                vertical-align: middle;
-                margin: 10px; /* demo only */
-                font-size: 2em;
-
-            }
-
-            &__Custom_Dropdown select {
-                background-color: #1abc9c;
-                color: #fff;
-                font-size: inherit;
-                padding: .5em;
-                padding-right: 2.5em;	
-                border: 0;
-                margin: 0;
-                border-radius: 3px;
-                text-indent: 0.01px;
-                text-overflow: '';
-                -webkit-appearance: button; /* hide default arrow in chrome OSX */
-              }
-
-              
-  
-  &__Custom_Dropdown::before,
-  &__Custom_Dropdown::after {
-    content: "";
-    position: absolute;
-    pointer-events: none;
-  }
-  
-  &__Custom_Dropdown::after { /*  Custom dropdown arrow */
-    content: "\25BC";
-    height: 1em;
-    font-size: .625em;
-    line-height: 1;
-    right: 1.2em;
-    top: 50%;
-    margin-top: -.5em;
-  }
-  
-  &__Custom_Dropdown::before { /*  Custom dropdown arrow cover */
-    width: 2em;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    border-radius: 0 3px 3px 0;
-  }
-  
-  &__Custom_Dropdown select[disabled] {
-    color: rgba(0,0,0,.3);
-  }
-  
-  &__Custom_Dropdown select[disabled]::after {
-    color: rgba(0,0,0,.1);
-  }
-  
-  &__Custom_Dropdown::before {
-    background-color: rgba(0,0,0,.15);
-  }
-  
-  &__Custom_Dropdown::after {
-    color: rgba(0,0,0,.4);
-  }
-            
-            &__Left{
-                height:8rem;
-                // background:red;
-                flex: 0 0 auto;
-                margin-left: 3rem;
-                display:flex;
-                align-items: center;
-                justify-content: center;
-                &__Data{
-                    color:$color-grey-light-2;
-                    // background:green;
-                    height:5rem;
-                    font-size:1.2rem;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    &__Number{
-                        color:$color-black;
-                        margin-left: 1rem;
-                    }
-                }
-            }
-            &__Right{
-                height:3rem;
-                // background:orange;
-                flex: 0 0 auto;
-                margin-right: 5rem;
-                display:flex;
-                &__Button{
-                    justify-self: stretch;
-                    flex:1;
-                    font-size:1.5rem;
-                    background:white;
-                    border:1px solid $color-grey-light-2;
-                    padding:0 1rem;
-                    &:hover{
-                        cursor: pointer;
-                    }
-                }
-            }
-        }
-    }
-    &__AnswerInput{
-        width:95%;
-        margin-top:rem;
-        // background: red;
-        margin:2rem auto;
-        border: 1px solid $color-grey-light-2;
-        border-radius: 5px;
-        &__Box{
             padding: 0 1rem;
-        
-            width:100%;
-            &__Heading{
-                font-size:1.4rem;
-                color:$color-black;
-            }
-            &__InputBox{
-                display:flex;
-                align-items: center;
-                justify-content: center;
-                height:10rem;
-                &__Input{
-                    width:100%;
-                    height:90%;
-                    padding:1rem;
-                    border: none;
-                    outline:none;
-                    background:$color-grey-light-2; 
-                    border-radius: 5px;
-                    resize: none;
-                }
-            }
-            &__ButtonBox{
-                height:5rem;
-                display:flex;
-                align-items: center;
-                justify-content: flex-end;
-                padding:0 1rem;
-               
-                &__Button{
-                    height:4rem;
-                    border:none;
-                    outline: none;
-                    background:$color-primary;
-                    padding:0 1rem;
-                    font-size:2rem;
-                    border-radius:5px;
-                    &:hover{
-                        cursor: pointer;
-                        background:$color-grey-light-2;
-                    }
-                }
-            }
+          }
         }
+      }
+      &__Main {
+        // background:red;
+        display: flex;
+        width: 100%;
+        height: auto;
+        // flex-direction: column;
+        // align-items: center;
+
+        &__Likes {
+          height: 13rem;
+          width: 10rem;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          margin-right: 3.5rem;
+          // background:red;
+
+          &__Upvote {
+            height: 4rem;
+            width: 4rem;
+            // background:$color-grey-light-3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            &__Logo {
+              height: 3.3rem;
+              width: 3.3rem;
+              &:hover {
+                cursor: pointer;
+              }
+            }
+          }
+          &__Total {
+            height: 5rem;
+            width: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            // background:red;
+            font-size: 2.5rem;
+          }
+          &__Downvote {
+            height: 4rem;
+            width: 4rem;
+            // background:$color-grey-light-3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            &__Logo {
+              height: 3.3rem;
+              width: 3.3rem;
+              &:hover {
+                cursor: pointer;
+              }
+            }
+          }
+        }
+        &__AnswerText {
+          display: flex;
+          flex-direction: column;
+          &__Text {
+            font-size: 1.6rem;
+            padding: 0 0.5rem;
+            text-align: left;
+          }
+        }
+        &__Bottom {
+          // background:orange;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          height: 7rem;
+          width: 100%;
+          &__Aligning {
+            display: flex;
+          }
+          &__Function {
+            width: auto;
+            height: 3rem;
+            // background:green;
+            display: flex;
+            align-items: center;
+            font-size: 1.5rem;
+            padding: 0 1rem;
+            &:not(:last-child) {
+              border-right: 1px solid $color-grey-light-2;
+            }
+            &__Text {
+              &__RepliesIcons {
+                display: flex;
+                align-items: center;
+                font-size: 15px;
+                cursor: pointer;
+              }
+            }
+            &__Logo {
+              height: 3rem;
+              width: 3rem;
+              // background:red;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              margin-right: 0.4rem;
+              &__Logo {
+                height: 2.8rem;
+                width: 2.8rem;
+
+                &:hover {
+                  cursor: pointer;
+                }
+              }
+            }
+          }
+        }
+      }
     }
-    &__Heading{
-        margin: 0 auto;
-        height: 8rem;
-        color:$color-black;
-        padding: 0 1rem;
-        margin:.4rem 0;
-        width:auto;
-        display:flex;
+  }
+  &__Question {
+    height: auto;
+    width: 95%;
+    background: $color-white;
+    margin: 1rem auto;
+    border-radius: 5px;
+    border: 1px solid $color-grey-light-2;
+    &__Top {
+      height: 7rem;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 1rem 0;
+      &__ProfileData {
+        height: 6rem;
+        width: 25rem;
+        // background:$color-grey-light-2;
+        margin: 0 1rem;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        &__ProfilePhoto {
+          height: 5rem;
+          width: 5rem;
+          border-radius: 50%;
+          margin: 0 0.5rem;
+          background: $color-white;
+          overflow: hidden;
+          &__Image {
+            height: 5rem;
+            width: 5rem;
+            object-fit: cover;
+          }
+        }
+        &__ProfileName {
+          flex: 1;
+          height: 5rem;
+          margin: 0 0.5rem;
+          background: $color-white;
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          font-size: 2rem;
+          font-weight: 600;
+          color: $color-black;
+          padding-left: 0.3rem;
+        }
+      }
+      &__QuestionData {
+        height: 5rem;
+        width: 45rem;
+        // background:$color-primary;
+        margin: 0 1rem;
+        display: flex;
+        align-items: center;
+        &__Views {
+          flex: 1;
+          height: 5rem;
+          background: white;
+          border-radius: 5px;
+          border: 1px solid $color-grey-light-2;
+          margin: 0 0.5rem;
+          display: flex;
+          justify-content: space-between;
+          padding: 0 0.5rem;
+          align-items: center;
+          font-size: 1.8rem;
+          color: $color-black;
+        }
+        &__Delete {
+          height: 5rem;
+          width: 5rem;
+          border-radius: 50%;
+          border: 1px solid $color-grey-light-2;
+          background: white;
+          margin: 0 1rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          &:hover {
+            cursor: pointer;
+            background: $color-grey-light-2;
+          }
+          &__Icon {
+            height: 3rem;
+            width: 3rem;
+          }
+        }
+      }
+    }
+    &__MainQuestionData {
+      width: 100%;
+      height: auto;
+      margin: 1rem 0;
+      // background:green;
+      display: flex;
+      align-items: center;
+      &__QuestionLikes {
+        // background:red;
+        height: 96%;
+        flex: 0 0 10rem;
+        margin: 0 0.5rem;
+        display: flex;
         align-items: center;
         justify-content: center;
-        font-size:4rem;
-        font-weight:600;
-        // border-bottom: 3px solid $color-grey-light-3;
-    }
-    &__Answers{
-        background:white;
-        height:auto;
-        width:100%;
-        display:flex;
+        &__LikesBox {
+          height: 18rem;
+          width: 8rem;
+          border: 1px solid $color-grey-light-2;
+          // background:green;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: space-evenly;
+          &__Upvote {
+            height: 5rem;
+            width: 5rem;
+            // background:$color-grey-light-2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+          &__Data {
+            height: 4rem;
+            width: 7rem;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.3rem;
+            font-weight: 600;
+            color: $color-black;
+          }
+          &__Downvote {
+            height: 5rem;
+            width: 5rem;
+            // background:$color-grey-light-2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            &__Logo {
+              width: 5rem;
+              height: 5rem;
+              &:hover {
+                cursor: pointer;
+              }
+            }
+          }
+        }
+      }
+      &__QuestionTitleAndBody {
+        background: white;
+        height: 96%;
+        flex: 1;
+        margin: 0 0.5rem;
+        display: flex;
         flex-direction: column;
-        align-items: center;
-        
-    }
-    &__Replies{
-        height:auto;
-        width:100%;
-        
-        &__Replys{
-            
-            &:not(:last-child){
-            border-bottom: 2px solid $color-grey-light-2;
-            
+        // border-left:1px solid $color-grey-light-2;
+        &__Title {
+          height: auto;
+          // background:$color-grey-light-2;
+          width: 96%;
+          margin: 0.5rem auto;
+          font-size: 2rem;
+          font-weight: 600;
+          color: $color-black;
+          padding: 0.5rem;
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          border-bottom: 1px solid $color-grey-light-2;
         }
+        &__Body {
+          height: auto;
+          min-height: calc(100% - 15rem);
+          // background:$color-grey-light-2;
+          width: 96%;
+          margin: 0.5rem auto;
+          padding: 0.5rem;
+          font-size: 1.7rem;
+          color: $color-black;
+          border-radius: 1rem;
+          display: flex;
+          align-items: flex-start;
+          justify-content: flex-start;
         }
-        &__Reply{
-            height:auto;
-            width:100%;
-            padding:1rem;
-        }
-
-    }
-    &__Questions{
-        width: 100%;
-        height:2px;
-        border: 1px solid $color-grey-light-2;
-        
-    }
-    &__Answer{
-        height:auto;
-        width:100%;
-        padding:3rem;
-        border-bottom: 2px solid $color-grey-light-2;
-        &__Box{
-            width:100%;
-            height:100%;
-            // background-color: green;
-            display:flex;
-            flex-direction: column;
-            align-items: flex-end;
-            
-            &__Top{
-                width:100%;
-                height:10rem;
-                // background:orange;
-                display:flex;
-                align-items: center;
-                justify-content: space-between;
-                &__Left{
-                    flex:0 0 auto;
-                    // background:purple;
-                    height:8rem;
-                    display:flex;
-                    align-items: center;
-                    justify-content: space-between;
-                    padding:0 1rem;
-                    &__ProfilePhoto{
-                        height:6rem;
-                        width:6rem;
-                        border-radius: 50%;
-                        // background:$color-grey-light-3;
-                        border: 3px solid $color-primary;
-                        display:flex;
-                        justify-content: center;
-                        align-items: center;
-                        
-                        &__Image{
-                            height:5rem;
-                            width:5rem;
-                            object-fit: cover;
-                            border-radius:50%;
-                        }
-                    }
-                    &__AnswerData{
-                        height:100%;
-                        width:auto;
-                        // background:red;
-                        font-size:1.3rem;
-                        margin-left:1rem;
-                        display:flex;
-                        flex-direction: column;
-                        align-items: flex-start;
-                        justify-content: center;
-                        &__UserName{
-                            // background:green;
-                            color:$color-primary;
-                        }
-                        &__AnswerData{
-                            // background:orange;
-                            font-size:1.3rem;
-                            margin-top:.5rem;
-                        }
-                        
-
-                    }
-
-
-                }
-                &__Right{
-                    // background:red;
-                    height: 100%;
-                    flex: 0 0 auto;
-                    padding:0 1rem;
-                    display:flex;
-                    align-items: center;
-                    
-                    &__AnswerQuality{
-                        height:3rem;
-                        width:auto;
-                        font-size:1.3rem;
-                        // background:green;
-                        color:$color-secondary;
-                        border:1px solid $color-secondary;
-                        display: flex;
-                        align-items: center;
-                        padding:0 1rem;
-                        
-                    }
-                }
-
-            }
-            &__Main{
-                // background:red;
-                display:flex;
-                width:100%;
-                height:auto;
-                // flex-direction: column;
-                // align-items: center;
-                
-                &__Likes{
-                    height:13rem;
-                    width:10rem;
-                    display:flex;
-                    flex-direction: column;
-                    align-items: center;
-                    justify-content: center;
-                    margin-right:3.5rem;
-                    // background:red;
-                    
-                    &__Upvote{
-                        height:4rem;
-                        width:4rem;
-                        // background:$color-grey-light-3;
-                        display:flex;
-                        align-items: center;
-                        justify-content: center;
-                        &__Logo{
-                            height:3.3rem;
-                            width:3.3rem;
-                            &:hover{
-                                cursor:pointer;
-                            }
-                        }
-                    }
-                    &__Total{
-                        height:5rem;
-                        width:auto;
-                        display:flex;
-                        align-items: center;
-                        justify-content: center;
-                        // background:red;
-                        font-size:2.5rem;
-                    }
-                    &__Downvote{
-                        height:4rem;
-                        width:4rem;
-                        // background:$color-grey-light-3;
-                        display:flex;
-                        align-items: center;
-                        justify-content: center;
-                        &__Logo{
-                            height:3.3rem;
-                            width:3.3rem;
-                            &:hover{
-                                cursor:pointer;
-                            }
-                        }
-                    }
-                    
-                }
-                &__AnswerText{ 
-                    display:flex;
-                    flex-direction: column;
-                    &__Text{
-                        font-size:1.6rem;
-                        padding:0 .5rem;
-                        text-align:left;
-
-                    }
-                }
-                &__Bottom{
-                    // background:orange;
-                    display:flex;
-                    align-items: center;
-                    justify-content: space-between;
-                    height:7rem;
-                    width:100%;
-                    &__Aligning{
-                        display: flex;
-                    }
-                    &__Function{
-                        width:auto;
-                        height:3rem;
-                        // background:green;
-                        display: flex;
-                        align-items: center;
-                        font-size:1.5rem;
-                        padding:0 1rem;
-                        &:not(:last-child){
-                            border-right: 1px solid $color-grey-light-2;
-                        }
-                        &__Text{
-                            &__RepliesIcons{
-                                display: flex;
-                                align-items: center;
-                                font-size: 15px;
-                                cursor: pointer;
-                            }
-                        }
-                        &__Logo{
-                            height:3rem;
-                            width:3rem;
-                            // background:red;
-                            display:flex;
-                            align-items: center;
-                            justify-content: center;
-                            margin-right:.4rem;
-                            &__Logo{
-                                height:2.8rem;
-                                width:2.8rem;
-                                
-                                &:hover{
-                                    cursor: pointer;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
-    }
-    &__Question{
-        height:auto;
-        width:95%;
-        background:$color-white;
-        margin:1rem auto;
-        border-radius:5px;
-        border:1px solid $color-grey-light-2;
-        &__Top{
-            height:7rem;
-            width: 100%;
-            display:flex;
+        &__Tag {
+          height: 5rem;
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          &__TagName {
+            height: 3rem;
+            width: auto;
+            padding: 0 1rem;
+            display: flex;
             align-items: center;
-            justify-content: space-between;
-            margin:1rem 0;
-            &__ProfileData{
-                height:6rem;
-                width:25rem;
-                // background:$color-grey-light-2;
-                margin: 0 1rem;
-                border-radius:5px;
-                display:flex;
-                align-items:center;
-                &__ProfilePhoto{
-                    height:5rem;
-                    width:5rem;
-                    border-radius:50%;
-                    margin:0 .5rem;
-                    background:$color-white;
-                    overflow:hidden;
-                    &__Image{
-                        height:5rem;
-                        width:5rem;
-                        object-fit: cover;
-                    }
-                }
-                &__ProfileName{
-                    flex:1;
-                    height:5rem;
-                    margin:0 .5rem;
-                    background:$color-white;
-                    display:flex;
-                    align-items: center;
-                    justify-content: flex-start;
-                    font-size:2rem;
-                    font-weight:600;
-                    color: $color-black;
-                    padding-left:.3rem;
-                   
-                    
-                }
-            }
-            &__QuestionData{
-                height:5rem;
-                width:45rem;
-                // background:$color-primary;
-                margin:0 1rem;
-                display:flex;
-                align-items: center;
-                &__Views{
-                    flex:1;
-                    height:5rem;
-                    background:white;
-                    border-radius:5px;
-                    border: 1px solid $color-grey-light-2;
-                    margin: 0 .5rem;
-                    display:flex;
-                    justify-content: space-between;
-                    padding:0 .5rem;
-                    align-items: center;
-                    font-size:1.8rem;
-                    color: $color-black;
-                }
-                &__Delete{
-                    height:5rem;
-                    width:5rem;
-                    border-radius:50%;
-                    border: 1px solid $color-grey-light-2;
-                    background:white;
-                    margin: 0 1rem;
-                    display:flex;
-                    align-items: center;
-                    justify-content: center;
-                    
-                    &:hover{
-                        cursor: pointer;
-                        background:$color-grey-light-2;
-
-                    }
-                    &__Icon{
-                        height:3rem;
-                        width:3rem;
-                    }
-                }
-            }
-
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: $color-black;
+            border-radius: 5rem;
+            margin: 0 1rem;
+            background: $color-grey-light-2;
+          }
         }
-        &__MainQuestionData{
-            width:100%;
-            height:auto;
-            margin:1rem 0;
-            // background:green;
-            display:flex;
-            align-items: center;
-            &__QuestionLikes{
-                // background:red;
-                height:96%;
-                flex:0 0 10rem;
-                margin:0 .5rem;
-                display:flex;
-                align-items: center;
-                justify-content: center;
-                &__LikesBox{
-                    height:18rem;
-                    width:8rem;
-                    border: 1px solid $color-grey-light-2;
-                    // background:green;
-                    display:flex;
-                    flex-direction: column;
-                    align-items: center;
-                    justify-content: space-evenly;
-                    &__Upvote{
-                        height:5rem;
-                        width:5rem;
-                        // background:$color-grey-light-2;
-                        display:flex;
-                        align-items: center;
-                        justify-content: center;
-                    }
-                    &__Data{
-                        height:4rem;
-                        width:7rem;
-                        background:white;
-                        display:flex;
-                        align-items: center;
-                        justify-content: center;
-                        font-size:2.3rem;
-                        font-weight:600;
-                        color:$color-black;
-                    }
-                    &__Downvote{
-                        height:5rem;
-                        width:5rem;
-                        // background:$color-grey-light-2;
-                        display:flex;
-                        align-items: center;
-                        justify-content: center;
-                        &__Logo{
-                            width:5rem;
-                            height:5rem;
-                            &:hover{
-                                cursor:pointer;
-                            }
-                        
-                        }
-                    }
-                }
-            }
-            &__QuestionTitleAndBody{
-                background:white;
-                height:96%;
-                flex:1;
-                margin:0 .5rem;
-                display: flex;
-                flex-direction: column;
-                // border-left:1px solid $color-grey-light-2;
-                &__Title{
-                    height:auto;
-                    // background:$color-grey-light-2;
-                    width:96%;
-                    margin:.5rem auto;
-                    font-size:2rem;
-                    font-weight:600;
-                    color:$color-black;
-                    padding:.5rem;
-                    display:flex;
-                    align-items:center;
-                    justify-content: flex-start;
-                    border-bottom: 1px solid $color-grey-light-2;
-                }
-                &__Body{
-                    height:auto;
-                    min-height:calc(100% - 15rem);
-                    // background:$color-grey-light-2;
-                    width:96%;
-                    margin:.5rem auto;
-                    padding:.5rem;
-                    font-size:1.7rem;
-                    color:$color-black;
-                    border-radius: 1rem;
-                    display:flex;
-                    align-items: flex-start;
-                    justify-content: flex-start;
-
-                }
-                &__Tag{
-                    height:5rem;
-                    display:flex;
-                    align-items: center;
-                    justify-content: flex-start;
-                    &__TagName{
-                        height:3rem;
-                        width:auto;
-                        padding:0 1rem;
-                        display:flex;
-                        align-items: center;
-                        justify-content: center;
-                        font-size:1.5rem;
-                        font-weight:600;
-                        color:$color-black;
-                        border-radius:5rem;
-                        margin:0 1rem;
-                        background:$color-grey-light-2;
-
-                    }
-
-                }
-            }
-        }
+      }
     }
-    
+  }
 }

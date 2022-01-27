@@ -451,12 +451,30 @@ body {
         border: 3px solid #057777;
         display: flex;
         align-items: center;
-        justify-content: center; }
+        justify-content: center;
+        position: relative; }
         .QuestionFeed__Box__Top__ProfileImage__Image {
           height: 5rem;
           width: 5rem;
           border-radius: 50%;
-          object-fit: cover; }
+          object-fit: cover;
+          transition: all 0.5s; }
+        .QuestionFeed__Box__Top__ProfileImage__Caption {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, 0);
+          color: #fff;
+          text-transform: uppercase;
+          text-align: center;
+          font-size: 1.1rem;
+          opacity: 0;
+          transition: all 0.5s; }
+        .QuestionFeed__Box__Top__ProfileImage:hover .QuestionFeed__Box__Top__ProfileImage__Caption {
+          opacity: 1;
+          transform: translate(-50%, -50%); }
+        .QuestionFeed__Box__Top__ProfileImage:hover .QuestionFeed__Box__Top__ProfileImage__Image {
+          filter: blur(3px); }
       .QuestionFeed__Box__Top__AboutQuestion {
         flex: 1;
         height: auto; }
@@ -502,9 +520,16 @@ body {
           justify-content: center; }
           .QuestionFeed__Box__Main__Upvotes__Likes__Logo {
             height: 3rem;
-            width: 3rem; }
+            width: 3rem;
+            transition: all 0.4s ease; }
             .QuestionFeed__Box__Main__Upvotes__Likes__Logo:hover {
-              cursor: pointer; }
+              cursor: pointer;
+              color: blue;
+              transform: scale(1.2); }
+            .QuestionFeed__Box__Main__Upvotes__Likes__Logo:active {
+              cursor: pointer;
+              color: blue;
+              transform: translateY(2px); }
         .QuestionFeed__Box__Main__Upvotes__Box {
           height: 4rem;
           width: auto;
@@ -520,9 +545,16 @@ body {
           justify-content: center; }
           .QuestionFeed__Box__Main__Upvotes__Dislikes__Logo {
             height: 3rem;
-            width: 3rem; }
+            width: 3rem;
+            transition: all 0.4s ease; }
             .QuestionFeed__Box__Main__Upvotes__Dislikes__Logo:hover {
-              cursor: pointer; }
+              cursor: pointer;
+              color: #f61b1b;
+              transform: scale(1.2); }
+            .QuestionFeed__Box__Main__Upvotes__Dislikes__Logo:active {
+              cursor: pointer;
+              color: #f61b1b;
+              transform: translateY(-2px); }
       .QuestionFeed__Box__Main__AboutQuestion {
         height: 100%;
         display: flex;
@@ -567,7 +599,14 @@ body {
                 justify-content: center; }
                 .QuestionFeed__Box__Main__AboutQuestion__QuestionStatistics__Left__Answers__Logo__Logo {
                   height: 3rem;
-                  width: 3rem; }
+                  width: 3rem;
+                  transition: all 0.4s ease; }
+                  .QuestionFeed__Box__Main__AboutQuestion__QuestionStatistics__Left__Answers__Logo__Logo:hover {
+                    color: #057777;
+                    transform: scale(1.2); }
+                  .QuestionFeed__Box__Main__AboutQuestion__QuestionStatistics__Left__Answers__Logo__Logo:active {
+                    color: #057777;
+                    transform: scale(1); }
               .QuestionFeed__Box__Main__AboutQuestion__QuestionStatistics__Left__Answers__Text {
                 font-size: 1.7rem;
                 color: #494949;
@@ -590,7 +629,11 @@ body {
                 justify-content: center; }
                 .QuestionFeed__Box__Main__AboutQuestion__QuestionStatistics__Left__Views__Logo__Logo {
                   height: 3rem;
-                  width: 3rem; }
+                  width: 3rem;
+                  transition: all 0.4s ease; }
+                  .QuestionFeed__Box__Main__AboutQuestion__QuestionStatistics__Left__Views__Logo__Logo:hover {
+                    color: #057777;
+                    transform: scale(1.2); }
               .QuestionFeed__Box__Main__AboutQuestion__QuestionStatistics__Left__Views__Text {
                 font-size: 1.7rem;
                 color: #494949;
@@ -636,12 +679,17 @@ body {
         align-items: center;
         justify-content: space-between;
         font-size: 1.4rem;
-        padding: 0 1rem; }
+        padding: 0 1rem;
+        cursor: pointer;
+        transition: all 0.4s ease; }
+        .QuestionFeed__Bottom__Left__Content:hover {
+          color: red; }
+        .QuestionFeed__Bottom__Left__Content:hover:first-child {
+          color: #5388b4; }
+        .QuestionFeed__Bottom__Left__Content:hover:last-child {
+          color: #d3d308; }
         .QuestionFeed__Bottom__Left__Content:not(:last-child) {
           border-right: 1px solid #494949; }
-        .QuestionFeed__Bottom__Left__Content:hover {
-          cursor: pointer;
-          background: #c4c4c4; }
         .QuestionFeed__Bottom__Left__Content__Logo {
           width: 3rem;
           height: 3rem;
@@ -665,10 +713,15 @@ body {
         justify-content: space-between;
         font-size: 1.4rem;
         padding: 0 1rem;
-        margin: 0 0.3rem; }
-        .QuestionFeed__Bottom__Right__Content:hover {
-          cursor: pointer;
-          background: #c4c4c4; }
+        margin: 0 0.3rem;
+        cursor: pointer;
+        transition: all 0.4s ease; }
+        .QuestionFeed__Bottom__Right__Content:hover:nth-child(2) {
+          color: #4267b2; }
+        .QuestionFeed__Bottom__Right__Content:hover:first-child {
+          color: #057777; }
+        .QuestionFeed__Bottom__Right__Content:hover:last-child {
+          color: #00acee; }
         .QuestionFeed__Bottom__Right__Content__Logo {
           width: 3rem;
           height: 3rem;
@@ -720,8 +773,8 @@ body {
     background: #fff;
     width: 100%;
     height: 50rem;
-    margin-bottom: 2rem;
-    display: flex; }
+    display: flex;
+    border: 2px solid lightgrey; }
     .Profile__Box__Top__ImagesAndDatas {
       flex: 0 0 30%;
       height: 100%;
@@ -745,7 +798,7 @@ body {
         position: relative; }
         .Profile__Box__Top__ImagesAndDatas__Image__Icon {
           border: 2px solid #ffffff1a;
-          background: #c4c4c4;
+          background-color: #0e0e0e1a;
           border-radius: 50%;
           height: 5rem;
           width: 5rem;
@@ -1183,24 +1236,29 @@ body {
       transition: all 0.4s ease; }
       .Navbar__Links__Home:hover, .Navbar__Links__Create:hover, .Navbar__Links__Exit:hover {
         transform: scale(1.3); }
+      .Navbar__Links__Home:active, .Navbar__Links__Create:active, .Navbar__Links__Exit:active {
+        transform: scale(1); }
     .Navbar__Links__Notification:hover {
       animation: swing 0.5s ease 0s; }
     .Navbar__Links__Content {
       position: relative;
       color: #777; }
+      .Navbar__Links__Content:first-child {
+        background-color: red; }
       .Navbar__Links__Content__Box {
         position: absolute;
         padding: 0rem 1rem;
         top: 5rem;
         right: 0;
-        background: #fff;
-        border: 1px solid #c4c4c4;
+        background: #eee;
+        border: 2px solid #c4c4c4;
         height: auto;
         width: 30rem;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: flex-start;
+        border-radius: 5px;
         z-index: 100; }
         .Navbar__Links__Content__Box:before {
           content: "";
@@ -1435,9 +1493,8 @@ body {
                   .HomePage__Right__MainBody__Notification__Box__RequestNotification__Noti__Right__Reject__Icon {
                     font-size: 24px !important; }
                   .HomePage__Right__MainBody__Notification__Box__RequestNotification__Noti__Right__Reject:hover {
-                    background: #983131;
-                    color: #fff;
-                    border-radius: 50%; }
+                    transform: scale(1.3);
+                    color: red; }
                 .HomePage__Right__MainBody__Notification__Box__RequestNotification__Noti__Right__Accept {
                   cursor: pointer;
                   transition: all 0.4s ease;
@@ -1449,9 +1506,8 @@ body {
                   .HomePage__Right__MainBody__Notification__Box__RequestNotification__Noti__Right__Accept__Icon {
                     font-size: 24px !important; }
                   .HomePage__Right__MainBody__Notification__Box__RequestNotification__Noti__Right__Accept:hover {
-                    background: #008000;
-                    color: #fff;
-                    border-radius: 50%; }
+                    transform: scale(1.3);
+                    color: #008000; }
           .HomePage__Right__MainBody__Notification__Box__Header {
             padding: 5px 25px;
             font-size: 18px;
@@ -1559,7 +1615,10 @@ body {
             text-decoration: none;
             transition: all 0.3s ease; }
             .HomePage__Right__MainBody__Notification__Below__Links:hover {
-              box-shadow: inset 0 0 50px 50px #0c6363; }
+              box-shadow: inset 0 0 50px 50px #0c6363;
+              transform: translateY(-2px); }
+            .HomePage__Right__MainBody__Notification__Below__Links:active {
+              transform: translateY(2px); }
           .HomePage__Right__MainBody__Notification__Below button:last-child {
             cursor: pointer;
             background-color: transparent;
@@ -1573,7 +1632,10 @@ body {
             border-radius: 4px;
             transition: all 0.3s ease; }
             .HomePage__Right__MainBody__Notification__Below button:last-child:hover {
-              box-shadow: inset 0 0 50px 50px lightgray; }
+              box-shadow: inset 0 0 50px 50px lightgray;
+              transform: translateY(-2px); }
+            .HomePage__Right__MainBody__Notification__Below button:last-child:active {
+              transform: translateY(2px); }
 
 .AskQuestion {
   padding-right: 1rem;
@@ -1640,7 +1702,7 @@ body {
       width: auto;
       padding: 0 2rem;
       height: 4rem;
-      margin: .4rem 0;
+      margin: 0.4rem 0;
       outline: none;
       border-radius: 5px;
       font-size: 1.5rem;
@@ -1652,7 +1714,7 @@ body {
       width: 100%;
       height: 4rem;
       padding: 0 2rem;
-      margin: .4rem 0;
+      margin: 0.4rem 0;
       font-size: 1.4rem;
       border: none;
       outline: none;
@@ -1685,13 +1747,13 @@ body {
         background-color: #1abc9c;
         color: #fff;
         font-size: inherit;
-        padding: .5em;
+        padding: 0.5em;
         padding-right: 2.5em;
         border: 0;
         margin: 0;
         border-radius: 3px;
         text-indent: 0.01px;
-        text-overflow: '';
+        text-overflow: "";
         -webkit-appearance: button;
         /* hide default arrow in chrome OSX */ }
       .MainQA__Types__Box__Custom_Dropdown::before, .MainQA__Types__Box__Custom_Dropdown::after {
@@ -1702,11 +1764,11 @@ body {
         /*  Custom dropdown arrow */
         content: "\25BC";
         height: 1em;
-        font-size: .625em;
+        font-size: 0.625em;
         line-height: 1;
         right: 1.2em;
         top: 50%;
-        margin-top: -.5em; }
+        margin-top: -0.5em; }
       .MainQA__Types__Box__Custom_Dropdown::before {
         /*  Custom dropdown arrow cover */
         width: 2em;
@@ -1792,16 +1854,23 @@ body {
           background: #057777;
           padding: 0 1rem;
           font-size: 2rem;
-          border-radius: 5px; }
+          border-radius: 5px;
+          color: #fff;
+          transition: all 0.4s; }
           .MainQA__AnswerInput__Box__ButtonBox__Button:hover {
             cursor: pointer;
-            background: #c4c4c4; }
+            box-shadow: inset 0 0 150px 150px rgba(40, 101, 99, 0.8);
+            transform: translateY(-1px); }
+          .MainQA__AnswerInput__Box__ButtonBox__Button:active {
+            cursor: pointer;
+            box-shadow: inset 0 0 150px 150px rgba(40, 101, 99, 0.8);
+            transform: translateY(2px); }
   .MainQA__Heading {
     margin: 0 auto;
     height: 8rem;
     color: #000;
     padding: 0 1rem;
-    margin: .4rem 0;
+    margin: 0.4rem 0;
     width: auto;
     display: flex;
     align-items: center;
@@ -1878,7 +1947,7 @@ body {
               color: #057777; }
             .MainQA__Answer__Box__Top__Left__AnswerData__AnswerData {
               font-size: 1.3rem;
-              margin-top: .5rem; }
+              margin-top: 0.5rem; }
         .MainQA__Answer__Box__Top__Right {
           height: 100%;
           flex: 0 0 auto;
@@ -1940,7 +2009,7 @@ body {
           flex-direction: column; }
           .MainQA__Answer__Box__Main__AnswerText__Text {
             font-size: 1.6rem;
-            padding: 0 .5rem;
+            padding: 0 0.5rem;
             text-align: left; }
         .MainQA__Answer__Box__Main__Bottom {
           display: flex;
@@ -1970,7 +2039,7 @@ body {
               display: flex;
               align-items: center;
               justify-content: center;
-              margin-right: .4rem; }
+              margin-right: 0.4rem; }
               .MainQA__Answer__Box__Main__Bottom__Function__Logo__Logo {
                 height: 2.8rem;
                 width: 2.8rem; }
@@ -2001,7 +2070,7 @@ body {
           height: 5rem;
           width: 5rem;
           border-radius: 50%;
-          margin: 0 .5rem;
+          margin: 0 0.5rem;
           background: #fff;
           overflow: hidden; }
           .MainQA__Question__Top__ProfileData__ProfilePhoto__Image {
@@ -2011,7 +2080,7 @@ body {
         .MainQA__Question__Top__ProfileData__ProfileName {
           flex: 1;
           height: 5rem;
-          margin: 0 .5rem;
+          margin: 0 0.5rem;
           background: #fff;
           display: flex;
           align-items: center;
@@ -2019,7 +2088,7 @@ body {
           font-size: 2rem;
           font-weight: 600;
           color: #000;
-          padding-left: .3rem; }
+          padding-left: 0.3rem; }
       .MainQA__Question__Top__QuestionData {
         height: 5rem;
         width: 45rem;
@@ -2032,10 +2101,10 @@ body {
           background: white;
           border-radius: 5px;
           border: 1px solid #c4c4c4;
-          margin: 0 .5rem;
+          margin: 0 0.5rem;
           display: flex;
           justify-content: space-between;
-          padding: 0 .5rem;
+          padding: 0 0.5rem;
           align-items: center;
           font-size: 1.8rem;
           color: #000; }
@@ -2064,7 +2133,7 @@ body {
       .MainQA__Question__MainQuestionData__QuestionLikes {
         height: 96%;
         flex: 0 0 10rem;
-        margin: 0 .5rem;
+        margin: 0 0.5rem;
         display: flex;
         align-items: center;
         justify-content: center; }
@@ -2107,17 +2176,17 @@ body {
         background: white;
         height: 96%;
         flex: 1;
-        margin: 0 .5rem;
+        margin: 0 0.5rem;
         display: flex;
         flex-direction: column; }
         .MainQA__Question__MainQuestionData__QuestionTitleAndBody__Title {
           height: auto;
           width: 96%;
-          margin: .5rem auto;
+          margin: 0.5rem auto;
           font-size: 2rem;
           font-weight: 600;
           color: #000;
-          padding: .5rem;
+          padding: 0.5rem;
           display: flex;
           align-items: center;
           justify-content: flex-start;
@@ -2126,8 +2195,8 @@ body {
           height: auto;
           min-height: calc(100% - 15rem);
           width: 96%;
-          margin: .5rem auto;
-          padding: .5rem;
+          margin: 0.5rem auto;
+          padding: 0.5rem;
           font-size: 1.7rem;
           color: #000;
           border-radius: 1rem;
