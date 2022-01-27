@@ -42,27 +42,34 @@ const Navbar: FC = () => {
 
   return (
     <div className="Navbar">
+      <div className="Navbar__Left">
+        <p onClick={() => history.push("/")}>LEARN101</p>
+      </div>
       <div className="Navbar__Links">
         <AiFillHome
           onClick={() => history.push("/")}
           style={{ fontSize: 25, marginLeft: 20, cursor: "pointer" }}
+          className="Navbar__Links__Home"
         />
         {(userInfo && userInfo.user_id) || user_id ? (
           <>
             <IoCreate
               onClick={() => history.push("/question/ask")}
               style={{ fontSize: 25, marginLeft: 20, cursor: "pointer" }}
+              className="Navbar__Links__Create"
             />
 
             <FiLogOut
               onClick={handleLogout}
               style={{ fontSize: 25, marginLeft: 20, cursor: "pointer" }}
+              className="Navbar__Links__Exit"
             />
 
             <div className="Navbar__Links__content">
               <div className="Navbar__Links__content__Icon">
                 <IoNotificationsSharp
                   style={{ fontSize: 25, marginLeft: 20 }}
+                  className="Navbar__Links__Notification"
                   onClick={() => {
                     setShowNotification({
                       show: !showNotification.show,
@@ -77,7 +84,11 @@ const Navbar: FC = () => {
               <div className="Navbar__Links__Content">
                 <div className="Navbar__Links__content__Avatar">
                   <Avatar
-                  onClick={()=>history.push(`/profile/${userInfo && userInfo.user_id || user_id}`)}
+                    onClick={() =>
+                      history.push(
+                        `/profile/${(userInfo && userInfo.user_id) || user_id}`
+                      )
+                    }
                     alt="user"
                     src={`${(userInfo && userInfo.image) || image}`}
                     style={{ width: 40, height: 40 }}

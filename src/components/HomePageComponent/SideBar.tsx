@@ -29,9 +29,6 @@ const SideBar: FC = () => {
   const history = useHistory();
   return (
     <div className="App__Bottom__Left__SideBar">
-      <div className="App__Bottom__Left__SideBar__Header">
-        <p onClick={() => history.push("/")}>LEARN101</p>
-      </div>
       <div className="App__Bottom__Left__SideBar__Links">
         <div className="App__Bottom__Left__SideBar__Links__Link">Samikxya</div>
         <Link

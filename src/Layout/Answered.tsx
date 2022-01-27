@@ -1,8 +1,6 @@
 import { FC, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-// import Home from "../components/ProfileComponents/NewsFeed";
 import HomeNewsFeed from "../components/HomePageComponent/HomeNewsFeed";
-import { Link } from "react-router-dom";
 import { QuestionFeedAction } from "../actions/QuestionFeedAction";
 import {
   questionFeedInterface,

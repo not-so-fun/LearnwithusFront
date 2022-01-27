@@ -1,61 +1,52 @@
-import React, { FC } from "react";
+import React, { FC, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { RootDispatchType, RootStateType } from "../../stores";
+import { RootStateType } from "../../stores";
 import { answersInterface } from "../../reducers/AnsweresOnlyReducer";
 import axios from "../../axios";
 import useTokenAndId from "../ReusableLogicComponents/useTokenAndId";
-import {ANSWERS_LOAD_SUCCESS} from "../../constants/OnlyAnswersContants"
+import { ANSWERS_LOAD_SUCCESS } from "../../constants/OnlyAnswersContants";
+import InputLabel from "@mui/material/InputLabel";
+import MenuItem from "@mui/material/MenuItem";
+import FormControl from "@mui/material/FormControl";
+import Select, { SelectChangeEvent } from "@mui/material/Select";
 
 interface mainAnswerQATypest {
   question_id: string;
 }
 
 const MainQAAnswerTypes: FC<mainAnswerQATypest> = ({ question_id }) => {
+  const [age, setAge] = useState<string>("Hello");
+
+  const handleChange = (event: SelectChangeEvent) => {
+    setAge(event.target.value as string);
+  };
+
   const { answers } = useSelector<RootStateType>(
     (state) => state.answers
   ) as answersInterface;
 
-  const dispatch=useDispatch()
+  const dispatch = useDispatch();
 
   const { token } = useTokenAndId();
 
-  const handleShowAnswersByOldest:
-    | React.MouseEventHandler<HTMLButtonElement>
-    | undefined = () => {
+  const handleShowAnswersSort:
+    | React.ChangeEventHandler<HTMLSelectElement>
+    | undefined = (e) => {
     axios
-      .get(`/answers/by_oldest/${question_id}`, {
-        headers: {
-          "x-auth-token": token,
-        },
-      })
-      .then((response) => {
-        // console.log(response.data);
-        dispatch({type:ANSWERS_LOAD_SUCCESS,answers:response.data})
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
-
-  const handleShowAnswersByRecent:
-  | React.MouseEventHandler<HTMLButtonElement>
-  | undefined = () => {
-  axios
-    .get(`/answers/by_recent/${question_id}`, {
+    .get(`/answers/${e.target.value}/${question_id}`, {
       headers: {
         "x-auth-token": token,
       },
     })
     .then((response) => {
       // console.log(response.data);
-      dispatch({type:ANSWERS_LOAD_SUCCESS,answers:response.data})
+      dispatch({ type: ANSWERS_LOAD_SUCCESS, answers: response.data });
     })
     .catch((error) => {
       console.log(error);
     });
-};
+  };
 
-  
   return (
     <>
       <div className="MainQA__Types__Box">
@@ -67,16 +58,13 @@ const MainQAAnswerTypes: FC<mainAnswerQATypest> = ({ question_id }) => {
             </h1>
           </div>
         </div>
-        <div className="MainQA__Types__Box__Right">
-          <button className="MainQA__Types__Box__Right__Button">Votes</button>
-          <button
-            onClick={handleShowAnswersByOldest}
-            className="MainQA__Types__Box__Right__Button"
-          >
-            Oldest
-          </button>
-          <button   onClick={handleShowAnswersByRecent} className="MainQA__Types__Box__Right__Button">Recent</button>
-        </div>
+
+        <span className="MainQA__Types__Box__Custom_Dropdown">
+          <select onChange={(e) => handleShowAnswersSort(e)}>
+            <option value="by_oldest">Oldest</option>
+            <option value="by_recent">Recent</option>
+          </select>
+        </span>
       </div>
     </>
   );

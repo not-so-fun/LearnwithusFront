@@ -540,10 +540,9 @@ body {
         .QuestionFeed__Box__Main__AboutQuestion__QuestionStatistics {
           flex: 0 0 7rem;
           width: 100%;
-          background: #f8f8f8;
           display: flex;
           align-items: center;
-          justify-content: space-between; }
+          justify-content: flex-start; }
           .QuestionFeed__Box__Main__AboutQuestion__QuestionStatistics__Left {
             height: 7rem;
             flex: 0 0 auto;
@@ -555,6 +554,7 @@ body {
               width: auto;
               height: 5rem;
               border: 1px solid #494949;
+              cursor: pointer;
               border-radius: 5px;
               display: flex;
               align-items: center;
@@ -562,7 +562,6 @@ body {
               .QuestionFeed__Box__Main__AboutQuestion__QuestionStatistics__Left__Answers__Logo {
                 height: 4rem;
                 width: 4rem;
-                margin: 0 1rem;
                 display: flex;
                 align-items: center;
                 justify-content: center; }
@@ -586,7 +585,6 @@ body {
               .QuestionFeed__Box__Main__AboutQuestion__QuestionStatistics__Left__Views__Logo {
                 height: 4rem;
                 width: 4rem;
-                margin: 0 1rem;
                 display: flex;
                 align-items: center;
                 justify-content: center; }
@@ -814,7 +812,7 @@ body {
           width: 49%; }
           .Profile__Box__Top__Information__Name__firstName__Box {
             height: auto;
-            padding: .3rem;
+            padding: 0.3rem;
             width: 100%; }
         .Profile__Box__Top__Information__Name__firstName p {
           font-size: 14px;
@@ -824,15 +822,15 @@ body {
           font-size: 18px;
           font-weight: 500;
           letter-spacing: 0.03rem;
-          background-color: #c4c4c4;
-          padding: 0 0.5rem;
+          background-color: #ebebeb;
+          padding: 0.5rem 0.5rem;
           color: #000; }
         .Profile__Box__Top__Information__Name__lastName {
           width: 49%;
           display: inline-block; }
           .Profile__Box__Top__Information__Name__lastName__Box {
             height: auto;
-            padding: .3rem;
+            padding: 0.3rem;
             width: 100%; }
         .Profile__Box__Top__Information__Name__lastName p {
           font-size: 14px;
@@ -843,8 +841,8 @@ body {
           font-size: 18px;
           font-weight: 500;
           letter-spacing: 0.03rem;
-          background-color: #c4c4c4;
-          padding: 0 0.5rem;
+          background-color: #ebebeb;
+          padding: 0.5rem 0.5rem;
           color: #000; }
       .Profile__Box__Top__Information__BasicInfo {
         margin-bottom: 2rem; }
@@ -857,8 +855,8 @@ body {
         font-size: 18px;
         font-weight: 500;
         letter-spacing: 0.03rem;
-        background-color: #fff;
-        padding: 0 0.5rem;
+        background-color: #ebebeb;
+        padding: 0.5rem 0.5rem;
         color: #000; }
     .Profile__Box__Top__Statistics {
       flex: 1;
@@ -886,23 +884,25 @@ body {
       .Profile__Box__Top__Statistics__Div {
         width: 70%;
         padding: 2rem;
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); }
+        border: 2px solid lightgrey; }
         .Profile__Box__Top__Statistics__Div__Data p {
           font-size: 14px;
-          letter-spacing: 0.08rem; }
+          letter-spacing: 0.08rem;
+          color: #000; }
         .Profile__Box__Top__Statistics__Div__Data h1 {
           font-weight: bold;
           font-size: 55px;
           line-height: 70px;
           color: #4f9b13; }
   .Profile__Box__Main {
-    background: #c4c4c4;
+    background: #ffffff;
     width: 100%;
     height: 95rem;
     display: flex;
     align-items: center;
-    margin-bottom: 2rem;
-    display: flex; }
+    margin-bottom: 0rem;
+    display: flex;
+    border: 2px solid lightgrey; }
     .Profile__Box__Main__Newsfeed {
       height: 100%;
       flex: 1;
@@ -967,7 +967,7 @@ body {
     .Profile__Box__Main__SideInformation {
       height: 100%;
       flex: 0 0 30%;
-      background: #057777; }
+      background: white; }
       .Profile__Box__Main__SideInformation__Status {
         border: 2px solid black;
         background: #f6f6f6;
@@ -1160,16 +1160,31 @@ body {
   background-color: #057777;
   display: flex;
   height: 6.5rem;
-  justify-content: flex-end;
+  justify-content: space-between;
+  align-items: center;
   position: fixed;
   z-index: 100;
   width: 100%; }
+  .Navbar__Left {
+    margin-left: 2rem;
+    font-size: 24px;
+    letter-spacing: 0.05rem;
+    cursor: pointer;
+    transition: all 0.4s ease; }
+    .Navbar__Left:hover {
+      transform: scale(1.2); }
   .Navbar__Links {
     margin-right: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
     float: right; }
+    .Navbar__Links__Home, .Navbar__Links__Create, .Navbar__Links__Exit {
+      transition: all 0.4s ease; }
+      .Navbar__Links__Home:hover, .Navbar__Links__Create:hover, .Navbar__Links__Exit:hover {
+        transform: scale(1.3); }
+    .Navbar__Links__Notification:hover {
+      animation: swing 0.5s ease 0s; }
     .Navbar__Links__Content {
       position: relative;
       color: #777; }
@@ -1260,6 +1275,18 @@ body {
           font-size: 34px !important; }
     .Navbar__Links__content:hover {
       cursor: pointer; }
+
+@keyframes swing {
+  0% {
+    transform: rotateZ(0); }
+  25% {
+    transform: rotateZ(25deg); }
+  50% {
+    transform: rotateZ(-15deg); }
+  75% {
+    transform: rotateZ(10deg); }
+  100% {
+    transform: rotateZ(0); } }
 
 .HomePage {
   height: 100%;
@@ -1645,8 +1672,56 @@ body {
       height: 8rem;
       width: 100%;
       display: flex;
-      align-items: flex-end;
+      align-items: center;
       justify-content: space-between; }
+      .MainQA__Types__Box__Custom_Dropdown {
+        position: relative;
+        display: inline-block;
+        vertical-align: middle;
+        margin: 10px;
+        /* demo only */
+        font-size: 2em; }
+      .MainQA__Types__Box__Custom_Dropdown select {
+        background-color: #1abc9c;
+        color: #fff;
+        font-size: inherit;
+        padding: .5em;
+        padding-right: 2.5em;
+        border: 0;
+        margin: 0;
+        border-radius: 3px;
+        text-indent: 0.01px;
+        text-overflow: '';
+        -webkit-appearance: button;
+        /* hide default arrow in chrome OSX */ }
+      .MainQA__Types__Box__Custom_Dropdown::before, .MainQA__Types__Box__Custom_Dropdown::after {
+        content: "";
+        position: absolute;
+        pointer-events: none; }
+      .MainQA__Types__Box__Custom_Dropdown::after {
+        /*  Custom dropdown arrow */
+        content: "\25BC";
+        height: 1em;
+        font-size: .625em;
+        line-height: 1;
+        right: 1.2em;
+        top: 50%;
+        margin-top: -.5em; }
+      .MainQA__Types__Box__Custom_Dropdown::before {
+        /*  Custom dropdown arrow cover */
+        width: 2em;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        border-radius: 0 3px 3px 0; }
+      .MainQA__Types__Box__Custom_Dropdown select[disabled] {
+        color: rgba(0, 0, 0, 0.3); }
+      .MainQA__Types__Box__Custom_Dropdown select[disabled]::after {
+        color: rgba(0, 0, 0, 0.1); }
+      .MainQA__Types__Box__Custom_Dropdown::before {
+        background-color: rgba(0, 0, 0, 0.15); }
+      .MainQA__Types__Box__Custom_Dropdown::after {
+        color: rgba(0, 0, 0, 0.4); }
       .MainQA__Types__Box__Left {
         height: 8rem;
         flex: 0 0 auto;

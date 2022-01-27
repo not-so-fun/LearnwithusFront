@@ -1,7 +1,6 @@
 import React, { FC, useEffect, useState } from "react";
-
 import { AiFillCaretDown, AiFillCaretUp, AiOutlineEye } from "react-icons/ai";
-
+import { FaRegCommentDots } from "react-icons/fa";
 import { MdMessage } from "react-icons/md";
 import { questionFeedListInterface } from "../../reducers/QuestionFeedReducers";
 import useTokenAndId from "../ReusableLogicComponents/useTokenAndId";
@@ -18,10 +17,9 @@ interface lastStateInterface {
 
 const QuestionFeed: FC<quesInterface> = ({ question }) => {
   const [upvote, setUpvote] = useState<boolean | null>(null);
-  let data = parseInt(question.total_upvotes) - parseInt(question.total_downvotes);
+  let data =
+    parseInt(question.total_upvotes) - parseInt(question.total_downvotes);
   const [totalUpvotes, setTotalUpvote] = useState<number>(data);
-
-  
 
   const history = useHistory();
   const [lastState, setLastState] = useState<lastStateInterface>({
@@ -31,7 +29,7 @@ const QuestionFeed: FC<quesInterface> = ({ question }) => {
 
   useEffect(() => {
     setUpvote(question.upvote);
-    setLastState({upvote:question.upvote})
+    setLastState({ upvote: question.upvote });
   }, [question]);
 
   const upVote = (upvote: boolean) => {
@@ -66,7 +64,7 @@ const QuestionFeed: FC<quesInterface> = ({ question }) => {
       setUpvote(true);
       if (upvote !== null) {
         setTotalUpvote(totalUpvotes + 2);
-      }else{
+      } else {
         setTotalUpvote(totalUpvotes + 1);
       }
     } else {
@@ -83,9 +81,9 @@ const QuestionFeed: FC<quesInterface> = ({ question }) => {
     if (upvote === null || upvote === true) {
       setLastState({ ...lastState, upvote: upvote });
       setUpvote(false);
-      if (upvote !== null){ 
+      if (upvote !== null) {
         setTotalUpvote(totalUpvotes - 2);
-      }else{
+      } else {
         setTotalUpvote(totalUpvotes - 1);
       }
     } else {
@@ -131,24 +129,23 @@ const QuestionFeed: FC<quesInterface> = ({ question }) => {
         </div>
         <div className="QuestionFeed__Box__Main">
           <div className="QuestionFeed__Box__Main__Upvotes">
-            
-                    <div className="QuestionFeed__Box__Main__Upvotes__Likes">
-                      <AiFillCaretUp
-                        onClick={handleChangeUpvoteUp}
-                        style={(upvote===true)?{ color: "blue" }:{}}
-                        className="QuestionFeed__Box__Main__Upvotes__Likes__Logo"
-                      />
-                    </div>
-                    <div className="QuestionFeed__Box__Main__Upvotes__Box">
-                      <h1>{totalUpvotes}</h1>
-                    </div>
-                    <div className="QuestionFeed__Box__Main__Upvotes__Dislikes">
-                      <AiFillCaretDown
-                        style={(upvote===false)?{ color: "red" }:{}}
-                        onClick={handleChangeUpvoteDown}
-                        className="QuestionFeed__Box__Main__Upvotes__Dislikes__Logo"
-                      />
-                    </div>    
+            <div className="QuestionFeed__Box__Main__Upvotes__Likes">
+              <AiFillCaretUp
+                onClick={handleChangeUpvoteUp}
+                style={upvote === true ? { color: "blue" } : {}}
+                className="QuestionFeed__Box__Main__Upvotes__Likes__Logo"
+              />
+            </div>
+            <div className="QuestionFeed__Box__Main__Upvotes__Box">
+              <h1>{totalUpvotes}</h1>
+            </div>
+            <div className="QuestionFeed__Box__Main__Upvotes__Dislikes">
+              <AiFillCaretDown
+                style={upvote === false ? { color: "red" } : {}}
+                onClick={handleChangeUpvoteDown}
+                className="QuestionFeed__Box__Main__Upvotes__Dislikes__Logo"
+              />
+            </div>
           </div>
 
           <div className="QuestionFeed__Box__Main__AboutQuestion">
@@ -166,33 +163,39 @@ const QuestionFeed: FC<quesInterface> = ({ question }) => {
                 directory:
               </p>
             </div>
+
             <div className="QuestionFeed__Box__Main__AboutQuestion__QuestionStatistics">
               <div className="QuestionFeed__Box__Main__AboutQuestion__QuestionStatistics__Left">
-                <div className="QuestionFeed__Box__Main__AboutQuestion__QuestionStatistics__Left__Answers">
+                <div
+                  onClick={redirectToMainQA}
+                  className="QuestionFeed__Box__Main__AboutQuestion__QuestionStatistics__Left__Answers"
+                >
                   <div className="QuestionFeed__Box__Main__AboutQuestion__QuestionStatistics__Left__Answers__Logo">
-                    <MdMessage className="QuestionFeed__Box__Main__AboutQuestion__QuestionStatistics__Left__Answers__Logo__Logo" />
+                    <FaRegCommentDots className="QuestionFeed__Box__Main__AboutQuestion__QuestionStatistics__Left__Answers__Logo__Logo" />
                   </div>
+
                   <p className="QuestionFeed__Box__Main__AboutQuestion__QuestionStatistics__Left__Answers__Text">
-                    14 Answers
+                    14
                   </p>
+                  
                 </div>
                 <div className="QuestionFeed__Box__Main__AboutQuestion__QuestionStatistics__Left__Views">
                   <div className="QuestionFeed__Box__Main__AboutQuestion__QuestionStatistics__Left__Views__Logo">
                     <AiOutlineEye className="QuestionFeed__Box__Main__AboutQuestion__QuestionStatistics__Left__Views__Logo__Logo" />
                   </div>
                   <p className="QuestionFeed__Box__Main__AboutQuestion__QuestionStatistics__Left__Views__Text">
-                    412 views
+                    41
                   </p>
                 </div>
               </div>
-              <div className="QuestionFeed__Box__Main__AboutQuestion__QuestionStatistics__Right">
+              {/* <div className="QuestionFeed__Box__Main__AboutQuestion__QuestionStatistics__Right">
                 <button
                   className="QuestionFeed__Box__Main__AboutQuestion__QuestionStatistics__Right__Button"
                   onClick={redirectToMainQA}
                 >
                   Answer
                 </button>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
