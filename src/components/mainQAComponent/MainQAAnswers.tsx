@@ -81,14 +81,14 @@ const MainQAAnswers: FC<MainQAAnswerInterface> = ({ ans }) => {
   //GET_REPLIES
   const repliesArray = () => {
     axios
-      .get(`/replies/${ans.answer_id}`, {
+      .get(`/replies/${ans.answer_id}?set=${0}`, {
         headers: {
           "x-auth-token": token,
         },
       })
       .then((response) => {
-        // console.log(response.data);
-        setReplies(response.data);
+        console.log(response.data);
+        setReplies([...replies,response.data]);
         setShowReplies(true);
       })
       .catch((error) => {

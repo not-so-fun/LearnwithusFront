@@ -65,7 +65,6 @@ const MainQAAnswerTypes: FC<mainAnswerQATypest> = ({ question_id }) => {
             <option value="by_recent"> Recent</option>
           </select>
         </span>
-        
       </div>
     </>
   );

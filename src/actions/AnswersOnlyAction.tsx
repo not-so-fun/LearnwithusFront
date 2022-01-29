@@ -12,7 +12,7 @@ export const AnswersOnlyAction =
   (dispatch: Dispatch<RootDispatchType>) => {
     dispatch({ type: ANSWERS_LOAD_START });
     axios
-      .get(`/answers/${question_id}`, {
+      .get(`/answers/${question_id}?set=${0}`, {
         headers: {
           "x-auth-token": token,
         },

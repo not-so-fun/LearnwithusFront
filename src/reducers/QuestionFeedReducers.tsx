@@ -24,6 +24,7 @@ export interface questionFeedListInterface {
 export interface questionFeedInterface {
   loading: boolean;
   questions: questionFeedListInterface[] | null;
+  
   error: string;
 }
 
@@ -43,6 +44,7 @@ export const QuestionFeedReducer = (
             return {...state,loading:true}
         case QUESTION_FEED_LOAD_SUCCESS:
             return {...state,loading:false,questions:action.questions}
+        
         case QUESTION_FEED_LOAD_ERROR:
             return {...state,loading:false,error:action.error}
         default:

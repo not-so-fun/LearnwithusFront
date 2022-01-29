@@ -5,7 +5,7 @@ import { AnswerTheQuestionAction } from "../../actions/AnswerTheQuestionAction";
 import { answerTheQuestionInterface } from "../../reducers/AnswerTheQuestionReducer";
 import { Progress } from "../ReusableUIComponents/Spinner";
 import useTokenAndId from "../ReusableLogicComponents/useTokenAndId";
-import AnswerTextEditor from "./AnswerTextEditor"
+import AnswerTextEditor from "./AnswerTextEditor";
 
 interface answerComponentInterface {
   question_id: string;
@@ -27,37 +27,35 @@ const AnswerComponent: FC<answerComponentInterface> = ({ question_id }) => {
     setAnswerType("");
   };
   return (
-
     <>
+      <div className="MainQA__AnswerInput__Box">
+        <div className="MainQA__AnswerInput__Box__Heading">
+          <h1>Your Answer</h1>
+        </div>
 
-    <div className="MainQA__AnswerInput__Box">
+        <AnswerTextEditor
+          answerType={answerType}
+          setAnswerType={setAnswerType}
+        />
 
-      <div className="MainQA__AnswerInput__Box__Heading">
-        <h1>Your Answer</h1>
+        <div className="MainQA__AnswerInput__Box__ButtonBox">
+          {loading ? (
+            <button
+              disabled
+              className="MainQA__AnswerInput__Box__ButtonBox__Button"
+            >
+              <Progress size={25} />
+            </button>
+          ) : (
+            <button
+              onClick={handleAnswerSubmit}
+              className="MainQA__AnswerInput__Box__ButtonBox__Button"
+            >
+              Post your answer
+            </button>
+          )}
+        </div>
       </div>
-
-<AnswerTextEditor answerType={answerType} setAnswerType={setAnswerType}/>
-
-
-
-      <div className="MainQA__AnswerInput__Box__ButtonBox">
-        {loading ? (
-          <button
-            disabled
-            className="MainQA__AnswerInput__Box__ButtonBox__Button"
-          >
-            <Progress size={25} />
-          </button>
-        ) : (
-          <button
-            onClick={handleAnswerSubmit}
-            className="MainQA__AnswerInput__Box__ButtonBox__Button"
-          >
-            Post your answer
-          </button>
-        )}
-      </div>
-    </div>
     </>
   );
 };
