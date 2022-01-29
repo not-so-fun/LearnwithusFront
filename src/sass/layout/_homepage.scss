@@ -3,7 +3,7 @@
   width: 100%;
   display: flex;
   background: #eeeeee;
-  overflow-y: scroll;
+  // overflow-y: scroll;
   // border: 2px solid red;
 
   &__Left {
@@ -105,6 +105,9 @@
 
         // width: 8rem;
         // margin-right: 1rem;
+        &::-webkit-scrollbar {
+          width: 0px;
+        }
       }
       &__Notification {
         flex: 0 0 32rem;
