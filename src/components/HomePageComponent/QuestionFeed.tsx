@@ -2,6 +2,7 @@ import React, { FC, useEffect, useState } from "react";
 import { AiFillCaretDown, AiFillCaretUp, AiOutlineEye } from "react-icons/ai";
 import { FaRegCommentDots } from "react-icons/fa";
 import { MdMessage } from "react-icons/md";
+import { Markup } from "interweave";
 import { questionFeedListInterface } from "../../reducers/QuestionFeedReducers";
 import useTokenAndId from "../ReusableLogicComponents/useTokenAndId";
 import axios from "../../axios";
@@ -110,6 +111,9 @@ const QuestionFeed: FC<quesInterface> = ({ question }) => {
               src={question.image}
               className="QuestionFeed__Box__Top__ProfileImage__Image"
             />
+            <figcaption className="QuestionFeed__Box__Top__ProfileImage__Caption">
+              {question.username}
+            </figcaption>
           </Link>
           <div className="QuestionFeed__Box__Top__AboutQuestion">
             <div className="QuestionFeed__Box__Top__AboutQuestion__Top">
@@ -152,7 +156,7 @@ const QuestionFeed: FC<quesInterface> = ({ question }) => {
             <div className="QuestionFeed__Box__Main__AboutQuestion__Question">
               <p>
                 {" "}
-                {question.question}
+                <Markup content={question.question} />
                 When you create a regular .NET 5 or 6 API project, you get some
                 basic classes such as Program.cs and Startup.cs. I want to
                 replicate that in a class project, because I want to be able to
@@ -177,7 +181,6 @@ const QuestionFeed: FC<quesInterface> = ({ question }) => {
                   <p className="QuestionFeed__Box__Main__AboutQuestion__QuestionStatistics__Left__Answers__Text">
                     14
                   </p>
-                  
                 </div>
                 <div className="QuestionFeed__Box__Main__AboutQuestion__QuestionStatistics__Left__Views">
                   <div className="QuestionFeed__Box__Main__AboutQuestion__QuestionStatistics__Left__Views__Logo">

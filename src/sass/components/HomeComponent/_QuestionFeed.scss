@@ -30,11 +30,32 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        position: relative;
         &__Image {
           height: 5rem;
           width: 5rem;
           border-radius: 50%;
           object-fit: cover;
+          transition: all 0.5s;
+        }
+        &__Caption {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, 0);
+          color: $color-white;
+          text-transform: uppercase;
+          text-align: center;
+          font-size: 1.1rem;
+          opacity: 0;
+          transition: all 0.5s;
+        }
+        &:hover &__Caption {
+          opacity: 1;
+          transform: translate(-50%, -50%);
+        }
+        &:hover &__Image {
+          filter: blur(3px);
         }
       }
       &__AboutQuestion {
@@ -97,8 +118,17 @@
           &__Logo {
             height: 3rem;
             width: 3rem;
+            transition: all 0.4s ease;
+
             &:hover {
               cursor: pointer;
+              color: blue;
+              transform: scale(1.2);
+            }
+            &:active {
+              cursor: pointer;
+              color: blue;
+              transform: translateY(2px);
             }
           }
         }
@@ -121,8 +151,16 @@
           &__Logo {
             height: 3rem;
             width: 3rem;
+            transition: all 0.4s ease;
             &:hover {
               cursor: pointer;
+              color: rgb(246, 27, 27);
+              transform: scale(1.2);
+            }
+            &:active {
+              cursor: pointer;
+              color: rgb(246, 27, 27);
+              transform: translateY(-2px);
             }
           }
         }
@@ -138,7 +176,7 @@
         &__Question {
           flex: 1;
           width: 100%;
-          text-align:left;
+          text-align: left;
           // background:green;
           margin-bottom: 2rem;
           color: $color-grey-light-3;
@@ -165,7 +203,7 @@
               width: auto;
               height: 5rem;
               border: 1px solid $color-grey-light-3;
-            cursor: pointer;
+              cursor: pointer;
               border-radius: 5px;
               display: flex;
               align-items: center;
@@ -181,6 +219,15 @@
                 &__Logo {
                   height: 3rem;
                   width: 3rem;
+                  transition: all 0.4s ease;
+                  &:hover {
+                    color: #057777;
+                    transform: scale(1.2);
+                  }
+                  &:active {
+                    color: #057777;
+                    transform: scale(1);
+                  }
                 }
               }
               &__Text {
@@ -210,6 +257,11 @@
                 &__Logo {
                   height: 3rem;
                   width: 3rem;
+                  transition: all 0.4s ease;
+                  &:hover {
+                    color: #057777;
+                    transform: scale(1.2);
+                  }
                 }
               }
               &__Text {
@@ -267,19 +319,27 @@
       &__Content {
         width: auto;
         height: 3rem;
-        // background:red;
         display: flex;
         align-items: center;
         justify-content: space-between;
         font-size: 1.4rem;
         padding: 0 1rem;
+        cursor: pointer;
+        transition: all 0.4s ease;
+        &:hover {
+          color: red;
+        }
+
+        &:hover:first-child {
+          color: #5388b4;
+        }
+        &:hover:last-child {
+          color: #d3d308;
+        }
         &:not(:last-child) {
           border-right: 1px solid $color-grey-light-3;
         }
-        &:hover {
-          cursor: pointer;
-          background: $color-grey-light-2;
-        }
+
         &__Logo {
           width: 3rem;
           height: 3rem;
@@ -287,6 +347,7 @@
           display: flex;
           align-items: center;
           justify-content: center;
+
           &__Logo {
             width: 2.5rem;
             height: 2.5rem;
@@ -311,9 +372,17 @@
         font-size: 1.4rem;
         padding: 0 1rem;
         margin: 0 0.3rem;
-        &:hover {
-          cursor: pointer;
-          background: $color-grey-light-2;
+        cursor: pointer;
+        transition: all 0.4s ease;
+
+        &:hover:nth-child(2) {
+          color: #4267b2;
+        }
+        &:hover:first-child {
+          color: #057777;
+        }
+        &:hover:last-child {
+          color: #00acee;
         }
         &__Logo {
           width: 3rem;
@@ -322,6 +391,7 @@
           display: flex;
           align-items: center;
           justify-content: center;
+
           &__Logo {
             width: 2.5rem;
             height: 2.5rem;

@@ -4,6 +4,7 @@ import axios from "../../axios";
 import useTokenAndId from "../ReusableLogicComponents/useTokenAndId";
 import { MainRepliesInterface } from "./MainQAAnswers";
 import { lastStateInterface } from "./MainQAAnswers";
+import {Markup} from "interweave"
 
 interface replyInterface {
   reply: MainRepliesInterface;
@@ -140,7 +141,7 @@ const MainQAReplies: FC<replyInterface> = ({ reply }) => {
           <div className="MainQA__Answer__Box__Main__AnswerText">
             <div className="MainQA__Answer__Box__Main__AnswerText__Text">
               <p>
-                {reply.reply}
+                <Markup content={reply.reply}/>
                 If it is difficult fo you to quit cold turkey then try adding 2
                 or 3 vegeterian or vegan meals per week to see how you feel. The
                 most important thing is to read, read, read anything you can
