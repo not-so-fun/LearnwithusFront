@@ -1,4 +1,4 @@
-import React, { FC, useEffect } from "react";
+import React, { FC } from "react";
 import { profileUserDataInterface } from "../../reducers/ProfileReducer";
 
 interface ProfileFormInterface {
@@ -14,6 +14,7 @@ const ProfileForm: FC<ProfileFormInterface> = ({ profile_data }) => {
           <div className="Profile__Box__Top__Information__Name__firstName__Box">
             <h4>{profile_data.first_name}</h4>
           </div>
+          
         </div>
         <div className="Profile__Box__Top__Information__Name__lastName">
           <p>Lastname</p>

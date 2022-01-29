@@ -9,11 +9,10 @@ import { profileDataInterface } from "../reducers/ProfileReducer";
 import { ProfileAction } from "../actions/ProfileAction";
 import { RootStateType } from "../stores";
 import useTokenAndId from "../components/ReusableLogicComponents/useTokenAndId";
-import { Progress } from "../components/ReusableUIComponents/Spinner";
-import Navbar from "../components/Navbar";
-import ProfileNewsFeed from "../components/ProfileComponents/NewsFeed";
+
 import { RESET_USER_INFO } from "../constants/ProfileConstants";
-import SideBar from "../components/HomePageComponent/SideBar";
+import ProfileFormEdit from "../components/ProfileComponents/ProfileFormEdit";
+import ModalImageUpload from "../components/ProfileComponents/ModalComponents/ModalImageUpload";
 
 // const answerStats = [
 //   {
@@ -63,10 +62,10 @@ const Profile: FC<RouteComponentProps<any>> = ({ match }) => {
     };
   }, [match, token, userInfo]);
 
-  const { loading, profile_data, error } = useSelector<RootStateType>(
+  const { loading, profile_data, error,profileForm} = useSelector<RootStateType>(
     (state) => state.profile_info_data
   ) as profileDataInterface;
-
+  
   return (
     // <div className="Profile">
     <div className="Profile__Box">
@@ -74,7 +73,10 @@ const Profile: FC<RouteComponentProps<any>> = ({ match }) => {
         <>
           <div className="Profile__Box__Top">
             <ProfileImageAndData profile_data={profile_data} />
+            {profileForm ?
+            <ProfileFormEdit profile_data={profile_data}/>:
             <ProfileForm profile_data={profile_data} />
+            }
             <ProfileStats page_user_id={match.params.id} />
           </div>
           <div className="Profile__Box__Main">
@@ -98,9 +100,14 @@ const Profile: FC<RouteComponentProps<any>> = ({ match }) => {
             <h1 style={{ color: "black" }}>{error}</h1>
           ) : (
             <>
+            
               <div className="Profile__Box__Top">
                 <ProfileImageAndData profile_data={profile_data} />
+
+                {profileForm ?
+                <ProfileFormEdit profile_data={profile_data}/>:
                 <ProfileForm profile_data={profile_data} />
+                 }
                 <ProfileStats page_user_id={match.params.id} />
               </div>
 

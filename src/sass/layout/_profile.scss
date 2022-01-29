@@ -128,6 +128,26 @@
         text-align: left;
         padding: 2rem;
         color: $color-black;
+        &__Buttons{
+          height:4rem;
+          width:100%;
+          display:flex;
+          align-items: center;
+          justify-content: flex-start;
+          &__Button{
+            height:3.5rem;
+            width:8rem;
+            padding:0 1rem;
+            border:none;
+            outline: none;
+            background:$color-secondary;
+            border-radius:5px;
+            color:$color-white;
+            &:hover{
+              cursor:pointer;
+            }
+          }
+        }
 
         &__Name {
           display: flex;
@@ -137,9 +157,14 @@
             display: inline-block;
             width: 49%;
             &__Box {
-              height: auto;
+              background:$color-grey-light-2;
+              height: 4rem;
               padding: 0.3rem;
               width: 100%;
+              border:none;
+              outline:none;
+              font-size:1.6rem;
+              letter-spacing: 0.03rem;
             }
           }
           &__firstName p {
@@ -150,9 +175,6 @@
           &__firstName h4 {
             font-size: 18px;
             font-weight: 500;
-            letter-spacing: 0.03rem;
-            background-color: #ebebeb;
-            padding: 0.5rem 0.5rem;
             color: $color-black;
           }
 
@@ -160,9 +182,14 @@
             width: 49%;
             display: inline-block;
             &__Box {
-              height: auto;
+              background:$color-grey-light-2;
+              height: 4rem;
               padding: 0.3rem;
               width: 100%;
+              border:none;
+              outline:none;
+              font-size:1.6rem;
+              letter-spacing: 0.03rem;
             }
           }
           &__lastName p {
@@ -175,14 +202,24 @@
             font-size: 18px;
             font-weight: 500;
             letter-spacing: 0.03rem;
-            background-color: #ebebeb;
-            padding: 0.5rem 0.5rem;
             color: $color-black;
+
           }
         }
 
         &__BasicInfo {
           margin-bottom: 2rem;
+          &__Box{
+              background:$color-grey-light-2;
+              height: 4rem;
+              padding: 0.3rem;
+              width: 100%;
+              letter-spacing: 0.03rem;
+              border:none;
+              outline:none;
+              font-size:1.6rem;
+              
+          }
         }
         &__BasicInfo p {
           font-size: 14px;
@@ -194,8 +231,7 @@
           font-size: 18px;
           font-weight: 500;
           letter-spacing: 0.03rem;
-          background-color: #ebebeb;
-          padding: 0.5rem 0.5rem;
+          
           color: $color-black;
         }
       }
@@ -216,8 +252,8 @@
             border: none;
             padding: 6px 12px;
             background-color: transparent;
-            border: 2px solid $color-white;
-            color: $color-white;
+            border: 2px solid $color-black;
+            color: $color-black;
             font-weight: 600;
             letter-spacing: 0.09rem;
             cursor: pointer;
@@ -225,6 +261,7 @@
             &:hover {
               background-color: $color-white;
               color: $color-primary;
+              border:2px solid $color-primary;
             }
           }
         }
@@ -627,4 +664,19 @@
 }
 .custom-file-input:active::before {
   background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+}
+
+
+.CENTER{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100vw;
+  height:100vh;
+  background:$color-grey-dark;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index:200;
+  opacity:0.6;
 }

@@ -5,7 +5,9 @@ import {
   RESET_USER_INFO,
   CHANGE_IMAGE,
   START_IMAGE_UPLOAD,
-  IMAGE_UPLOAD_SUCCESS
+  IMAGE_UPLOAD_SUCCESS,
+  EDIT_PROFILE_ON,
+  EDIT_PROFILE_OFF
 } from "../constants/ProfileConstants";
 import {profileUserDataInterface} from "../reducers/ProfileReducer"
 
@@ -37,6 +39,12 @@ interface startImage{
 interface successImage{
   type:typeof IMAGE_UPLOAD_SUCCESS;
 }
+interface editProfileOn{
+  type:typeof EDIT_PROFILE_ON;
+}
+interface editProfileOff{
+  type:typeof EDIT_PROFILE_OFF;
+}
 
 
 export type ProfileActionTypes =
@@ -46,4 +54,6 @@ export type ProfileActionTypes =
   | profileDataReset
   | changeImage
   |startImage
-  |successImage;
+  |successImage
+  |editProfileOn
+  |editProfileOff;

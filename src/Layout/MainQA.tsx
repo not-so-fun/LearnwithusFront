@@ -13,6 +13,8 @@ import { questionFeedListInterface } from "../reducers/QuestionFeedReducers";
 import { answersInterface } from "../reducers/AnsweresOnlyReducer";
 import { MainQuestionAnswerInterface } from "../reducers/MainQuestionAnswerReducer";
 import AnswerComponent from "../components/AnswerComponent/AnswerComponent";
+
+
 // const MainQAAnswer=lazy(()=>import("../components/mainQAComponent/MainQAAnswer"))
 
 const MainQA: FC<RouteComponentProps<any>> = ({ match }) => {
@@ -52,7 +54,8 @@ const MainQA: FC<RouteComponentProps<any>> = ({ match }) => {
   }, [match, token]);
 
   return (
-    // <div className="">
+  <>
+  
     <div className="MainQA">
       <div className="MainQA__Heading">Main Question Answer</div>
       <div className="MainQA__Questions"></div>
@@ -68,6 +71,7 @@ const MainQA: FC<RouteComponentProps<any>> = ({ match }) => {
         <AnswerComponent question_id={match.params.id} />
       </div>
     </div>
+    </>
   );
 };
 
