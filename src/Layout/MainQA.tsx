@@ -14,7 +14,6 @@ import { answersInterface } from "../reducers/AnsweresOnlyReducer";
 import { MainQuestionAnswerInterface } from "../reducers/MainQuestionAnswerReducer";
 import AnswerComponent from "../components/AnswerComponent/AnswerComponent";
 
-
 // const MainQAAnswer=lazy(()=>import("../components/mainQAComponent/MainQAAnswer"))
 
 const MainQA: FC<RouteComponentProps<any>> = ({ match }) => {
@@ -54,23 +53,22 @@ const MainQA: FC<RouteComponentProps<any>> = ({ match }) => {
   }, [match, token]);
 
   return (
-  <>
-  
-    <div className="MainQA">
-      <div className="MainQA__Heading">Main Question Answer</div>
-      <div className="MainQA__Questions"></div>
-      <MainQAQuestion question={question} />
-      <div className="MainQA__Types">
-        <MainQAAnswerTypes question_id={match.params.id} />
-      </div>
+    <>
+      <div className="MainQA">
+        <div className="MainQA__Heading">Main Question Answer</div>
+        <div className="MainQA__Questions"></div>
+        <MainQAQuestion question={question} />
+        <div className="MainQA__Types">
+          <MainQAAnswerTypes question_id={match.params.id} />
+        </div>
 
-      <div className="MainQA__Answers">
-        {answers && answers.map((ans) => <MainQAAnswers ans={ans} />)}
+        <div className={`${answers ? "MainQA__Answers" : "MainQA__NoAnswers"}`}>
+          {answers && answers.map((ans) => <MainQAAnswers ans={ans} />)}
+        </div>
+        <div className="MainQA__AnswerInput">
+          <AnswerComponent question_id={match.params.id} />
+        </div>
       </div>
-      <div className="MainQA__AnswerInput">
-        <AnswerComponent question_id={match.params.id} />
-      </div>
-    </div>
     </>
   );
 };
