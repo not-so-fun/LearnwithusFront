@@ -405,8 +405,16 @@
             &__Logo {
               height: 3.3rem;
               width: 3.3rem;
+              transition: all 0.4s ease;
               &:hover {
                 cursor: pointer;
+                color: blue;
+                transform: scale(1.2);
+              }
+              &:active {
+                cursor: pointer;
+                color: blue;
+                transform: translateY(2px);
               }
             }
           }
@@ -429,8 +437,16 @@
             &__Logo {
               height: 3.3rem;
               width: 3.3rem;
+              transition: all 0.4s ease;
               &:hover {
                 cursor: pointer;
+                color: red;
+                transform: scale(1.2);
+              }
+              &:active {
+                cursor: pointer;
+                color: red;
+                transform: translateY(-2px);
               }
             }
           }
@@ -462,6 +478,18 @@
             align-items: center;
             font-size: 1.5rem;
             padding: 0 1rem;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            &:hover:first-child {
+              color: #5388b4;
+            }
+            &:hover:nth-child(2) {
+              color: red;
+            }
+            &:hover:last-child {
+              color: rgb(201, 201, 18);
+            }
+
             &:not(:last-child) {
               border-right: 1px solid $color-grey-light-2;
             }
