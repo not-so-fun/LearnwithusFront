@@ -683,6 +683,36 @@ body {
           height: 2.5rem;
           width: 2.5rem; }
 
+.Modal {
+  height: 40rem;
+  width: 60rem;
+  background: #fff;
+  border-radius: 5px;
+  opacity: 1;
+  z-index: 250;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; }
+  .Modal__Spinner {
+    width: 50rem;
+    height: 25rem;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+  .Modal__Text {
+    width: 50rem;
+    height: 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #048004; }
+
 .Auth {
   height: 70rem;
   max-width: 120rem;
@@ -719,9 +749,11 @@ body {
   .Profile__Box__Top {
     background: #fff;
     width: 100%;
-    height: 50rem;
+    height: auto;
     margin-bottom: 2rem;
-    display: flex; }
+    display: flex;
+    padding: 1rem 0;
+    align-items: center; }
     .Profile__Box__Top__ImagesAndDatas {
       flex: 0 0 30%;
       height: 100%;
@@ -805,6 +837,23 @@ body {
       text-align: left;
       padding: 2rem;
       color: #000; }
+      .Profile__Box__Top__Information__Buttons {
+        height: 4rem;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start; }
+        .Profile__Box__Top__Information__Buttons__Button {
+          height: 3.5rem;
+          width: 8rem;
+          padding: 0 1rem;
+          border: none;
+          outline: none;
+          background: #048004;
+          border-radius: 5px;
+          color: #fff; }
+          .Profile__Box__Top__Information__Buttons__Button:hover {
+            cursor: pointer; }
       .Profile__Box__Top__Information__Name {
         display: flex;
         justify-content: space-between;
@@ -813,9 +862,14 @@ body {
           display: inline-block;
           width: 49%; }
           .Profile__Box__Top__Information__Name__firstName__Box {
-            height: auto;
+            background: #c4c4c4;
+            height: 4rem;
             padding: 0.3rem;
-            width: 100%; }
+            width: 100%;
+            border: none;
+            outline: none;
+            font-size: 1.6rem;
+            letter-spacing: 0.03rem; }
         .Profile__Box__Top__Information__Name__firstName p {
           font-size: 14px;
           letter-spacing: 0.08rem;
@@ -823,17 +877,19 @@ body {
         .Profile__Box__Top__Information__Name__firstName h4 {
           font-size: 18px;
           font-weight: 500;
-          letter-spacing: 0.03rem;
-          background-color: #ebebeb;
-          padding: 0.5rem 0.5rem;
           color: #000; }
         .Profile__Box__Top__Information__Name__lastName {
           width: 49%;
           display: inline-block; }
           .Profile__Box__Top__Information__Name__lastName__Box {
-            height: auto;
+            background: #c4c4c4;
+            height: 4rem;
             padding: 0.3rem;
-            width: 100%; }
+            width: 100%;
+            border: none;
+            outline: none;
+            font-size: 1.6rem;
+            letter-spacing: 0.03rem; }
         .Profile__Box__Top__Information__Name__lastName p {
           font-size: 14px;
           letter-spacing: 0.08rem;
@@ -843,11 +899,18 @@ body {
           font-size: 18px;
           font-weight: 500;
           letter-spacing: 0.03rem;
-          background-color: #ebebeb;
-          padding: 0.5rem 0.5rem;
           color: #000; }
       .Profile__Box__Top__Information__BasicInfo {
         margin-bottom: 2rem; }
+        .Profile__Box__Top__Information__BasicInfo__Box {
+          background: #c4c4c4;
+          height: 4rem;
+          padding: 0.3rem;
+          width: 100%;
+          letter-spacing: 0.03rem;
+          border: none;
+          outline: none;
+          font-size: 1.6rem; }
       .Profile__Box__Top__Information__BasicInfo p {
         font-size: 14px;
         letter-spacing: 0.08rem;
@@ -857,8 +920,6 @@ body {
         font-size: 18px;
         font-weight: 500;
         letter-spacing: 0.03rem;
-        background-color: #ebebeb;
-        padding: 0.5rem 0.5rem;
         color: #000; }
     .Profile__Box__Top__Statistics {
       flex: 1;
@@ -874,15 +935,16 @@ body {
           border: none;
           padding: 6px 12px;
           background-color: transparent;
-          border: 2px solid #fff;
-          color: #fff;
+          border: 2px solid #000;
+          color: #000;
           font-weight: 600;
           letter-spacing: 0.09rem;
           cursor: pointer;
           transition: all 0.4s ease; }
           .Profile__Box__Top__Statistics__Botton__Expertise:hover, .Profile__Box__Top__Statistics__Botton__Wishes:hover {
             background-color: #fff;
-            color: #057777; }
+            color: #057777;
+            border: 2px solid #057777; }
       .Profile__Box__Top__Statistics__Div {
         width: 70%;
         padding: 2rem;
@@ -1179,6 +1241,19 @@ body {
 
 .custom-file-input:active::before {
   background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9); }
+
+.CENTER {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #777;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+  opacity: 0.6; }
 
 .Navbar {
   font-size: 18px;

@@ -2,19 +2,18 @@ import React, { FC, useState } from "react";
 import { profileUserDataInterface } from "../../reducers/ProfileReducer";
 import { AiFillStar } from "react-icons/ai";
 import Avatar from "@mui/material/Avatar";
-import EditModal from "../ProfileComponents/EditModal";
 import PhotoCameraIcon from "@mui/icons-material/PhotoCamera";
 import storage from "../../Firebase";
 import { ref, getDownloadURL, uploadBytesResumable } from "firebase/storage";
-import { Progress } from "../ReusableUIComponents/Spinner";
 import {UpdateImageAction} from "../../actions/UpdateImageAction"
 import useTokenAndId from "../ReusableLogicComponents/useTokenAndId";
 import { useDispatch,useSelector } from "react-redux";
 import { CircularProgress } from '@mui/material';
 import CircularProgressWithLabel from "../ReusableUIComponents/CircularProgressWithLabel";
-import {CHANGE_IMAGE,START_IMAGE_UPLOAD,IMAGE_UPLOAD_SUCCESS} from "../../constants/ProfileConstants";
+import {CHANGE_IMAGE,START_IMAGE_UPLOAD, EDIT_PROFILE_ON, EDIT_PROFILE_OFF} from "../../constants/ProfileConstants";
 import { profileDataInterface } from "../../reducers/ProfileReducer";
 import { RootStateType } from "../../stores";
+
 interface ProfileFormInterface {
   profile_data: profileUserDataInterface;
 }
@@ -23,22 +22,16 @@ type EditModalState = {
 };
 
 const ProfileImageAndData: FC<ProfileFormInterface> = ({ profile_data }) => {
-  const [openModal, setOpenModal] = useState<EditModalState>({
-    open: false,
-  });
-
+  
   const dispatch=useDispatch();
-  const {imageUploading} = useSelector<RootStateType>(
+  const {imageUploading,profileForm } = useSelector<RootStateType>(
     (state) => state.profile_info_data
   ) as profileDataInterface;
 
   const [progress, setProgess] = useState<number>(0);
   const {token}=useTokenAndId()
 
-  const modalHandler = () => {
-    setOpenModal({ ...openModal, open: !openModal.open });
-  };
-
+  
   const formHandler = (e: any) => {
     e.preventDefault();
     const file = e.target.files[0];
@@ -65,13 +58,9 @@ const ProfileImageAndData: FC<ProfileFormInterface> = ({ profile_data }) => {
       () => {
         dispatch({type:START_IMAGE_UPLOAD});
         getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-          
           const body= {...profile_data, image:downloadURL}
           dispatch(UpdateImageAction(token,downloadURL));
-          dispatch({type:CHANGE_IMAGE, image:downloadURL});
-          
-          
-          
+          dispatch({type:CHANGE_IMAGE, image:body});
         });
       }
     );
@@ -116,17 +105,25 @@ const ProfileImageAndData: FC<ProfileFormInterface> = ({ profile_data }) => {
         <AiFillStar className="Profile__Box__Top__ImagesAndDatas__Rating__Star" />
         <AiFillStar className="Profile__Box__Top__ImagesAndDatas__Rating__Star" />
       </div>
-
+      
+{profileForm ?
       <button
         type="submit"
         className="Profile__Box__Top__ImagesAndDatas__Button"
-        onClick={() => {
-          setOpenModal({ open: !openModal.open });
-        }}
+        onClick={()=>{dispatch({type:EDIT_PROFILE_OFF})}}
       >
-        Edit Profile
+       Profile Form
       </button>
-      {openModal.open && <EditModal modalHandler={modalHandler} />}
+      :
+      <button
+      type="submit"
+      className="Profile__Box__Top__ImagesAndDatas__Button"
+      onClick={()=>{dispatch({type:EDIT_PROFILE_ON})}}
+    >
+      Edit Profile
+    </button>
+}
+
     </div>
   );
 };

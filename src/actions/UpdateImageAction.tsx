@@ -2,7 +2,7 @@ import { Dispatch } from "redux";
 
 import { RootDispatchType } from "../stores";
 import axios from "../axios";
-import {PROFILE_DATA_SUCCESS, START_IMAGE_UPLOAD, IMAGE_UPLOAD_SUCCESS} from "../constants/ProfileConstants";
+import {PROFILE_DATA_SUCCESS} from "../constants/ProfileConstants";
 
 
 export const UpdateImageAction =
