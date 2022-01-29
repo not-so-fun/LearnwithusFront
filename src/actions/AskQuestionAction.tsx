@@ -40,7 +40,7 @@ export const AskQuestionAction =
       )
       .then((response) => {
         dispatch({ type: ASK_QUESTION_SUCCESS, message: response.data });
-        setFormData({topic_id:"",sub_topic_id:"",title:"",question:""})
+        setFormData({topic_id:"",sub_topic_id:"",title:"",question:"",imageUploadPercent:0})
         setTimeout(()=>{
           // console.log("Removed")
           dispatch({type:ASK_QUESTION_REMOVE_MESSAGE})

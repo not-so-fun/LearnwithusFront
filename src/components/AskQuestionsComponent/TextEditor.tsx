@@ -41,7 +41,8 @@ const TextEditor: FC<TextEditorInterface> = ({ formData, setFormData }) => {
               if (input != null && input.files !== null) {
                 var file = input.files[0];
                 console.log(value, meta);
-                // callback("Loading....",{alt:'Loading'});
+
+                setFormData({ ...formData, showImageModal: true });
 
                 const sotrageRef = ref(storage, `files/${file.name}`);
                 const uploadTask = uploadBytesResumable(sotrageRef, file);
@@ -52,13 +53,15 @@ const TextEditor: FC<TextEditorInterface> = ({ formData, setFormData }) => {
                     const prog = Math.round(
                       (snapshot.bytesTransferred / snapshot.totalBytes) * 100
                     );
-                    console.log(prog);
+
+                    // setFormData({ ...formData, imageUploadPercent: prog });
                   },
                   (error) => console.log(error),
                   () => {
                     getDownloadURL(uploadTask.snapshot.ref).then(
                       (downloadURL) => {
                         callback(downloadURL);
+                        setFormData({ ...formData, showImageModal: false });
                       }
                     );
                   }

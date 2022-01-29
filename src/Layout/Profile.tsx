@@ -12,7 +12,7 @@ import useTokenAndId from "../components/ReusableLogicComponents/useTokenAndId";
 
 import { RESET_USER_INFO } from "../constants/ProfileConstants";
 import ProfileFormEdit from "../components/ProfileComponents/ProfileFormEdit";
-import ModalImageUpload from "../components/ProfileComponents/ModalComponents/ModalImageUpload";
+import ModalImageUpload from "../components/ReusableUIComponents/ModalImageUpload";
 
 // const answerStats = [
 //   {

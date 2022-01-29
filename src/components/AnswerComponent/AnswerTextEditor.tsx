@@ -8,9 +8,16 @@ import { formDataInterface } from "../AskQuestionsComponent/AskQuestionForm";
 interface TextEditorInterface {
   answerType: string;
   setAnswerType: React.Dispatch<React.SetStateAction<string>>;
+  showImageModal: boolean;
+  setShowImageModal: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const AnswerTextEditor: FC<TextEditorInterface> = ({ answerType, setAnswerType }) => {
+const AnswerTextEditor: FC<TextEditorInterface> = ({
+  answerType,
+  setAnswerType,
+  showImageModal,
+  setShowImageModal,
+}) => {
   const handleChangeEditor = (content: any, editor: any) => {
     console.log(content);
     setAnswerType(content);
@@ -41,7 +48,7 @@ const AnswerTextEditor: FC<TextEditorInterface> = ({ answerType, setAnswerType }
               if (input != null && input.files !== null) {
                 var file = input.files[0];
                 console.log(value, meta);
-                // callback("Loading....",{alt:'Loading'});
+                setShowImageModal(true);
 
                 const sotrageRef = ref(storage, `files/${file.name}`);
                 const uploadTask = uploadBytesResumable(sotrageRef, file);
@@ -52,13 +59,14 @@ const AnswerTextEditor: FC<TextEditorInterface> = ({ answerType, setAnswerType }
                     const prog = Math.round(
                       (snapshot.bytesTransferred / snapshot.totalBytes) * 100
                     );
-                    console.log(prog);
+                    // console.log(prog);
                   },
                   (error) => console.log(error),
                   () => {
                     getDownloadURL(uploadTask.snapshot.ref).then(
                       (downloadURL) => {
                         callback(downloadURL);
+                        setShowImageModal(false);
                       }
                     );
                   }

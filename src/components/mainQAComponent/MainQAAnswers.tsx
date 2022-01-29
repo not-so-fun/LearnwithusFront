@@ -13,6 +13,8 @@ import useTokenAndId from "../ReusableLogicComponents/useTokenAndId";
 import axios from "../../axios";
 import MainQAReplies from "./MainQAReplies";
 import { Markup } from "interweave";
+import  UploadImageModal from "../ReusableUIComponents/ModalImageUpload"
+
 interface MainQAAnswerInterface {
   ans: answerInterface;
 }
@@ -40,6 +42,7 @@ const MainQAAnswers: FC<MainQAAnswerInterface> = ({ ans }) => {
   });
   const [totalUpvotes, setTotalUpvote] = useState<number>(0);
   const [showReplies, setShowReplies] = useState<boolean>(false);
+  const [showImageModal, setShowImageModal] = useState<boolean>(false);
 
   const [reply, showReply] = useState<boolean>(false);
   const [replies, setReplies] = useState<MainRepliesInterface[]>([]);
@@ -88,7 +91,7 @@ const MainQAAnswers: FC<MainQAAnswerInterface> = ({ ans }) => {
       })
       .then((response) => {
         console.log(response.data);
-        setReplies([...replies,response.data]);
+        setReplies([...replies, response.data]);
         setShowReplies(true);
       })
       .catch((error) => {
@@ -188,6 +191,7 @@ const MainQAAnswers: FC<MainQAAnswerInterface> = ({ ans }) => {
             </div>
           </div>
         </div>
+        {showImageModal && <UploadImageModal/>}
         <div className="MainQA__Answer__Box__Main">
           <div className="MainQA__Answer__Box__Main__Likes">
             {/* Upvote started */}
@@ -280,9 +284,12 @@ const MainQAAnswers: FC<MainQAAnswerInterface> = ({ ans }) => {
 
             {reply && (
               <div>
+
                 <ReplyTextEditor
                   replyText={replyText}
                   setReplyText={setReplyText}
+                  showImageModal={showImageModal}
+                  setShowImageModal={setShowImageModal}
                 />
 
                 <button

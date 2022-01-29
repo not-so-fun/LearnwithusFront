@@ -6,6 +6,7 @@ import { answerTheQuestionInterface } from "../../reducers/AnswerTheQuestionRedu
 import { Progress } from "../ReusableUIComponents/Spinner";
 import useTokenAndId from "../ReusableLogicComponents/useTokenAndId";
 import AnswerTextEditor from "./AnswerTextEditor";
+import ModalImageUpload from "../ReusableUIComponents/ModalImageUpload"
 
 interface answerComponentInterface {
   question_id: string;
@@ -19,6 +20,7 @@ const AnswerComponent: FC<answerComponentInterface> = ({ question_id }) => {
   ) as answerTheQuestionInterface;
 
   const [answerType, setAnswerType] = useState<string>("");
+  const [showImageModal,setShowImageModal]=useState<boolean>(false)
 
   const handleAnswerSubmit:
     | React.MouseEventHandler<HTMLButtonElement>
@@ -31,11 +33,16 @@ const AnswerComponent: FC<answerComponentInterface> = ({ question_id }) => {
       <div className="MainQA__AnswerInput__Box">
         <div className="MainQA__AnswerInput__Box__Heading">
           <h1>Your Answer</h1>
+          {showImageModal && <ModalImageUpload/>}
         </div>
 
         <AnswerTextEditor
           answerType={answerType}
           setAnswerType={setAnswerType}
+          
+          showImageModal={showImageModal}
+          setShowImageModal={setShowImageModal}
+
         />
 
         <div className="MainQA__AnswerInput__Box__ButtonBox">
