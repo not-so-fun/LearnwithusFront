@@ -44,10 +44,13 @@ const ModalOverlay: React.FC<ClickProp> = ({
     (state) => state.expertises
   ) as expertiseInterface;
 
-  const { loading: expertisesLoading,expertises:expertises_edited_array, error: expertisesError } =
-    useSelector<RootStateType>(
-      (state) => state.edit_expertises
-    ) as expertiseEditReducerInterface;
+  const {
+    loading: expertisesLoading,
+    expertises: expertises_edited_array,
+    error: expertisesError,
+  } = useSelector<RootStateType>(
+    (state) => state.edit_expertises
+  ) as expertiseEditReducerInterface;
 
   useEffect(() => {
     dispatch(ExpertiseAction(token));
@@ -74,16 +77,6 @@ const ModalOverlay: React.FC<ClickProp> = ({
             <p className="modal__selects__header__text">Topic</p>
             {loading && <Progress size={15} />}
           </div>
-
-          {expertisesLoading ? (
-             <button style={{width:110}} className="Profile__Box__Top__Statistics__Botton__Expertise">
-             <Progress size={15} />
-           </button>
-         ) : (
-           <button style={{width:110}} onClick={handleEditExpertise} className="Profile__Box__Top__Statistics__Botton__Expertise">
-             Expertises
-           </button>
-          )}
         </div>
 
         <div className="modal__selects__dropdown">
@@ -105,6 +98,19 @@ const ModalOverlay: React.FC<ClickProp> = ({
               )
             )}
         </div>
+        {expertisesLoading ? (
+          <button style={{ width: 110 }} className="modal__selects__button">
+            <Progress size={15} />
+          </button>
+        ) : (
+          <button
+            style={{ width: 110 }}
+            onClick={handleEditExpertise}
+            className="modal__selects__button"
+          >
+            Edit
+          </button>
+        )}
       </div>
     </div>
   );
