@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { FC } from 'react';
 import BeatLoader from "react-spinners/BeatLoader";
 
-const ModalImageUpload = () => {
+interface modalImageUploadInterface{
+  imageUploadPercent:number
+}
+const ModalImageUpload:FC = () => {
   return (<>
   <div className="CENTER"> 
   </div>
-  <div className="Modal">
+  <div style={{zIndex:10000}} className="Modal">
     <div className="Modal__Spinner">
     <BeatLoader size={50}/>
 

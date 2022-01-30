@@ -1450,8 +1450,7 @@ body {
   height: 100%;
   width: 100%;
   display: flex;
-  background: #eeeeee;
-  overflow-y: scroll; }
+  background: #eeeeee; }
   .HomePage__Left {
     background-color: #057777;
     color: #fff;
@@ -1540,6 +1539,8 @@ body {
             color: #fff; }
             .HomePage__Right__MainBody__NewsFeed__LoadMore__button:hover {
               cursor: pointer; }
+        .HomePage__Right__MainBody__NewsFeed::-webkit-scrollbar {
+          width: 0px; }
       .HomePage__Right__MainBody__Notification {
         flex: 0 0 32rem;
         padding: 0 1rem; }
@@ -1785,13 +1786,12 @@ body {
         height: 100%; }
 
 .MainQA {
-  height: 100%;
+  height: auto;
   width: 70%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  overflow-y: scroll;
   background: #fff;
   border: 1px solid #c4c4c4; }
   .MainQA__ShowReply {
@@ -1993,13 +1993,18 @@ body {
     justify-content: center;
     font-size: 4rem;
     font-weight: 600; }
+  .MainQA__NoAnswers {
+    height: 0; }
   .MainQA__Answers {
     background: white;
-    height: auto;
+    height: 725px;
     width: 100%;
+    overflow: scroll;
     display: flex;
     flex-direction: column;
     align-items: center; }
+    .MainQA__Answers::-webkit-scrollbar {
+      width: 0px; }
   .MainQA__Replies {
     height: auto;
     width: 100%; }
@@ -2014,7 +2019,7 @@ body {
     height: 2px;
     border: 1px solid #c4c4c4; }
   .MainQA__Answer {
-    height: auto;
+    height: 100%;
     width: 100%;
     padding: 3rem;
     border-bottom: 2px solid #c4c4c4; }
@@ -2099,9 +2104,16 @@ body {
             justify-content: center; }
             .MainQA__Answer__Box__Main__Likes__Upvote__Logo {
               height: 3.3rem;
-              width: 3.3rem; }
+              width: 3.3rem;
+              transition: all 0.4s ease; }
               .MainQA__Answer__Box__Main__Likes__Upvote__Logo:hover {
-                cursor: pointer; }
+                cursor: pointer;
+                color: blue;
+                transform: scale(1.2); }
+              .MainQA__Answer__Box__Main__Likes__Upvote__Logo:active {
+                cursor: pointer;
+                color: blue;
+                transform: translateY(2px); }
           .MainQA__Answer__Box__Main__Likes__Total {
             height: 5rem;
             width: auto;
@@ -2117,9 +2129,16 @@ body {
             justify-content: center; }
             .MainQA__Answer__Box__Main__Likes__Downvote__Logo {
               height: 3.3rem;
-              width: 3.3rem; }
+              width: 3.3rem;
+              transition: all 0.4s ease; }
               .MainQA__Answer__Box__Main__Likes__Downvote__Logo:hover {
-                cursor: pointer; }
+                cursor: pointer;
+                color: red;
+                transform: scale(1.2); }
+              .MainQA__Answer__Box__Main__Likes__Downvote__Logo:active {
+                cursor: pointer;
+                color: red;
+                transform: translateY(-2px); }
         .MainQA__Answer__Box__Main__AnswerText {
           display: flex;
           flex-direction: column; }
@@ -2141,7 +2160,15 @@ body {
             display: flex;
             align-items: center;
             font-size: 1.5rem;
-            padding: 0 1rem; }
+            padding: 0 1rem;
+            cursor: pointer;
+            transition: all 0.4s ease; }
+            .MainQA__Answer__Box__Main__Bottom__Function:hover:first-child {
+              color: #5388b4; }
+            .MainQA__Answer__Box__Main__Bottom__Function:hover:nth-child(2) {
+              color: red; }
+            .MainQA__Answer__Box__Main__Bottom__Function:hover:last-child {
+              color: #c9c912; }
             .MainQA__Answer__Box__Main__Bottom__Function:not(:last-child) {
               border-right: 1px solid #c4c4c4; }
             .MainQA__Answer__Box__Main__Bottom__Function__Text__RepliesIcons {
@@ -2418,4 +2445,5 @@ body {
     flex: 0.8;
     position: relative;
     left: 20%;
-    height: calc(100vh - 6.5rem); }
+    height: calc(100vh - 6.5rem);
+    overflow-y: scroll; }

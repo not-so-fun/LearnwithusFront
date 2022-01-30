@@ -6,11 +6,18 @@ import { ref, getDownloadURL, uploadBytesResumable } from "firebase/storage";
 import { formDataInterface } from "../AskQuestionsComponent/AskQuestionForm";
 
 interface TextEditorInterface {
-    replyText: string;
-    setReplyText: React.Dispatch<React.SetStateAction<string>>;
+  replyText: string;
+  setReplyText: React.Dispatch<React.SetStateAction<string>>;
+  showImageModal: boolean;
+  setShowImageModal: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const ReplyTextEditor: FC<TextEditorInterface> = ({ replyText, setReplyText }) => {
+const ReplyTextEditor: FC<TextEditorInterface> = ({
+  replyText,
+  setReplyText,
+  showImageModal,
+  setShowImageModal,
+}) => {
   const handleChangeEditor = (content: any, editor: any) => {
     console.log(content);
     setReplyText(content);
@@ -42,7 +49,7 @@ const ReplyTextEditor: FC<TextEditorInterface> = ({ replyText, setReplyText }) =
                 var file = input.files[0];
                 console.log(value, meta);
                 // callback("Loading....",{alt:'Loading'});
-
+                setShowImageModal(true);
                 const sotrageRef = ref(storage, `files/${file.name}`);
                 const uploadTask = uploadBytesResumable(sotrageRef, file);
 
@@ -52,13 +59,14 @@ const ReplyTextEditor: FC<TextEditorInterface> = ({ replyText, setReplyText }) =
                     const prog = Math.round(
                       (snapshot.bytesTransferred / snapshot.totalBytes) * 100
                     );
-                    console.log(prog);
+                    // console.log(prog);
                   },
                   (error) => console.log(error),
                   () => {
                     getDownloadURL(uploadTask.snapshot.ref).then(
                       (downloadURL) => {
                         callback(downloadURL);
+                        setShowImageModal(false);
                       }
                     );
                   }

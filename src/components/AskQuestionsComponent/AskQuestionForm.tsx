@@ -8,15 +8,19 @@ import Alert from "@mui/material/Alert";
 import AskQuestionSelect from "./AskQuestionSelect";
 import { Progress } from "../ReusableUIComponents/Spinner";
 import TextEditor from "./TextEditor";
+import ModalImageUpload from "../ReusableUIComponents/ModalImageUpload";
 
 export interface formDataInterface {
   title: string;
   topic_id: string;
   sub_topic_id: string;
   question: string;
+  showImageModal?:boolean;
+  imageUploadPercent:number
 }
 const AskQuesForm: FC = () => {
   const dispatch = useDispatch();
+
 
   const { loading, message, error } = useSelector<RootStateType>(
     (state) => state.ask_question
@@ -28,9 +32,11 @@ const AskQuesForm: FC = () => {
     topic_id: "",
     sub_topic_id: "",
     question: "",
+    showImageModal:false,
+    imageUploadPercent:0
   });
 
-  const { title, topic_id, sub_topic_id, question } = formData;
+  const { title, topic_id, sub_topic_id, question,showImageModal,imageUploadPercent } = formData;
 
   const handleChange = (
     e: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLTextAreaElement>
@@ -59,7 +65,7 @@ const AskQuesForm: FC = () => {
     <form onSubmit={(e) => handleQuestionAsk(e)} className="AskQuestionForm">
       <div className="AskQuestionForm__Heading">
         <div className="AskQuestionForm__Heading__Title">Ask a question</div>
-
+        {showImageModal  && <ModalImageUpload />}
         {message && (
           <>
             <Alert style={{ fontSize: 15 }} icon={false}>

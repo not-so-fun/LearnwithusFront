@@ -17,6 +17,7 @@ import {
 import useTokenAndId from "../components/ReusableLogicComponents/useTokenAndId";
 import { RootStateType } from "../stores";
 import QuestionFeed from "../components/HomePageComponent/QuestionFeed";
+import { BeatLoaderProgress } from "../components/ReusableUIComponents/BeatLoader";
 
 
 const HomePage: FC = () => {
@@ -45,10 +46,15 @@ const HomePage: FC = () => {
     <>
       <div className="HomePage">
         <div className="HomePage__Right__MainBody__NewsFeed">
-          {loading && <div>Loading........</div>}
+          {loading && (
+            <div>
+              <BeatLoaderProgress size={24} color="#057777" />
+            </div>
+          )}
+          {/* skeleton here */}
           {questions &&
             questions.map((question: questionFeedListInterface) => (
-              <div  key={question.question_id}>
+              <div key={question.question_id}>
                 <QuestionFeed question={question} />
               </div>
             ))}
@@ -59,6 +65,12 @@ const HomePage: FC = () => {
                 <h1>Load More questions</h1>
               </button>
             </div>
+          {loading && (
+            <div>
+              <BeatLoaderProgress size={24} color="#057777" />
+            </div>
+          )}
+          {/* loading ko thau ma extra loading rakha */}
         </div>
         <div className="HomePage__Right__MainBody__Notification">
           <div className="HomePage__Right__MainBody__Notification__Below">
