@@ -13,7 +13,7 @@ const Answered: FC = () => {
   const dispatch = useDispatch();
   const { token } = useTokenAndId();
 
-  const { loading, questions, error } = useSelector<RootStateType>(
+  const { loading, questions, count,error } = useSelector<RootStateType>(
     (state) => state.questionFeed
   ) as questionFeedInterface;
 

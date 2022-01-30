@@ -1,7 +1,7 @@
 import { RootDispatchType } from "../stores";
 import { Dispatch } from "redux";
 import axios from "../axios";
-import {NEW_ANSWERS_ADDED} from "../constants/OnlyAnswersContants"
+import {ANSWERS_LOAD_SUCCESS} from "../constants/OnlyAnswersContants"
 import {
   ANSWER_THE_QUESTION_LOAD,
   ANSWER_THE_QUESTION_ERROR,
@@ -22,8 +22,7 @@ export const AnswerTheQuestionAction =
         },
       })
       .then((response) => {
-        // console.log(response.data);
-        dispatch({type:NEW_ANSWERS_ADDED,answer:response.data})
+        dispatch({type:ANSWERS_LOAD_SUCCESS,answers:response.data})
         dispatch({type:ANSWER_THE_QUESTION_SUCCESS})
       })
       .catch((error) => {

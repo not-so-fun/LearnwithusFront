@@ -1,7 +1,7 @@
 import {
     MAIN_QUESTION_ANSWER_STARTED,
     MAIN_QUESTION_ANSWER_SUCCESS,
-    MAIN_QUESTION_ANSWER_ERROR,
+    MAIN_QUESTION_ANSWER_ERROR
   } from "../constants/MainQuestionAnswerConstants";
 import {mainQuestionAnswerTypes} from "../types/MainQuestionAnswerTypes";
 import {questionFeedListInterface} from "../reducers/QuestionFeedReducers"

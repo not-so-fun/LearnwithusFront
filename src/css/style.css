@@ -1272,7 +1272,7 @@ body {
   visibility: hidden; }
 
 .custom-file-input::before {
-  content: 'Select some files';
+  content: "Select some files";
   display: inline-block;
   background: linear-gradient(top, #f9f9f9, #e3e3e3);
   border: 1px solid #999;
@@ -1524,6 +1524,22 @@ body {
         overflow-y: scroll;
         margin-right: 2rem;
         background: #fff; }
+        .HomePage__Right__MainBody__NewsFeed__LoadMore {
+          height: 8rem;
+          display: flex;
+          align-items: center;
+          justify-content: center; }
+          .HomePage__Right__MainBody__NewsFeed__LoadMore__button {
+            background: #057777;
+            border: none;
+            outline: none;
+            border-radius: 5px;
+            height: 5rem;
+            padding: 0 2rem;
+            font-size: 1.2rem;
+            color: #fff; }
+            .HomePage__Right__MainBody__NewsFeed__LoadMore__button:hover {
+              cursor: pointer; }
       .HomePage__Right__MainBody__Notification {
         flex: 0 0 32rem;
         padding: 0 1rem; }

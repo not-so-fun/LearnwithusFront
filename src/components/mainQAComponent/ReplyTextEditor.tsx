@@ -32,7 +32,7 @@ const ReplyTextEditor: FC<TextEditorInterface> = ({ replyText, setReplyText }) =
           image_title: true,
           /* enable automatic uploads of images represented by blob or data URIs*/
           automatic_uploads: false,
-          file_picker_callback: function (callback, value, meta) {
+          file_picker_callback: function (callback:any, value:any, meta:any) {
             const input = document.createElement("input");
             input.setAttribute("type", "file");
             input.setAttribute("accept", "image/*");

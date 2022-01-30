@@ -2,6 +2,8 @@ import {
     MAIN_QUESTION_ANSWER_STARTED,
     MAIN_QUESTION_ANSWER_SUCCESS,
     MAIN_QUESTION_ANSWER_ERROR,
+    MAIN_QUESTION_ANSWER_ADDED_STARTED,
+    MAIN_QUESTION_ANSWER_ADDED_ERROR
   } from "../constants/MainQuestionAnswerConstants";
   
  interface questionFeedListInterface {
@@ -17,6 +19,9 @@ import {
   interface mainQuestionAnswerStarted {
     type: typeof MAIN_QUESTION_ANSWER_STARTED;
   }
+  interface mainQuestionAnswerAddedStarted {
+    type: typeof MAIN_QUESTION_ANSWER_ADDED_STARTED;
+  }
   
   interface mainQuestionAnswerSuccess {
     type: typeof MAIN_QUESTION_ANSWER_SUCCESS;
@@ -27,8 +32,13 @@ import {
     type: typeof MAIN_QUESTION_ANSWER_ERROR;
     error: string;
   }
-  
+  interface mainQuestionAnswerAddedError {
+    type: typeof MAIN_QUESTION_ANSWER_ADDED_ERROR;
+    error: string;
+  }
   export type mainQuestionAnswerTypes =
     | mainQuestionAnswerStarted 
     | mainQuestionAnswerSuccess
-    | mainQuestionAnswerError;
+    | mainQuestionAnswerError
+    | mainQuestionAnswerAddedStarted
+    | mainQuestionAnswerAddedError;

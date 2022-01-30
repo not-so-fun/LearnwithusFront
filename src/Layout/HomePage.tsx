@@ -5,7 +5,7 @@ import Navbar from "../components/Navbar";
 // import Home from "../components/ProfileComponents/NewsFeed";
 import HomeNewsFeed from "../components/HomePageComponent/HomeNewsFeed";
 import { Link } from "react-router-dom";
-import { QuestionFeedAction } from "../actions/QuestionFeedAction";
+import { QuestionFeedAction,QuestionFeedActionMore } from "../actions/QuestionFeedAction";
 import HomeNewsFeedSkeleton from "../components/HomePageComponent/HomeNewsFeedSkeleton";
 import CircleIcon from "@mui/icons-material/Circle";
 
@@ -18,11 +18,12 @@ import useTokenAndId from "../components/ReusableLogicComponents/useTokenAndId";
 import { RootStateType } from "../stores";
 import QuestionFeed from "../components/HomePageComponent/QuestionFeed";
 
+
 const HomePage: FC = () => {
   const dispatch = useDispatch();
   const { token } = useTokenAndId();
 
-  const { loading, questions, error } = useSelector<RootStateType>(
+  const { loading, questions, count,error } = useSelector<RootStateType>(
     (state) => state.questionFeed
   ) as questionFeedInterface;
 
@@ -30,9 +31,15 @@ const HomePage: FC = () => {
     document.title = "Learn with us | Home";
   }, []);
 
+
   useEffect(() => {
     dispatch(QuestionFeedAction(token));
   }, [token]);
+  const ShowMore= ()=>{
+  dispatch(QuestionFeedActionMore(token, count));
+
+
+  }
 
   return (
     <>
@@ -45,6 +52,13 @@ const HomePage: FC = () => {
                 <QuestionFeed question={question} />
               </div>
             ))}
+            <div className="HomePage__Right__MainBody__NewsFeed__LoadMore" >
+              <button className="HomePage__Right__MainBody__NewsFeed__LoadMore__button"
+              onClick={ShowMore}
+              >
+                <h1>Load More questions</h1>
+              </button>
+            </div>
         </div>
         <div className="HomePage__Right__MainBody__Notification">
           <div className="HomePage__Right__MainBody__Notification__Below">
