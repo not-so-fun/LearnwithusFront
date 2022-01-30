@@ -1,34 +1,33 @@
-.Modal{
-    height:40rem;
-    width:60rem;
-    background:$color-white;
-    border-radius:5px;
-    opacity:1;
-    z-index:250;
-    position: fixed; 
-    left: 50%; 
-    top: 50%; 
-    transform: translate(-50%, -50%); 
+.Modal {
+  height: 30rem;
+  width: 40rem;
+  background: $color-white;
+  border-radius: 5px;
+  opacity: 1;
+  z-index: 250;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  &__Spinner {
+    width: 50rem;
+    height: 25rem;
+    margin-bottom: 2rem;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    &__Spinner{
-        width:50rem;
-        height:25rem;
-        margin-bottom:2rem;
-        display:flex;
-        align-items: center;
-        justify-content: center;
-       
-    }
-    &__Text{
-        // background:red;
-        width:50rem;
-        height:10rem;
-        display:flex;
-        align-items: center;
-        justify-content: center;
-        color:$color-secondary;
-    }
+  }
+  &__Text {
+    // background:red;
+    width: 50rem;
+    height: 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $color-secondary;
+  }
 }

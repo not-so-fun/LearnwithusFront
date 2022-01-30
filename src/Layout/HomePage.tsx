@@ -18,6 +18,7 @@ import useTokenAndId from "../components/ReusableLogicComponents/useTokenAndId";
 import { RootStateType } from "../stores";
 import QuestionFeed from "../components/HomePageComponent/QuestionFeed";
 import { BeatLoaderProgress } from "../components/ReusableUIComponents/BeatLoader";
+import ModalImageUpload from "../components/ReusableUIComponents/ModalImageUpload";
 
 
 const HomePage: FC = () => {

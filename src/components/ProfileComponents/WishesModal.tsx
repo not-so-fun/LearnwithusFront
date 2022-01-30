@@ -75,16 +75,6 @@ const ModalOverlay: React.FC<ClickProp> = ({
             <p className="modal__selects__header__text">Topic</p>
             {loading && <Progress size={15} />}
           </div>
-
-          {editWishesLoading ? (
-            <button style={{width:90}} className="Profile__Box__Top__Statistics__Botton__Expertise">
-              <Progress size={15} />
-            </button>
-          ) : (
-            <button style={{width:90}} onClick={handleEditWish} className="Profile__Box__Top__Statistics__Botton__Expertise">
-              Wishes
-            </button>
-          )}
         </div>
 
         <div className="modal__selects__dropdown">
@@ -107,6 +97,19 @@ const ModalOverlay: React.FC<ClickProp> = ({
               )
             )}
         </div>
+        {editWishesLoading ? (
+          <button style={{ width: 90 }} className="modal__selects__button">
+            <Progress size={15} />
+          </button>
+        ) : (
+          <button
+            style={{ width: 90 }}
+            onClick={handleEditWish}
+            className="modal__selects__button"
+          >
+            Edit
+          </button>
+        )}
       </div>
     </div>
   );

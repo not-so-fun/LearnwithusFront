@@ -128,23 +128,23 @@
         text-align: left;
         padding: 2rem;
         color: $color-black;
-        &__Buttons{
-          height:4rem;
-          width:100%;
-          display:flex;
+        &__Buttons {
+          height: 4rem;
+          width: 100%;
+          display: flex;
           align-items: center;
           justify-content: flex-start;
-          &__Button{
-            height:3.5rem;
-            width:8rem;
-            padding:0 1rem;
-            border:none;
+          &__Button {
+            height: 3.5rem;
+            width: 8rem;
+            padding: 0 1rem;
+            border: none;
             outline: none;
-            background:$color-secondary;
-            border-radius:5px;
-            color:$color-white;
-            &:hover{
-              cursor:pointer;
+            background: $color-secondary;
+            border-radius: 5px;
+            color: $color-white;
+            &:hover {
+              cursor: pointer;
             }
           }
         }
@@ -157,13 +157,13 @@
             display: inline-block;
             width: 49%;
             &__Box {
-              background:$color-grey-light-2;
+              background: $color-grey-light-2;
               height: 4rem;
               padding: 0.3rem;
               width: 100%;
-              border:none;
-              outline:none;
-              font-size:1.6rem;
+              border: none;
+              outline: none;
+              font-size: 1.6rem;
               letter-spacing: 0.03rem;
             }
           }
@@ -182,13 +182,13 @@
             width: 49%;
             display: inline-block;
             &__Box {
-              background:$color-grey-light-2;
+              background: $color-grey-light-2;
               height: 4rem;
               padding: 0.3rem;
               width: 100%;
-              border:none;
-              outline:none;
-              font-size:1.6rem;
+              border: none;
+              outline: none;
+              font-size: 1.6rem;
               letter-spacing: 0.03rem;
             }
           }
@@ -203,22 +203,20 @@
             font-weight: 500;
             letter-spacing: 0.03rem;
             color: $color-black;
-
           }
         }
 
         &__BasicInfo {
           margin-bottom: 2rem;
-          &__Box{
-              background:$color-grey-light-2;
-              height: 4rem;
-              padding: 0.3rem;
-              width: 100%;
-              letter-spacing: 0.03rem;
-              border:none;
-              outline:none;
-              font-size:1.6rem;
-              
+          &__Box {
+            background: $color-grey-light-2;
+            height: 4rem;
+            padding: 0.3rem;
+            width: 100%;
+            letter-spacing: 0.03rem;
+            border: none;
+            outline: none;
+            font-size: 1.6rem;
           }
         }
         &__BasicInfo p {
@@ -231,7 +229,7 @@
           font-size: 18px;
           font-weight: 500;
           letter-spacing: 0.03rem;
-          
+
           color: $color-black;
         }
       }
@@ -261,7 +259,7 @@
             &:hover {
               background-color: $color-white;
               color: $color-primary;
-              border:2px solid $color-primary;
+              border: 2px solid $color-primary;
             }
           }
         }
@@ -443,32 +441,47 @@
 .modal {
   position: fixed;
   padding: 1rem 2rem;
-  top: 30vh;
+  top: 17vh;
   left: 10%;
-  width: 80%;
+  width: 90%;
   z-index: 100;
-  max-height: 40rem;
-  overflow: scroll;
+  max-height: 50rem;
 
-  background-color: $color-primary;
-  color: $color-white;
-  overflow-x: hidden;
+  background-color: #e6e6e6;
+  color: $color-black;
+  border-radius: 6px;
 
   &__header {
-    font-size: 20px;
+    font-size: 25px;
     letter-spacing: 0.1rem;
     // border: 2px solid black;
     display: flex;
   }
   &__selects {
     margin-top: 1rem;
+
+    &__button {
+      margin-top: 1rem;
+      float: right;
+      margin-right: 0.5rem;
+      padding: 5px 0rem;
+      font-size: 16px;
+      font-weight: 600;
+      transition: all 0.4s ease;
+      border: 2px solid black;
+      &:hover {
+        color: $color-primary;
+        border: 2px solid $color-primary;
+        cursor: pointer;
+      }
+    }
     &__header {
       display: flex;
       align-items: center;
       // border: 2px solid lightgrey;
       // width: 100px;
       &__text {
-        font-size: 24px;
+        font-size: 30px;
       }
       &__arrow {
         font-size: 28px !important;
@@ -482,7 +495,7 @@
       background-color: white;
       color: black;
 
-      padding: 1rem;
+      padding: 1rem 4rem;
       &__item {
         display: flex;
         flex-direction: row;
@@ -493,7 +506,7 @@
 
         &__text {
           margin-left: 1rem;
-          font-size: 20px;
+          font-size: 26px;
         }
         &__checkbox {
           cursor: pointer;
@@ -510,8 +523,9 @@
     position: absolute;
     top: 7px;
     right: 6px;
-    font-size: 26px !important;
-    color: $color-white;
+    font-size: 28px !important;
+    font-weight: bold !important;
+    color: black;
     cursor: pointer;
   }
 }
@@ -632,11 +646,11 @@
 @media (min-width: 768px) {
   .modal {
     left: calc(50% - 20rem);
-    width: 40rem;
+    width: 50rem;
   }
   .editModal {
     left: calc(50% - 20rem);
-    width: 47rem;
+    width: 57rem;
   }
 }
 
@@ -666,17 +680,16 @@
   background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
 }
 
-
-.CENTER{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100vw;
-  height:100vh;
-  background:$color-grey-dark;
+.CENTER {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: black;
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index:200;
-  opacity:0.6;
+  z-index: 200;
+  opacity: 0.6;
 }
