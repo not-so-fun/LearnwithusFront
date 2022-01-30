@@ -54,9 +54,9 @@ const HomePage: FC = () => {
           {/* skeleton here */}
           {questions &&
             questions.map((question: questionFeedListInterface) => (
-              <div key={question.question_id}>
-                <QuestionFeed question={question} />
-              </div>
+             
+                <QuestionFeed question={question} key={question.question_id}/>
+           
             ))}
             <div className="HomePage__Right__MainBody__NewsFeed__LoadMore" >
               <button className="HomePage__Right__MainBody__NewsFeed__LoadMore__button"

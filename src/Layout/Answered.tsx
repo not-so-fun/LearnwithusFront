@@ -1,7 +1,7 @@
 import { FC, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import HomeNewsFeed from "../components/HomePageComponent/HomeNewsFeed";
-import { QuestionFeedAction } from "../actions/QuestionFeedAction";
+import QuestionFeed from "../components/HomePageComponent/QuestionFeed";
+import { AskedQuestionFeedAction } from "../actions/MyQuestionAskedAction";
 import {
   questionFeedInterface,
   questionFeedListInterface,
@@ -13,8 +13,8 @@ const Answered: FC = () => {
   const dispatch = useDispatch();
   const { token } = useTokenAndId();
 
-  const { loading, questions, count,error } = useSelector<RootStateType>(
-    (state) => state.questionFeed
+  const { loading, questions,error } = useSelector<RootStateType>(
+    (state) => state.askedQuestions
   ) as questionFeedInterface;
 
   useEffect(() => {
@@ -22,7 +22,7 @@ const Answered: FC = () => {
   }, []);
 
   useEffect(() => {
-    dispatch(QuestionFeedAction(token));
+    dispatch(AskedQuestionFeedAction(token));
   }, [token]);
 
   return (
@@ -37,9 +37,7 @@ const Answered: FC = () => {
             
               {questions &&
                 questions.map((question: questionFeedListInterface) => (
-                  <div key={question.question_id}>
-                    <HomeNewsFeed question={question} />
-                  </div>
+                    <QuestionFeed question={question}  key={question.question_id}/>
                 ))}
                 </div>
           

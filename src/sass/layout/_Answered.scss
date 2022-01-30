@@ -1,5 +1,5 @@
 .Answered{
-    height: 100%;
+    height:auto;
     width: 100%;
     // background:red;
     display:flex;
@@ -11,12 +11,12 @@
         font-size:2.5rem;
         font-weight:600;
         color:$color-black;
-        // background:green;
         margin-top: 1rem;
         
     }
     &__Newsfeed{
-        overflow-y: scroll;
+       height:auto;
+       width:100%;
     }
 
 }

@@ -1,3 +1,6 @@
+import { CallToActionSharp, SatelliteAlt } from "@mui/icons-material";
+import { strictEqual } from "assert";
+import { stat } from "fs";
 import {
   QUESTION_FEED_LOAD_STARTED,
   QUESTION_FEED_LOAD_SUCCESS,
@@ -5,7 +8,7 @@ import {
   QUESTION_FEED_ADD_STARTED,
   QUESTION_FEED_ADD_ERROR,
   QUESTION_FEED_ADD_SUCCESS,
-  QUESTION_FEED_ADD_EMPTY
+  QUESTION_FEED_ADD_EMPTY,
 } from "../constants/QuestionFeedConstatns";
 
 import { QuestionFeedTypes } from "../types/QuestionfeedTypes";
@@ -28,7 +31,7 @@ export interface questionFeedInterface {
   loading: boolean;
   questions: questionFeedListInterface[];
   error: string;
-  count:number;
+  count: number;
   moreQuestionLoading: boolean;
 }
 
@@ -36,7 +39,7 @@ const questionState: questionFeedInterface = {
   loading: false,
   questions: [],
   error: "",
-  count:0,
+  count: 1,
   moreQuestionLoading: false,
 };
 
@@ -54,16 +57,36 @@ export const QuestionFeedReducer = (
       return {
         ...state,
         loading: false,
-        moreQuestionLoading: false,
+       
         questions: action.questions,
-        count:state.count + 1
       };
     case QUESTION_FEED_ADD_SUCCESS:
-      return{
+      const truthy: number = action.questions.length === 10 ? 1 : 0; 
+      let data: questionFeedListInterface[] = [...state.questions];
+      let length: number =
+        action.questions.length - (state.questions.length % 10);
+      let index: number = 0;
+      /*
+state.questions = [0,1,2,3,4,5,6,7,8,9,10,action[1],action[2]]; length = 11 % 10 =1
+action.questions = [0,1,2]; 3;
+      */
+      if (state.questions.length % 10 !== 0) {
+        
+        while (length !== 0) {
+          data.push(action.questions[(state.questions.length % 10) + index]);
+          index++;
+          length--;
+        }
+      } else {
+        data = data.concat(action.questions);
+      }
+      return {
         ...state,
         moreQuestionLoading: false,
-        questions:state.questions.concat(action.questions)
-      }
+        questions: data,
+        count: state.count + truthy
+      };
+
     case QUESTION_FEED_LOAD_ERROR:
       return {
         ...state,
@@ -73,16 +96,13 @@ export const QuestionFeedReducer = (
     case QUESTION_FEED_ADD_STARTED:
       return {
         ...state,
-        count:state.count +1,
-        moreQuestionLoading: true
+        moreQuestionLoading: true,
       };
     case QUESTION_FEED_ADD_EMPTY:
       return {
         ...state,
-        count:state.count - 1,
         moreQuestionLoading: false,
-        error:"No more data to show"
-
+        error: "No more data to show",
       };
     case QUESTION_FEED_ADD_ERROR:
       return {

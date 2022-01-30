@@ -7,6 +7,7 @@ import {
   QUESTION_FEED_ADD_ERROR,
   QUESTION_FEED_ADD_EMPTY
 } from "../constants/QuestionFeedConstatns";
+import store from "../stores";
 
 import axios from "../axios";
 import { Dispatch } from "redux";
@@ -49,16 +50,17 @@ export const QuestionFeedAction =
         },
       })
       .then((response) => {
-        console.log(response.data);
-        if(response.data.length === 0){
-          dispatch({type: QUESTION_FEED_ADD_EMPTY});
-        } else{
-          dispatch({
-            type: QUESTION_FEED_ADD_SUCCESS,
-            questions: response.data,
-          });
-        }
-        
+       const questions= store.getState().questionFeed.questions;
+       if(questions.length % 10 !== response.data.length){
+        dispatch({
+          type: QUESTION_FEED_ADD_SUCCESS,
+          questions: response.data,
+        });
+       } else{
+         dispatch({type:QUESTION_FEED_ADD_EMPTY});
+       }
+       
+      
       })
       .catch((error) => {
         dispatch({
