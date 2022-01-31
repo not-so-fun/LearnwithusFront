@@ -431,7 +431,18 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 4rem 0; }
+  padding: 4rem 0;
+  position: relative; }
+  .QuestionFeed__Bookmark {
+    position: absolute;
+    top: 74px;
+    right: 40px;
+    cursor: pointer;
+    font-size: 30px !important;
+    color: #000;
+    transition: all 0.4s ease; }
+    .QuestionFeed__Bookmark :hover {
+      color: #057777; }
   .QuestionFeed__Box {
     width: 90%;
     height: 100%; }
