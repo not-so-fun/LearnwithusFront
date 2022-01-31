@@ -8,7 +8,7 @@ interface modalImageUploadInterface {
 const ModalImageUpload: FC = () => {
   return (
     <>
-      <div className="CENTER"></div>
+      <div style={{ zIndex: 10000 }} className="CENTER"></div>
       <div style={{ zIndex: 10000 }} className="Modal">
         <div className="Modal__Spinner">
           <BeatLoaderProgress size={30} color="#048004" />
