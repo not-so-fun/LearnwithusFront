@@ -14,7 +14,7 @@ import {
     (token: string) => (dispatch: Dispatch<RootDispatchType>) => {
       dispatch({ type: SAVED_QUESTION_STARTED });
       axios
-        .get(`/saved-questions`, {
+        .get(`/questions/all/saved_by_me?set=0`, {
           headers: {
             "x-auth-token": token,
           },
@@ -35,3 +35,5 @@ import {
           });
         });
     };
+
+    
