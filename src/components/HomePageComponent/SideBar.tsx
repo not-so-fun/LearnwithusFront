@@ -1,31 +1,15 @@
 import React, { FC } from "react";
 import { Avatar } from "@mui/material";
 import { Link, useHistory } from "react-router-dom";
+import { useSelector } from "react-redux";
 import { FaSearch } from "react-icons/fa";
+import { RootStateType } from "../../stores";
 
-// const SideBar: FC = () => {
-//   const history=useHistory()
-//   return (
-//     <div className="HomePage__Left__SideBar">
-//       <div className="HomePage__Left__SideBar__Header">
-//         <p onClick={()=>history.push("/")}>LEARN101</p>
-//       </div>
-//       <div className="HomePage__Left__SideBar__Links">
-//         <div className="HomePage__Left__SideBar__Links__Link">Samikxya</div>
-//         <Link to="/answered" className="HomePage__Left__SideBar__Links__Link">
-//           Answered Questions
-//         </Link>
-//         <div className="HomePage__Left__SideBar__Links__Link">
-//           Replied Questions
-//         </div>
-//         <div className="HomePage__Left__SideBar__Links__Link">
-//           Search Tutors
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
 const SideBar: FC = () => {
+
+  const { userInfo } = useSelector<RootStateType>(
+    (state) => state.userInfo
+  ) as any;
   const history = useHistory();
   return (
     <div className="App__Bottom__Left__SideBar">
@@ -37,9 +21,12 @@ const SideBar: FC = () => {
         >
           Answered Questions
         </Link>
-        <div className="App__Bottom__Left__SideBar__Links__Link">
-          Replied Questions
-        </div>
+        <Link
+          to="/saved_questions"
+          className="App__Bottom__Left__SideBar__Links__Link"
+        >
+          Saved Questions
+        </Link>
         <div className="App__Bottom__Left__SideBar__Links__Link">
           Search Tutors
         </div>

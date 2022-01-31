@@ -81,7 +81,7 @@ const HomePage: FC = () => {
             >
               Having a doubt, ask a question?
             </Link>
-            <button>Saved Questions</button>
+        
           </div>
           <div className="HomePage__Right__MainBody__Notification__Active">
             <div className="HomePage__Right__MainBody__Notification__Active__Person">
