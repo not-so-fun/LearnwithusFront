@@ -33,8 +33,6 @@ const Answered: FC = () => {
                 Your Answered Question
             </div>
             <div className="Answered__Newsfeed">
-
-            
               {questions &&
                 questions.map((question: questionFeedListInterface) => (
                     <QuestionFeed question={question}  key={question.question_id}/>
