@@ -7,7 +7,7 @@ import { questionFeedListInterface } from "../../reducers/QuestionFeedReducers";
 import useTokenAndId from "../ReusableLogicComponents/useTokenAndId";
 import axios from "../../axios";
 import { Link, useHistory } from "react-router-dom";
-
+import BookmarkBorderIcon from "@mui/icons-material/BookmarkBorder";
 interface quesInterface {
   question: questionFeedListInterface;
 }
@@ -100,6 +100,7 @@ const QuestionFeed: FC<quesInterface> = ({ question }) => {
 
   return (
     <div className="QuestionFeed">
+      <BookmarkBorderIcon className="QuestionFeed__Bookmark" />
       <div className="QuestionFeed__Box">
         <div className="QuestionFeed__Box__Top">
           <Link

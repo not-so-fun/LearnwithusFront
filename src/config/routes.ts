@@ -9,91 +9,98 @@ import AccountActivationScreen from "../Screens/AccountActivationScreen";
 import AskQuestion from "../Layout/AskQuestions";
 import MainQA from "../Layout/MainQA";
 import Answered from "../Layout/Answered";
+import SavedQuestion from "../components/SavedQuestions/SavedQuestion";
 const routes: IRoute[] = [
   {
     path: "/",
     name: "Home",
-    component:HomePage,
+    component: HomePage,
     exact: true,
-    private:true,
-    showNav:true
+    private: true,
+    showNav: true,
   },
   {
     path: "/answered",
     name: "Answered",
-    component:Answered,
+    component: Answered,
     exact: true,
-    private:true,
-    showNav:true
+    private: true,
+    showNav: true,
   },
   {
     path: "/questions/:id",
     name: "MainQuestionAnswer",
     component: MainQA,
     exact: false,
-    private:true,
-    showNav:false
+    private: true,
+    showNav: false,
   },
   {
     path: "/login",
     name: "Login",
     component: Login,
     exact: true,
-    private:false,
-    showNav:false
+    private: false,
+    showNav: false,
   },
   {
     path: "/register",
     name: "Register",
     component: Register,
     exact: true,
-    private:false,
-    showNav:false
+    private: false,
+    showNav: false,
   },
   {
     path: "/profile/:id",
     name: "Profile",
-    component:Profile,
+    component: Profile,
     exact: true,
-    private:true,
-    showNav:true
+    private: true,
+    showNav: true,
   },
- 
+
   {
     path: "/forgot-password",
     name: "ForgotPassword",
     component: ForgotPassword,
     exact: true,
-    private:false,
-    showNav:false
+    private: false,
+    showNav: false,
   },
   {
     path: "/reset-password",
     name: "ResetPassword",
     component: ResetPassword,
     exact: true,
-    private:false,
-    showNav:false
+    private: false,
+    showNav: false,
   },
   {
     path: "/activate_account",
     name: "Account_Activate",
     component: AccountActivationScreen,
     exact: true,
-    private:false,
-    showNav:false
+    private: false,
+    showNav: false,
   },
-  
+
   {
     path: "/question/ask",
     name: "questions",
     component: AskQuestion,
     exact: true,
-    private:true,
-    showNav:false
+    private: true,
+    showNav: false,
   },
-  
-  
+  {
+    path: "/saved-questions",
+    name: "saved-question",
+    component: SavedQuestion,
+    exact: true,
+    private: true,
+    showNav: false,
+  },
 ];
 
 export default routes;
