@@ -34,7 +34,7 @@ import {questionFeedListInterface} from "./QuestionFeedReducers";
         return {
           ...state,
           loading: false,
-          questions: state.questions.concat(action.questions)
+          questions: action.questions
         };
       case SAVED_QUESTION_ERROR:
         return {

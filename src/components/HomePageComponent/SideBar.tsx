@@ -22,7 +22,7 @@ const SideBar: FC = () => {
           Answered Questions
         </Link>
         <Link
-          to="/saved_questions"
+          to="/saved-questions"
           className="App__Bottom__Left__SideBar__Links__Link"
         >
           Saved Questions

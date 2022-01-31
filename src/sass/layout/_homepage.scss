@@ -85,7 +85,6 @@
       width: 100%;
       height: calc(100% - 7rem);
       margin-top: 1rem;
-
       &__Notification {
         flex: 0 0 32rem;
         padding: 0 1rem;
@@ -402,6 +401,7 @@
             width: 0px;
           }
         }
+     
       }
       &__NewsFeed {
         flex: 1;
