@@ -5,7 +5,10 @@ import Navbar from "../components/Navbar";
 // import Home from "../components/ProfileComponents/NewsFeed";
 import HomeNewsFeed from "../components/HomePageComponent/HomeNewsFeed";
 import { Link } from "react-router-dom";
-import { QuestionFeedAction,QuestionFeedActionMore } from "../actions/QuestionFeedAction";
+import {
+  QuestionFeedAction,
+  QuestionFeedActionMore,
+} from "../actions/QuestionFeedAction";
 import HomeNewsFeedSkeleton from "../components/HomePageComponent/HomeNewsFeedSkeleton";
 import CircleIcon from "@mui/icons-material/Circle";
 
@@ -20,12 +23,11 @@ import QuestionFeed from "../components/HomePageComponent/QuestionFeed";
 import { BeatLoaderProgress } from "../components/ReusableUIComponents/BeatLoader";
 import ModalImageUpload from "../components/ReusableUIComponents/ModalImageUpload";
 
-
 const HomePage: FC = () => {
   const dispatch = useDispatch();
   const { token } = useTokenAndId();
 
-  const { loading, questions, count,error } = useSelector<RootStateType>(
+  const { loading, questions, count, error } = useSelector<RootStateType>(
     (state) => state.questionFeed
   ) as questionFeedInterface;
 
@@ -33,15 +35,12 @@ const HomePage: FC = () => {
     document.title = "Learn with us | Home";
   }, []);
 
-
   useEffect(() => {
     dispatch(QuestionFeedAction(token));
   }, [token]);
-  const ShowMore= ()=>{
-  dispatch(QuestionFeedActionMore(token, count));
-
-
-  }
+  const ShowMore = () => {
+    dispatch(QuestionFeedActionMore(token, count));
+  };
 
   return (
     <>
@@ -55,17 +54,16 @@ const HomePage: FC = () => {
           {/* skeleton here */}
           {questions &&
             questions.map((question: questionFeedListInterface) => (
-             
-                <QuestionFeed question={question} key={question.question_id}/>
-           
+              <QuestionFeed question={question} key={question.question_id} />
             ))}
-            <div className="HomePage__Right__MainBody__NewsFeed__LoadMore" >
-              <button className="HomePage__Right__MainBody__NewsFeed__LoadMore__button"
+          <div className="HomePage__Right__MainBody__NewsFeed__LoadMore">
+            <button
+              className="HomePage__Right__MainBody__NewsFeed__LoadMore__button"
               onClick={ShowMore}
-              >
-                <h1>Load More questions</h1>
-              </button>
-            </div>
+            >
+              <h1>Load More questions</h1>
+            </button>
+          </div>
           {loading && (
             <div>
               <BeatLoaderProgress size={24} color="#057777" />
@@ -81,7 +79,7 @@ const HomePage: FC = () => {
             >
               Having a doubt, ask a question?
             </Link>
-            <button>Saved Questions</button>
+            <Link to="/saved-questions">Saved Questions</Link>
           </div>
           <div className="HomePage__Right__MainBody__Notification__Active">
             <div className="HomePage__Right__MainBody__Notification__Active__Person">

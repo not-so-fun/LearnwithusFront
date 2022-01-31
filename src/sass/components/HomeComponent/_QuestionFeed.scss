@@ -8,6 +8,19 @@
   align-items: center;
   justify-content: center;
   padding: 4rem 0;
+  position: relative;
+  &__Bookmark {
+    position: absolute;
+    top: 74px;
+    right: 40px;
+    cursor: pointer;
+    font-size: 30px !important;
+    color: $color-black;
+    transition: all 0.4s ease;
+    :hover {
+      color: $color-primary;
+    }
+  }
   &__Box {
     // background:green;
     width: 90%;
