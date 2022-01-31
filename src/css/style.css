@@ -1039,7 +1039,8 @@ body {
         margin: 2rem;
         text-align: left;
         padding: 8px;
-        border-radius: 5px; }
+        border-radius: 5px;
+        border: 2px solid red; }
         .Profile__Box__Main__Newsfeed__Div__Header {
           display: flex;
           flex-direction: row;

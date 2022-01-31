@@ -97,10 +97,13 @@ const QuestionFeed: FC<quesInterface> = ({ question }) => {
   const redirectToMainQA = () => {
     history.push(`/questions/${question.question_id}`);
   };
+  const SavedQuestion =() =>{
+    console.log("Hlello world");
+  }
 
   return (
     <div className="QuestionFeed">
-      <BookmarkBorderIcon className="QuestionFeed__Bookmark" />
+      <BookmarkBorderIcon className="QuestionFeed__Bookmark" style={{background:"red"}} onClick={SavedQuestion}/>
       <div className="QuestionFeed__Box">
         <div className="QuestionFeed__Box__Top">
           <Link
