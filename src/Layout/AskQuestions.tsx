@@ -3,6 +3,7 @@ import SideBar from "../components/HomePageComponent/SideBar";
 import Navbar from "../components/Navbar";
 
 import AskQuestionForm from "../components/AskQuestionsComponent/AskQuestionForm";
+import AskQuestionHelp from "../components/AskQuestionsComponent/AskQuestionHelp";
 
 const AskQuestions = () => {
   useEffect(() => {
@@ -17,7 +18,9 @@ const AskQuestions = () => {
               <AskQuestionForm />
             </div>
           </div>
-          <div className="AskQuestion__Right__Bottom__Right">Helps</div>
+          <div className="AskQuestion__Right__Bottom__Right">
+            <AskQuestionHelp />
+          </div>
         </div>
       </div>
     </div>

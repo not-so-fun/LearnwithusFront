@@ -1552,220 +1552,220 @@ body {
             color: #fff; }
             .HomePage__Right__MainBody__NewsFeed__LoadMore__button:hover {
               cursor: pointer; }
-        .HomePage__Right__MainBody__NewsFeed::-webkit-scrollbar {
-          width: 0px; }
-      .HomePage__Right__MainBody__Notification {
-        flex: 0 0 32rem;
-        padding: 0 1rem; }
-        .HomePage__Right__MainBody__Notification__Box {
-          background-color: #fff;
-          cursor: default;
-          text-align: left;
-          height: fit-content;
-          border-radius: 0.5rem;
-          border: 2px solid lightgrey; }
-          .HomePage__Right__MainBody__Notification__Box :before {
-            content: "";
-            position: absolute;
-            top: 1px;
-            right: 50px;
-            width: 10px;
-            height: 0;
-            transform: translate(-1rem, -100%);
-            border-left: 0.75rem solid transparent;
-            border-right: 0.75rem solid transparent;
-            border-bottom: 0.75rem solid white; }
-          .HomePage__Right__MainBody__Notification__Box__NormalNotification {
-            border-top: 2px solid lightgrey;
-            color: #000;
-            padding: 5px 25px;
-            font-size: 14px;
-            font-weight: 400;
-            width: 100%; }
-            .HomePage__Right__MainBody__Notification__Box__NormalNotification__Noti {
-              display: flex;
-              align-items: center; }
-              .HomePage__Right__MainBody__Notification__Box__NormalNotification__Noti__Text {
-                padding: 1rem 0;
-                margin-left: 1rem; }
-              .HomePage__Right__MainBody__Notification__Box__NormalNotification__Noti__Avatar {
-                cursor: pointer; }
-          .HomePage__Right__MainBody__Notification__Box__RequestNotification {
-            border-top: 2px solid lightgrey;
-            color: #000;
-            padding: 6px 25px;
-            font-size: 14px;
-            font-weight: 400;
-            width: 100%; }
-            .HomePage__Right__MainBody__Notification__Box__RequestNotification__Noti {
-              display: flex;
-              justify-content: space-between;
-              align-items: center; }
-              .HomePage__Right__MainBody__Notification__Box__RequestNotification__Noti__Left {
+          .HomePage__Right__MainBody__NewsFeed__LoadMore::-webkit-scrollbar {
+            width: 0px; }
+        .HomePage__Right__MainBody__NewsFeed__Notification {
+          flex: 0 0 32rem;
+          padding: 0 1rem; }
+          .HomePage__Right__MainBody__NewsFeed__Notification__Box {
+            background-color: #fff;
+            cursor: default;
+            text-align: left;
+            height: fit-content;
+            border-radius: 0.5rem;
+            border: 2px solid lightgrey; }
+            .HomePage__Right__MainBody__NewsFeed__Notification__Box :before {
+              content: "";
+              position: absolute;
+              top: 1px;
+              right: 50px;
+              width: 10px;
+              height: 0;
+              transform: translate(-1rem, -100%);
+              border-left: 0.75rem solid transparent;
+              border-right: 0.75rem solid transparent;
+              border-bottom: 0.75rem solid white; }
+            .HomePage__Right__MainBody__NewsFeed__Notification__Box__NormalNotification {
+              border-top: 2px solid lightgrey;
+              color: #000;
+              padding: 5px 25px;
+              font-size: 14px;
+              font-weight: 400;
+              width: 100%; }
+              .HomePage__Right__MainBody__NewsFeed__Notification__Box__NormalNotification__Noti {
                 display: flex;
                 align-items: center; }
-                .HomePage__Right__MainBody__Notification__Box__RequestNotification__Noti__Left__Avatar {
-                  cursor: pointer; }
-                .HomePage__Right__MainBody__Notification__Box__RequestNotification__Noti__Left__Text {
-                  width: 220px;
+                .HomePage__Right__MainBody__NewsFeed__Notification__Box__NormalNotification__Noti__Text {
+                  padding: 1rem 0;
                   margin-left: 1rem; }
-              .HomePage__Right__MainBody__Notification__Box__RequestNotification__Noti__Right {
-                display: flex;
-                align-items: center;
-                justify-content: space-between; }
-                .HomePage__Right__MainBody__Notification__Box__RequestNotification__Noti__Right__Reject {
-                  cursor: pointer;
-                  transition: all 0.4s ease;
-                  display: flex;
-                  justify-content: center;
-                  align-items: center;
-                  padding: 0.4rem; }
-                  .HomePage__Right__MainBody__Notification__Box__RequestNotification__Noti__Right__Reject__Icon {
-                    font-size: 24px !important; }
-                  .HomePage__Right__MainBody__Notification__Box__RequestNotification__Noti__Right__Reject:hover {
-                    transform: scale(1.3);
-                    color: red; }
-                .HomePage__Right__MainBody__Notification__Box__RequestNotification__Noti__Right__Accept {
-                  cursor: pointer;
-                  transition: all 0.4s ease;
-                  display: flex;
-                  justify-content: center;
-                  align-items: center;
-                  margin-left: 0.5rem;
-                  padding: 0.4rem; }
-                  .HomePage__Right__MainBody__Notification__Box__RequestNotification__Noti__Right__Accept__Icon {
-                    font-size: 24px !important; }
-                  .HomePage__Right__MainBody__Notification__Box__RequestNotification__Noti__Right__Accept:hover {
-                    transform: scale(1.3);
-                    color: #008000; }
-          .HomePage__Right__MainBody__Notification__Box__Header {
-            padding: 5px 25px;
-            font-size: 18px;
-            font-weight: 600;
-            color: #84929f;
-            margin-bottom: 1rem; }
-            .HomePage__Right__MainBody__Notification__Box__Header__Underline {
-              border: 1px solid lightgrey;
-              margin-bottom: 1rem; }
-          .HomePage__Right__MainBody__Notification__Box__InnerDiv {
-            border: 2px solid lightgrey;
-            border-radius: 5px;
-            padding: 8px; }
-            .HomePage__Right__MainBody__Notification__Box__InnerDiv__Underline {
-              margin-top: 1rem;
-              border-bottom: 2px solid lightgrey;
-              margin-bottom: 1rem; }
-            .HomePage__Right__MainBody__Notification__Box__InnerDiv__Header {
-              display: flex;
-              flex-direction: row;
-              align-items: center; }
-              .HomePage__Right__MainBody__Notification__Box__InnerDiv__Header__Div {
-                margin-left: 7px; }
-                .HomePage__Right__MainBody__Notification__Box__InnerDiv__Header__Div > p:first-child {
-                  color: #000;
-                  font-weight: 600;
-                  font-size: 13px; }
-                .HomePage__Right__MainBody__Notification__Box__InnerDiv__Header__Div > p:last-child {
-                  font-size: 13px; }
-            .HomePage__Right__MainBody__Notification__Box__InnerDiv__Button {
-              display: flex;
-              justify-content: flex-end;
-              margin: 1rem 0rem; }
-              .HomePage__Right__MainBody__Notification__Box__InnerDiv__Button__Accept {
-                border: none;
-                background-color: #057777;
-                color: #fff;
-                font-size: 16px;
-                padding: 7px 17px;
-                width: 28%;
-                border-radius: 5px; }
-                .HomePage__Right__MainBody__Notification__Box__InnerDiv__Button__Accept:hover {
+                .HomePage__Right__MainBody__NewsFeed__Notification__Box__NormalNotification__Noti__Avatar {
                   cursor: pointer; }
-              .HomePage__Right__MainBody__Notification__Box__InnerDiv__Button__Decline {
-                border: 2px solid lightgrey;
-                background-color: transparent;
-                color: #000;
-                font-size: 16px;
-                padding: 7px 17px;
-                border-radius: 5px;
-                width: 28%;
-                margin-left: 2rem; }
-                .HomePage__Right__MainBody__Notification__Box__InnerDiv__Button__Decline:hover {
-                  cursor: pointer; }
-        .HomePage__Right__MainBody__Notification__Active {
-          margin-top: 2rem;
-          border-top: 2px solid lightgrey;
-          padding-top: 2rem; }
-          .HomePage__Right__MainBody__Notification__Active__Person {
-            display: flex;
-            align-items: center;
-            margin-bottom: 2rem; }
-            .HomePage__Right__MainBody__Notification__Active__Person__Avatar {
-              position: relative; }
-              .HomePage__Right__MainBody__Notification__Active__Person__Avatar__Icon {
-                position: absolute;
-                top: 23px;
-                right: -2px;
-                color: #31a24c; }
-            .HomePage__Right__MainBody__Notification__Active__Person__Name {
-              font-size: 16px;
-              margin-left: 1rem;
-              color: black; }
-            .HomePage__Right__MainBody__Notification__Active__Person__Approach {
+            .HomePage__Right__MainBody__NewsFeed__Notification__Box__RequestNotification {
+              border-top: 2px solid lightgrey;
+              color: #000;
+              padding: 6px 25px;
               font-size: 14px;
-              margin-left: 4rem;
-              color: #515151;
-              padding: 4px 7px;
-              font-weight: 500;
-              transition: all 0.4s ease; }
-              .HomePage__Right__MainBody__Notification__Active__Person__Approach:hover {
-                color: red;
-                cursor: pointer;
-                background-color: #008000;
-                color: white;
-                border-radius: 4px; }
-        .HomePage__Right__MainBody__Notification__Below {
-          display: flex;
-          flex-direction: column;
-          border: 2px solid lightgrey;
-          margin-top: 1rem;
-          padding: 0.8rem;
-          margin-bottom: 1rem;
-          background-color: #e6e6e6; }
-          .HomePage__Right__MainBody__Notification__Below__Links {
-            background-color: #057777;
-            color: #fff;
-            font-size: 15px;
-            padding: 0.5rem 1rem;
-            border: none;
-            border-radius: 4px;
-            font-weight: 600;
-            height: 4rem;
-            cursor: pointer;
-            text-decoration: none;
-            transition: all 0.3s ease; }
-            .HomePage__Right__MainBody__Notification__Below__Links:hover {
-              box-shadow: inset 0 0 50px 50px #0c6363;
-              transform: translateY(-2px); }
-            .HomePage__Right__MainBody__Notification__Below__Links:active {
-              transform: translateY(2px); }
-          .HomePage__Right__MainBody__Notification__Below button:last-child {
-            cursor: pointer;
-            background-color: transparent;
-            font-weight: 600;
-            color: #000;
+              font-weight: 400;
+              width: 100%; }
+              .HomePage__Right__MainBody__NewsFeed__Notification__Box__RequestNotification__Noti {
+                display: flex;
+                justify-content: space-between;
+                align-items: center; }
+                .HomePage__Right__MainBody__NewsFeed__Notification__Box__RequestNotification__Noti__Left {
+                  display: flex;
+                  align-items: center; }
+                  .HomePage__Right__MainBody__NewsFeed__Notification__Box__RequestNotification__Noti__Left__Avatar {
+                    cursor: pointer; }
+                  .HomePage__Right__MainBody__NewsFeed__Notification__Box__RequestNotification__Noti__Left__Text {
+                    width: 220px;
+                    margin-left: 1rem; }
+                .HomePage__Right__MainBody__NewsFeed__Notification__Box__RequestNotification__Noti__Right {
+                  display: flex;
+                  align-items: center;
+                  justify-content: space-between; }
+                  .HomePage__Right__MainBody__NewsFeed__Notification__Box__RequestNotification__Noti__Right__Reject {
+                    cursor: pointer;
+                    transition: all 0.4s ease;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 0.4rem; }
+                    .HomePage__Right__MainBody__NewsFeed__Notification__Box__RequestNotification__Noti__Right__Reject__Icon {
+                      font-size: 24px !important; }
+                    .HomePage__Right__MainBody__NewsFeed__Notification__Box__RequestNotification__Noti__Right__Reject:hover {
+                      transform: scale(1.3);
+                      color: red; }
+                  .HomePage__Right__MainBody__NewsFeed__Notification__Box__RequestNotification__Noti__Right__Accept {
+                    cursor: pointer;
+                    transition: all 0.4s ease;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin-left: 0.5rem;
+                    padding: 0.4rem; }
+                    .HomePage__Right__MainBody__NewsFeed__Notification__Box__RequestNotification__Noti__Right__Accept__Icon {
+                      font-size: 24px !important; }
+                    .HomePage__Right__MainBody__NewsFeed__Notification__Box__RequestNotification__Noti__Right__Accept:hover {
+                      transform: scale(1.3);
+                      color: #008000; }
+            .HomePage__Right__MainBody__NewsFeed__Notification__Box__Header {
+              padding: 5px 25px;
+              font-size: 18px;
+              font-weight: 600;
+              color: #84929f;
+              margin-bottom: 1rem; }
+              .HomePage__Right__MainBody__NewsFeed__Notification__Box__Header__Underline {
+                border: 1px solid lightgrey;
+                margin-bottom: 1rem; }
+            .HomePage__Right__MainBody__NewsFeed__Notification__Box__InnerDiv {
+              border: 2px solid lightgrey;
+              border-radius: 5px;
+              padding: 8px; }
+              .HomePage__Right__MainBody__NewsFeed__Notification__Box__InnerDiv__Underline {
+                margin-top: 1rem;
+                border-bottom: 2px solid lightgrey;
+                margin-bottom: 1rem; }
+              .HomePage__Right__MainBody__NewsFeed__Notification__Box__InnerDiv__Header {
+                display: flex;
+                flex-direction: row;
+                align-items: center; }
+                .HomePage__Right__MainBody__NewsFeed__Notification__Box__InnerDiv__Header__Div {
+                  margin-left: 7px; }
+                  .HomePage__Right__MainBody__NewsFeed__Notification__Box__InnerDiv__Header__Div > p:first-child {
+                    color: #000;
+                    font-weight: 600;
+                    font-size: 13px; }
+                  .HomePage__Right__MainBody__NewsFeed__Notification__Box__InnerDiv__Header__Div > p:last-child {
+                    font-size: 13px; }
+              .HomePage__Right__MainBody__NewsFeed__Notification__Box__InnerDiv__Button {
+                display: flex;
+                justify-content: flex-end;
+                margin: 1rem 0rem; }
+                .HomePage__Right__MainBody__NewsFeed__Notification__Box__InnerDiv__Button__Accept {
+                  border: none;
+                  background-color: #057777;
+                  color: #fff;
+                  font-size: 16px;
+                  padding: 7px 17px;
+                  width: 28%;
+                  border-radius: 5px; }
+                  .HomePage__Right__MainBody__NewsFeed__Notification__Box__InnerDiv__Button__Accept:hover {
+                    cursor: pointer; }
+                .HomePage__Right__MainBody__NewsFeed__Notification__Box__InnerDiv__Button__Decline {
+                  border: 2px solid lightgrey;
+                  background-color: transparent;
+                  color: #000;
+                  font-size: 16px;
+                  padding: 7px 17px;
+                  border-radius: 5px;
+                  width: 28%;
+                  margin-left: 2rem; }
+                  .HomePage__Right__MainBody__NewsFeed__Notification__Box__InnerDiv__Button__Decline:hover {
+                    cursor: pointer; }
+          .HomePage__Right__MainBody__NewsFeed__Notification__Active {
+            margin-top: 2rem;
+            border-top: 2px solid lightgrey;
+            padding-top: 2rem; }
+            .HomePage__Right__MainBody__NewsFeed__Notification__Active__Person {
+              display: flex;
+              align-items: center;
+              margin-bottom: 2rem; }
+              .HomePage__Right__MainBody__NewsFeed__Notification__Active__Person__Avatar {
+                position: relative; }
+                .HomePage__Right__MainBody__NewsFeed__Notification__Active__Person__Avatar__Icon {
+                  position: absolute;
+                  top: 23px;
+                  right: -2px;
+                  color: #31a24c; }
+              .HomePage__Right__MainBody__NewsFeed__Notification__Active__Person__Name {
+                font-size: 16px;
+                margin-left: 1rem;
+                color: black; }
+              .HomePage__Right__MainBody__NewsFeed__Notification__Active__Person__Approach {
+                font-size: 14px;
+                margin-left: 4rem;
+                color: #515151;
+                padding: 4px 7px;
+                font-weight: 500;
+                transition: all 0.4s ease; }
+                .HomePage__Right__MainBody__NewsFeed__Notification__Active__Person__Approach:hover {
+                  color: red;
+                  cursor: pointer;
+                  background-color: #008000;
+                  color: white;
+                  border-radius: 4px; }
+          .HomePage__Right__MainBody__NewsFeed__Notification__Below {
+            display: flex;
+            flex-direction: column;
             border: 2px solid lightgrey;
-            font-size: 15px;
-            padding: 6px 0px;
-            height: 4rem;
             margin-top: 1rem;
-            border-radius: 4px;
-            transition: all 0.3s ease; }
-            .HomePage__Right__MainBody__Notification__Below button:last-child:hover {
-              box-shadow: inset 0 0 50px 50px lightgray;
-              transform: translateY(-2px); }
-            .HomePage__Right__MainBody__Notification__Below button:last-child:active {
-              transform: translateY(2px); }
+            padding: 0.8rem;
+            margin-bottom: 1rem;
+            background-color: #e6e6e6; }
+            .HomePage__Right__MainBody__NewsFeed__Notification__Below__Links {
+              background-color: #057777;
+              color: #fff;
+              font-size: 15px;
+              padding: 0.5rem 1rem;
+              border: none;
+              border-radius: 4px;
+              font-weight: 600;
+              height: 4rem;
+              cursor: pointer;
+              text-decoration: none;
+              transition: all 0.3s ease; }
+              .HomePage__Right__MainBody__NewsFeed__Notification__Below__Links:hover {
+                box-shadow: inset 0 0 50px 50px #0c6363;
+                transform: translateY(-2px); }
+              .HomePage__Right__MainBody__NewsFeed__Notification__Below__Links:active {
+                transform: translateY(2px); }
+            .HomePage__Right__MainBody__NewsFeed__Notification__Below button:last-child {
+              cursor: pointer;
+              background-color: transparent;
+              font-weight: 600;
+              color: #000;
+              border: 2px solid lightgrey;
+              font-size: 15px;
+              padding: 6px 0px;
+              height: 4rem;
+              margin-top: 1rem;
+              border-radius: 4px;
+              transition: all 0.3s ease; }
+              .HomePage__Right__MainBody__NewsFeed__Notification__Below button:last-child:hover {
+                box-shadow: inset 0 0 50px 50px lightgray;
+                transform: translateY(-2px); }
+              .HomePage__Right__MainBody__NewsFeed__Notification__Below button:last-child:active {
+                transform: translateY(2px); }
 
 .AskQuestion {
   padding-right: 1rem;
@@ -1797,6 +1797,42 @@ body {
         margin-left: 1rem;
         flex: 0.3;
         height: 100%; }
+        .AskQuestion__Right__Bottom__Right__Help__Top {
+          background-color: #fff;
+          text-align: left;
+          margin-top: 1rem;
+          border-radius: 5px; }
+          .AskQuestion__Right__Bottom__Right__Help__Top__Header {
+            background-color: #f8f9f9;
+            font-size: 18px;
+            padding: 5px 8px; }
+          .AskQuestion__Right__Bottom__Right__Help__Top__Content, .AskQuestion__Right__Bottom__Right__Help__Top__Para {
+            padding: 5px 8px;
+            font-size: 14px;
+            margin-top: 0.3rem; }
+          .AskQuestion__Right__Bottom__Right__Help__Top__List {
+            padding: 12px 15px;
+            font-size: 14px;
+            font-weight: 600;
+            border-bottom: 1px solid lightgrey;
+            cursor: pointer; }
+            .AskQuestion__Right__Bottom__Right__Help__Top__List:last-child {
+              border: none; }
+            .AskQuestion__Right__Bottom__Right__Help__Top__List__Flex {
+              display: flex;
+              justify-content: space-between;
+              align-items: center; }
+              .AskQuestion__Right__Bottom__Right__Help__Top__List__Flex__Left__span {
+                color: #209ae6;
+                font-size: 16px;
+                margin-right: 0.5rem; }
+            .AskQuestion__Right__Bottom__Right__Help__Top__List__Answer {
+              padding-left: 3.5rem;
+              margin-top: 0.5rem; }
+              .AskQuestion__Right__Bottom__Right__Help__Top__List__Answer > ul li {
+                margin-bottom: 0.5rem; }
+              .AskQuestion__Right__Bottom__Right__Help__Top__List__Answer__Content {
+                font-weight: normal; }
 
 .MainQA {
   height: auto;

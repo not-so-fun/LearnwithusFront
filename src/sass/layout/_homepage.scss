@@ -98,312 +98,313 @@
         overflow-y: scroll;
         margin-right: 2rem;
         background: $color-white;
-        &__LoadMore{
-          height:8rem;
+        &__LoadMore {
+          height: 8rem;
           display: flex;
           align-items: center;
           justify-content: center;
-          &__button{
-            background:$color-primary;
-            border:none;
-            outline:none;
-            border-radius:5px;
-            height:5rem;
-            padding:0 2rem;
-            font-size:1.2rem;
-            color:$color-white;
-            &:hover{
+          &__button {
+            background: $color-primary;
+            border: none;
+            outline: none;
+            border-radius: 5px;
+            height: 5rem;
+            padding: 0 2rem;
+            font-size: 1.2rem;
+            color: $color-white;
+            &:hover {
               cursor: pointer;
             }
           }
-        // display: flex;
-        // flex-direction: column;
-        // justify-content: center;
-        // align-items: center;
+          // display: flex;
+          // flex-direction: column;
+          // justify-content: center;
+          // align-items: center;
 
-        // width: 8rem;
-        // margin-right: 1rem;
-        &::-webkit-scrollbar {
-          width: 0px;
+          // width: 8rem;
+          // margin-right: 1rem;
+          &::-webkit-scrollbar {
+            width: 0px;
+          }
         }
-      }
-      &__Notification {
-        flex: 0 0 32rem;
-        padding: 0 1rem;
-        // background: $color-white;
-        &__Box {
-          background-color: $color-white;
-          cursor: default;
-          // position: relative;
-          text-align: left;
+        &__Notification {
+          flex: 0 0 32rem;
+          padding: 0 1rem;
+          // background: $color-white;
+          &__Box {
+            background-color: $color-white;
+            cursor: default;
+            // position: relative;
+            text-align: left;
 
-          height: fit-content;
+            height: fit-content;
 
-          border-radius: 0.5rem;
-          border: 2px solid lightgrey;
-          :before {
-            content: "";
-            position: absolute;
-            top: 1px;
-            right: 50px;
-            width: 10px;
-            height: 0;
-            transform: translate(-1rem, -100%);
-            border-left: 0.75rem solid transparent;
-            border-right: 0.75rem solid transparent;
-            border-bottom: 0.75rem solid white;
-          }
-
-          &__NormalNotification {
-            border-top: 2px solid lightgrey;
-            color: $color-black;
-            padding: 5px 25px;
-            font-size: 14px;
-            font-weight: 400;
-            width: 100%;
-
-            &__Noti {
-              display: flex;
-
-              align-items: center;
-
-              &__Text {
-                padding: 1rem 0;
-                margin-left: 1rem;
-              }
-              &__Avatar {
-                cursor: pointer;
-              }
+            border-radius: 0.5rem;
+            border: 2px solid lightgrey;
+            :before {
+              content: "";
+              position: absolute;
+              top: 1px;
+              right: 50px;
+              width: 10px;
+              height: 0;
+              transform: translate(-1rem, -100%);
+              border-left: 0.75rem solid transparent;
+              border-right: 0.75rem solid transparent;
+              border-bottom: 0.75rem solid white;
             }
-          }
-          &__RequestNotification {
-            border-top: 2px solid lightgrey;
-            color: $color-black;
-            padding: 6px 25px;
-            font-size: 14px;
-            font-weight: 400;
-            width: 100%;
-            &__Noti {
-              display: flex;
-              justify-content: space-between;
-              align-items: center;
-              &__Left {
+
+            &__NormalNotification {
+              border-top: 2px solid lightgrey;
+              color: $color-black;
+              padding: 5px 25px;
+              font-size: 14px;
+              font-weight: 400;
+              width: 100%;
+
+              &__Noti {
                 display: flex;
+
                 align-items: center;
 
+                &__Text {
+                  padding: 1rem 0;
+                  margin-left: 1rem;
+                }
                 &__Avatar {
                   cursor: pointer;
                 }
-
-                &__Text {
-                  width: 220px;
-                  margin-left: 1rem;
-                }
-              }
-
-              &__Right {
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                &__Reject {
-                  cursor: pointer;
-                  transition: all 0.4s ease;
-                  display: flex;
-                  justify-content: center;
-                  align-items: center;
-                  padding: 0.4rem;
-                  &__Icon {
-                    font-size: 24px !important;
-                  }
-                  &:hover {
-                    transform: scale(1.3);
-                    color: red;
-                  }
-                }
-                &__Accept {
-                  cursor: pointer;
-                  transition: all 0.4s ease;
-                  display: flex;
-                  justify-content: center;
-                  align-items: center;
-                  margin-left: 0.5rem;
-                  padding: 0.4rem;
-                  &__Icon {
-                    font-size: 24px !important;
-                  }
-                  &:hover {
-                    transform: scale(1.3);
-                    color: #008000;
-                  }
-                }
               }
             }
-          }
-          &__Header {
-            padding: 5px 25px;
-            font-size: 18px;
-            font-weight: 600;
-            color: #84929f;
-            margin-bottom: 1rem;
-            &__Underline {
-              border: 1px solid lightgrey;
-              margin-bottom: 1rem;
-            }
-          }
-
-          &__InnerDiv {
-            border: 2px solid lightgrey;
-            border-radius: 5px;
-            padding: 8px;
-
-            &__Underline {
-              margin-top: 1rem;
-              border-bottom: 2px solid lightgrey;
-              margin-bottom: 1rem;
-            }
-
-            &__Header {
-              display: flex;
-              flex-direction: row;
-
-              align-items: center;
-              &__Div {
-                margin-left: 7px;
-                & > p:first-child {
-                  color: $color-black;
-                  font-weight: 600;
-                  font-size: 13px;
-                }
-                & > p:last-child {
-                  font-size: 13px;
-                }
-              }
-            }
-
-            &__Button {
-              //   border: 2px solid black;
-              display: flex;
-              justify-content: flex-end;
-              margin: 1rem 0rem;
-
-              &__Accept {
-                border: none;
-                background-color: $color-primary;
-                color: $color-white;
-                font-size: 16px;
-                padding: 7px 17px;
-                width: 28%;
-                border-radius: 5px;
-                &:hover {
-                  cursor: pointer;
-                }
-              }
-              &__Decline {
-                border: 2px solid lightgrey;
-                background-color: transparent;
-                color: $color-black;
-                font-size: 16px;
-                padding: 7px 17px;
-                border-radius: 5px;
-                width: 28%;
-                margin-left: 2rem;
-                &:hover {
-                  cursor: pointer;
-                }
-              }
-            }
-          }
-        }
-        &__Active {
-          margin-top: 2rem;
-          border-top: 2px solid lightgrey;
-          padding-top: 2rem;
-          &__Person {
-            // border: 2px solid red;
-            display: flex;
-            align-items: center;
-            margin-bottom: 2rem;
-
-            &__Avatar {
-              position: relative;
-              &__Icon {
-                position: absolute;
-                top: 23px;
-                right: -2px;
-                color: #31a24c;
-              }
-            }
-
-            &__Name {
-              font-size: 16px;
-              margin-left: 1rem;
-              color: black;
-            }
-            &__Approach {
+            &__RequestNotification {
+              border-top: 2px solid lightgrey;
+              color: $color-black;
+              padding: 6px 25px;
               font-size: 14px;
-              margin-left: 4rem;
-              color: rgb(81, 81, 81);
-              padding: 4px 7px;
-              font-weight: 500;
-              transition: all 0.4s ease;
-              &:hover {
-                color: red;
-                cursor: pointer;
-                background-color: #008000;
-                color: white;
-                border-radius: 4px;
+              font-weight: 400;
+              width: 100%;
+              &__Noti {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                &__Left {
+                  display: flex;
+                  align-items: center;
+
+                  &__Avatar {
+                    cursor: pointer;
+                  }
+
+                  &__Text {
+                    width: 220px;
+                    margin-left: 1rem;
+                  }
+                }
+
+                &__Right {
+                  display: flex;
+                  align-items: center;
+                  justify-content: space-between;
+                  &__Reject {
+                    cursor: pointer;
+                    transition: all 0.4s ease;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 0.4rem;
+                    &__Icon {
+                      font-size: 24px !important;
+                    }
+                    &:hover {
+                      transform: scale(1.3);
+                      color: red;
+                    }
+                  }
+                  &__Accept {
+                    cursor: pointer;
+                    transition: all 0.4s ease;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin-left: 0.5rem;
+                    padding: 0.4rem;
+                    &__Icon {
+                      font-size: 24px !important;
+                    }
+                    &:hover {
+                      transform: scale(1.3);
+                      color: #008000;
+                    }
+                  }
+                }
+              }
+            }
+            &__Header {
+              padding: 5px 25px;
+              font-size: 18px;
+              font-weight: 600;
+              color: #84929f;
+              margin-bottom: 1rem;
+              &__Underline {
+                border: 1px solid lightgrey;
+                margin-bottom: 1rem;
+              }
+            }
+
+            &__InnerDiv {
+              border: 2px solid lightgrey;
+              border-radius: 5px;
+              padding: 8px;
+
+              &__Underline {
+                margin-top: 1rem;
+                border-bottom: 2px solid lightgrey;
+                margin-bottom: 1rem;
+              }
+
+              &__Header {
+                display: flex;
+                flex-direction: row;
+
+                align-items: center;
+                &__Div {
+                  margin-left: 7px;
+                  & > p:first-child {
+                    color: $color-black;
+                    font-weight: 600;
+                    font-size: 13px;
+                  }
+                  & > p:last-child {
+                    font-size: 13px;
+                  }
+                }
+              }
+
+              &__Button {
+                //   border: 2px solid black;
+                display: flex;
+                justify-content: flex-end;
+                margin: 1rem 0rem;
+
+                &__Accept {
+                  border: none;
+                  background-color: $color-primary;
+                  color: $color-white;
+                  font-size: 16px;
+                  padding: 7px 17px;
+                  width: 28%;
+                  border-radius: 5px;
+                  &:hover {
+                    cursor: pointer;
+                  }
+                }
+                &__Decline {
+                  border: 2px solid lightgrey;
+                  background-color: transparent;
+                  color: $color-black;
+                  font-size: 16px;
+                  padding: 7px 17px;
+                  border-radius: 5px;
+                  width: 28%;
+                  margin-left: 2rem;
+                  &:hover {
+                    cursor: pointer;
+                  }
+                }
               }
             }
           }
-        }
+          &__Active {
+            margin-top: 2rem;
+            border-top: 2px solid lightgrey;
+            padding-top: 2rem;
+            &__Person {
+              // border: 2px solid red;
+              display: flex;
+              align-items: center;
+              margin-bottom: 2rem;
 
-        &__Below {
-          display: flex;
-          flex-direction: column;
-          border: 2px solid lightgrey;
-          margin-top: 1rem;
-          padding: 0.8rem;
-          margin-bottom: 1rem;
-          background-color: #e6e6e6;
-          &__Links {
-            background-color: $color-primary;
-            color: $color-white;
-            font-size: 15px;
-            padding: 0.5rem 1rem;
-            border: none;
-            border-radius: 4px;
-            font-weight: 600;
-            height: 4rem;
-            cursor: pointer;
-            text-decoration: none;
-            transition: all 0.3s ease;
+              &__Avatar {
+                position: relative;
+                &__Icon {
+                  position: absolute;
+                  top: 23px;
+                  right: -2px;
+                  color: #31a24c;
+                }
+              }
 
-            &:hover {
-              box-shadow: inset 0 0 50px 50px rgb(12, 99, 99);
-              transform: translateY(-2px);
-            }
-            &:active {
-              transform: translateY(2px);
+              &__Name {
+                font-size: 16px;
+                margin-left: 1rem;
+                color: black;
+              }
+              &__Approach {
+                font-size: 14px;
+                margin-left: 4rem;
+                color: rgb(81, 81, 81);
+                padding: 4px 7px;
+                font-weight: 500;
+                transition: all 0.4s ease;
+                &:hover {
+                  color: red;
+                  cursor: pointer;
+                  background-color: #008000;
+                  color: white;
+                  border-radius: 4px;
+                }
+              }
             }
           }
-          & button:last-child {
-            cursor: pointer;
-            background-color: transparent;
-            font-weight: 600;
-            color: $color-black;
+
+          &__Below {
+            display: flex;
+            flex-direction: column;
             border: 2px solid lightgrey;
-            font-size: 15px;
-            padding: 6px 0px;
-            height: 4rem;
             margin-top: 1rem;
-            border-radius: 4px;
-            transition: all 0.3s ease;
-            &:hover {
-              box-shadow: inset 0 0 50px 50px rgb(211, 211, 211);
-              transform: translateY(-2px);
+            padding: 0.8rem;
+            margin-bottom: 1rem;
+            background-color: #e6e6e6;
+            &__Links {
+              background-color: $color-primary;
+              color: $color-white;
+              font-size: 15px;
+              padding: 0.5rem 1rem;
+              border: none;
+              border-radius: 4px;
+              font-weight: 600;
+              height: 4rem;
+              cursor: pointer;
+              text-decoration: none;
+              transition: all 0.3s ease;
+
+              &:hover {
+                box-shadow: inset 0 0 50px 50px rgb(12, 99, 99);
+                transform: translateY(-2px);
+              }
+              &:active {
+                transform: translateY(2px);
+              }
             }
-            &:active {
-              transform: translateY(2px);
+            & button:last-child {
+              cursor: pointer;
+              background-color: transparent;
+              font-weight: 600;
+              color: $color-black;
+              border: 2px solid lightgrey;
+              font-size: 15px;
+              padding: 6px 0px;
+              height: 4rem;
+              margin-top: 1rem;
+              border-radius: 4px;
+              transition: all 0.3s ease;
+              &:hover {
+                box-shadow: inset 0 0 50px 50px rgb(211, 211, 211);
+                transform: translateY(-2px);
+              }
+              &:active {
+                transform: translateY(2px);
+              }
             }
           }
         }
