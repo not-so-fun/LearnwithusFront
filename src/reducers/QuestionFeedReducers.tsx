@@ -25,7 +25,7 @@ export interface questionFeedListInterface {
   image: string;
   total_upvotes: string;
   total_downvotes: string;
-  saved:boolean;
+  saved_question_id :string;
 }
 
 export interface questionFeedInterface {

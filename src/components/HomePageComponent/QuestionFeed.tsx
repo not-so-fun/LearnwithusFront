@@ -7,7 +7,9 @@ import { questionFeedListInterface } from "../../reducers/QuestionFeedReducers";
 import useTokenAndId from "../ReusableLogicComponents/useTokenAndId";
 import axios from "../../axios";
 import { Link, useHistory } from "react-router-dom";
-import BookmarkBorderIcon from "@mui/icons-material/BookmarkBorder";
+import BookmarkIcon from '@mui/icons-material/Bookmark';
+import { useDispatch } from "react-redux";
+import {SavedQuestionPostAction} from "../../actions/SavedQuestionsAction";
 interface quesInterface {
   question: questionFeedListInterface;
 }
@@ -17,11 +19,12 @@ interface lastStateInterface {
 }
 
 const QuestionFeed: FC<quesInterface> = ({ question }) => {
+  const dispatch = useDispatch();
   const [upvote, setUpvote] = useState<boolean | null>(null);
   let data =
     parseInt(question.total_upvotes) - parseInt(question.total_downvotes);
   const [totalUpvotes, setTotalUpvote] = useState<number>(data);
-
+  const [saved ,setSaved] = useState<string | null>(null);
   const history = useHistory();
   const [lastState, setLastState] = useState<lastStateInterface>({
     upvote: null,
@@ -31,6 +34,7 @@ const QuestionFeed: FC<quesInterface> = ({ question }) => {
   useEffect(() => {
     setUpvote(question.upvote);
     setLastState({ upvote: question.upvote });
+    setSaved(question.saved_question_id);
   }, [question]);
 
   const upVote = (upvote: boolean) => {
@@ -98,12 +102,18 @@ const QuestionFeed: FC<quesInterface> = ({ question }) => {
     history.push(`/questions/${question.question_id}`);
   };
   const SavedQuestion =() =>{
-    console.log("Hlello world");
-  }
+    console.log(question.question_id);
+    dispatch(SavedQuestionPostAction(token, question.question_id));
+    if(saved){
+      setSaved(null);
+    }else{
+    setSaved(`${question.question_id}`);
+    };
+  };
 
   return (
     <div className="QuestionFeed">
-      <BookmarkBorderIcon className="QuestionFeed__Bookmark" style={{background:"red"}} onClick={SavedQuestion}/>
+      <BookmarkIcon className={saved?"QuestionFeed__Primary":"QuestionFeed__Bookmark"} onClick={SavedQuestion}/>
       <div className="QuestionFeed__Box">
         <div className="QuestionFeed__Box__Top">
           <Link

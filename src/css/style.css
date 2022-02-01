@@ -439,10 +439,14 @@ body {
     right: 40px;
     cursor: pointer;
     font-size: 30px !important;
-    color: #000;
-    transition: all 0.4s ease; }
-    .QuestionFeed__Bookmark :hover {
-      color: #057777; }
+    color: #494949; }
+  .QuestionFeed__Primary {
+    position: absolute;
+    top: 74px;
+    right: 40px;
+    cursor: pointer;
+    font-size: 30px !important;
+    color: #048004; }
   .QuestionFeed__Box {
     width: 90%;
     height: 100%; }
