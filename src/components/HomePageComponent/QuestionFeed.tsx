@@ -12,8 +12,9 @@ import { FaBookmark } from "react-icons/fa";
 import { useDispatch } from "react-redux";
 import { SavedQuestionPostAction } from "../../actions/SavedQuestionsAction";
 import { SAVED_QUESTION_DELETE } from "../../constants/SavedQuestionsConstants";
-import {DeleteQuestionAction} from "../../actions/AskQuestionAction";
-import BookmarkIcon from '@mui/icons-material/Bookmark';interface quesInterface {
+import { DeleteQuestionAction } from "../../actions/AskQuestionAction";
+import BookmarkIcon from "@mui/icons-material/Bookmark";
+interface quesInterface {
   question: questionFeedListInterface;
 }
 
@@ -33,15 +34,14 @@ const QuestionFeed: FC<quesInterface> = ({ question }) => {
   const [lastState, setLastState] = useState<lastStateInterface>({
     upvote: null,
   });
-  const {user_id, token } = useTokenAndId();
+  const { user_id, token } = useTokenAndId();
   const [owner, setOwner] = useState<boolean | null>(null);
 
   useEffect(() => {
     setUpvote(question.upvote);
     setLastState({ upvote: question.upvote });
     setSaved(question.saved_question_id);
-    if(user_id === question.user_id){
-    
+    if (user_id === question.user_id) {
       setOwner(true);
     }
   }, [question]);
@@ -124,29 +124,37 @@ const QuestionFeed: FC<quesInterface> = ({ question }) => {
       setSaved(`${question.question_id}`);
     }
   };
-  const deleteQuestion = () =>{
+  const deleteQuestion = () => {
     console.log("hello world");
-    dispatch(DeleteQuestionAction(token,question.question_id)); 
-  }
-  const UpdateDeleteUI =()=>{
-    return(<>
-    <div className="QuestionFeed__Box__Top__Right__Delete">
-      <Link to={`/updateQuestion/${question.question_id}`} className="QuestionFeed__Box__Top__Right__Delete__Box" >
-        <h2>Update</h2>
-      </Link>
-      <div className="QuestionFeed__Box__Top__Right__Delete__Box" onClick={deleteQuestion}>
-      <h2>Delete</h2>
-      </div>
-
-    </div>
-     
-      
-      </>)
-  }
+    dispatch(DeleteQuestionAction(token, question.question_id));
+  };
+  const UpdateDeleteUI = () => {
+    return (
+      <>
+        <div className="QuestionFeed__Box__Top__Right__Delete">
+          <Link
+            to={`/updateQuestion/${question.question_id}`}
+            className="QuestionFeed__Box__Top__Right__Delete__Box"
+          >
+            <h2>Update</h2>
+          </Link>
+          <div
+            className="QuestionFeed__Box__Top__Right__Delete__Box"
+            onClick={deleteQuestion}
+          >
+            <h2>Delete</h2>
+          </div>
+        </div>
+      </>
+    );
+  };
 
   return (
     <div className="QuestionFeed">
-
+      <BookmarkIcon
+        className={saved ? "QuestionFeed__Primary" : "QuestionFeed__Bookmark"}
+        onClick={SavedQuestion}
+      />
       <div className="QuestionFeed__Box">
         <div className="QuestionFeed__Box__Top">
           <div className="QuestionFeed__Box__Top__Left">
@@ -180,26 +188,26 @@ const QuestionFeed: FC<quesInterface> = ({ question }) => {
             </div>
           </div>
           <div className="QuestionFeed__Box__Top__Right">
-              {showUpdate && <UpdateDeleteUI/>}
-              
-              {saved ? (
-                <FaBookmark
-                  className="QuestionFeed__Box__Top__Right__Primary"
-                  onClick={SavedQuestion}
-                />
-              ) : (
-                <BsBookmark
-                  className="QuestionFeed__Box__Top__Right__Bookmark"
-                  onClick={SavedQuestion}
-                />
-              )}
-              {owner && 
-              <BsThreeDots 
-              className="QuestionFeed__Box__Top__Right__ThreeDots"
-              onClick={()=>setShowUpdate(!showUpdate)}
-              />}
+            {showUpdate && <UpdateDeleteUI />}
+
+            {saved ? (
+              <FaBookmark
+                className="QuestionFeed__Box__Top__Right__Primary"
+                onClick={SavedQuestion}
+              />
+            ) : (
+              <BsBookmark
+                className="QuestionFeed__Box__Top__Right__Bookmark"
+                onClick={SavedQuestion}
+              />
+            )}
+            {owner && (
+              <BsThreeDots
+                className="QuestionFeed__Box__Top__Right__ThreeDots"
+                onClick={() => setShowUpdate(!showUpdate)}
+              />
+            )}
           </div>
-          
         </div>
         <div className="QuestionFeed__Box__Main">
           <div className="QuestionFeed__Box__Main__Upvotes">
