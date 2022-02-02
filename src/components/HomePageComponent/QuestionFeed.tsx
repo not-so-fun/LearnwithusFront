@@ -12,7 +12,7 @@ import { FaBookmark } from "react-icons/fa";
 import { useDispatch } from "react-redux";
 import { SavedQuestionPostAction } from "../../actions/SavedQuestionsAction";
 import { SAVED_QUESTION_DELETE } from "../../constants/SavedQuestionsConstants";
-interface quesInterface {
+import BookmarkIcon from '@mui/icons-material/Bookmark';interface quesInterface {
   question: questionFeedListInterface;
 }
 
@@ -141,6 +141,9 @@ const QuestionFeed: FC<quesInterface> = ({ question }) => {
 
   return (
     <div className="QuestionFeed">
+
+      <BookmarkIcon className={saved?"QuestionFeed__Primary":"QuestionFeed__Bookmark"} onClick={SavedQuestion}/>
+
       <div className="QuestionFeed__Box">
         <div className="QuestionFeed__Box__Top">
           <div className="QuestionFeed__Box__Top__Left">

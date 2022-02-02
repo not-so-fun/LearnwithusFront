@@ -62,7 +62,11 @@ const MainQA: FC<RouteComponentProps<any>> = ({ match }) => {
           <MainQAAnswerTypes question_id={match.params.id} />
         </div>
 
-        <div className={`${answers ? "MainQA__Answers" : "MainQA__NoAnswers"}`}>
+        <div
+          className={
+            answers.length !== 0 ? "MainQA__Answers" : "MainQA__NoAnswers"
+          }
+        >
           {answers && answers.map((ans) => <MainQAAnswers ans={ans} />)}
         </div>
         <div className="MainQA__AnswerInput">
