@@ -7,9 +7,13 @@ import { questionFeedListInterface } from "../../reducers/QuestionFeedReducers";
 import useTokenAndId from "../ReusableLogicComponents/useTokenAndId";
 import axios from "../../axios";
 import { Link, useHistory } from "react-router-dom";
+<<<<<<< HEAD
 import BookmarkIcon from '@mui/icons-material/Bookmark';
 import { useDispatch } from "react-redux";
 import {SavedQuestionPostAction} from "../../actions/SavedQuestionsAction";
+=======
+import BookmarkBorderIcon from "@mui/icons-material/BookmarkBorder";
+>>>>>>> 2a0cb4d (maked saved questions)
 interface quesInterface {
   question: questionFeedListInterface;
 }
@@ -113,7 +117,11 @@ const QuestionFeed: FC<quesInterface> = ({ question }) => {
 
   return (
     <div className="QuestionFeed">
+<<<<<<< HEAD
       <BookmarkIcon className={saved?"QuestionFeed__Primary":"QuestionFeed__Bookmark"} onClick={SavedQuestion}/>
+=======
+      <BookmarkBorderIcon className="QuestionFeed__Bookmark" />
+>>>>>>> 2a0cb4d (maked saved questions)
       <div className="QuestionFeed__Box">
         <div className="QuestionFeed__Box__Top">
           <Link
