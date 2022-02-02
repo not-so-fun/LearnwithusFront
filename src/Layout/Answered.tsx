@@ -30,7 +30,7 @@ const Answered: FC = () => {
       <div className="Answered">
           {/* <div className="HomePage__Right__MainBody"> */}
             <div className="Answered__Heading">
-                Your Answered Question
+                Your Asked Question
             </div>
             <div className="Answered__Newsfeed">
               {questions &&

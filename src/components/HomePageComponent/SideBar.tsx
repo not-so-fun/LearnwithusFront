@@ -14,12 +14,11 @@ const SideBar: FC = () => {
   return (
     <div className="App__Bottom__Left__SideBar">
       <div className="App__Bottom__Left__SideBar__Links">
-        <div className="App__Bottom__Left__SideBar__Links__Link">Samikxya</div>
         <Link
-          to="/answered"
+          to="/asked"
           className="App__Bottom__Left__SideBar__Links__Link"
         >
-          Answered Questions
+          Asked Questions
         </Link>
         <Link
           to="/saved-questions"

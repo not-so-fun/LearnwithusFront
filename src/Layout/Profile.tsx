@@ -88,10 +88,7 @@ const Profile: FC<RouteComponentProps<any>> = ({ match }) => {
                   <ProfileNewsFeed /> */}
             </div>
 
-            <div className="Profile__Box__Main__SideInformation">
-              <ProfileQAStatus />
-              <ProfileQAStatus />
-            </div>
+            
           </div>
         </>
       ) : (

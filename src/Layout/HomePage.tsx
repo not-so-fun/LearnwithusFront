@@ -27,7 +27,7 @@ const HomePage: FC = () => {
   const dispatch = useDispatch();
   const { token } = useTokenAndId();
 
-  const { loading, questions, count, error } = useSelector<RootStateType>(
+  const { loading, questions, count, error, moreQuestionLoading } = useSelector<RootStateType>(
     (state) => state.questionFeed
   ) as questionFeedInterface;
 
@@ -57,18 +57,21 @@ const HomePage: FC = () => {
               <QuestionFeed question={question} key={question.question_id} />
             ))}
           <div className="HomePage__Right__MainBody__NewsFeed__LoadMore">
-            <button
+          {moreQuestionLoading ? (
+            <div>
+              <BeatLoaderProgress size={24} color="#057777" />
+            </div>)
+            :
+            (<button
               className="HomePage__Right__MainBody__NewsFeed__LoadMore__button"
               onClick={ShowMore}
             >
               <h1>Load More questions</h1>
             </button>
-          </div>
-          {loading && (
-            <div>
-              <BeatLoaderProgress size={24} color="#057777" />
-            </div>
           )}
+            
+          </div>
+          
           {/* loading ko thau ma extra loading rakha */}
         </div>
         <div className="HomePage__Right__MainBody__Notification">

@@ -433,20 +433,6 @@ body {
   justify-content: center;
   padding: 4rem 0;
   position: relative; }
-  .QuestionFeed__Bookmark {
-    position: absolute;
-    top: 74px;
-    right: 40px;
-    cursor: pointer;
-    font-size: 30px !important;
-    color: #494949; }
-  .QuestionFeed__Primary {
-    position: absolute;
-    top: 74px;
-    right: 40px;
-    cursor: pointer;
-    font-size: 30px !important;
-    color: #048004; }
   .QuestionFeed__Box {
     width: 90%;
     height: 100%; }
@@ -455,62 +441,119 @@ body {
       height: auto;
       display: flex;
       align-items: center;
-      justify-content: flex-start;
+      justify-content: space-between;
       padding: 0 1rem; }
-      .QuestionFeed__Box__Top__ProfileImage {
-        width: 6rem;
-        height: 6rem;
-        border-radius: 50%;
-        background: #fff;
-        margin-right: 2rem;
-        border: 3px solid #057777;
+      .QuestionFeed__Box__Top__Left {
         display: flex;
         align-items: center;
-        justify-content: center;
-        position: relative; }
-        .QuestionFeed__Box__Top__ProfileImage__Image {
-          height: 5rem;
-          width: 5rem;
+        justify-content: flex-start; }
+        .QuestionFeed__Box__Top__Left__ProfileImage {
+          width: 6rem;
+          height: 6rem;
           border-radius: 50%;
-          object-fit: cover;
-          transition: all 0.5s; }
-        .QuestionFeed__Box__Top__ProfileImage__Caption {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, 0);
-          color: #fff;
-          text-transform: uppercase;
-          text-align: center;
-          font-size: 1.1rem;
-          opacity: 0;
-          transition: all 0.5s; }
-        .QuestionFeed__Box__Top__ProfileImage:hover .QuestionFeed__Box__Top__ProfileImage__Caption {
-          opacity: 1;
-          transform: translate(-50%, -50%); }
-        .QuestionFeed__Box__Top__ProfileImage:hover .QuestionFeed__Box__Top__ProfileImage__Image {
-          filter: blur(3px); }
-      .QuestionFeed__Box__Top__AboutQuestion {
-        flex: 1;
-        height: auto; }
-        .QuestionFeed__Box__Top__AboutQuestion__Top {
-          width: auto;
-          height: auto;
-          font-size: 1.6rem; }
-          .QuestionFeed__Box__Top__AboutQuestion__Top__QuestionData {
+          background: #fff;
+          margin-right: 2rem;
+          border: 3px solid #057777;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: relative; }
+          .QuestionFeed__Box__Top__Left__ProfileImage__Image {
+            height: 5rem;
+            width: 5rem;
+            border-radius: 50%;
+            object-fit: cover;
+            transition: all 0.5s; }
+          .QuestionFeed__Box__Top__Left__ProfileImage__Caption {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, 0);
+            color: #fff;
+            text-transform: uppercase;
+            text-align: center;
+            font-size: 1.1rem;
+            opacity: 0;
+            transition: all 0.5s; }
+          .QuestionFeed__Box__Top__Left__ProfileImage:hover .QuestionFeed__Box__Top__Left__ProfileImage__Caption {
+            opacity: 1;
+            transform: translate(-50%, -50%); }
+          .QuestionFeed__Box__Top__Left__ProfileImage:hover .QuestionFeed__Box__Top__Left__ProfileImage__Image {
+            filter: blur(3px); }
+        .QuestionFeed__Box__Top__Left__AboutQuestion {
+          flex: 1;
+          height: auto; }
+          .QuestionFeed__Box__Top__Left__AboutQuestion__Top {
             width: auto;
+            height: auto;
+            font-size: 1.6rem; }
+            .QuestionFeed__Box__Top__Left__AboutQuestion__Top__QuestionData {
+              width: auto;
+              display: flex;
+              align-items: center;
+              justify-content: flex-start; }
+              .QuestionFeed__Box__Top__Left__AboutQuestion__Top__QuestionData__Time {
+                margin-right: 3rem; }
+              .QuestionFeed__Box__Top__Left__AboutQuestion__Top__QuestionData__Title {
+                color: #057777;
+                text-align: left; }
+          .QuestionFeed__Box__Top__Left__AboutQuestion__Title {
+            color: #000;
+            font-size: 1.5rem;
+            text-align: left; }
+      .QuestionFeed__Box__Top__Right {
+        height: 5rem;
+        width: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative; }
+        .QuestionFeed__Box__Top__Right__Delete {
+          position: absolute;
+          bottom: 0;
+          top: 5rem;
+          height: 10rem;
+          width: 13rem;
+          background: #fff;
+          z-index: 10;
+          display: flex;
+          align-items: center;
+          flex-direction: column;
+          justify-content: space-around;
+          box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.3); }
+          .QuestionFeed__Box__Top__Right__Delete__Box {
+            background: green;
+            width: 95%;
+            height: 4rem;
             display: flex;
             align-items: center;
-            justify-content: flex-start; }
-            .QuestionFeed__Box__Top__AboutQuestion__Top__QuestionData__Time {
-              margin-right: 3rem; }
-            .QuestionFeed__Box__Top__AboutQuestion__Top__QuestionData__Title {
-              color: #057777;
-              text-align: left; }
-        .QuestionFeed__Box__Top__AboutQuestion__Title {
-          color: #000;
-          font-size: 1.5rem;
-          text-align: left; }
+            justify-content: center;
+            color: #fff;
+            text-decoration: none; }
+            .QuestionFeed__Box__Top__Right__Delete__Box:hover {
+              cursor: pointer; }
+        .QuestionFeed__Box__Top__Right__ThreeDots {
+          cursor: pointer;
+          font-size: 30px !important;
+          color: #494949;
+          margin-left: 1rem;
+          height: 5rem;
+          width: 5rem;
+          padding: 0 1rem;
+          border-radius: 50%; }
+          .QuestionFeed__Box__Top__Right__ThreeDots:hover {
+            background: #c4c4c4;
+            border-radius: 50%; }
+        .QuestionFeed__Box__Top__Right__Bookmark {
+          cursor: pointer;
+          font-size: 30px !important;
+          color: #494949;
+          margin-right: 1rem; }
+        .QuestionFeed__Box__Top__Right__Primary {
+          cursor: pointer;
+          font-size: 30px !important;
+          color: #048004;
+          margin-right: 1rem; }
     .QuestionFeed__Box__Main {
       margin-top: 1rem;
       height: auto;
@@ -817,8 +860,10 @@ body {
   .Profile__Box__Top {
     background: #fff;
     width: 100%;
-    height: 50rem;
+    height: auto;
+    padding: 3rem 1rem;
     display: flex;
+    align-items: center;
     border: 2px solid lightgrey; }
     .Profile__Box__Top__ImagesAndDatas {
       flex: 0 0 30%;
@@ -930,12 +975,15 @@ body {
           .Profile__Box__Top__Information__Name__firstName__Box {
             background: #c4c4c4;
             height: 4rem;
-            padding: 0.3rem;
+            padding-left: 0.3rem;
             width: 100%;
             border: none;
             outline: none;
             font-size: 1.6rem;
-            letter-spacing: 0.03rem; }
+            letter-spacing: 0.03rem;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start; }
         .Profile__Box__Top__Information__Name__firstName p {
           font-size: 14px;
           letter-spacing: 0.08rem;
@@ -955,7 +1003,10 @@ body {
             border: none;
             outline: none;
             font-size: 1.6rem;
-            letter-spacing: 0.03rem; }
+            letter-spacing: 0.03rem;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start; }
         .Profile__Box__Top__Information__Name__lastName p {
           font-size: 14px;
           letter-spacing: 0.08rem;
@@ -976,7 +1027,10 @@ body {
           letter-spacing: 0.03rem;
           border: none;
           outline: none;
-          font-size: 1.6rem; }
+          font-size: 1.6rem;
+          display: flex;
+          align-items: center;
+          justify-content: flex-start; }
       .Profile__Box__Top__Information__BasicInfo p {
         font-size: 14px;
         letter-spacing: 0.08rem;
