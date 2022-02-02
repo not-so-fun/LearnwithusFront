@@ -18,6 +18,7 @@ import { MdMessage, MdReportProblem } from "react-icons/md";
 
 import { BsPencil, BsShare, BsFacebook, BsTwitter } from "react-icons/bs";
 import { Server } from "http";
+import DeleteQuestion from "../Modals/DeleteQuestion";
 
 interface MainQAQuestionInterface {
   question: questionFeedListInterface | null;
@@ -30,6 +31,8 @@ interface lastStateInterface {
 const MainQAQuestion: FC<MainQAQuestionInterface> = ({ question }) => {
   const [upvote, setUpvote] = useState<boolean | null>(null);
   const [totalUpvotes, setTotalUpvote] = useState<number>(0);
+
+  const [openModal, setOpenModal] = useState<boolean>(false);
 
   const [lastState, setLastState] = useState<lastStateInterface>({
     upvote: null,
@@ -115,7 +118,9 @@ const MainQAQuestion: FC<MainQAQuestionInterface> = ({ question }) => {
     }
     upVote(false);
   };
-
+  const modalHandler = () => {
+    setOpenModal(!openModal);
+  };
   return (
     <>
       {question && (
@@ -220,10 +225,21 @@ const MainQAQuestion: FC<MainQAQuestionInterface> = ({ question }) => {
                 </p>
               </div>
               <div className="QuestionFeed__Bottom__Left__Content">
-                <div className="QuestionFeed__Bottom__Left__Content__Logo">
+                <div
+                  className="QuestionFeed__Bottom__Left__Content__Logo"
+                  onClick={() => {
+                    setOpenModal((prev) => !prev);
+                  }}
+                >
                   <AiOutlineDelete className="QuestionFeed__Bottom__Left__Content__Logo__Logo" />
+                  {openModal && <DeleteQuestion modalHandler={modalHandler} />}
                 </div>
-                <p className="QuestionFeed__Bottom__Left__Content__Text">
+                <p
+                  className="QuestionFeed__Bottom__Left__Content__Text"
+                  onClick={() => {
+                    setOpenModal((prev) => !prev);
+                  }}
+                >
                   Delete
                 </p>
               </div>

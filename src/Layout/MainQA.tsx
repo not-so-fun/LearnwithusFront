@@ -51,7 +51,14 @@ const MainQA: FC<RouteComponentProps<any>> = ({ match }) => {
     dispatch(MainQuestionAnswerAction(token, match.params.id));
     dispatch(AnswersOnlyAction(token, match.params.id));
   }, [match, token]);
-
+  let className = "";
+  if (answers.length === 1) {
+    className = "MainQA__OneAnswer";
+  } else if (answers.length === 0) {
+    className = "MainQA__NoAnwers";
+  } else {
+    className = "MainQA__Answers";
+  }
   return (
     <>
       <div className="MainQA">
@@ -62,11 +69,7 @@ const MainQA: FC<RouteComponentProps<any>> = ({ match }) => {
           <MainQAAnswerTypes question_id={match.params.id} />
         </div>
 
-        <div
-          className={
-            answers.length !== 0 ? "MainQA__Answers" : "MainQA__NoAnswers"
-          }
-        >
+        <div className={className}>
           {answers && answers.map((ans) => <MainQAAnswers ans={ans} />)}
         </div>
         <div className="MainQA__AnswerInput">
