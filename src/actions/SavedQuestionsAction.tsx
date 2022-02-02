@@ -9,12 +9,38 @@ import axios from "../axios";
 import { Dispatch } from "redux";
 import { RootDispatchType } from "../stores";
 
+export const SavedQuestionAction =
+  (token: string) =>
+  (dispatch: Dispatch<RootDispatchType>) => {
+    dispatch({type:SAVED_QUESTION_STARTED})
+
+    axios
+      .get(
+        `/saved-questions`,
+        {
+          headers: {
+            "x-auth-token": token,
+          },
+        }
+      )
+      .then((response) => {
+        dispatch({type:SAVED_QUESTION_SUCCESS, questions:response.data});
+        console.log(response.data);
+      })
+      .catch((error) => {
+        // console.log(error)
+        dispatch({
+          type: SAVED_QUESTION_ERROR,
+          error: error.response.data,
+        });
+      });
+  };
+
+
 export const SavedQuestionPostAction =
   (token: string, question_id: string) =>
   (dispatch: Dispatch<RootDispatchType>) => {
-    console.log("hello world");
-    console.log(token);
-    console.log(question_id);
+    dispatch({type:SAVED_QUESTION_STARTED})
 
     axios
       .post(

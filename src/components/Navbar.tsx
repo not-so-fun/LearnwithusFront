@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useState } from "react";
+import React, { FC, useEffect, useState, useRef } from "react";
 import { useSelector } from "react-redux";
 import useTokenAndId from "./ReusableLogicComponents/useTokenAndId";
 import { RootStateType } from "../stores";
@@ -39,6 +39,31 @@ const Navbar: FC = () => {
     history.push("/login");
     window.location.reload();
   };
+  const Dropdown:FC= (props) => {
+    const dropdownmenu  = useRef <HTMLDivElement>(null);
+
+    useEffect(() => {
+      function handleOutsideClick (event: any) {
+        if (
+          dropdownmenu.current &&
+          !dropdownmenu.current.contains(event.target)
+        ) {
+          setShowNotification({
+            show: !showNotification.show,
+            showProfile: false,
+          });
+
+        }
+      }
+
+      document.addEventListener("click", handleOutsideClick);
+    }, [dropdownmenu]);
+    return (
+      <div className="Dropdown" ref={dropdownmenu}>
+        {props.children}
+      </div>
+    );
+  };
 
   return (
     <div className="Navbar">
@@ -78,7 +103,13 @@ const Navbar: FC = () => {
                   }}
                 />
                 <div className="Navbar__Links__content__Notification">
-                  {showNotification.show && <Notification />}
+                  {
+                  showNotification.show 
+                  &&
+                  <Dropdown>
+                    <Notification />
+                  </Dropdown>
+                   }
                 </div>
               </div>
               <div className="Navbar__Links__Content">
@@ -93,18 +124,7 @@ const Navbar: FC = () => {
                     src={`${(userInfo && userInfo.image) || image}`}
                     style={{ width: 40, height: 40 }}
                   />
-
-                  <ArrowDropDownIcon
-                    className="Navbar__Links__content__Avatar__Drop"
-                    onClick={() => {
-                      setShowMore({
-                        show: false,
-                        showProfile: !showMore.showProfile,
-                      });
-                    }}
-                  />
                 </div>
-                {showMore.showProfile && <NavbarShowMore />}
               </div>
             </div>
           </>

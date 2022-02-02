@@ -7,7 +7,7 @@ import { subtopicInterface } from "../../reducers/SubTopicReducer";
 import { SubTopicAction } from "../../actions/SubTopicAction";
 import useTokenAndId from "../ReusableLogicComponents/useTokenAndId";
 import { RouteComponentProps } from "react-router-dom";
-import { formDataInterface } from "../AskQuestionsComponent/AskQuestionForm";
+import { formDataInterface } from "./AskQuestionForm";
 
 interface AskQuestionSelectPropsType {
   setFormData: (value: React.SetStateAction<formDataInterface>) => void;

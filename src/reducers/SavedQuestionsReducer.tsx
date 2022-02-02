@@ -1,7 +1,8 @@
 import {
     SAVED_QUESTION_STARTED,
     SAVED_QUESTION_SUCCESS,
-    SAVED_QUESTION_ERROR
+    SAVED_QUESTION_ERROR,
+    SAVED_QUESTION_DELETE
   } from "../constants/SavedQuestionsConstants";
   
   import { SavedQuestionType } from "../types/SavedQuestionsTypes";
@@ -36,6 +37,13 @@ import {questionFeedListInterface} from "./QuestionFeedReducers";
           loading: false,
           questions: action.questions
         };
+      case SAVED_QUESTION_DELETE:
+        console.log(action.question_id);
+        return{
+          ...state,
+          loading:false,
+          questions:state.questions.filter((question) => question.question_id !== action.question_id)
+        }
       case SAVED_QUESTION_ERROR:
         return {
           ...state,

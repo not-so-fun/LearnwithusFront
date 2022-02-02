@@ -2,11 +2,12 @@ import { FC, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import QuestionFeed from "../HomePageComponent/QuestionFeed";
 
-import { AskedQuestionFeedAction } from "../../actions/MyQuestionAskedAction";
+import { SavedQuestionAction } from "../../actions/SavedQuestionsAction";
 import {
   questionFeedInterface,
   questionFeedListInterface,
 } from "../../reducers/QuestionFeedReducers";
+import { questionsInterface } from "../../reducers/SavedQuestionsReducer";
 import useTokenAndId from "../../components/ReusableLogicComponents/useTokenAndId";
 
 import { RootStateType } from "../../stores";
@@ -16,21 +17,20 @@ const SavedQuestion: FC = () => {
   const { token } = useTokenAndId();
 
   const { loading, questions, error } = useSelector<RootStateType>(
-    (state) => state.askedQuestions
-  ) as questionFeedInterface;
+    (state) => state.savedQuestions
+  ) as questionsInterface;
 
   useEffect(() => {
-    document.title = "Learn with us | Answered";
+    document.title = "Learn with us | Saved Questions";
   }, []);
-
   useEffect(() => {
-    dispatch(AskedQuestionFeedAction(token));
+    dispatch(SavedQuestionAction(token));
   }, [token]);
   return (
     <>
       <div className="Answered">
         {/* <div className="HomePage__Right__MainBody"> */}
-        <div className="Answered__Heading">Your Answered Question</div>
+        <div className="Answered__Heading">Your Saved Questions</div>
         <div className="Answered__Newsfeed">
           {questions &&
             questions.map((question: questionFeedListInterface) => (

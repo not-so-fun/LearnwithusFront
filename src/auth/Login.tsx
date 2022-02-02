@@ -71,7 +71,7 @@ const Login: React.FunctionComponent<RouteComponentProps<any>> = ({history}) => 
     }, 4000);
   };
 
-  const handleEvent: React.FormEventHandler<HTMLButtonElement> = (event) => {
+  const handleEvent: React.FormEventHandler<HTMLButtonElement> = (event: React.SyntheticEvent<EventTarget>) => {
     event.preventDefault();
     setLoginForm({ ...loginForm, helperText: "Fill all the input Fields" });
 
@@ -80,10 +80,10 @@ const Login: React.FunctionComponent<RouteComponentProps<any>> = ({history}) => 
     }, 3000);
   };
 
-  const handleChange: React.ChangeEventHandler<HTMLInputElement> = (event) => {
+  const handleChange: React.ChangeEventHandler<HTMLInputElement> = (event):void => {
     setLoginForm({ ...loginForm, [event.target.name]: event.target.value });
   };
-  const ShowPassword = (event: any) => {
+  const ShowPassword = (event: React.SyntheticEvent<EventTarget>) => {
     event.preventDefault();
     setLoginForm({ ...loginForm, showPassword: !showPassword });
   };

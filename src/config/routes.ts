@@ -10,6 +10,7 @@ import AskQuestion from "../Layout/AskQuestions";
 import MainQA from "../Layout/MainQA";
 import Answered from "../Layout/Answered";
 import SavedQuestion from "../components/SavedQuestions/SavedQuestion";
+import UpdateQuestions from "../Layout/UpdateQuestions";
 const routes: IRoute[] = [
   {
     path: "/",
@@ -20,7 +21,15 @@ const routes: IRoute[] = [
     showNav: true,
   },
   {
-    path: "/answered",
+    path: "/updateQuestion/:question_id",
+    name: "Update Question",
+    component: UpdateQuestions,
+    exact: true,
+    private: true,
+    showNav: true,
+  },
+  {
+    path: "/asked",
     name: "Answered",
     component: Answered,
     exact: true,
