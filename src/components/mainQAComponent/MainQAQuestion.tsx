@@ -65,7 +65,7 @@ const MainQAQuestion: FC<MainQAQuestionInterface> = ({ question }) => {
   const upVote = (upvote: boolean) => {
     axios
       .post(
-        `/question-upvote`,
+        /question-upvote,
         {
           upvote,
           question_id: question?.question_id,
@@ -144,7 +144,7 @@ const MainQAQuestion: FC<MainQAQuestionInterface> = ({ question }) => {
       });
       setSaved(null);
     } else {
-      setSaved(`${question?.question_id}`);
+      setSaved(${question?.question_id});
     }
   };
   const deleteQuestion = () =>{
@@ -152,7 +152,7 @@ const MainQAQuestion: FC<MainQAQuestionInterface> = ({ question }) => {
     dispatch(DeleteQuestionAction(token,question?.question_id)); 
     }
   }
-  const UpdateDeleteUI =()=>{
+  const UpdateDeleteUI 🙁)=>{
     return(<>
     <div className="QuestionFeed__Box__Top__Right__Delete">
       <Link to={`/updateQuestion/${question?.question_id}`} className="QuestionFeed__Box__Top__Right__Delete__Box" >
