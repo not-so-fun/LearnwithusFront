@@ -10,6 +10,11 @@ import {
   QUESTION_FEED_ADD_SUCCESS,
   QUESTION_FEED_ADD_EMPTY,
 } from "../constants/QuestionFeedConstatns";
+import{
+DELETE_QUESTION_STARTED,
+DELETE_QUESTION_SUCCESS,
+DELETE_QUESTION_ERROR
+} from "../constants/AskQuestionConstants";
 
 import { QuestionFeedTypes } from "../types/QuestionfeedTypes";
 
@@ -58,7 +63,6 @@ export const QuestionFeedReducer = (
       return {
         ...state,
         loading: false,
-       
         questions: action.questions,
       };
     case QUESTION_FEED_ADD_SUCCESS:
@@ -67,10 +71,7 @@ export const QuestionFeedReducer = (
       let length: number =
         action.questions.length - (state.questions.length % 10);
       let index: number = 0;
-      /*
-state.questions = [0,1,2,3,4,5,6,7,8,9,10,action[1],action[2]]; length = 11 % 10 =1
-action.questions = [0,1,2]; 3;
-      */
+    
       if (state.questions.length % 10 !== 0) {
         
         while (length !== 0) {
@@ -111,7 +112,25 @@ action.questions = [0,1,2]; 3;
         moreQuestionLoading: false,
         error: action.error,
       };
+    case DELETE_QUESTION_STARTED:
+      return{
+        ...state,
+       loading:true
+      }
+    case DELETE_QUESTION_SUCCESS:
+      return{
+        ...state,
+        loading:false,
+        questions:state.questions.filter((question) => question.question_id !== action.question_id)
+      }
+    case DELETE_QUESTION_ERROR:
+      return {
+        ...state,
+        loading:false,
+        error: action.error,
+      }
     default:
       return { ...state };
+
   }
 };

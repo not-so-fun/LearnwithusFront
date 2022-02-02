@@ -85,16 +85,6 @@
       width: 100%;
       height: calc(100% - 7rem);
       margin-top: 1rem;
-      &__Notification {
-        flex: 0 0 32rem;
-        padding: 0 1rem;
-        // background: $color-white;
-        &__Box {
-          background-color: $color-white;
-          cursor: default;
-          // position: relative;
-          text-align: left;
-
           &__Notification {
             flex: 0 0 32rem;
             padding: 0 1rem;
@@ -376,64 +366,31 @@
               }
             }
           }
-
-          &__NewsFeed {
-            flex: 1;
-            overflow-y: scroll;
-            margin-right: 2rem;
-            background: $color-white;
-            &__LoadMore {
-              height: 8rem;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              &__button {
-                background: $color-primary;
-                border: none;
-                outline: none;
-                border-radius: 5px;
-                height: 5rem;
-                padding: 0 2rem;
-                font-size: 1.2rem;
-                color: $color-white;
-                &:hover {
-                  cursor: pointer;
-                }
-              }
-              // display: flex;
-              // flex-direction: column;
-              // justify-content: center;
-              // align-items: center;
-
-              // width: 8rem;
-              // margin-right: 1rem;
-              &::-webkit-scrollbar {
-                width: 0px;
-              }
-            }
-          }
           &__NewsFeed {
             flex: 1;
             overflow-y: scroll;
             // margin-right: 2rem;
             background: $color-white;
-
+      
             &__LoadMore {
               height: 8rem;
               display: flex;
               align-items: center;
               justify-content: center;
               &__button {
-                background: $color-primary;
-                border: none;
+               
+                border: 2px solid $color-primary;
+                color:$color-primary;
                 outline: none;
                 border-radius: 5px;
                 height: 5rem;
                 padding: 0 2rem;
                 font-size: 1.2rem;
-                color: $color-white;
+                
                 &:hover {
                   cursor: pointer;
+                  background: $color-primary;
+                  color: $color-white;
                 }
               }
               &::-webkit-scrollbar {
@@ -441,8 +398,14 @@
               }
             }
           }
+
+
+          
         }
       }
+   
+     
     }
-  }
-}
+   
+  
+

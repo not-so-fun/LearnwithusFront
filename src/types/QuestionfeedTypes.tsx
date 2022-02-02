@@ -8,8 +8,26 @@ import {
   QUESTION_FEED_ADD_EMPTY
 
 } from "../constants/QuestionFeedConstatns";
+import{
+  DELETE_QUESTION_STARTED,
+  DELETE_QUESTION_SUCCESS,
+  DELETE_QUESTION_ERROR
+  } from "../constants/AskQuestionConstants";
 
 import { questionFeedListInterface } from "../reducers/QuestionFeedReducers";
+
+
+interface deleteQuestionStarted{
+  type: typeof DELETE_QUESTION_STARTED
+}
+interface deleteQuestionSuccess{
+  type:typeof DELETE_QUESTION_SUCCESS,
+  question_id:string
+}
+interface deleteQuestionError{
+  type: typeof DELETE_QUESTION_ERROR,
+  error:string
+}
 
 interface questionFeedLoad {
   type: typeof QUESTION_FEED_LOAD_STARTED;
@@ -49,4 +67,7 @@ export type QuestionFeedTypes =
   |questionFeedError
   |questionFeedAdd
   |questionAddError
-  |questionFeedAddEmpty;
+  |questionFeedAddEmpty
+  |deleteQuestionStarted  
+  |deleteQuestionSuccess
+  |deleteQuestionError;

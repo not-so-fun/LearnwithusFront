@@ -17,7 +17,7 @@ import {questionFeedListInterface} from "../reducers/QuestionFeedReducers"
   export interface MainQuestionAnswerInterface {
     loading: boolean;
     error?: string;
-    question:questionFeedListInterface | null;
+    question:questionFeedListInterface|null ;
     Answers:answered[];
   }
   

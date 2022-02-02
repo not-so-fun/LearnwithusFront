@@ -3,7 +3,6 @@ import {
   SAVED_QUESTION_SUCCESS,
   SAVED_QUESTION_ERROR,
 } from "../constants/SavedQuestionsConstants";
-import store from "../stores";
 
 import axios from "../axios";
 import { Dispatch } from "redux";
@@ -16,7 +15,7 @@ export const SavedQuestionAction =
 
     axios
       .get(
-        `/saved-questions`,
+        `/questions/all/saved_by_me`,
         {
           headers: {
             "x-auth-token": token,
@@ -28,7 +27,7 @@ export const SavedQuestionAction =
         console.log(response.data);
       })
       .catch((error) => {
-        // console.log(error)
+        console.log(error)
         dispatch({
           type: SAVED_QUESTION_ERROR,
           error: error.response.data,
@@ -63,3 +62,5 @@ export const SavedQuestionPostAction =
         });
       });
   };
+
+

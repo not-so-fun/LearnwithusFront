@@ -17,7 +17,7 @@
     &__Top {
       min-height: 10rem;
       height: auto;
-      // background:red;
+      width:100%;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -98,7 +98,7 @@
     }
     &__Right{
       height:5rem;
-      width:auto;
+      width:10rem;
       display:flex;
       align-items: center;
       justify-content: space-between;

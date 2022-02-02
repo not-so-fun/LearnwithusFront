@@ -4,6 +4,9 @@ import {
   UPDATE_PROFILE_LOAD,
   UPDATE_PROFILE_SUCCESS,
 } from "../constants/UpdateProfileConstants";
+import {
+  EDIT_PROFILE_OFF
+} from "../constants/ProfileConstants";
 import {PROFILE_DATA_SUCCESS} from "../constants/ProfileConstants"
 import { RootDispatchType } from "../stores";
 import axios from "../axios";
@@ -27,6 +30,7 @@ export const UpdateProfileAction =
         // console.log(response.data);
         dispatch({type:UPDATE_PROFILE_SUCCESS})
         dispatch({type:PROFILE_DATA_SUCCESS,profile_data:response.data})
+       dispatch({type:EDIT_PROFILE_OFF});
        
       })
       .catch((error) => {

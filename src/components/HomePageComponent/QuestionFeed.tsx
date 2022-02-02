@@ -12,6 +12,7 @@ import { FaBookmark } from "react-icons/fa";
 import { useDispatch } from "react-redux";
 import { SavedQuestionPostAction } from "../../actions/SavedQuestionsAction";
 import { SAVED_QUESTION_DELETE } from "../../constants/SavedQuestionsConstants";
+import {DeleteQuestionAction} from "../../actions/AskQuestionAction";
 import BookmarkIcon from '@mui/icons-material/Bookmark';interface quesInterface {
   question: questionFeedListInterface;
 }
@@ -123,13 +124,17 @@ const QuestionFeed: FC<quesInterface> = ({ question }) => {
       setSaved(`${question.question_id}`);
     }
   };
+  const deleteQuestion = () =>{
+    console.log("hello world");
+    dispatch(DeleteQuestionAction(token,question.question_id)); 
+  }
   const UpdateDeleteUI =()=>{
     return(<>
     <div className="QuestionFeed__Box__Top__Right__Delete">
       <Link to={`/updateQuestion/${question.question_id}`} className="QuestionFeed__Box__Top__Right__Delete__Box" >
         <h2>Update</h2>
       </Link>
-      <div className="QuestionFeed__Box__Top__Right__Delete__Box">
+      <div className="QuestionFeed__Box__Top__Right__Delete__Box" onClick={deleteQuestion}>
       <h2>Delete</h2>
       </div>
 
@@ -194,6 +199,7 @@ const QuestionFeed: FC<quesInterface> = ({ question }) => {
               onClick={()=>setShowUpdate(!showUpdate)}
               />}
           </div>
+          
         </div>
         <div className="QuestionFeed__Box__Main">
           <div className="QuestionFeed__Box__Main__Upvotes">
