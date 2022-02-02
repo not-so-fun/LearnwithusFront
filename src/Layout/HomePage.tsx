@@ -79,10 +79,7 @@ const HomePage: FC = () => {
             >
               Having a doubt, ask a question?
             </Link>
-<<<<<<< HEAD
-=======
             <Link to="/saved-questions">Saved Questions</Link>
->>>>>>> 2a0cb4d (maked saved questions)
           </div>
           <div className="HomePage__Right__MainBody__Notification__Active">
             <div className="HomePage__Right__MainBody__Notification__Active__Person">

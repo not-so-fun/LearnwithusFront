@@ -6,7 +6,6 @@ import { FaSearch } from "react-icons/fa";
 import { RootStateType } from "../../stores";
 
 const SideBar: FC = () => {
-
   const { userInfo } = useSelector<RootStateType>(
     (state) => state.userInfo
   ) as any;
@@ -17,7 +16,7 @@ const SideBar: FC = () => {
         <div className="App__Bottom__Left__SideBar__Links__Link">Samikxya</div>
         <Link
           to="/answered"
-          className="App__Bottom__Left__SideBar__Links__Link"
+          className="App__Bottom__Left__SideBar__Links__Link Active"
         >
           Answered Questions
         </Link>

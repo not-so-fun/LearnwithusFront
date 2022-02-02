@@ -7,13 +7,9 @@ import { questionFeedListInterface } from "../../reducers/QuestionFeedReducers";
 import useTokenAndId from "../ReusableLogicComponents/useTokenAndId";
 import axios from "../../axios";
 import { Link, useHistory } from "react-router-dom";
-<<<<<<< HEAD
-import BookmarkIcon from '@mui/icons-material/Bookmark';
+import BookmarkIcon from "@mui/icons-material/Bookmark";
 import { useDispatch } from "react-redux";
-import {SavedQuestionPostAction} from "../../actions/SavedQuestionsAction";
-=======
-import BookmarkBorderIcon from "@mui/icons-material/BookmarkBorder";
->>>>>>> 2a0cb4d (maked saved questions)
+import { SavedQuestionPostAction } from "../../actions/SavedQuestionsAction";
 interface quesInterface {
   question: questionFeedListInterface;
 }
@@ -28,7 +24,7 @@ const QuestionFeed: FC<quesInterface> = ({ question }) => {
   let data =
     parseInt(question.total_upvotes) - parseInt(question.total_downvotes);
   const [totalUpvotes, setTotalUpvote] = useState<number>(data);
-  const [saved ,setSaved] = useState<string | null>(null);
+  const [saved, setSaved] = useState<string | null>(null);
   const history = useHistory();
   const [lastState, setLastState] = useState<lastStateInterface>({
     upvote: null,
@@ -105,23 +101,22 @@ const QuestionFeed: FC<quesInterface> = ({ question }) => {
   const redirectToMainQA = () => {
     history.push(`/questions/${question.question_id}`);
   };
-  const SavedQuestion =() =>{
+  const SavedQuestion = () => {
     console.log(question.question_id);
     dispatch(SavedQuestionPostAction(token, question.question_id));
-    if(saved){
+    if (saved) {
       setSaved(null);
-    }else{
-    setSaved(`${question.question_id}`);
-    };
+    } else {
+      setSaved(`${question.question_id}`);
+    }
   };
 
   return (
     <div className="QuestionFeed">
-<<<<<<< HEAD
-      <BookmarkIcon className={saved?"QuestionFeed__Primary":"QuestionFeed__Bookmark"} onClick={SavedQuestion}/>
-=======
-      <BookmarkBorderIcon className="QuestionFeed__Bookmark" />
->>>>>>> 2a0cb4d (maked saved questions)
+      <BookmarkIcon
+        className={saved ? "QuestionFeed__Primary" : "QuestionFeed__Bookmark"}
+        onClick={SavedQuestion}
+      />
       <div className="QuestionFeed__Box">
         <div className="QuestionFeed__Box__Top">
           <Link
