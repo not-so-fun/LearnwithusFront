@@ -45,11 +45,9 @@ const AskQuestionSelect: FC<AskQuestionSelectPropsType> = ({
     dispatch(SubTopicAction(token, e.target.value));
     setFormData({ ...formData, topic_id: e.target.value });
     // setFormData({ ...formData, sub_topic_id: '0'});
-
   };
 
   const handleSelectSubTopic = (e: React.ChangeEvent<HTMLSelectElement>) => {
-
     setFormData({ ...formData, sub_topic_id: e.target.value });
   };
 
@@ -57,6 +55,7 @@ const AskQuestionSelect: FC<AskQuestionSelectPropsType> = ({
     <div className="AskQuestionForm__TitleInput__InputBox__Div">
       <select
         onChange={(e) => handleSelectTopic(e)}
+        // className="AskQuestionForm__TitleInput__InputBox__Div__Select"
         className="AskQuestionForm__TitleInput__InputBox__Div__Select"
         required
       >
@@ -65,7 +64,13 @@ const AskQuestionSelect: FC<AskQuestionSelectPropsType> = ({
         </option>
         {topics &&
           topics.map((topic: { topic_id: string; title: string }) => (
-            <option key={topic.topic_id} value={topic.topic_id}>{topic.title}</option>
+            <option
+              key={topic.topic_id}
+              value={topic.topic_id}
+              className="AskQuestionForm__TitleInput__InputBox__Div__Select__Option"
+            >
+              {topic.title}
+            </option>
           ))}
       </select>
 
@@ -80,7 +85,12 @@ const AskQuestionSelect: FC<AskQuestionSelectPropsType> = ({
         {sub_topics &&
           sub_topics.map(
             (sub_topic: { sub_topic_id: string; title: string }) => (
-              <option key={sub_topic.sub_topic_id} value={sub_topic.sub_topic_id}>{sub_topic.title}</option>
+              <option
+                key={sub_topic.sub_topic_id}
+                value={sub_topic.sub_topic_id}
+              >
+                {sub_topic.title}
+              </option>
             )
           )}
       </select>
