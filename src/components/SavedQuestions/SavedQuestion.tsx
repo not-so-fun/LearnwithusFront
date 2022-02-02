@@ -7,9 +7,7 @@ import {
   questionFeedInterface,
   questionFeedListInterface,
 } from "../../reducers/QuestionFeedReducers";
-import {
-  questionsInterface
-} from "../../reducers/SavedQuestionsReducer";
+import { questionsInterface } from "../../reducers/SavedQuestionsReducer";
 import useTokenAndId from "../../components/ReusableLogicComponents/useTokenAndId";
 
 import { RootStateType } from "../../stores";
