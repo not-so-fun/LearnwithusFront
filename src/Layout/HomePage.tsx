@@ -1,4 +1,4 @@
-import { FC, useEffect } from "react";
+import { FC, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import SideBar from "../components/HomePageComponent/SideBar";
 import Navbar from "../components/Navbar";
@@ -11,6 +11,7 @@ import {
 } from "../actions/QuestionFeedAction";
 import HomeNewsFeedSkeleton from "../components/HomePageComponent/HomeNewsFeedSkeleton";
 import CircleIcon from "@mui/icons-material/Circle";
+import DeleteQuestion from "../components/Modals/DeleteQuestion";
 
 import { Avatar } from "@mui/material";
 import {
@@ -24,12 +25,17 @@ import { BeatLoaderProgress } from "../components/ReusableUIComponents/BeatLoade
 import ModalImageUpload from "../components/ReusableUIComponents/ModalImageUpload";
 
 const HomePage: FC = () => {
+  const [openModal, setOpenModal] = useState<boolean>(false);
+  const modalHandler = () => {
+    setOpenModal((prev) => !prev);
+  };
   const dispatch = useDispatch();
   const { token } = useTokenAndId();
 
-  const { loading, questions, count, error, moreQuestionLoading } = useSelector<RootStateType>(
-    (state) => state.questionFeed
-  ) as questionFeedInterface;
+  const { loading, questions, count, error, moreQuestionLoading } =
+    useSelector<RootStateType>(
+      (state) => state.questionFeed
+    ) as questionFeedInterface;
 
   useEffect(() => {
     document.title = "Learn with us | Home";
@@ -57,21 +63,20 @@ const HomePage: FC = () => {
               <QuestionFeed question={question} key={question.question_id} />
             ))}
           <div className="HomePage__Right__MainBody__NewsFeed__LoadMore">
-          {moreQuestionLoading ? (
-            <div>
-              <BeatLoaderProgress size={24} color="#057777" />
-            </div>)
-            :
-            (<button
-              className="HomePage__Right__MainBody__NewsFeed__LoadMore__button"
-              onClick={ShowMore}
-            >
-              <h1>Load More questions</h1>
-            </button>
-          )}
-            
+            {moreQuestionLoading ? (
+              <div>
+                <BeatLoaderProgress size={24} color="#057777" />
+              </div>
+            ) : (
+              <button
+                className="HomePage__Right__MainBody__NewsFeed__LoadMore__button"
+                onClick={ShowMore}
+              >
+                <h1>Load More questions</h1>
+              </button>
+            )}
           </div>
-          
+
           {/* loading ko thau ma extra loading rakha */}
         </div>
         <div className="HomePage__Right__MainBody__Notification">
@@ -82,6 +87,7 @@ const HomePage: FC = () => {
             >
               Having a doubt, ask a question?
             </Link>
+            <Link to="/saved-questions">Saved Questions</Link>
           </div>
           <div className="HomePage__Right__MainBody__Notification__Active">
             <div className="HomePage__Right__MainBody__Notification__Active__Person">
