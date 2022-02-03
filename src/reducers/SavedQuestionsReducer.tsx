@@ -30,6 +30,7 @@ import {questionFeedListInterface} from "./QuestionFeedReducers";
         return {
           ...state,
           loading: true,
+          error:""
         };
       case SAVED_QUESTION_SUCCESS:
         return {
@@ -38,7 +39,6 @@ import {questionFeedListInterface} from "./QuestionFeedReducers";
           questions: action.questions
         };
       case SAVED_QUESTION_DELETE:
-        console.log(action.question_id);
         return{
           ...state,
           loading:false,

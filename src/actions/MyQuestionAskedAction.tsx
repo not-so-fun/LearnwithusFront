@@ -8,7 +8,6 @@ import {
   import axios from "../axios";
   import { Dispatch } from "redux";
   import { RootDispatchType } from "../stores";
-  import { countReset } from "console";
   
   export const AskedQuestionFeedAction =
     (token: string) => (dispatch: Dispatch<RootDispatchType>) => {
@@ -20,8 +19,8 @@ import {
           },
         })
         .then((response) => {
+          console.log(response.data);
           dispatch({
-            
             type: ASKED_QUESTION_FEED_LOAD_SUCCESS,
             questions: response.data,
           });

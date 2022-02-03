@@ -6,7 +6,10 @@ import {
   CHANGE_IMAGE,
   START_IMAGE_UPLOAD,
   EDIT_PROFILE_ON,
-  EDIT_PROFILE_OFF
+  EDIT_PROFILE_OFF,
+  RATE_PROFILE_STARTED,
+  RATE_PROFILE_SUCCESS,
+  RATE_PROFILE_ERROR
 } from "../constants/ProfileConstants";
 import { ProfileActionTypes } from "../types/ProfileActionTypes";
 
@@ -16,6 +19,7 @@ export interface profileUserDataInterface {
   last_name: string;
   username: string;
   image: string;
+  rating:number;
 }
 
 const profileUserData: profileUserDataInterface = {
@@ -24,6 +28,7 @@ const profileUserData: profileUserDataInterface = {
   image: "",
   user_id: "....",
   username: "....",
+  rating:0
 };
 
 export interface profileDataInterface {
@@ -32,6 +37,8 @@ export interface profileDataInterface {
   error: string;
   imageUploading:boolean;
   profileForm:boolean;
+  rating:boolean;
+  ratingError:string;
 }
 
 const profileDataState = {
@@ -39,7 +46,9 @@ const profileDataState = {
   profile_data: profileUserData,
   error: "",
   imageUploading:false,
-  profileForm:false
+  profileForm:false,
+  rating:false,
+  ratingError:""
 };
 
 export const ProfileReducer = (
@@ -63,6 +72,13 @@ export const ProfileReducer = (
       return {...state,profileForm:true}
     case EDIT_PROFILE_OFF:
       return {...state, profileForm:false}
+    case RATE_PROFILE_STARTED:
+      return {...state, rating:true}
+    case RATE_PROFILE_SUCCESS:
+      return {...state,rating:false}
+    case RATE_PROFILE_ERROR:
+      return {...state, rating:false, ratingError: action.ratingError} 
+
     default:
       return { ...state };
   }

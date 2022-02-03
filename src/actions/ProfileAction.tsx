@@ -3,6 +3,9 @@ import {
   PROFILE_DATA_LOADING,
   PROFILE_DATA_SUCCESS,
   PROFILE_DATA_ERROR,
+  RATE_PROFILE_STARTED,
+  RATE_PROFILE_SUCCESS,
+  RATE_PROFILE_ERROR
 } from "../constants/ProfileConstants";
 import axios from "../axios";
 import { RootDispatchType } from "../stores";
@@ -24,5 +27,26 @@ export const ProfileAction =
       })
       .catch((error) => {
         dispatch({ type: PROFILE_DATA_ERROR, error: error.response.data });
+      });
+  };
+
+  export const rateUserAction =
+  (rate:number, user_id: string, token: string) =>
+  (dispatch: Dispatch<RootDispatchType>) => {
+    
+    
+    dispatch({ type:RATE_PROFILE_STARTED });
+    axios
+      .post(`/rate-users/${user_id}`, {rating:rate}, {
+        headers: {
+          "x-auth-token": token,
+        },
+      })
+      .then((response) => {
+        dispatch({type:RATE_PROFILE_SUCCESS});
+        console.log(response.data);
+      })
+      .catch((error) => {
+        dispatch({ type: RATE_PROFILE_ERROR, ratingError: error.response.data });
       });
   };

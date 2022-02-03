@@ -37,17 +37,14 @@ export const SavedQuestionPostAction =
     dispatch({ type: SAVED_QUESTION_STARTED });
 
     axios
-      .get(`/saved-questions`, {
+      .post(`/saved-questions`,{question_id}, {
         headers: {
           "x-auth-token": token,
         },
       })
       .then((response) => {
         console.log(response.data);
-        dispatch({
-          type: SAVED_QUESTION_SUCCESS,
-          questions: response.data,
-        });
+       
       })
       .catch((error) => {
         // console.log(error)

@@ -7,12 +7,25 @@ import {
   START_IMAGE_UPLOAD,
   IMAGE_UPLOAD_SUCCESS,
   EDIT_PROFILE_ON,
-  EDIT_PROFILE_OFF
+  EDIT_PROFILE_OFF,
+  RATE_PROFILE_STARTED,
+  RATE_PROFILE_SUCCESS,
+  RATE_PROFILE_ERROR
 } from "../constants/ProfileConstants";
 import {profileUserDataInterface} from "../reducers/ProfileReducer"
 
 interface profileDataLoading {
   type: typeof PROFILE_DATA_LOADING;
+}
+interface ratingLoading{
+  type: typeof RATE_PROFILE_STARTED;
+}
+interface ratingSuccess{
+  type:typeof RATE_PROFILE_SUCCESS;
+}
+interface ratingError{
+  type:typeof RATE_PROFILE_ERROR;
+  ratingError: string;
 }
 
 interface profileDataSuccess {
@@ -56,4 +69,7 @@ export type ProfileActionTypes =
   |startImage
   |successImage
   |editProfileOn
-  |editProfileOff;
+  |editProfileOff
+  |ratingLoading
+  |ratingSuccess
+  |ratingError;

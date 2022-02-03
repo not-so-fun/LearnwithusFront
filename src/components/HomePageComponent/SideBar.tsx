@@ -17,7 +17,7 @@ const SideBar: FC = () => {
     <div className="App__Bottom__Left__SideBar">
       <div className="App__Bottom__Left__SideBar__Links">
         <Link
-          to="/answered"
+          to="/asked"
           onClick={() => {
             setActive((prev) => !prev);
             setActiveTutor(false);

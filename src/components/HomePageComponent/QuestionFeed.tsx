@@ -151,10 +151,6 @@ const QuestionFeed: FC<quesInterface> = ({ question }) => {
 
   return (
     <div className="QuestionFeed">
-      <BookmarkIcon
-        className={saved ? "QuestionFeed__Primary" : "QuestionFeed__Bookmark"}
-        onClick={SavedQuestion}
-      />
       <div className="QuestionFeed__Box">
         <div className="QuestionFeed__Box__Top">
           <div className="QuestionFeed__Box__Top__Left">

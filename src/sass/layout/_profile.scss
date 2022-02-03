@@ -29,6 +29,81 @@
         display: flex;
         align-items: center;
         flex-direction: column;
+        &__Rate{
+          width:50rem;
+          background:$color-white;
+          height:50rem;
+          position: fixed; 
+          left: 50%; 
+          top: 50%; 
+          transform: translate(-50%, -50%);
+          z-index:300;
+          display:flex;
+          align-items: center;
+          flex-direction: column;
+          justify-content: flex-start;
+          
+          &__Heading{
+            color:$color-black;
+            height:7rem;
+            display:flex;
+            justify-content: center;
+            font-size:1.5rem;
+            align-items: center;
+            text-transform: uppercase;
+          }
+          &__ProfileData{
+            height:30rem;
+            width:100%;
+            display:flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            &__Username{
+              height:6rem;
+              font-size:1.5rem;
+              color:$color-black;
+              
+            }
+            &__Image{
+              margin-top:2rem;
+              height:20rem;
+              width:20rem;
+              border-radius: 50%;
+            }
+            
+          }
+          &__Rating{
+            height:5rem;
+            display:flex;
+            align-items: center;
+            justify-content:center;
+          }
+          &__Buttons{
+
+            height:7rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            &__Button{
+              height:4rem;
+              width:auto;
+              padding: 0 3rem;
+              font-size:1.5rem;
+              border:2px solid $color-primary;
+              color:$color-primary;
+              outline: none;
+              border-radius: 5px;
+             transition: all 0.3s ease-in-out;
+              &:hover{
+                cursor: pointer;
+                background:$color-primary;
+                color:$color-white;
+
+              }
+            }
+          }
+        }
 
         &__Button {
           padding: 1rem 2rem;
@@ -100,7 +175,6 @@
         &__ProfileName {
           margin: 0.2rem 0;
           height: 5rem;
-
           font-size: 2rem;
           letter-spacing: 0.05rem;
           font-weight: 600;
@@ -109,19 +183,7 @@
           justify-content: center;
           color: $color-black;
         }
-        &__Rating {
-          height: 5rem;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          &__Star {
-            // border: 2px solid red;
-            height: 3rem;
-            width: 3rem;
-            fill: gold;
-            margin: 0 0.2rem;
-          }
-        }
+       
       }
       &__Information {
         flex: 0 0 40%;
