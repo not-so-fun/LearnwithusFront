@@ -28,6 +28,7 @@ const AnswerComponent: FC<answerComponentInterface> = ({ question_id }) => {
     dispatch(AnswerTheQuestionAction(token, question_id, answerType));
     setAnswerType("");
   };
+  
   return (
     <>
       <div className="MainQA__AnswerInput__Box">
