@@ -1,16 +1,20 @@
-import React from "react";
+import React,{FC} from "react";
+import {profileUserDataInterface} from "../../reducers/ProfileReducer"
+interface tutorInterface {
+  tutor: profileUserDataInterface;
+}
 
-const TutorsProfile = () => {
+const TutorsProfile : FC<tutorInterface>= ({tutor}) => {
   return (
     <div className="Tutors">
       <div className="Tutors__Box">
         <div className="Tutors__Box__Top">
           <div className="Tutors__Box__Top__ProfileImage">
-            <div className="Tutors__Box__Top__ProfileImage__Image"></div>
+            <img src={tutor.image} className="Tutors__Box__Top__ProfileImage__Image"/>
           </div>
           <div className="Tutors__Box__Top__ProfileData">
             <div className="Tutors__Box__Top__ProfileData__ProfileName">
-              <strong>Pasang Sherpa</strong>
+              <strong>{tutor.username}</strong>
             </div>
             <div className="Tutors__Box__Top__ProfileData__Expertise">
               Physics, chemistry, mathematics
@@ -24,7 +28,7 @@ const TutorsProfile = () => {
                   <i className="fa fa-star-o" aria-hidden="true"></i>
                   <i className="fa fa-star-o" aria-hidden="true"></i>
 
-                  <div className="front-stars1" style={{ width: `${20}%` }}>
+                  <div className="front-stars1" style={{ width: `${tutor.rating * 20}%` }}>
                     <i className="fa fa-star" aria-hidden="true"></i>
                     <i className="fa fa-star" aria-hidden="true"></i>
                     <i className="fa fa-star" aria-hidden="true"></i>

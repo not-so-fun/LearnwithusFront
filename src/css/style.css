@@ -422,36 +422,51 @@ body {
         box-shadow: inset 5em 5em rgba(0, 0, 0, 0.2); }
 
 .SearchTutors {
-  border: 2px solid red;
-  height: 100%;
-  background-color: #fff; }
-  .SearchTutors__Top__AdvanceSearch {
-    text-align: left;
-    padding: 0 3rem;
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: #057777;
-    cursor: pointer; }
-  .SearchTutors__Top__Search {
-    padding: 1rem 3rem;
-    display: flex; }
-    .SearchTutors__Top__Search input {
+  height: auto;
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  flex-direction: column; }
+  .SearchTutors__Top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 95%; }
+    .SearchTutors__Top__AdvanceSearch {
+      text-align: left;
+      margin: .4rem 0;
+      font-size: 2rem;
       width: 100%;
-      height: 3rem;
-      border: 2px solid lightgrey;
-      padding: 0 1rem;
-      border-top-left-radius: 4px;
-      border-bottom-left-radius: 4px; }
-    .SearchTutors__Top__Search__Icon {
-      font-size: 3rem !important;
-      padding: 0.2rem;
-      background-color: #057777;
-      border-top-right-radius: 4px;
-      border-bottom-right-radius: 4px;
-      margin-left: -1rem;
-      height: 3rem !important;
-      color: #fff;
+      color: #057777;
       cursor: pointer; }
+    .SearchTutors__Top__Search {
+      width: 100%;
+      height: 7rem;
+      display: flex;
+      align-items: center; }
+      .SearchTutors__Top__Search input {
+        width: 100%;
+        height: 5rem;
+        border: none;
+        outline: none;
+        background: #c4c4c4;
+        padding: 0 1rem;
+        border-top-left-radius: 4px;
+        border-bottom-left-radius: 4px;
+        font-size: 1.9rem; }
+      .SearchTutors__Top__Search__Icon {
+        font-size: 3rem !important;
+        padding: 0.2rem;
+        background-color: #057777;
+        border-top-right-radius: 4px;
+        border-bottom-right-radius: 4px;
+        margin-left: -5rem;
+        height: 5rem !important;
+        width: 5rem !important;
+        color: #fff;
+        cursor: pointer; }
 
 .QuestionFeed {
   width: 100%;
@@ -1010,6 +1025,7 @@ body {
   width: 100%;
   height: auto;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: space-between; }
   .Profile__Box__Top {
@@ -1991,11 +2007,6 @@ body {
             color: #057777;
             font-size: 15px;
             padding: 0.5rem 1rem;
-            background-color: #057777;
-            color: #fff;
-            font-size: 15px;
-            padding: 0.5rem 1rem;
-            border: none;
             border-radius: 4px;
             font-weight: 600;
             height: 4rem;
@@ -2878,23 +2889,16 @@ body {
   .deleteModal__close {
     font-size: 28px !important;
     font-weight: bold !important;
-<<<<<<< HEAD
-    color: #9e1818;
-=======
     color: #bc1b1b;
->>>>>>> sujan
     cursor: pointer; }
 
 @media (min-width: 768px) {
   .deleteModal {
     left: calc(50% - 20rem);
     width: 50rem; }
-<<<<<<< HEAD
-=======
   .SearchModal {
     left: calc(50% - 20rem);
     width: 50rem; }
->>>>>>> sujan
   .editModal {
     left: calc(50% - 20rem);
     width: 57rem; } }
@@ -2904,9 +2908,11 @@ body {
 
 .SearchModal {
   position: fixed;
-  top: 30vh;
-  left: 25%;
-  width: 50%;
+  height: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80rem;
   z-index: 100;
   max-height: 50rem;
   border-radius: 6px;
@@ -2917,20 +2923,32 @@ body {
     .SearchModal__Search__Expertise {
       padding: 0 2rem;
       display: flex;
-      flex-direction: column; }
+      flex-direction: column;
+      margin: 3rem 0; }
+      .SearchModal__Search__Expertise__Box {
+        width: 100%; }
+      .SearchModal__Search__Expertise__TitleLabel {
+        height: auto;
+        margin: 1rem 0; }
+        .SearchModal__Search__Expertise__TitleLabel__Select {
+          border: none;
+          outline: none;
+          height: 5rem;
+          padding: 1rem;
+          width: 100%;
+          border-radius: 5px;
+          font-size: 2.3rem; }
+          .SearchModal__Search__Expertise__TitleLabel__Select__Option {
+            font-size: 2.3rem; }
       .SearchModal__Search__Expertise label {
-        font-size: 1.6rem;
+        font-size: 2.3rem;
         margin-bottom: 0.5rem; }
-      .SearchModal__Search__Expertise select {
-        height: 3rem;
-        padding: 0 0.7rem;
-        border-radius: 4px;
-        font-size: 1.4rem; }
   .SearchModal__Button {
-    margin-bottom: 1rem;
+    margin: 1rem 0;
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    height: 6rem;
     padding-right: 3rem; }
     .SearchModal__Button__Btn {
       padding: 5px 10px;
@@ -2955,16 +2973,15 @@ body {
         background-color: #bc1b1b;
         color: white; }
   .SearchModal__Top {
-    border-top-left-radius: 6px;
-    border-top-right-radius: 6px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 2rem;
-    height: 5rem;
-    border-bottom: 2px solid lightgrey; }
+    padding-right: 2rem;
+    padding-left: 3rem;
+    height: 7rem;
+    border-bottom: 2px solid #c4c4c4; }
     .SearchModal__Top__Para {
-      font-size: 1.8rem; }
+      font-size: 2.4rem; }
   .SearchModal__close {
     font-size: 28px !important;
     font-weight: bold !important;

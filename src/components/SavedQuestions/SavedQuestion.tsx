@@ -11,7 +11,7 @@ import { questionsInterface } from "../../reducers/SavedQuestionsReducer";
 import useTokenAndId from "../../components/ReusableLogicComponents/useTokenAndId";
 
 import { RootStateType } from "../../stores";
-import RIghtSideBar from "../../Layout/RIghtSideBar";
+import RIghtSideBar from "../../Layout/RightSideBar";
 
 const SavedQuestion: FC = () => {
   const dispatch = useDispatch();

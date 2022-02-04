@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Avatar } from "@mui/material";
 import CircleIcon from "@mui/icons-material/Circle";
 
-const RIghtSideBar = () => {
+const RightSideBar = () => {
   return (
     <div className="HomePage__Right__MainBody__Notification">
       <div className="HomePage__Right__MainBody__Notification__Below">
@@ -66,4 +66,4 @@ const RIghtSideBar = () => {
   );
 };
 
-export default RIghtSideBar;
+export default RightSideBar;
