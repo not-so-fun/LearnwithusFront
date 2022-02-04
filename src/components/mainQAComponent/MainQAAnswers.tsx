@@ -13,7 +13,9 @@ import useTokenAndId from "../ReusableLogicComponents/useTokenAndId";
 import axios from "../../axios";
 import MainQAReplies from "./MainQAReplies";
 import { Markup } from "interweave";
-import  UploadImageModal from "../ReusableUIComponents/ModalImageUpload"
+import UploadImageModal from "../ReusableUIComponents/ModalImageUpload";
+import { AiOutlineDelete } from "react-icons/ai";
+import DeleteAnswerModal from "../Modals/DeleteAnswerModal";
 
 interface MainQAAnswerInterface {
   ans: answerInterface;
@@ -36,7 +38,7 @@ export interface MainRepliesInterface {
 
 const MainQAAnswers: FC<MainQAAnswerInterface> = ({ ans }) => {
   const [upvote, setUpvote] = useState<boolean | null>(null);
-
+  const [showModal, setShowModal] = useState<boolean>(false);
   const [lastState, setLastState] = useState<lastStateInterface>({
     upvote: null,
   });
@@ -55,6 +57,10 @@ const MainQAAnswers: FC<MainQAAnswerInterface> = ({ ans }) => {
     // setLastState({ upvote: ans?.upvote! });
     setShowReplies(false);
   }, [ans]);
+
+  const handleModal = () => {
+    setShowModal((prev) => !prev);
+  };
 
   //UPVOTE_POST
   const upVote = (upvote: boolean) => {
@@ -191,7 +197,7 @@ const MainQAAnswers: FC<MainQAAnswerInterface> = ({ ans }) => {
             </div>
           </div>
         </div>
-        {showImageModal && <UploadImageModal/>}
+        {showImageModal && <UploadImageModal />}
         <div className="MainQA__Answer__Box__Main">
           <div className="MainQA__Answer__Box__Main__Likes">
             {/* Upvote started */}
@@ -243,6 +249,23 @@ const MainQAAnswers: FC<MainQAAnswerInterface> = ({ ans }) => {
                   </p>
                 </div>
                 <div className="MainQA__Answer__Box__Main__Bottom__Function">
+                  <div
+                    className="QuestionFeed__Bottom__Left__Content__Logo"
+                    onClick={handleModal}
+                  >
+                    <AiOutlineDelete className="QuestionFeed__Bottom__Left__Content__Logo__Logo" />
+                  </div>
+                  {showModal && (
+                    <DeleteAnswerModal modalHandler={handleModal} />
+                  )}
+                  <p
+                    className="QuestionFeed__Bottom__Left__Content__Text"
+                    onClick={handleModal}
+                  >
+                    Delete
+                  </p>
+                </div>
+                <div className="MainQA__Answer__Box__Main__Bottom__Function">
                   <div className="MainQA__Answer__Box__Main__Bottom__Function__Logo">
                     <AiOutlineShareAlt className="MainQA__Answer__Box__Main__Bottom__Function__Logo__Logo" />
                   </div>
@@ -284,7 +307,6 @@ const MainQAAnswers: FC<MainQAAnswerInterface> = ({ ans }) => {
 
             {reply && (
               <div>
-
                 <ReplyTextEditor
                   replyText={replyText}
                   setReplyText={setReplyText}

@@ -11,6 +11,7 @@ import { questionsInterface } from "../../reducers/SavedQuestionsReducer";
 import useTokenAndId from "../../components/ReusableLogicComponents/useTokenAndId";
 
 import { RootStateType } from "../../stores";
+import RIghtSideBar from "../../Layout/RIghtSideBar";
 
 const SavedQuestion: FC = () => {
   const dispatch = useDispatch();
@@ -30,12 +31,25 @@ const SavedQuestion: FC = () => {
     <>
       <div className="Answered">
         {/* <div className="HomePage__Right__MainBody"> */}
-        <div className="Answered__Heading">Your Saved Questions</div>
-        <div className="Answered__Newsfeed">
-          {questions &&
-            questions.map((question: questionFeedListInterface) => (
-              <QuestionFeed question={question} key={question.question_id} />
-            ))}
+        <div className="Answered__Left">
+          {questions.length === 0 ? (
+            <div className="flex__div">
+              <div className="Answered__HeadingFallback">
+                You haven't saved any questions 😥
+              </div>
+            </div>
+          ) : (
+            <div className="Answered__Heading">Your Saved Questions</div>
+          )}
+          <div className="Answered__Newsfeed">
+            {questions &&
+              questions.map((question: questionFeedListInterface) => (
+                <QuestionFeed question={question} key={question.question_id} />
+              ))}
+          </div>
+        </div>
+        <div className="Answered__Right">
+          <RIghtSideBar />
         </div>
       </div>
       {/* </div> */}
