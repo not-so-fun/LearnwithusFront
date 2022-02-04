@@ -1987,18 +1987,15 @@ body {
           margin-bottom: 1rem;
           background-color: #e6e6e6; }
           .HomePage__Right__MainBody__Notification__Below__Links {
-<<<<<<< HEAD
             border: 2px solid #057777;
             color: #057777;
             font-size: 15px;
             padding: 0.5rem 1rem;
-=======
             background-color: #057777;
             color: #fff;
             font-size: 15px;
             padding: 0.5rem 1rem;
             border: none;
->>>>>>> sujan
             border-radius: 4px;
             font-weight: 600;
             height: 4rem;
@@ -2007,13 +2004,9 @@ body {
             transition: all 0.3s ease; }
             .HomePage__Right__MainBody__Notification__Below__Links:hover {
               box-shadow: inset 0 0 50px 50px #0c6363;
-<<<<<<< HEAD
               transform: translateY(-2px);
               background: #057777;
               color: #fff; }
-=======
-              transform: translateY(-2px); }
->>>>>>> sujan
             .HomePage__Right__MainBody__Notification__Below__Links:active {
               transform: translateY(2px); }
           .HomePage__Right__MainBody__Notification__Below button:last-child {
@@ -2862,8 +2855,6 @@ body {
       .deleteModal__Button__Btn:hover {
         background-color: #057777;
         color: white; }
-<<<<<<< HEAD
-=======
     .deleteModal__Button__BtnCancel {
       padding: 5px 10px;
       background-color: transparent;
@@ -2875,7 +2866,6 @@ body {
       .deleteModal__Button__BtnCancel:hover {
         background-color: #bc1b1b;
         color: white; }
->>>>>>> sujan
   .deleteModal__Top {
     border-top-left-radius: 6px;
     border-top-right-radius: 6px;
