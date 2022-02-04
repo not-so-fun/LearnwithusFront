@@ -11,6 +11,7 @@ import MainQA from "../Layout/MainQA";
 import Answered from "../Layout/Answered";
 import SavedQuestion from "../components/SavedQuestions/SavedQuestion";
 import UpdateQuestions from "../Layout/UpdateQuestions";
+import SearchTutors from "../components/SearchTutors/SearchTutors";
 const routes: IRoute[] = [
   {
     path: "/",
@@ -98,6 +99,14 @@ const routes: IRoute[] = [
     path: "/question/ask",
     name: "questions",
     component: AskQuestion,
+    exact: true,
+    private: true,
+    showNav: false,
+  },
+  {
+    path: "/searchTutors",
+    name: "Search Tutors",
+    component: SearchTutors,
     exact: true,
     private: true,
     showNav: false,

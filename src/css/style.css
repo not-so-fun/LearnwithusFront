@@ -421,6 +421,38 @@ body {
         cursor: pointer;
         box-shadow: inset 5em 5em rgba(0, 0, 0, 0.2); }
 
+.SearchTutors {
+  border: 2px solid red;
+  height: 100%;
+  background-color: #fff; }
+  .SearchTutors__Top__AdvanceSearch {
+    text-align: left;
+    padding: 0 3rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #057777;
+    cursor: pointer; }
+  .SearchTutors__Top__Search {
+    padding: 1rem 3rem;
+    display: flex; }
+    .SearchTutors__Top__Search input {
+      width: 100%;
+      height: 3rem;
+      border: 2px solid lightgrey;
+      padding: 0 1rem;
+      border-top-left-radius: 4px;
+      border-bottom-left-radius: 4px; }
+    .SearchTutors__Top__Search__Icon {
+      font-size: 3rem !important;
+      padding: 0.2rem;
+      background-color: #057777;
+      border-top-right-radius: 4px;
+      border-bottom-right-radius: 4px;
+      margin-left: -1rem;
+      height: 3rem !important;
+      color: #fff;
+      cursor: pointer; }
+
 .QuestionFeed {
   width: 100%;
   min-width: 30rem;
@@ -513,25 +545,28 @@ body {
           bottom: 0;
           top: 5rem;
           height: 10rem;
-          width: 13rem;
-          background: #fff;
+          right: -20px;
+          border-radius: 5px;
+          width: 10rem;
+          background: white;
           z-index: 10;
           display: flex;
           align-items: center;
           flex-direction: column;
           justify-content: space-around;
-          box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.3); }
+          box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.1); }
           .QuestionFeed__Box__Top__Right__Delete__Box {
-            background: green;
-            width: 95%;
+            width: 100%;
             height: 4rem;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #fff;
-            text-decoration: none; }
+            color: #000000de;
+            text-decoration: none;
+            transition: all 0.4s ease; }
             .QuestionFeed__Box__Top__Right__Delete__Box:hover {
-              cursor: pointer; }
+              cursor: pointer;
+              box-shadow: inset 0 0 100px 100px rgba(0, 0, 0, 0.05); }
         .QuestionFeed__Box__Top__Right__ThreeDots {
           cursor: pointer;
           font-size: 30px !important;
@@ -975,7 +1010,6 @@ body {
   width: 100%;
   height: auto;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: space-between; }
   .Profile__Box__Top {
@@ -1953,10 +1987,18 @@ body {
           margin-bottom: 1rem;
           background-color: #e6e6e6; }
           .HomePage__Right__MainBody__Notification__Below__Links {
+<<<<<<< HEAD
             border: 2px solid #057777;
             color: #057777;
             font-size: 15px;
             padding: 0.5rem 1rem;
+=======
+            background-color: #057777;
+            color: #fff;
+            font-size: 15px;
+            padding: 0.5rem 1rem;
+            border: none;
+>>>>>>> sujan
             border-radius: 4px;
             font-weight: 600;
             height: 4rem;
@@ -1965,9 +2007,13 @@ body {
             transition: all 0.3s ease; }
             .HomePage__Right__MainBody__Notification__Below__Links:hover {
               box-shadow: inset 0 0 50px 50px #0c6363;
+<<<<<<< HEAD
               transform: translateY(-2px);
               background: #057777;
               color: #fff; }
+=======
+              transform: translateY(-2px); }
+>>>>>>> sujan
             .HomePage__Right__MainBody__Notification__Below__Links:active {
               transform: translateY(2px); }
           .HomePage__Right__MainBody__Notification__Below button:last-child {
@@ -2663,20 +2709,46 @@ body {
             background: #c4c4c4; }
 
 .Answered {
-  height: auto;
+  height: 100%;
   width: 100%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   background: #fff; }
+  .Answered__Left {
+    height: 100%;
+    width: 100%;
+    flex: 1; }
+  .Answered__Right {
+    height: 100%;
+    width: 100%;
+    background-color: #eeeeee;
+    flex: 0.4; }
+  .Answered__HeadingFallback {
+    border: 2px solid lightgrey;
+    font-size: 4rem;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #3f3f3f;
+    padding: 2rem;
+    height: 40%;
+    width: 80%; }
   .Answered__Heading {
     font-size: 2.5rem;
     font-weight: 600;
     color: #000;
     margin-top: 1rem; }
   .Answered__Newsfeed {
-    height: auto;
+    height: 100%;
     width: 100%; }
+
+.flex__div {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
 
 .App {
   background: red;
@@ -2790,6 +2862,20 @@ body {
       .deleteModal__Button__Btn:hover {
         background-color: #057777;
         color: white; }
+<<<<<<< HEAD
+=======
+    .deleteModal__Button__BtnCancel {
+      padding: 5px 10px;
+      background-color: transparent;
+      border: 2px solid #bc1b1b;
+      color: #bc1b1b;
+      font-size: 1.8rem;
+      transition: all 0.4s ease;
+      cursor: pointer; }
+      .deleteModal__Button__BtnCancel:hover {
+        background-color: #bc1b1b;
+        color: white; }
+>>>>>>> sujan
   .deleteModal__Top {
     border-top-left-radius: 6px;
     border-top-right-radius: 6px;
@@ -2802,16 +2888,95 @@ body {
   .deleteModal__close {
     font-size: 28px !important;
     font-weight: bold !important;
+<<<<<<< HEAD
     color: #9e1818;
+=======
+    color: #bc1b1b;
+>>>>>>> sujan
     cursor: pointer; }
 
 @media (min-width: 768px) {
   .deleteModal {
     left: calc(50% - 20rem);
     width: 50rem; }
+<<<<<<< HEAD
+=======
+  .SearchModal {
+    left: calc(50% - 20rem);
+    width: 50rem; }
+>>>>>>> sujan
   .editModal {
     left: calc(50% - 20rem);
     width: 57rem; } }
 
 .margin-right {
   margin-right: 2rem; }
+
+.SearchModal {
+  position: fixed;
+  top: 30vh;
+  left: 25%;
+  width: 50%;
+  z-index: 100;
+  max-height: 50rem;
+  border-radius: 6px;
+  background-color: #fff;
+  color: #000; }
+  .SearchModal__Search {
+    margin: 1rem 0; }
+    .SearchModal__Search__Expertise {
+      padding: 0 2rem;
+      display: flex;
+      flex-direction: column; }
+      .SearchModal__Search__Expertise label {
+        font-size: 1.6rem;
+        margin-bottom: 0.5rem; }
+      .SearchModal__Search__Expertise select {
+        height: 3rem;
+        padding: 0 0.7rem;
+        border-radius: 4px;
+        font-size: 1.4rem; }
+  .SearchModal__Button {
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 3rem; }
+    .SearchModal__Button__Btn {
+      padding: 5px 10px;
+      background-color: transparent;
+      border: 2px solid #057777;
+      color: #057777;
+      font-size: 1.8rem;
+      transition: all 0.4s ease;
+      cursor: pointer; }
+      .SearchModal__Button__Btn:hover {
+        background-color: #057777;
+        color: white; }
+    .SearchModal__Button__BtnCancel {
+      padding: 5px 10px;
+      background-color: transparent;
+      border: 2px solid #bc1b1b;
+      color: #bc1b1b;
+      font-size: 1.8rem;
+      transition: all 0.4s ease;
+      cursor: pointer; }
+      .SearchModal__Button__BtnCancel:hover {
+        background-color: #bc1b1b;
+        color: white; }
+  .SearchModal__Top {
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    height: 5rem;
+    border-bottom: 2px solid lightgrey; }
+    .SearchModal__Top__Para {
+      font-size: 1.8rem; }
+  .SearchModal__close {
+    font-size: 28px !important;
+    font-weight: bold !important;
+    color: #5d5d5d;
+    cursor: pointer; }

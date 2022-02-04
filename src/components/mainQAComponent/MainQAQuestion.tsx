@@ -30,6 +30,7 @@ import { SavedQuestionPostAction } from "../../actions/SavedQuestionsAction";
 import { SAVED_QUESTION_DELETE } from "../../constants/SavedQuestionsConstants";
 import { DeleteQuestionAction } from "../../actions/AskQuestionAction";
 import { Server } from "http";
+import DeleteQuestion from "../Modals/DeleteQuestion";
 
 interface MainQAQuestionInterface {
   question: questionFeedListInterface | null;
@@ -48,6 +49,7 @@ const MainQAQuestion: FC<MainQAQuestionInterface> = ({ question }) => {
   });
   const [owner, setOwner] = useState<boolean | null>(null);
 
+  const [showModal, setShowModal] = useState<boolean>(false);
   const [showUpdate, setShowUpdate] = useState<boolean>(false);
   const { token, user_id } = useTokenAndId();
 
@@ -158,6 +160,11 @@ const MainQAQuestion: FC<MainQAQuestionInterface> = ({ question }) => {
       dispatch(DeleteQuestionAction(token, question?.question_id));
     }
   };
+
+  const handleModal = () => {
+    setShowModal((prev) => !prev);
+  };
+
   const UpdateDeleteUI = () => {
     return (
       <>
@@ -306,10 +313,17 @@ const MainQAQuestion: FC<MainQAQuestionInterface> = ({ question }) => {
                 </p>
               </div>
               <div className="QuestionFeed__Bottom__Left__Content">
-                <div className="QuestionFeed__Bottom__Left__Content__Logo">
+                <div
+                  className="QuestionFeed__Bottom__Left__Content__Logo"
+                  onClick={handleModal}
+                >
                   <AiOutlineDelete className="QuestionFeed__Bottom__Left__Content__Logo__Logo" />
                 </div>
-                <p className="QuestionFeed__Bottom__Left__Content__Text">
+                {showModal && <DeleteQuestion modalHandler={handleModal} />}
+                <p
+                  className="QuestionFeed__Bottom__Left__Content__Text"
+                  onClick={handleModal}
+                >
                   Delete
                 </p>
               </div>

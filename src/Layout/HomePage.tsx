@@ -24,6 +24,7 @@ import QuestionFeed from "../components/HomePageComponent/QuestionFeed";
 import { BeatLoaderProgress } from "../components/ReusableUIComponents/BeatLoader";
 import ModalImageUpload from "../components/ReusableUIComponents/ModalImageUpload";
 import TutorsProfile from "../components/tutors/tutorsProfile";
+import RIghtSideBar from "./RIghtSideBar";
 
 const HomePage: FC = () => {
   const [openModal, setOpenModal] = useState<boolean>(false);
@@ -76,14 +77,13 @@ const HomePage: FC = () => {
                 <h1>Load More questions</h1>
               </button>
             )}
-            
           </div>
-          <TutorsProfile/>
-          <TutorsProfile/>
-          <TutorsProfile/>
-          <TutorsProfile/>
-          <TutorsProfile/>
-          <TutorsProfile/>
+          <TutorsProfile />
+          <TutorsProfile />
+          <TutorsProfile />
+          <TutorsProfile />
+          <TutorsProfile />
+          <TutorsProfile />
           {/* loading ko thau ma extra loading rakha */}
         </div>
         <div className="HomePage__Right__MainBody__Notification">
@@ -143,6 +143,7 @@ const HomePage: FC = () => {
             </div>
           </div>
         </div>
+        <RIghtSideBar />
       </div>
     </>
   );

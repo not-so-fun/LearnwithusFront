@@ -46,7 +46,8 @@ const SideBar: FC = () => {
         >
           Saved Questions
         </Link>
-        <div
+        <Link
+          to="/searchTutors"
           onClick={() => {
             setActiveTutor((prev) => !prev);
             setActive(false);
@@ -59,7 +60,7 @@ const SideBar: FC = () => {
           }`}
         >
           Search Tutors
-        </div>
+        </Link>
       </div>
     </div>
   );
