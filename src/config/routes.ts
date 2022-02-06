@@ -12,6 +12,7 @@ import Answered from "../Layout/Answered";
 import SavedQuestion from "../components/SavedQuestions/SavedQuestion";
 import UpdateQuestions from "../Layout/UpdateQuestions";
 import SearchTutors from "../components/SearchTutors/SearchTutors";
+import Messages from "../Layout/Messages";
 const routes: IRoute[] = [
   {
     path: "/",
@@ -21,6 +22,7 @@ const routes: IRoute[] = [
     private: true,
     showNav: true,
   },
+  
   {
     path: "/updateQuestion/:question_id",
     name: "Update Question",
@@ -44,6 +46,14 @@ const routes: IRoute[] = [
     exact: false,
     private: true,
     showNav: false,
+  },
+  {
+    path: "/messages/:messageId",
+    name: "Message",
+    component: Messages,
+    exact: true,
+    private: true,
+    showNav: true,
   },
   {
     path: "/login",
