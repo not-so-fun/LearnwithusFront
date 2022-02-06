@@ -49,6 +49,9 @@ const MainQA: FC<RouteComponentProps<any>> = ({ match }) => {
 
   useEffect(() => {
     dispatch(MainQuestionAnswerAction(token, match.params.id));
+  }, [match, token]);
+
+  useEffect(() => {
     dispatch(AnswersOnlyAction(token, match.params.id));
   }, [match, token]);
   let className = "";

@@ -56,6 +56,7 @@ const AskQuestionSelect: FC<AskQuestionSelectPropsType> = ({
       <select
         onChange={(e) => handleSelectTopic(e)}
         // className="AskQuestionForm__TitleInput__InputBox__Div__Select"
+        style={{padding:10}}
         className="AskQuestionForm__TitleInput__InputBox__Div__Select"
         required
       >
