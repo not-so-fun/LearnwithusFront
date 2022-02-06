@@ -8,8 +8,9 @@ interface DefaultEventsMap {
   [event: string]: (...args: any[]) => void;
 }
 
-const SocketTry: FC = () => {
   let socketOfChat: Socket<DefaultEventsMap, DefaultEventsMap>;
+  
+const SocketTry: FC = () => {
 
   useEffect(() => {
 
