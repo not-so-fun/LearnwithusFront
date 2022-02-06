@@ -8,12 +8,13 @@ import {
 } from "../reducers/QuestionFeedReducers";
 import useTokenAndId from "../components/ReusableLogicComponents/useTokenAndId";
 import { RootStateType } from "../stores";
+import RightSideBar from "./RightSideBar";
 
 const Answered: FC = () => {
   const dispatch = useDispatch();
   const { token } = useTokenAndId();
 
-  const { loading, questions,error } = useSelector<RootStateType>(
+  const { loading, questions, error } = useSelector<RootStateType>(
     (state) => state.askedQuestions
   ) as questionFeedInterface;
 
@@ -28,23 +29,23 @@ const Answered: FC = () => {
   return (
     <>
       <div className="Answered">
-          {/* <div className="HomePage__Right__MainBody"> */}
-            <div className="Answered__Heading">
-                Your Asked Question
-            </div>
-            <div className="Answered__Newsfeed">
-              {questions &&
-                questions.map((question: questionFeedListInterface) => (
-                    <QuestionFeed question={question}  key={question.question_id}/>
-                ))}
-                </div>
-          
+        {/* <div className="HomePage__Right__MainBody"> */}
+        <div className="Answered__Left">
+          <div className="Answered__Heading">Your Asked Question</div>
+          <div className="Answered__Newsfeed">
+            {questions &&
+              questions.map((question: questionFeedListInterface) => (
+                <QuestionFeed question={question} key={question.question_id} />
+              ))}
           </div>
-        {/* </div> */}
+        </div>
+        <div className="Answered__Right">
+          <RightSideBar />
+        </div>
+      </div>
+      {/* </div> */}
     </>
   );
 };
 
 export default Answered;
-
-

@@ -77,7 +77,7 @@ const HomePage: FC = () => {
               </button>
             )}
           </div>
-        
+
           {/* loading ko thau ma extra loading rakha */}
         </div>
         <RightSideBar />

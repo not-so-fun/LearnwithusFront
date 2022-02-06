@@ -218,7 +218,7 @@
             width: 49%;
 
             &__Box {
-              background: $color-grey-light-2;
+              background: #e8e8e8;
               height: 4rem;
               padding-left: 0.3rem;
               width: 100%;
@@ -229,6 +229,7 @@
               display: flex;
               align-items: center;
               justify-content: flex-start;
+              padding: 0.7rem;
             }
           }
           &__firstName p {
@@ -246,7 +247,7 @@
             width: 49%;
             display: inline-block;
             &__Box {
-              background: $color-grey-light-2;
+              background: #e8e8e8;
               height: 4rem;
               padding: 0.3rem;
               width: 100%;
@@ -257,6 +258,7 @@
               display: flex;
               align-items: center;
               justify-content: flex-start;
+              padding: 0.7rem;
             }
           }
           &__lastName p {
@@ -276,9 +278,9 @@
         &__BasicInfo {
           margin-bottom: 2rem;
           &__Box {
-            background: $color-grey-light-2;
+            background: #e8e8e8;
             height: 4rem;
-            padding: 0.3rem;
+            padding: 0.7rem;
             width: 100%;
             letter-spacing: 0.03rem;
             border: none;
