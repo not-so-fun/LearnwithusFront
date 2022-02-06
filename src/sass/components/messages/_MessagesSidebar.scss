@@ -1,44 +1,44 @@
-.MessagesSidebar{
-    height:100%;
-    width:100%;
+.MessagesSidebar {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  &__User {
+    height: 8rem;
+    width: 95%;
+    font-size: 1.3rem;
+    color: $color-black;
     display: flex;
-    flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    &__User{
-        height:8rem;
-        width:95%;
-        font-size:1.3rem;
-        color: $color-black;
-        display: flex;
-        justify-content: flex-start;
-        align-items:center;
-        padding:0 1rem;
-        border-radius: 5px;
-        &:hover{
-            background:$color-white;
-            cursor: pointer;
-        }
-        &__Image{
-            height:6rem;
-            width:6rem;
-            border-radius: 100%;
-            overflow:hidden;
-            background:grey;
-            margin-right:1rem;
-        } 
-        &__Text{
-            display:flex;
-            flex-direction: column;
-            align-items: flex-start;
-            height:auto;
-            flex:1;
-            &__ChatInfo{
-                display:flex;
-                justify-content: space-between;
-                align-items: center;
-                width:100%;
-            }
-        }
+    padding: 0 1rem;
+    border-radius: 5px;
+    &:hover {
+      background: $color-white;
+      cursor: pointer;
     }
+    &__Image {
+      height: 6rem;
+      width: 6rem;
+      border-radius: 100%;
+      overflow: hidden;
+      background: grey;
+      margin-right: 1rem;
+    }
+    &__Text {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      height: auto;
+      flex: 1;
+      &__ChatInfo {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+      }
+    }
+  }
 }
