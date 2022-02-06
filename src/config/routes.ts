@@ -52,7 +52,7 @@ const routes: IRoute[] = [
     path: "/messages/:messageId",
     name: "Message",
     component: Messages,
-    exact: true,
+    exact: false,
     private: true,
     showNav: true,
   },

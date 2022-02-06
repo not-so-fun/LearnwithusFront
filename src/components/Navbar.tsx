@@ -86,7 +86,7 @@ const Navbar: FC = () => {
 
 
 <BsFillChatFill
-              onClick={() => history.push("/chat")}
+              onClick={() => history.push("/messages")}
               style={{ fontSize: 25, marginLeft: 20, cursor: "pointer" }}
               className="Navbar__Links__Exit"
             />

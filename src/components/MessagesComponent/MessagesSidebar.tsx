@@ -19,6 +19,7 @@ const MessagesSidebar = () => {
     }
   return (
   <div className="MessagesSidebar">
+      
     <User/>
     <User/>
     <User/>
