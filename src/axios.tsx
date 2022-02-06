@@ -1,8 +1,7 @@
 import axios from "axios";
-// http://localhost:5000
-// https://learnwithus101.herokuapp.com
+import {URL} from "./axiosURL";
 const Axios = axios.create({
-  baseURL: "http://localhost:5000",
+  baseURL: URL,
 });
 
 export default Axios;
