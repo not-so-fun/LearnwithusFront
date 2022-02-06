@@ -544,10 +544,10 @@ body {
           position: absolute;
           bottom: 0;
           top: 5rem;
-          height: 10rem;
+          height: 7rem;
           right: -20px;
           border-radius: 5px;
-          width: 10rem;
+          width: 11rem;
           background: white;
           z-index: 10;
           display: flex;
@@ -1010,6 +1010,7 @@ body {
   width: 100%;
   height: auto;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: space-between; }
   .Profile__Box__Top {
@@ -1183,7 +1184,7 @@ body {
           display: inline-block;
           width: 49%; }
           .Profile__Box__Top__Information__Name__firstName__Box {
-            background: #c4c4c4;
+            background: #e8e8e8;
             height: 4rem;
             padding-left: 0.3rem;
             width: 100%;
@@ -1193,7 +1194,8 @@ body {
             letter-spacing: 0.03rem;
             display: flex;
             align-items: center;
-            justify-content: flex-start; }
+            justify-content: flex-start;
+            padding: 0.7rem; }
         .Profile__Box__Top__Information__Name__firstName p {
           font-size: 14px;
           letter-spacing: 0.08rem;
@@ -1206,7 +1208,7 @@ body {
           width: 49%;
           display: inline-block; }
           .Profile__Box__Top__Information__Name__lastName__Box {
-            background: #c4c4c4;
+            background: #e8e8e8;
             height: 4rem;
             padding: 0.3rem;
             width: 100%;
@@ -1216,7 +1218,8 @@ body {
             letter-spacing: 0.03rem;
             display: flex;
             align-items: center;
-            justify-content: flex-start; }
+            justify-content: flex-start;
+            padding: 0.7rem; }
         .Profile__Box__Top__Information__Name__lastName p {
           font-size: 14px;
           letter-spacing: 0.08rem;
@@ -1230,9 +1233,9 @@ body {
       .Profile__Box__Top__Information__BasicInfo {
         margin-bottom: 2rem; }
         .Profile__Box__Top__Information__BasicInfo__Box {
-          background: #c4c4c4;
+          background: #e8e8e8;
           height: 4rem;
-          padding: 0.3rem;
+          padding: 0.7rem;
           width: 100%;
           letter-spacing: 0.03rem;
           border: none;
@@ -1948,12 +1951,14 @@ body {
                   cursor: pointer; }
         .HomePage__Right__MainBody__Notification__Active {
           margin-top: 2rem;
-          border-top: 2px solid lightgrey;
-          padding-top: 2rem; }
+          padding: 1rem;
+          padding-bottom: 0; }
           .HomePage__Right__MainBody__Notification__Active__Person {
             display: flex;
             align-items: center;
-            margin-bottom: 2rem; }
+            margin-bottom: 2rem;
+            border-bottom: 2px solid lightgrey;
+            padding-bottom: 1rem; }
             .HomePage__Right__MainBody__Notification__Active__Person__Avatar {
               position: relative; }
               .HomePage__Right__MainBody__Notification__Active__Person__Avatar__Icon {
@@ -1991,11 +1996,6 @@ body {
             color: #057777;
             font-size: 15px;
             padding: 0.5rem 1rem;
-            background-color: #057777;
-            color: #fff;
-            font-size: 15px;
-            padding: 0.5rem 1rem;
-            border: none;
             border-radius: 4px;
             font-weight: 600;
             height: 4rem;
@@ -2711,7 +2711,11 @@ body {
   .Answered__Left {
     height: 100%;
     width: 100%;
-    flex: 1; }
+    flex: 1;
+    overflow-y: scroll; }
+    .Answered__Left::-webkit-scrollbar {
+      width: 0;
+      background: transparent; }
   .Answered__Right {
     height: 100%;
     width: 100%;
@@ -2733,9 +2737,6 @@ body {
     font-weight: 600;
     color: #000;
     margin-top: 1rem; }
-  .Answered__Newsfeed {
-    height: 100%;
-    width: 100%; }
 
 .flex__div {
   height: 100%;
@@ -2878,23 +2879,16 @@ body {
   .deleteModal__close {
     font-size: 28px !important;
     font-weight: bold !important;
-<<<<<<< HEAD
-    color: #9e1818;
-=======
     color: #bc1b1b;
->>>>>>> sujan
     cursor: pointer; }
 
 @media (min-width: 768px) {
   .deleteModal {
     left: calc(50% - 20rem);
     width: 50rem; }
-<<<<<<< HEAD
-=======
   .SearchModal {
     left: calc(50% - 20rem);
     width: 50rem; }
->>>>>>> sujan
   .editModal {
     left: calc(50% - 20rem);
     width: 57rem; } }

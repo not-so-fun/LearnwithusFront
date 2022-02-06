@@ -17,7 +17,7 @@
       background: $color-white;
       width: 100%;
       height: auto;
-      padding:3rem 1rem;
+      padding: 3rem 1rem;
       display: flex;
       align-items: center;
       border: 2px solid lightgrey;
@@ -29,77 +29,73 @@
         display: flex;
         align-items: center;
         flex-direction: column;
-        &__Rate{
-          width:50rem;
-          background:$color-white;
-          height:50rem;
-          position: fixed; 
-          left: 50%; 
-          top: 50%; 
+        &__Rate {
+          width: 50rem;
+          background: $color-white;
+          height: 50rem;
+          position: fixed;
+          left: 50%;
+          top: 50%;
           transform: translate(-50%, -50%);
-          z-index:300;
-          display:flex;
+          z-index: 300;
+          display: flex;
           align-items: center;
           flex-direction: column;
           justify-content: flex-start;
-          
-          &__Heading{
-            color:$color-black;
-            height:7rem;
-            display:flex;
+
+          &__Heading {
+            color: $color-black;
+            height: 7rem;
+            display: flex;
             justify-content: center;
-            font-size:1.5rem;
+            font-size: 1.5rem;
             align-items: center;
             text-transform: uppercase;
           }
-          &__ProfileData{
-            height:30rem;
-            width:100%;
-            display:flex;
+          &__ProfileData {
+            height: 30rem;
+            width: 100%;
+            display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: space-between;
-            &__Username{
-              height:6rem;
-              font-size:1.5rem;
-              color:$color-black;
-              
+            &__Username {
+              height: 6rem;
+              font-size: 1.5rem;
+              color: $color-black;
             }
-            &__Image{
-              margin-top:2rem;
-              height:20rem;
-              width:20rem;
+            &__Image {
+              margin-top: 2rem;
+              height: 20rem;
+              width: 20rem;
               border-radius: 50%;
             }
-            
           }
-          &__Rating{
-            height:5rem;
-            display:flex;
-            align-items: center;
-            justify-content:center;
-          }
-          &__Buttons{
-
-            height:7rem;
+          &__Rating {
+            height: 5rem;
             display: flex;
             align-items: center;
             justify-content: center;
-            &__Button{
-              height:4rem;
-              width:auto;
+          }
+          &__Buttons {
+            height: 7rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            &__Button {
+              height: 4rem;
+              width: auto;
               padding: 0 3rem;
-              font-size:1.5rem;
-              border:2px solid $color-primary;
-              color:$color-primary;
+              font-size: 1.5rem;
+              border: 2px solid $color-primary;
+              color: $color-primary;
               outline: none;
               border-radius: 5px;
-             transition: all 0.3s ease-in-out;
-              &:hover{
+              transition: all 0.3s ease-in-out;
+              &:hover {
                 cursor: pointer;
-                background:$color-primary;
-                color:$color-white;
-
+                background: $color-primary;
+                color: $color-white;
               }
             }
           }
@@ -107,7 +103,7 @@
 
         &__Button {
           padding: 1rem 2rem;
-          color:#008000;
+          color: #008000;
           border: 2px solid #008000;
           cursor: pointer;
           transition: all 0.4s ease;
@@ -183,7 +179,6 @@
           justify-content: center;
           color: $color-black;
         }
-       
       }
       &__Information {
         flex: 0 0 40%;
@@ -204,7 +199,7 @@
             border: 2px solid $color-secondary;
             outline: none;
             border-radius: 5px;
-            color:$color-secondary;
+            color: $color-secondary;
             background: $color-white;
             &:hover {
               cursor: pointer;
@@ -221,9 +216,9 @@
           &__firstName {
             display: inline-block;
             width: 49%;
-            
+
             &__Box {
-              background: $color-grey-light-2;
+              background: #e8e8e8;
               height: 4rem;
               padding-left: 0.3rem;
               width: 100%;
@@ -231,10 +226,10 @@
               outline: none;
               font-size: 1.6rem;
               letter-spacing: 0.03rem;
-              display:flex;
+              display: flex;
               align-items: center;
               justify-content: flex-start;
-            
+              padding: 0.7rem;
             }
           }
           &__firstName p {
@@ -252,7 +247,7 @@
             width: 49%;
             display: inline-block;
             &__Box {
-              background: $color-grey-light-2;
+              background: #e8e8e8;
               height: 4rem;
               padding: 0.3rem;
               width: 100%;
@@ -260,9 +255,10 @@
               outline: none;
               font-size: 1.6rem;
               letter-spacing: 0.03rem;
-              display:flex;
+              display: flex;
               align-items: center;
               justify-content: flex-start;
+              padding: 0.7rem;
             }
           }
           &__lastName p {
@@ -282,15 +278,15 @@
         &__BasicInfo {
           margin-bottom: 2rem;
           &__Box {
-            background: $color-grey-light-2;
+            background: #e8e8e8;
             height: 4rem;
-            padding: 0.3rem;
+            padding: 0.7rem;
             width: 100%;
             letter-spacing: 0.03rem;
             border: none;
             outline: none;
             font-size: 1.6rem;
-            display:flex;
+            display: flex;
             align-items: center;
             justify-content: flex-start;
           }

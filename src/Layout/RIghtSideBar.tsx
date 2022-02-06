@@ -13,7 +13,6 @@ const RIghtSideBar = () => {
         >
           Having a doubt, ask a question?
         </Link>
-        <Link to="/saved-questions">Saved Questions</Link>
       </div>
       <div className="HomePage__Right__MainBody__Notification__Active">
         <div className="HomePage__Right__MainBody__Notification__Active__Person">
