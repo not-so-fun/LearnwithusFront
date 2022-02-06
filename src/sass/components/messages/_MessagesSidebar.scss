@@ -26,6 +26,10 @@
             overflow:hidden;
             background:grey;
             margin-right:1rem;
+            &__Img{
+                height:6rem;
+                width:6rem;
+            }
         } 
         &__Text{
             display:flex;
