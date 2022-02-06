@@ -13,6 +13,7 @@ import SavedQuestion from "../components/SavedQuestions/SavedQuestion";
 import UpdateQuestions from "../Layout/UpdateQuestions";
 import SearchTutors from "../components/SearchTutors/SearchTutors";
 import Messages from "../Layout/Messages";
+import SocketTry from "../Layout/SocketTry";
 const routes: IRoute[] = [
   {
     path: "/",
@@ -51,7 +52,7 @@ const routes: IRoute[] = [
     path: "/messages/:messageId",
     name: "Message",
     component: Messages,
-    exact: true,
+    exact: false,
     private: true,
     showNav: true,
   },
@@ -125,6 +126,14 @@ const routes: IRoute[] = [
     path: "/saved-questions",
     name: "saved-question",
     component: SavedQuestion,
+    exact: true,
+    private: true,
+    showNav: false,
+  },
+  {
+    path: "/chat",
+    name: "chat",
+    component: SocketTry,
     exact: true,
     private: true,
     showNav: false,

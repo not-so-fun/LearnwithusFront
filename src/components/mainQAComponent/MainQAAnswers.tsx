@@ -97,7 +97,7 @@ const MainQAAnswers: FC<MainQAAnswerInterface> = ({ ans }) => {
       })
       .then((response) => {
         console.log(response.data);
-        setReplies([...replies, response.data]);
+        setReplies(replies.concat(response.data));
         setShowReplies(true);
       })
       .catch((error) => {
@@ -169,6 +169,12 @@ const MainQAAnswers: FC<MainQAAnswerInterface> = ({ ans }) => {
     }
     upVote(false);
   };
+
+  const handleHideReplies=()=>{
+    setShowReplies(false)
+    setReplies([])
+  }
+
 
   return (
     <div key={ans.answer_id} className="MainQA__Answer">
@@ -286,7 +292,7 @@ const MainQAAnswers: FC<MainQAAnswerInterface> = ({ ans }) => {
                 <div>
                   {showReplies ? (
                     <p
-                      onClick={() => setShowReplies(false)}
+                      onClick={handleHideReplies}
                       className="MainQA__Answer__Box__Main__Bottom__Function__Text__RepliesIcons"
                     >
                       Replies

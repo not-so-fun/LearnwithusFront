@@ -2,7 +2,12 @@ import { FC, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import QuestionFeed from "../HomePageComponent/QuestionFeed";
 
-import { SavedQuestionAction } from "../../actions/SavedQuestionsAction";
+import { SavedQuestionPostAction, } from "../../actions/SavedQuestionsAction";
+
+import {SavedQuestionAction} from "../../actions/SavedQuestionsAction"
+
+import { AskedQuestionFeedAction } from "../../actions/MyQuestionAskedAction";
+
 import {
   questionFeedInterface,
   questionFeedListInterface,
@@ -14,6 +19,7 @@ import { RootStateType } from "../../stores";
 import RIghtSideBar from "../../Layout/RightSideBar";
 
 const SavedQuestion: FC = () => {
+
   const dispatch = useDispatch();
   const { token } = useTokenAndId();
 
@@ -21,13 +27,19 @@ const SavedQuestion: FC = () => {
     (state) => state.savedQuestions
   ) as questionsInterface;
 
+
   useEffect(() => {
-    document.title = "Learn with us | Saved Questions";
+    document.title = "Learn with us | Answered";
   }, []);
+
   useEffect(() => {
     dispatch(SavedQuestionAction(token));
   }, [token]);
+
+
+
   return (
+    
     <>
       <div className="Answered">
         {/* <div className="HomePage__Right__MainBody"> */}

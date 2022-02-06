@@ -559,10 +559,10 @@ body {
           position: absolute;
           bottom: 0;
           top: 5rem;
-          height: 10rem;
+          height: 7rem;
           right: -20px;
           border-radius: 5px;
-          width: 10rem;
+          width: 11rem;
           background: white;
           z-index: 10;
           display: flex;
@@ -1238,7 +1238,7 @@ body {
           display: inline-block;
           width: 49%; }
           .Profile__Box__Top__Information__Name__firstName__Box {
-            background: #c4c4c4;
+            background: #e8e8e8;
             height: 4rem;
             padding-left: 0.3rem;
             width: 100%;
@@ -1248,7 +1248,8 @@ body {
             letter-spacing: 0.03rem;
             display: flex;
             align-items: center;
-            justify-content: flex-start; }
+            justify-content: flex-start;
+            padding: 0.7rem; }
         .Profile__Box__Top__Information__Name__firstName p {
           font-size: 14px;
           letter-spacing: 0.08rem;
@@ -1261,7 +1262,7 @@ body {
           width: 49%;
           display: inline-block; }
           .Profile__Box__Top__Information__Name__lastName__Box {
-            background: #c4c4c4;
+            background: #e8e8e8;
             height: 4rem;
             padding: 0.3rem;
             width: 100%;
@@ -1271,7 +1272,8 @@ body {
             letter-spacing: 0.03rem;
             display: flex;
             align-items: center;
-            justify-content: flex-start; }
+            justify-content: flex-start;
+            padding: 0.7rem; }
         .Profile__Box__Top__Information__Name__lastName p {
           font-size: 14px;
           letter-spacing: 0.08rem;
@@ -1285,9 +1287,9 @@ body {
       .Profile__Box__Top__Information__BasicInfo {
         margin-bottom: 2rem; }
         .Profile__Box__Top__Information__BasicInfo__Box {
-          background: #c4c4c4;
+          background: #e8e8e8;
           height: 4rem;
-          padding: 0.3rem;
+          padding: 0.7rem;
           width: 100%;
           letter-spacing: 0.03rem;
           border: none;
@@ -2003,12 +2005,14 @@ body {
                   cursor: pointer; }
         .HomePage__Right__MainBody__Notification__Active {
           margin-top: 2rem;
-          border-top: 2px solid lightgrey;
-          padding-top: 2rem; }
+          padding: 1rem;
+          padding-bottom: 0; }
           .HomePage__Right__MainBody__Notification__Active__Person {
             display: flex;
             align-items: center;
-            margin-bottom: 2rem; }
+            margin-bottom: 2rem;
+            border-bottom: 2px solid lightgrey;
+            padding-bottom: 1rem; }
             .HomePage__Right__MainBody__Notification__Active__Person__Avatar {
               position: relative; }
               .HomePage__Right__MainBody__Notification__Active__Person__Avatar__Icon {
@@ -2761,7 +2765,11 @@ body {
   .Answered__Left {
     height: 100%;
     width: 100%;
-    flex: 1; }
+    flex: 1;
+    overflow-y: scroll; }
+    .Answered__Left::-webkit-scrollbar {
+      width: 0;
+      background: transparent; }
   .Answered__Right {
     height: 100%;
     width: 100%;
@@ -2783,9 +2791,6 @@ body {
     font-weight: 600;
     color: #000;
     margin-top: 1rem; }
-  .Answered__Newsfeed {
-    height: 100%;
-    width: 100%; }
 
 .flex__div {
   height: 100%;
@@ -3046,7 +3051,7 @@ body {
       .Messages__Left__Heading__ProfilePhoto {
         height: 5rem;
         width: 5rem;
-        margin: 0 .4rem;
+        margin: 0 0.4rem;
         background: #494949;
         border-radius: 50%; }
       .Messages__Left__Heading__ProfileName {
@@ -3062,13 +3067,29 @@ body {
       flex-direction: column;
       font-size: 1.5rem;
       padding: 1rem;
-      color: #000; }
+      color: #000;
+      background-color: #f4f4f4; }
+      .Messages__Left__Messages::-webkit-scrollbar {
+        display: none; }
+      .Messages__Left__Messages__Others {
+        display: flex; }
+        .Messages__Left__Messages__Others__Image {
+          display: flex;
+          justify-content: center;
+          align-items: flex-end;
+          margin: 1rem 0.5rem; }
+          .Messages__Left__Messages__Others__Image img {
+            height: 4rem;
+            width: 4rem;
+            border-radius: 50%;
+            background-color: #fff;
+            object-fit: contain; }
       .Messages__Left__Messages__Other {
         background: #c4c4c4;
         height: auto;
         width: auto;
         max-width: 70%;
-        margin: .5rem 0;
+        margin: 0.5rem 0;
         padding: 1rem 2rem;
         border-radius: 2rem;
         align-self: flex-start;
@@ -3082,9 +3103,10 @@ body {
         padding: 1rem 2rem;
         border-radius: 2rem;
         align-self: flex-end;
-        margin: .5rem 0;
+        margin: 0.5rem 0;
         overflow-wrap: break-word;
-        text-align: justify; }
+        text-align: justify;
+        border: 2px solid black; }
     .Messages__Left__InputBox {
       flex: 0 0 5rem;
       display: flex;

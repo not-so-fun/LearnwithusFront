@@ -16,12 +16,15 @@ const MainQAReplies: FC<replyInterface> = ({ reply }) => {
   const [lastState, setLastState] = useState<lastStateInterface>({
     upvote: null,
   });
-  const [totalUpvotes, setTotalUpvote] = useState<number>(
-    parseInt(reply.total_upvotes) - parseInt(reply.total_downvotes)
-  );
+  const [totalUpvotes, setTotalUpvote] = useState<number>(0);
+
+  console.log(totalUpvotes);
 
   useEffect(() => {
     setUpvote(reply?.upvote!);
+    setTotalUpvote(
+      parseInt(reply.total_upvotes) - parseInt(reply.total_downvotes)
+    );
     setLastState({ upvote: reply?.upvote! });
   }, [reply]);
 

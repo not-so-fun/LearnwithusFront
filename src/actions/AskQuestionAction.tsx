@@ -42,6 +42,7 @@ export const AskQuestionAction =
         }
       )
       .then((response) => {
+        console.log(response.data)
         dispatch({ type: ASK_QUESTION_SUCCESS, message: response.data });
         setTimeout(()=>{
           // console.log("Removed")

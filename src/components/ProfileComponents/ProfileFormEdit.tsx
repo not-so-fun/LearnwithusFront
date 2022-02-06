@@ -68,7 +68,7 @@ const ProfileFormEdit: FC<ProfileFormInterface> = ({ profile_data }) => {
         <h4>Solukhumbu</h4>
         </div> 
       </div>
-      <div className="Profile__Box__Top__Information__BasicInfo">
+      {/* <div className="Profile__Box__Top__Information__BasicInfo">
         <p>Interest</p>
         <div  className="Profile__Box__Top__Information__BasicInfo__Box">
           <h4>Web Development</h4>
@@ -79,7 +79,7 @@ const ProfileFormEdit: FC<ProfileFormInterface> = ({ profile_data }) => {
         <div  className="Profile__Box__Top__Information__BasicInfo__Box">
           <h4>Front and Back End</h4>
         </div>
-      </div>
+      </div> */}
       <div className="Profile__Box__Top__Information__Buttons">
           <button onClick={onSubmit} className="Profile__Box__Top__Information__Buttons__Button"><h3>Edit</h3></button>
       </div>

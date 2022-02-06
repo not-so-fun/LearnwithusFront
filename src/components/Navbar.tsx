@@ -11,6 +11,7 @@ import { AiFillHome } from "react-icons/ai";
 import { FiLogOut } from "react-icons/fi";
 import NavbarShowMore from "./NavbarComponent/NavbarShowMore";
 import { IoCreate } from "react-icons/io5";
+import { BsFillChatFill } from "react-icons/bs";
 
 type NotificaitonState = {
   show: boolean;
@@ -39,11 +40,11 @@ const Navbar: FC = () => {
     history.push("/login");
     window.location.reload();
   };
-  const Dropdown:FC= (props) => {
-    const dropdownmenu  = useRef <HTMLDivElement>(null);
+  const Dropdown: FC = (props) => {
+    const dropdownmenu = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
-      function handleOutsideClick (event: any) {
+      function handleOutsideClick(event: any) {
         if (
           dropdownmenu.current &&
           !dropdownmenu.current.contains(event.target)
@@ -52,7 +53,6 @@ const Navbar: FC = () => {
             show: !showNotification.show,
             showProfile: false,
           });
-
         }
       }
 
@@ -84,11 +84,19 @@ const Navbar: FC = () => {
               className="Navbar__Links__Create"
             />
 
+
+<BsFillChatFill
+              onClick={() => history.push("/messages")}
+              style={{ fontSize: 25, marginLeft: 20, cursor: "pointer" }}
+              className="Navbar__Links__Exit"
+            />
+
             <FiLogOut
               onClick={handleLogout}
               style={{ fontSize: 25, marginLeft: 20, cursor: "pointer" }}
               className="Navbar__Links__Exit"
             />
+
 
             <div className="Navbar__Links__content">
               <div className="Navbar__Links__content__Icon">
@@ -103,13 +111,11 @@ const Navbar: FC = () => {
                   }}
                 />
                 <div className="Navbar__Links__content__Notification">
-                  {
-                  showNotification.show 
-                  &&
-                  <Dropdown>
-                    <Notification />
-                  </Dropdown>
-                   }
+                  {showNotification.show && (
+                    <Dropdown>
+                      <Notification />
+                    </Dropdown>
+                  )}
                 </div>
               </div>
               <div className="Navbar__Links__Content">
