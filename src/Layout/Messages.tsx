@@ -11,6 +11,7 @@ import {ChatRoomAction} from "../actions/ChatRoomAction";
 
 import { useDispatch } from 'react-redux';
 
+  
 interface oneMessageInterface {
   chat_room_id: String;
   message: String;
@@ -27,9 +28,12 @@ const Messages: FC<RouteComponentProps<any>> = ({ match }) => {
   const [messagesState, setMessagesState] = useState<messagesInterface>({
     messages: null,
   });
+  const dispatch = useDispatch();
 
-  const { user_id, token } = useTokenAndId();
-
+  const { token, user_id } = useTokenAndId();
+  useEffect(()=>{
+    dispatch(ChatRoomAction(token));
+  },[token])
   useEffect(() => {
     axios
       .get(`/chat/messages/${match.params.messageId}`, {
@@ -86,12 +90,13 @@ const Messages: FC<RouteComponentProps<any>> = ({ match }) => {
         <div className="Messages__Left__Messages">
           {messagesState &&
             messagesState.messages != null &&
-            messagesState.messages.map((message: oneMessageInterface) => (
+            messagesState.messages.map((message: oneMessageInterface, index, array) => (
               <>
-              {message.user_id !== user_id ? 
-              <div >
-                My
-              </div>
+              {message.user_id === user_id ? 
+              <>
+         
+               <MessageMe />
+              </>
               :
               <div key={message?.message_id}  className="Messages__Left__Messages__Others">
               <div className="Messages__Left__Messages__Others__Image">
@@ -108,11 +113,6 @@ const Messages: FC<RouteComponentProps<any>> = ({ match }) => {
             </div>
               
             }
-               
-
-
-
-
               </>
             ))}
         </div>
