@@ -7,17 +7,18 @@ import {
 import { Dispatch } from "redux";
 import { RootDispatchType } from "../stores";
 
-export const GetMessagesAction =
-  (token: string, message_id: string) => (dispatch: Dispatch<RootDispatchType>) => {
+export const MessagesAction =
+  (token: string, chat_room_id: string) => (dispatch: Dispatch<RootDispatchType>) => {
     dispatch({ type: MESSAGES_STARTED });
 
     axios
-      .get(`/chat/messages/${message_id}`, {
+      .get(`/chat/messages/${chat_room_id}`, {
         headers: {
           "x-auth-token": token,
         },
       })
       .then((response) => {
+        console.log(response.data)
        dispatch({type:MESSAGES_SUCCESS, messages: response.data});
       })
       .catch((error) => {
