@@ -9,16 +9,18 @@ import { IoMdSend } from "react-icons/io";
 
 import {ChatRoomAction} from "../actions/ChatRoomAction";
 
-import { useDispatch } from 'react-redux';
-
-  
-interface oneMessageInterface {
+import { useDispatch, useSelector} from 'react-redux';
+import { GetMessagesAction } from "../actions/MessagesAction";
+import { RootStateType } from "../stores";
+import {MessagesInterface} from "../reducers/MessagesReducer"; 
+export interface oneMessageInterface {
   chat_room_id: String;
   message: String;
   message_id: string;
   user_id: String;
   created_at: String;
 }
+
 
 interface messagesInterface {
   messages: [oneMessageInterface] | null;
@@ -28,30 +30,21 @@ interface messageInterface {
 }
 
 const MessagesChatroom: FC<RouteComponentProps<any>> = ({ match }) => {
-  const [messagesState, setMessagesState] = useState<messagesInterface>({
-    messages: null,
-  });
+  
   const [text, setText] = useState("");
   const dispatch = useDispatch();
+  const { loading, messages,error } =
+  useSelector<RootStateType>(
+    (state) => state.messages
+  ) as MessagesInterface;
 
   const { token, user_id } = useTokenAndId();
   useEffect(()=>{
     dispatch(ChatRoomAction(token));
   },[token]);
   useEffect(() => {
-    axios
-      .get(`/chat/messages/${match.params.messageId}`, {
-        headers: {
-          "x-auth-token": token,
-        },
-      })
-      .then((response) => {
-        console.log(response.data);
-        setMessagesState({ ...messagesState, messages: response.data });
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    dispatch(GetMessagesAction(token, match.params.messageId));
+   
   }, [token, match]);
 
   const MessageOther: FC<messageInterface>  = ({message}) => {
@@ -90,9 +83,9 @@ const MessagesChatroom: FC<RouteComponentProps<any>> = ({ match }) => {
           </Link>
         </div>
         <div className="Messages__Left__Messages">
-          {messagesState &&
-            messagesState.messages != null &&
-            messagesState.messages.map((message: oneMessageInterface, index, array) => (
+          {messages
+           &&
+            messages.map((message: oneMessageInterface, index, array) => (
               <>
               {message.user_id === user_id ? 
               <>

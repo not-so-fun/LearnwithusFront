@@ -22,7 +22,8 @@ import {QuestionAskedFeedReducer} from "./reducers/MyQuestionAskedReducer";
 import { SavedQuestionReducer } from "./reducers/SavedQuestionsReducer";
 import { UpdateQuestionReducer} from "./reducers/UpdateQuestionReducer";
 import {SearchTutorReducer} from "./reducers/searchTutorsReducer";
-import {ChatRoomReducer} from "./reducers/ChatRoom"
+import {ChatRoomReducer} from "./reducers/ChatRoom";
+import {MessagesReducer} from "./reducers/MessagesReducer";
 
 const rootReducer = combineReducers({
   userInfo: LoginReducer,
@@ -46,7 +47,8 @@ const rootReducer = combineReducers({
   savedQuestions: SavedQuestionReducer,
   updateQuestion:UpdateQuestionReducer,
   tutor: SearchTutorReducer,
-  chatRoom:ChatRoomReducer
+  chatRoom:ChatRoomReducer,
+  messages: MessagesReducer
 });
 
 const store = createStore(
