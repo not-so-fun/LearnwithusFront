@@ -12,7 +12,7 @@ import {ChatRoomAction} from "../actions/ChatRoomAction";
 import { useDispatch } from 'react-redux';
 
   
-interface oneMessageInterface {
+export interface oneMessageInterface {
   chat_room_id: String;
   message: String;
   message_id: string;
