@@ -3091,6 +3091,7 @@ body {
           margin: auto;
           color: #494949; }
       .Messages__Empty__Box__Heading {
+        margin: 1rem 0;
         color: #000; }
   .Messages__Left {
     flex: 1;

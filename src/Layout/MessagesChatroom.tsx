@@ -1,5 +1,5 @@
 import React, { useEffect, useState, FC } from "react";
-import RightSideBar from "./RightSideBar";
+
 import MessagesSidebar from "../components/MessagesComponent/MessagesSidebar";
 import useTokenAndId from "../components/ReusableLogicComponents/useTokenAndId";
 import { Link } from "react-router-dom";
@@ -23,6 +23,9 @@ interface oneMessageInterface {
 interface messagesInterface {
   messages: [oneMessageInterface] | null;
 }
+interface messageInterface {
+  message:oneMessageInterface;
+}
 
 const MessagesChatroom: FC<RouteComponentProps<any>> = ({ match }) => {
   const [messagesState, setMessagesState] = useState<messagesInterface>({
@@ -34,7 +37,7 @@ const MessagesChatroom: FC<RouteComponentProps<any>> = ({ match }) => {
   const { token, user_id } = useTokenAndId();
   useEffect(()=>{
     dispatch(ChatRoomAction(token));
-  },[token])
+  },[token]);
   useEffect(() => {
     axios
       .get(`/chat/messages/${match.params.messageId}`, {
@@ -51,25 +54,23 @@ const MessagesChatroom: FC<RouteComponentProps<any>> = ({ match }) => {
       });
   }, [token, match]);
 
-  const MessageOther = () => {
+  const MessageOther: FC<messageInterface>  = ({message}) => {
     return (
       <>
         <div className="Messages__Left__Messages__Other">
           <p>
-            hello how are you I am fine thank you how are you how are you how
-            are you how are you how are you
+            {message.message}
           </p>
         </div>
       </>
     );
   };
-  const MessageMe = () => {
+  const MessageMe: FC<messageInterface>  = ({message}) => {
     return (
       <>
         <div className="Messages__Left__Messages__Me">
           <p>
-            hello how are you I am fine thank you how are you how are you how
-            are you how are you how are you
+          {message.message}
           </p>
         </div>
       </>
@@ -96,10 +97,10 @@ const MessagesChatroom: FC<RouteComponentProps<any>> = ({ match }) => {
               {message.user_id === user_id ? 
               <>
          
-               <MessageMe />
+               <MessageMe key={message.message_id} message={message}/>
               </>
               :
-                <MessageOther  />
+                <MessageOther key={message.message_id} message={message}/>
             }
               </>
             ))}
