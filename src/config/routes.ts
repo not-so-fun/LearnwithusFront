@@ -12,8 +12,9 @@ import Answered from "../Layout/Answered";
 import SavedQuestion from "../components/SavedQuestions/SavedQuestion";
 import UpdateQuestions from "../Layout/UpdateQuestions";
 import SearchTutors from "../components/SearchTutors/SearchTutors";
-import Messages from "../Layout/Messages";
+import MessagesChatroom from "../Layout/MessagesChatroom";
 import SocketTry from "../Layout/SocketTry";
+import Messages from "../Layout/Messages";
 const routes: IRoute[] = [
   {
     path: "/",
@@ -50,6 +51,14 @@ const routes: IRoute[] = [
   },
   {
     path: "/messages/:messageId",
+    name: "Message",
+    component: MessagesChatroom,
+    exact: false,
+    private: true,
+    showNav: true,
+  },
+  {
+    path: "/messages",
     name: "Message",
     component: Messages,
     exact: false,

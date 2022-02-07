@@ -1003,6 +1003,7 @@ body {
   justify-content: flex-start;
   align-items: center; }
   .MessagesSidebar__User {
+    text-decoration: none;
     height: 8rem;
     width: 95%;
     font-size: 1.3rem;
@@ -1030,9 +1031,34 @@ body {
       flex: 1; }
       .MessagesSidebar__User__Text__ChatInfo {
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-start;
         align-items: center;
-        width: 100%; }
+        padding: 0 1rem;
+        border-radius: 5px; }
+        .MessagesSidebar__User__Text__ChatInfo:hover {
+          background: #fff;
+          cursor: pointer; }
+        .MessagesSidebar__User__Text__ChatInfo__Image {
+          height: 6rem;
+          width: 6rem;
+          border-radius: 100%;
+          overflow: hidden;
+          background: grey;
+          margin-right: 1rem; }
+          .MessagesSidebar__User__Text__ChatInfo__Image__Img {
+            height: 6rem;
+            width: 6rem; }
+        .MessagesSidebar__User__Text__ChatInfo__Text {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          height: auto;
+          flex: 1; }
+          .MessagesSidebar__User__Text__ChatInfo__Text__ChatInfo {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%; }
 
 .Auth {
   height: 70rem;
@@ -3036,6 +3062,36 @@ body {
   display: flex;
   height: 100%;
   width: 100%; }
+  .Messages__Empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    height: 100%;
+    background: #fff; }
+    .Messages__Empty__Box {
+      height: 50rem;
+      width: 75rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem; }
+      .Messages__Empty__Box__Logos {
+        height: 20rem;
+        width: 20rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 5px solid #494949;
+        border-radius: 50%; }
+        .Messages__Empty__Box__Logos__Logo {
+          height: 11rem;
+          width: 11rem;
+          margin: auto;
+          color: #494949; }
+      .Messages__Empty__Box__Heading {
+        color: #000; }
   .Messages__Left {
     flex: 1;
     height: 100%;
