@@ -1060,6 +1060,22 @@ body {
             align-items: center;
             width: 100%; }
 
+.message {
+  display: flex;
+  justify-content: flex-end; }
+  .message__image {
+    display: flex;
+    align-items: flex-end;
+    margin: 1rem 0.5rem; }
+    .message__image__right {
+      margin-right: 5rem; }
+    .message__image img {
+      height: 4rem;
+      width: 4rem;
+      border-radius: 50%;
+      object-fit: cover;
+      background-color: white; }
+
 .Auth {
   height: 70rem;
   max-width: 120rem;
@@ -3158,7 +3174,7 @@ body {
         width: auto;
         max-width: 70%;
         padding: 1rem 2rem;
-        border-radius: 2rem;
+        border-radius: 1rem;
         align-self: flex-end;
         margin: 0.5rem 0;
         overflow-wrap: break-word;
