@@ -9,7 +9,8 @@ import {
   EDIT_PROFILE_OFF,
   RATE_PROFILE_STARTED,
   RATE_PROFILE_SUCCESS,
-  RATE_PROFILE_ERROR
+  RATE_PROFILE_ERROR,
+  CHANGE_PROFILE_APPROACH_STATUS,
 } from "../constants/ProfileConstants";
 import { ProfileActionTypes } from "../types/ProfileActionTypes";
 
@@ -19,8 +20,8 @@ export interface profileUserDataInterface {
   last_name: string;
   username: string;
   image: string;
-  rating:number;
-  approachStatus:string | null;
+  rating: number;
+  approachStatus: string | null;
 }
 
 const profileUserData: profileUserDataInterface = {
@@ -29,28 +30,30 @@ const profileUserData: profileUserDataInterface = {
   image: "",
   user_id: "....",
   username: "....",
-  rating:0,
-  approachStatus: null
+  rating: 0,
+  approachStatus: null,
 };
 
 export interface profileDataInterface {
   loading: boolean;
   profile_data: profileUserDataInterface;
   error: string;
-  imageUploading:boolean;
-  profileForm:boolean;
-  rating:boolean;
-  ratingError:string;
+  imageUploading: boolean;
+  profileForm: boolean;
+  rating: boolean;
+  ratingError: string;
+  approachStatus: null | "pending" | "accepted";
 }
 
 const profileDataState = {
   loading: false,
   profile_data: profileUserData,
   error: "",
-  imageUploading:false,
-  profileForm:false,
-  rating:false,
-  ratingError:""
+  imageUploading: false,
+  profileForm: false,
+  rating: false,
+  ratingError: "",
+  approachStatus: null,
 };
 
 export const ProfileReducer = (
@@ -61,26 +64,33 @@ export const ProfileReducer = (
     case PROFILE_DATA_LOADING:
       return { ...state, loading: true };
     case PROFILE_DATA_SUCCESS:
-      return { ...state,loading:false, profile_data: action.profile_data, imageUploading:false };
+      return {
+        ...state,
+        loading: false,
+        profile_data: action.profile_data,
+        approachStatus: action.profile_data?.approachStatus,
+        imageUploading: false,
+      };
     case PROFILE_DATA_ERROR:
-      return { ...state,loading:false, error: action.error };
+      return { ...state, loading: false, error: action.error };
     case RESET_USER_INFO:
-      return {...state,profile_data:action.reset_info}
+      return { ...state, profile_data: action.reset_info };
     case START_IMAGE_UPLOAD:
-      return {...state, imageUploading:true}
+      return { ...state, imageUploading: true };
     case CHANGE_IMAGE:
-      return {...state,profile_data:action.image, imageUploading:false}
+      return { ...state, profile_data: action.image, imageUploading: false };
     case EDIT_PROFILE_ON:
-      return {...state,profileForm:true}
+      return { ...state, profileForm: true };
     case EDIT_PROFILE_OFF:
-      return {...state, profileForm:false}
+      return { ...state, profileForm: false };
     case RATE_PROFILE_STARTED:
-      return {...state, rating:true}
+      return { ...state, rating: true };
     case RATE_PROFILE_SUCCESS:
-      return {...state,rating:false}
-    
+      return { ...state, rating: false };
+    case CHANGE_PROFILE_APPROACH_STATUS:
+      return { ...state, approachStatus: action.status };
     case RATE_PROFILE_ERROR:
-      return {...state, rating:false, ratingError: action.ratingError} 
+      return { ...state, rating: false, ratingError: action.ratingError };
 
     default:
       return { ...state };

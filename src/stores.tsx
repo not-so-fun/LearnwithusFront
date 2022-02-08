@@ -7,6 +7,7 @@ import { ProfileReducer } from "./reducers/ProfileReducer";
 import { ForgotPassowrdReducer } from "./reducers/ForgotPasswordReducer";
 import { ResetPassowrdReducer } from "./reducers/ResetPasswordReducer";
 import { AskQuestionReducer } from "./reducers/AskQuestionReducer";
+import { ApproachReducer } from "./reducers/ApproachReducer";
 import { ExpertiseReducer } from "./reducers/ExpertiseReducer";
 import { TopicReducer } from "./reducers/TopicReducer";
 import { SubTopicReducer } from "./reducers/SubTopicReducer";
@@ -50,6 +51,7 @@ const rootReducer = combineReducers({
   tutor: SearchTutorReducer,
   chatRoom:ChatRoomReducer,
   messages: MessagesReducer,
+  approaches:ApproachReducer,
   Notification:NotificationReducer 
 });
 

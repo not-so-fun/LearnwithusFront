@@ -4,6 +4,7 @@ import {
   PROFILE_DATA_ERROR,
   RESET_USER_INFO,
   CHANGE_IMAGE,
+  CHANGE_PROFILE_APPROACH_STATUS,
   START_IMAGE_UPLOAD,
   IMAGE_UPLOAD_SUCCESS,
   EDIT_PROFILE_ON,
@@ -59,7 +60,10 @@ interface editProfileOff{
   type:typeof EDIT_PROFILE_OFF;
 }
 
-
+interface editProfileApproachStatus{
+  type:typeof CHANGE_PROFILE_APPROACH_STATUS;
+  status:null|"pending"|"accepted"
+}
 export type ProfileActionTypes =
   | profileDataLoading
   | profileDataSuccess
@@ -72,4 +76,5 @@ export type ProfileActionTypes =
   |editProfileOff
   |ratingLoading
   |ratingSuccess
+  |editProfileApproachStatus
   |ratingError;

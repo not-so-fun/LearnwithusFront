@@ -60,25 +60,6 @@ export const rateUserAction =
         });
       });
   };
-export const ApproachAction =
-  (user_id: string, token: string) =>
-  (dispatch: Dispatch<RootDispatchType>) => {
-    axios
-      .post(
-        `/notifications/approach`,
-        { notified_to: user_id },
-        {
-          headers: {
-            "x-auth-token": token,
-          },
-        }
-      )
-      .then((response) => {})
-      .catch((error) => {
-        // dispatch({ type: RATE_PROFILE_ERROR, ratingError: error.response.data });
-      });
-  };
-
 export const GetNotificationAction =
   (token: string) => (dispatch: Dispatch<RootDispatchType>) => {
    
