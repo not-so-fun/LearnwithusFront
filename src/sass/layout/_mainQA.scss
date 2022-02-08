@@ -264,7 +264,7 @@
 
   &__Answers {
     background: white;
-    height: 725px;
+    height:auto;
     width: 100%;
     overflow: scroll;
     display: flex;
@@ -279,14 +279,18 @@
     width: 100%;
   }
   &__OneAnswer {
-    height: 363px;
+    height: auto;
     width: 100%;
   }
   &__Replies {
     height: auto;
     width: 100%;
+   
 
     &__Replys {
+      &:first-child{
+        border-top: 2px solid $color-grey-light-2;
+      }
       &:not(:last-child) {
         border-bottom: 2px solid $color-grey-light-2;
       }
@@ -303,7 +307,7 @@
     border: 1px solid $color-grey-light-2;
   }
   &__Answer {
-    height: 100%;
+    height: auto;
     width: 100%;
     padding: 3rem;
     border-bottom: 2px solid $color-grey-light-2;
@@ -480,6 +484,12 @@
           justify-content: space-between;
           height: 7rem;
           width: 100%;
+          &__Left{
+            width:50%;
+            height:100%;
+            display:flex;
+            align-items: center;
+          }
           &__Aligning {
             display: flex;
           }

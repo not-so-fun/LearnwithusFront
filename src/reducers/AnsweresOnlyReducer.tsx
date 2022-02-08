@@ -4,6 +4,9 @@ import {
   ANSWERS_LOAD_ERROR,
   ANSWERS_ADD_START,
   ANSWERS_ADD_ERROR,
+  ANSWERS_DELETE_START,
+  ANSWERS_DELETE_SUCCESS,
+  ANSWERS_DELETE_ERROR
 } from "../constants/OnlyAnswersContants";
 
 import { AnswersOnlyTypes } from "../types/AnswersOnlyTypes";
@@ -24,6 +27,7 @@ export interface answersInterface {
   loading: boolean;
   moreAnswerLoading: boolean;
   answers: answerInterface[];
+  deleteStart:boolean;
   error?: string;
 }
 
@@ -31,6 +35,7 @@ const answeresState: answersInterface = {
   loading: false,
   moreAnswerLoading: false,
   answers: [],
+  deleteStart:false,
   error: "",
 };
 
@@ -68,6 +73,24 @@ export const AnswersOnlyReducer = (
         moreAnswerLoading: false,
         error: action.error,
       };
+    case ANSWERS_DELETE_START:
+      return{
+        ...state,
+        deleteStart: true
+      }
+    case ANSWERS_DELETE_SUCCESS:
+      return{
+        ...state,
+        deleteStart:false,
+        answers: state.answers.filter(ans => ans.answer_id != action.answer_id)
+      }
+      case ANSWERS_DELETE_ERROR:
+        return {
+          ...state,
+          deleteStart: false,
+          error: action.error,
+        };
+    
     default:
       return { ...state };
   }

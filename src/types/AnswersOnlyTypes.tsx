@@ -4,6 +4,9 @@ import {
   ANSWERS_LOAD_ERROR,
   ANSWERS_ADD_START,
   ANSWERS_ADD_ERROR,
+  ANSWERS_DELETE_START,
+  ANSWERS_DELETE_SUCCESS,
+  ANSWERS_DELETE_ERROR
 } from "../constants/OnlyAnswersContants";
 import { answerInterface } from "../reducers/AnsweresOnlyReducer";
 
@@ -19,7 +22,18 @@ interface answeresOnlySuccess {
   answers: answerInterface[];
 }
 
+interface answersDeleteStart{
+  type:typeof ANSWERS_DELETE_START;
+}
+interface answersDeleteSuccess {
+  type:typeof ANSWERS_DELETE_SUCCESS;
+  answer_id:string;
 
+}
+interface answersDeleteError{
+  type:typeof ANSWERS_DELETE_ERROR;
+  error:string;
+}
 interface answersOnlyError {
   type: typeof ANSWERS_LOAD_ERROR;
   error: string;
@@ -34,4 +48,7 @@ export type AnswersOnlyTypes =
   | answeresOnlySuccess
   | answersOnlyError
   |answersAddedStarted 
-  |answersAddError ;
+  |answersAddError
+  |answersDeleteStart
+  |answersDeleteSuccess
+  |answersDeleteError ;

@@ -1325,6 +1325,22 @@ body {
           font-weight: 500;
           letter-spacing: 0.03rem;
           color: #000; }
+      .Profile__Box__Top__Information__Approach {
+        height: 5rem;
+        width: 100%;
+        display: flex;
+        align-items: center; }
+        .Profile__Box__Top__Information__Approach__Button {
+          height: 4rem;
+          width: auto;
+          padding: 0 2rem;
+          font-size: 1.6rem;
+          background: #057777;
+          border: none;
+          outline: none;
+          border-radius: 5px; }
+          .Profile__Box__Top__Information__Approach__Button:hover {
+            cursor: pointer; }
       .Profile__Box__Top__Information__BasicInfo {
         margin-bottom: 2rem; }
         .Profile__Box__Top__Information__BasicInfo__Box {
@@ -2422,7 +2438,7 @@ body {
     font-weight: 600; }
   .MainQA__Answers {
     background: white;
-    height: 725px;
+    height: auto;
     width: 100%;
     overflow: scroll;
     display: flex;
@@ -2434,11 +2450,13 @@ body {
     height: 0px;
     width: 100%; }
   .MainQA__OneAnswer {
-    height: 363px;
+    height: auto;
     width: 100%; }
   .MainQA__Replies {
     height: auto;
     width: 100%; }
+    .MainQA__Replies__Replys:first-child {
+      border-top: 2px solid #c4c4c4; }
     .MainQA__Replies__Replys:not(:last-child) {
       border-bottom: 2px solid #c4c4c4; }
     .MainQA__Replies__Reply {
@@ -2450,7 +2468,7 @@ body {
     height: 2px;
     border: 1px solid #c4c4c4; }
   .MainQA__Answer {
-    height: 100%;
+    height: auto;
     width: 100%;
     padding: 3rem;
     border-bottom: 2px solid #c4c4c4; }
@@ -2583,6 +2601,11 @@ body {
           justify-content: space-between;
           height: 7rem;
           width: 100%; }
+          .MainQA__Answer__Box__Main__Bottom__Left {
+            width: 50%;
+            height: 100%;
+            display: flex;
+            align-items: center; }
           .MainQA__Answer__Box__Main__Bottom__Aligning {
             display: flex; }
           .MainQA__Answer__Box__Main__Bottom__Function {

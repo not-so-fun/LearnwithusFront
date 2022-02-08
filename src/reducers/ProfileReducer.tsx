@@ -20,6 +20,7 @@ export interface profileUserDataInterface {
   username: string;
   image: string;
   rating:number;
+  approachStatus:string | null;
 }
 
 const profileUserData: profileUserDataInterface = {
@@ -28,7 +29,8 @@ const profileUserData: profileUserDataInterface = {
   image: "",
   user_id: "....",
   username: "....",
-  rating:0
+  rating:0,
+  approachStatus: null
 };
 
 export interface profileDataInterface {
@@ -76,6 +78,7 @@ export const ProfileReducer = (
       return {...state, rating:true}
     case RATE_PROFILE_SUCCESS:
       return {...state,rating:false}
+    
     case RATE_PROFILE_ERROR:
       return {...state, rating:false, ratingError: action.ratingError} 
 

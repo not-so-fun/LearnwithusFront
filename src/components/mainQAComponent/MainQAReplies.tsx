@@ -1,11 +1,12 @@
 import React, { FC, useEffect, useState } from "react";
-import { AiOutlineCaretDown, AiOutlineCaretUp } from "react-icons/ai";
+import { AiOutlineCaretDown, AiOutlineCaretUp,AiOutlineShareAlt,AiOutlineDelete } from "react-icons/ai";
 import axios from "../../axios";
 import useTokenAndId from "../ReusableLogicComponents/useTokenAndId";
 import { MainRepliesInterface } from "./MainQAAnswers";
 import { lastStateInterface } from "./MainQAAnswers";
 import { Markup } from "interweave";
-
+import { MdReportProblem } from "react-icons/md";
+import DeleteReplyModal from "../Modals/DeleteReplyModal";
 interface replyInterface {
   reply: MainRepliesInterface;
 }
@@ -17,9 +18,10 @@ const MainQAReplies: FC<replyInterface> = ({ reply }) => {
     upvote: null,
   });
   const [totalUpvotes, setTotalUpvote] = useState<number>(0);
-
-  console.log(totalUpvotes);
-
+  const [showModal, setShowModal] = useState<boolean>(false);
+  const handleModal = () => {
+    setShowModal((prev) => !prev);
+  };
   useEffect(() => {
     setUpvote(reply?.upvote!);
     setTotalUpvote(
@@ -152,7 +154,8 @@ const MainQAReplies: FC<replyInterface> = ({ reply }) => {
                 the same old thing. I wish you Good Luck!
               </p>
             </div>
-            {/* <div className="MainQA__Answer__Box__Main__Bottom">
+            <div className="MainQA__Answer__Box__Main__Bottom">
+              <div className="MainQA__Answer__Box__Main__Bottom__Left">
               <div className="MainQA__Answer__Box__Main__Bottom__Function">
                 <div className="MainQA__Answer__Box__Main__Bottom__Function__Logo">
                   <AiOutlineShareAlt className="MainQA__Answer__Box__Main__Bottom__Function__Logo__Logo" />
@@ -163,14 +166,28 @@ const MainQAReplies: FC<replyInterface> = ({ reply }) => {
               </div>
               <div className="MainQA__Answer__Box__Main__Bottom__Function">
                 <div className="MainQA__Answer__Box__Main__Bottom__Function__Logo">
+                  <AiOutlineDelete className="MainQA__Answer__Box__Main__Bottom__Function__Logo__Logo" />
+                </div>
+                {showModal && (
+                  <DeleteReplyModal reply_id={reply.reply_id} modalHandler={handleModal}/>
+                )}
+                <p className="MainQA__Answer__Box__Main__Bottom__Function__Text" onClick={handleModal}>
+                  Delete
+                </p>
+              </div>
+             
+              <div className="MainQA__Answer__Box__Main__Bottom__Function">
+                <div className="MainQA__Answer__Box__Main__Bottom__Function__Logo">
                   <MdReportProblem className="MainQA__Answer__Box__Main__Bottom__Function__Logo__Logo" />
                 </div>
                 <p className="MainQA__Answer__Box__Main__Bottom__Function__Text">
                   Report
                 </p>
               </div>
-            </div> */}
+              </div>
+            </div>
           </div>
+
         </div>
       </div>
     </div>

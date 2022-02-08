@@ -10,9 +10,11 @@ type ShowState = {
   show: boolean;
 };
 type PropState = {
+  reply_id:string;
   modalHandler: () => void;
 };
 type ClickProp = {
+  
   onClick: () => void;
 };
 
@@ -42,7 +44,7 @@ const ModalOverlay: React.FC<ClickProp> = ({ onClick }) => {
   );
 };
 
-const DeleteReplyModal: React.FC<PropState> = ({ modalHandler }) => {
+const DeleteReplyModal: React.FC<PropState> = ({ reply_id, modalHandler }) => {
   return (
     <React.Fragment>
       {createPortal(

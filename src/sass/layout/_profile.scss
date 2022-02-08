@@ -186,6 +186,7 @@
         text-align: left;
         padding: 2rem;
         color: $color-black;
+        
         &__Buttons {
           height: 4rem;
           width: 100%;
@@ -274,7 +275,27 @@
             color: $color-black;
           }
         }
+        &__Approach{
+          height:5rem;
+          width:100%;
+          display: flex;
+          align-items: center;
 
+
+          &__Button{
+            height:4rem;
+            width:auto;
+            padding:0 2rem;
+            font-size:1.6rem;
+            background:$color-primary;
+            border:none;
+            outline:none;
+            border-radius: 5px;
+            &:hover{
+              cursor:pointer;
+            }
+          }
+        }
         &__BasicInfo {
           margin-bottom: 2rem;
           &__Box {

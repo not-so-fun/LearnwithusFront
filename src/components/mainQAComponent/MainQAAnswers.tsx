@@ -4,6 +4,7 @@ import {
   AiOutlineCaretDown,
   AiOutlineCaretUp,
   AiOutlineShareAlt,
+  AiOutlineDelete
 } from "react-icons/ai";
 import { BiCaretUpCircle, BiCaretDownCircle } from "react-icons/bi";
 import { BsFillReplyAllFill } from "react-icons/bs";
@@ -14,7 +15,6 @@ import axios from "../../axios";
 import MainQAReplies from "./MainQAReplies";
 import { Markup } from "interweave";
 import UploadImageModal from "../ReusableUIComponents/ModalImageUpload";
-import { AiOutlineDelete } from "react-icons/ai";
 import DeleteAnswerModal from "../Modals/DeleteAnswerModal";
 
 interface MainQAAnswerInterface {
@@ -262,7 +262,7 @@ const MainQAAnswers: FC<MainQAAnswerInterface> = ({ ans }) => {
                     <AiOutlineDelete className="QuestionFeed__Bottom__Left__Content__Logo__Logo" />
                   </div>
                   {showModal && (
-                    <DeleteAnswerModal modalHandler={handleModal} />
+                    <DeleteAnswerModal answer_id={ans.answer_id} modalHandler={handleModal} />
                   )}
                   <p
                     className="QuestionFeed__Bottom__Left__Content__Text"
@@ -310,7 +310,19 @@ const MainQAAnswers: FC<MainQAAnswerInterface> = ({ ans }) => {
                 </div>
               </div>
             </div>
-
+            {showReplies && (
+              <div className="MainQA__Replies">
+                {replies &&
+                  replies.map((reply: MainRepliesInterface) => (
+                    <div
+                      key={reply.reply_id}
+                      className="MainQA__Replies__Replys"
+                    >
+                      <MainQAReplies key={reply.reply_id} reply={reply} />
+                    </div>
+                  ))}
+              </div>
+            )}
             {reply && (
               <div>
                 <ReplyTextEditor
@@ -326,20 +338,6 @@ const MainQAAnswers: FC<MainQAAnswerInterface> = ({ ans }) => {
                 >
                   <h3>Reply</h3>
                 </button>
-              </div>
-            )}
-
-            {showReplies && (
-              <div className="MainQA__Replies">
-                {replies &&
-                  replies.map((reply: MainRepliesInterface) => (
-                    <div
-                      key={reply.reply_id}
-                      className="MainQA__Replies__Replys"
-                    >
-                      <MainQAReplies key={reply.reply_id} reply={reply} />
-                    </div>
-                  ))}
               </div>
             )}
           </div>

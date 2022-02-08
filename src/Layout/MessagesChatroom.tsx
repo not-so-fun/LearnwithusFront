@@ -95,7 +95,7 @@ const MessagesChatroom: FC<RouteComponentProps<any>> = ({ match }) => {
     | React.FormEventHandler<HTMLFormElement>
     | undefined = (e) => {
     e.preventDefault();
-
+    setText("");  
     socketOfChat.emit("send_message", {
       chat_room_id: match.params.messageId,
       user_id: user_id,

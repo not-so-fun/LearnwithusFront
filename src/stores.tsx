@@ -24,6 +24,7 @@ import { UpdateQuestionReducer} from "./reducers/UpdateQuestionReducer";
 import {SearchTutorReducer} from "./reducers/searchTutorsReducer";
 import {ChatRoomReducer} from "./reducers/ChatRoom";
 import {MessagesReducer} from "./reducers/MessagesReducer";
+import { NotificationReducer } from "./reducers/NotificationReducer";
 
 const rootReducer = combineReducers({
   userInfo: LoginReducer,
@@ -48,7 +49,8 @@ const rootReducer = combineReducers({
   updateQuestion:UpdateQuestionReducer,
   tutor: SearchTutorReducer,
   chatRoom:ChatRoomReducer,
-  messages: MessagesReducer
+  messages: MessagesReducer,
+  Notification:NotificationReducer 
 });
 
 const store = createStore(

@@ -1,9 +1,37 @@
-import React, { FC } from "react";
+import React, { FC , useState,useEffect} from "react";
 import { Avatar } from "@mui/material";
 import NormalNotification from "./NormalNotification";
 import RequestNotification from "./RequestNotification";
-
+import { GetNotificationAction } from "../../actions/ProfileAction";
+import useTokenAndId from "../ReusableLogicComponents/useTokenAndId";
+import { useDispatch } from "react-redux";
+import {
+  NOTIFICATION_STARTED,
+  NOTIFICATION_SUCCESS,
+  NOTIFICATION_ERROR,
+} from "../../constants/NotificationConstants";
+import axios from "../../axios";
 const Notification: FC = () => {
+  const { token } = useTokenAndId();
+  const dispatch = useDispatch();
+  const [notification, setNotification] = useState([]);
+   useEffect(()=>{
+    axios
+    .get(`/notifications/approach`, {
+      headers: {
+        "x-auth-token": token,
+      },
+    })
+    .then((response) => {
+      console.log(response.data);
+      let noti = notification.concat(response.data);
+       setNotification(noti);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+   },[]);
+   console.log(notification);
   return (
     <div className="HomePage__Right__MainBody__Notification__Box">
       <div className="HomePage__Right__MainBody__Notification__Box__Header">
