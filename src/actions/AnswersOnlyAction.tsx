@@ -25,7 +25,7 @@ export const AnswersOnlyAction =
       })
       .catch((error) => {
         console.log(error);
-        dispatch({type:ANSWERS_LOAD_ERROR,error:error.response.data})
+        dispatch({type:ANSWERS_LOAD_ERROR,error:error})
 
       });
   };
@@ -46,7 +46,7 @@ export const AnswersOnlyAction =
       })
       .catch((error) => {
         console.log(error);
-        dispatch({type:ANSWERS_DELETE_ERROR,error:error.response.data})
+        dispatch({type:ANSWERS_DELETE_ERROR,error:error})
 
       });
   };

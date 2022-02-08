@@ -35,9 +35,13 @@ const Notification: FC = () => {
         <NormalNotification />
       </div> */}
       <div className="HomePage__Right__MainBody__Notification__Box__RequestNotification">
-        {notifications && notifications.map((not)=>{
+        {notifications && notifications.map((not)=>(
+          not.status ==="pending" &&
           <RequestNotification not={not}/>
-        })}
+
+          // (not.status ==="accepted" &&
+          // <NormalNotification not={not}/>)
+        ))}
         
       </div>
     </div>

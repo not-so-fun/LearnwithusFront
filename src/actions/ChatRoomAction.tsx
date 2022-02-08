@@ -22,7 +22,7 @@ export const ChatRoomAction =(token: string) =>
       })
       .catch((error) => {
         console.log(error);
-        dispatch({type:CHATROOM_ERROR,error:error.response.data})
+        dispatch({type:CHATROOM_ERROR,error:error})
 
       });
   };

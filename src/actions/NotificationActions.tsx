@@ -1,9 +1,9 @@
 import { Dispatch } from "redux";
 import {
-    NOTIFICATION_STARTED,
-    NOTIFICATION_SUCCESS,
-    NOTIFICATION_ERROR,
-  } from "../constants/NotificationConstants";
+  NOTIFICATION_STARTED,
+  NOTIFICATION_SUCCESS,
+  NOTIFICATION_ERROR,
+} from "../constants/NotificationConstants";
 
 import axios from "../axios";
 import { RootDispatchType } from "../stores";
@@ -14,15 +14,65 @@ export const GetNotificationAction =
     dispatch({ type: NOTIFICATION_STARTED });
 
     axios
-.get(`/notifications/approach`, {
-  headers: {
-    "x-auth-token": token,
-  },
-})
-.then((response) => {
-  dispatch({type:NOTIFICATION_SUCCESS, notification: response.data});
-})
-.catch((error) => {
-   dispatch({type:NOTIFICATION_ERROR, error:error});
-});
- };
+      .get(`/notifications/approach`, {
+        headers: {
+          "x-auth-token": token,
+        },
+      })
+      .then((response) => {
+        dispatch({ type: NOTIFICATION_SUCCESS, notification: response.data });
+      })
+      .catch((error) => {
+        dispatch({ type: NOTIFICATION_ERROR, error: error });
+      });
+  };
+
+export const AcceptApproachNotificationAction =
+  (token: string, notification_id: string) =>
+  (dispatch: Dispatch<NotificationTypes>) => {
+    // dispatch({ type: NOTIFICATION_STARTED });
+
+    console.log(token);
+    console.log(notification_id);
+
+    axios
+      .post(
+        `/notifications/accept_approach/${notification_id}`,
+        { data: "" },
+        {
+          headers: {
+            "x-auth-token": token,
+          },
+        }
+      )
+      .then((response) => {
+        console.log(response.data);
+        // dispatch({type:NOTIFICATION_SUCCESS, notification: response.data});
+      })
+      .catch((error) => {
+        dispatch({ type: NOTIFICATION_ERROR, error: error });
+      });
+  };
+
+export const DeleteApproachNotificationAction =
+  (token: string, notification_id: string) =>
+  (dispatch: Dispatch<NotificationTypes>) => {
+    // dispatch({ type: NOTIFICATION_STARTED })
+
+    axios
+      .delete(
+        `/notifications/accept_approach/${notification_id}`,
+        {
+          headers: {
+            "x-auth-token": token,
+          },
+        }
+      )
+      .then((response) => {
+        console.log(response.data);
+        // dispatch({type:NOTIFICATION_SUCCESS, notification: response.data});
+      })
+      .catch((error) => {
+        dispatch({ type: NOTIFICATION_ERROR, error: error });
+      });
+  };

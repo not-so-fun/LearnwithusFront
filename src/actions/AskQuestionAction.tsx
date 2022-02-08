@@ -52,7 +52,7 @@ export const AskQuestionAction =
       })
       .catch((error) => {
         // console.log(error.response)
-        dispatch({ type: ASK_QUESTION_ERROR, error: error.response.data });
+        dispatch({ type: ASK_QUESTION_ERROR, error: error });
       });
   };
 
@@ -79,7 +79,7 @@ export const AskQuestionAction =
       })
       .catch((error) => {
         // console.log(error.response)
-        dispatch({ type: DELETE_QUESTION_ERROR, error: error.response.data });
+        dispatch({ type: DELETE_QUESTION_ERROR, error: error });
       });
   };
 
