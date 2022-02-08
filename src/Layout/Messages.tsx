@@ -1,7 +1,5 @@
 import React, { FC, useEffect } from "react";
-
 import MessagesSidebar from "../components/MessagesComponent/MessagesSidebar";
-
 import { RouteComponentProps } from "react-router-dom";
 
 import { FiSend } from "react-icons/fi";
@@ -18,6 +16,7 @@ const Messages: FC<RouteComponentProps<any>> = ({ match }) => {
   useEffect(()=>{
     dispatch(ChatRoomAction(token));
   },[token]);
+  
   return (
     <div className="Messages">
       <div className="Messages__Empty">
@@ -34,6 +33,7 @@ const Messages: FC<RouteComponentProps<any>> = ({ match }) => {
       <div className="Messages__Right">
         <MessagesSidebar />
       </div>
+
     </div>
   );
 };

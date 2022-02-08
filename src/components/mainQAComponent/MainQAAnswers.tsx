@@ -170,11 +170,10 @@ const MainQAAnswers: FC<MainQAAnswerInterface> = ({ ans }) => {
     upVote(false);
   };
 
-  const handleHideReplies=()=>{
-    setShowReplies(false)
-    setReplies([])
-  }
-
+  const handleHideReplies = () => {
+    setShowReplies(false);
+    setReplies([]);
+  };
 
   return (
     <div key={ans.answer_id} className="MainQA__Answer">

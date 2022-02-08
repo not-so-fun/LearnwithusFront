@@ -4,19 +4,25 @@ import useTokenAndId from "./ReusableLogicComponents/useTokenAndId";
 import { RootStateType } from "../stores";
 import { Link, useHistory } from "react-router-dom";
 import { Avatar } from "@mui/material";
-import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import { IoNotificationsSharp } from "react-icons/io5";
 import Notification from "./HomePageComponent/Notification";
 import { AiFillHome } from "react-icons/ai";
 import { FiLogOut } from "react-icons/fi";
-import NavbarShowMore from "./NavbarComponent/NavbarShowMore";
 import { IoCreate } from "react-icons/io5";
+import io from "socket.io-client";
 import { BsFillChatFill } from "react-icons/bs";
-
+import { Socket } from "socket.io-client";
+import { URL } from "../axiosURL";
+const socketUrl = URL + "/notification";
 type NotificaitonState = {
   show: boolean;
   showProfile: boolean;
 };
+interface DefaultEventsMap {
+  [event: string]: (...args: any[]) => void;
+}
+
+let socketOfNotification: Socket<DefaultEventsMap, DefaultEventsMap>;
 
 const Navbar: FC = () => {
   const [showNotification, setShowNotification] = useState<NotificaitonState>({
@@ -34,6 +40,14 @@ const Navbar: FC = () => {
 
   const { user_id, image } = useTokenAndId();
   const history = useHistory();
+
+  useEffect(() => {
+    socketOfNotification = io(socketUrl);
+    socketOfNotification.emit("join_my_noti_room", { user_id: user_id });
+    socketOfNotification.on("notification_received",data=>{
+      console.log(data)
+    })
+  }, [user_id]);
 
   const handleLogout = () => {
     localStorage.clear();
@@ -84,8 +98,7 @@ const Navbar: FC = () => {
               className="Navbar__Links__Create"
             />
 
-
-<BsFillChatFill
+            <BsFillChatFill
               onClick={() => history.push("/messages")}
               style={{ fontSize: 25, marginLeft: 20, cursor: "pointer" }}
               className="Navbar__Links__Exit"
@@ -96,7 +109,6 @@ const Navbar: FC = () => {
               style={{ fontSize: 25, marginLeft: 20, cursor: "pointer" }}
               className="Navbar__Links__Exit"
             />
-
 
             <div className="Navbar__Links__content">
               <div className="Navbar__Links__content__Icon">
