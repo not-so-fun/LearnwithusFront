@@ -2,46 +2,43 @@ import React, { FC , useState,useEffect} from "react";
 import { Avatar } from "@mui/material";
 import NormalNotification from "./NormalNotification";
 import RequestNotification from "./RequestNotification";
-import { GetNotificationAction } from "../../actions/ProfileAction";
+import { GetNotificationAction } from "../../actions/NotificationActions";
 import useTokenAndId from "../ReusableLogicComponents/useTokenAndId";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import {
   NOTIFICATION_STARTED,
   NOTIFICATION_SUCCESS,
   NOTIFICATION_ERROR,
 } from "../../constants/NotificationConstants";
+import {ApproachNotificationInterface, NotificationInterface} from "../../reducers/NotificationReducer";
+import { RootStateType } from "../../stores";
+
 import axios from "../../axios";
 const Notification: FC = () => {
   const { token } = useTokenAndId();
   const dispatch = useDispatch();
-  const [notification, setNotification] = useState([]);
+  const [notification, setNotification] = useState<ApproachNotificationInterface[]>([]) ;
    useEffect(()=>{
-    axios
-    .get(`/notifications/approach`, {
-      headers: {
-        "x-auth-token": token,
-      },
-    })
-    .then((response) => {
-      console.log(response.data);
-      let noti = notification.concat(response.data);
-       setNotification(noti);
-    })
-    .catch((error) => {
-      console.log(error);
-    });
-   },[]);
+    dispatch(GetNotificationAction(token));
+   },[token]);
+   const { loading, notifications ,error} =
+    useSelector<RootStateType>(
+      (state) => state.Notification
+    ) as NotificationInterface;
    console.log(notification);
   return (
     <div className="HomePage__Right__MainBody__Notification__Box">
       <div className="HomePage__Right__MainBody__Notification__Box__Header">
         Notification
       </div>
-      <div className="HomePage__Right__MainBody__Notification__Box__NormalNotification">
+      {/* <div className="HomePage__Right__MainBody__Notification__Box__NormalNotification">
         <NormalNotification />
-      </div>
+      </div> */}
       <div className="HomePage__Right__MainBody__Notification__Box__RequestNotification">
-        <RequestNotification />
+        {notifications && notifications.map((not)=>{
+          <RequestNotification not={not}/>
+        })}
+        
       </div>
     </div>
   );

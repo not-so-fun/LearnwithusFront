@@ -124,9 +124,9 @@ const Navbar: FC = () => {
                 />
                 <div className="Navbar__Links__content__Notification">
                   {showNotification.show && (
-                    <Dropdown>
+                    // <Dropdown>
                       <Notification />
-                    </Dropdown>
+                    // </Dropdown>
                   )}
                 </div>
               </div>
