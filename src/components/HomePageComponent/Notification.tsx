@@ -15,6 +15,9 @@ const Notification: FC = () => {
   const { token } = useTokenAndId();
   const dispatch = useDispatch();
   const [notification, setNotification] = useState([]);
+
+
+
    useEffect(()=>{
     axios
     .get(`/notifications/approach`, {
@@ -23,15 +26,16 @@ const Notification: FC = () => {
       },
     })
     .then((response) => {
-      console.log(response.data);
-      let noti = notification.concat(response.data);
-       setNotification(noti);
+      // let noti = notification.concat(response.data);
+      dispatch({type:NOTIFICATION_SUCCESS,notification:response.data})
+      //  setNotification(noti);
     })
     .catch((error) => {
       console.log(error);
     });
-   },[]);
-   console.log(notification);
+   },[token]);
+
+
   return (
     <div className="HomePage__Right__MainBody__Notification__Box">
       <div className="HomePage__Right__MainBody__Notification__Box__Header">
