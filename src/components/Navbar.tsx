@@ -1,5 +1,6 @@
-import React, { FC, useEffect, useState, useRef } from "react";
-import { useSelector } from "react-redux";
+import React, { FC, useEffect, useState, useRef, useDebugValue } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { CHANGED_NOTIFICATION_NUMBER,SINGLE_NOTIFICATION_SUCCESS } from "../constants/NotificationConstants";
 import useTokenAndId from "./ReusableLogicComponents/useTokenAndId";
 import { RootStateType } from "../stores";
 import { Link, useHistory } from "react-router-dom";
@@ -13,6 +14,8 @@ import io from "socket.io-client";
 import { BsFillChatFill } from "react-icons/bs";
 import { Socket } from "socket.io-client";
 import { URL } from "../axiosURL";
+import axios from "../axios";
+import { NotificationInterface } from "../reducers/NotificationReducer";
 const socketUrl = URL + "/notification";
 type NotificaitonState = {
   show: boolean;
@@ -25,6 +28,10 @@ interface DefaultEventsMap {
 let socketOfNotification: Socket<DefaultEventsMap, DefaultEventsMap>;
 
 const Navbar: FC = () => {
+  const { notificationLength } = useSelector<RootStateType>(
+    (state) => state.Notification
+  ) as NotificationInterface;
+  const dispatch = useDispatch();
   const [showNotification, setShowNotification] = useState<NotificaitonState>({
     show: false,
     showProfile: false,
@@ -38,15 +45,43 @@ const Navbar: FC = () => {
     (state) => state.userInfo
   ) as any;
 
-  const { user_id, image } = useTokenAndId();
+  const { user_id, token, image } = useTokenAndId();
   const history = useHistory();
+
+  useEffect(() => {
+    axios
+      .get("/notifications", {
+        headers: {
+          "x-auth-token": token,
+        },
+      })
+      .then((response) => {
+        console.log(response.data);
+        dispatch({
+          type: CHANGED_NOTIFICATION_NUMBER,
+          length: response.data.length,
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, [token]);
 
   useEffect(() => {
     socketOfNotification = io(socketUrl);
     socketOfNotification.emit("join_my_noti_room", { user_id: user_id });
-    socketOfNotification.on("notification_received",data=>{
-      console.log(data)
-    })
+    socketOfNotification.on("notification_received", (data) => {
+      console.log(data);
+      
+      dispatch({
+        type: CHANGED_NOTIFICATION_NUMBER,
+        length: notificationLength+1,
+      });
+
+
+
+      dispatch({type:SINGLE_NOTIFICATION_SUCCESS,notification:data.notification})
+    });
   }, [user_id]);
 
   const handleLogout = () => {
@@ -54,6 +89,7 @@ const Navbar: FC = () => {
     history.push("/login");
     window.location.reload();
   };
+
   const Dropdown: FC = (props) => {
     const dropdownmenu = useRef<HTMLDivElement>(null);
 
@@ -72,6 +108,7 @@ const Navbar: FC = () => {
 
       document.addEventListener("click", handleOutsideClick);
     }, [dropdownmenu]);
+
     return (
       <div className="Dropdown" ref={dropdownmenu}>
         {props.children}
@@ -122,12 +159,9 @@ const Navbar: FC = () => {
                     });
                   }}
                 />
+                ({notificationLength})
                 <div className="Navbar__Links__content__Notification">
-                  {showNotification.show && (
-                    // <Dropdown>
-                      <Notification />
-                    // </Dropdown>
-                  )}
+                  {showNotification.show && <Notification />}
                 </div>
               </div>
               <div className="Navbar__Links__Content">

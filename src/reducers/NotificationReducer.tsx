@@ -53,7 +53,7 @@ export const NotificationReducer = (
       return {
         ...state,
         loading: false,
-        number:action.length
+        notificationLength:action.length
       };
     case NOTIFICATION_ERROR:
       return {

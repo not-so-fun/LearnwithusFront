@@ -1,4 +1,4 @@
-import React, { FC , useState,useEffect} from "react";
+import React, { FC, useState, useEffect } from "react";
 import { Avatar } from "@mui/material";
 import NormalNotification from "./NormalNotification";
 import RequestNotification from "./RequestNotification";
@@ -17,7 +17,7 @@ import axios from "../../axios";
 const Notification: FC = () => {
   const { token } = useTokenAndId();
   const dispatch = useDispatch();
-  const [notification, setNotification] = useState<ApproachNotificationInterface[]>([]) ;
+
    useEffect(()=>{
     dispatch(GetNotificationAction(token));
    },[token]);
@@ -25,7 +25,8 @@ const Notification: FC = () => {
     useSelector<RootStateType>(
       (state) => state.Notification
     ) as NotificationInterface;
-   console.log(notification);
+
+
   return (
     <div className="HomePage__Right__MainBody__Notification__Box">
       <div className="HomePage__Right__MainBody__Notification__Box__Header">
