@@ -8,7 +8,7 @@ import {
 import { NotificationTypes } from "../types/NotificationTypes";
 export interface ApproachNotificationInterface {
   approachnotification_id: string;
-  notification_type:"answerd"|"replied"|"approach_request"|"approach_accept"
+  notification_type:"answered"|"replied"|"approach_request"|"approach_accept"
   viewed: boolean;
   status: string | null;
   username: string;

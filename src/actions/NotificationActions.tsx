@@ -20,6 +20,7 @@ export const GetNotificationAction =
         },
       })
       .then((response) => {
+        console.log(response.data)
         dispatch({ type: NOTIFICATION_SUCCESS, notification: response.data });
       })
       .catch((error) => {

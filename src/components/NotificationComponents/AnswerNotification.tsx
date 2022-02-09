@@ -10,17 +10,10 @@ interface RequestNotificationInterface {
   not: ApproachNotificationInterface
 }
 
-const RequestNotification: FC<RequestNotificationInterface> = ({not}) => {
+const AnswerNotification: FC<RequestNotificationInterface> = ({not}) => {
   const dispatch = useDispatch();
   const {token} = useTokenAndId();
 
-  const Done = () =>{
-    dispatch(AcceptApproachNotificationAction(token, not.approachnotification_id)); 
-  }
-  const Close =() =>{
-    dispatch(DeleteApproachNotificationAction(token, not.approachnotification_id)); 
-
-  }
   return (
     <div className="HomePage__Right__MainBody__Notification__Box__RequestNotification__Noti">
       <div className="HomePage__Right__MainBody__Notification__Box__RequestNotification__Noti__Left">
@@ -31,19 +24,12 @@ const RequestNotification: FC<RequestNotificationInterface> = ({not}) => {
           className="HomePage__Right__MainBody__Notification__Box__RequestNotification__Noti__Left__Avatar"
         />
         <p className="HomePage__Right__MainBody__Notification__Box__RequestNotification__Noti__Left__Text">
-          {`${not?.username}`} wants to connect with you.
+          {`${not?.username}`} has answered your question.
         </p>
-      </div>
-      <div className="HomePage__Right__MainBody__Notification__Box__RequestNotification__Noti__Right">
-        <div className="HomePage__Right__MainBody__Notification__Box__RequestNotification__Noti__Right__Reject">
-          <CloseIcon className="HomePage__Right__MainBody__Notification__Box__RequestNotification__Noti__Right__Reject__Icon" onClick={Close}/>
-        </div>
-        <div className="HomePage__Right__MainBody__Notification__Box__RequestNotification__Noti__Right__Accept">
-          <DoneIcon className="HomePage__Right__MainBody__Notification__Box__RequestNotification__Noti__Right__Accept__Icon" onClick={Done}/>
-        </div>
       </div>
     </div>
   );
 };
 
-export default RequestNotification;
+export default AnswerNotification;
+

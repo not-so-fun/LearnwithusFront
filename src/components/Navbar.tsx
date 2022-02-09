@@ -1,6 +1,9 @@
 import React, { FC, useEffect, useState, useRef, useDebugValue } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { CHANGED_NOTIFICATION_NUMBER,SINGLE_NOTIFICATION_SUCCESS } from "../constants/NotificationConstants";
+import {
+  CHANGED_NOTIFICATION_NUMBER,
+  SINGLE_NOTIFICATION_SUCCESS,
+} from "../constants/NotificationConstants";
 import useTokenAndId from "./ReusableLogicComponents/useTokenAndId";
 import { RootStateType } from "../stores";
 import { Link, useHistory } from "react-router-dom";
@@ -72,15 +75,16 @@ const Navbar: FC = () => {
     socketOfNotification.emit("join_my_noti_room", { user_id: user_id });
     socketOfNotification.on("notification_received", (data) => {
       console.log(data);
-      
+
       dispatch({
         type: CHANGED_NOTIFICATION_NUMBER,
-        length: notificationLength+1,
+        length: notificationLength + 1,
       });
 
-
-
-      dispatch({type:SINGLE_NOTIFICATION_SUCCESS,notification:data.notification})
+      dispatch({
+        type: SINGLE_NOTIFICATION_SUCCESS,
+        notification: data.notification,
+      });
     });
   }, [user_id]);
 
@@ -90,31 +94,31 @@ const Navbar: FC = () => {
     window.location.reload();
   };
 
-  const Dropdown: FC = (props) => {
-    const dropdownmenu = useRef<HTMLDivElement>(null);
+  // const Dropdown: FC = (props) => {
+  //   const dropdownmenu = useRef<HTMLDivElement>(null);
 
-    useEffect(() => {
-      function handleOutsideClick(event: any) {
-        if (
-          dropdownmenu.current &&
-          !dropdownmenu.current.contains(event.target)
-        ) {
-          setShowNotification({
-            show: !showNotification.show,
-            showProfile: false,
-          });
-        }
-      }
+  // //   useEffect(() => {
+  // //     function handleOutsideClick(event: any) {
+  // //       if (
+  // //         dropdownmenu.current &&
+  // //         !dropdownmenu.current.contains(event.target)
+  // //       ) {
+  // //         setShowNotification({
+  // //           show: !showNotification.show,
+  // //           showProfile: false,
+  // //         });
+  // //       }
+  // //     }
 
-      document.addEventListener("click", handleOutsideClick);
-    }, [dropdownmenu]);
+  // //     document.addEventListener("click", handleOutsideClick);
+  // //   }, [dropdownmenu]);
 
-    return (
-      <div className="Dropdown" ref={dropdownmenu}>
-        {props.children}
-      </div>
-    );
-  };
+  // //   return (
+  // //     <div className="Dropdown" ref={dropdownmenu}>
+  // //       {props.children}
+  // //     </div>
+  // //   );
+  // // };
 
   return (
     <div className="Navbar">
@@ -140,6 +144,7 @@ const Navbar: FC = () => {
               style={{ fontSize: 25, marginLeft: 20, cursor: "pointer" }}
               className="Navbar__Links__Exit"
             />
+
 
             <FiLogOut
               onClick={handleLogout}
