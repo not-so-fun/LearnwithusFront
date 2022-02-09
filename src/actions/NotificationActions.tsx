@@ -36,9 +36,8 @@ export const AcceptApproachNotificationAction =
     console.log(notification_id);
 
     axios
-      .post(
-        `/notifications/accept_approach/${notification_id}`,
-        { data: "" },
+      .get(
+        `/notifications/approach_accept/${notification_id}`,
         {
           headers: {
             "x-auth-token": token,

@@ -8,10 +8,13 @@ import {
 import { NotificationTypes } from "../types/NotificationTypes";
 export interface ApproachNotificationInterface {
   approachnotification_id: string;
+  notification_type:"answerd"|"replied"|"approach_request"|"approach_accept"
   viewed: boolean;
   status: string | null;
   username: string;
   image: string;
+  answer_id:string|null;
+  reply_id:string|null
 }
 export interface NotificationInterface {
   loading: boolean;

@@ -6,11 +6,11 @@ import {ApproachNotificationInterface} from "../../reducers/NotificationReducer"
 import {AcceptApproachNotificationAction, DeleteApproachNotificationAction} from "../../actions/NotificationActions";
 import { useDispatch } from "react-redux";
 import useTokenAndId from "../ReusableLogicComponents/useTokenAndId";
-interface RequestNotification {
+interface RequestNotificationInterface {
   not: ApproachNotificationInterface
 }
 
-const RequestNotification: FC<RequestNotification> = ({not}) => {
+const RequestNotification: FC<RequestNotificationInterface> = ({not}) => {
   const dispatch = useDispatch();
   const {token} = useTokenAndId();
 
