@@ -12,6 +12,7 @@ import {
   RATE_PROFILE_ERROR,
   CHANGE_PROFILE_APPROACH_STATUS,
 } from "../constants/ProfileConstants";
+
 import { ProfileActionTypes } from "../types/ProfileActionTypes";
 
 export interface profileUserDataInterface {

@@ -7,11 +7,11 @@ import {AcceptApproachNotificationAction, DeleteApproachNotificationAction} from
 import {DELETE_NOTIFICATION} from "../../constants/NotificationConstants";
 import { useDispatch } from "react-redux";
 import useTokenAndId from "../ReusableLogicComponents/useTokenAndId";
-interface RequestNotification {
+interface RequestNotificationInterface {
   not: ApproachNotificationInterface
 }
 
-const RequestNotification: FC<RequestNotification> = ({not}) => {
+const ReplyNotification: FC<RequestNotificationInterface> = ({not}) => {
   const dispatch = useDispatch();
   const {token} = useTokenAndId();
 
@@ -34,19 +34,13 @@ const RequestNotification: FC<RequestNotification> = ({not}) => {
           className="HomePage__Right__MainBody__Notification__Box__RequestNotification__Noti__Left__Avatar"
         />
         <p className="HomePage__Right__MainBody__Notification__Box__RequestNotification__Noti__Left__Text">
-          {`${not?.username}`} wants to connect with you.
+          {`${not?.username}`} has replied to your answer.
         </p>
-      </div>
-      <div className="HomePage__Right__MainBody__Notification__Box__RequestNotification__Noti__Right">
-        <div className="HomePage__Right__MainBody__Notification__Box__RequestNotification__Noti__Right__Reject">
-          <CloseIcon className="HomePage__Right__MainBody__Notification__Box__RequestNotification__Noti__Right__Reject__Icon" onClick={Close}/>
-        </div>
-        <div className="HomePage__Right__MainBody__Notification__Box__RequestNotification__Noti__Right__Accept">
-          <DoneIcon className="HomePage__Right__MainBody__Notification__Box__RequestNotification__Noti__Right__Accept__Icon" onClick={Done}/>
-        </div>
       </div>
     </div>
   );
 };
 
-export default RequestNotification;
+export default ReplyNotification;
+
+

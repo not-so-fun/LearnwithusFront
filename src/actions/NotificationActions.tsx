@@ -20,6 +20,7 @@ export const GetNotificationAction =
         },
       })
       .then((response) => {
+        console.log(response.data)
         dispatch({ type: NOTIFICATION_SUCCESS, notification: response.data });
       })
       .catch((error) => {
@@ -36,9 +37,8 @@ export const AcceptApproachNotificationAction =
     console.log(notification_id);
 
     axios
-      .post(
-        `/notifications/accept_approach/${notification_id}`,
-        { data: "" },
+      .get(
+        `/notifications/approach_accept/${notification_id}`,
         {
           headers: {
             "x-auth-token": token,
