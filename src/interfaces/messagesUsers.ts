@@ -7,4 +7,4 @@ export interface ChatRoomInterface {
     username: string;
     image: string;
     created_at: string;
-  }
+}

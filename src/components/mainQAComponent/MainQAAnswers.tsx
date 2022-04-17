@@ -45,17 +45,20 @@ const MainQAAnswers: FC<MainQAAnswerInterface> = ({ ans }) => {
   const [totalUpvotes, setTotalUpvote] = useState<number>(0);
   const [showReplies, setShowReplies] = useState<boolean>(false);
   const [showImageModal, setShowImageModal] = useState<boolean>(false);
-
+  const [owner, setOwner] = useState<boolean | null>(null);
   const [reply, showReply] = useState<boolean>(false);
   const [replies, setReplies] = useState<MainRepliesInterface[]>([]);
-  const { token } = useTokenAndId();
+  const { token, user_id } = useTokenAndId();
   const [replyText, setReplyText] = useState<string>("");
 
   useEffect(() => {
     setUpvote(ans?.upvote!);
     setTotalUpvote(parseInt(ans.total_upvotes) - parseInt(ans.total_downvotes));
-    // setLastState({ upvote: ans?.upvote! });
+    
     setShowReplies(false);
+    if (user_id === ans?.user_id) {
+      setOwner(true);
+    }
   }, [ans]);
 
   const handleModal = () => {
@@ -253,23 +256,30 @@ const MainQAAnswers: FC<MainQAAnswerInterface> = ({ ans }) => {
                     Reply
                   </p>
                 </div>
-                <div className="MainQA__Answer__Box__Main__Bottom__Function">
-                  <div
-                    className="QuestionFeed__Bottom__Left__Content__Logo"
-                    onClick={handleModal}
-                  >
-                    <AiOutlineDelete className="QuestionFeed__Bottom__Left__Content__Logo__Logo" />
-                  </div>
-                  {showModal && (
-                    <DeleteAnswerModal answer_id={ans.answer_id} modalHandler={handleModal} />
-                  )}
-                  <p
-                    className="QuestionFeed__Bottom__Left__Content__Text"
-                    onClick={handleModal}
-                  >
-                    Delete
-                  </p>
+                {
+                  owner &&
+                    <div className="MainQA__Answer__Box__Main__Bottom__Function">
+                 
+                     <div
+                     className="QuestionFeed__Bottom__Left__Content__Logo"
+                     onClick={handleModal}
+                   >
+                     <AiOutlineDelete className="QuestionFeed__Bottom__Left__Content__Logo__Logo" />
+                   </div>
+                   {showModal && (
+                     <DeleteAnswerModal answer_id={ans.answer_id} modalHandler={handleModal} />
+                   )}
+                   <p
+                     className="QuestionFeed__Bottom__Left__Content__Text"
+                     onClick={handleModal}
+                   >
+                     Delete
+                   </p>
+                  
+                  
                 </div>
+                }
+                 
                 <div className="MainQA__Answer__Box__Main__Bottom__Function">
                   <div className="MainQA__Answer__Box__Main__Bottom__Function__Logo">
                     <AiOutlineShareAlt className="MainQA__Answer__Box__Main__Bottom__Function__Logo__Logo" />

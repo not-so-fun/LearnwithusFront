@@ -4,6 +4,7 @@ import CloseIcon from "@mui/icons-material/Close";
 import DoneIcon from "@mui/icons-material/Done";
 import {ApproachNotificationInterface} from "../../reducers/NotificationReducer";
 import {AcceptApproachNotificationAction, DeleteApproachNotificationAction} from "../../actions/NotificationActions";
+import {DELETE_NOTIFICATION} from "../../constants/NotificationConstants";
 import { useDispatch } from "react-redux";
 import useTokenAndId from "../ReusableLogicComponents/useTokenAndId";
 interface RequestNotification {
@@ -15,9 +16,11 @@ const RequestNotification: FC<RequestNotification> = ({not}) => {
   const {token} = useTokenAndId();
 
   const Done = () =>{
+    // dispatch({type:ADD_MESSAGE, message:`${not?.username} is now connected`})
     dispatch(AcceptApproachNotificationAction(token, not.approachnotification_id)); 
   }
   const Close =() =>{
+    dispatch({type:DELETE_NOTIFICATION, notification_id:not.approachnotification_id});
     dispatch(DeleteApproachNotificationAction(token, not.approachnotification_id)); 
 
   }

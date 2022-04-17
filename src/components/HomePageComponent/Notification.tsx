@@ -2,6 +2,7 @@ import React, { FC , useState,useEffect} from "react";
 import { Avatar } from "@mui/material";
 import NormalNotification from "./NormalNotification";
 import RequestNotification from "./RequestNotification";
+import AcceptedNotification from "./AccceptedNotification";
 import { GetNotificationAction } from "../../actions/NotificationActions";
 import useTokenAndId from "../ReusableLogicComponents/useTokenAndId";
 import { useDispatch, useSelector } from "react-redux";
@@ -31,10 +32,12 @@ const Notification: FC = () => {
       <div className="HomePage__Right__MainBody__Notification__Box__Header">
         Notification
       </div>
-      {/* <div className="HomePage__Right__MainBody__Notification__Box__NormalNotification">
-        <NormalNotification />
-      </div> */}
+      <div className="HomePage__Right__MainBody__Notification__Box__NormalNotification">
+        {/* <NormalNotification /> */}
+        <AcceptedNotification />
+      </div>
       <div className="HomePage__Right__MainBody__Notification__Box__RequestNotification">
+      
         {notifications && notifications.map((not)=>(
           not.status ==="pending" &&
           <RequestNotification not={not}/>

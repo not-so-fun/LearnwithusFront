@@ -95,12 +95,13 @@ const MessagesChatroom: FC<RouteComponentProps<any>> = ({ match }) => {
     | React.FormEventHandler<HTMLFormElement>
     | undefined = (e) => {
     e.preventDefault();
-    setText("");  
+   console.log(text);
     socketOfChat.emit("send_message", {
       chat_room_id: match.params.messageId,
       user_id: user_id,
       message: text,
     });
+    setText("");  
   };
 
   return (
@@ -143,7 +144,6 @@ const MessagesChatroom: FC<RouteComponentProps<any>> = ({ match }) => {
             <button>
             <IoMdSend
               className="Messages__Left__InputBox__Logos__Logo"
-             
             />
             </button>
            

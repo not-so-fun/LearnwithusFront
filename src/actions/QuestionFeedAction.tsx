@@ -26,7 +26,6 @@ export const QuestionFeedAction =
       .then((response) => {
         console.log(response.data);
         dispatch({
-          
           type: QUESTION_FEED_LOAD_SUCCESS,
           questions: response.data,
         });

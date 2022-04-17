@@ -1,10 +1,18 @@
 import React,{FC} from "react";
 import {profileUserDataInterface} from "../../reducers/ProfileReducer"
+import { useDispatch, useSelector } from "react-redux";
+import { ApproachAction } from "../../actions/ApproachAction";
+import useTokenAndId from "../ReusableLogicComponents/useTokenAndId";
 interface tutorInterface {
   tutor: profileUserDataInterface;
 }
 
 const TutorsProfile : FC<tutorInterface>= ({tutor}) => {
+  const { token } = useTokenAndId();
+  const dispatch = useDispatch();
+  const Approached = () => {
+    dispatch(ApproachAction(token, tutor?.user_id));
+  };
   return (
     <div className="Tutors">
       <div className="Tutors__Box">
@@ -54,7 +62,9 @@ const TutorsProfile : FC<tutorInterface>= ({tutor}) => {
           </p>
         </div>
         <div className="Tutors__Box__Buttons">
-          <button className="Tutors__Box__Buttons__Button">
+          <button 
+          className="Tutors__Box__Buttons__Button"  
+          onClick={Approached}>
             <h2>Approach</h2>
           </button>
         </div>

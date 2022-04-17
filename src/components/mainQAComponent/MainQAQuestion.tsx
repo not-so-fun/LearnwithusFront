@@ -304,6 +304,8 @@ const MainQAQuestion: FC<MainQAQuestionInterface> = ({ question }) => {
           </div>
           <div className="QuestionFeed__Bottom">
             <div className="QuestionFeed__Bottom__Left">
+              {owner && 
+              <>
               <div className="QuestionFeed__Bottom__Left__Content">
                 <div className="QuestionFeed__Bottom__Left__Content__Logo">
                   <BsPencil className="QuestionFeed__Bottom__Left__Content__Logo__Logo" />
@@ -327,6 +329,8 @@ const MainQAQuestion: FC<MainQAQuestionInterface> = ({ question }) => {
                   Delete
                 </p>
               </div>
+              </>
+              }
               <div className="QuestionFeed__Bottom__Left__Content">
                 <div className="QuestionFeed__Bottom__Left__Content__Logo">
                   <MdReportProblem className="QuestionFeed__Bottom__Left__Content__Logo__Logo" />

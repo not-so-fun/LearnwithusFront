@@ -6,7 +6,6 @@
     align-items: center;
     justify-content: flex-start;
     flex-direction: column;
-
     color: $color-grey-light-3;
     // box-shadow:$shadow-light;
   }
@@ -38,7 +37,6 @@
           font-size: 1.3rem;
           margin: 0.4rem 0;
           margin-bottom: 1rem;
-
           padding: 1rem;
           background: $color-grey-light-1;
           border: none;
@@ -82,7 +80,6 @@
         height: 4rem;
         font-size: 1.3rem;
         margin: 0.3rem 0;
-        background: green;
         border: none;
         outline: none;
         display: flex;
@@ -138,7 +135,7 @@
       background: $color-secondary;
       font-size: 1.9rem;
       color: $color-white;
-      border-radius: 5px;
+      border-radius: 0.5rem;
       border: none;
       outline: none;
       &:hover {
@@ -176,4 +173,7 @@
 
 .error_input {
   background-color: #ffeeee;
+}
+.Auth__Side{
+
 }

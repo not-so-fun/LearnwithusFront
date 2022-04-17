@@ -4,6 +4,7 @@ import {
   SINGLE_NOTIFICATION_SUCCESS,
   CHANGED_NOTIFICATION_NUMBER,
   NOTIFICATION_ERROR,
+  DELETE_NOTIFICATION
 } from "../constants/NotificationConstants";
 import { NotificationTypes } from "../types/NotificationTypes";
 export interface ApproachNotificationInterface {
@@ -55,6 +56,12 @@ export const NotificationReducer = (
         loading: false,
         number:action.length
       };
+    case DELETE_NOTIFICATION:
+      return{
+        ...state,
+        loading: false,
+        notifications: state.notifications.filter((notification) => notification.approachnotification_id !==action.notification_id)
+      }
     case NOTIFICATION_ERROR:
       return {
         ...state,

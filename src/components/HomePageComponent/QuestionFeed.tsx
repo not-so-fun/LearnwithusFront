@@ -261,7 +261,7 @@ const QuestionFeed: FC<quesInterface> = ({ question }) => {
                     <AiOutlineEye className="QuestionFeed__Box__Main__AboutQuestion__QuestionStatistics__Left__Views__Logo__Logo" />
                   </div>
                   <p className="QuestionFeed__Box__Main__AboutQuestion__QuestionStatistics__Left__Views__Text">
-                    41
+                    {question.views}
                   </p>
                 </div>
               </div>

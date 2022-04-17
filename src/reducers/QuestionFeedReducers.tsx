@@ -31,6 +31,7 @@ export interface questionFeedListInterface {
   total_upvotes: string;
   total_downvotes: string;
   saved_question_id :string;
+  views:string;
 }
 
 export interface questionFeedInterface {

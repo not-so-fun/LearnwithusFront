@@ -12,13 +12,14 @@ interface replyInterface {
 }
 
 const MainQAReplies: FC<replyInterface> = ({ reply }) => {
-  const { token } = useTokenAndId();
+  const { token, user_id } = useTokenAndId();
   const [upvote, setUpvote] = useState<boolean | null>(null);
   const [lastState, setLastState] = useState<lastStateInterface>({
     upvote: null,
   });
   const [totalUpvotes, setTotalUpvote] = useState<number>(0);
   const [showModal, setShowModal] = useState<boolean>(false);
+  const [owner, setOwner] = useState<boolean | null>(null);
   const handleModal = () => {
     setShowModal((prev) => !prev);
   };
@@ -28,6 +29,9 @@ const MainQAReplies: FC<replyInterface> = ({ reply }) => {
       parseInt(reply.total_upvotes) - parseInt(reply.total_downvotes)
     );
     setLastState({ upvote: reply?.upvote! });
+    if (user_id === reply?.user_id) {
+      setOwner(true);
+    }
   }, [reply]);
 
   const upVote = (upvote: boolean) => {
@@ -164,6 +168,7 @@ const MainQAReplies: FC<replyInterface> = ({ reply }) => {
                   Share
                 </p>
               </div>
+              {owner &&
               <div className="MainQA__Answer__Box__Main__Bottom__Function">
                 <div className="MainQA__Answer__Box__Main__Bottom__Function__Logo">
                   <AiOutlineDelete className="MainQA__Answer__Box__Main__Bottom__Function__Logo__Logo" />
@@ -175,6 +180,7 @@ const MainQAReplies: FC<replyInterface> = ({ reply }) => {
                   Delete
                 </p>
               </div>
+                }
              
               <div className="MainQA__Answer__Box__Main__Bottom__Function">
                 <div className="MainQA__Answer__Box__Main__Bottom__Function__Logo">

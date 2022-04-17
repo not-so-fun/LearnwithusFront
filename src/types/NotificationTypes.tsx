@@ -3,6 +3,7 @@ import {
     NOTIFICATION_SUCCESS,
     SINGLE_NOTIFICATION_SUCCESS,
     CHANGED_NOTIFICATION_NUMBER,
+    DELETE_NOTIFICATION,
     NOTIFICATION_ERROR,
   } from "../constants/NotificationConstants";
   import {ApproachNotificationInterface } from "../reducers/NotificationReducer";
@@ -22,6 +23,11 @@ import {
     type:typeof CHANGED_NOTIFICATION_NUMBER;
     length:number;
   }
+  interface deleteNotification{
+    type:typeof DELETE_NOTIFICATION;
+    notification_id:string;
+  }
+  
   interface NotificationError {
     type: typeof NOTIFICATION_ERROR;
     error: string;
@@ -29,8 +35,9 @@ import {
   export type NotificationTypes =
     | NotificationLoading
     | NotificationSuccess
-    |singleNotificationSuccess
-    |notificationLength
+    | singleNotificationSuccess
+    | notificationLength
+    | deleteNotification
     | NotificationError
  
   
