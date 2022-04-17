@@ -16,7 +16,7 @@ const AnswerNotification: FC<RequestNotificationInterface> = ({not}) => {
 
   return (
     <div className="HomePage__Right__MainBody__Notification__Box__RequestNotification__Noti">
-      <div className="HomePage__Right__MainBody__Notification__Box__RequestNotification__Noti__Left">
+      {/* <div className="HomePage__Right__MainBody__Notification__Box__RequestNotification__Noti__Left">
         <Avatar
           alt={not?.image}
           src="image"
@@ -26,7 +26,9 @@ const AnswerNotification: FC<RequestNotificationInterface> = ({not}) => {
         <p className="HomePage__Right__MainBody__Notification__Box__RequestNotification__Noti__Left__Text">
           {`${not?.username}`} has answered your question.
         </p>
-      </div>
+
+      </div> */}
+
     </div>
   );
 };
