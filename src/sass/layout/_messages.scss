@@ -82,7 +82,7 @@
       display: flex;
       flex-direction: column;
       font-size: 1.5rem;
-      padding: .5rem;
+      padding: 1rem;
       color: $color-black;
       background-color: $color-white;
 
@@ -134,12 +134,13 @@
       }
     }
     &__InputBox {
-      flex: 0 0 5rem;
+      flex: 0 0 8rem;
       display: flex;
       align-items: center;
       justify-content: flex-start;
+     
       &__Input {
-        height: 4rem;
+        height: 5rem;
         flex: 1;
         font-size: 1.5rem;
         padding: 0 2rem;
@@ -155,9 +156,14 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        border:none;
+        background: $color-white;
+        margin-right:1rem;
+        outline:none;
+        
         &__Logo {
-          height: 3.5rem;
-          width: 3.5rem;
+          height: 4rem;
+          width: 4rem;
           fill: $color-primary;
           &:hover {
             cursor: pointer;
@@ -167,7 +173,8 @@
     }
   }
   &__Right {
-    flex: 0 0 28%;
+    min-width:30rem;
+    width:auto;
     height: 100%;
     padding:1rem;
     padding-top:3rem;

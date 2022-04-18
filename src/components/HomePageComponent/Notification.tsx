@@ -35,7 +35,7 @@ const Notification: FC = () => {
       </div>
       <div className="HomePage__Right__MainBody__Notification__Box__NormalNotification">
         {/* <NormalNotification /> */}
-        <AcceptedNotification />
+        {/* <AcceptedNotification /> */}
       </div>
       <div className="HomePage__Right__MainBody__Notification__Box__RequestNotification">
         {notifications &&

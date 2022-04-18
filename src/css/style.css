@@ -1004,8 +1004,8 @@ body {
   .MessagesSidebar__User {
     text-decoration: none;
     height: 8rem;
-    width: 95%;
-    font-size: 1.3rem;
+    width: auto;
+    font-size: 1.5rem;
     color: #000;
     display: flex;
     justify-content: flex-start;
@@ -1013,7 +1013,7 @@ body {
     padding: 0 1rem;
     border-radius: 5px; }
     .MessagesSidebar__User:hover {
-      background: #fff;
+      background: #f8f8f8;
       cursor: pointer; }
     .MessagesSidebar__User__Image {
       height: 6rem;
@@ -1028,15 +1028,18 @@ body {
       align-items: flex-start;
       height: auto;
       flex: 1; }
+      @media screen and (max-width: 76.8em) {
+        .MessagesSidebar__User__Text {
+          display: none; } }
       .MessagesSidebar__User__Text__ChatInfo {
         display: flex;
-        justify-content: flex-start;
+        justify-content: space-between;
         align-items: center;
-        padding: 0 1rem;
         border-radius: 5px; }
-        .MessagesSidebar__User__Text__ChatInfo:hover {
-          background: #fff;
-          cursor: pointer; }
+        .MessagesSidebar__User__Text__ChatInfo__LastMessage {
+          margin-right: 2rem; }
+        .MessagesSidebar__User__Text__ChatInfo__time {
+          margin-left: 1rem; }
         .MessagesSidebar__User__Text__ChatInfo__Image {
           height: 6rem;
           width: 6rem;
@@ -3163,7 +3166,7 @@ body {
       display: flex;
       flex-direction: column;
       font-size: 1.5rem;
-      padding: .5rem;
+      padding: 1rem;
       color: #000;
       background-color: #fff; }
       .Messages__Left__Messages::-webkit-scrollbar {
@@ -3205,12 +3208,12 @@ body {
         text-align: justify;
         color: #fff; }
     .Messages__Left__InputBox {
-      flex: 0 0 5rem;
+      flex: 0 0 8rem;
       display: flex;
       align-items: center;
       justify-content: flex-start; }
       .Messages__Left__InputBox__Input {
-        height: 4rem;
+        height: 5rem;
         flex: 1;
         font-size: 1.5rem;
         padding: 0 2rem;
@@ -3224,15 +3227,20 @@ body {
         width: 5rem;
         display: flex;
         align-items: center;
-        justify-content: center; }
+        justify-content: center;
+        border: none;
+        background: #fff;
+        margin-right: 1rem;
+        outline: none; }
         .Messages__Left__InputBox__Logos__Logo {
-          height: 3.5rem;
-          width: 3.5rem;
+          height: 4rem;
+          width: 4rem;
           fill: #32569F; }
           .Messages__Left__InputBox__Logos__Logo:hover {
             cursor: pointer; }
   .Messages__Right {
-    flex: 0 0 28%;
+    min-width: 30rem;
+    width: auto;
     height: 100%;
     padding: 1rem;
     padding-top: 3rem;

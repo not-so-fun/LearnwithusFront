@@ -1,4 +1,4 @@
-import React, { useEffect, useState, FC } from "react";
+import React, { useEffect, useState,useLayoutEffect,useRef, FC } from "react";
 import { MESSAGE_SUCCESS } from "../constants/MessagesConstants";
 import MessagesSidebar from "../components/MessagesComponent/MessagesSidebar";
 import useTokenAndId from "../components/ReusableLogicComponents/useTokenAndId";
@@ -40,12 +40,15 @@ let socketOfChat: Socket<DefaultEventsMap, DefaultEventsMap>;
 const MessagesChatroom: FC<RouteComponentProps<any>> = ({ match }) => {
   const [text, setText] = useState("");
   const dispatch = useDispatch();
-
+  const messagesEndRef = useRef<HTMLDivElement | null>(null)
   const { loading, messages, error } = useSelector<RootStateType>(
     (state) => state.messages
   ) as MessagesInterface;
 
   const { token, user_id } = useTokenAndId();
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" })
+  }
 
   useEffect(() => {
     dispatch(ChatRoomAction(token));
@@ -54,7 +57,9 @@ const MessagesChatroom: FC<RouteComponentProps<any>> = ({ match }) => {
   useEffect(() => {
     dispatch(MessagesAction(token, match.params.messageId));
   }, [token, match]);
-
+  useLayoutEffect(() => {
+    scrollToBottom()
+  }, [messages]);
   useEffect(() => {
     socketOfChat = io(socketUrl);
 
@@ -65,6 +70,7 @@ const MessagesChatroom: FC<RouteComponentProps<any>> = ({ match }) => {
       dispatch({type:MESSAGE_SUCCESS,message:data})
     
     });
+
 
     return () => {
       console.log("Disconnect");
@@ -95,7 +101,6 @@ const MessagesChatroom: FC<RouteComponentProps<any>> = ({ match }) => {
     | React.FormEventHandler<HTMLFormElement>
     | undefined = (e) => {
     e.preventDefault();
-   console.log(text);
     socketOfChat.emit("send_message", {
       chat_room_id: match.params.messageId,
       user_id: user_id,
@@ -128,8 +133,10 @@ const MessagesChatroom: FC<RouteComponentProps<any>> = ({ match }) => {
                 ) : (
                   <MessageOther key={message.message_id} message={message} />
                 )}
+
               </>
             ))}
+            <div ref={messagesEndRef} />
         </div>
 
         <form onSubmit={handleMessageSent} className="Messages__Left__InputBox">
@@ -140,15 +147,12 @@ const MessagesChatroom: FC<RouteComponentProps<any>> = ({ match }) => {
             value={text}
             onChange={(e) => setText(e.target.value)}
           />
-          <div className="Messages__Left__InputBox__Logos">
-            <button>
+          <button className="Messages__Left__InputBox__Logos">
             <IoMdSend
               className="Messages__Left__InputBox__Logos__Logo"
             />
-            </button>
+          </button>
            
-         
-          </div>
         </form>
       </div>
 

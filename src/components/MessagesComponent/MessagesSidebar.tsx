@@ -23,8 +23,8 @@ const MessagesSidebar = () => {
         <div className="MessagesSidebar__User__Text">
           <h3>{chatRoom?.username}</h3>
           <div className="MessagesSidebar__User__Text__ChatInfo">
-            <p>Sujan: Hello world</p>
-            <p>37 mins ago</p>
+            <p className="MessagesSidebar__User__Text__ChatInfo__LastMessage">Sujan: Hello world</p>
+            <p className="MessagesSidebar__User__Text__ChatInfo__Time">37 mins ago</p>
           </div>
         </div>
       </Link>
