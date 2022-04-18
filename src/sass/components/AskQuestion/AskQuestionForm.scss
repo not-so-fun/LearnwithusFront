@@ -3,7 +3,7 @@
 
   width: 100%;
   height: auto;
-  border-radius: 6px;
+  border-radius: 0.6rem;
   // overflow: scroll;
   // height: auto;
   // border: 2px solid red;
@@ -66,8 +66,8 @@
     padding: 1rem 0;
     padding-bottom: 0;
     &__Title {
-      border: 2px solid lightgrey;
-      border-radius: 5px;
+      border: 0.2rem solid lightgrey;
+      border-radius: 0.5rem;
       height: 5rem;
       width: 100%;
       padding: 0 1rem;
@@ -96,28 +96,28 @@
         display: flex;
 
         &__Select {
-          width: 363 px;
+          width: 36.3rem;
           background: $color-white;
           width: 100%;
-          border-radius: 5px;
+          border-radius: 0.5rem;
           height: 5rem;
           //   flex: 1;
           display: flex;
           align-items: center;
           padding: 0px 1rem;
-          border: 2px solid lightgrey;
+          border: 0.2rem solid lightgrey;
           cursor: pointer;
           color: $color-grey-dark;
           &:last-child {
             // color: red;
-            margin-left: 5px;
+            margin-left: 0.5rem;
           }
         }
       }
 
       &__Title {
         background: #4b4b4b;
-        border-radius: 5px;
+        border-radius: 0.5rem;
         height: 5rem;
         flex: 1;
         display: flex;
@@ -183,7 +183,7 @@
         padding: 0 1rem;
         &__Button {
           height: 4rem;
-          border-radius: 5px;
+          border-radius: 0.5rem;
           padding: 0 1rem;
           flex: 0 0 20%;
           font-size: 1.5rem;
@@ -219,13 +219,13 @@
     }
     &__Input {
       height: 33rem;
-      border-radius: 5px;
+      border-radius: 0.5rem;
       overflow-y: scroll;
       padding: 1rem;
       outline: none;
       color: #4b4b4b;
       font-size: 1.5rem;
-      border: 5px;
+      border: 0.5rem;
       background-color: #e3e3e3;
       // border: 2px solid #717171;
       margin: 0 1rem;
@@ -243,7 +243,7 @@
     &__Button {
       height: 4rem;
       width: auto;
-      border-radius: 5px;
+      border-radius: 0.5rem;
       margin-top: 2rem;
       margin-bottom: 1rem;
       padding: 0 1rem;
