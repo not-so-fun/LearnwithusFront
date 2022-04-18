@@ -14,16 +14,6 @@ interface RequestNotificationInterface {
 const ReplyNotification: FC<RequestNotificationInterface> = ({not}) => {
   const dispatch = useDispatch();
   const {token} = useTokenAndId();
-
-  const Done = () =>{
-    // dispatch({type:ADD_MESSAGE, message:`${not?.username} is now connected`})
-    dispatch(AcceptApproachNotificationAction(token, not.approachnotification_id)); 
-  }
-  const Close =() =>{
-    dispatch({type:DELETE_NOTIFICATION, notification_id:not.approachnotification_id});
-    dispatch(DeleteApproachNotificationAction(token, not.approachnotification_id)); 
-
-  }
   return (
     <div className="HomePage__Right__MainBody__Notification__Box__RequestNotification__Noti">
       <div className="HomePage__Right__MainBody__Notification__Box__RequestNotification__Noti__Left">

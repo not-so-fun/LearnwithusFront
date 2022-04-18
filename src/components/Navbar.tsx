@@ -1,9 +1,10 @@
-import React, { FC, useEffect, useState, useRef, useDebugValue } from "react";
+import React, { FC, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   CHANGED_NOTIFICATION_NUMBER,
   SINGLE_NOTIFICATION_SUCCESS,
 } from "../constants/NotificationConstants";
+import {CHATROOM_UPDATE} from "../constants/ChatRoomConstants";
 import useTokenAndId from "./ReusableLogicComponents/useTokenAndId";
 import { RootStateType } from "../stores";
 import { Link, useHistory } from "react-router-dom";
@@ -74,8 +75,6 @@ const Navbar: FC = () => {
     socketOfNotification = io(socketUrl);
     socketOfNotification.emit("join_my_noti_room", { user_id: user_id });
     socketOfNotification.on("notification_received", (data) => {
-      console.log(data);
-
       dispatch({
         type: CHANGED_NOTIFICATION_NUMBER,
         length: notificationLength + 1,
@@ -85,6 +84,12 @@ const Navbar: FC = () => {
         type: SINGLE_NOTIFICATION_SUCCESS,
         notification: data.notification,
       });
+
+    });
+
+    socketOfNotification.on("inbox_list_update",(data)=>{
+      console.log(data);
+      dispatch({type:CHATROOM_UPDATE,chatRoom:data});
     });
   }, [user_id]);
 
@@ -144,7 +149,6 @@ const Navbar: FC = () => {
               style={{ fontSize: 25, marginLeft: 20, cursor: "pointer" }}
               className="Navbar__Links__Exit"
             />
-
 
             <FiLogOut
               onClick={handleLogout}

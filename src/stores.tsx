@@ -23,7 +23,7 @@ import {QuestionAskedFeedReducer} from "./reducers/MyQuestionAskedReducer";
 import { SavedQuestionReducer } from "./reducers/SavedQuestionsReducer";
 import { UpdateQuestionReducer} from "./reducers/UpdateQuestionReducer";
 import {SearchTutorReducer} from "./reducers/searchTutorsReducer";
-import {ChatRoomReducer} from "./reducers/ChatRoom";
+import {ChatRoomReducer} from "./reducers/ChatRoomReducer";
 import {MessagesReducer} from "./reducers/MessagesReducer";
 import { NotificationReducer } from "./reducers/NotificationReducer";
 

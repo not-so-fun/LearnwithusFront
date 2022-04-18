@@ -1,8 +1,10 @@
 import { Avatar } from "@mui/material";
+import { useState } from "react";
 import React, { FC } from "react";
 import CloseIcon from "@mui/icons-material/Close";
 import DoneIcon from "@mui/icons-material/Done";
 import { ApproachNotificationInterface } from "../../reducers/NotificationReducer";
+import { Progress } from "../ReusableUIComponents/Spinner";
 import {
   AcceptApproachNotificationAction,
   DeleteApproachNotificationAction,
@@ -16,15 +18,29 @@ interface RequestNotificationInterface {
 const RequestNotification: FC<RequestNotificationInterface> = ({ not }) => {
   const dispatch = useDispatch();
   const { token } = useTokenAndId();
+  const [doneLoader, setDoneLoading] = useState<boolean>(false);
+  const [deleteLoader, setDeleteLoader] = useState<boolean>(false);
+  const [deletedNoti, setDeletedNoti] = useState<boolean>(false);
 
   const Done = () => {
+    setDoneLoading(true);
     dispatch(
-      AcceptApproachNotificationAction(token, not.approachnotification_id)
+      AcceptApproachNotificationAction(
+        token,
+        not.approachnotification_id,
+        setDoneLoading
+      )
     );
   };
   const Close = () => {
+    setDeleteLoader(true);
     dispatch(
-      DeleteApproachNotificationAction(token, not.approachnotification_id)
+      DeleteApproachNotificationAction(
+        token,
+        not.approachnotification_id,
+        setDeleteLoader,
+        setDeletedNoti
+      )
     );
   };
   return (
@@ -40,29 +56,40 @@ const RequestNotification: FC<RequestNotificationInterface> = ({ not }) => {
           {`${not?.username}`} wants to connect with you.
         </p>
       </div>
-      {not.status == "pending" ? (
-        <div className="HomePage__Right__MainBody__Notification__Box__RequestNotification__Noti__Right">
-          <div className="HomePage__Right__MainBody__Notification__Box__RequestNotification__Noti__Right__Reject">
-            <CloseIcon
-              className="HomePage__Right__MainBody__Notification__Box__RequestNotification__Noti__Right__Reject__Icon"
-              onClick={Close}
-            />
-          </div>
-          <div className="HomePage__Right__MainBody__Notification__Box__RequestNotification__Noti__Right__Accept">
-            <DoneIcon
-              className="HomePage__Right__MainBody__Notification__Box__RequestNotification__Noti__Right__Accept__Icon"
-              onClick={Done}
-            />
-          </div>
-        </div>
+      {deletedNoti===true ? (
+        <button>Removed</button>
       ) : (
-        <div className="HomePage__Right__MainBody__Notification__Box__RequestNotification__Noti__Right">
-<button>
-  Message
-</button>
+        <>
+          {not.status === "pending" ? (
+            <div className="HomePage__Right__MainBody__Notification__Box__RequestNotification__Noti__Right">
+              <div className="HomePage__Right__MainBody__Notification__Box__RequestNotification__Noti__Right__Reject">
+                {deleteLoader == true ? (
+                  <Progress size={20} />
+                ) : (
+                  <CloseIcon
+                    className="HomePage__Right__MainBody__Notification__Box__RequestNotification__Noti__Right__Reject__Icon"
+                    onClick={Close}
+                  />
+                )}
+              </div>
 
-
-        </div>
+              <div className="HomePage__Right__MainBody__Notification__Box__RequestNotification__Noti__Right__Accept">
+                {doneLoader == true ? (
+                  <Progress size={20} />
+                ) : (
+                  <DoneIcon
+                    className="HomePage__Right__MainBody__Notification__Box__RequestNotification__Noti__Right__Accept__Icon"
+                    onClick={Done}
+                  />
+                )}
+              </div>
+            </div>
+          ) : (
+            <div className="HomePage__Right__MainBody__Notification__Box__RequestNotification__Noti__Right">
+              <button>Message</button>
+            </div>
+          )}
+        </>
       )}
     </div>
   );
