@@ -15,6 +15,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { RootStateType } from "../stores";
 import { URL } from "../axiosURL";
 import { CHATROOM_UPDATE } from "../constants/ChatRoomConstants";
+import debounce from 'lodash.debounce';
 
 const socketUrl = URL + "/chat";
 export interface oneMessageInterface {
@@ -41,13 +42,33 @@ let socketOfChat: Socket<DefaultEventsMap, DefaultEventsMap>;
 const MessagesChatroom: FC<RouteComponentProps<any>> = ({ match }) => {
   const [text, setText] = useState("");
   const dispatch = useDispatch();
-  const messagesEndRef = useRef<HTMLDivElement | null>(null)
+  const messagesEndRef = useRef<HTMLDivElement | null>(null);
+  const ContainerRef = useRef<HTMLDivElement>(null);
+
+  window.onscroll = debounce(() => {
+    // const {
+    //   loadApods,
+    //   state: {
+    //     error,
+    //     isLoading,
+    //     hasMore,
+    //   },
+    // } = this;
+
+    // if (error || isLoading || !hasMore) return;
+
+    if (window.innerHeight + document.documentElement.scrollTop === document.documentElement.offsetHeight) {
+      // loadApods();
+    }
+  }, 100);
+
   const { loading, messages, error } = useSelector<RootStateType>(
     (state) => state.messages
   ) as MessagesInterface;
 
   const { token, user_id } = useTokenAndId();
   const scrollToBottom = () => {
+    console.log(messagesEndRef);
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" })
   }
 
@@ -107,16 +128,12 @@ const MessagesChatroom: FC<RouteComponentProps<any>> = ({ match }) => {
     | React.FormEventHandler<HTMLFormElement>
     | undefined = (e) => {
     e.preventDefault();
-<<<<<<< HEAD
-=======
     setText("");
->>>>>>> 7e7382a (added front for cancel request)
     socketOfChat.emit("send_message", {
       chat_room_id: match.params.messageId,
       user_id: user_id,
       message: text,
-    });
-    setText("");  
+    }); 
   };
 
   return (
@@ -129,10 +146,10 @@ const MessagesChatroom: FC<RouteComponentProps<any>> = ({ match }) => {
             to={`/profile/${user_id}`}
             className="Messages__Left__Heading__ProfileName"
           >
-            <h1>Yugal Khati</h1>
+            <h1></h1>
           </Link>
         </div>
-        <div className="Messages__Left__Messages">
+        <div className="Messages__Left__Messages" ref={ContainerRef}>
           {messages &&
             messages.map((message: oneMessageInterface, index, array) => (
               <>
@@ -157,20 +174,12 @@ const MessagesChatroom: FC<RouteComponentProps<any>> = ({ match }) => {
             value={text}
             onChange={(e) => setText(e.target.value)}
           />
-<<<<<<< HEAD
           <button className="Messages__Left__InputBox__Logos">
             <IoMdSend
               className="Messages__Left__InputBox__Logos__Logo"
             />
           </button>
            
-=======
-          <div className="Messages__Left__InputBox__Logos">
-            <button>
-              <IoMdSend className="Messages__Left__InputBox__Logos__Logo" />
-            </button>
-          </div>
->>>>>>> 7e7382a (added front for cancel request)
         </form>
       </div>
 

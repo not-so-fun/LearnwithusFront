@@ -1001,7 +1001,7 @@ body {
   .MessagesSidebar__User {
     text-decoration: none;
     height: 8rem;
-    width: auto;
+    width: 97%;
     font-size: 1.5rem;
     color: #000;
     display: flex;
@@ -3236,10 +3236,10 @@ body {
           .Messages__Left__InputBox__Logos__Logo:hover {
             cursor: pointer; }
   .Messages__Right {
-    min-width: 30rem;
+    min-width: 35rem;
     width: auto;
     height: 100%;
-    padding: 1rem;
+    padding: .5rem;
     padding-top: 3rem;
     background: #fff;
     border-left: 1px solid lightgray; }
