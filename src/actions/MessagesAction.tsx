@@ -1,6 +1,7 @@
 import {
     MESSAGES_STARTED,
     MESSAGES_SUCCESS,
+    MESSAGES_UPDATE,
     MESSAGES_ERROR
   } from "../constants/MessagesConstants";
   import axios from "../axios";
@@ -26,4 +27,29 @@ export const MessagesAction =
       });
       
   };
+
+  export const LoadMessagesAction =
+  (token: string, chat_room_id: string, length:number) => (dispatch: Dispatch<RootDispatchType>) => {
+    dispatch({ type: MESSAGES_STARTED });
+
+    axios
+      .get(`/chat/messages/${chat_room_id}?set=${length}`, {
+        headers: {
+          "x-auth-token": token,
+        },
+      })
+      .then((response) => {
+        if(response.data.length == 0){
+          return;
+        }
+       dispatch({type:MESSAGES_UPDATE, messages: response.data});
+      })
+      .catch((error) => {
+          dispatch({type:MESSAGES_ERROR, error:error});
+        console.log(error);
+      });
+      
+  };
+
+
 

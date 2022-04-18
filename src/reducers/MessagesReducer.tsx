@@ -2,6 +2,7 @@ import {
     MESSAGES_STARTED,
     MESSAGES_SUCCESS,
     MESSAGE_SUCCESS,
+    MESSAGES_UPDATE,
     MESSAGES_ERROR
   } from "../constants/MessagesConstants";
   
@@ -38,6 +39,12 @@ import {oneMessageInterface} from "../Layout/MessagesChatroom";
           loading: false,
           messages: action.messages
         };
+        case MESSAGES_UPDATE:
+          return{
+            ...state,
+            loading:false,
+            messages:[...action.messages,...state.messages]
+          }
         case MESSAGE_SUCCESS:
             return {
               ...state,

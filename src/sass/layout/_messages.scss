@@ -81,6 +81,7 @@
       overflow-y: scroll;
       display: flex;
       flex-direction: column;
+      justify-content: flex-end;
       font-size: 1.5rem;
       padding: 1rem;
       color: $color-black;

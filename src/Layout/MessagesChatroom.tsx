@@ -1,4 +1,4 @@
-import React, { useEffect, useState,useLayoutEffect,useRef, FC } from "react";
+import React, { useEffect, useState,useLayoutEffect,useRef,useCallback,UIEvent , FC }  from "react";
 import { MESSAGE_SUCCESS } from "../constants/MessagesConstants";
 import MessagesSidebar from "../components/MessagesComponent/MessagesSidebar";
 import useTokenAndId from "../components/ReusableLogicComponents/useTokenAndId";
@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import axios from "../axios";
 import { RouteComponentProps } from "react-router-dom";
 import { IoMdSend } from "react-icons/io";
-import { MessagesAction } from "../actions/MessagesAction";
+import { MessagesAction, LoadMessagesAction } from "../actions/MessagesAction";
 import io from "socket.io-client";
 import { Socket } from "socket.io-client";
 import { ChatRoomAction } from "../actions/ChatRoomAction";
@@ -15,7 +15,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { RootStateType } from "../stores";
 import { URL } from "../axiosURL";
 import { CHATROOM_UPDATE } from "../constants/ChatRoomConstants";
-import debounce from 'lodash.debounce';
+// import debounce from 'lodash.debounce';
 
 const socketUrl = URL + "/chat";
 export interface oneMessageInterface {
@@ -24,13 +24,17 @@ export interface oneMessageInterface {
   message_id: string;
   user_id: String;
   created_at: String;
+ 
+  // lastElementRef: null | any
 }
 
 interface messagesInterface {
   messages: [oneMessageInterface] | null;
+  
 }
 interface messageInterface {
   message: oneMessageInterface;
+  firstElementRef: null | any;
 }
 
 interface DefaultEventsMap {
@@ -41,37 +45,17 @@ let socketOfChat: Socket<DefaultEventsMap, DefaultEventsMap>;
 
 const MessagesChatroom: FC<RouteComponentProps<any>> = ({ match }) => {
   const [text, setText] = useState("");
+  const [yes, setYes] = useState<boolean>(true);
+  
   const dispatch = useDispatch();
   const messagesEndRef = useRef<HTMLDivElement | null>(null);
-  const ContainerRef = useRef<HTMLDivElement>(null);
-
-  window.onscroll = debounce(() => {
-    // const {
-    //   loadApods,
-    //   state: {
-    //     error,
-    //     isLoading,
-    //     hasMore,
-    //   },
-    // } = this;
-
-    // if (error || isLoading || !hasMore) return;
-
-    if (window.innerHeight + document.documentElement.scrollTop === document.documentElement.offsetHeight) {
-      // loadApods();
-    }
-  }, 100);
-
   const { loading, messages, error } = useSelector<RootStateType>(
     (state) => state.messages
   ) as MessagesInterface;
-
   const { token, user_id } = useTokenAndId();
   const scrollToBottom = () => {
-    console.log(messagesEndRef);
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" })
   }
-
   useEffect(() => {
     dispatch(ChatRoomAction(token));
   }, [token]);
@@ -80,22 +64,16 @@ const MessagesChatroom: FC<RouteComponentProps<any>> = ({ match }) => {
     dispatch(MessagesAction(token, match.params.messageId));
   }, [token, match]);
   useLayoutEffect(() => {
-    scrollToBottom()
+    if(yes){
+      scrollToBottom()
+    }
+   
   }, [messages]);
   useEffect(() => {
     socketOfChat = io(socketUrl);
     socketOfChat.emit("join_room", { chat_room_id: match.params.messageId });
     socketOfChat.on("received_message", (data: oneMessageInterface) => {
       dispatch({ type: MESSAGE_SUCCESS, message: data });
-
-    //   dispatch({
-    //     type: CHATROOM_UPDATE,
-    //     chatRoom: {
-    //       chat_room_id: data.chat_room_id,
-    //       last_message: data.message,
-    //     },
-    //   });
-
     });
 
 
@@ -128,6 +106,7 @@ const MessagesChatroom: FC<RouteComponentProps<any>> = ({ match }) => {
     | React.FormEventHandler<HTMLFormElement>
     | undefined = (e) => {
     e.preventDefault();
+    setYes(true);
     setText("");
     socketOfChat.emit("send_message", {
       chat_room_id: match.params.messageId,
@@ -135,12 +114,24 @@ const MessagesChatroom: FC<RouteComponentProps<any>> = ({ match }) => {
       message: text,
     }); 
   };
+  const  handleScroll = (e: UIEvent<HTMLDivElement>)  => {
+    let element =e.target as Element;
+  
+    if (element.scrollTop==0) {
+      console.log('helloworld');
+      setYes(false);
+      dispatch(LoadMessagesAction(token, match.params.messageId, Math.floor(messages.length / 15)));
+    }
+ }
+ 
 
   return (
     <div className="Messages">
       <div className="Messages__Left">
         <div className="Messages__Left__Heading">
-          <div className="Messages__Left__Heading__ProfilePhoto"></div>
+          <div className="Messages__Left__Heading__ProfilePhoto">
+          
+          </div>
           {/* owner id is used for now later on user_id of the another user id should be used */}
           <Link
             to={`/profile/${user_id}`}
@@ -149,18 +140,17 @@ const MessagesChatroom: FC<RouteComponentProps<any>> = ({ match }) => {
             <h1></h1>
           </Link>
         </div>
-        <div className="Messages__Left__Messages" ref={ContainerRef}>
+        <div className="Messages__Left__Messages" onScroll={handleScroll}>
           {messages &&
-            messages.map((message: oneMessageInterface, index, array) => (
+            messages.map((message: oneMessageInterface, index) => (
               <>
                 {message.user_id === user_id ? (
                   <>
-                    <MessageMe key={message.message_id} message={message} />
+                    <MessageMe firstElementRef={null} key={message.message_id} message={message} />
                   </>
                 ) : (
-                  <MessageOther key={message.message_id} message={message} />
+                  <MessageOther firstElementRef={null} key={message.message_id} message={message} />
                 )}
-
               </>
             ))}
             <div ref={messagesEndRef} />

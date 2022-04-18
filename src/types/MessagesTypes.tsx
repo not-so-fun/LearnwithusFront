@@ -2,6 +2,7 @@ import {
     MESSAGES_STARTED,
     MESSAGES_SUCCESS,
     MESSAGE_SUCCESS,
+    MESSAGES_UPDATE,
     MESSAGES_ERROR
   } from "../constants/MessagesConstants";
   import {oneMessageInterface} from "../Layout/MessagesChatroom";
@@ -12,6 +13,10 @@ import {
 
   interface MessagesSuccess {
     type: typeof MESSAGES_SUCCESS;
+    messages: oneMessageInterface[];
+  }
+  interface MessagesUpdate{
+    type: typeof MESSAGES_UPDATE;
     messages: oneMessageInterface[];
   }
   interface MessageSuccess{
@@ -29,5 +34,6 @@ import {
     | MessagesLoad
     | MessagesSuccess
     | MessageSuccess
+    | MessagesUpdate
     | MessagesError;
   
