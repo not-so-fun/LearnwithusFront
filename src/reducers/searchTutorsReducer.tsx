@@ -5,7 +5,7 @@ import {
   } from "../constants/searchTutorConstants";
   
   import { SearchTutorType } from "../types/searchTutorTypes";
-  import {profileUserDataInterface} from "../reducers/ProfileReducer"
+  import {profileUserDataInterface} from "./ProfileReducer"
   
   
   export interface searchTutorInterface {

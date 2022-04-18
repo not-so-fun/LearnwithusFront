@@ -12,6 +12,7 @@ import {
   NOTIFICATION_SUCCESS,
   NOTIFICATION_ERROR,
 } from "../constants/NotificationConstants";
+
 import axios from "../axios";
 import { RootDispatchType } from "../stores";
 
@@ -19,7 +20,9 @@ export const ProfileAction =
   (user_id: string, token: string) =>
   (dispatch: Dispatch<RootDispatchType>) => {
     dispatch({ type: PROFILE_DATA_LOADING });
+
     console.log(user_id);
+
     axios
       .get(`/users/${user_id}`, {
         headers: {
@@ -27,12 +30,14 @@ export const ProfileAction =
         },
       })
       .then((response) => {
-        console.log(response.data);
+        console.log("Data is ",response.data);
         dispatch({ type: PROFILE_DATA_SUCCESS, profile_data: response.data });
       })
       .catch((error) => {
+        console.log(error);
         dispatch({ type: PROFILE_DATA_ERROR, error: error.response.data });
       });
+
   };
 
 export const rateUserAction =

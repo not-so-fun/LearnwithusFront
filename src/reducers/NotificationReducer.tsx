@@ -9,18 +9,22 @@ import {
 import { NotificationTypes } from "../types/NotificationTypes";
 export interface ApproachNotificationInterface {
   approachnotification_id: string;
-  notification_type:"answered"|"replied"|"approach_request"|"approach_accept"
+  notification_type:
+    | "answered"
+    | "replied"
+    | "approach_request"
+    | "approach_accept";
   viewed: boolean;
   status: string | null;
   username: string;
   image: string;
-  answer_id:string|null;
-  reply_id:string|null
+  answer_id: string | null;
+  reply_id: string | null;
 }
 export interface NotificationInterface {
   loading: boolean;
   notifications: ApproachNotificationInterface[];
-  notificationLength:number;
+  notificationLength: number;
   error: string | null;
 }
 
@@ -48,16 +52,22 @@ export const NotificationReducer = (
         notifications: action.notification,
       };
     case SINGLE_NOTIFICATION_SUCCESS:
+      let c = action.notification;
       return {
         ...state,
         loading: false,
-        notifications: [...state.notifications,action.notification]
+        notifications: state.notifications.map((notification, index) =>
+          notification["approachnotification_id"] ===
+          c["approachnotification_id"]
+            ? { ...notification, status: "accepted" }
+            : notification
+        ),
       };
     case CHANGED_NOTIFICATION_NUMBER:
       return {
         ...state,
         loading: false,
-        notificationLength:action.length
+        notificationLength: action.length,
       };
     case DELETE_NOTIFICATION:
       return{

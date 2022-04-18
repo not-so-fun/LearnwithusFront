@@ -25,7 +25,6 @@ export const ApproachAction =
         }
       )
       .then((response) => {
-        console.log(response.data);
         dispatch({ type: APPROACH_REQUST_SUCCESS });
         if (response.data == "approach") {
           dispatch({ type: CHANGE_PROFILE_APPROACH_STATUS, status: null });

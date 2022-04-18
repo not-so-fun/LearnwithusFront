@@ -14,6 +14,7 @@ import { MessagesInterface } from "../reducers/MessagesReducer";
 import { useDispatch, useSelector } from "react-redux";
 import { RootStateType } from "../stores";
 import { URL } from "../axiosURL";
+import { CHATROOM_UPDATE } from "../constants/ChatRoomConstants";
 
 const socketUrl = URL + "/chat";
 export interface oneMessageInterface {
@@ -62,13 +63,18 @@ const MessagesChatroom: FC<RouteComponentProps<any>> = ({ match }) => {
   }, [messages]);
   useEffect(() => {
     socketOfChat = io(socketUrl);
-
     socketOfChat.emit("join_room", { chat_room_id: match.params.messageId });
-
     socketOfChat.on("received_message", (data: oneMessageInterface) => {
-      console.log(data);
-      dispatch({type:MESSAGE_SUCCESS,message:data})
-    
+      dispatch({ type: MESSAGE_SUCCESS, message: data });
+
+    //   dispatch({
+    //     type: CHATROOM_UPDATE,
+    //     chatRoom: {
+    //       chat_room_id: data.chat_room_id,
+    //       last_message: data.message,
+    //     },
+    //   });
+
     });
 
 
@@ -101,6 +107,10 @@ const MessagesChatroom: FC<RouteComponentProps<any>> = ({ match }) => {
     | React.FormEventHandler<HTMLFormElement>
     | undefined = (e) => {
     e.preventDefault();
+<<<<<<< HEAD
+=======
+    setText("");
+>>>>>>> 7e7382a (added front for cancel request)
     socketOfChat.emit("send_message", {
       chat_room_id: match.params.messageId,
       user_id: user_id,
@@ -147,18 +157,27 @@ const MessagesChatroom: FC<RouteComponentProps<any>> = ({ match }) => {
             value={text}
             onChange={(e) => setText(e.target.value)}
           />
+<<<<<<< HEAD
           <button className="Messages__Left__InputBox__Logos">
             <IoMdSend
               className="Messages__Left__InputBox__Logos__Logo"
             />
           </button>
            
+=======
+          <div className="Messages__Left__InputBox__Logos">
+            <button>
+              <IoMdSend className="Messages__Left__InputBox__Logos__Logo" />
+            </button>
+          </div>
+>>>>>>> 7e7382a (added front for cancel request)
         </form>
       </div>
 
       <div className="Messages__Right">
         <MessagesSidebar />
       </div>
+
     </div>
   );
 };

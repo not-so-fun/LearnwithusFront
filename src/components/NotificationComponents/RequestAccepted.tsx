@@ -14,13 +14,6 @@ const RequestAcceptedNotification: FC<RequestNotificationInterface> = ({not}) =>
   const dispatch = useDispatch();
   const {token} = useTokenAndId();
 
-  const Done = () =>{
-    dispatch(AcceptApproachNotificationAction(token, not.approachnotification_id)); 
-  }
-  const Close =() =>{
-    dispatch(DeleteApproachNotificationAction(token, not.approachnotification_id)); 
-
-  }
   return (
     <div className="HomePage__Right__MainBody__Notification__Box__RequestNotification__Noti">
       <div className="HomePage__Right__MainBody__Notification__Box__RequestNotification__Noti__Left">

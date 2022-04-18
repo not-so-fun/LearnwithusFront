@@ -3,6 +3,7 @@ import {
   NOTIFICATION_STARTED,
   NOTIFICATION_SUCCESS,
   NOTIFICATION_ERROR,
+  SINGLE_NOTIFICATION_SUCCESS,
 } from "../constants/NotificationConstants";
 
 import axios from "../axios";
@@ -20,7 +21,6 @@ export const GetNotificationAction =
         },
       })
       .then((response) => {
-        console.log(response.data)
         dispatch({ type: NOTIFICATION_SUCCESS, notification: response.data });
       })
       .catch((error) => {
@@ -29,25 +29,26 @@ export const GetNotificationAction =
   };
 
 export const AcceptApproachNotificationAction =
-  (token: string, notification_id: string) =>
+  (
+    token: string,
+    notification_id: string,
+    setDoneLoading: React.Dispatch<React.SetStateAction<boolean>>
+  ) =>
   (dispatch: Dispatch<NotificationTypes>) => {
-    // dispatch({ type: NOTIFICATION_STARTED });
-
-    console.log(token);
-    console.log(notification_id);
-
     axios
-      .get(
-        `/notifications/approach_accept/${notification_id}`,
-        {
-          headers: {
-            "x-auth-token": token,
-          },
-        }
-      )
+      .get(`/notifications/approach_accept/${notification_id}`, {
+        headers: {
+          "x-auth-token": token,
+        },
+      })
       .then((response) => {
-        console.log(response.data);
-        // dispatch({type:NOTIFICATION_SUCCESS, notification: response.data});
+        console.log(response.data.notification);
+        dispatch({
+          type: SINGLE_NOTIFICATION_SUCCESS,
+          notification: response.data.notification,
+        });
+
+        setDoneLoading(false);
       })
       .catch((error) => {
         dispatch({ type: NOTIFICATION_ERROR, error: error });
@@ -55,22 +56,23 @@ export const AcceptApproachNotificationAction =
   };
 
 export const DeleteApproachNotificationAction =
-  (token: string, notification_id: string) =>
+  (
+    token: string,
+    notification_id: string,
+    setDeleteLoader: React.Dispatch<React.SetStateAction<boolean>>,
+    setDeletedNoti: React.Dispatch<React.SetStateAction<boolean>>
+  ) =>
   (dispatch: Dispatch<NotificationTypes>) => {
-    // dispatch({ type: NOTIFICATION_STARTED })
-
     axios
-      .delete(
-        `/notifications/accept_approach/${notification_id}`,
-        {
-          headers: {
-            "x-auth-token": token,
-          },
-        }
-      )
+      .delete(`/notifications/approach_accept/${notification_id}`, {
+        headers: {
+          "x-auth-token": token,
+        },
+      })
       .then((response) => {
         console.log(response.data);
-        // dispatch({type:NOTIFICATION_SUCCESS, notification: response.data});
+        setDeleteLoader(false);
+        setDeletedNoti(true);
       })
       .catch((error) => {
         dispatch({ type: NOTIFICATION_ERROR, error: error });

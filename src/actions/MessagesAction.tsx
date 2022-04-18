@@ -18,7 +18,6 @@ export const MessagesAction =
         },
       })
       .then((response) => {
-        console.log(response.data)
        dispatch({type:MESSAGES_SUCCESS, messages: response.data});
       })
       .catch((error) => {
