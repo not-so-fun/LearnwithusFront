@@ -157,7 +157,7 @@ const Navbar: FC = () => {
               className="Navbar__Left__Hamburger__Header"
               onClick={() => history.push("/")}
             >
-              LEARN101
+              LEARN10
             </h3>
             <CloseIcon
               onClick={() => {
@@ -226,18 +226,15 @@ const Navbar: FC = () => {
                 // style={{ fontSize: 25, marginLeft: 20, cursor: "pointer" }}
                 className="Navbar__Links__Create"
               />
-
               <BsFillChatFill
                 onClick={() => history.push("/messages")}
                 className="Navbar__Links__Exit"
               />
-                ({chatNotificationLength})
-
+              ({chatNotificationLength})
               <FiLogOut
                 onClick={handleLogout}
                 className="Navbar__Links__Exit"
               />
-
               <div className="Navbar__Links__content">
                 <div className="Navbar__Links__content__Icon">
                   <div className="Navbar__Links__content__Icon__Bell">
