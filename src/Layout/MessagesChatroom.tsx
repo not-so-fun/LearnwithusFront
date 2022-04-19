@@ -13,7 +13,7 @@ import useTokenAndId from "../components/ReusableLogicComponents/useTokenAndId";
 import { Link } from "react-router-dom";
 import { RouteComponentProps } from "react-router-dom";
 import { IoMdSend } from "react-icons/io";
-import { MessagesAction,LoadMessagesAction } from "../actions/MessagesAction";
+import { MessagesAction, LoadMessagesAction } from "../actions/MessagesAction";
 import io from "socket.io-client";
 import { Socket } from "socket.io-client";
 import { ChatRoomAction } from "../actions/ChatRoomAction";
@@ -71,6 +71,7 @@ const MessagesChatroom: FC<RouteComponentProps<any>> = ({ match }) => {
   useEffect(() => {
     dispatch(MessagesAction(token, match.params.messageId));
   }, [token, match]);
+
   useLayoutEffect(() => {
     if (yes) {
       scrollToBottom();
@@ -78,7 +79,10 @@ const MessagesChatroom: FC<RouteComponentProps<any>> = ({ match }) => {
   }, [messages]);
   useEffect(() => {
     socketOfChat = io(socketUrl);
-    socketOfChat.emit("join_room", { chat_room_id: match.params.messageId });
+    socketOfChat.emit("join_room", {
+      chat_room_id: match.params.messageId,
+      user: user_id,
+    });
     socketOfChat.on("received_message", (data: oneMessageInterface) => {
       dispatch({ type: MESSAGE_SUCCESS, message: data });
     });

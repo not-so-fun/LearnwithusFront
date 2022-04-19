@@ -45,6 +45,7 @@ const HomePage: FC = () => {
   useEffect(() => {
     dispatch(QuestionFeedAction(token));
   }, [token]);
+
   const ShowMore = () => {
     dispatch(QuestionFeedActionMore(token, count));
   };

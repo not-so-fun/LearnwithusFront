@@ -1,7 +1,9 @@
-import React, { FC, useEffect, useState } from "react";
+import React, { FC, useEffect, useMemo, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   CHANGED_NOTIFICATION_NUMBER,
+  CHAT_NOTIFICATION_NUMBER,
+  CHAT_NOTIFICATION_NUMBER_CHANGE,
   SINGLE_NOTIFICATION_SUCCESS,
 } from "../constants/NotificationConstants";
 import { CHATROOM_UPDATE } from "../constants/ChatRoomConstants";
@@ -34,9 +36,10 @@ interface DefaultEventsMap {
 let socketOfNotification: Socket<DefaultEventsMap, DefaultEventsMap>;
 
 const Navbar: FC = () => {
-  const { notificationLength } = useSelector<RootStateType>(
-    (state) => state.Notification
-  ) as NotificationInterface;
+  const { notificationLength, chatNotificationLength } =
+    useSelector<RootStateType>(
+      (state) => state.Notification
+    ) as NotificationInterface;
   const dispatch = useDispatch();
   const [showNotification, setShowNotification] = useState<NotificaitonState>({
     show: false,
@@ -71,6 +74,10 @@ const Navbar: FC = () => {
           type: CHANGED_NOTIFICATION_NUMBER,
           length: response.data.length,
         });
+        dispatch({
+          type: CHAT_NOTIFICATION_NUMBER,
+          chatLength: response.data.chatLength,
+        });
       })
       .catch((error) => {
         console.log(error);
@@ -80,6 +87,7 @@ const Navbar: FC = () => {
   useEffect(() => {
     socketOfNotification = io(socketUrl);
     socketOfNotification.emit("join_my_noti_room", { user_id: user_id });
+
     socketOfNotification.on("notification_received", (data) => {
       dispatch({
         type: CHANGED_NOTIFICATION_NUMBER,
@@ -97,6 +105,16 @@ const Navbar: FC = () => {
       dispatch({ type: CHATROOM_UPDATE, chatRoom: data });
     });
   }, [user_id]);
+
+  useEffect(() => {
+    socketOfNotification.on("chat_room_notification", (data) => {
+      console.log(data);
+      dispatch({
+        type: CHAT_NOTIFICATION_NUMBER_CHANGE,
+        changeNumber: chatNotificationLength + data.msg,
+      });
+    });
+  }, []);
 
   const handleLogout = () => {
     localStorage.clear();
@@ -218,6 +236,7 @@ const Navbar: FC = () => {
                 style={{ fontSize: 25, marginLeft: 20, cursor: "pointer" }}
                 className="Navbar__Links__Exit"
               />
+                ({chatNotificationLength})
 
               <FiLogOut
                 onClick={handleLogout}
