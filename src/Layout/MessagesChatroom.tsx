@@ -15,6 +15,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { RootStateType } from "../stores";
 import { URL } from "../axiosURL";
 import { CHATROOM_UPDATE } from "../constants/ChatRoomConstants";
+import CircularProgress from '@mui/material/CircularProgress';
 // import debounce from 'lodash.debounce';
 
 const socketUrl = URL + "/chat";
@@ -145,6 +146,7 @@ const MessagesChatroom: FC<RouteComponentProps<any>> = ({ match }) => {
           </Link>
         </div>
         <div className="Messages__Left__Messages" onScroll={handleScroll}>
+          {loading &&  <div><CircularProgress /></div>}
           {messages &&
             messages.map((message: oneMessageInterface, index) => (
               <>
