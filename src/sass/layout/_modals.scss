@@ -18,7 +18,7 @@
   width: 90%;
   z-index: 100;
   max-height: 50rem;
-  border-radius: 6px;
+  border-radius: 0.6rem;
   background-color: #e6e6e6;
   color: $color-black;
   &__Question {
@@ -34,9 +34,9 @@
     align-items: center;
     padding-right: 3rem;
     &__Btn {
-      padding: 5px 10px;
+      padding: 0.5rem 1rem;
       background-color: transparent;
-      border: 2px solid #057777;
+      border: 0.2rem solid #057777;
       color: #057777;
       font-size: 1.8rem;
       transition: all 0.4s ease;
@@ -47,9 +47,9 @@
       }
     }
     &__BtnCancel {
-      padding: 5px 10px;
+      padding: 0.5rem 1rem;
       background-color: transparent;
-      border: 2px solid rgb(188, 27, 27);
+      border: 0.2rem solid rgb(188, 27, 27);
       color: rgb(188, 27, 27);
       font-size: 1.8rem;
       transition: all 0.4s ease;
@@ -61,8 +61,8 @@
     }
   }
   &__Top {
-    border-top-left-radius: 6px;
-    border-top-right-radius: 6px;
+    border-top-left-radius: 0.6rem;
+    border-top-right-radius: 0.6rem;
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -75,7 +75,7 @@
     // position: absolute;
     // top: 7px;
     // right: 6px;
-    font-size: 28px !important;
+    font-size: 2.8rem !important;
     font-weight: bold !important;
     color: rgb(188, 27, 27);
     cursor: pointer;
@@ -107,17 +107,16 @@
 
 .SearchModal {
   position: fixed;
- height:auto;
+  height: auto;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   width: 80rem;
   z-index: 100;
   max-height: 50rem;
-  border-radius: 6px;
+  border-radius: 0.6rem;
   background-color: $color-white;
   color: $color-black;
-  
 
   &__Search {
     margin: 1rem 0;
@@ -125,33 +124,31 @@
       padding: 0 2rem;
       display: flex;
       flex-direction: column;
-      margin:3rem 0;
-      &__Box{
-        width:100%;
+      margin: 3rem 0;
+      &__Box {
+        width: 100%;
       }
-      &__TitleLabel{
-        height:auto;
-        margin:1rem 0;
-        &__Select{
-          border:none;
-          outline:none;
-          height:5rem;
-          padding:1rem;
-          width:100%;
-          border-radius: 5px;
-          font-size:2.3rem;
-          &__Option{
-            font-size:2.3rem;
-           
+      &__TitleLabel {
+        height: auto;
+        margin: 1rem 0;
+        &__Select {
+          border: none;
+          outline: none;
+          height: 5rem;
+          padding: 1rem;
+          width: 100%;
+          border-radius: 0.5rem;
+          font-size: 2.3rem;
+          &__Option {
+            font-size: 2.3rem;
           }
         }
       }
-    
+
       & label {
         font-size: 2.3rem;
         margin-bottom: 0.5rem;
       }
-      
     }
   }
   &__Button {
@@ -159,13 +156,13 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
-   
-    height:6rem;
+
+    height: 6rem;
     padding-right: 3rem;
     &__Btn {
-      padding: 5px 10px;
+      padding: 0.5rem 1rem;
       background-color: transparent;
-      border: 2px solid #057777;
+      border: 0.2rem solid #057777;
       color: #057777;
       font-size: 1.8rem;
       transition: all 0.4s ease;
@@ -176,9 +173,9 @@
       }
     }
     &__BtnCancel {
-      padding: 5px 10px;
+      padding: 0.5rem 1rem;
       background-color: transparent;
-      border: 2px solid rgb(188, 27, 27);
+      border: 0.2rem solid rgb(188, 27, 27);
       color: rgb(188, 27, 27);
       font-size: 1.8rem;
       transition: all 0.4s ease;
@@ -190,15 +187,14 @@
     }
   }
   &__Top {
-    
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-right:2rem;
-    padding-left:3rem;
+    padding-right: 2rem;
+    padding-left: 3rem;
     // background-color: #057777;
     height: 7rem;
-    border-bottom: 2px solid $color-grey-light-2;
+    border-bottom: 0.2rem solid $color-grey-light-2;
     &__Para {
       font-size: 2.4rem;
     }
@@ -208,7 +204,7 @@
     // position: absolute;
     // top: 7px;
     // right: 6px;
-    font-size: 28px !important;
+    font-size: 2.8rem !important;
     font-weight: bold !important;
     color: rgb(93, 93, 93);
     cursor: pointer;

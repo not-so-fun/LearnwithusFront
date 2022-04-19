@@ -43,23 +43,23 @@
             background-color: $color-white;
             text-align: left;
             margin-top: 1rem;
-            border-radius: 5px;
+            border-radius: 0.5rem;
             &__Header {
               background-color: #f8f9f9;
-              font-size: 18px;
-              padding: 5px 8px;
+              font-size: 1.8rem;
+              padding: 0.5rem 0.8rem;
             }
             &__Content,
             &__Para {
-              padding: 5px 8px;
-              font-size: 14px;
+              padding: 0.5rem 0.8rem;
+              font-size: 1.4rem;
               margin-top: 0.3rem;
             }
             &__List {
-              padding: 12px 15px;
-              font-size: 14px;
+              padding: 1.2rem 1.5rem;
+              font-size: 1.4rem;
               font-weight: 600;
-              border-bottom: 1px solid lightgrey;
+              border-bottom: 0.1rem solid lightgrey;
               cursor: pointer;
               &:last-child {
                 border: none;
@@ -72,7 +72,7 @@
                 &__Left {
                   &__span {
                     color: rgb(32, 154, 230);
-                    font-size: 16px;
+                    font-size: 1.6rem;
                     margin-right: 0.5rem;
                   }
                 }

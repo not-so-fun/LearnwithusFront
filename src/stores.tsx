@@ -14,17 +14,17 @@ import { SubTopicReducer } from "./reducers/SubTopicReducer";
 import { QuestionFeedReducer } from "./reducers/QuestionFeedReducers";
 import { MainQuestionAnswerReducer } from "./reducers/MainQuestionAnswerReducer";
 import { WishesReducer } from "./reducers/WishesReducer";
-import {AnswersOnlyReducer} from "./reducers/AnsweresOnlyReducer"
+import { AnswersOnlyReducer } from "./reducers/AnsweresOnlyReducer";
 import { AnswerTheQuestionReducer } from "./reducers/AnswerTheQuestionReducer";
 import { WishesEditReducer } from "./reducers/WishesEditReducer";
 import { ExpertisesEditReducer } from "./reducers/ExpertiseEditReducer";
 import { UpdateProfileReducer } from "./reducers/UpdateProfileReducer";
-import {QuestionAskedFeedReducer} from "./reducers/MyQuestionAskedReducer";
+import { QuestionAskedFeedReducer } from "./reducers/MyQuestionAskedReducer";
 import { SavedQuestionReducer } from "./reducers/SavedQuestionsReducer";
-import { UpdateQuestionReducer} from "./reducers/UpdateQuestionReducer";
-import {SearchTutorReducer} from "./reducers/searchTutorsReducer";
-import {ChatRoomReducer} from "./reducers/ChatRoomReducer";
-import {MessagesReducer} from "./reducers/MessagesReducer";
+import { UpdateQuestionReducer } from "./reducers/UpdateQuestionReducer";
+import { SearchTutorReducer } from "./reducers/searchTutorsReducer";
+import { ChatRoomReducer } from "./reducers/ChatRoomReducer";
+import { MessagesReducer } from "./reducers/MessagesReducer";
 import { NotificationReducer } from "./reducers/NotificationReducer";
 
 const rootReducer = combineReducers({
@@ -34,25 +34,25 @@ const rootReducer = combineReducers({
   forgot_password: ForgotPassowrdReducer,
   reset_password: ResetPassowrdReducer,
   ask_question: AskQuestionReducer,
-  topics:TopicReducer,
-  subtopics:SubTopicReducer,
-  expertises:ExpertiseReducer,
-  questionFeed:QuestionFeedReducer,
+  topics: TopicReducer,
+  subtopics: SubTopicReducer,
+  expertises: ExpertiseReducer,
+  questionFeed: QuestionFeedReducer,
   mainQA: MainQuestionAnswerReducer,
   wishes: WishesReducer,
-  answers:AnswersOnlyReducer,
-  answer_question:AnswerTheQuestionReducer,
-  edit_wishes:WishesEditReducer,
-  edit_expertises:ExpertisesEditReducer,
-  updateUserInfo:UpdateProfileReducer,
-  askedQuestions:QuestionAskedFeedReducer,
+  answers: AnswersOnlyReducer,
+  answer_question: AnswerTheQuestionReducer,
+  edit_wishes: WishesEditReducer,
+  edit_expertises: ExpertisesEditReducer,
+  updateUserInfo: UpdateProfileReducer,
+  askedQuestions: QuestionAskedFeedReducer,
   savedQuestions: SavedQuestionReducer,
-  updateQuestion:UpdateQuestionReducer,
+  updateQuestion: UpdateQuestionReducer,
   tutor: SearchTutorReducer,
-  chatRoom:ChatRoomReducer,
+  chatRoom: ChatRoomReducer,
   messages: MessagesReducer,
-  approaches:ApproachReducer,
-  Notification:NotificationReducer 
+  approaches: ApproachReducer,
+  Notification: NotificationReducer,
 });
 
 const store = createStore(

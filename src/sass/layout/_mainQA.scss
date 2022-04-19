@@ -6,7 +6,7 @@
   align-items: center;
   justify-content: flex-start;
   background: $color-white;
-  border: 1px solid $color-grey-light-2;
+  border: 0.1rem solid $color-grey-light-2;
   &__ShowReply {
     height: auto;
     width: 100%;
@@ -25,7 +25,7 @@
       border: none;
       outline: none;
       font-size: 1.5rem;
-      border-radius: 5px;
+      border-radius: 0.5rem;
       resize: none;
     }
     &__Reply {
@@ -36,10 +36,10 @@
       margin: 0.4rem 0;
 
       outline: none;
-      border-radius: 5px;
+      border-radius: 0.5rem;
       font-size: 1.5rem;
       color: $color-secondary;
-      border: 1px solid $color-secondary;
+      border: 0.1rem solid $color-secondary;
       &:hover {
         cursor: pointer;
       }
@@ -53,7 +53,7 @@
       border: none;
       outline: none;
       background: $color-white;
-      border: 1px solid $color-grey-light-2;
+      border: 0.1rem solid $color-grey-light-2;
 
       color: $color-black;
       &:hover {
@@ -69,7 +69,7 @@
     display: flex;
     align-items: center;
     // border:1px solid black;
-    border-bottom: 2px solid $color-grey-light-2;
+    border-bottom: 0.2rem solid $color-grey-light-2;
     &__Box {
       height: 8rem;
       // background:green;
@@ -82,7 +82,7 @@
         position: relative;
         display: inline-block;
         vertical-align: middle;
-        margin: 10px; /* demo only */
+        margin: 1rem; /* demo only */
         font-size: 2em;
       }
 
@@ -94,7 +94,7 @@
         padding-right: 2.5em;
         border: 0;
         margin: 0;
-        border-radius: 3px;
+        border-radius: 0.3rem;
         text-indent: 0.01px;
         text-overflow: "";
         -webkit-appearance: button; /* hide default arrow in chrome OSX */
@@ -124,7 +124,7 @@
         right: 0;
         top: 0;
         bottom: 0;
-        border-radius: 0 3px 3px 0;
+        border-radius: 0 0.3rem 0.3rem 0;
       }
 
       &__Custom_Dropdown select[disabled] {
@@ -176,7 +176,7 @@
           flex: 1;
           font-size: 1.5rem;
           background: white;
-          border: 1px solid $color-grey-light-2;
+          border: 0.1rem solid $color-grey-light-2;
           padding: 0 1rem;
           &:hover {
             cursor: pointer;
@@ -190,8 +190,8 @@
     margin-top: rem;
     // background: red;
     margin: 2rem auto;
-    border: 1px solid $color-grey-light-2;
-    border-radius: 5px;
+    border: 0.1rem solid $color-grey-light-2;
+    border-radius: 0.5rem;
     &__Box {
       padding: 0 1rem;
 
@@ -212,7 +212,7 @@
           border: none;
           outline: none;
           background: $color-grey-light-2;
-          border-radius: 5px;
+          border-radius: 0.5rem;
           resize: none;
         }
       }
@@ -230,17 +230,17 @@
           background: $color-primary;
           padding: 0 1rem;
           font-size: 2rem;
-          border-radius: 5px;
+          border-radius: 0.5rem;
           color: $color-white;
           transition: all 0.4s;
           &:hover {
             cursor: pointer;
-            box-shadow: inset 0 0 150px 150px rgba(40, 101, 99, 0.8);
+            box-shadow: inset 0 0 15rem 15rem rgba(40, 101, 99, 0.8);
             transform: translateY(-1px);
           }
           &:active {
             cursor: pointer;
-            box-shadow: inset 0 0 150px 150px rgba(40, 101, 99, 0.8);
+            box-shadow: inset 0 0 15rem 15rem rgba(40, 101, 99, 0.8);
             transform: translateY(2px);
           }
         }
@@ -264,7 +264,7 @@
 
   &__Answers {
     background: white;
-    height:auto;
+    height: auto;
     width: 100%;
     overflow: scroll;
     display: flex;
@@ -285,14 +285,13 @@
   &__Replies {
     height: auto;
     width: 100%;
-   
 
     &__Replys {
-      &:first-child{
-        border-top: 2px solid $color-grey-light-2;
+      &:first-child {
+        border-top: 0.2rem solid $color-grey-light-2;
       }
       &:not(:last-child) {
-        border-bottom: 2px solid $color-grey-light-2;
+        border-bottom: 0.2rem solid $color-grey-light-2;
       }
     }
     &__Reply {
@@ -303,14 +302,14 @@
   }
   &__Questions {
     width: 100%;
-    height: 2px;
-    border: 1px solid $color-grey-light-2;
+    height: 0.2rem;
+    border: 0.1rem solid $color-grey-light-2;
   }
   &__Answer {
     height: auto;
     width: 100%;
     padding: 3rem;
-    border-bottom: 2px solid $color-grey-light-2;
+    border-bottom: 0.2rem solid $color-grey-light-2;
     // border: 2px solid red;
     &__Box {
       width: 100%;
@@ -339,7 +338,7 @@
             width: 6rem;
             border-radius: 50%;
             // background:$color-grey-light-3;
-            border: 3px solid $color-primary;
+            border: 0.3rem solid $color-primary;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -386,7 +385,7 @@
             font-size: 1.3rem;
             // background:green;
             color: $color-secondary;
-            border: 1px solid $color-secondary;
+            border: 0.1rem solid $color-secondary;
             display: flex;
             align-items: center;
             padding: 0 1rem;
@@ -483,10 +482,10 @@
           justify-content: space-between;
           height: 7rem;
           width: 100%;
-          &__Left{
-            width:50%;
-            height:100%;
-            display:flex;
+          &__Left {
+            width: 50%;
+            height: 100%;
+            display: flex;
             align-items: center;
           }
           &__Aligning {
@@ -513,13 +512,13 @@
             }
 
             &:not(:last-child) {
-              border-right: 1px solid $color-grey-light-2;
+              border-right: 0.1rem solid $color-grey-light-2;
             }
             &__Text {
               &__RepliesIcons {
                 display: flex;
                 align-items: center;
-                font-size: 15px;
+                font-size: 1.5rem;
                 cursor: pointer;
               }
             }
@@ -550,8 +549,8 @@
     width: 95%;
     background: $color-white;
     margin: 1rem auto;
-    border-radius: 5px;
-    border: 1px solid $color-grey-light-2;
+    border-radius: 0.5rem;
+    border: 0.1rem solid $color-grey-light-2;
     &__Top {
       height: 7rem;
       width: 100%;
@@ -564,7 +563,7 @@
         width: 25rem;
         // background:$color-grey-light-2;
         margin: 0 1rem;
-        border-radius: 5px;
+        border-radius: 0.5rem;
         display: flex;
         align-items: center;
         &__ProfilePhoto {
@@ -605,8 +604,8 @@
           flex: 1;
           height: 5rem;
           background: white;
-          border-radius: 5px;
-          border: 1px solid $color-grey-light-2;
+          border-radius: 0.5rem;
+          border: 0.1rem solid $color-grey-light-2;
           margin: 0 0.5rem;
           display: flex;
           justify-content: space-between;
@@ -619,7 +618,7 @@
           height: 5rem;
           width: 5rem;
           border-radius: 50%;
-          border: 1px solid $color-grey-light-2;
+          border: 0.1rem solid $color-grey-light-2;
           background: white;
           margin: 0 1rem;
           display: flex;
@@ -655,7 +654,7 @@
         &__LikesBox {
           height: 18rem;
           width: 8rem;
-          border: 1px solid $color-grey-light-2;
+          border: 0.1rem solid $color-grey-light-2;
           // background:green;
           display: flex;
           flex-direction: column;
@@ -717,7 +716,7 @@
           display: flex;
           align-items: center;
           justify-content: flex-start;
-          border-bottom: 1px solid $color-grey-light-2;
+          border-bottom: 0.1rem solid $color-grey-light-2;
         }
         &__Body {
           height: auto;

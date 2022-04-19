@@ -23,7 +23,7 @@
     flex: 0.4;
   }
   &__HeadingFallback {
-    border: 2px solid lightgrey;
+    border: 0.2rem solid lightgrey;
     font-size: 4rem;
     font-weight: 600;
     display: flex;
@@ -40,12 +40,15 @@
     color: $color-black;
     margin-top: 1rem;
   }
-  &__Newsfeed {
-  }
 }
 .flex__div {
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+@media only screen and (max-width: 700px) {
+  .Answered__Right {
+    display: none;
+  }
 }

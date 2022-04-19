@@ -95,7 +95,7 @@ const HomePage: FC = () => {
                 <Avatar
                   alt="image"
                   src="https://images.unsplash.com/photo-1453728013993-6d66e9c9123a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dmlld3xlbnwwfHwwfHw%3D&w=1000&q=80"
-                style={{ width: 35, height: 35 }}
+                  style={{ width: 35, height: 35 }}
                   className="Profile__Box__Top__ImagesAndDatas__Image__Avatar"
                 />
                 <CircleIcon className="HomePage__Right__MainBody__Notification__Active__Person__Avatar__Icon" />
@@ -137,7 +137,6 @@ const HomePage: FC = () => {
             </div>
           </div>
         </div>
-   
       </div>
     </>
   );
