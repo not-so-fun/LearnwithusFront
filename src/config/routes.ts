@@ -15,11 +15,20 @@ import SearchTutors from "../components/SearchTutors/SearchTutors";
 import MessagesChatroom from "../Layout/MessagesChatroom";
 import SocketTry from "../Layout/SocketTry";
 import Messages from "../Layout/Messages";
+import ProfileTry from "../Layout/profileTry";
 const routes: IRoute[] = [
   {
     path: "/",
     name: "Home",
     component: HomePage,
+    exact: true,
+    private: true,
+    showNav: true,
+  },
+  {
+    path: "/profiles",
+    name: "profileTry",
+    component: ProfileTry,
     exact: true,
     private: true,
     showNav: true,
