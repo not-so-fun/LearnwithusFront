@@ -4,11 +4,12 @@
     "module": "esnext",
     "moduleResolution": "node",
     "lib": [
-      "es6",
+      "dom",
+      "dom.iterable",
+      "esnext",
       "dom"
     ],
     "sourceMap": true,
-    "jsx": "preserve",
     "strict": true,
     "noImplicitReturns": true,
     "rootDir": "src",
@@ -18,13 +19,14 @@
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true
+    "noEmit": true,
+    "jsx": "preserve"
   },
   "include": [
-    "**/*.ts",
-    "**/*.tsx"
+    "src"
   ],
   "exclude": [
     "node_modules"
