@@ -218,29 +218,23 @@ const Navbar: FC = () => {
           )}
         </div>
         <div className="Navbar__Links">
-          <AiFillHome
-            onClick={() => history.push("/")}
-            style={{ fontSize: 25, marginLeft: 20, cursor: "pointer" }}
-            className="Navbar__Links__Home"
-          />
+          <AiFillHome className="Navbar__Links__Home" />
           {(userInfo && userInfo.user_id) || user_id ? (
             <>
               <IoCreate
                 onClick={() => history.push("/question/ask")}
-                style={{ fontSize: 25, marginLeft: 20, cursor: "pointer" }}
+                // style={{ fontSize: 25, marginLeft: 20, cursor: "pointer" }}
                 className="Navbar__Links__Create"
               />
 
               <BsFillChatFill
                 onClick={() => history.push("/messages")}
-                style={{ fontSize: 25, marginLeft: 20, cursor: "pointer" }}
                 className="Navbar__Links__Exit"
               />
                 ({chatNotificationLength})
 
               <FiLogOut
                 onClick={handleLogout}
-                style={{ fontSize: 25, marginLeft: 20, cursor: "pointer" }}
                 className="Navbar__Links__Exit"
               />
 
@@ -248,7 +242,6 @@ const Navbar: FC = () => {
                 <div className="Navbar__Links__content__Icon">
                   <div className="Navbar__Links__content__Icon__Bell">
                     <IoNotificationsSharp
-                      style={{ fontSize: 25, marginLeft: 20 }}
                       className="Navbar__Links__Notification"
                       onClick={() => {
                         setShowNotification({
@@ -272,6 +265,7 @@ const Navbar: FC = () => {
                 <div className="Navbar__Links__Content">
                   <div className="Navbar__Links__content__Avatar">
                     <Avatar
+                      className="Navbar__Links__content__Avatar__Icon"
                       onClick={() =>
                         history.push(
                           `/profile/${

@@ -1,7 +1,7 @@
 .App {
   height: 100%;
   width: 100%;
-  display:flex;
+  display: flex;
   flex-direction: column;
   &__Top {
     &__Bar {
@@ -10,13 +10,13 @@
     }
   }
   &__Bottom {
-    flex:1;
+    flex: 1;
     display: flex;
     flex-direction: row;
     &__Left {
       flex: 0.2;
       position: sticky;
-      top:0;
+      top: 0;
       &__SideBar {
         display: flex;
         flex-direction: column;

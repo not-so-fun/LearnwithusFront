@@ -756,3 +756,50 @@
     }
   }
 }
+
+@media only screen and (max-width: 600px) {
+  .MainQA {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .MainQA__Heading {
+    height: 5rem;
+
+    font-size: 3rem;
+  }
+  .MainQA__Answer {
+    padding: 0.5rem;
+    width: 100%;
+  }
+  .MainQA__Answer__Box__Top__Left__AnswerData__AnswerData {
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+  }
+  .MainQA__Answer__Box__Top__Left__ProfilePhoto {
+    height: 6rem;
+    width: 6rem;
+  }
+  .MainQA__Answer__Box__Main__Likes {
+    margin-right: 1.5rem;
+  }
+  .MainQA__Answer__Box__Top__Right {
+    padding: 0 0rem;
+  }
+  .MainQA__Answer__Box__Top__Right__AnswerQuality {
+    font-size: 1.1rem;
+  }
+
+  .MainQA__AnswerInput__Box__ButtonBox__Button {
+    font-size: 1.2rem;
+    height: 3rem;
+    padding: 0 0.7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .MainQA__Types__Box__Custom_Dropdown select {
+    font-size: 1.4rem;
+    padding: 0.5em;
+  }
+}

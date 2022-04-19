@@ -113,8 +113,14 @@
 
     &__Home,
     &__Create,
-    &__Exit {
+    &__Exit,
+    &__Notification {
       transition: all 0.4s ease;
+      height: 3rem;
+      width: 3rem;
+      margin-left: 1.3rem;
+      cursor: pointer;
+
       &:hover {
         transform: scale(1.3);
       }
@@ -252,6 +258,11 @@
       &__Avatar {
         position: relative;
         margin-left: 1.5rem;
+
+        &__Icon {
+          height: 4rem !important;
+          width: 4rem !important;
+        }
         &__Drop {
           position: absolute;
 
