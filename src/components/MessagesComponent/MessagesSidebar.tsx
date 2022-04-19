@@ -14,6 +14,7 @@ const MessagesSidebar = () => {
     (state) => state.chatRoom
   ) as chatRoomInterface;
   const User: FC<chatRoom> = ({ chatRoom }) => {
+    console.log(chatRoom);
     return (
       <Link
         to={`/messages/${chatRoom.chat_room_id}`}

@@ -334,7 +334,6 @@
           display: flex;
           align-items: center;
           justify-content: space-between;
-          padding: 0 1rem;
           &__ProfilePhoto {
             height: 6rem;
             width: 6rem;
@@ -395,26 +394,25 @@
         }
       }
       &__Main {
-        // background:red;
+        // background:green;
         display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
         width: 100%;
         height: auto;
         // flex-direction: column;
         // align-items: center;
 
-        &__Likes {
+        &__Likes{
           height: 13rem;
-          width: 10rem;
+          width: 9rem;
           display: flex;
           flex-direction: column;
           align-items: center;
           justify-content: center;
-          margin-right: 3.5rem;
-          // background:red;
-
           &__Upvote {
-            height: 4rem;
-            width: 4rem;
+            height: 6rem;
+            width:6rem;
             // background:$color-grey-light-3;
             display: flex;
             align-items: center;
@@ -436,7 +434,7 @@
             }
           }
           &__Total {
-            height: 5rem;
+            height: 7rem;
             width: auto;
             display: flex;
             align-items: center;
@@ -445,8 +443,8 @@
             font-size: 2.5rem;
           }
           &__Downvote {
-            height: 4rem;
-            width: 4rem;
+            height: 6rem;
+            width: 6rem;
             // background:$color-grey-light-3;
             display: flex;
             align-items: center;
@@ -471,6 +469,7 @@
         &__AnswerText {
           display: flex;
           flex-direction: column;
+          margin-left: .5rem;
           &__Text {
             font-size: 1.6rem;
             padding: 0 0.5rem;

@@ -151,7 +151,7 @@ body {
 
 .Auth__Box__ForgotPassword {
   font-size: 1.7rem;
-  color: #32569F;
+  color: #1433BB;
   text-decoration: underline;
   margin: 1rem 0; }
   .Auth__Box__ForgotPassword:hover {
@@ -414,7 +414,7 @@ body {
       border: none;
       font-size: 1.5rem;
       font-weight: 600;
-      background: #32569F;
+      background: #1433BB;
       color: #f7f7f7; }
       .AskQuestionForm__Footer__Button:hover {
         cursor: pointer;
@@ -438,7 +438,7 @@ body {
       margin: .4rem 0;
       font-size: 2rem;
       width: 100%;
-      color: #32569F;
+      color: #1433BB;
       cursor: pointer; }
     .SearchTutors__Top__Search {
       width: 100%;
@@ -458,7 +458,7 @@ body {
       .SearchTutors__Top__Search__Icon {
         font-size: 3rem !important;
         padding: 0.2rem;
-        background-color: #32569F;
+        background-color: #1433BB;
         border-top-right-radius: 4px;
         border-bottom-right-radius: 4px;
         margin-left: -5rem;
@@ -498,7 +498,7 @@ body {
           border-radius: 50%;
           background: #fff;
           margin-right: 2rem;
-          border: 3px solid #32569F;
+          border: 3px solid #1433BB;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -540,7 +540,7 @@ body {
               .QuestionFeed__Box__Top__Left__AboutQuestion__Top__QuestionData__Time {
                 margin-right: 3rem; }
               .QuestionFeed__Box__Top__Left__AboutQuestion__Top__QuestionData__Title {
-                color: #32569F;
+                color: #1433BB;
                 text-align: left; }
           .QuestionFeed__Box__Top__Left__AboutQuestion__Title {
             color: #000;
@@ -981,13 +981,13 @@ body {
         height: 4rem;
         width: auto;
         padding: 0 3rem;
-        border: 2px solid #32569F;
+        border: 2px solid #1433BB;
         outline: none;
-        color: #32569F;
+        color: #1433BB;
         border-radius: 5px;
         transition: all 0.3s ease; }
         .Tutors__Box__Buttons__Button:hover {
-          background: #32569F;
+          background: #1433BB;
           color: #fff;
           cursor: pointer; }
 
@@ -1089,7 +1089,7 @@ body {
     align-items: center;
     justify-content: center; }
   .Auth__Side {
-    background: #32569F;
+    background: #1433BB;
     max-width: 60rem;
     width: 60rem;
     min-width: 30rem; }
@@ -1175,14 +1175,14 @@ body {
             width: auto;
             padding: 0 3rem;
             font-size: 1.5rem;
-            border: 2px solid #32569F;
-            color: #32569F;
+            border: 2px solid #1433BB;
+            color: #1433BB;
             outline: none;
             border-radius: 5px;
             transition: all 0.3s ease-in-out; }
             .Profile__Box__Top__ImagesAndDatas__Rate__Buttons__Button:hover {
               cursor: pointer;
-              background: #32569F;
+              background: #1433BB;
               color: #fff; }
       .Profile__Box__Top__ImagesAndDatas__Button {
         padding: 1rem 2rem;
@@ -1336,7 +1336,7 @@ body {
           width: auto;
           padding: 0 2rem;
           font-size: 1.6rem;
-          background: #32569F;
+          background: #1433BB;
           border: none;
           outline: none;
           border-radius: 5px; }
@@ -1388,8 +1388,8 @@ body {
           transition: all 0.4s ease; }
           .Profile__Box__Top__Statistics__Botton__Expertise:hover, .Profile__Box__Top__Statistics__Botton__Wishes:hover {
             background-color: #fff;
-            color: #32569F;
-            border: 2px solid #32569F; }
+            color: #1433BB;
+            border: 2px solid #1433BB; }
       .Profile__Box__Top__Statistics__Div {
         width: 70%;
         padding: 2rem;
@@ -1497,7 +1497,7 @@ body {
               width: 115px;
               padding: 1px 2px;
               margin-bottom: 1rem;
-              background: #32569F;
+              background: #1433BB;
               display: flex;
               justify-content: center;
               align-items: center; }
@@ -1549,8 +1549,8 @@ body {
       transition: all 0.4s ease;
       border: 2px solid black; }
       .modal__selects__button:hover {
-        color: #32569F;
-        border: 2px solid #32569F;
+        color: #1433BB;
+        border: 2px solid #1433BB;
         cursor: pointer; }
     .modal__selects__header {
       display: flex;
@@ -1612,7 +1612,7 @@ body {
   z-index: 100;
   max-height: 50rem;
   width: 900px;
-  background-color: #32569F;
+  background-color: #1433BB;
   color: #fff; }
   .editModal__Header {
     font-size: 28px;
@@ -1718,7 +1718,7 @@ body {
   font-size: 18px;
   font-weight: 600;
   color: #fff;
-  background-color: #32569F;
+  background-color: #1433BB;
   display: flex;
   height: 6.5rem;
   justify-content: space-between;
@@ -1860,7 +1860,7 @@ body {
   display: flex;
   background: #eeeeee; }
   .HomePage__Left {
-    background-color: #32569F;
+    background-color: #1433BB;
     color: #fff;
     flex: 0.3;
     height: 98vh;
@@ -1919,7 +1919,7 @@ body {
     position: relative; }
     .HomePage__Right__MainBody {
       display: flex;
-      background: #32569F;
+      background: #1433BB;
       width: 100%;
       height: calc(100% - 7rem);
       margin-top: 1rem; }
@@ -2042,7 +2042,7 @@ body {
               margin: 1rem 0rem; }
               .HomePage__Right__MainBody__Notification__Box__InnerDiv__Button__Accept {
                 border: none;
-                background-color: #32569F;
+                background-color: #1433BB;
                 color: #fff;
                 font-size: 16px;
                 padding: 7px 17px;
@@ -2104,8 +2104,8 @@ body {
           margin-bottom: 1rem;
           background-color: #e6e6e6; }
           .HomePage__Right__MainBody__Notification__Below__Links {
-            border: 2px solid #32569F;
-            color: #32569F;
+            border: 2px solid #1433BB;
+            color: #1433BB;
             font-size: 15px;
             padding: 0.5rem 1rem;
             border-radius: 4px;
@@ -2117,7 +2117,7 @@ body {
             .HomePage__Right__MainBody__Notification__Below__Links:hover {
               box-shadow: inset 0 0 50px 50px #0c6363;
               transform: translateY(-2px);
-              background: #32569F;
+              background: #1433BB;
               color: #fff; }
             .HomePage__Right__MainBody__Notification__Below__Links:active {
               transform: translateY(2px); }
@@ -2148,8 +2148,8 @@ body {
           align-items: center;
           justify-content: center; }
           .HomePage__Right__MainBody__NewsFeed__LoadMore__button {
-            border: 2px solid #32569F;
-            color: #32569F;
+            border: 2px solid #1433BB;
+            color: #1433BB;
             outline: none;
             border-radius: 5px;
             height: 5rem;
@@ -2157,7 +2157,7 @@ body {
             font-size: 1.2rem; }
             .HomePage__Right__MainBody__NewsFeed__LoadMore__button:hover {
               cursor: pointer;
-              background: #32569F;
+              background: #1433BB;
               color: #fff; }
           .HomePage__Right__MainBody__NewsFeed__LoadMore::-webkit-scrollbar {
             width: 0px; }
@@ -2411,7 +2411,7 @@ body {
           height: 4rem;
           border: none;
           outline: none;
-          background: #32569F;
+          background: #1433BB;
           padding: 0 1rem;
           font-size: 2rem;
           border-radius: 5px;
@@ -2490,13 +2490,12 @@ body {
           height: 8rem;
           display: flex;
           align-items: center;
-          justify-content: space-between;
-          padding: 0 1rem; }
+          justify-content: space-between; }
           .MainQA__Answer__Box__Top__Left__ProfilePhoto {
             height: 6rem;
             width: 6rem;
             border-radius: 50%;
-            border: 3px solid #32569F;
+            border: 3px solid #1433BB;
             display: flex;
             justify-content: center;
             align-items: center; }
@@ -2515,7 +2514,7 @@ body {
             align-items: flex-start;
             justify-content: center; }
             .MainQA__Answer__Box__Top__Left__AnswerData__UserName {
-              color: #32569F; }
+              color: #1433BB; }
             .MainQA__Answer__Box__Top__Left__AnswerData__AnswerData {
               font-size: 1.3rem;
               margin-top: 0.5rem; }
@@ -2536,19 +2535,20 @@ body {
             padding: 0 1rem; }
       .MainQA__Answer__Box__Main {
         display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
         width: 100%;
         height: auto; }
         .MainQA__Answer__Box__Main__Likes {
           height: 13rem;
-          width: 10rem;
+          width: 9rem;
           display: flex;
           flex-direction: column;
           align-items: center;
-          justify-content: center;
-          margin-right: 3.5rem; }
+          justify-content: center; }
           .MainQA__Answer__Box__Main__Likes__Upvote {
-            height: 4rem;
-            width: 4rem;
+            height: 6rem;
+            width: 6rem;
             display: flex;
             align-items: center;
             justify-content: center; }
@@ -2565,15 +2565,15 @@ body {
                 color: blue;
                 transform: translateY(2px); }
           .MainQA__Answer__Box__Main__Likes__Total {
-            height: 5rem;
+            height: 7rem;
             width: auto;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 2.5rem; }
           .MainQA__Answer__Box__Main__Likes__Downvote {
-            height: 4rem;
-            width: 4rem;
+            height: 6rem;
+            width: 6rem;
             display: flex;
             align-items: center;
             justify-content: center; }
@@ -2591,7 +2591,8 @@ body {
                 transform: translateY(-2px); }
         .MainQA__Answer__Box__Main__AnswerText {
           display: flex;
-          flex-direction: column; }
+          flex-direction: column;
+          margin-left: .5rem; }
           .MainQA__Answer__Box__Main__AnswerText__Text {
             font-size: 1.6rem;
             padding: 0 0.5rem;
@@ -3162,13 +3163,16 @@ body {
       overflow-y: scroll;
       display: flex;
       flex-direction: column;
-      justify-content: flex-end;
       font-size: 1.5rem;
       padding: 1rem;
       color: #000;
       background-color: #fff; }
       .Messages__Left__Messages::-webkit-scrollbar {
         display: none; }
+      .Messages__Left__Messages__Container {
+        height: 100%;
+        max-height: 300px;
+        overflow-y: scroll; }
       .Messages__Left__Messages__Others {
         display: flex; }
         .Messages__Left__Messages__Others__Image {
@@ -3187,21 +3191,21 @@ body {
         height: auto;
         width: auto;
         max-width: 70%;
-        margin: 0.25rem 0;
+        margin: 0.4rem 0;
         padding: 1rem 2rem;
         border-radius: 2rem;
         align-self: flex-start;
         overflow-wrap: break-word;
         text-align: justify; }
       .Messages__Left__Messages__Me {
-        background: #32569F;
+        background: #1433BB;
         height: auto;
         width: auto;
         max-width: 70%;
         padding: 1rem 2rem;
         border-radius: 2rem;
         align-self: flex-end;
-        margin: 0.25rem 0;
+        margin: 0.4rem 0;
         overflow-wrap: break-word;
         text-align: justify;
         color: #fff; }
@@ -3233,7 +3237,7 @@ body {
         .Messages__Left__InputBox__Logos__Logo {
           height: 4rem;
           width: 4rem;
-          fill: #32569F; }
+          fill: #1433BB; }
           .Messages__Left__InputBox__Logos__Logo:hover {
             cursor: pointer; }
   .Messages__Right {

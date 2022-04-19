@@ -46,6 +46,7 @@ let socketOfChat: Socket<DefaultEventsMap, DefaultEventsMap>;
 const MessagesChatroom: FC<RouteComponentProps<any>> = ({ match }) => {
   const [text, setText] = useState("");
   const [yes, setYes] = useState<boolean>(true);
+  const [length, setLength] = useState<number>(0);
   
   const dispatch = useDispatch();
   const messagesEndRef = useRef<HTMLDivElement | null>(null);
@@ -118,9 +119,12 @@ const MessagesChatroom: FC<RouteComponentProps<any>> = ({ match }) => {
     let element =e.target as Element;
   
     if (element.scrollTop==0) {
-      console.log('helloworld');
       setYes(false);
+      if(length === Math.floor(messages.length / 15)){
+        return;
+      }
       dispatch(LoadMessagesAction(token, match.params.messageId, Math.floor(messages.length / 15)));
+      setLength(length + 1);
     }
  }
  

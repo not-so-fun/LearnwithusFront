@@ -78,10 +78,10 @@
     }
     &__Messages {
       flex: 1;
-      overflow-y: scroll;
+      overflow-y:scroll;
       display: flex;
       flex-direction: column;
-      justify-content: flex-end;
+      // justify-content: flex-end;
       font-size: 1.5rem;
       padding: 1rem;
       color: $color-black;
@@ -89,6 +89,11 @@
 
       &::-webkit-scrollbar {
         display: none;
+      }
+      &__Container{
+        height: 100%;
+        max-height: 300px;
+        overflow-y: scroll;
       }
       &__Others {
         display: flex;
@@ -113,7 +118,7 @@
         height: auto;
         width: auto;
         max-width: 70%;
-        margin: 0.25rem 0;
+        margin: 0.4rem 0;
         padding: 1rem 2rem;
         border-radius: 2rem;
         align-self: flex-start;
@@ -128,7 +133,7 @@
         padding: 1rem 2rem;
         border-radius: 2rem;
         align-self: flex-end;
-        margin: 0.25rem 0;
+        margin: 0.4rem 0;
         overflow-wrap: break-word;
         text-align: justify;
         color:$color-white;
