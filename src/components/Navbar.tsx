@@ -36,7 +36,7 @@ interface DefaultEventsMap {
 let socketOfNotification: Socket<DefaultEventsMap, DefaultEventsMap>;
 
 const Navbar: FC = () => {
-  const { notificationLength } = useSelector<RootStateType>(
+  const { notificationLength,chatNotificationLength } = useSelector<RootStateType>(
     (state) => state.Notification
   ) as NotificationInterface;
   const dispatch = useDispatch();
