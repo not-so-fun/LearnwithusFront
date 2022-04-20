@@ -16,6 +16,7 @@ export interface ApproachNotificationInterface {
     | "replied"
     | "approach_request"
     | "approach_accept";
+  approachnotified_by: string;
   viewed: boolean;
   status: string | null;
   username: string;
@@ -95,7 +96,7 @@ export const NotificationReducer = (
       console.log(action.changeNumber);
       return {
         ...state,
-        chatNotificationLength:action.changeNumber,
+        chatNotificationLength: action.changeNumber,
       };
     default:
       return { ...state };
