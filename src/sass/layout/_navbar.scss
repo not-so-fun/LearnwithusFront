@@ -2,6 +2,86 @@
   position: relative;
 }
 
+.MobileDeviceBox {
+  position: absolute;
+  background-color: white;
+  box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.25);
+  width: 30rem;
+  top: 6.5rem;
+  right: 0.6rem;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  height: 27.5rem;
+  display: none;
+  &__Border {
+    border-bottom: 2px solid rgb(217, 217, 217);
+    margin: 0.2rem;
+    padding-bottom: 0.4rem;
+    display: flex;
+    flex-direction: column;
+  }
+  &__Content {
+    display: flex;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 0.5rem;
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+    &__Left {
+      flex: 0.3;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      &__Icon {
+        font-size: 3.3rem;
+        background-color: #cacaca;
+        padding: 0.4rem !important;
+        color: #848484;
+        border-radius: 50% !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+      }
+      &__Image {
+        width: 5rem;
+        height: 5rem;
+
+        border-radius: 50%;
+        object-fit: cover;
+      }
+    }
+    &__Right {
+      flex: 1;
+      text-align: left;
+      display: flex;
+      margin-left: 0.5rem;
+      flex-direction: column;
+      justify-content: center;
+
+      &__H3 {
+        font-size: 1.6rem;
+        color: black;
+        &__Below {
+          font-size: 1.4rem;
+          color: black;
+          // font-weight: 500;
+          letter-spacing: 0.03rem;
+        }
+      }
+      &__P {
+        font-size: 1.2rem;
+        color: #4a4a4a;
+        &__Below {
+          font-size: 0.8rem;
+        }
+      }
+    }
+  }
+}
+
 .ModelContent {
   position: absolute;
 
@@ -114,7 +194,8 @@
     &__Home,
     &__Create,
     &__Exit,
-    &__Notification {
+    &__Notification,
+    &__Chat {
       transition: all 0.4s ease;
       height: 3rem;
       width: 3rem;
@@ -258,10 +339,18 @@
       &__Avatar {
         position: relative;
         margin-left: 1.5rem;
+        position: relative;
 
         &__Icon {
           height: 4rem !important;
           width: 4rem !important;
+          &__Arrow {
+            position: absolute;
+            top: 22px;
+            right: 1px;
+            color: white;
+            display: none;
+          }
         }
         &__Drop {
           position: absolute;
@@ -319,6 +408,24 @@
   .ModelContent {
     display: block;
     width: 70vw;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .MobileDeviceBox {
+    display: flex;
+  }
+  .Navbar__Links__content__Avatar__Icon__Arrow {
+    display: flex;
+  }
+  .Navbar__Links__Home,
+  .Navbar__Links__Create,
+  .Navbar__Links__Exit {
+    display: none;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .MobileDeviceBox {
+    width: 22rem;
   }
 }
 

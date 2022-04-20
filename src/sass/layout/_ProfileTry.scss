@@ -1,210 +1,234 @@
-.Profiles{
-    height:auto;
-    width:100%;
-    background:whitesmoke;
-    display:flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    position: relative;
-    padding:1rem;
-    
+.Profiles {
+  height: auto;
+  width: 100%;
+  background: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  position: relative;
+  padding: 1rem;
 }
-.ProfileTry{
-    height:100%;
-    width:100%;
-    display:flex;
+.ProfileTry {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  padding: 1rem;
+  &__Top {
+    width: 100%;
+    height: 13rem;
+    font-size: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 0 3rem;
+    &__Heading {
+      color: $color-primary;
+      &__Below {
+        font-size: 2rem !important;
+      }
+    }
+    &__Paragraph {
+      font-size: 2.2rem;
+    }
+  }
+  &__Left {
+    height: 90%;
+    // background:red;
+    flex: 0 0 25%;
+    min-width: 40rem;
+    color: white;
+    margin: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: sticky;
+    top: -5px;
     justify-content: flex-start;
-    padding:1rem;
-    &__Top{
-        width:100%;
-        height:13rem;
-        font-size:2rem;
-        display:flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: center;
-        padding:0 3rem;
-        &__Heading{
-            color:$color-primary;
-        }
-        &__Paragraph{
-            font-size:2.2rem;
-        }
-    }
-    &__Left{
-        height: 90%;
-        // background:red;
-        flex:0 0 25%;
-        min-width:40rem;
-        color:white;
-        margin:0 1rem;
+    &__ProfileInformation {
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+      height: auto;
+      background: white;
+      padding: 1rem;
+      width: 95%;
+      margin: 1rem 0;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      &__Profile {
+        width: 100%;
+        height: 10rem;
         display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-        position:relative;
-        &__ProfileInformation{
-            
-            box-shadow: 0 3px 10px rgba(0,0, 0, 0.2);
-            height:auto;
-            background:white;
-            padding:1rem;
-            width:95%;
-            margin:1rem 0;
-            display: flex;
-            align-items: center;
-            flex-direction: column;
-            &__Profile{
-                width:100%;
-                height:10rem;
-                display: flex;
-                align-items: center;
-                justify-content: space-around;
-                margin:1rem 0;
-                &__ProfilePhoto{
-
-                    height:8rem;
-                    width:8rem;
-                    border-radius: 50%;
-                    background:grey;
-                    margin:0 2rem;
-                }
-                &__ProfileData{
-                    height:8rem;
-                    flex:1;
-                    // background:green;
-                    display:flex;
-                    flex-direction: column;
-                    justify-content: flex-start;
-                    align-items: flex-start;
-                    padding:1rem;
-                    margin-left:-1rem;
-                    font-size:1.4rem;
-                    &__Heading{
-                        color:$color-primary;
-                    }
-                    &__Paragraph{
-                        color:$color-grey-light-2;
-                    }
-                    
-
-                }
-            }
-            &__Question{
-                height:20rem;
-                width: 100%;
-                // background:yellow;
-                display: flex;
-                align-items: center;
-                justify-content: space-around;
-                padding:.5rem;
-                &__QuestionAsked{
-                    width:47%;
-                    background:white;
-                    height:95%;
-                    color:$color-black;
-                    display:flex;
-                    font-size:2.2rem;
-                    flex-direction: column;
-                    align-items: center;
-                    justify-content: center;
-                    box-shadow: 0 3px 10px rgba(0,0, 0, 0.2);
-                    &__Heading{
-                        font-size:5.2rem;
-                        color:$color-primary;
-                    }
-                }
-            }
-            &__Approach{
-                height:6rem;
-                width:100%;
-                display:flex;
-                align-items: center;
-                justify-content: center;
-                margin:1rem 0;
-
-                &__Button{
-                    height:5rem;
-                    width:55%;
-                    border: none;
-                    outline:none;
-                    font-size:2rem;
-                    color:$color-white;
-                    background: $color-primary;
-                    border-radius:.5rem;
-                }
-            }
-
-            &__ProfileData{
-                flex:1;
-                // background: greenyellow;
-                width:100%;
-                display:flex;
-                flex-direction: column;
-                margin-bottom: 3rem;
-               
-                &__AboutMe{
-                    font-size:1.9rem;
-                    margin:1rem;
-                    display: flex;
-                    align-items: flex-start;
-                    justify-content: flex-start;
-                    flex-direction: column;
-                    color:$color-primary;
-                    &__Bio{
-                        height:auto;
-                        // overflow-wrap: break-word;
-                        color:$color-grey-light-3;
-                        // word-break: break-word;
-                    }
-                }
-                &__Email{
-                    font-size:1.9rem;
-                    color:$color-primary;
-                    margin:0 1rem;
-                    display: flex;
-                    align-items: flex-start;
-                    justify-content: flex-start;
-                    flex-direction: column;
-                    &__Text{
-                        height:auto;
-                        // overflow-wrap: break-word;
-                        color:$color-grey-light-3;
-                        // word-break: break-word;
-                    }
-                }
-            }
-
-        }
-    }
-    &__Right{
-        height:auto;
-        background:white;
-        flex:1;
-        display:flex;
-        flex-direction: column;
         align-items: center;
         justify-content: space-around;
-        padding:1rem;
-        margin:1rem;
-       
-        
-        &__AskQuestion{
-            box-shadow: 0 3px 10px rgba(0,0, 0, 0.2);
-            background:white;
-            flex: 0 0 20rem;
-            width:100%;
-            margin:1rem 0;
+        margin: 1rem 0;
+        &__ProfilePhoto {
+          height: 8rem;
+          width: 8rem;
+          border-radius: 50%;
+          background: grey;
+          margin: 0 2rem;
         }
-        // &__QuestionBox{
-        //     box-shadow: 0 3px 10px rgba(0,0, 0, 0.2);
-        //     background:white;
-        //     width:98%;
-        //     flex:1;
-        //     padding:1rem;
-        //     margin:1rem 0;
-        //     overflow-y: scroll;
-        // }
+        &__ProfileData {
+          height: 8rem;
+          flex: 1;
+          // background:green;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          align-items: flex-start;
+          padding: 1rem;
+          margin-left: -1rem;
+          font-size: 1.4rem;
+          &__Heading {
+            color: $color-primary;
+          }
+          &__Paragraph {
+            color: $color-grey-light-2;
+          }
+        }
+      }
+      &__Question {
+        height: 20rem;
+        width: 100%;
+        // background:yellow;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        padding: 0.5rem;
+        &__QuestionAsked {
+          width: 47%;
+          background: white;
+          height: 95%;
+          color: $color-black;
+          display: flex;
+          font-size: 2.2rem;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+          &__Heading {
+            font-size: 5.2rem;
+            color: $color-primary;
+          }
+        }
+      }
+      &__Approach {
+        height: 6rem;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 1rem 0;
 
+        &__Button {
+          height: 5rem;
+          width: 55%;
+          border: none;
+          outline: none;
+          font-size: 2rem;
+          color: $color-white;
+          background: $color-primary;
+          border-radius: 0.5rem;
+        }
+      }
+
+      &__ProfileData {
+        flex: 1;
+        // background: greenyellow;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 3rem;
+
+        &__AboutMe {
+          font-size: 1.9rem;
+          margin: 1rem;
+          display: flex;
+          align-items: flex-start;
+          justify-content: flex-start;
+          flex-direction: column;
+          color: $color-primary;
+          &__Bio {
+            height: auto;
+            // overflow-wrap: break-word;
+            color: $color-grey-light-3;
+            // word-break: break-word;
+          }
+        }
+        &__Email {
+          font-size: 1.9rem;
+          color: $color-primary;
+          margin: 0 1rem;
+          display: flex;
+          align-items: flex-start;
+          justify-content: flex-start;
+          flex-direction: column;
+          &__Text {
+            height: auto;
+            // overflow-wrap: break-word;
+            color: $color-grey-light-3;
+            // word-break: break-word;
+          }
+        }
+      }
     }
+  }
+  &__Right {
+    height: auto;
+    background: white;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 1rem;
+    margin: 1rem;
+
+    &__AskQuestion {
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+      background: white;
+      flex: 0 0 20rem;
+      width: 100%;
+      margin: 1rem 0;
+    }
+    // &__QuestionBox{
+    //     box-shadow: 0 3px 10px rgba(0,0, 0, 0.2);
+    //     background:white;
+    //     width:98%;
+    //     flex:1;
+    //     padding:1rem;
+    //     margin:1rem 0;
+    //     overflow-y: scroll;
+    // }
+  }
+}
+
+@media only screen and (max-width: 760px) {
+  .ProfileTry {
+    flex-direction: column;
+  }
+  .ProfileTry__Left {
+    position: relative;
+  }
+  .ProfileTry__Left__ProfileInformation {
+    padding: 0rem;
+    box-shadow: none;
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .ProfileTry__Left__ProfileInformation__Question__QuestionAsked__Heading {
+    font-size: 4.5rem;
+  }
+  .ProfileTry {
+    padding: 0;
+  }
+  .Profiles {
+    padding: 0;
+  }
+  .ProfileTry__Left__ProfileInformation__Question__QuestionAsked__Heading__Below {
+    font-size: 2rem;
+  }
 }

@@ -49,14 +49,13 @@ const RequestNotification: FC<RequestNotificationInterface> = ({ not }) => {
         <Avatar
           alt={not?.image}
           src="image"
-          style={{ width: 30, height: 30 }}
           className="HomePage__Right__MainBody__Notification__Box__RequestNotification__Noti__Left__Avatar"
         />
         <p className="HomePage__Right__MainBody__Notification__Box__RequestNotification__Noti__Left__Text">
           {`${not?.username}`} wants to connect with you.
         </p>
       </div>
-      {deletedNoti===true ? (
+      {deletedNoti === true ? (
         <button>Removed</button>
       ) : (
         <>
