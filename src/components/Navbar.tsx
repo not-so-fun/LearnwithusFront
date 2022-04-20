@@ -11,11 +11,13 @@ import { Link, useHistory } from "react-router-dom";
 import { Avatar } from "@mui/material";
 import { IoNotificationsSharp } from "react-icons/io5";
 import Notification from "./HomePageComponent/Notification";
+import ArrowDropDownCircleIcon from "@mui/icons-material/ArrowDropDownCircle";
 import { AiFillHome } from "react-icons/ai";
 import { FiLogOut } from "react-icons/fi";
 import { IoCreate } from "react-icons/io5";
 import io from "socket.io-client";
 import { BsFillChatFill } from "react-icons/bs";
+import { RiFeedbackFill } from "react-icons/ri";
 import MenuIcon from "@mui/icons-material/Menu";
 import { Socket } from "socket.io-client";
 import { URL } from "../axiosURL";
@@ -42,6 +44,7 @@ const Navbar: FC = () => {
     show: false,
     showProfile: false,
   });
+  const [mobileDrop, setMobileDrop] = useState<Boolean>(false);
 
   const [clickedBellIcon, setClicketBellIcon] = useState<Boolean>(false);
   const [openHam, setOpenHam] = useState<Boolean>(false);
@@ -102,6 +105,10 @@ const Navbar: FC = () => {
     localStorage.clear();
     history.push("/login");
     window.location.reload();
+  };
+
+  const mobileDeviceHandler = () => {
+    setMobileDrop((prev) => !prev);
   };
 
   // const Dropdown: FC = (props) => {
@@ -174,9 +181,89 @@ const Navbar: FC = () => {
     );
   };
 
+  const MobileDeviceBox = () => {
+    return (
+      <div className="MobileDeviceBox">
+        <div className="MobileDeviceBox__Border">
+          <div className="MobileDeviceBox__Content">
+            <div className="MobileDeviceBox__Content__Left">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxOR-T_D2BgjFw4fXpA40T0dgEA4m7V4QH2w&usqp=CAU"
+                alt=""
+                className="MobileDeviceBox__Content__Left__Image"
+              />
+            </div>
+            <div className="MobileDeviceBox__Content__Right">
+              <h3 className="MobileDeviceBox__Content__Right__H3">
+                Pasang Sherpa
+              </h3>
+              <p className="MobileDeviceBox__Content__Right__P">
+                View your profile
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="MobileDeviceBox__Border">
+          <div className="MobileDeviceBox__Content">
+            <div className="MobileDeviceBox__Content__Left">
+              <RiFeedbackFill className="MobileDeviceBox__Content__Left__Icon" />
+            </div>
+            <div className="MobileDeviceBox__Content__Right">
+              <h3 className="MobileDeviceBox__Content__Right__H3__Below">
+                Give Feedbacks
+              </h3>
+              <p className="MobileDeviceBox__Content__Right__P___Below">
+                help use import LEARN101{" "}
+              </p>
+            </div>
+          </div>
+        </div>
+        <div className="MobileDeviceBox__Border">
+          <div className="MobileDeviceBox__Content">
+            <div className="MobileDeviceBox__Content__Left">
+              <AiFillHome className="MobileDeviceBox__Content__Left__Icon" />
+            </div>
+            <div className="MobileDeviceBox__Content__Right">
+              <h3 className="MobileDeviceBox__Content__Right__H3__Below">
+                Home
+              </h3>
+            </div>
+          </div>
+
+          <div className="MobileDeviceBox__Content">
+            <div className="MobileDeviceBox__Content__Left">
+              <IoCreate className="MobileDeviceBox__Content__Left__Icon" />
+            </div>
+            <div className="MobileDeviceBox__Content__Right">
+              <h3 className="MobileDeviceBox__Content__Right__H3__Below">
+                Give Feedbacks
+              </h3>
+              <p className="MobileDeviceBox__Content__Right__P___Below">
+                help use import LEARN101
+              </p>
+            </div>
+          </div>
+
+          <div className="MobileDeviceBox__Content">
+            <div className="MobileDeviceBox__Content__Left">
+              <FiLogOut className="MobileDeviceBox__Content__Left__Icon" />
+            </div>
+            <div className="MobileDeviceBox__Content__Right">
+              <h3 className="MobileDeviceBox__Content__Right__H3__Below">
+                Logout
+              </h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
   return (
     <div className="NavMain">
       {openHam && <ModelContent />}
+      {mobileDrop && <MobileDeviceBox />}
 
       <div className="Navbar">
         <div className="Navbar__Left">
@@ -200,28 +287,22 @@ const Navbar: FC = () => {
           )}
         </div>
         <div className="Navbar__Links">
-          <AiFillHome
-            onClick={() => history.push("/")}
-            style={{ fontSize: 25, marginLeft: 20, cursor: "pointer" }}
-            className="Navbar__Links__Home"
-          />
+          <AiFillHome className="Navbar__Links__Home" />
           {(userInfo && userInfo.user_id) || user_id ? (
             <>
               <IoCreate
                 onClick={() => history.push("/question/ask")}
-                style={{ fontSize: 25, marginLeft: 20, cursor: "pointer" }}
+                // style={{ fontSize: 25, marginLeft: 20, cursor: "pointer" }}
                 className="Navbar__Links__Create"
               />
 
               <BsFillChatFill
                 onClick={() => history.push("/messages")}
-                style={{ fontSize: 25, marginLeft: 20, cursor: "pointer" }}
-                className="Navbar__Links__Exit"
+                className="Navbar__Links__Chat"
               />
 
               <FiLogOut
                 onClick={handleLogout}
-                style={{ fontSize: 25, marginLeft: 20, cursor: "pointer" }}
                 className="Navbar__Links__Exit"
               />
 
@@ -229,7 +310,6 @@ const Navbar: FC = () => {
                 <div className="Navbar__Links__content__Icon">
                   <div className="Navbar__Links__content__Icon__Bell">
                     <IoNotificationsSharp
-                      style={{ fontSize: 25, marginLeft: 20 }}
                       className="Navbar__Links__Notification"
                       onClick={() => {
                         setShowNotification({
@@ -253,6 +333,7 @@ const Navbar: FC = () => {
                 <div className="Navbar__Links__Content">
                   <div className="Navbar__Links__content__Avatar">
                     <Avatar
+                      className="Navbar__Links__content__Avatar__Icon"
                       onClick={() =>
                         history.push(
                           `/profile/${
@@ -264,6 +345,9 @@ const Navbar: FC = () => {
                       src={`${(userInfo && userInfo.image) || image}`}
                       style={{ width: 40, height: 40 }}
                     />
+                    <div className="Navbar__Links__content__Avatar__Icon__Arrow">
+                      <ArrowDropDownCircleIcon onClick={mobileDeviceHandler} />
+                    </div>
                   </div>
                 </div>
               </div>

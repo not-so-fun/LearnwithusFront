@@ -548,7 +548,7 @@ body {
             text-align: left; }
       .QuestionFeed__Box__Top__Right {
         height: 5rem;
-        width: 10rem;
+        width: 4rem;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -1114,6 +1114,8 @@ body {
     padding: 0 3rem; }
     .ProfileTry__Top__Heading {
       color: #1433BB; }
+      .ProfileTry__Top__Heading__Below {
+        font-size: 2rem !important; }
     .ProfileTry__Top__Paragraph {
       font-size: 2.2rem; }
   .ProfileTry__Left {
@@ -1125,8 +1127,9 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
-    position: relative; }
+    position: sticky;
+    top: -5px;
+    justify-content: flex-start; }
     .ProfileTry__Left__ProfileInformation {
       box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
       height: auto;
@@ -1170,7 +1173,7 @@ body {
         display: flex;
         align-items: center;
         justify-content: space-around;
-        padding: .5rem; }
+        padding: 0.5rem; }
         .ProfileTry__Left__ProfileInformation__Question__QuestionAsked {
           width: 47%;
           background: white;
@@ -1200,7 +1203,7 @@ body {
           font-size: 2rem;
           color: #fff;
           background: #1433BB;
-          border-radius: .5rem; }
+          border-radius: 0.5rem; }
       .ProfileTry__Left__ProfileInformation__ProfileData {
         flex: 1;
         width: 100%;
@@ -1245,6 +1248,26 @@ body {
       flex: 0 0 20rem;
       width: 100%;
       margin: 1rem 0; }
+
+@media only screen and (max-width: 760px) {
+  .ProfileTry {
+    flex-direction: column; }
+  .ProfileTry__Left {
+    position: relative; }
+  .ProfileTry__Left__ProfileInformation {
+    padding: 0rem;
+    box-shadow: none;
+    width: 100%; } }
+
+@media only screen and (max-width: 400px) {
+  .ProfileTry__Left__ProfileInformation__Question__QuestionAsked__Heading {
+    font-size: 4.5rem; }
+  .ProfileTry {
+    padding: 0; }
+  .Profiles {
+    padding: 0; }
+  .ProfileTry__Left__ProfileInformation__Question__QuestionAsked__Heading__Below {
+    font-size: 2rem; } }
 
 .Auth {
   height: 70rem;
@@ -1893,6 +1916,71 @@ body {
 .NavMain {
   position: relative; }
 
+.MobileDeviceBox {
+  position: absolute;
+  background-color: white;
+  box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.25);
+  width: 30rem;
+  top: 6.5rem;
+  right: 0.6rem;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  height: 27.5rem;
+  display: none; }
+  .MobileDeviceBox__Border {
+    border-bottom: 2px solid #d9d9d9;
+    margin: 0.2rem;
+    padding-bottom: 0.4rem;
+    display: flex;
+    flex-direction: column; }
+  .MobileDeviceBox__Content {
+    display: flex;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 0.5rem; }
+    .MobileDeviceBox__Content:hover {
+      background-color: rgba(0, 0, 0, 0.1); }
+    .MobileDeviceBox__Content__Left {
+      flex: 0.3;
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+      .MobileDeviceBox__Content__Left__Icon {
+        font-size: 3.3rem;
+        background-color: #cacaca;
+        padding: 0.4rem !important;
+        color: #848484;
+        border-radius: 50% !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important; }
+      .MobileDeviceBox__Content__Left__Image {
+        width: 5rem;
+        height: 5rem;
+        border-radius: 50%;
+        object-fit: cover; }
+    .MobileDeviceBox__Content__Right {
+      flex: 1;
+      text-align: left;
+      display: flex;
+      margin-left: 0.5rem;
+      flex-direction: column;
+      justify-content: center; }
+      .MobileDeviceBox__Content__Right__H3 {
+        font-size: 1.6rem;
+        color: black; }
+        .MobileDeviceBox__Content__Right__H3__Below {
+          font-size: 1.4rem;
+          color: black;
+          letter-spacing: 0.03rem; }
+      .MobileDeviceBox__Content__Right__P {
+        font-size: 1.2rem;
+        color: #4a4a4a; }
+        .MobileDeviceBox__Content__Right__P__Below {
+          font-size: 0.8rem; }
+
 .ModelContent {
   position: absolute;
   height: 100vh;
@@ -1981,11 +2069,15 @@ body {
     justify-content: center;
     align-items: center;
     float: right; }
-    .Navbar__Links__Home, .Navbar__Links__Create, .Navbar__Links__Exit {
-      transition: all 0.4s ease; }
-      .Navbar__Links__Home:hover, .Navbar__Links__Create:hover, .Navbar__Links__Exit:hover {
+    .Navbar__Links__Home, .Navbar__Links__Create, .Navbar__Links__Exit, .Navbar__Links__Notification, .Navbar__Links__Chat {
+      transition: all 0.4s ease;
+      height: 3rem;
+      width: 3rem;
+      margin-left: 1.3rem;
+      cursor: pointer; }
+      .Navbar__Links__Home:hover, .Navbar__Links__Create:hover, .Navbar__Links__Exit:hover, .Navbar__Links__Notification:hover, .Navbar__Links__Chat:hover {
         transform: scale(1.3); }
-      .Navbar__Links__Home:active, .Navbar__Links__Create:active, .Navbar__Links__Exit:active {
+      .Navbar__Links__Home:active, .Navbar__Links__Create:active, .Navbar__Links__Exit:active, .Navbar__Links__Notification:active, .Navbar__Links__Chat:active {
         transform: scale(1); }
     .Navbar__Links__Notification:hover {
       animation: swing 0.5s ease 0s; }
@@ -2090,7 +2182,17 @@ body {
             right: -5px; }
       .Navbar__Links__content__Avatar {
         position: relative;
-        margin-left: 1.5rem; }
+        margin-left: 1.5rem;
+        position: relative; }
+        .Navbar__Links__content__Avatar__Icon {
+          height: 4rem !important;
+          width: 4rem !important; }
+          .Navbar__Links__content__Avatar__Icon__Arrow {
+            position: absolute;
+            top: 22px;
+            right: 1px;
+            color: white;
+            display: none; }
         .Navbar__Links__content__Avatar__Drop {
           position: absolute;
           top: 1.6rem;
@@ -2128,6 +2230,20 @@ body {
   .ModelContent {
     display: block;
     width: 70vw; } }
+
+@media only screen and (max-width: 500px) {
+  .MobileDeviceBox {
+    display: flex; }
+  .Navbar__Links__content__Avatar__Icon__Arrow {
+    display: flex; }
+  .Navbar__Links__Home,
+  .Navbar__Links__Create,
+  .Navbar__Links__Exit {
+    display: none; } }
+
+@media only screen and (max-width: 400px) {
+  .MobileDeviceBox {
+    width: 22rem; } }
 
 @keyframes drawer {
   0% {
@@ -2224,15 +2340,14 @@ body {
             content: "";
             position: absolute;
             top: 0.1rem;
-            right: 5rem;
-            width: 5rem;
+            right: 4.6rem;
+            width: 2rem;
             height: 0;
             transform: translate(-1rem, -100%);
-            border-left: 0.75rem solid transparent;
-            border-right: 0.75rem solid transparent;
-            border-bottom: 0.75rem solid white; }
+            border-left: 1.5rem solid transparent;
+            border-right: 1.5rem solid transparent;
+            border-bottom: 1.2rem solid white; }
           .HomePage__Right__MainBody__Notification__Box__NormalNotification {
-            border-top: 0.2rem solid lightgrey;
             color: #000;
             padding: 0.5rem 2.5rem;
             font-size: 1.4rem;
@@ -2247,28 +2362,45 @@ body {
               .HomePage__Right__MainBody__Notification__Box__NormalNotification__Noti__Avatar {
                 cursor: pointer; }
           .HomePage__Right__MainBody__Notification__Box__RequestNotification {
-            border-top: 0.2rem solid lightgrey;
             color: #000;
-            padding: 0.6rem 2.5rem;
+            padding: 0.6rem 0.5rem;
             font-size: 1.4rem;
             font-weight: 400;
             width: 100%; }
             .HomePage__Right__MainBody__Notification__Box__RequestNotification__Noti {
               display: flex;
               justify-content: space-between;
+              margin-bottom: 0.5rem;
+              border-radius: 5px;
+              height: 6rem;
+              padding: 0 1rem;
               align-items: center; }
+              .HomePage__Right__MainBody__Notification__Box__RequestNotification__Noti:hover {
+                background-color: rgba(0, 0, 0, 0.1); }
               .HomePage__Right__MainBody__Notification__Box__RequestNotification__Noti__Left {
                 display: flex;
                 align-items: center; }
                 .HomePage__Right__MainBody__Notification__Box__RequestNotification__Noti__Left__Avatar {
-                  cursor: pointer; }
+                  cursor: pointer;
+                  height: 45px !important;
+                  width: 45px !important; }
                 .HomePage__Right__MainBody__Notification__Box__RequestNotification__Noti__Left__Text {
                   width: 22rem;
-                  margin-left: 1rem; }
+                  margin-left: 1rem;
+                  font-size: 1.7rem;
+                  line-height: 1.9rem; }
               .HomePage__Right__MainBody__Notification__Box__RequestNotification__Noti__Right {
                 display: flex;
                 align-items: center;
                 justify-content: space-between; }
+                .HomePage__Right__MainBody__Notification__Box__RequestNotification__Noti__Right button {
+                  border: none;
+                  background-color: transparent;
+                  font-size: 1.5rem;
+                  font-weight: 500;
+                  color: #1433bb;
+                  cursor: pointer;
+                  padding: 5px 7px; }
                 .HomePage__Right__MainBody__Notification__Box__RequestNotification__Noti__Right__Reject {
                   cursor: pointer;
                   transition: all 0.4s ease;
@@ -2295,11 +2427,12 @@ body {
                     transform: scale(1.3);
                     color: #008000; }
           .HomePage__Right__MainBody__Notification__Box__Header {
-            padding: 0.5rem 2.5rem;
-            font-size: 1.8rem;
+            padding: 0.5rem 1.5rem;
+            font-size: 2.5rem;
             font-weight: 600;
-            color: #84929f;
-            margin-bottom: 1rem; }
+            color: #555555;
+            border-bottom: 2px solid #b5b5b5;
+            margin-bottom: 0rem; }
             .HomePage__Right__MainBody__Notification__Box__Header__Underline {
               border: 0.1rem solid lightgrey;
               margin-bottom: 1rem; }
@@ -3114,6 +3247,40 @@ body {
             border-radius: 5rem;
             margin: 0 1rem;
             background: #c4c4c4; }
+
+@media only screen and (max-width: 600px) {
+  .MainQA {
+    width: 100%; } }
+
+@media only screen and (max-width: 400px) {
+  .MainQA__Heading {
+    height: 5rem;
+    font-size: 3rem; }
+  .MainQA__Answer {
+    padding: 0.5rem;
+    width: 100%; }
+  .MainQA__Answer__Box__Top__Left__AnswerData__AnswerData {
+    font-size: 1.2rem;
+    margin-top: 0.5rem; }
+  .MainQA__Answer__Box__Top__Left__ProfilePhoto {
+    height: 6rem;
+    width: 6rem; }
+  .MainQA__Answer__Box__Main__Likes {
+    margin-right: 1.5rem; }
+  .MainQA__Answer__Box__Top__Right {
+    padding: 0 0rem; }
+  .MainQA__Answer__Box__Top__Right__AnswerQuality {
+    font-size: 1.1rem; }
+  .MainQA__AnswerInput__Box__ButtonBox__Button {
+    font-size: 1.2rem;
+    height: 3rem;
+    padding: 0 0.7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+  .MainQA__Types__Box__Custom_Dropdown select {
+    font-size: 1.4rem;
+    padding: 0.5em; } }
 
 .Answered {
   height: 100%;

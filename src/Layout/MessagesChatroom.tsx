@@ -1,9 +1,16 @@
-import React, { useEffect, useState,useLayoutEffect,useRef,useCallback,UIEvent , FC }  from "react";
+import React, {
+  useEffect,
+  useState,
+  useLayoutEffect,
+  useRef,
+  useCallback,
+  UIEvent,
+  FC,
+} from "react";
 import { MESSAGE_SUCCESS } from "../constants/MessagesConstants";
 import MessagesSidebar from "../components/MessagesComponent/MessagesSidebar";
 import useTokenAndId from "../components/ReusableLogicComponents/useTokenAndId";
 import { Link } from "react-router-dom";
-import axios from "../axios";
 import { RouteComponentProps } from "react-router-dom";
 import { IoMdSend } from "react-icons/io";
 import { MessagesAction, LoadMessagesAction } from "../actions/MessagesAction";
@@ -15,7 +22,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { RootStateType } from "../stores";
 import { URL } from "../axiosURL";
 import { CHATROOM_UPDATE } from "../constants/ChatRoomConstants";
-import CircularProgress from '@mui/material/CircularProgress';
+import CircularProgress from "@mui/material/CircularProgress";
 // import debounce from 'lodash.debounce';
 
 const socketUrl = URL + "/chat";
@@ -25,13 +32,12 @@ export interface oneMessageInterface {
   message_id: string;
   user_id: String;
   created_at: String;
- 
+
   // lastElementRef: null | any
 }
 
 interface messagesInterface {
   messages: [oneMessageInterface] | null;
-  
 }
 interface messageInterface {
   message: oneMessageInterface;
@@ -48,7 +54,7 @@ const MessagesChatroom: FC<RouteComponentProps<any>> = ({ match }) => {
   const [text, setText] = useState("");
   const [yes, setYes] = useState<boolean>(true);
   const [length, setLength] = useState<number>(0);
-  
+
   const dispatch = useDispatch();
   const messagesEndRef = useRef<HTMLDivElement | null>(null);
   const { loading, messages, error } = useSelector<RootStateType>(
@@ -56,8 +62,8 @@ const MessagesChatroom: FC<RouteComponentProps<any>> = ({ match }) => {
   ) as MessagesInterface;
   const { token, user_id } = useTokenAndId();
   const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" })
-  }
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
   useEffect(() => {
     dispatch(ChatRoomAction(token));
   }, [token]);
@@ -65,19 +71,21 @@ const MessagesChatroom: FC<RouteComponentProps<any>> = ({ match }) => {
   useEffect(() => {
     dispatch(MessagesAction(token, match.params.messageId));
   }, [token, match]);
+
   useLayoutEffect(() => {
-    if(yes){
-      scrollToBottom()
+    if (yes) {
+      scrollToBottom();
     }
-   
   }, [messages]);
   useEffect(() => {
     socketOfChat = io(socketUrl);
-    socketOfChat.emit("join_room", { chat_room_id: match.params.messageId });
+    socketOfChat.emit("join_room", {
+      chat_room_id: match.params.messageId,
+      user: user_id,
+    });
     socketOfChat.on("received_message", (data: oneMessageInterface) => {
       dispatch({ type: MESSAGE_SUCCESS, message: data });
     });
-
 
     return () => {
       console.log("Disconnect");
@@ -114,29 +122,32 @@ const MessagesChatroom: FC<RouteComponentProps<any>> = ({ match }) => {
       chat_room_id: match.params.messageId,
       user_id: user_id,
       message: text,
-    }); 
+    });
   };
-  const  handleScroll = (e: UIEvent<HTMLDivElement>)  => {
-    let element =e.target as Element;
-  
-    if (element.scrollTop==0) {
+  const handleScroll = (e: UIEvent<HTMLDivElement>) => {
+    let element = e.target as Element;
+
+    if (element.scrollTop == 0) {
       setYes(false);
-      if(length === Math.floor(messages.length / 15)){
+      if (length === Math.floor(messages.length / 15)) {
         return;
       }
-      dispatch(LoadMessagesAction(token, match.params.messageId, Math.floor(messages.length / 15)));
+      dispatch(
+        LoadMessagesAction(
+          token,
+          match.params.messageId,
+          Math.floor(messages.length / 15)
+        )
+      );
       setLength(length + 1);
     }
- }
- 
+  };
 
   return (
     <div className="Messages">
       <div className="Messages__Left">
         <div className="Messages__Left__Heading">
-          <div className="Messages__Left__Heading__ProfilePhoto">
-          
-          </div>
+          <div className="Messages__Left__Heading__ProfilePhoto"></div>
           {/* owner id is used for now later on user_id of the another user id should be used */}
           <Link
             to={`/profile/${user_id}`}
@@ -146,20 +157,32 @@ const MessagesChatroom: FC<RouteComponentProps<any>> = ({ match }) => {
           </Link>
         </div>
         <div className="Messages__Left__Messages" onScroll={handleScroll}>
-          {loading &&  <div><CircularProgress /></div>}
+          {loading && (
+            <div>
+              <CircularProgress />
+            </div>
+          )}
           {messages &&
             messages.map((message: oneMessageInterface, index) => (
               <>
                 {message.user_id === user_id ? (
                   <>
-                    <MessageMe firstElementRef={null} key={message.message_id} message={message} />
+                    <MessageMe
+                      firstElementRef={null}
+                      key={message.message_id}
+                      message={message}
+                    />
                   </>
                 ) : (
-                  <MessageOther firstElementRef={null} key={message.message_id} message={message} />
+                  <MessageOther
+                    firstElementRef={null}
+                    key={message.message_id}
+                    message={message}
+                  />
                 )}
               </>
             ))}
-            <div ref={messagesEndRef} />
+          <div ref={messagesEndRef} />
         </div>
 
         <form onSubmit={handleMessageSent} className="Messages__Left__InputBox">
@@ -170,19 +193,17 @@ const MessagesChatroom: FC<RouteComponentProps<any>> = ({ match }) => {
             value={text}
             onChange={(e) => setText(e.target.value)}
           />
-          <button className="Messages__Left__InputBox__Logos">
-            <IoMdSend
-              className="Messages__Left__InputBox__Logos__Logo"
-            />
-          </button>
-           
+          <div className="Messages__Left__InputBox__Logos">
+            <button>
+              <IoMdSend className="Messages__Left__InputBox__Logos__Logo" />
+            </button>
+          </div>
         </form>
       </div>
 
       <div className="Messages__Right">
         <MessagesSidebar />
       </div>
-
     </div>
   );
 };

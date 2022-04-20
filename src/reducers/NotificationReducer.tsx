@@ -4,7 +4,9 @@ import {
   SINGLE_NOTIFICATION_SUCCESS,
   CHANGED_NOTIFICATION_NUMBER,
   NOTIFICATION_ERROR,
-  DELETE_NOTIFICATION
+  DELETE_NOTIFICATION,
+  CHAT_NOTIFICATION_NUMBER,
+  CHAT_NOTIFICATION_NUMBER_CHANGE,
 } from "../constants/NotificationConstants";
 import { NotificationTypes } from "../types/NotificationTypes";
 export interface ApproachNotificationInterface {
@@ -25,6 +27,7 @@ export interface NotificationInterface {
   loading: boolean;
   notifications: ApproachNotificationInterface[];
   notificationLength: number;
+  chatNotificationLength: number;
   error: string | null;
 }
 
@@ -32,6 +35,7 @@ const NotificationState: NotificationInterface = {
   loading: false,
   notifications: [],
   notificationLength: 0,
+  chatNotificationLength: 0,
   error: "",
 };
 
@@ -70,16 +74,28 @@ export const NotificationReducer = (
         notificationLength: action.length,
       };
     case DELETE_NOTIFICATION:
-      return{
+      return {
         ...state,
         loading: false,
-        notifications: state.notifications.filter((notification) => notification.approachnotification_id !==action.notification_id)
-      }
+        notifications: state.notifications.filter(
+          (notification) =>
+            notification.approachnotification_id !== action.notification_id
+        ),
+      };
+
     case NOTIFICATION_ERROR:
       return {
         ...state,
         loading: false,
         error: action.error,
+      };
+    case CHAT_NOTIFICATION_NUMBER:
+      return { ...state, chatNotificationLength: action.chatLength };
+    case CHAT_NOTIFICATION_NUMBER_CHANGE:
+      console.log(action.changeNumber);
+      return {
+        ...state,
+        chatNotificationLength:action.changeNumber,
       };
     default:
       return { ...state };
