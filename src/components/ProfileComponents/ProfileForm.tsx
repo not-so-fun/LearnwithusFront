@@ -18,7 +18,7 @@ const ProfileForm: FC<ProfileFormInterface> = ({ profile_data }) => {
   const { approachStatus } = useSelector<RootStateType>(
     (state) => state.profile_info_data
   ) as profileDataInterface;
-  const { token,user_id } = useTokenAndId();
+  const { token, user_id } = useTokenAndId();
   const { loading, error } = useSelector<RootStateType>(
     (state) => state.approaches
   ) as approachUserInterface;
@@ -34,7 +34,7 @@ const ProfileForm: FC<ProfileFormInterface> = ({ profile_data }) => {
     axios
       .get(`/chat/${profile_data.user_id}`, {
         headers: {
-          "x-auth-token":token,
+          "x-auth-token": token,
         },
       })
       .then((response) => {
@@ -60,58 +60,58 @@ const ProfileForm: FC<ProfileFormInterface> = ({ profile_data }) => {
           <h4>{profile_data.last_name}</h4>
         </div>
       </div>
-      {user_id !== profile_data.user_id  && 
-      <div className="Profile__Box__Top__Information__Approach">
-        {approachStatus === null && (
-          <>
-            {!loading ? (
-              <button
-                style={{ color: "white" }}
-                className="Profile__Box__Top__Information__Approach__Button"
-                onClick={Approached}
-              >
-                Approach
-              </button>
-            ) : (
-              <button
-                style={{ color: "white" }}
-                className="Profile__Box__Top__Information__Approach__Button"
-              >
-                <CircularProgress style={{ color: "white" }} />
-              </button>
-            )}
-          </>
-        )}
-        {approachStatus === "pending" && (
-          <>
-            {!loading ? (
-              <button
-                style={{ color: "white" }}
-                className="Profile__Box__Top__Information__Approach__Button"
-                onClick={Approached}
-              >
-                Pending
-              </button>
-            ) : (
-              <button
-                style={{ color: "white" }}
-                className="Profile__Box__Top__Information__Approach__Button"
-              >
-                <CircularProgress style={{ color: "white" }} />
-              </button>
-            )}
-          </>
-        )}
-        {approachStatus === "accepted" && (
-          <button
-            onClick={handleMessage}
-            className="Profile__Box__Top__Information__Approach__Button"
-          >
-            Message
-          </button>
-        )}
-      </div>
-}
+      {user_id !== profile_data.user_id && (
+        <div className="Profile__Box__Top__Information__Approach">
+          {approachStatus === null && (
+            <>
+              {!loading ? (
+                <button
+                  style={{ color: "white" }}
+                  className="Profile__Box__Top__Information__Approach__Button"
+                  onClick={Approached}
+                >
+                  Approach
+                </button>
+              ) : (
+                <button
+                  style={{ color: "white" }}
+                  className="Profile__Box__Top__Information__Approach__Button"
+                >
+                  <CircularProgress style={{ color: "white" }} />
+                </button>
+              )}
+            </>
+          )}
+          {approachStatus === "pending" && (
+            <>
+              {!loading ? (
+                <button
+                  style={{ color: "white" }}
+                  className="Profile__Box__Top__Information__Approach__Button"
+                  onClick={Approached}
+                >
+                  Pending
+                </button>
+              ) : (
+                <button
+                  style={{ color: "white" }}
+                  className="Profile__Box__Top__Information__Approach__Button"
+                >
+                  <CircularProgress style={{ color: "white" }} />
+                </button>
+              )}
+            </>
+          )}
+          {approachStatus === "accepted" && (
+            <button
+              onClick={handleMessage}
+              className="Profile__Box__Top__Information__Approach__Button"
+            >
+              Message
+            </button>
+          )}
+        </div>
+      )}
     </div>
   );
 };

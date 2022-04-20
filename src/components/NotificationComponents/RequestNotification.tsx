@@ -11,12 +11,15 @@ import {
 } from "../../actions/NotificationActions";
 import { useDispatch } from "react-redux";
 import useTokenAndId from "../ReusableLogicComponents/useTokenAndId";
+import { useHistory } from "react-router-dom";
+import axios from "../../axios";
 interface RequestNotificationInterface {
   not: ApproachNotificationInterface;
 }
 
 const RequestNotification: FC<RequestNotificationInterface> = ({ not }) => {
   const dispatch = useDispatch();
+  const history = useHistory();
   const { token } = useTokenAndId();
   const [doneLoader, setDoneLoading] = useState<boolean>(false);
   const [deleteLoader, setDeleteLoader] = useState<boolean>(false);
@@ -43,6 +46,23 @@ const RequestNotification: FC<RequestNotificationInterface> = ({ not }) => {
       )
     );
   };
+
+  const handleMessage = () => {
+    axios
+      .get(`/chat/${not.approachnotified_by}`, {
+        headers: {
+          "x-auth-token": token,
+        },
+      })
+      .then((response) => {
+        console.log(response.data);
+        history.push(`/messages/${response.data.chat_room_id}`);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   return (
     <div className="HomePage__Right__MainBody__Notification__Box__RequestNotification__Noti">
       <div className="HomePage__Right__MainBody__Notification__Box__RequestNotification__Noti__Left">
@@ -85,7 +105,7 @@ const RequestNotification: FC<RequestNotificationInterface> = ({ not }) => {
             </div>
           ) : (
             <div className="HomePage__Right__MainBody__Notification__Box__RequestNotification__Noti__Right">
-              <button>Message</button>
+              <button onClick={handleMessage}>Message</button>
             </div>
           )}
         </>
