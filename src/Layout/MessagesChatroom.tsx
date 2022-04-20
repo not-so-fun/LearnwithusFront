@@ -194,7 +194,7 @@ const MessagesChatroom: FC<RouteComponentProps<any>> = ({ match }) => {
             onChange={(e) => setText(e.target.value)}
           />
           <div className="Messages__Left__InputBox__Logos">
-            <button>
+            <button className="Messages__Left__InputBox__Logos">
               <IoMdSend className="Messages__Left__InputBox__Logos__Logo" />
             </button>
           </div>

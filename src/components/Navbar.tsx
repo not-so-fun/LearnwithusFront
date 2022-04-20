@@ -295,11 +295,19 @@ const Navbar: FC = () => {
                 // style={{ fontSize: 25, marginLeft: 20, cursor: "pointer" }}
                 className="Navbar__Links__Create"
               />
-
-              <BsFillChatFill
-                onClick={() => history.push("/messages")}
-                className="Navbar__Links__Chat"
-              />
+               <div className="Navbar__Links__content__Icon">
+                  <div className="Navbar__Links__content__Icon__Bell">
+                    <BsFillChatFill
+                      className="Navbar__Links__Chat"
+                      onClick={() => history.push("/messages")}
+                    />
+                    {notificationLength != 0 && (
+                      <div className="Navbar__Links__content__Icon__Bell__Circle">
+                        {notificationLength}
+                      </div>
+                    )}
+                  </div>
+                </div>
 
               <FiLogOut
                 onClick={handleLogout}
@@ -319,7 +327,7 @@ const Navbar: FC = () => {
                         setClicketBellIcon(true);
                       }}
                     />
-                    {!clickedBellIcon && notificationLength != 0 && (
+                    {notificationLength != 0 && (
                       <div className="Navbar__Links__content__Icon__Bell__Circle">
                         {notificationLength}
                       </div>
