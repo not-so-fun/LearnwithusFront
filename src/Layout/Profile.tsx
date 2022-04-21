@@ -62,10 +62,11 @@ const Profile: FC<RouteComponentProps<any>> = ({ match }) => {
     };
   }, [match, token, userInfo]);
 
-  const { loading, profile_data, error,profileForm} = useSelector<RootStateType>(
-    (state) => state.profile_info_data
-  ) as profileDataInterface;
-  
+  const { loading, profile_data, error, profileForm } =
+    useSelector<RootStateType>(
+      (state) => state.profile_info_data
+    ) as profileDataInterface;
+
   return (
     // <div className="Profile">
     <div className="Profile__Box">
@@ -73,10 +74,11 @@ const Profile: FC<RouteComponentProps<any>> = ({ match }) => {
         <>
           <div className="Profile__Box__Top">
             <ProfileImageAndData profile_data={profile_data} />
-            {profileForm ?
-            <ProfileFormEdit profile_data={profile_data}/>:
-            <ProfileForm profile_data={profile_data} />
-            }
+            {profileForm ? (
+              <ProfileFormEdit profile_data={profile_data} />
+            ) : (
+              <ProfileForm profile_data={profile_data} />
+            )}
             <ProfileStats page_user_id={match.params.id} />
           </div>
           <div className="Profile__Box__Main">
@@ -87,8 +89,6 @@ const Profile: FC<RouteComponentProps<any>> = ({ match }) => {
                   <ProfileNewsFeed />
                   <ProfileNewsFeed /> */}
             </div>
-
-            
           </div>
         </>
       ) : (
@@ -97,14 +97,14 @@ const Profile: FC<RouteComponentProps<any>> = ({ match }) => {
             <h1 style={{ color: "black" }}>{error}</h1>
           ) : (
             <>
-            
               <div className="Profile__Box__Top">
                 <ProfileImageAndData profile_data={profile_data} />
 
-                {profileForm ?
-                <ProfileFormEdit profile_data={profile_data}/>:
-                <ProfileForm profile_data={profile_data} />
-                 }
+                {profileForm ? (
+                  <ProfileFormEdit profile_data={profile_data} />
+                ) : (
+                  <ProfileForm profile_data={profile_data} />
+                )}
                 <ProfileStats page_user_id={match.params.id} />
               </div>
 

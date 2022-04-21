@@ -2,6 +2,8 @@ import React, { FC, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   CHANGED_NOTIFICATION_NUMBER,
+  CHAT_NOTIFICATION_NUMBER,
+  CHAT_NOTIFICATION_NUMBER_CHANGE,
   SINGLE_NOTIFICATION_SUCCESS,
 } from "../constants/NotificationConstants";
 import { CHATROOM_UPDATE } from "../constants/ChatRoomConstants";
@@ -75,6 +77,10 @@ const Navbar: FC = () => {
           type: CHANGED_NOTIFICATION_NUMBER,
           length: response.data.length,
         });
+        dispatch({
+          type: CHAT_NOTIFICATION_NUMBER,
+          chatLength: response.data.chatLength,
+        });
       })
       .catch((error) => {
         console.log(error);
@@ -101,6 +107,18 @@ const Navbar: FC = () => {
       dispatch({ type: CHATROOM_UPDATE, chatRoom: data });
     });
   }, [user_id]);
+
+  useEffect(() => {
+    socketOfNotification.on("chat_room_notification", (data) => {
+      console.log(data);
+      if (chatNotificationLength !== 0) {
+        dispatch({
+          type: CHAT_NOTIFICATION_NUMBER_CHANGE,
+          changeNumber: chatNotificationLength + data.msg,
+        });
+      }
+    });
+  }, []);
 
   const handleLogout = () => {
     localStorage.clear();
@@ -302,11 +320,9 @@ const Navbar: FC = () => {
                     className="Navbar__Links__Chat"
                     onClick={() => history.push("/messages")}
                   />
-                  {chatNotificationLength != 0 && (
-                    <div className="Navbar__Links__content__Icon__Bell__Circle">
-                      {chatNotificationLength}
-                    </div>
-                  )}
+                  <div className="Navbar__Links__content__Icon__Bell__Circle">
+                    {chatNotificationLength}
+                  </div>
                 </div>
               </div>
 
