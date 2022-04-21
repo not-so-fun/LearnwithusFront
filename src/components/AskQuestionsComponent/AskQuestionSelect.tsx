@@ -42,7 +42,7 @@ const AskQuestionSelect: FC<AskQuestionSelectPropsType> = ({
   }, [token]);
 
   const handleSelectTopic = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    dispatch(SubTopicAction(token, e.target.value));
+    // dispatch(SubTopicAction(token, e.target.value));
     setFormData({ ...formData, topic_id: e.target.value });
     // setFormData({ ...formData, sub_topic_id: '0'});
   };
@@ -58,6 +58,7 @@ const AskQuestionSelect: FC<AskQuestionSelectPropsType> = ({
         // className="AskQuestionForm__TitleInput__InputBox__Div__Select"
         style={{ padding: 10 }}
         className="AskQuestionForm__Main__Form__Item__SelectTag__Select"
+        // className="AskQuestionForm__TitleInput__InputBox__Div__Select"
         required
       >
         <option value="" selected>

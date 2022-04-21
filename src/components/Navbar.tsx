@@ -36,9 +36,10 @@ interface DefaultEventsMap {
 let socketOfNotification: Socket<DefaultEventsMap, DefaultEventsMap>;
 
 const Navbar: FC = () => {
-  const { notificationLength,chatNotificationLength } = useSelector<RootStateType>(
-    (state) => state.Notification
-  ) as NotificationInterface;
+  const { notificationLength, chatNotificationLength } =
+    useSelector<RootStateType>(
+      (state) => state.Notification
+    ) as NotificationInterface;
   const dispatch = useDispatch();
   const [showNotification, setShowNotification] = useState<NotificaitonState>({
     show: false,
@@ -295,19 +296,19 @@ const Navbar: FC = () => {
                 // style={{ fontSize: 25, marginLeft: 20, cursor: "pointer" }}
                 className="Navbar__Links__Create"
               />
-               <div className="Navbar__Links__content__Icon">
-                  <div className="Navbar__Links__content__Icon__Bell">
-                    <BsFillChatFill
-                      className="Navbar__Links__Chat"
-                      onClick={() => history.push("/messages")}
-                    />
-                    {notificationLength != 0 && (
-                      <div className="Navbar__Links__content__Icon__Bell__Circle">
-                        {notificationLength}
-                      </div>
-                    )}
-                  </div>
+              <div className="Navbar__Links__content__Icon">
+                <div className="Navbar__Links__content__Icon__Bell">
+                  <BsFillChatFill
+                    className="Navbar__Links__Chat"
+                    onClick={() => history.push("/messages")}
+                  />
+                  {chatNotificationLength != 0 && (
+                    <div className="Navbar__Links__content__Icon__Bell__Circle">
+                      {chatNotificationLength}
+                    </div>
+                  )}
                 </div>
+              </div>
 
               <FiLogOut
                 onClick={handleLogout}
