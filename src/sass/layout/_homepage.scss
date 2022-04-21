@@ -86,9 +86,8 @@
       height: calc(100% - 7rem);
       margin-top: 1rem;
       &__Notification {
-        flex: 0.2;
-        padding: 0 1rem;
-        // background: $color-white;
+        flex: 0.4;
+        background: $color-white;
         &__Box {
           background-color: $color-white;
           cursor: default;
@@ -344,11 +343,9 @@
         &__Below {
           display: flex;
           flex-direction: column;
-          border: 0.2rem solid lightgrey;
-          margin-top: 1rem;
-          padding: 0.8rem;
-          margin-bottom: 1rem;
-          background-color: #e6e6e6;
+          padding: 3rem 3rem;
+          border-bottom: 2px solid lightgrey;
+          background-color: white;
           &__Links {
             border: 0.2rem solid $color-primary;
             color: $color-primary;
@@ -365,7 +362,6 @@
             transition: all 0.3s ease;
 
             &:hover {
-              box-shadow: inset 0 0 5rem 5rem rgb(12, 99, 99);
               transform: translateY(-0.2rem);
               background: $color-primary;
               color: $color-white;
@@ -392,6 +388,78 @@
             }
             &:active {
               transform: translateY(0.2rem);
+            }
+          }
+        }
+
+        &__Two {
+          border-bottom: 2px solid lightgrey;
+          padding: 2rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: #f4f4f4;
+          &__Left {
+            border: 2px solid lightgrey;
+            padding: 0.5rem 2rem;
+            background-color: white;
+            &__Top {
+              font-size: 1.2rem;
+              color: #1433bb;
+            }
+            &__Bottom {
+              font-size: 1.8rem;
+              color: black;
+            }
+          }
+          &__Right {
+            border: 2px solid lightgrey;
+            padding: 0.5rem 2rem;
+            border-left: 0;
+            background-color: white;
+            &__Top {
+              font-size: 1.2rem;
+              color: #bb1c14;
+            }
+            &__Bottom {
+              font-size: 1.8rem;
+              color: black;
+            }
+          }
+        }
+        &__Trend {
+          // padding: 1rem;
+          border-bottom: 2px solid lightgrey;
+          &__Header {
+            text-align: left;
+            font-size: 1.6rem;
+            padding: 0.5rem 1rem;
+            padding-bottom: 0;
+          }
+          &__Item {
+            padding: 1rem 2rem;
+            display: flex;
+            &__Left {
+              &__Avatar {
+                margin-top: 0.5rem;
+                font-size: 3rem !important;
+              }
+            }
+            &__Right {
+              width: 85%;
+              text-align: left;
+              margin-left: 1rem;
+              display: flex;
+              flex-direction: column;
+              font-size: 1.3rem;
+              &__Span {
+                display: flex;
+                align-items: center;
+                margin-top: 0.2rem;
+                &__Icon {
+                  margin-right: 0.5rem;
+                }
+              }
             }
           }
         }

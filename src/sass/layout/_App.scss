@@ -17,11 +17,13 @@
       flex: 0.2;
       position: sticky;
       top: 0;
+      border-right: 2px solid lightgrey;
       &__SideBar {
         display: flex;
         flex-direction: column;
         align-items: center;
         height: 100%;
+        background-color: white;
         &__Header {
           display: flex;
           flex-direction: row;
@@ -47,11 +49,17 @@
         }
 
         &__Links {
-          margin-top: 1rem;
+          // margin-top: 1rem;
+          background-color: white;
+
+          padding-top: 0.8rem;
+          // padding: 1rem;
           display: flex;
           flex-direction: column;
           align-items: center;
           width: 100%;
+          // border: 2px solid red;
+          border-bottom: 2px solid lightgrey;
 
           &__Link {
             font-size: 1.8rem;
@@ -72,6 +80,29 @@
             }
           }
         }
+        &__Detail {
+          width: 100%;
+          border-bottom: 2px solid lightgrey;
+          &__Item {
+            margin: 1rem;
+            display: flex;
+
+            &__Left {
+              &__Icon {
+                font-size: 2rem !important;
+                margin-top: 0.2rem;
+              }
+            }
+            &__Right {
+              margin-left: 1rem;
+              text-align: left;
+              width: 85%;
+              font-size: 1.3rem;
+              display: flex;
+              flex-direction: column;
+            }
+          }
+        }
       }
     }
     &__MainBody {
@@ -79,6 +110,16 @@
       height: calc(100vh - 6.5rem);
       overflow-y: scroll;
     }
+  }
+
+  &__CopyRight {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    justify-content: flex-end;
+    padding-bottom: 1rem;
+    font-size: 1.2rem;
   }
 }
 .Active {
