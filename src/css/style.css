@@ -476,9 +476,10 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 4rem 0;
+  padding: 2rem 0;
   position: relative; }
   .QuestionFeed__Box {
+    margin-bottom: 1rem;
     width: 95%;
     height: 100%; }
     .QuestionFeed__Box__Top {
@@ -526,6 +527,7 @@ body {
           .QuestionFeed__Box__Top__Left__ProfileImage:hover .QuestionFeed__Box__Top__Left__ProfileImage__Image {
             filter: blur(3px); }
         .QuestionFeed__Box__Top__Left__AboutQuestion {
+          margin-left: 2rem;
           flex: 1;
           height: auto; }
           .QuestionFeed__Box__Top__Left__AboutQuestion__Top {
@@ -661,6 +663,7 @@ body {
               color: #f61b1b;
               transform: translateY(-2px); }
       .QuestionFeed__Box__Main__AboutQuestion {
+        margin-left: 2rem;
         height: 100%;
         display: flex;
         flex-direction: column;
@@ -766,8 +769,7 @@ body {
     width: 95%;
     height: 7rem;
     border-top: 0.3rem solid #c4c4c4;
-    margin-top: 2rem;
-    padding-top: 4rem;
+    padding-top: 2rem;
     display: flex;
     align-items: center;
     justify-content: space-between; }
@@ -1149,10 +1151,44 @@ body {
         margin: 1rem 0; }
         .ProfileTry__Left__ProfileInformation__Profile__ProfilePhoto {
           height: 8rem;
-          width: 8rem;
-          border-radius: 50%;
-          background: grey;
-          margin: 0 2rem; }
+          width: 10rem;
+          margin: 0 1rem; }
+          .ProfileTry__Left__ProfileInformation__Profile__ProfilePhoto__Icon {
+            border: 2px solid #ffffff1a;
+            background-color: #0e0e0e1a;
+            border-radius: 50%;
+            height: 4rem;
+            width: 4rem;
+            margin-left: auto;
+            margin-top: -6rem;
+            color: #fff;
+            position: relative; }
+            .ProfileTry__Left__ProfileInformation__Profile__ProfilePhoto__Icon__Camera {
+              font-size: 2rem !important;
+              position: absolute;
+              top: 25%;
+              left: 25%;
+              z-index: 1;
+              opacity: 1; }
+            .ProfileTry__Left__ProfileInformation__Profile__ProfilePhoto__Icon__Input {
+              height: 100%;
+              width: 100%;
+              z-index: 10;
+              position: absolute;
+              top: 0;
+              left: 0;
+              border-radius: 50%;
+              opacity: 0; }
+              .ProfileTry__Left__ProfileInformation__Profile__ProfilePhoto__Icon__Input:hover {
+                cursor: pointer; }
+          .ProfileTry__Left__ProfileInformation__Profile__ProfilePhoto__Paragraph {
+            font-size: 1.5rem;
+            z-index: 10; }
+          .ProfileTry__Left__ProfileInformation__Profile__ProfilePhoto__Photo {
+            height: 8rem;
+            width: 8rem;
+            border-radius: 50%;
+            z-index: 100; }
         .ProfileTry__Left__ProfileInformation__Profile__ProfileData {
           height: 8rem;
           flex: 1;
@@ -1204,6 +1240,8 @@ body {
           color: #fff;
           background: #1433BB;
           border-radius: 0.5rem; }
+          .ProfileTry__Left__ProfileInformation__Approach__Button:hover {
+            cursor: pointer; }
       .ProfileTry__Left__ProfileInformation__ProfileData {
         flex: 1;
         width: 100%;
@@ -1400,10 +1438,10 @@ body {
           border: 2px solid #ffffff1a;
           background-color: #0e0e0e1a;
           border-radius: 50%;
-          height: 5rem;
-          width: 5rem;
+          height: 4rem;
+          width: 4rem;
           margin-left: auto;
-          margin-top: -5rem;
+          margin-top: -5.4rem;
           color: #fff;
           position: relative; }
           .Profile__Box__Top__ImagesAndDatas__Image__Icon__Camera {
@@ -2685,16 +2723,16 @@ body {
       border-radius: 0.5rem;
       resize: none; }
     .MainQA__ShowReply__Reply {
-      background: #ffffff;
-      width: auto;
+      background: #1433BB;
+      color: #fff;
       padding: 0 2rem;
       height: 4rem;
       margin: 0.4rem 0;
+      width: 100%;
+      border: none;
       outline: none;
       border-radius: 0.5rem;
-      font-size: 1.5rem;
-      color: #048004;
-      border: 0.1rem solid #048004; }
+      font-size: 1.5rem; }
       .MainQA__ShowReply__Reply:hover {
         cursor: pointer; }
     .MainQA__ShowReply__ReplyButton {
@@ -2711,7 +2749,7 @@ body {
       .MainQA__ShowReply__ReplyButton:hover {
         cursor: pointer; }
   .MainQA__Types {
-    height: 10rem;
+    height: 8rem;
     width: 100%;
     margin: 0 1rem;
     display: flex;
@@ -2836,6 +2874,7 @@ body {
         padding: 0 1rem; }
         .MainQA__AnswerInput__Box__ButtonBox__Button {
           height: 4rem;
+          width: 100%;
           border: none;
           outline: none;
           background: #1433BB;
@@ -2935,7 +2974,7 @@ body {
             height: 100%;
             width: auto;
             font-size: 1.3rem;
-            margin-left: 1rem;
+            margin-left: 3rem;
             display: flex;
             flex-direction: column;
             align-items: flex-start;
@@ -3019,7 +3058,7 @@ body {
         .MainQA__Answer__Box__Main__AnswerText {
           display: flex;
           flex-direction: column;
-          margin-left: .5rem; }
+          margin-left: 2.5rem; }
           .MainQA__Answer__Box__Main__AnswerText__Text {
             font-size: 1.6rem;
             padding: 0 0.5rem;

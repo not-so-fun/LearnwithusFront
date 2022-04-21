@@ -3,6 +3,7 @@ import {profileUserDataInterface} from "../../reducers/ProfileReducer"
 import { useDispatch, useSelector } from "react-redux";
 import { ApproachAction } from "../../actions/ApproachAction";
 import useTokenAndId from "../ReusableLogicComponents/useTokenAndId";
+import {Link} from "react-router-dom";
 interface tutorInterface {
   tutor: profileUserDataInterface;
 }
@@ -21,9 +22,9 @@ const TutorsProfile : FC<tutorInterface>= ({tutor}) => {
             <img src={tutor.image} className="Tutors__Box__Top__ProfileImage__Image"/>
           </div>
           <div className="Tutors__Box__Top__ProfileData">
-            <div className="Tutors__Box__Top__ProfileData__ProfileName">
+            <Link to={`/profile/${tutor.user_id}`} className="Tutors__Box__Top__ProfileData__ProfileName">
               <strong>{tutor.username}</strong>
-            </div>
+            </Link>
             <div className="Tutors__Box__Top__ProfileData__Expertise">
               Physics, chemistry, mathematics
             </div>

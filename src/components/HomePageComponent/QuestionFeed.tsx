@@ -231,14 +231,14 @@ const QuestionFeed: FC<quesInterface> = ({ question }) => {
               <p>
                 {" "}
                 <Markup content={question.question} />
-                When you create a regular .NET 5 or 6 API project, you get some
+                {/* When you create a regular .NET 5 or 6 API project, you get some
                 basic classes such as Program.cs and Startup.cs. I want to
                 replicate that in a class project, because I want to be able to
                 configure my services for dependency injection, but I don't want
                 any controllers or HTTP in my project. As an example, let's
                 assume I want to create a .NET 6 project using minimal
                 API/hosting, and I want to check for file changes in a
-                directory:
+                directory: */}
               </p>
             </div>
 

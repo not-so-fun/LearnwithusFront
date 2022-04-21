@@ -93,7 +93,7 @@ const routes: IRoute[] = [
   {
     path: "/profile/:id",
     name: "Profile",
-    component: Profile,
+    component:ProfileTry,
     exact: true,
     private: true,
     showNav: true,

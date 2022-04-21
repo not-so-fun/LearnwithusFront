@@ -156,6 +156,7 @@ const MainQAQuestion: FC<MainQAQuestionInterface> = ({ question }) => {
     }
   };
   const deleteQuestion = () => {
+    console.log('helloworld');
     if (question) {
       dispatch(DeleteQuestionAction(token, question?.question_id));
     }

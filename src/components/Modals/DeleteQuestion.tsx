@@ -33,7 +33,7 @@ const ModalOverlay: React.FC<ClickProp> = ({ onClick }) => {
         </p>
       </div>
       <div className="deleteModal__Button">
-        <button className="deleteModal__Button__Btn margin-right">
+        <button className="deleteModal__Button__Btn margin-right" >
           Confirm
         </button>
         <button className="deleteModal__Button__BtnCancel" onClick={onClick}>

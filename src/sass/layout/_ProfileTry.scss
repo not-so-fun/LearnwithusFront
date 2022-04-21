@@ -65,10 +65,54 @@
         margin: 1rem 0;
         &__ProfilePhoto {
           height: 8rem;
-          width: 8rem;
-          border-radius: 50%;
-          background: grey;
-          margin: 0 2rem;
+          width: 10rem;
+          margin:0 1rem;
+        
+          &__Icon {
+            border: 2px solid #ffffff1a;
+            background-color: #0e0e0e1a;
+            // background:red;
+            border-radius: 50%;
+            height: 4rem;
+            width: 4rem;
+            margin-left: auto;
+            margin-top: -6rem;
+            color: $color-white;
+            position: relative;
+
+            // background:red;
+            &__Camera {
+              font-size: 2rem !important;
+              position: absolute;
+              top: 25%;
+              left: 25%;
+              z-index: 1;
+              opacity: 1;
+            }
+            &__Input {
+              height: 100%;
+              width: 100%;
+              z-index: 10;
+              position: absolute;
+              top: 0;
+              left: 0;
+              border-radius: 50%;
+              opacity: 0;
+              &:hover {
+                cursor: pointer;
+              }
+            }
+          }
+          &__Paragraph{
+            font-size:1.5rem;
+            z-index:10;
+          }
+          &__Photo{
+            height:8rem;
+            width:8rem;
+            border-radius:50%;
+            z-index:100;
+          }
         }
         &__ProfileData {
           height: 8rem;
@@ -131,6 +175,9 @@
           color: $color-white;
           background: $color-primary;
           border-radius: 0.5rem;
+          &:hover{
+            cursor:pointer;
+          }
         }
       }
 

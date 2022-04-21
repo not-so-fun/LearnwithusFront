@@ -29,17 +29,16 @@
       resize: none;
     }
     &__Reply {
-      background: #ffffff;
-      width: auto;
+      background:$color-primary;
+      color:$color-white;
       padding: 0 2rem;
       height: 4rem;
       margin: 0.4rem 0;
-
+      width:100%;
+      border:none;
       outline: none;
       border-radius: 0.5rem;
       font-size: 1.5rem;
-      color: $color-secondary;
-      border: 0.1rem solid $color-secondary;
       &:hover {
         cursor: pointer;
       }
@@ -63,7 +62,7 @@
   }
   &__Types {
     // background:red;
-    height: 10rem;
+    height: 8rem;
     width: 100%;
     margin: 0 1rem;
     display: flex;
@@ -225,6 +224,7 @@
 
         &__Button {
           height: 4rem;
+          width:100%;
           border: none;
           outline: none;
           background: $color-primary;
@@ -355,7 +355,7 @@
             width: auto;
             // background:red;
             font-size: 1.3rem;
-            margin-left: 1rem;
+            margin-left: 3rem;
             display: flex;
             flex-direction: column;
             align-items: flex-start;
@@ -468,7 +468,7 @@
         &__AnswerText {
           display: flex;
           flex-direction: column;
-          margin-left: .5rem;
+          margin-left: 2.5rem;
           &__Text {
             font-size: 1.6rem;
             padding: 0 0.5rem;

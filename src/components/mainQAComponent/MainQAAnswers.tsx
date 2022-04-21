@@ -133,6 +133,7 @@ const MainQAAnswers: FC<MainQAAnswerInterface> = ({ ans }) => {
           console.log(error);
         });
     }
+    setReplyText("");
   };
 
   const handleChangeUpvoteUp:
