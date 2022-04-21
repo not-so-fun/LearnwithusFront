@@ -52,12 +52,12 @@ const AskQuestionSelect: FC<AskQuestionSelectPropsType> = ({
   };
 
   return (
-    <div className="AskQuestionForm__TitleInput__InputBox__Div">
+    <div className="AskQuestionForm__Main__Form__Item__SelectTag">
       <select
         onChange={(e) => handleSelectTopic(e)}
         // className="AskQuestionForm__TitleInput__InputBox__Div__Select"
-        style={{padding:10}}
-        className="AskQuestionForm__TitleInput__InputBox__Div__Select"
+        style={{ padding: 10 }}
+        className="AskQuestionForm__Main__Form__Item__SelectTag__Select"
         required
       >
         <option value="" selected>
@@ -73,27 +73,6 @@ const AskQuestionSelect: FC<AskQuestionSelectPropsType> = ({
               {topic.title}
             </option>
           ))}
-      </select>
-
-      <select
-        onChange={(e) => handleSelectSubTopic(e)}
-        className="AskQuestionForm__TitleInput__InputBox__Div__Select"
-      >
-        <option value="" selected>
-          Sub-Topic
-        </option>
-
-        {sub_topics &&
-          sub_topics.map(
-            (sub_topic: { sub_topic_id: string; title: string }) => (
-              <option
-                key={sub_topic.sub_topic_id}
-                value={sub_topic.sub_topic_id}
-              >
-                {sub_topic.title}
-              </option>
-            )
-          )}
       </select>
     </div>
   );

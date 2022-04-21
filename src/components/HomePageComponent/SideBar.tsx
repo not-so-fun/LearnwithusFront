@@ -4,7 +4,7 @@ import { Link, useHistory } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { FaSearch } from "react-icons/fa";
 import { RootStateType } from "../../stores";
-
+import HelpIcon from "@mui/icons-material/Help";
 const SideBar: FC = () => {
   const [active, setActive] = useState<boolean>(false);
   const [activeSaved, setActiveSaved] = useState<boolean>(false);
@@ -60,6 +60,42 @@ const SideBar: FC = () => {
           }`}
         >
           Search Tutors
+        </Link>
+      </div>
+      <div className="App__Bottom__Left__SideBar__Detail">
+        <div className="App__Bottom__Left__SideBar__Detail__Item">
+          <div className="App__Bottom__Left__SideBar__Detail__Item__Left">
+            <HelpIcon className="App__Bottom__Left__SideBar__Detail__Item__Left__Icon" />
+          </div>
+          <div className="App__Bottom__Left__SideBar__Detail__Item__Right">
+            <span>
+              You asked&nbsp;
+              <Link style={{ textDecoration: "none", color: "#1433BB" }} to="">
+                How to start investing in NFT's?
+              </Link>
+            </span>
+            <span>24 mins ago</span>
+          </div>
+        </div>
+        <div className="App__Bottom__Left__SideBar__Detail__Item">
+          <div className="App__Bottom__Left__SideBar__Detail__Item__Left">
+            <HelpIcon className="App__Bottom__Left__SideBar__Detail__Item__Left__Icon" />
+          </div>
+          <div className="App__Bottom__Left__SideBar__Detail__Item__Right">
+            <span>
+              You answered&nbsp;
+              <Link style={{ textDecoration: "none", color: "#1433BB" }} to="">
+                How to get a black on black mercedes at the age of 25?
+              </Link>
+            </span>
+            <span>24 mins ago</span>
+          </div>
+        </div>
+      </div>
+      <div className="App__CopyRight">
+        <span>&copy; LEARN 101, All right reserved.</span>
+        <Link style={{ textDecoration: "none", color: "#1433BB" }} to="/">
+          Terms & Policy
         </Link>
       </div>
     </div>

@@ -23,7 +23,7 @@ const TextEditor: FC<TextEditorInterface> = ({ formData, setFormData }) => {
         value={formData.question}
         onEditorChange={handleChangeEditor}
         init={{
-          height: "500",
+          height: "250",
           plugins: "link image code",
           toolbar:
             "undo redo  | bold italic | alignleft aligncenter alignright | code",

@@ -220,205 +220,63 @@ body {
       text-align: left; }
 
 .AskQuestionForm {
-  background: #fff;
-  width: 100%;
+  background-color: white;
   height: auto;
-  border-radius: 0.6rem;
-  padding: 1rem; }
-  .AskQuestionForm__Heading {
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-end;
-    color: #4b4b4b; }
-    .AskQuestionForm__Heading__Title {
-      height: 5rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 2.5rem;
-      color: #4b4b4b;
-      font-weight: 600; }
+  padding-bottom: 1rem; }
   .AskQuestionForm__Title {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    color: #4b4b4b; }
-    .AskQuestionForm__Title__Heading {
-      font-size: 2.3rem;
-      font-weight: 600;
-      letter-spacing: 0.07rem;
-      width: 10rem;
+    font-size: 2rem;
+    color: black; }
+  .AskQuestionForm__Main__Form {
+    text-align: left; }
+    .AskQuestionForm__Main__Form__Item {
       display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      color: #4b4b4b; }
-    .AskQuestionForm__Title__HelperText {
-      font-size: 1.5rem;
-      color: #000;
-      color: #4b4b4b; }
-  .AskQuestionForm__TitleInput {
-    height: 14rem;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 0.5rem;
-    padding: 1rem 0;
-    padding-bottom: 0; }
-    .AskQuestionForm__TitleInput__Title {
-      border: 0.2rem solid lightgrey;
-      border-radius: 0.5rem;
-      height: 5rem;
-      width: 100%;
-      padding: 0 1rem;
-      font-size: 1.5rem;
-      display: flex;
-      align-items: center;
-      outline: none; }
-      .AskQuestionForm__TitleInput__Title__Logos {
-        height: 4rem;
-        width: 4rem;
-        margin-left: -4rem; }
-    .AskQuestionForm__TitleInput__InputBox {
-      height: 7rem;
-      width: 100%;
-      display: flex;
-      justify-content: flex-start;
-      align-items: center; }
-      .AskQuestionForm__TitleInput__InputBox__Div {
-        width: 100%;
-        display: flex; }
-        .AskQuestionForm__TitleInput__InputBox__Div__Select {
-          width: 36.3rem;
-          background: #fff;
-          width: 100%;
-          border-radius: 0.5rem;
-          height: 5rem;
-          display: flex;
-          align-items: center;
-          padding: 0px 1rem;
-          border: 0.2rem solid lightgrey;
-          cursor: pointer;
-          color: #777; }
-          .AskQuestionForm__TitleInput__InputBox__Div__Select:last-child {
-            margin-left: 0.5rem; }
-      .AskQuestionForm__TitleInput__InputBox__Title {
-        background: #4b4b4b;
-        border-radius: 0.5rem;
-        height: 5rem;
-        flex: 1;
-        display: flex;
-        align-items: center;
-        position: relative; }
-        .AskQuestionForm__TitleInput__InputBox__Title:not(:first-child) {
-          margin-left: 0.5rem; }
-        .AskQuestionForm__TitleInput__InputBox__Title:not(:last-child) {
-          margin-right: 0.5rem; }
-        .AskQuestionForm__TitleInput__InputBox__Title__Box {
-          width: 100%;
-          height: 30rem;
-          background: #c4c4c4;
-          position: absolute;
-          top: 5.6rem;
-          left: 0;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: flex-start;
-          overflow-y: scroll; }
-          .AskQuestionForm__TitleInput__InputBox__Title__Box__Topics {
-            font-size: 2rem;
-            color: #000;
-            height: 5rem;
-            width: 95%;
-            margin: 0.5rem 0;
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            padding: 0.4rem 1rem; }
-            .AskQuestionForm__TitleInput__InputBox__Title__Box__Topics:hover {
-              cursor: pointer;
-              background: #f8f8f8; }
-        .AskQuestionForm__TitleInput__InputBox__Title__Input {
-          font-size: 1.5rem;
-          width: 100%;
-          height: 5rem;
-          border: none;
-          outline: none;
-          border-radius: 5px;
-          padding-right: 3.5rem;
-          padding-left: 1rem; }
-      .AskQuestionForm__TitleInput__InputBox__Footer {
-        height: 5rem;
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-        padding: 0 1rem; }
-        .AskQuestionForm__TitleInput__InputBox__Footer__Button {
-          height: 4rem;
-          border-radius: 0.5rem;
-          padding: 0 1rem;
-          flex: 0 0 20%;
-          font-size: 1.5rem;
-          font-weight: 600;
-          background: #c4c4c4;
-          margin-bottom: 1rem; }
-          .AskQuestionForm__TitleInput__InputBox__Footer__Button:hover {
-            cursor: pointer;
-            background: #f8f8f8; }
-  .AskQuestionForm__Body {
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start; }
-    .AskQuestionForm__Body__Heading {
-      width: 10rem;
-      height: 4rem;
-      font-size: 2.3rem;
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      color: #4b4b4b; }
-    .AskQuestionForm__Body__Input {
-      height: 33rem;
-      border-radius: 0.5rem;
-      overflow-y: scroll;
-      padding: 1rem;
-      outline: none;
-      color: #4b4b4b;
-      font-size: 1.5rem;
-      border: 0.5rem;
-      background-color: #e3e3e3;
-      margin: 0 1rem;
-      resize: none; }
+      flex-direction: column;
+      margin-bottom: 0.5rem;
+      padding: 0 2rem; }
+      .AskQuestionForm__Main__Form__Item__Label {
+        color: #444444;
+        font-size: 1.2rem;
+        font-weight: 600;
+        letter-spacing: 0.05rem;
+        margin-bottom: 0.2rem; }
+      .AskQuestionForm__Main__Form__Item__Input {
+        height: 3.8rem;
+        padding: 0px 0.9rem;
+        font-size: 1.4rem; }
+        .AskQuestionForm__Main__Form__Item__Input:focus {
+          outline: none; }
+      .AskQuestionForm__Main__Form__Item__Span {
+        margin-top: 0.2rem;
+        font-size: 1.1rem; }
+      .AskQuestionForm__Main__Form__Item__SelectTag__Select {
+        width: 100%; }
+      .AskQuestionForm__Main__Form__Item__SelectTag:focus {
+        outline: none; }
   .AskQuestionForm__Footer {
-    height: 5rem;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    padding: 0 1rem; }
+    margin: 0 2rem; }
     .AskQuestionForm__Footer__Button {
-      height: 4rem;
-      width: auto;
-      border-radius: 0.5rem;
-      margin-top: 2rem;
-      margin-bottom: 1rem;
-      padding: 0 1rem;
+      width: 100% !important;
+      background-color: #1433bb;
       border: none;
-      font-size: 1.5rem;
-      font-weight: 600;
-      background: #1433BB;
-      color: #f7f7f7; }
+      color: #fff;
+      padding: 0.5rem 0px;
+      cursor: pointer;
+      font-size: 1.8rem;
+      font-weight: 600; }
       .AskQuestionForm__Footer__Button:hover {
-        cursor: pointer;
-        box-shadow: inset 5em 5em rgba(0, 0, 0, 0.2); }
+        background-color: rgba(20, 51, 187, 0.9); }
+
+@media only screen and (max-width: 600px) {
+  .AskQuestion__Right__Bottom__Right {
+    display: none;
+    flex: 0; }
+  .AskQuestion__Right__Bottom__Left {
+    flex: 1 !important;
+    width: 100%; }
+  .AskQuestion__Right__Bottom__Left__Main__Form {
+    width: 100%; }
+  .AskQuestionForm {
+    height: 100vh; } }
 
 .SearchTutors {
   height: 100%;
@@ -2365,8 +2223,8 @@ body {
       height: calc(100% - 7rem);
       margin-top: 1rem; }
       .HomePage__Right__MainBody__Notification {
-        flex: 0.2;
-        padding: 0 1rem; }
+        flex: 0.4;
+        background: #fff; }
         .HomePage__Right__MainBody__Notification__Box {
           background-color: #fff;
           cursor: default;
@@ -2556,11 +2414,9 @@ body {
         .HomePage__Right__MainBody__Notification__Below {
           display: flex;
           flex-direction: column;
-          border: 0.2rem solid lightgrey;
-          margin-top: 1rem;
-          padding: 0.8rem;
-          margin-bottom: 1rem;
-          background-color: #e6e6e6; }
+          padding: 3rem 3rem;
+          border-bottom: 2px solid lightgrey;
+          background-color: white; }
           .HomePage__Right__MainBody__Notification__Below__Links {
             border: 0.2rem solid #1433BB;
             color: #1433BB;
@@ -2576,7 +2432,6 @@ body {
             text-decoration: none;
             transition: all 0.3s ease; }
             .HomePage__Right__MainBody__Notification__Below__Links:hover {
-              box-shadow: inset 0 0 5rem 5rem #0c6363;
               transform: translateY(-0.2rem);
               background: #1433BB;
               color: #fff; }
@@ -2599,6 +2454,60 @@ body {
               transform: translateY(-0.2rem); }
             .HomePage__Right__MainBody__Notification__Below button:last-child:active {
               transform: translateY(0.2rem); }
+        .HomePage__Right__MainBody__Notification__Two {
+          border-bottom: 2px solid lightgrey;
+          padding: 2rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: #f4f4f4; }
+          .HomePage__Right__MainBody__Notification__Two__Left {
+            border: 2px solid lightgrey;
+            padding: 0.5rem 2rem;
+            background-color: white; }
+            .HomePage__Right__MainBody__Notification__Two__Left__Top {
+              font-size: 1.2rem;
+              color: #1433bb; }
+            .HomePage__Right__MainBody__Notification__Two__Left__Bottom {
+              font-size: 1.8rem;
+              color: black; }
+          .HomePage__Right__MainBody__Notification__Two__Right {
+            border: 2px solid lightgrey;
+            padding: 0.5rem 2rem;
+            border-left: 0;
+            background-color: white; }
+            .HomePage__Right__MainBody__Notification__Two__Right__Top {
+              font-size: 1.2rem;
+              color: #bb1c14; }
+            .HomePage__Right__MainBody__Notification__Two__Right__Bottom {
+              font-size: 1.8rem;
+              color: black; }
+        .HomePage__Right__MainBody__Notification__Trend {
+          border-bottom: 2px solid lightgrey; }
+          .HomePage__Right__MainBody__Notification__Trend__Header {
+            text-align: left;
+            font-size: 1.6rem;
+            padding: 0.5rem 1rem;
+            padding-bottom: 0; }
+          .HomePage__Right__MainBody__Notification__Trend__Item {
+            padding: 1rem 2rem;
+            display: flex; }
+            .HomePage__Right__MainBody__Notification__Trend__Item__Left__Avatar {
+              margin-top: 0.5rem;
+              font-size: 3rem !important; }
+            .HomePage__Right__MainBody__Notification__Trend__Item__Right {
+              width: 85%;
+              text-align: left;
+              margin-left: 1rem;
+              display: flex;
+              flex-direction: column;
+              font-size: 1.3rem; }
+              .HomePage__Right__MainBody__Notification__Trend__Item__Right__Span {
+                display: flex;
+                align-items: center;
+                margin-top: 0.2rem; }
+                .HomePage__Right__MainBody__Notification__Trend__Item__Right__Span__Icon {
+                  margin-right: 0.5rem; }
       .HomePage__Right__MainBody__NewsFeed {
         flex: 1;
         overflow-y: scroll;
@@ -3339,8 +3248,9 @@ body {
   .Answered__Right {
     height: 100%;
     width: 100%;
-    background-color: #eeeeee;
-    flex: 0.4; }
+    background-color: #ffffff;
+    flex: 0.4;
+    border-left: 2px solid lightgrey; }
   .Answered__HeadingFallback {
     border: 0.2rem solid lightgrey;
     font-size: 4rem;
@@ -3383,12 +3293,14 @@ body {
     .App__Bottom__Left {
       flex: 0.2;
       position: sticky;
-      top: 0; }
+      top: 0;
+      border-right: 2px solid lightgrey; }
       .App__Bottom__Left__SideBar {
         display: flex;
         flex-direction: column;
         align-items: center;
-        height: 100%; }
+        height: 100%;
+        background-color: white; }
         .App__Bottom__Left__SideBar__Header {
           display: flex;
           flex-direction: row;
@@ -3409,11 +3321,13 @@ body {
             font-weight: 600;
             letter-spacing: 0.01rem; }
         .App__Bottom__Left__SideBar__Links {
-          margin-top: 1rem;
+          background-color: white;
+          padding-top: 0.8rem;
           display: flex;
           flex-direction: column;
           align-items: center;
-          width: 100%; }
+          width: 100%;
+          border-bottom: 2px solid lightgrey; }
           .App__Bottom__Left__SideBar__Links__Link {
             font-size: 1.8rem;
             width: 95%;
@@ -3429,10 +3343,34 @@ body {
               cursor: pointer;
               box-shadow: inset 0 0 10rem 10rem rgba(118, 118, 118, 0.1);
               border-radius: 0.4rem; }
+        .App__Bottom__Left__SideBar__Detail {
+          width: 100%;
+          border-bottom: 2px solid lightgrey; }
+          .App__Bottom__Left__SideBar__Detail__Item {
+            margin: 1rem;
+            display: flex; }
+            .App__Bottom__Left__SideBar__Detail__Item__Left__Icon {
+              font-size: 2rem !important;
+              margin-top: 0.2rem; }
+            .App__Bottom__Left__SideBar__Detail__Item__Right {
+              margin-left: 1rem;
+              text-align: left;
+              width: 85%;
+              font-size: 1.3rem;
+              display: flex;
+              flex-direction: column; }
     .App__Bottom__MainBody {
       flex: 1;
       height: calc(100vh - 6.5rem);
       overflow-y: scroll; }
+  .App__CopyRight {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    justify-content: flex-end;
+    padding-bottom: 1rem;
+    font-size: 1.2rem; }
 
 .Active {
   box-shadow: inset 0 0 10rem 10rem rgba(118, 118, 118, 0.1); }

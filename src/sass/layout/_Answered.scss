@@ -19,8 +19,9 @@
   &__Right {
     height: 100%;
     width: 100%;
-    background-color: #eeeeee;
+    background-color: #ffffff;
     flex: 0.4;
+    border-left: 2px solid lightgrey;
   }
   &__HeadingFallback {
     border: 0.2rem solid lightgrey;
