@@ -25,12 +25,13 @@ import {
 } from "../constants/ProfileConstants";
 import storage from "../Firebase";
 import { BeatLoader } from "react-spinners";
-import { Skeleton,Box } from "@mui/material";
+import { Skeleton, Box } from "@mui/material";
 
 const ProfileTry: FC<RouteComponentProps<any>> = ({ match }) => {
   const dispatch = useDispatch();
   const history = useHistory();
   const { token, user_id } = useTokenAndId();
+  const [rateUser, setRateUser] = useState<boolean>(false);
 
   const {
     profile_data: { approachStatus },
@@ -200,6 +201,69 @@ const ProfileTry: FC<RouteComponentProps<any>> = ({ match }) => {
                 <p className="ProfileTry__Left__ProfileInformation__Profile__ProfileData__Paragraph">
                   Kathmandu,Nepal
                 </p>
+                <div
+                  className="star-rating"
+                  onClick={() => setRateUser(!rateUser)}
+                >
+                  <div className="back-stars">
+                    <i
+                      style={{ fontSize: "2.3rem" }}
+                      className="fa fa-star-o"
+                      aria-hidden="true"
+                    ></i>
+                    <i
+                      style={{ fontSize: "2.3rem" }}
+                      className="fa fa-star-o"
+                      aria-hidden="true"
+                    ></i>
+                    <i
+                      style={{ fontSize: "2.3rem" }}
+                      className="fa fa-star-o"
+                      aria-hidden="true"
+                    ></i>
+                    <i
+                      style={{ fontSize: "2.3rem" }}
+                      className="fa fa-star-o"
+                      aria-hidden="true"
+                    ></i>
+                    <i
+                      style={{ fontSize: "2.3rem" }}
+                      className="fa fa-star-o"
+                      aria-hidden="true"
+                    ></i>
+
+                    <div
+                      className="front-stars"
+                      style={{ width: `${profile_data.rating * 20}%` }}
+                    >
+                      <i
+                        style={{ fontSize: "2.3rem" }}
+                        className="fa fa-star"
+                        aria-hidden="true"
+                      ></i>
+                      <i
+                        style={{ fontSize: "2.3rem" }}
+                        className="fa fa-star"
+                        aria-hidden="true"
+                      ></i>
+                      <i
+                        style={{ fontSize: "2.3rem" }}
+                        className="fa fa-star"
+                        aria-hidden="true"
+                      ></i>
+                      <i
+                        style={{ fontSize: "2.3rem" }}
+                        className="fa fa-star"
+                        aria-hidden="true"
+                      ></i>
+                      <i
+                        style={{ fontSize: "2.3rem" }}
+                        className="fa fa-star"
+                        aria-hidden="true"
+                      ></i>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
             <div className="ProfileTry__Left__ProfileInformation__Question">

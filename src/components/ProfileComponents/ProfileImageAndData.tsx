@@ -6,7 +6,7 @@ import PhotoCameraIcon from "@mui/icons-material/PhotoCamera";
 import storage from "../../Firebase";
 import { ref, getDownloadURL, uploadBytesResumable } from "firebase/storage";
 import { UpdateImageAction } from "../../actions/UpdateImageAction";
-import {rateUserAction} from "../../actions/ProfileAction";
+import { rateUserAction } from "../../actions/ProfileAction";
 import useTokenAndId from "../ReusableLogicComponents/useTokenAndId";
 import { useDispatch, useSelector } from "react-redux";
 import { CircularProgress } from "@mui/material";
@@ -72,127 +72,180 @@ const ProfileImageAndData: FC<ProfileFormInterface> = ({ profile_data }) => {
   };
   const RateUserUI: FC = () => {
     const [rate, setRate] = useState<number>(0);
-    const rateApi: React.FormEventHandler<HTMLButtonElement>= (event) =>{
-      dispatch(rateUserAction(rate,profile_data.user_id, token));
-    }
-    return(
+    const rateApi: React.FormEventHandler<HTMLButtonElement> = (event) => {
+      dispatch(rateUserAction(rate, profile_data.user_id, token));
+    };
+    return (
       <>
-      <div className="CENTER" onClick={()=>setRateUser(!rateUser)}></div>
-      <div className="Profile__Box__Top__ImagesAndDatas__Rate">
-        <div className="Profile__Box__Top__ImagesAndDatas__Rate__Heading">
-          <h1>Rate Your Experience</h1>
-        </div>
-        <div className="Profile__Box__Top__ImagesAndDatas__Rate__ProfileData">
-          <img src={profile_data.image} className="Profile__Box__Top__ImagesAndDatas__Rate__ProfileData__Image"/>
-          <div className="Profile__Box__Top__ImagesAndDatas__Rate__ProfileData__Username">
-            <h1>{profile_data.username}</h1>
+        <div className="CENTER" onClick={() => setRateUser(!rateUser)}></div>
+        <div className="Profile__Box__Top__ImagesAndDatas__Rate">
+          <div className="Profile__Box__Top__ImagesAndDatas__Rate__Heading">
+            <h1>Rate Your Experience</h1>
           </div>
-        </div>
-        <div className="Profile__Box__Top__ImagesAndDatas__Rate__Rating">
-      <div className="star-rating" >
-        <div className="back-stars">
-          <i className="fa fa-star-o" aria-hidden="true" onClick={()=>setRate(1)}></i>
-          <i className="fa fa-star-o" aria-hidden="true" onClick={()=>setRate(2)}></i>
-          <i className="fa fa-star-o" aria-hidden="true" onClick={()=>setRate(3)}></i>
-          <i className="fa fa-star-o" aria-hidden="true" onClick={()=>setRate(4)}></i>
-          <i className="fa fa-star-o" aria-hidden="true" onClick={()=>setRate(5)}></i>
-          
-          <div className="front-stars" style={{width: `${rate * 20}%`}}>
-            <i className="fa fa-star" aria-hidden="true" onClick={()=>setRate(1)}></i>
-            <i className="fa fa-star" aria-hidden="true" onClick={()=>setRate(2)}></i>
-            <i className="fa fa-star" aria-hidden="true" onClick={()=>setRate(3)}></i>
-            <i className="fa fa-star" aria-hidden="true" onClick={()=>setRate(4)}></i>
-            <i className="fa fa-star" aria-hidden="true" onClick={()=>setRate(5)}></i>
-          </div>
-        </div>
-      </div>
-      </div>
-      <div className="Profile__Box__Top__ImagesAndDatas__Rate__Buttons">
-        <button className="Profile__Box__Top__ImagesAndDatas__Rate__Buttons__Button" onClick={rateApi}>
-          <h2>Rate</h2>
-        </button>
-      </div>
-
-      </div>
-      </>
-    )
-  }
-
-  return (<>
-  {rateUser && <RateUserUI/>}
-    <div className="Profile__Box__Top__ImagesAndDatas">
-      <div className="Profile__Box__Top__ImagesAndDatas__Image">
-        <Avatar
-          alt={profile_data.username}
-          src={profile_data.image}
-          style={{ width: 200, height: 200 }}
-          className="Profile__Box__Top__ImagesAndDatas__Image__Avatar"
-        />
-        <div className="Profile__Box__Top__ImagesAndDatas__Image__Icon">
-          {progress > 0 && progress < 100 && (
-            <CircularProgressWithLabel
-              className="Profile__Box__Top__ImagesAndDatas__Image__Icon__CircularIcon"
-              value={progress}
+          <div className="Profile__Box__Top__ImagesAndDatas__Rate__ProfileData">
+            <img
+              src={profile_data.image}
+              className="Profile__Box__Top__ImagesAndDatas__Rate__ProfileData__Image"
             />
-          )}
-          {imageUploading && (
-            <CircularProgress className="Profile__Box__Top__ImagesAndDatas__Image__Icon__CircularIcon" />
-          )}
-          <input
-            type="file"
-            className="Profile__Box__Top__ImagesAndDatas__Image__Icon__Input custom-file-input"
-            onChange={formHandler}
-          />
-          <PhotoCameraIcon
-            className="Profile__Box__Top__ImagesAndDatas__Image__Icon__Camera"
-            style={progress > 0 && progress < 100 ? { display: "none" } : {}}
-          />
-        </div>
-      </div>
+            <div className="Profile__Box__Top__ImagesAndDatas__Rate__ProfileData__Username">
+              <h1>{profile_data.username}</h1>
+            </div>
+          </div>
+          <div className="Profile__Box__Top__ImagesAndDatas__Rate__Rating">
+            <div className="star-rating">
+              <div className="back-stars">
+                <i
+                  className="fa fa-star-o"
+                  aria-hidden="true"
+                  onClick={() => setRate(1)}
+                ></i>
+                <i
+                  className="fa fa-star-o"
+                  aria-hidden="true"
+                  onClick={() => setRate(2)}
+                ></i>
+                <i
+                  className="fa fa-star-o"
+                  aria-hidden="true"
+                  onClick={() => setRate(3)}
+                ></i>
+                <i
+                  className="fa fa-star-o"
+                  aria-hidden="true"
+                  onClick={() => setRate(4)}
+                ></i>
+                <i
+                  className="fa fa-star-o"
+                  aria-hidden="true"
+                  onClick={() => setRate(5)}
+                ></i>
 
-      <div className="Profile__Box__Top__ImagesAndDatas__ProfileName">
-        {profile_data.username}
-      </div>
-      <div className="star-rating" onClick={()=>setRateUser(!rateUser)}>
-        <div className="back-stars">
-          <i className="fa fa-star-o" aria-hidden="true"></i>
-          <i className="fa fa-star-o" aria-hidden="true"></i>
-          <i className="fa fa-star-o" aria-hidden="true"></i>
-          <i className="fa fa-star-o" aria-hidden="true"></i>
-          <i className="fa fa-star-o" aria-hidden="true"></i>
-          
-          <div className="front-stars" style={{width: `${(profile_data.rating) * 20}%`}}>
-            <i className="fa fa-star" aria-hidden="true"></i>
-            <i className="fa fa-star" aria-hidden="true"></i>
-            <i className="fa fa-star" aria-hidden="true"></i>
-            <i className="fa fa-star" aria-hidden="true"></i>
-            <i className="fa fa-star" aria-hidden="true"></i>
+                <div className="front-stars" style={{ width: `${rate * 20}%` }}>
+                  <i
+                    className="fa fa-star"
+                    aria-hidden="true"
+                    onClick={() => setRate(1)}
+                  ></i>
+                  <i
+                    className="fa fa-star"
+                    aria-hidden="true"
+                    onClick={() => setRate(2)}
+                  ></i>
+                  <i
+                    className="fa fa-star"
+                    aria-hidden="true"
+                    onClick={() => setRate(3)}
+                  ></i>
+                  <i
+                    className="fa fa-star"
+                    aria-hidden="true"
+                    onClick={() => setRate(4)}
+                  ></i>
+                  <i
+                    className="fa fa-star"
+                    aria-hidden="true"
+                    onClick={() => setRate(5)}
+                  ></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="Profile__Box__Top__ImagesAndDatas__Rate__Buttons">
+            <button
+              className="Profile__Box__Top__ImagesAndDatas__Rate__Buttons__Button"
+              onClick={rateApi}
+            >
+              <h2>Rate</h2>
+            </button>
           </div>
         </div>
-      </div>
+      </>
+    );
+  };
 
-      {profileForm ? (
-        <button
-          type="submit"
-          className="Profile__Box__Top__ImagesAndDatas__Button"
-          onClick={() => {
-            dispatch({ type: EDIT_PROFILE_OFF });
-          }}
+  return (
+    <>
+      {rateUser && <RateUserUI />}
+      <div className="Profile__Box__Top__ImagesAndDatas">
+        <div className="Profile__Box__Top__ImagesAndDatas__Image">
+          <Avatar
+            alt={profile_data.username}
+            src={profile_data.image}
+            style={{ width: 200, height: 200 }}
+            className="Profile__Box__Top__ImagesAndDatas__Image__Avatar"
+          />
+          <div className="Profile__Box__Top__ImagesAndDatas__Image__Icon">
+            {progress > 0 && progress < 100 && (
+              <CircularProgressWithLabel
+                className="Profile__Box__Top__ImagesAndDatas__Image__Icon__CircularIcon"
+                value={progress}
+              />
+            )}
+            {imageUploading && (
+              <CircularProgress className="Profile__Box__Top__ImagesAndDatas__Image__Icon__CircularIcon" />
+            )}
+            <input
+              type="file"
+              className="Profile__Box__Top__ImagesAndDatas__Image__Icon__Input custom-file-input"
+              onChange={formHandler}
+            />
+            <PhotoCameraIcon
+              className="Profile__Box__Top__ImagesAndDatas__Image__Icon__Camera"
+              style={progress > 0 && progress < 100 ? { display: "none" } : {}}
+            />
+          </div>
+        </div>
+
+        <div className="Profile__Box__Top__ImagesAndDatas__ProfileName">
+          {profile_data.username}
+        </div>
+        <div
+          className="star-rating"
+          onClick={() => setRateUser(!rateUser)}
+          style={{ background: "red" }}
         >
-          Profile Form
-        </button>
-      ) : (
-        <button
-          type="submit"
-          className="Profile__Box__Top__ImagesAndDatas__Button"
-          onClick={() => {
-            dispatch({ type: EDIT_PROFILE_ON });
-          }}
-        >
-          Edit Profile
-        </button>
-      )}
-    </div>
+          <div className="back-stars">
+            <i className="fa fa-star-o" aria-hidden="true"></i>
+            <i className="fa fa-star-o" aria-hidden="true"></i>
+            <i className="fa fa-star-o" aria-hidden="true"></i>
+            <i className="fa fa-star-o" aria-hidden="true"></i>
+            <i className="fa fa-star-o" aria-hidden="true"></i>
+
+            <div
+              className="front-stars"
+              style={{ width: `${profile_data.rating * 20}%` }}
+            >
+              <i className="fa fa-star" aria-hidden="true"></i>
+              <i className="fa fa-star" aria-hidden="true"></i>
+              <i className="fa fa-star" aria-hidden="true"></i>
+              <i className="fa fa-star" aria-hidden="true"></i>
+              <i className="fa fa-star" aria-hidden="true"></i>
+            </div>
+          </div>
+        </div>
+
+        {profileForm ? (
+          <button
+            type="submit"
+            className="Profile__Box__Top__ImagesAndDatas__Button"
+            onClick={() => {
+              dispatch({ type: EDIT_PROFILE_OFF });
+            }}
+          >
+            Profile Form
+          </button>
+        ) : (
+          <button
+            type="submit"
+            className="Profile__Box__Top__ImagesAndDatas__Button"
+            onClick={() => {
+              dispatch({ type: EDIT_PROFILE_ON });
+            }}
+          >
+            Edit Profile
+          </button>
+        )}
+      </div>
     </>
   );
 };
