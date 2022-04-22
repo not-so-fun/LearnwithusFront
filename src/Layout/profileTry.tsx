@@ -13,7 +13,6 @@ import { UpdateImageAction } from "../actions/UpdateImageAction";
 import { rateUserAction } from "../actions/ProfileAction";
 import CircularProgress from "@mui/material/CircularProgress";
 import { RESET_USER_INFO } from "../constants/ProfileConstants";
-import { PriorityHigh } from "@mui/icons-material";
 import { ApproachAction } from "../actions/ApproachAction";
 import { useHistory } from "react-router-dom";
 import CircularProgressWithLabel from "../components/ReusableUIComponents/CircularProgressWithLabel";
@@ -25,7 +24,10 @@ import {
 } from "../constants/ProfileConstants";
 import storage from "../Firebase";
 import { BeatLoader } from "react-spinners";
-import { Skeleton,Box } from "@mui/material";
+import { Skeleton, Box } from "@mui/material";
+import ProfileStats from "../components/ProfileComponents/ProfileStats";
+import RateUserUI from "../components/ProfileComponents/RatingUI";
+import RateUserModal from "../components/ProfileComponents/RateUserModal";
 
 const ProfileTry: FC<RouteComponentProps<any>> = ({ match }) => {
   const dispatch = useDispatch();
@@ -198,7 +200,7 @@ const ProfileTry: FC<RouteComponentProps<any>> = ({ match }) => {
                   )}
                 </h2>
                 <p className="ProfileTry__Left__ProfileInformation__Profile__ProfileData__Paragraph">
-                  Kathmandu,Nepal
+                  <RateUserModal profile_data={profile_data} />
                 </p>
               </div>
             </div>
@@ -274,6 +276,7 @@ const ProfileTry: FC<RouteComponentProps<any>> = ({ match }) => {
                 )}
               </div>
             )}
+            <ProfileStats page_user_id={match.params.id} />
             <div className="ProfileTry__Left__ProfileInformation__ProfileData">
               <div className="ProfileTry__Left__ProfileInformation__ProfileData__AboutMe">
                 <h3>About me</h3>

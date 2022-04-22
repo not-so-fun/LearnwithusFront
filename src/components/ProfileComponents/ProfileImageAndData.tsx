@@ -75,6 +75,7 @@ const ProfileImageAndData: FC<ProfileFormInterface> = ({ profile_data }) => {
     const rateApi: React.FormEventHandler<HTMLButtonElement>= (event) =>{
       dispatch(rateUserAction(rate,profile_data.user_id, token));
     }
+
     return(
       <>
       <div className="CENTER" onClick={()=>setRateUser(!rateUser)}></div>
@@ -106,6 +107,7 @@ const ProfileImageAndData: FC<ProfileFormInterface> = ({ profile_data }) => {
           </div>
         </div>
       </div>
+
       </div>
       <div className="Profile__Box__Top__ImagesAndDatas__Rate__Buttons">
         <button className="Profile__Box__Top__ImagesAndDatas__Rate__Buttons__Button" onClick={rateApi}>

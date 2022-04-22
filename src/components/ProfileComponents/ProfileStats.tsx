@@ -6,10 +6,10 @@ export type ModalState = {
   open: boolean;
   wishes: boolean;
 };
-interface ProfileStatsInterface{
-  page_user_id:string
+interface ProfileStatsInterface {
+  page_user_id: string;
 }
-const ProfileStats: FC<ProfileStatsInterface> = ({page_user_id}) => {
+const ProfileStats: FC<ProfileStatsInterface> = ({ page_user_id }) => {
   //state type
 
   const [openModal, setOpenModal] = useState<ModalState>({
@@ -26,18 +26,6 @@ const ProfileStats: FC<ProfileStatsInterface> = ({page_user_id}) => {
 
   return (
     <div className="Profile__Box__Top__Statistics">
-      
-      <div className="Profile__Box__Top__Statistics__Div">
-        <div className="Profile__Box__Top__Statistics__Div__Data">
-          <p>Number of questions asked</p>
-          <h1>78</h1>
-        </div>
-        <div className="Profile__Box__Top__Statistics__Div__Data">
-          <p>Number of questions answered</p>
-          <h1>1200</h1>
-        </div>
-      </div>
-
       <div className="Profile__Box__Top__Statistics__Botton">
         <button
           className="Profile__Box__Top__Statistics__Botton__Expertise"
@@ -49,7 +37,11 @@ const ProfileStats: FC<ProfileStatsInterface> = ({page_user_id}) => {
         </button>
 
         {openModal.open && (
-          <ExpertiseModal modalHandler={modalHandler} page_user_id={page_user_id} heading="Expertise" />
+          <ExpertiseModal
+            modalHandler={modalHandler}
+            page_user_id={page_user_id}
+            heading="Expertise"
+          />
         )}
 
         <button
@@ -62,7 +54,11 @@ const ProfileStats: FC<ProfileStatsInterface> = ({page_user_id}) => {
         </button>
 
         {openModal.wishes && (
-          <WishesModal page_user_id={page_user_id} modalHandler={wishHandler} heading="Wishes" />
+          <WishesModal
+            page_user_id={page_user_id}
+            modalHandler={wishHandler}
+            heading="Wishes"
+          />
         )}
       </div>
     </div>
