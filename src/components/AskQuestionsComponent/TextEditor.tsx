@@ -12,7 +12,6 @@ interface TextEditorInterface {
 
 const TextEditor: FC<TextEditorInterface> = ({ formData, setFormData }) => {
   const handleChangeEditor = (content: any, editor: any) => {
-    console.log(content);
     setFormData({ ...formData, question: content });
   };
 

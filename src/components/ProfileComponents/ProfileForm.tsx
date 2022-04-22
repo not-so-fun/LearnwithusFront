@@ -15,7 +15,7 @@ interface ProfileFormInterface {
   profile_data: profileUserDataInterface;
 }
 const ProfileForm: FC<ProfileFormInterface> = ({ profile_data }) => {
-  const { approachStatus } = useSelector<RootStateType>(
+  const {profile_data:{ approachStatus }}= useSelector<RootStateType>(
     (state) => state.profile_info_data
   ) as profileDataInterface;
   const { token, user_id } = useTokenAndId();

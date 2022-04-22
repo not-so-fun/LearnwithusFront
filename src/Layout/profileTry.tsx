@@ -24,18 +24,20 @@ import {
   EDIT_PROFILE_OFF,
 } from "../constants/ProfileConstants";
 import storage from "../Firebase";
+import { BeatLoader } from "react-spinners";
+import { Skeleton,Box } from "@mui/material";
 
 const ProfileTry: FC<RouteComponentProps<any>> = ({ match }) => {
   const dispatch = useDispatch();
   const history = useHistory();
   const { token, user_id } = useTokenAndId();
-  const { approachStatus } = useSelector<RootStateType>(
+
+  const {
+    profile_data: { approachStatus },
+  } = useSelector<RootStateType>(
     (state) => state.profile_info_data
   ) as profileDataInterface;
 
-  const { userInfo } = useSelector<RootStateType>(
-    (state) => state.userInfo
-  ) as any;
   const Approached = () => {
     dispatch(ApproachAction(token, profile_data.user_id));
   };
@@ -61,27 +63,23 @@ const ProfileTry: FC<RouteComponentProps<any>> = ({ match }) => {
   }, []);
 
   useEffect(() => {
-    if (userInfo && userInfo?.token) {
-      dispatch(ProfileAction(match.params.id, userInfo.token));
-    } else {
-      dispatch(ProfileAction(match.params.id, token));
-    }
+    dispatch(ProfileAction(match.params.id, token));
 
     return () => {
       dispatch({
         type: RESET_USER_INFO,
         reset_info: {
           email: "",
-          first_name: "....",
-          last_name: "....",
+          first_name: "",
+          last_name: "",
           image: "",
           status: null,
-          user_id: "....",
-          username: "....",
+          user_id: "",
+          username: "",
         },
       });
     };
-  }, [match, token, userInfo]);
+  }, [match, token]);
 
   const { loading, profile_data, imageUploading, error, profileForm } =
     useSelector<RootStateType>(
@@ -98,7 +96,6 @@ const ProfileTry: FC<RouteComponentProps<any>> = ({ match }) => {
   };
 
   const uploadFiles = (file: any) => {
-    
     //
     if (!file) return;
     const sotrageRef = ref(storage, `files/${file.name}`);
@@ -123,12 +120,6 @@ const ProfileTry: FC<RouteComponentProps<any>> = ({ match }) => {
       }
     );
   };
-  // const RateUserUI: FC = () => {
-  //   const [rate, setRate] = useState<number>(0);
-  //   const rateApi: React.FormEventHandler<HTMLButtonElement> = (event) => {
-  //     dispatch(rateUserAction(rate, profile_data.user_id, token));
-  //   }
-
   const question = {
     question_id: "92cb816e-2b57-45cb-b8e7-e12d5035d00b",
     topic_id: "6f07cea6-10ba-47c3-8b23-eb8ddd3e570c",
@@ -160,13 +151,14 @@ const ProfileTry: FC<RouteComponentProps<any>> = ({ match }) => {
             <div className="ProfileTry__Left__ProfileInformation__Profile">
               <div className="ProfileTry__Left__ProfileInformation__Profile__ProfilePhoto">
                 <img
+                  alt={`${profile_data.username}`}
                   className="ProfileTry__Left__ProfileInformation__Profile__ProfilePhoto__Photo"
                   src={profile_data.image}
                 />
                 <p className="ProfileTry__Left__ProfileInformation__Profile__ProfilePhoto__Paragraph">
                   No Photo
                 </p>
-                {profile_data.user_id === user_id && (
+                {match.params.id === user_id && (
                   <div className="ProfileTry__Left__ProfileInformation__Profile__ProfilePhoto__Icon">
                     {progress > 0 && progress < 100 && (
                       <CircularProgressWithLabel
@@ -195,7 +187,15 @@ const ProfileTry: FC<RouteComponentProps<any>> = ({ match }) => {
               </div>
               <div className="ProfileTry__Left__ProfileInformation__Profile__ProfileData">
                 <h2 className="ProfileTry__Left__ProfileInformation__Profile__ProfileData__Heading">
-                  {profile_data.first_name + " " + profile_data.last_name}
+                  {loading ? (
+                    <Box sx={{ width: 100 }}>
+                      <Skeleton animation="wave" />
+                    </Box>
+                  ) : (
+                    <>
+                      {profile_data.first_name + " " + profile_data.last_name}
+                    </>
+                  )}
                 </h2>
                 <p className="ProfileTry__Left__ProfileInformation__Profile__ProfileData__Paragraph">
                   Kathmandu,Nepal
@@ -204,21 +204,23 @@ const ProfileTry: FC<RouteComponentProps<any>> = ({ match }) => {
             </div>
             <div className="ProfileTry__Left__ProfileInformation__Question">
               <div className="ProfileTry__Left__ProfileInformation__Question__QuestionAsked">
-                <h1 className="ProfileTry__Left__ProfileInformation__Question__QuestionAsked__Heading"></h1>
+                <h1 className="ProfileTry__Left__ProfileInformation__Question__QuestionAsked__Heading">
+                  {profile_data.total_questions_asked}
+                </h1>
                 <h4 className="ProfileTry__Left__ProfileInformation__Question__QuestionAsked__Heading__Below">
                   Questions <br></br> Asked
                 </h4>
               </div>
               <div className="ProfileTry__Left__ProfileInformation__Question__QuestionAsked">
                 <h1 className="ProfileTry__Left__ProfileInformation__Question__QuestionAsked__Heading">
-                  100
+                  {profile_data.total_questions_answered}
                 </h1>
                 <h4 className="ProfileTry__Left__ProfileInformation__Question__QuestionAsked__Heading__Below">
                   Questions <br></br> Answered
                 </h4>
               </div>
             </div>
-            {user_id !== profile_data.user_id && (
+            {user_id !== match.params.id && (
               <div className="ProfileTry__Left__ProfileInformation__Approach">
                 {approachStatus === null && (
                   <>
@@ -235,7 +237,8 @@ const ProfileTry: FC<RouteComponentProps<any>> = ({ match }) => {
                         style={{ color: "white" }}
                         className="ProfileTry__Left__ProfileInformation__Approach__Button"
                       >
-                        <CircularProgress style={{ color: "white" }} />
+                        {/* <CircularProgress style={{ color: "white" }} /> */}
+                        <BeatLoader color="white" size={10} />
                       </button>
                     )}
                   </>
@@ -255,7 +258,8 @@ const ProfileTry: FC<RouteComponentProps<any>> = ({ match }) => {
                         style={{ color: "white" }}
                         className="ProfileTry__Left__ProfileInformation__Approach__Button"
                       >
-                        <CircularProgress style={{ color: "white" }} />
+                        {/* <CircularProgress style={{ color: "white" }} /> */}
+                        <BeatLoader color="white" size={10} />
                       </button>
                     )}
                   </>
