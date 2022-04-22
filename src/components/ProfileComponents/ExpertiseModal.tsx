@@ -98,18 +98,22 @@ const ModalOverlay: React.FC<ClickProp> = ({
               )
             )}
         </div>
-        {expertisesLoading ? (
-          <button style={{ width: 110 }} className="modal__selects__button">
-            <Progress size={15} />
-          </button>
-        ) : (
-          <button
-            style={{ width: 110 }}
-            onClick={handleEditExpertise}
-            className="modal__selects__button"
-          >
-            Edit
-          </button>
+        {page_user_id === user_id && (
+          <>
+            {expertisesLoading ? (
+              <button style={{ width: 110 }} className="modal__selects__button">
+                <Progress size={15} />
+              </button>
+            ) : (
+              <button
+                style={{ width: 110 }}
+                onClick={handleEditExpertise}
+                className="modal__selects__button"
+              >
+                Edit
+              </button>
+            )}
+          </>
         )}
       </div>
     </div>

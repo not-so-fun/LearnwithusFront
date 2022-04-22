@@ -75,6 +75,7 @@ const ProfileImageAndData: FC<ProfileFormInterface> = ({ profile_data }) => {
     const rateApi: React.FormEventHandler<HTMLButtonElement> = (event) => {
       dispatch(rateUserAction(rate, profile_data.user_id, token));
     };
+
     return (
       <>
         <div className="CENTER" onClick={() => setRateUser(!rateUser)}></div>

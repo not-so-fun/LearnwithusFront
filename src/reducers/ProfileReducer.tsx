@@ -25,7 +25,6 @@ export interface profileUserDataInterface {
   approachStatus: null | "pending" | "accepted";
   total_questions_answered: number;
   total_questions_asked: number;
-
 }
 
 const profileUserData: profileUserDataInterface = {
@@ -36,8 +35,8 @@ const profileUserData: profileUserDataInterface = {
   username: "",
   rating: 0,
   approachStatus: null,
-  total_questions_answered:0,
-  total_questions_asked:0
+  total_questions_answered: 0,
+  total_questions_asked: 0,
 };
 
 export interface profileDataInterface {

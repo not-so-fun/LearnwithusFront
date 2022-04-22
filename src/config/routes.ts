@@ -13,7 +13,6 @@ import SavedQuestion from "../components/SavedQuestions/SavedQuestion";
 import UpdateQuestions from "../Layout/UpdateQuestions";
 import SearchTutors from "../components/SearchTutors/SearchTutors";
 import MessagesChatroom from "../Layout/MessagesChatroom";
-import SocketTry from "../Layout/SocketTry";
 import Messages from "../Layout/Messages";
 import ProfileTry from "../Layout/profileTry";
 const routes: IRoute[] = [
@@ -33,7 +32,7 @@ const routes: IRoute[] = [
     private: true,
     showNav: true,
   },
-  
+
   {
     path: "/updateQuestion/:question_id",
     name: "Update Question",
@@ -93,7 +92,7 @@ const routes: IRoute[] = [
   {
     path: "/profile/:id",
     name: "Profile",
-    component:ProfileTry,
+    component: ProfileTry,
     exact: true,
     private: true,
     showNav: true,
@@ -144,14 +143,6 @@ const routes: IRoute[] = [
     path: "/saved-questions",
     name: "saved-question",
     component: SavedQuestion,
-    exact: true,
-    private: true,
-    showNav: false,
-  },
-  {
-    path: "/chat",
-    name: "chat",
-    component: SocketTry,
     exact: true,
     private: true,
     showNav: false,
