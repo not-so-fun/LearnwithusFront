@@ -33,14 +33,16 @@ const RateUserModal: React.FC<ProfileFormInterface> = ({ profile_data }) => {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   const [rate, setRate] = React.useState<number>(0);
-  const {rating}=useSelector<RootStateType>(state=>state.profile_info_data ) as {rating:boolean}
+  const { rating } = useSelector<RootStateType>(
+    (state) => state.profile_info_data
+  ) as { rating: boolean };
 
   const rateApi: React.FormEventHandler<HTMLButtonElement> = (event) => {
     dispatch(rateUserAction(rate, profile_data.user_id, token));
   };
 
   return (
-    <div>
+    <div style={{ marginBottom: "1rem" }}>
       {user_id === profile_data.user_id ? (
         <RateUserUI profile_data={profile_data} />
       ) : (

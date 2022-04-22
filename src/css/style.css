@@ -965,13 +965,13 @@ body {
   padding: 1rem; }
   .ProfileTry__Top {
     width: 100%;
-    height: 13rem;
+    height: 9rem;
     font-size: 2rem;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
-    padding: 0 3rem; }
+    padding: 0 0.5rem; }
     .ProfileTry__Top__Heading {
       color: #1433BB; }
       .ProfileTry__Top__Heading__Below {
@@ -1470,17 +1470,14 @@ body {
           margin-left: 2rem;
           border: none;
           padding: 0.6rem 1.2rem;
-          background-color: transparent;
-          border: 2px solid #000;
-          color: #000;
+          background-color: #1433BB;
+          color: #fff;
           font-weight: 600;
           letter-spacing: 0.09rem;
           cursor: pointer;
           transition: all 0.4s ease; }
           .Profile__Box__Top__Statistics__Botton__Expertise:hover, .Profile__Box__Top__Statistics__Botton__Wishes:hover {
-            background-color: #fff;
-            color: #1433BB;
-            border: 0.2rem solid #1433BB; }
+            background-color: rgba(20, 51, 187, 0.8); }
       .Profile__Box__Top__Statistics__Div {
         width: 70%;
         padding: 2rem;

@@ -201,71 +201,9 @@ const ProfileTry: FC<RouteComponentProps<any>> = ({ match }) => {
                   )}
                 </h2>
                 <p className="ProfileTry__Left__ProfileInformation__Profile__ProfileData__Paragraph">
-                  <RateUserModal profile_data={profile_data} />
+                  Kathmandu, Nepal.
                 </p>
-                <div
-                  className="star-rating"
-                  onClick={() => setRateUser(!rateUser)}
-                >
-                  <div className="back-stars">
-                    <i
-                      style={{ fontSize: "2.3rem" }}
-                      className="fa fa-star-o"
-                      aria-hidden="true"
-                    ></i>
-                    <i
-                      style={{ fontSize: "2.3rem" }}
-                      className="fa fa-star-o"
-                      aria-hidden="true"
-                    ></i>
-                    <i
-                      style={{ fontSize: "2.3rem" }}
-                      className="fa fa-star-o"
-                      aria-hidden="true"
-                    ></i>
-                    <i
-                      style={{ fontSize: "2.3rem" }}
-                      className="fa fa-star-o"
-                      aria-hidden="true"
-                    ></i>
-                    <i
-                      style={{ fontSize: "2.3rem" }}
-                      className="fa fa-star-o"
-                      aria-hidden="true"
-                    ></i>
-
-                    <div
-                      className="front-stars"
-                      style={{ width: `${profile_data.rating * 20}%` }}
-                    >
-                      <i
-                        style={{ fontSize: "2.3rem" }}
-                        className="fa fa-star"
-                        aria-hidden="true"
-                      ></i>
-                      <i
-                        style={{ fontSize: "2.3rem" }}
-                        className="fa fa-star"
-                        aria-hidden="true"
-                      ></i>
-                      <i
-                        style={{ fontSize: "2.3rem" }}
-                        className="fa fa-star"
-                        aria-hidden="true"
-                      ></i>
-                      <i
-                        style={{ fontSize: "2.3rem" }}
-                        className="fa fa-star"
-                        aria-hidden="true"
-                      ></i>
-                      <i
-                        style={{ fontSize: "2.3rem" }}
-                        className="fa fa-star"
-                        aria-hidden="true"
-                      ></i>
-                    </div>
-                  </div>
-                </div>
+                <RateUserModal profile_data={profile_data} />
               </div>
             </div>
             <div className="ProfileTry__Left__ProfileInformation__Question">
