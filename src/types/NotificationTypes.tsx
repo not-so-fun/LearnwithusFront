@@ -1,6 +1,7 @@
 import {
   NOTIFICATION_STARTED,
   NOTIFICATION_SUCCESS,
+  NOTIFICATION_VIEW,
   SINGLE_NOTIFICATION_SUCCESS,
   CHANGED_NOTIFICATION_NUMBER,
   DELETE_NOTIFICATION,
@@ -25,6 +26,10 @@ interface notificationLength {
   type: typeof CHANGED_NOTIFICATION_NUMBER;
   length: number;
 }
+interface notificationView {
+  type: typeof NOTIFICATION_VIEW;
+  notification_id: string;
+}
 interface deleteNotification {
   type: typeof DELETE_NOTIFICATION;
   notification_id: string;
@@ -39,14 +44,15 @@ interface chatNotificationLength {
   chatLength: number;
 }
 interface chatNotificationLengthChange {
-  type: typeof CHAT_NOTIFICATION_NUMBER_CHANGE,
-  changeNumber: number
+  type: typeof CHAT_NOTIFICATION_NUMBER_CHANGE;
+  changeNumber: number;
 }
 export type NotificationTypes =
   | NotificationLoading
   | NotificationSuccess
   | singleNotificationSuccess
   | notificationLength
+  | notificationView
   | deleteNotification
   | chatNotificationLength
   | chatNotificationLengthChange

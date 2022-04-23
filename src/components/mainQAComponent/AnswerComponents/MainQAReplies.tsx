@@ -1,12 +1,12 @@
 import React, { FC, useEffect, useState } from "react";
 import { AiOutlineCaretDown, AiOutlineCaretUp,AiOutlineShareAlt,AiOutlineDelete } from "react-icons/ai";
-import axios from "../../axios";
-import useTokenAndId from "../ReusableLogicComponents/useTokenAndId";
-import { MainRepliesInterface } from "./MainQAAnswers";
-import { lastStateInterface } from "./MainQAAnswers";
+import axios from "../../../axios";
+import useTokenAndId from "../../ReusableLogicComponents/useTokenAndId";
+import { MainRepliesInterface } from "../MainQAAnswers";
+import { lastStateInterface } from "../MainQAAnswers";
 import { Markup } from "interweave";
 import { MdReportProblem } from "react-icons/md";
-import DeleteReplyModal from "../Modals/DeleteReplyModal";
+import DeleteReplyModal from "../../Modals/DeleteReplyModal";
 interface replyInterface {
   reply: MainRepliesInterface;
 }

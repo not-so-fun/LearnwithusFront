@@ -119,9 +119,7 @@ export default Notification;
 //   </div>
 //   <div className="HomePage__Right__MainBody__Notification__Box__InnerDiv__Button">
 //     <button className="HomePage__Right__MainBody__Notification__Box__InnerDiv__Button__Accept">
-//       Accept
-//     </button>
-//     <button className="HomePage__Right__MainBody__Notification__Box__InnerDiv__Button__Decline">
+//       Accept //     </button> //     <button className="HomePage__Right__MainBody__Notification__Box__InnerDiv__Button__Decline">
 //       Decline
 //     </button>
 //   </div>

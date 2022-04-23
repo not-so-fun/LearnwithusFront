@@ -1,5 +1,5 @@
 import React, { FC, useState, useEffect } from "react";
-import ReplyTextEditor from "./ReplyTextEditor";
+import ReplyTextEditor from "./AnswerComponents/ReplyTextEditor";
 import {
   AiOutlineCaretDown,
   AiOutlineCaretUp,
@@ -12,7 +12,7 @@ import { MdReportProblem } from "react-icons/md";
 import { answerInterface } from "../../reducers/AnsweresOnlyReducer";
 import useTokenAndId from "../ReusableLogicComponents/useTokenAndId";
 import axios from "../../axios";
-import MainQAReplies from "./MainQAReplies";
+import MainQAReplies from "./AnswerComponents/MainQAReplies";
 import { Markup } from "interweave";
 import UploadImageModal from "../ReusableUIComponents/ModalImageUpload";
 import DeleteAnswerModal from "../Modals/DeleteAnswerModal";

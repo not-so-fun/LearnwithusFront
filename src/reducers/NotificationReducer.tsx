@@ -7,6 +7,7 @@ import {
   DELETE_NOTIFICATION,
   CHAT_NOTIFICATION_NUMBER,
   CHAT_NOTIFICATION_NUMBER_CHANGE,
+  NOTIFICATION_VIEW,
 } from "../constants/NotificationConstants";
 import { NotificationTypes } from "../types/NotificationTypes";
 export interface ApproachNotificationInterface {
@@ -68,6 +69,15 @@ export const NotificationReducer = (
             : notification
         ),
       };
+    case NOTIFICATION_VIEW:
+      state.notifications.map((e) =>
+        e.approachnotification_id === action.notification_id
+          ? (e.viewed = true)
+          : (e.viewed = false)
+      );
+      state.notificationLength =
+        state.notificationLength === 0 ? 0 : state.notificationLength - 1;
+      return { ...state };
     case CHANGED_NOTIFICATION_NUMBER:
       return {
         ...state,

@@ -1,79 +1,20 @@
 import IRoute from "../interfaces/route";
-import Login from "../auth/Login";
-import Register from "../auth/Register";
-import Profile from "../Layout/Profile";
+import Login from "../Screens/Login";
+import Register from "../Screens/Register";
 import ForgotPassword from "../components/ResetPassword/ForgotPassword";
-import HomePage from "../Layout/HomePage";
+import Home from "../Screens/Home";
 import ResetPassword from "../components/ResetPassword/ResetPassword";
 import AccountActivationScreen from "../Screens/AccountActivationScreen";
-import AskQuestion from "../Layout/AskQuestions";
-import MainQA from "../Layout/MainQA";
-import Answered from "../Layout/Answered";
-import SavedQuestion from "../components/SavedQuestions/SavedQuestion";
-import UpdateQuestions from "../Layout/UpdateQuestions";
+import AskQuestion from "../Screens/AskQuestions";
+import MainQA from "../Screens/MainQA";
+import Answered from "../Screens/Answered";
+import SavedQuestion from "../Screens/SavedQuestion";
+import UpdateQuestions from "../Screens/UpdateQuestions";
 import SearchTutors from "../components/SearchTutors/SearchTutors";
-import MessagesChatroom from "../Layout/MessagesChatroom";
-import SocketTry from "../Layout/SocketTry";
-import Messages from "../Layout/Messages";
-import ProfileTry from "../Layout/profileTry";
+import MessagesChatroom from "../Screens/MessagesChatroom";
+import Messages from "../Screens/Messages";
+import Profile from "../Screens/Profile";
 const routes: IRoute[] = [
-  {
-    path: "/",
-    name: "Home",
-    component: HomePage,
-    exact: true,
-    private: true,
-    showNav: true,
-  },
-  {
-    path: "/profiles",
-    name: "profileTry",
-    component: ProfileTry,
-    exact: true,
-    private: true,
-    showNav: true,
-  },
-  
-  {
-    path: "/updateQuestion/:question_id",
-    name: "Update Question",
-    component: UpdateQuestions,
-    exact: true,
-    private: true,
-    showNav: true,
-  },
-  {
-    path: "/asked",
-    name: "Answered",
-    component: Answered,
-    exact: true,
-    private: true,
-    showNav: true,
-  },
-  {
-    path: "/questions/:id",
-    name: "MainQuestionAnswer",
-    component: MainQA,
-    exact: false,
-    private: true,
-    showNav: false,
-  },
-  {
-    path: "/messages/:messageId",
-    name: "Message",
-    component: MessagesChatroom,
-    exact: false,
-    private: true,
-    showNav: true,
-  },
-  {
-    path: "/messages",
-    name: "Message",
-    component: Messages,
-    exact: false,
-    private: true,
-    showNav: true,
-  },
   {
     path: "/login",
     name: "Login",
@@ -91,14 +32,81 @@ const routes: IRoute[] = [
     showNav: false,
   },
   {
-    path: "/profile/:id",
-    name: "Profile",
-    component:ProfileTry,
+    path: "/",
+    name: "Home",
+    component: Home,
+    exact: true,
+    private: true,
+    showNav: true,
+  },
+  {
+    path: "/questions/:id",
+    name: "MainQuestionAnswer",
+    component: MainQA,
+    exact: false,
+    private: true,
+    showNav: false,
+  },
+
+  {
+    path: "/question/ask",
+    name: "questions",
+    component: AskQuestion,
+    exact: true,
+    private: true,
+    showNav: false,
+  },
+  {
+    path: "/updateQuestion/:question_id",
+    name: "Update Question",
+    component: UpdateQuestions,
+    exact: true,
+    private: true,
+    showNav: true,
+  },
+  {
+    path: "/asked",
+    name: "Answered",
+    component: Answered,
     exact: true,
     private: true,
     showNav: true,
   },
 
+  {
+    path: "/saved-questions",
+    name: "saved-question",
+    component: SavedQuestion,
+    exact: true,
+    private: true,
+    showNav: false,
+  },
+
+  {
+    path: "/profile/:id",
+    name: "Profile",
+    component: Profile,
+    exact: true,
+    private: true,
+    showNav: true,
+  },
+
+  {
+    path: "/messages/:messageId",
+    name: "Message",
+    component: MessagesChatroom,
+    exact: false,
+    private: true,
+    showNav: true,
+  },
+  {
+    path: "/messages",
+    name: "Message",
+    component: Messages,
+    exact: false,
+    private: true,
+    showNav: true,
+  },
   {
     path: "/forgot-password",
     name: "ForgotPassword",
@@ -125,33 +133,9 @@ const routes: IRoute[] = [
   },
 
   {
-    path: "/question/ask",
-    name: "questions",
-    component: AskQuestion,
-    exact: true,
-    private: true,
-    showNav: false,
-  },
-  {
     path: "/searchTutors",
     name: "Search Tutors",
     component: SearchTutors,
-    exact: true,
-    private: true,
-    showNav: false,
-  },
-  {
-    path: "/saved-questions",
-    name: "saved-question",
-    component: SavedQuestion,
-    exact: true,
-    private: true,
-    showNav: false,
-  },
-  {
-    path: "/chat",
-    name: "chat",
-    component: SocketTry,
     exact: true,
     private: true,
     showNav: false,

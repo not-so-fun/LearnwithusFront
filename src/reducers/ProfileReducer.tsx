@@ -22,17 +22,21 @@ export interface profileUserDataInterface {
   username: string;
   image: string;
   rating: number;
-  approachStatus: string | null;
+  approachStatus: null | "pending" | "accepted";
+  total_questions_answered: number;
+  total_questions_asked: number;
 }
 
 const profileUserData: profileUserDataInterface = {
-  first_name: "....",
-  last_name: "....",
+  first_name: "",
+  last_name: "",
   image: "",
-  user_id: "....",
-  username: "....",
+  user_id: "",
+  username: "",
   rating: 0,
   approachStatus: null,
+  total_questions_answered: 0,
+  total_questions_asked: 0,
 };
 
 export interface profileDataInterface {
@@ -41,9 +45,6 @@ export interface profileDataInterface {
   error: string;
   imageUploading: boolean;
   profileForm: boolean;
-  rating: boolean;
-  ratingError: string;
-  approachStatus: null | "pending" | "accepted";
 }
 
 const profileDataState = {
@@ -52,9 +53,6 @@ const profileDataState = {
   error: "",
   imageUploading: false,
   profileForm: false,
-  rating: false,
-  ratingError: "",
-  approachStatus: null,
 };
 
 export const ProfileReducer = (

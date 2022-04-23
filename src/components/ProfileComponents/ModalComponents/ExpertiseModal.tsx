@@ -1,16 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { createPortal } from "react-dom";
 import CloseIcon from "@mui/icons-material/Close";
+import { ExpertiseAction } from "../../../actions/ExpertiseAction";
+import { expertiseInterface } from "../../../reducers/ExpertiseReducer";
 import { useDispatch, useSelector } from "react-redux";
-import useTokenAndId from "../ReusableLogicComponents/useTokenAndId";
-import { RootStateType } from "../../stores";
-import { wishesInterface } from "../../reducers/WishesReducer";
-import { WishesAction } from "../../actions/WishesAction";
-import { Progress } from "../ReusableUIComponents/Spinner";
-import WishesDropDownListItem from "./ModalComponents/WishesDropDownListItem";
-import Button from "@mui/material/Button";
-import { WishesEditAction } from "../../actions/WishesEditAction";
-import { wishesEditReducerInterface } from "../../reducers/WishesEditReducer";
+import { RootStateType } from "../../../stores";
+import useTokenAndId from "../../ReusableLogicComponents/useTokenAndId";
+import ExpertiseDropDownListItem from "../DropdownComponents/ExpertiseDropDownListItem";
+import { expertiseEditReducerInterface } from "../../../reducers/ExpertiseEditReducer";
+import { Progress } from "../../ReusableUIComponents/Spinner";
+import { ExpertisesEditAction } from "../../../actions/ExpertiseEditAction";
 
 type ShowState = {
   show: boolean;
@@ -38,26 +37,26 @@ const ModalOverlay: React.FC<ClickProp> = ({
   const dispatch = useDispatch();
   const { token, user_id } = useTokenAndId();
 
-  const { loading, wishes, error } = useSelector<RootStateType>(
-    (state) => state.wishes
-  ) as wishesInterface;
+  const { loading, expertises, error } = useSelector<RootStateType>(
+    (state) => state.expertises
+  ) as expertiseInterface;
 
   const {
-    loading: editWishesLoading,
-    wishes: wishes_edited_array,
-    error: wishes_edited_error,
+    loading: expertisesLoading,
+    expertises: expertises_edited_array,
+    error: expertisesError,
   } = useSelector<RootStateType>(
-    (state) => state.edit_wishes
-  ) as wishesEditReducerInterface;
+    (state) => state.edit_expertises
+  ) as expertiseEditReducerInterface;
 
   useEffect(() => {
-    dispatch(WishesAction(token));
+    dispatch(ExpertiseAction(token));
   }, [token]);
 
-  const handleEditWish:
+  const handleEditExpertise:
     | React.MouseEventHandler<HTMLButtonElement>
     | undefined = () => {
-    dispatch(WishesEditAction(token, wishes_edited_array, onClick));
+    dispatch(ExpertisesEditAction(token, expertises_edited_array, onClick));
   };
 
   return (
@@ -78,17 +77,16 @@ const ModalOverlay: React.FC<ClickProp> = ({
         </div>
 
         <div className="modal__selects__dropdown">
-          {wishes &&
-            wishes.map(
+          {expertises &&
+            expertises.map(
               (exp: {
                 topic_id: string;
                 title: string;
                 user_id: string | null;
               }) => (
-                <div key={`${exp.topic_id}`}>
-                  {/* <p>{exp.topic_id}</p> */}
-                  <WishesDropDownListItem
-                    disabled={user_id === page_user_id ? false : true}
+                <div key={exp.topic_id}>
+                  <ExpertiseDropDownListItem
+                    disabled={user_id == page_user_id ? false : true}
                     topic_id={exp.topic_id}
                     title={exp.title}
                     user_id={exp.user_id}
@@ -97,25 +95,29 @@ const ModalOverlay: React.FC<ClickProp> = ({
               )
             )}
         </div>
-        {editWishesLoading ? (
-          <button style={{ width: 90 }} className="modal__selects__button">
-            <Progress size={15} />
-          </button>
-        ) : (
-          <button
-            style={{ width: 90 }}
-            onClick={handleEditWish}
-            className="modal__selects__button"
-          >
-            Edit
-          </button>
+        {page_user_id === user_id && (
+          <>
+            {expertisesLoading ? (
+              <button style={{ width: 110 }} className="modal__selects__button">
+                <Progress size={15} />
+              </button>
+            ) : (
+              <button
+                style={{ width: 110 }}
+                onClick={handleEditExpertise}
+                className="modal__selects__button"
+              >
+                Edit
+              </button>
+            )}
+          </>
         )}
       </div>
     </div>
   );
 };
 
-const WishesModal: React.FC<PropState> = ({
+const ExpertiseModal: React.FC<PropState> = ({
   modalHandler,
   heading,
   page_user_id,
@@ -138,4 +140,4 @@ const WishesModal: React.FC<PropState> = ({
   );
 };
 
-export default WishesModal;
+export default ExpertiseModal;

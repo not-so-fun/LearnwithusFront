@@ -1,6 +1,6 @@
 import { FC, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import QuestionFeed from "../components/HomePageComponent/QuestionFeed";
+import QuestionFeed from "../components/HomeComponents/Question";
 import { AskedQuestionFeedAction } from "../actions/MyQuestionAskedAction";
 import {
   questionFeedInterface,
@@ -8,7 +8,7 @@ import {
 } from "../reducers/QuestionFeedReducers";
 import useTokenAndId from "../components/ReusableLogicComponents/useTokenAndId";
 import { RootStateType } from "../stores";
-import RightSideBar from "./RightSideBar";
+import RightSideBar from "../FixedComponents/RightSideBar";
 
 const Answered: FC = () => {
   const dispatch = useDispatch();

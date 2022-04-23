@@ -5,9 +5,9 @@ import useTokenAndId from "../ReusableLogicComponents/useTokenAndId";
 import { RootStateType } from "../../stores";
 import { askQuestionInterface } from "../../reducers/AskQuestionReducer";
 import Alert from "@mui/material/Alert";
-import AskQuestionSelect from "./AskQuestionSelect";
+import AskQuestionSelect from "./AskQuestionFormComponents/AskQuestionSelect";
 import { Progress } from "../ReusableUIComponents/Spinner";
-import TextEditor from "./TextEditor";
+import TextEditor from "./AskQuestionFormComponents/TextEditor";
 import ModalImageUpload from "../ReusableUIComponents/ModalImageUpload";
 
 export interface formDataInterface {
@@ -55,87 +55,17 @@ const AskQuesForm: FC = () => {
     | undefined
     | undefined = (e) => {
     e.preventDefault();
-    dispatch(
-      AskQuestionAction(
-        token,
-        topic_id,
-        sub_topic_id,
-        title,
-        question,
-        setFormData
-      )
-    );
+    dispatch(AskQuestionAction(token, topic_id, title, question, setFormData));
   };
 
   return (
-    /*
-    <form onSubmit={(e) => handleQuestionAsk(e)} className="AskQuestionForm">
-      <div className="AskQuestionForm__Heading">
-        <div className="AskQuestionForm__Heading__Title">Ask a question</div>
-        {showImageModal  && <ModalImageUpload />}
-        {message && (
-          <>
-            <Alert style={{ fontSize: 15 }} icon={false}>
-              {message}
-            </Alert>
-          </>
-        )}
-
-        {error && <div style={{ color: "red", fontSize: 15 }}>{error}</div>}
-      </div>
-      <div className="AskQuestionForm__Title">
-        <div className="AskQuestionForm__Title__Heading">Title</div>
-        <p className="AskQuestionForm__Title__HelperText">
-          Be specific to the question
-        </p>
-      </div>
-      <div className="AskQuestionForm__TitleInput">
-        <input
-          type="text"
-          className="AskQuestionForm__TitleInput__Title"
-          placeholder="Put the title that enlightens"
-          name="title"
-          value={title}
-          required
-          onChange={(e) => handleChange(e)}
-        ></input>
-
-        <div className="AskQuestionForm__TitleInput__InputBox">
-          <AskQuestionSelect setFormData={setFormData} formData={formData} />
-        </div>
-      </div>
-
-      <div className="AskQuestionForm__Body">
-        <div className="AskQuestionForm__Body__Heading">Body</div>
-        <TextEditor formData={formData} setFormData={setFormData} />
-      </div>
-
-      <div className="AskQuestionForm__Footer">
-        {loading ? (
-          <button
-            style={{ width: 140 }}
-            className="AskQuestionForm__Footer__Button"
-          >
-            <Progress size={25} />
-          </button>
-        ) : (
-          <button
-            style={{ width: 140 }}
-            className="AskQuestionForm__Footer__Button"
-          >
-            Post Question
-          </button>
-        )}
-      </div>
-    </form>
-   */
     <div className="AskQuestionForm">
       <div className="AskQuestionForm__Title">
         <h3>Ask Your Question.</h3>
       </div>
 
       <div className="AskQuestionForm__Main">
-        <form action="">
+        <form onSubmit={handleQuestionAsk} action="">
           <div className="AskQuestionForm__Main__Form">
             <div className="AskQuestionForm__Main__Form__Item">
               <label
@@ -146,6 +76,9 @@ const AskQuesForm: FC = () => {
               </label>
               <input
                 type="text"
+                name="title"
+                value={formData.title}
+                onChange={(e) => handleChange(e)}
                 className="AskQuestionForm__Main__Form__Item__Input"
                 placeholder="Put a title that enlightens"
               />

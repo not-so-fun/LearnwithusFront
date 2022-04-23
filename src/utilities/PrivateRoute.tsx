@@ -1,6 +1,8 @@
 import React from "react";
 import { Route, Redirect, RouteProps } from "react-router-dom";
-import SideBar from "../components/HomePageComponent/SideBar";
+import SideBar from "../FixedComponents/SideBar";
+
+
 import Navbar from "../components/Navbar";
 // import isAuthenticated from './auth';
 

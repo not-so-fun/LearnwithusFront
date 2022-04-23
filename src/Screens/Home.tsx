@@ -1,15 +1,15 @@
 import { FC, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import SideBar from "../components/HomePageComponent/SideBar";
+import SideBar from "../FixedComponents/SideBar";
 import Navbar from "../components/Navbar";
 // import Home from "../components/ProfileComponents/NewsFeed";
-import HomeNewsFeed from "../components/HomePageComponent/HomeNewsFeed";
+import HomeNewsFeed from "../components/HomeComponents/HomeNewsFeed";
 import { Link } from "react-router-dom";
 import {
   QuestionFeedAction,
   QuestionFeedActionMore,
 } from "../actions/QuestionFeedAction";
-import HomeNewsFeedSkeleton from "../components/HomePageComponent/HomeNewsFeedSkeleton";
+import HomeNewsFeedSkeleton from "../components/HomeComponents/HomeNewsFeedSkeleton";
 import CircleIcon from "@mui/icons-material/Circle";
 import DeleteQuestion from "../components/Modals/DeleteQuestion";
 
@@ -20,10 +20,9 @@ import {
 } from "../reducers/QuestionFeedReducers";
 import useTokenAndId from "../components/ReusableLogicComponents/useTokenAndId";
 import { RootStateType } from "../stores";
-import QuestionFeed from "../components/HomePageComponent/QuestionFeed";
+import Question from "../components/HomeComponents/Question";
 import { BeatLoaderProgress } from "../components/ReusableUIComponents/BeatLoader";
-import ModalImageUpload from "../components/ReusableUIComponents/ModalImageUpload";
-import RightSideBar from "./RightSideBar";
+import RightSideBar from "../FixedComponents/RightSideBar";
 
 const HomePage: FC = () => {
   const [openModal, setOpenModal] = useState<boolean>(false);
@@ -62,7 +61,7 @@ const HomePage: FC = () => {
           {/* skeleton here */}
           {questions &&
             questions.map((question: questionFeedListInterface) => (
-              <QuestionFeed question={question} key={question.question_id} />
+              <Question question={question} key={question.question_id} />
             ))}
           <div className="HomePage__Right__MainBody__NewsFeed__LoadMore">
             {moreQuestionLoading ? (

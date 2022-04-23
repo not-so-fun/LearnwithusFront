@@ -1,13 +1,11 @@
 import React, { FC, useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { RootStateType } from "../../stores";
-import { TopicAction } from "../../actions/TopicAction";
-import { topicInterface } from "../../reducers/TopicReducer";
-import { subtopicInterface } from "../../reducers/SubTopicReducer";
-import { SubTopicAction } from "../../actions/SubTopicAction";
-import useTokenAndId from "../ReusableLogicComponents/useTokenAndId";
-import { RouteComponentProps } from "react-router-dom";
-import { formDataInterface } from "./AskQuestionForm";
+import { RootStateType } from "../../../stores";
+import { TopicAction } from "../../../actions/TopicAction";
+import { topicInterface } from "../../../reducers/TopicReducer";
+import { subtopicInterface } from "../../../reducers/SubTopicReducer";
+import useTokenAndId from "../../ReusableLogicComponents/useTokenAndId";
+import { formDataInterface } from "../AskQuestionForm";
 
 interface AskQuestionSelectPropsType {
   setFormData: (value: React.SetStateAction<formDataInterface>) => void;
@@ -42,7 +40,7 @@ const AskQuestionSelect: FC<AskQuestionSelectPropsType> = ({
   }, [token]);
 
   const handleSelectTopic = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    dispatch(SubTopicAction(token, e.target.value));
+    // dispatch(SubTopicAction(token, e.target.value));
     setFormData({ ...formData, topic_id: e.target.value });
     // setFormData({ ...formData, sub_topic_id: '0'});
   };
@@ -58,6 +56,7 @@ const AskQuestionSelect: FC<AskQuestionSelectPropsType> = ({
         // className="AskQuestionForm__TitleInput__InputBox__Div__Select"
         style={{ padding: 10 }}
         className="AskQuestionForm__Main__Form__Item__SelectTag__Select"
+        // className="AskQuestionForm__TitleInput__InputBox__Div__Select"
         required
       >
         <option value="" selected>

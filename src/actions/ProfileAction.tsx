@@ -30,14 +30,13 @@ export const ProfileAction =
         },
       })
       .then((response) => {
-        console.log("Data is ",response.data);
+        console.log("Data is ", response.data);
         dispatch({ type: PROFILE_DATA_SUCCESS, profile_data: response.data });
       })
       .catch((error) => {
         console.log(error);
         dispatch({ type: PROFILE_DATA_ERROR, error: error.response.data });
       });
-
   };
 
 export const rateUserAction =
@@ -66,6 +65,4 @@ export const rateUserAction =
       });
   };
 export const GetNotificationAction =
-  (token: string) => (dispatch: Dispatch<RootDispatchType>) => {
-   
-  };
+  (token: string) => (dispatch: Dispatch<RootDispatchType>) => {};
