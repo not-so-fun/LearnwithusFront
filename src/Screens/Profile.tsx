@@ -1,6 +1,6 @@
 import React, { FC, useEffect, useState } from "react";
 import { RouteComponentProps } from "react-router-dom";
-import QuestionFeed from "../components/HomePageComponent/QuestionFeed";
+import Question from "../components/HomeComponents/Question";
 import { useDispatch, useSelector } from "react-redux";
 import { profileDataInterface } from "../reducers/ProfileReducer";
 import { ProfileAction } from "../actions/ProfileAction";
@@ -10,7 +10,7 @@ import useTokenAndId from "../components/ReusableLogicComponents/useTokenAndId";
 import axios from "../axios";
 import { ref, getDownloadURL, uploadBytesResumable } from "firebase/storage";
 import { UpdateImageAction } from "../actions/UpdateImageAction";
-import { rateUserAction } from "../actions/ProfileAction";
+import ProfileStats from "../components/ProfileComponents/ExpertiseWisheshComponent";
 import CircularProgress from "@mui/material/CircularProgress";
 import { RESET_USER_INFO } from "../constants/ProfileConstants";
 import { ApproachAction } from "../actions/ApproachAction";
@@ -25,11 +25,10 @@ import {
 import storage from "../Firebase";
 import { BeatLoader } from "react-spinners";
 import { Skeleton, Box } from "@mui/material";
-import ProfileStats from "../components/ProfileComponents/ProfileStats";
 import RateUserUI from "../components/ProfileComponents/RatingUI";
-import RateUserModal from "../components/ProfileComponents/RateUserModal";
+import RateUserModal from "../components/ProfileComponents/ModalComponents/RateUserModal";
 
-const ProfileTry: FC<RouteComponentProps<any>> = ({ match }) => {
+const Profile: FC<RouteComponentProps<any>> = ({ match }) => {
   const dispatch = useDispatch();
   const history = useHistory();
   const { token, user_id } = useTokenAndId();
@@ -200,9 +199,6 @@ const ProfileTry: FC<RouteComponentProps<any>> = ({ match }) => {
                     </>
                   )}
                 </h2>
-                <p className="ProfileTry__Left__ProfileInformation__Profile__ProfileData__Paragraph">
-                  Kathmandu, Nepal.
-                </p>
                 <RateUserModal profile_data={profile_data} />
               </div>
             </div>
@@ -290,16 +286,16 @@ const ProfileTry: FC<RouteComponentProps<any>> = ({ match }) => {
           </div>
         </div>
         <div className="ProfileTry__Right">
-          <QuestionFeed question={question} />
-          <QuestionFeed question={question} />
-          <QuestionFeed question={question} />
-          <QuestionFeed question={question} />
-          <QuestionFeed question={question} />
-          <QuestionFeed question={question} />
+          <Question question={question} />
+          <Question question={question} />
+          <Question question={question} />
+          <Question question={question} />
+          <Question question={question} />
+          <Question question={question} />
         </div>
       </div>
     </div>
   );
 };
 
-export default ProfileTry;
+export default Profile;

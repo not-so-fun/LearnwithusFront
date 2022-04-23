@@ -6,9 +6,9 @@ import { RootStateType } from "../../stores";
 import { askQuestionInterface } from "../../reducers/AskQuestionReducer";
 import {UpdateQuestionInterface} from "../../reducers/UpdateQuestionReducer";
 import Alert from "@mui/material/Alert";
-import AskQuestionSelect from "./AskQuestionSelect";
+import AskQuestionSelect from "./AskQuestionFormComponents/AskQuestionSelect";
 import { Progress } from "../ReusableUIComponents/Spinner";
-import TextEditor from "./TextEditor";
+import TextEditor from "./AskQuestionFormComponents/TextEditor";
 import ModalImageUpload from "../ReusableUIComponents/ModalImageUpload";
 
 

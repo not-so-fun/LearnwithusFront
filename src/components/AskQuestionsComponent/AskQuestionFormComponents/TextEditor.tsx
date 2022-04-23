@@ -1,9 +1,9 @@
 import React, { FC } from "react";
 import { Editor } from "@tinymce/tinymce-react";
 // TINY-MICE TOKEN=7nzeo0sns30q6e2rn3uxbkx4baqhmo5ok21zhy1c47kede0a
-import storage from "../../Firebase";
+import storage from "../../../Firebase";
 import { ref, getDownloadURL, uploadBytesResumable } from "firebase/storage";
-import { formDataInterface } from "../AskQuestionsComponent/AskQuestionForm";
+import { formDataInterface } from "../AskQuestionForm";
 
 interface TextEditorInterface {
   formData: formDataInterface;
@@ -22,7 +22,7 @@ const TextEditor: FC<TextEditorInterface> = ({ formData, setFormData }) => {
         value={formData.question}
         onEditorChange={handleChangeEditor}
         init={{
-          height: "250",
+          height: "600",
           plugins: "link image code",
           toolbar:
             "undo redo  | bold italic | alignleft aligncenter alignright | code",

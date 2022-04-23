@@ -3,7 +3,7 @@ import { Avatar } from "@mui/material";
 import { Link, useHistory } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { FaSearch } from "react-icons/fa";
-import { RootStateType } from "../../stores";
+import {RootStateType} from "../stores"
 import HelpIcon from "@mui/icons-material/Help";
 const SideBar: FC = () => {
   const [active, setActive] = useState<boolean>(false);

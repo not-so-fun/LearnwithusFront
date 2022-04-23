@@ -68,7 +68,7 @@ const MainQAQuestion: FC<MainQAQuestionInterface> = ({ question }) => {
         parseInt(question?.total_upvotes) - parseInt(question?.total_downvotes)
       );
     }
-  }, [question]);
+  }, [question, user_id]);
 
   const upVote = (upvote: boolean) => {
     axios
@@ -156,7 +156,7 @@ const MainQAQuestion: FC<MainQAQuestionInterface> = ({ question }) => {
     }
   };
   const deleteQuestion = () => {
-    console.log('helloworld');
+    console.log("helloworld");
     if (question) {
       dispatch(DeleteQuestionAction(token, question?.question_id));
     }
@@ -305,33 +305,33 @@ const MainQAQuestion: FC<MainQAQuestionInterface> = ({ question }) => {
           </div>
           <div className="QuestionFeed__Bottom">
             <div className="QuestionFeed__Bottom__Left">
-              {owner && 
-              <>
-              <div className="QuestionFeed__Bottom__Left__Content">
-                <div className="QuestionFeed__Bottom__Left__Content__Logo">
-                  <BsPencil className="QuestionFeed__Bottom__Left__Content__Logo__Logo" />
-                </div>
-                <p className="QuestionFeed__Bottom__Left__Content__Text">
-                  Edit
-                </p>
-              </div>
-              <div className="QuestionFeed__Bottom__Left__Content">
-                <div
-                  className="QuestionFeed__Bottom__Left__Content__Logo"
-                  onClick={handleModal}
-                >
-                  <AiOutlineDelete className="QuestionFeed__Bottom__Left__Content__Logo__Logo" />
-                </div>
-                {showModal && <DeleteQuestion modalHandler={handleModal} />}
-                <p
-                  className="QuestionFeed__Bottom__Left__Content__Text"
-                  onClick={handleModal}
-                >
-                  Delete
-                </p>
-              </div>
-              </>
-              }
+              {owner && (
+                <>
+                  <div className="QuestionFeed__Bottom__Left__Content">
+                    <div className="QuestionFeed__Bottom__Left__Content__Logo">
+                      <BsPencil className="QuestionFeed__Bottom__Left__Content__Logo__Logo" />
+                    </div>
+                    <p className="QuestionFeed__Bottom__Left__Content__Text">
+                      Edit
+                    </p>
+                  </div>
+                  <div className="QuestionFeed__Bottom__Left__Content">
+                    <div
+                      className="QuestionFeed__Bottom__Left__Content__Logo"
+                      onClick={handleModal}
+                    >
+                      <AiOutlineDelete className="QuestionFeed__Bottom__Left__Content__Logo__Logo" />
+                    </div>
+                    {showModal && <DeleteQuestion modalHandler={handleModal} />}
+                    <p
+                      className="QuestionFeed__Bottom__Left__Content__Text"
+                      onClick={handleModal}
+                    >
+                      Delete
+                    </p>
+                  </div>
+                </>
+              )}
               <div className="QuestionFeed__Bottom__Left__Content">
                 <div className="QuestionFeed__Bottom__Left__Content__Logo">
                   <MdReportProblem className="QuestionFeed__Bottom__Left__Content__Logo__Logo" />

@@ -22,7 +22,7 @@ interface lastStateInterface {
   upvote: boolean | null;
 }
 
-const QuestionFeed: FC<quesInterface> = ({ question }) => {
+const Question: FC<quesInterface> = ({ question }) => {
   const dispatch = useDispatch();
   const [upvote, setUpvote] = useState<boolean | null>(null);
   let data =
@@ -281,4 +281,4 @@ const QuestionFeed: FC<quesInterface> = ({ question }) => {
   );
 };
 
-export default QuestionFeed;
+export default Question;

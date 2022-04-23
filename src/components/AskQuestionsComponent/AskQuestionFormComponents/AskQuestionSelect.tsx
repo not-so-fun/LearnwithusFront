@@ -1,13 +1,11 @@
 import React, { FC, useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { RootStateType } from "../../stores";
-import { TopicAction } from "../../actions/TopicAction";
-import { topicInterface } from "../../reducers/TopicReducer";
-import { subtopicInterface } from "../../reducers/SubTopicReducer";
-import { SubTopicAction } from "../../actions/SubTopicAction";
-import useTokenAndId from "../ReusableLogicComponents/useTokenAndId";
-import { RouteComponentProps } from "react-router-dom";
-import { formDataInterface } from "./AskQuestionForm";
+import { RootStateType } from "../../../stores";
+import { TopicAction } from "../../../actions/TopicAction";
+import { topicInterface } from "../../../reducers/TopicReducer";
+import { subtopicInterface } from "../../../reducers/SubTopicReducer";
+import useTokenAndId from "../../ReusableLogicComponents/useTokenAndId";
+import { formDataInterface } from "../AskQuestionForm";
 
 interface AskQuestionSelectPropsType {
   setFormData: (value: React.SetStateAction<formDataInterface>) => void;

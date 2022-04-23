@@ -12,7 +12,7 @@ import { RootStateType } from "../stores";
 import { Link, useHistory } from "react-router-dom";
 import { Avatar } from "@mui/material";
 import { IoNotificationsSharp } from "react-icons/io5";
-import Notification from "./HomePageComponent/Notification";
+import Notification from "./HomeComponents/Notification";
 import ArrowDropDownCircleIcon from "@mui/icons-material/ArrowDropDownCircle";
 import { AiFillHome } from "react-icons/ai";
 import { FiLogOut } from "react-icons/fi";

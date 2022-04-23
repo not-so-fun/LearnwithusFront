@@ -1,7 +1,4 @@
 import React, { useEffect } from "react";
-import SideBar from "../components/HomePageComponent/SideBar";
-import Navbar from "../components/Navbar";
-
 import AskQuestionForm from "../components/AskQuestionsComponent/AskQuestionForm";
 import AskQuestionHelp from "../components/AskQuestionsComponent/AskQuestionHelp";
 

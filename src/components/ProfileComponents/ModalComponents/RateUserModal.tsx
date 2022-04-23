@@ -5,13 +5,13 @@ import Modal from "@mui/material/Modal";
 import Fade from "@mui/material/Fade";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import RateUserUI from "./RatingUI";
+import RateUserUI from "../RatingUI";
 
-import { profileUserDataInterface } from "../../reducers/ProfileReducer";
-import { rateUserAction } from "../../actions/ProfileAction";
-import useTokenAndId from "../ReusableLogicComponents/useTokenAndId";
+import { profileUserDataInterface } from "../../../reducers/ProfileReducer";
+import { rateUserAction } from "../../../actions/ProfileAction";
+import useTokenAndId from "../../ReusableLogicComponents/useTokenAndId";
 import { useDispatch, useSelector } from "react-redux";
-import { RootStateType } from "../../stores";
+import { RootStateType } from "../../../stores";
 const style = {
   position: "absolute" as "absolute",
   top: "50%",

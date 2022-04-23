@@ -8,7 +8,7 @@ import {
   
   import { MessagesType } from "../types/MessagesTypes";
   
-import {oneMessageInterface} from "../Layout/MessagesChatroom";
+import {oneMessageInterface} from "../Screens/MessagesChatroom";
   
   export interface MessagesInterface {
     loading: boolean;

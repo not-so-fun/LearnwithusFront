@@ -1,6 +1,7 @@
 import React, { FC, useState } from "react";
-import ExpertiseModal from "./ExpertiseModal";
-import WishesModal from "./WishesModal";
+import ExpertiseModal from "./ModalComponents/ExpertiseModal";
+
+import WishesModal  from "./ModalComponents/WishesModal";
 
 export type ModalState = {
   open: boolean;

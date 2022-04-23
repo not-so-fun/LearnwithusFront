@@ -5,7 +5,7 @@ import {
     MESSAGES_UPDATE,
     MESSAGES_ERROR
   } from "../constants/MessagesConstants";
-  import {oneMessageInterface} from "../Layout/MessagesChatroom";
+  import {oneMessageInterface} from "../Screens/MessagesChatroom";
   
   interface MessagesLoad {
     type: typeof MESSAGES_STARTED;

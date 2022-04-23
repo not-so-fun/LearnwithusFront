@@ -5,7 +5,7 @@ import { AnswerTheQuestionAction } from "../../actions/AnswerTheQuestionAction";
 import { answerTheQuestionInterface } from "../../reducers/AnswerTheQuestionReducer";
 import { Progress } from "../ReusableUIComponents/Spinner";
 import useTokenAndId from "../ReusableLogicComponents/useTokenAndId";
-import AnswerTextEditor from "./AnswerTextEditor";
+import AnswerTextEditor from "./AnswerComponents/AnswerTextEditor";
 import ModalImageUpload from "../ReusableUIComponents/ModalImageUpload";
 
 interface answerComponentInterface {
@@ -28,7 +28,7 @@ const AnswerComponent: FC<answerComponentInterface> = ({ question_id }) => {
     dispatch(AnswerTheQuestionAction(token, question_id, answerType));
     setAnswerType("");
   };
-  
+
   return (
     <>
       <div className="MainQA__AnswerInput__Box">
