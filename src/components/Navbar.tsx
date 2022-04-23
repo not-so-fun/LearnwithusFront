@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   CHANGED_NOTIFICATION_NUMBER,
   SINGLE_NOTIFICATION_SUCCESS,
-  CHAT_NOTIFICATION_NUMBER
+  CHAT_NOTIFICATION_NUMBER,
 } from "../constants/NotificationConstants";
 import { CHATROOM_UPDATE } from "../constants/ChatRoomConstants";
 import useTokenAndId from "./ReusableLogicComponents/useTokenAndId";
@@ -37,9 +37,10 @@ interface DefaultEventsMap {
 let socketOfNotification: Socket<DefaultEventsMap, DefaultEventsMap>;
 
 const Navbar: FC = () => {
-  const { notificationLength,chatNotificationLength } = useSelector<RootStateType>(
-    (state) => state.Notification
-  ) as NotificationInterface;
+  const { notificationLength, chatNotificationLength } =
+    useSelector<RootStateType>(
+      (state) => state.Notification
+    ) as NotificationInterface;
   const dispatch = useDispatch();
   const [showNotification, setShowNotification] = useState<NotificaitonState>({
     show: false,
@@ -79,7 +80,6 @@ const Navbar: FC = () => {
           type: CHAT_NOTIFICATION_NUMBER,
           length: response.data.chatLength,
         });
-        
       })
       .catch((error) => {
         console.log(error);
@@ -164,7 +164,14 @@ const Navbar: FC = () => {
     return (
       <div className="MobileDeviceBox">
         <div className="MobileDeviceBox__Border">
-          <div className="MobileDeviceBox__Content">
+          <div
+            className="MobileDeviceBox__Content"
+            onClick={() =>
+              history.push(
+                `/profile/${(userInfo && userInfo.user_id) || user_id}`
+              )
+            }
+          >
             <div className="MobileDeviceBox__Content__Left">
               <img
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxOR-T_D2BgjFw4fXpA40T0dgEA4m7V4QH2w&usqp=CAU"
@@ -199,7 +206,10 @@ const Navbar: FC = () => {
           </div>
         </div>
         <div className="MobileDeviceBox__Border">
-          <div className="MobileDeviceBox__Content">
+          <div
+            className="MobileDeviceBox__Content"
+            onClick={() => history.push("/")}
+          >
             <div className="MobileDeviceBox__Content__Left">
               <AiFillHome className="MobileDeviceBox__Content__Left__Icon" />
             </div>
@@ -224,7 +234,7 @@ const Navbar: FC = () => {
             </div>
           </div>
 
-          <div className="MobileDeviceBox__Content">
+          <div className="MobileDeviceBox__Content" onClick={handleLogout}>
             <div className="MobileDeviceBox__Content__Left">
               <FiLogOut className="MobileDeviceBox__Content__Left__Icon" />
             </div>
@@ -266,7 +276,10 @@ const Navbar: FC = () => {
           )}
         </div>
         <div className="Navbar__Links">
-          <AiFillHome className="Navbar__Links__Home" onClick={()=>history.push("/")}/>
+          <AiFillHome
+            className="Navbar__Links__Home"
+            onClick={() => history.push("/")}
+          />
           {(userInfo && userInfo.user_id) || user_id ? (
             <>
               <IoCreate
@@ -274,19 +287,19 @@ const Navbar: FC = () => {
                 // style={{ fontSize: 25, marginLeft: 20, cursor: "pointer" }}
                 className="Navbar__Links__Create"
               />
-               <div className="Navbar__Links__content__Icon">
-                  <div className="Navbar__Links__content__Icon__Bell">
-                    <BsFillChatFill
-                      className="Navbar__Links__Chat"
-                      onClick={() => history.push("/messages")}
-                    />
-                    {chatNotificationLength > 0 && (
-                      <div className="Navbar__Links__content__Icon__Bell__Circle">
-                        {chatNotificationLength}
-                      </div>
-                    )}
-                  </div>
+              <div className="Navbar__Links__content__Icon">
+                <div className="Navbar__Links__content__Icon__Bell">
+                  <BsFillChatFill
+                    className="Navbar__Links__Chat"
+                    onClick={() => history.push("/messages")}
+                  />
+                  {chatNotificationLength > 0 && (
+                    <div className="Navbar__Links__content__Icon__Bell__Circle">
+                      {chatNotificationLength}
+                    </div>
+                  )}
                 </div>
+              </div>
 
               <FiLogOut
                 onClick={handleLogout}
