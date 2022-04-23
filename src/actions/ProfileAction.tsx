@@ -55,6 +55,7 @@ export const rateUserAction =
       )
       .then((response) => {
         dispatch({ type: RATE_PROFILE_SUCCESS });
+
         console.log(response.data);
       })
       .catch((error) => {

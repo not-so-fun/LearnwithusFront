@@ -172,6 +172,7 @@ const Question: FC<quesInterface> = ({ question }) => {
                 <div className="QuestionFeed__Box__Top__Left__AboutQuestion__Top__QuestionData">
                   <div className="QuestionFeed__Box__Top__Left__AboutQuestion__Top__QuestionData__Time">
                     Asked: March 28 2018
+
                   </div>
                   <div className="QuestionFeed__Box__Top__Left__AboutQuestion__Top__QuestionData__Title">
                     {question.topic_title}

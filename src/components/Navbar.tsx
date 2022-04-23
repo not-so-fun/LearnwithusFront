@@ -116,7 +116,6 @@ const Navbar: FC = () => {
   const mobileDeviceHandler = () => {
     setMobileDrop((prev) => !prev);
   };
-
   const ModelContent = () => {
     return (
       <div className={openHam ? "ModelContent" : ""}>

@@ -10,6 +10,7 @@ import MainQA from "../Screens/MainQA";
 import Answered from "../Screens/Answered";
 import SavedQuestion from "../Screens/SavedQuestion";
 import UpdateQuestions from "../Screens/UpdateQuestions";
+import XSS from "../components/XSS";
 import SearchTutors from "../components/SearchTutors/SearchTutors";
 import MessagesChatroom from "../Screens/MessagesChatroom";
 import Messages from "../Screens/Messages";
@@ -23,6 +24,16 @@ const routes: IRoute[] = [
     private: false,
     showNav: false,
   },
+  {
+    path: "/xss",
+    name: "xss",
+    component: XSS,
+    exact: true,
+    private: false,
+    showNav: false,
+  },
+
+
   {
     path: "/register",
     name: "Register",
