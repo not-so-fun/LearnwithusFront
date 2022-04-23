@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   CHANGED_NOTIFICATION_NUMBER,
   SINGLE_NOTIFICATION_SUCCESS,
+  CHAT_NOTIFICATION_NUMBER
 } from "../constants/NotificationConstants";
 import { CHATROOM_UPDATE } from "../constants/ChatRoomConstants";
 import useTokenAndId from "./ReusableLogicComponents/useTokenAndId";
@@ -36,7 +37,7 @@ interface DefaultEventsMap {
 let socketOfNotification: Socket<DefaultEventsMap, DefaultEventsMap>;
 
 const Navbar: FC = () => {
-  const { notificationLength } = useSelector<RootStateType>(
+  const { notificationLength,chatNotificationLength } = useSelector<RootStateType>(
     (state) => state.Notification
   ) as NotificationInterface;
   const dispatch = useDispatch();
@@ -74,6 +75,11 @@ const Navbar: FC = () => {
           type: CHANGED_NOTIFICATION_NUMBER,
           length: response.data.length,
         });
+        dispatch({
+          type: CHAT_NOTIFICATION_NUMBER,
+          length: response.data.chatLength,
+        });
+        
       })
       .catch((error) => {
         console.log(error);
@@ -110,32 +116,6 @@ const Navbar: FC = () => {
   const mobileDeviceHandler = () => {
     setMobileDrop((prev) => !prev);
   };
-
-  // const Dropdown: FC = (props) => {
-  //   const dropdownmenu = useRef<HTMLDivElement>(null);
-
-  // //   useEffect(() => {
-  // //     function handleOutsideClick(event: any) {
-  // //       if (
-  // //         dropdownmenu.current &&
-  // //         !dropdownmenu.current.contains(event.target)
-  // //       ) {
-  // //         setShowNotification({
-  // //           show: !showNotification.show,
-  // //           showProfile: false,
-  // //         });
-  // //       }
-  // //     }
-
-  // //     document.addEventListener("click", handleOutsideClick);
-  // //   }, [dropdownmenu]);
-
-  // //   return (
-  // //     <div className="Dropdown" ref={dropdownmenu}>
-  // //       {props.children}
-  // //     </div>
-  // //   );
-  // // };
 
   const ModelContent = () => {
     return (
@@ -287,7 +267,7 @@ const Navbar: FC = () => {
           )}
         </div>
         <div className="Navbar__Links">
-          <AiFillHome className="Navbar__Links__Home" />
+          <AiFillHome className="Navbar__Links__Home" onClick={()=>history.push("/")}/>
           {(userInfo && userInfo.user_id) || user_id ? (
             <>
               <IoCreate
@@ -301,9 +281,9 @@ const Navbar: FC = () => {
                       className="Navbar__Links__Chat"
                       onClick={() => history.push("/messages")}
                     />
-                    {notificationLength != 0 && (
+                    {chatNotificationLength > 0 && (
                       <div className="Navbar__Links__content__Icon__Bell__Circle">
-                        {notificationLength}
+                        {chatNotificationLength}
                       </div>
                     )}
                   </div>

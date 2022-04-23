@@ -39,6 +39,7 @@ const ProfileTry: FC<RouteComponentProps<any>> = ({ match }) => {
   const Approached = () => {
     dispatch(ApproachAction(token, profile_data.user_id));
   };
+  console.log(approachStatus);
 
   const handleMessage = () => {
     axios
@@ -86,6 +87,11 @@ const ProfileTry: FC<RouteComponentProps<any>> = ({ match }) => {
   const { loading, profile_data, imageUploading, error, profileForm } = useSelector<RootStateType>(
     (state) => state.profile_info_data
   ) as profileDataInterface;
+  const object= useSelector<RootStateType>(
+    (state) => state.profile_info_data
+  ) as profileDataInterface;
+console.log(object);
+
 
 
   const [progress, setProgess] = useState<number>(0);
@@ -160,6 +166,8 @@ const ProfileTry: FC<RouteComponentProps<any>> = ({ match }) => {
                 <div className="ProfileTry__Left__ProfileInformation__Profile__ProfilePhoto">
                   <img className="ProfileTry__Left__ProfileInformation__Profile__ProfilePhoto__Photo" src={profile_data.image} />
                   <p className="ProfileTry__Left__ProfileInformation__Profile__ProfilePhoto__Paragraph">No Photo</p>
+                  { user_id == profile_data.user_id && 
+                  (
                   <div className="ProfileTry__Left__ProfileInformation__Profile__ProfilePhoto__Icon">
                     {progress > 0 && progress < 100 && (
                       <CircularProgressWithLabel
@@ -180,6 +188,7 @@ const ProfileTry: FC<RouteComponentProps<any>> = ({ match }) => {
                       style={progress > 0 && progress < 100 ? { display: "none" } : {}}
                     />
                   </div>
+                  )}
                 </div>
                 <div className="ProfileTry__Left__ProfileInformation__Profile__ProfileData">
                   <h2 className="ProfileTry__Left__ProfileInformation__Profile__ProfileData__Heading">
@@ -208,7 +217,7 @@ const ProfileTry: FC<RouteComponentProps<any>> = ({ match }) => {
                   </h4>
                 </div>
               </div>
-              {user_id !== profile_data.user_id && (
+              {user_id != profile_data.user_id && (
                 <div className="ProfileTry__Left__ProfileInformation__Approach">
                   {approachStatus === null && (
                     <>
