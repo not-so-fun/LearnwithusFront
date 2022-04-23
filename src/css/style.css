@@ -969,9 +969,10 @@ body {
     font-size: 2rem;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
-    padding: 0 0.5rem; }
+    padding: 0 0.5rem;
+    padding-left: 3rem; }
     .ProfileTry__Top__Heading {
       color: #1433BB; }
       .ProfileTry__Top__Heading__Below {
@@ -1066,8 +1067,7 @@ body {
         width: 100%;
         display: flex;
         align-items: center;
-        justify-content: space-around;
-        padding: 0.5rem; }
+        justify-content: space-around; }
         .ProfileTry__Left__ProfileInformation__Question__QuestionAsked {
           width: 47%;
           background: white;
@@ -1088,10 +1088,11 @@ body {
         display: flex;
         align-items: center;
         justify-content: center;
-        margin: 1rem 0; }
+        margin: 1rem 0;
+        padding: 0.5rem; }
         .ProfileTry__Left__ProfileInformation__Approach__Button {
           height: 5rem;
-          width: 55%;
+          width: 100%;
           border: none;
           outline: none;
           font-size: 2rem;
@@ -1164,6 +1165,28 @@ body {
     padding: 0; }
   .ProfileTry__Left__ProfileInformation__Question__QuestionAsked__Heading__Below {
     font-size: 2rem; } }
+
+.MaterialBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between; }
+  .MaterialBox__Heading {
+    color: #1433BB;
+    font-size: 1.5rem; }
+  .MaterialBox__Button {
+    background: #1433BB;
+    margin-top: 1rem;
+    border: none;
+    outline: none;
+    height: 5rem;
+    width: 10rem;
+    font-size: 1.9rem;
+    font-weight: 600;
+    color: #fff;
+    border-radius: .5rem; }
+    .MaterialBox__Button:hover {
+      cursor: pointer; }
 
 .Auth {
   height: 70rem;
@@ -1458,22 +1481,25 @@ body {
         letter-spacing: 0.03rem;
         color: #000; }
     .Profile__Box__Top__Statistics {
-      flex: 1;
+      width: 100%;
       color: #fff;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center; }
+      padding: 0 0.5rem; }
       .Profile__Box__Top__Statistics__Botton {
-        margin-top: 2rem; }
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 5rem; }
         .Profile__Box__Top__Statistics__Botton__Expertise, .Profile__Box__Top__Statistics__Botton__Wishes {
-          margin-left: 2rem;
+          width: 49%;
           border: none;
+          font-size: 1.7rem;
           padding: 0.6rem 1.2rem;
           background-color: #1433BB;
+          height: 90%;
           color: #fff;
           font-weight: 600;
           letter-spacing: 0.09rem;
+          border-radius: .5rem;
           cursor: pointer;
           transition: all 0.4s ease; }
           .Profile__Box__Top__Statistics__Botton__Expertise:hover, .Profile__Box__Top__Statistics__Botton__Wishes:hover {

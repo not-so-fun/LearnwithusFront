@@ -27,6 +27,7 @@ interface ProfileFormInterface {
   profile_data: profileUserDataInterface;
 }
 const RateUserModal: React.FC<ProfileFormInterface> = ({ profile_data }) => {
+  
   const [open, setOpen] = React.useState(false);
   const { user_id, token } = useTokenAndId();
   const dispatch = useDispatch();
@@ -62,7 +63,10 @@ const RateUserModal: React.FC<ProfileFormInterface> = ({ profile_data }) => {
         }}
       >
         <Fade in={open}>
-          <Box sx={style}>
+          <Box sx={style} className="MaterialBox">
+            <div className="MaterialBox__Heading">
+              <h1>Rate {profile_data.username}</h1>
+            </div>
             <Typography id="transition-modal-description" sx={{ mt: 2 }}>
               <div className="star-rating">
                 <div className="back-stars">
@@ -125,7 +129,7 @@ const RateUserModal: React.FC<ProfileFormInterface> = ({ profile_data }) => {
                 </div>
               </div>
             </Typography>
-            <Button onClick={rateApi}>Rate</Button>
+            <button className="MaterialBox__Button" onClick={rateApi} >Rate</button>
           </Box>
         </Fade>
       </Modal>

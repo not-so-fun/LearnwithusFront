@@ -3,6 +3,12 @@ import {
     MAIN_QUESTION_ANSWER_SUCCESS,
     MAIN_QUESTION_ANSWER_ERROR,
   } from "../constants/MainQuestionAnswerConstants";
+  import {
+    ANSWERS_LOAD_START,
+    ANSWERS_LOAD_SUCCESS,
+    ANSWERS_LOAD_ERROR,
+  
+  } from "../constants/OnlyAnswersContants";
   
   import { RootDispatchType } from "../stores";
   import { Dispatch } from "redux";
@@ -15,6 +21,8 @@ import {
     ) =>
     (dispatch: Dispatch<RootDispatchType>) => {
       dispatch({ type: MAIN_QUESTION_ANSWER_STARTED});
+      dispatch({ type: ANSWERS_LOAD_START});
+      
       axios
         .get(
           `/questions/${question_id}`,
@@ -26,12 +34,14 @@ import {
         )
         .then((response) => {
           console.log(response.data)
-          dispatch({ type: MAIN_QUESTION_ANSWER_SUCCESS, question: response.data});
+          dispatch({ type: MAIN_QUESTION_ANSWER_SUCCESS, question: response.data.question});
+          dispatch({type:ANSWERS_LOAD_SUCCESS,answers:response.data.answers});
         })
         .catch((error) => {
           // console.log(error.response);
 
           dispatch({ type: MAIN_QUESTION_ANSWER_ERROR, error: error.response.data });
+          dispatch({ type: ANSWERS_LOAD_ERROR, error: error.response.data });
         });
     };
 

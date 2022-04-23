@@ -283,6 +283,20 @@ const Profile: FC<RouteComponentProps<any>> = ({ match }) => {
                 </p>
               </div>
             </div>
+            <div className="ProfileTry__Left__ProfileInformation__ProfileData">
+              <div className="ProfileTry__Left__ProfileInformation__ProfileData__AboutMe">
+                <h3>Expertise</h3>
+                <p className="ProfileTry__Left__ProfileInformation__ProfileData__AboutMe__Bio">
+                 Chemistry
+                </p>
+                <p className="ProfileTry__Left__ProfileInformation__ProfileData__AboutMe__Bio">
+                Maths
+                </p>
+                <p className="ProfileTry__Left__ProfileInformation__ProfileData__AboutMe__Bio">
+                 Physics
+                </p>
+              </div>
+            </div>
           </div>
         </div>
         <div className="ProfileTry__Right">

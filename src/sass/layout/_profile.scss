@@ -326,26 +326,26 @@
         }
       }
       &__Statistics {
-        flex: 1;
+        width:100%;
         color: $color-white;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-
+        padding:0 0.5rem;
         &__Botton {
-          // border: 2px solid black;
-          margin-top: 2rem;
+          display:flex;
+          align-items: center;
+          justify-content: space-between;
+          height:5rem;
           &__Expertise,
           &__Wishes {
-            margin-left: 2rem;
+            width:49%;
             border: none;
+            font-size:1.7rem;
             padding: 0.6rem 1.2rem;
             background-color: $color-primary;
-
+            height:90%;
             color: $color-white;
             font-weight: 600;
             letter-spacing: 0.09rem;
+            border-radius:.5rem;
             cursor: pointer;
             transition: all 0.4s ease;
             &:hover {
