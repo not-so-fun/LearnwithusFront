@@ -22,7 +22,6 @@ const AnswerComponent: FC<answerComponentInterface> = ({ question_id }) => {
   const [answerType, setAnswerType] = useState<string>("");
   const [showImageModal, setShowImageModal] = useState<boolean>(false);
 
-
   const handleAnswerSubmit:
     | React.MouseEventHandler<HTMLButtonElement>
     | undefined = () => {
