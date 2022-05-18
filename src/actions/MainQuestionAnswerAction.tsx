@@ -23,6 +23,7 @@ export const MainQuestionAnswerAction =
         dispatch({
           type: MAIN_QUESTION_ANSWER_SUCCESS,
           question: response.data.question,
+          answers:response.data.answers
         });
       })
       .catch((error) => {

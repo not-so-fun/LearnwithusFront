@@ -35,13 +35,13 @@ const MainQA: FC<RouteComponentProps<any>> = ({ match }) => {
     (state) => state.userInfo
   ) as UserInfoInterface;
 
-  const { loading: questionLoading, question } = useSelector<RootStateType>(
+  const { loading: questionLoading, question,answers } = useSelector<RootStateType>(
     (state) => state.mainQA
   ) as MainQuestionAnswerInterface;
 
-  const { loading, answers } = useSelector<RootStateType>(
-    (state) => state.answers
-  ) as answersInterface;
+  // const { loading, answers } = useSelector<RootStateType>(
+  //   (state) => state.answers
+  // ) as answersInterface;
 
   useEffect(() => {
     document.title = "Learn with us | Main QA";

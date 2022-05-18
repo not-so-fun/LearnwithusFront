@@ -5,26 +5,19 @@ import {
   } from "../constants/MainQuestionAnswerConstants";
 import {mainQuestionAnswerTypes} from "../types/MainQuestionAnswerTypes";
 import {questionFeedListInterface} from "./QuestionFeedReducers"
+import {answerInterface } from "./AnsweresOnlyReducer";
 
-  interface answered{
-    answer_id: string;
-    question_id:string;
-    answer:string;
-    user_id:string;
-    username:string;
-    image:string;
-}
   export interface MainQuestionAnswerInterface {
     loading: boolean;
     error?: string;
     question:questionFeedListInterface|null ;
-    Answers:answered[];
+    answers:answerInterface[];
   }
   
   const askQuestionState: MainQuestionAnswerInterface = {
     loading: false,
     question:null,
-    Answers:[],
+    answers:[],
     error: "",
   };
   
@@ -40,7 +33,9 @@ import {questionFeedListInterface} from "./QuestionFeedReducers"
         return { 
           ...state, 
           loading: false, 
-          question:action.question
+          question:action.question,
+          answers:action.answers
+
         };
       case MAIN_QUESTION_ANSWER_ERROR:
         return { ...state, loading: false, error: action.error };

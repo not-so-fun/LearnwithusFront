@@ -5,6 +5,8 @@ import {
     MAIN_QUESTION_ANSWER_ADDED_STARTED,
     MAIN_QUESTION_ANSWER_ADDED_ERROR
   } from "../constants/MainQuestionAnswerConstants";
+  import {answerInterface} from "../reducers/AnsweresOnlyReducer";
+
   
  interface questionFeedListInterface {
     question_id:string,
@@ -26,6 +28,7 @@ import {
   interface mainQuestionAnswerSuccess {
     type: typeof MAIN_QUESTION_ANSWER_SUCCESS;
     question: questionFeedListInterface;
+    answers:answerInterface[]
   }
   
   interface mainQuestionAnswerError {

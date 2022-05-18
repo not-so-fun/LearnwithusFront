@@ -22,6 +22,7 @@ export const AnswerTheQuestionAction =
         },
       })
       .then((response) => {
+        console.log(response.data);
         dispatch({type:ANSWERS_LOAD_SUCCESS,answers:response.data})
         dispatch({type:ANSWER_THE_QUESTION_SUCCESS})
       })
