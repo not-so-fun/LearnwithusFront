@@ -1,0 +1,29 @@
+.admin_products {
+  height: auto;
+  padding: 10px;
+  background-color: var(--secondary);
+}
+
+.admin_products_filter {
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px;
+  /* margin-bottom: 20px; */
+}
+
+.admin_products_grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  row-gap: 20px;
+  column-gap: 10px;
+}
+
+.admin_product {
+  max-width: 300px;
+  border: 1px solid rgb(218, 216, 216);
+}
+
+.admin_product_lower {
+  display: flex;
+  justify-content: space-between;
+}

@@ -1,0 +1,162 @@
+
+.admin_dashboard {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: var(--secondary);
+  height: auto;
+  padding: 10px;
+}
+
+.admin_dashboard_top {
+  /* height: 25rem; */
+  margin-top: 20px;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.admin_dashboard_top_card {
+  width: 17rem;
+  height: 17rem;
+  background-color: rgb(19, 205, 189);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-weight: 800;
+}
+
+.admin_dashboard_top_card_1 {
+  width: 17rem;
+  height: 17rem;
+  background-color: rgb(209, 233, 252);
+  /* box-shadow: 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-weight: 800;
+}
+
+.admin_dashboard_top_card_2 {
+  width: 17rem;
+  height: 17rem;
+  background-color: rgb(208, 242, 255);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-weight: 800;
+}
+
+.admin_dashboard_top_card_3 {
+  width: 17rem;
+  height: 17rem;
+  background-color: rgb(255, 247, 205);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-weight: 800;
+}
+
+.admin_dashboard_top_card_4 {
+  width: 17rem;
+  height: 17rem;
+  background-color: rgb(255, 231, 217);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-weight: 800;
+}
+
+.admin_dashboard_actual_card_mui {
+  background-color: red;
+}
+
+.admin_dashboard_top_card_number_1 {
+  color: rgb(6, 27, 100);
+  font-size: 50px;
+  font-weight: 900;
+}
+
+.admin_dashboard_top_card_lower_1 {
+  font-size: 30px;
+  color: rgb(6, 27, 100);
+}
+
+.admin_dashboard_top_card_number_2 {
+  color: rgb(4, 41, 122);
+  font-size: 50px;
+  font-weight: 900;
+}
+
+.admin_dashboard_top_card_lower_2 {
+  font-size: 30px;
+  color: rgb(4, 41, 122);
+}
+
+.admin_dashboard_top_card_number_3 {
+  color: rgb(122, 79, 1);
+  font-size: 50px;
+  font-weight: 900;
+}
+
+.admin_dashboard_top_card_lower_3 {
+  font-size: 30px;
+  color: rgb(122, 79, 1);
+}
+
+.admin_dashboard_top_card_number_4 {
+  color: rgb(122, 12, 46);
+  font-size: 50px;
+  font-weight: 900;
+}
+
+.admin_dashboard_top_card_lower_4 {
+  font-size: 30px;
+  color: rgb(122, 12, 46);
+}
+
+/* DASHBOAR CHART  */
+.admin_dashboard_chart {
+  width: 100%;
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.admin_dashboard_chart_each {
+  width: 47%;
+  height: 40rem;
+  padding: 40px;
+  display: flex;
+  justify-content: space-around;
+  background-color: white;
+  border: 1px solid var(--admin-border-color);
+  align-items: center;
+}
+
+.admin_dashboard_chart_each_full {
+  width: 100%;
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.admin_dashboard_chart_line {
+  width: 97%;
+  height: 40rem;
+  padding: 40px;
+  display: flex;
+  justify-content: space-around;
+  background-color: white;
+  border: 1px solid var(--admin-border-color);
+  align-items: center;
+}
+
+/* DASHBOAR CHART END */

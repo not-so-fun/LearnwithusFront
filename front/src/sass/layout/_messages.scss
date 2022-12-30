@@ -1,0 +1,186 @@
+.Messages {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  &__Empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    height: 100%;
+    background: $color-white;
+    &__Box {
+      height: 50rem;
+      width: 75rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      &__Logos {
+        height: 20rem;
+        width: 20rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 0.5rem solid $color-grey-light-3;
+        border-radius: 50%;
+        &__Logo {
+          height: 11rem;
+          width: 11rem;
+          margin: auto;
+          color: $color-grey-light-3;
+        }
+      }
+      &__Heading {
+        margin: 1rem 0;
+        color: $color-black;
+      }
+    }
+  }
+  &__Left {
+    flex: 1;
+    height: 100%;
+    background: $color-white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    &__Heading {
+      flex: 0 0 7rem;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      color: $color-black;
+      -webkit-box-shadow: 0 0.9rem 0.8rem -1.1rem #777;
+      -moz-box-shadow: 0 0.9rem 0.8rem -1.1rem #777;
+      box-shadow: 0 0.9rem 0.8rem -1.1rem #777;
+
+      &__ProfilePhoto {
+        height: 5rem;
+        width: 5rem;
+        margin: 0 1.2rem;
+        background: $color-grey-light-3;
+        border-radius: 50%;
+      }
+      &__ProfileName {
+        color: $color-black;
+        text-decoration: none;
+        &:hover {
+          cursor: pointer;
+          text-decoration: underline;
+        }
+      }
+    }
+    &__Messages {
+      flex: 1;
+      overflow-y:scroll;
+      display: flex;
+      flex-direction: column;
+      // justify-content: flex-end;
+      font-size: 1.5rem;
+      padding: 1rem;
+      color: $color-black;
+      background-color: $color-white;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+      &__Container{
+        height: 100%;
+        max-height: 300px;
+        overflow-y: scroll;
+      }
+      &__Others {
+        display: flex;
+        &__Image {
+          display: flex;
+          justify-content: center;
+          align-items: flex-end;
+          margin: 1rem 0.5rem;
+          & img {
+            height: 4rem;
+            width: 4rem;
+            border-radius: 50%;
+            // border: 2px solid red;
+            background-color: $color-white;
+            object-fit: contain;
+          }
+        }
+      }
+
+      &__Other {
+        background: $color-grey-light-2;
+        height: auto;
+        width: auto;
+        max-width: 70%;
+        margin: 0.4rem 0;
+        padding: 1rem 2rem;
+        border-radius: 2rem;
+        align-self: flex-start;
+        overflow-wrap: break-word;
+        text-align: justify;
+      }
+      &__Me {
+        background: $color-primary;
+        height: auto;
+        width: auto;
+        max-width: 70%;
+        padding: 1rem 2rem;
+        border-radius: 2rem;
+        align-self: flex-end;
+        margin: 0.4rem 0;
+        overflow-wrap: break-word;
+        text-align: justify;
+        color: $color-white;
+        border:none;
+      }
+    }
+    &__InputBox {
+      flex: 0 0 8rem;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+
+      &__Input {
+        height: 5rem;
+        flex: 1;
+        font-size: 1.5rem;
+        padding: 0 2rem;
+        background: $color-grey-light-2;
+        border-radius: 0.5rem;
+        border: none;
+        outline: none;
+        margin: 0 1rem;
+      }
+      &__Logos {
+        height: 5rem;
+        width: 5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        background: $color-white;
+        margin-right: 1rem;
+        outline: none;
+
+        &__Logo {
+          height: 4rem;
+          width: 4rem;
+          fill: $color-primary;
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+  &__Right {
+    min-width: 35rem;
+    width: auto;
+    height: 100%;
+    padding: 0.5rem;
+    padding-top: 3rem;
+    background: $color-white;
+    border-left: 1px solid lightgray;
+  }
+}

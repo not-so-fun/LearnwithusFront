@@ -1,0 +1,795 @@
+.Main {
+  display: flex;
+  position: relative;
+}
+
+.Profile {
+  &__Box {
+    background: $color-white;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    &__Top {
+      background: $color-white;
+      width: 100%;
+      height: auto;
+      padding: 3rem 1rem;
+      display: flex;
+      align-items: center;
+      border: 0.2rem solid lightgrey;
+
+      &__ImagesAndDatas {
+        // width: 30rem;
+        flex: 0 0 30%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        &__Rate {
+          width: 50rem;
+          background: $color-white;
+          height: 50rem;
+          position: fixed;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          z-index: 300;
+          display: flex;
+          align-items: center;
+          flex-direction: column;
+          justify-content: flex-start;
+
+          &__Heading {
+            color: $color-black;
+            height: 7rem;
+            display: flex;
+            justify-content: center;
+            font-size: 1.5rem;
+            align-items: center;
+            text-transform: uppercase;
+          }
+          &__ProfileData {
+            height: 30rem;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            &__Username {
+              height: 6rem;
+              font-size: 1.5rem;
+              color: $color-black;
+            }
+            &__Image {
+              margin-top: 2rem;
+              height: 20rem;
+              width: 20rem;
+              border-radius: 50%;
+            }
+          }
+          &__Rating {
+            height: 5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+          &__Buttons {
+            height: 7rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            &__Button {
+              height: 4rem;
+              width: auto;
+              padding: 0 3rem;
+              font-size: 1.5rem;
+              border: 0.2rem solid $color-primary;
+              color: $color-primary;
+              outline: none;
+              border-radius: 0.5rem;
+              transition: all 0.3s ease-in-out;
+              &:hover {
+                cursor: pointer;
+                background: $color-primary;
+                color: $color-white;
+              }
+            }
+          }
+        }
+
+        &__Button {
+          padding: 1rem 2rem;
+          color: #008000;
+          border: 0.2rem solid #008000;
+          cursor: pointer;
+          transition: all 0.4s ease;
+          background: $color-white;
+          &:hover {
+            box-shadow: inset 0 0 2rem 2rem rgba(0, 0, 0, 0.25);
+            color: $color-white;
+            background-color: #008000;
+          }
+        }
+        &__Image {
+          margin-top: 4rem;
+          margin-bottom: 0.5rem;
+          height: auto;
+          width: auto;
+
+          position: relative;
+          &__Icon {
+            border: 2px solid #ffffff1a;
+            background-color: #0e0e0e1a;
+            // background:red;
+            border-radius: 50%;
+            height: 4rem;
+            width: 4rem;
+            margin-left: auto;
+            margin-top: -5.4rem;
+            color: $color-white;
+            position: relative;
+
+            // background:red;
+            &__Camera {
+              font-size: 2rem !important;
+              position: absolute;
+              top: 25%;
+              left: 25%;
+              z-index: 1;
+              opacity: 1;
+            }
+            &__Input {
+              height: 100%;
+              width: 100%;
+              z-index: 10;
+              position: absolute;
+              top: 0;
+              left: 0;
+              border-radius: 50%;
+              opacity: 0;
+              &:hover {
+                cursor: pointer;
+              }
+            }
+          }
+          &__Avatar {
+            margin-bottom: 0.5rem;
+            width: 20rem;
+            height: 20rem;
+          }
+        }
+        &__Icon {
+          top: 0;
+          right: 0px;
+          color: red;
+        }
+
+        &__ProfileName {
+          margin: 0.2rem 0;
+          height: 5rem;
+          font-size: 2rem;
+          letter-spacing: 0.05rem;
+          font-weight: 600;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: $color-black;
+        }
+      }
+      &__Information {
+        flex: 0 0 40%;
+        height: 100%;
+        text-align: left;
+        padding: 2rem;
+        color: $color-black;
+
+        &__Buttons {
+          height: 4rem;
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          &__Button {
+            height: 3.5rem;
+            width: 8rem;
+            padding: 0 1rem;
+            border: 0.2rem solid $color-secondary;
+            outline: none;
+            border-radius: 0.5rem;
+            color: $color-secondary;
+            background: $color-white;
+            &:hover {
+              cursor: pointer;
+              color: $color-white;
+              background: $color-secondary;
+            }
+          }
+        }
+
+        &__Name {
+          display: flex;
+          justify-content: space-between;
+          margin: 2rem 0;
+          &__firstName {
+            display: inline-block;
+            width: 49%;
+
+            &__Box {
+              background: #e8e8e8;
+              height: 4rem;
+              padding-left: 0.3rem;
+              width: 100%;
+              border: none;
+              outline: none;
+              font-size: 1.6rem;
+              letter-spacing: 0.03rem;
+              display: flex;
+              align-items: center;
+              justify-content: flex-start;
+              padding: 0.7rem;
+            }
+          }
+          &__firstName p {
+            font-size: 1.4rem;
+            letter-spacing: 0.08rem;
+            margin-bottom: 0.5rem;
+          }
+          &__firstName h4 {
+            font-size: 1.8rem;
+            font-weight: 500;
+            color: $color-black;
+          }
+
+          &__lastName {
+            width: 49%;
+            display: inline-block;
+            &__Box {
+              background: #e8e8e8;
+              height: 4rem;
+              padding: 0.3rem;
+              width: 100%;
+              border: none;
+              outline: none;
+              font-size: 1.6rem;
+              letter-spacing: 0.03rem;
+              display: flex;
+              align-items: center;
+              justify-content: flex-start;
+              padding: 0.7rem;
+            }
+          }
+          &__lastName p {
+            font-size: 1.4rem;
+            letter-spacing: 0.08rem;
+            margin-bottom: 0.1rem;
+            margin-bottom: 0.5rem;
+          }
+          &__lastName h4 {
+            font-size: 1.8rem;
+            font-weight: 500;
+            letter-spacing: 0.03rem;
+            color: $color-black;
+          }
+        }
+        &__Approach {
+          height: 5rem;
+          width: 100%;
+          display: flex;
+          align-items: center;
+
+          &__Button {
+            height: 4rem;
+            width: auto;
+            padding: 0 2rem;
+            font-size: 1.6rem;
+            background: $color-primary;
+            border: none;
+            outline: none;
+            border-radius: 0.5rem;
+            &:hover {
+              cursor: pointer;
+            }
+          }
+        }
+        &__BasicInfo {
+          margin-bottom: 2rem;
+          &__Box {
+            background: #e8e8e8;
+            height: 4rem;
+            padding: 0.7rem;
+            width: 100%;
+            letter-spacing: 0.03rem;
+            border: none;
+            outline: none;
+            font-size: 1.6rem;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+          }
+        }
+        &__BasicInfo p {
+          font-size: 1.4rem;
+          letter-spacing: 0.08rem;
+          margin-bottom: 0.1rem;
+          margin-bottom: 0.5rem;
+        }
+        &__BasicInfo h4 {
+          font-size: 1.8rem;
+          font-weight: 500;
+          letter-spacing: 0.03rem;
+
+          color: $color-black;
+        }
+      }
+      &__Statistics {
+        width:100%;
+        color: $color-white;
+        padding:0 0.5rem;
+        &__Botton {
+          display:flex;
+          align-items: center;
+          justify-content: space-between;
+          height:5rem;
+          &__Expertise,
+          &__Wishes {
+            width:49%;
+            border: none;
+            font-size:1.7rem;
+            padding: 0.6rem 1.2rem;
+            background-color: $color-primary;
+            height:90%;
+            color: $color-white;
+            font-weight: 600;
+            letter-spacing: 0.09rem;
+            border-radius:.5rem;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            &:hover {
+              // background-color: $color-white;
+              // color: $color-primary;
+              // border: 0.2rem solid $color-primary;
+              background-color: rgba(20, 51, 187, 0.8);
+            }
+          }
+        }
+        &__Div {
+          width: 70%;
+          padding: 2rem;
+          border: 0.2rem solid lightgrey;
+
+          &__Data p {
+            font-size: 1.4rem;
+            letter-spacing: 0.08rem;
+            color: $color-black;
+          }
+          &__Data h1 {
+            font-weight: bold;
+            font-size: 5.5rem;
+            line-height: 7rem;
+
+            color: #4f9b13;
+          }
+        }
+      }
+    }
+    &__Main {
+      background: #ffffff;
+      width: 100%;
+      height: 95rem;
+      display: flex;
+      align-items: center;
+      margin-bottom: 0rem;
+      display: flex;
+      border: 0.2rem solid lightgrey;
+      &__Newsfeed {
+        height: 100%;
+        flex: 1;
+        overflow-y: scroll;
+        &__Div {
+          background-color: $color-grey-light-1;
+          color: $color-black;
+          margin: 2rem;
+          text-align: left;
+          padding: 0.8rem;
+          border-radius: 0.5rem;
+          border: 0.2rem solid red;
+          &__Header {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-bottom: 0.7rem;
+
+            justify-content: space-between;
+
+            &__Left {
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              p {
+                margin-left: 1rem;
+                font-size: 1.8rem;
+              }
+            }
+            &__Right {
+              border: 0.2rem solid lightgray;
+              border-radius: 0.5rem;
+
+              padding: 0.4rem 0.5rem;
+              display: flex;
+              font-size: 1.2rem;
+            }
+
+            &__image {
+              height: 5rem;
+              width: 5rem;
+            }
+          }
+          &__InnerDiv {
+            display: flex;
+
+            &__Votes {
+              // border: 2px solid black;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              padding: 0rem 1rem;
+              color: $color-grey-dark;
+              &__Up,
+              &__Down {
+                font-size: 5rem !important;
+                cursor: pointer;
+              }
+            }
+
+            &__Questions {
+              text-decoration: none;
+              color: $color-black;
+              &:hover {
+                cursor: pointer;
+              }
+              &__Question {
+                background-color: $color-grey-light-2;
+                margin-bottom: 1rem;
+                font-size: 1.4rem;
+                padding: 0.1rem 0.8rem;
+                text-decoration: none;
+              }
+
+              &__QuestionDetails {
+                font-size: 1.4rem;
+                padding: 0.1rem 0.8rem;
+                background-color: $color-grey-light-2;
+                text-decoration: none;
+              }
+            }
+          }
+        }
+      }
+      &__SideInformation {
+        height: 100%;
+        flex: 0 0 30%;
+        background: white;
+        &__Status {
+          border: 0.2rem solid black;
+          background: #f6f6f6;
+
+          margin: 1rem;
+          &__InnerDiv {
+            background: $color-grey-light-2;
+            padding: 0.5rem 0.5rem;
+            display: flex;
+            justify-content: space-between;
+            &__Box {
+              display: flex;
+              flex-direction: column;
+              &__Header {
+                font-size: 2rem;
+                color: $color-white;
+                height: 3.5rem;
+                width: 11.5rem;
+                padding: 0.1rem 0.2rem;
+                margin-bottom: 1rem;
+                background: $color-primary;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+              }
+
+              &__Stats {
+                height: 3.5rem;
+                font-size: 1.7rem;
+                color: $color-black;
+                width: 11.5rem;
+                padding: 0.1rem 0.2rem;
+                margin-bottom: 1rem;
+                background: $color-white;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// For error modal
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.75);
+}
+
+.modal {
+  position: fixed;
+  padding: 1rem 2rem;
+  top: 17vh;
+  left: 10%;
+  width: 90%;
+  z-index: 100;
+  max-height: 50rem;
+
+  background-color: #e6e6e6;
+  color: $color-black;
+  border-radius: 0.6rem;
+
+  &__header {
+    font-size: 2.5rem;
+    letter-spacing: 0.1rem;
+    // border: 2px solid black;
+    display: flex;
+  }
+  &__selects {
+    margin-top: 1rem;
+
+    &__button {
+      margin-top: 1rem;
+      float: right;
+      margin-right: 0.5rem;
+      padding: 0.5rem 0rem;
+      font-size: 1.6rem;
+      font-weight: 600;
+      transition: all 0.4s ease;
+      border: 0.2rem solid black;
+      &:hover {
+        color: $color-primary;
+        border: 0.2rem solid $color-primary;
+        cursor: pointer;
+      }
+    }
+    &__header {
+      display: flex;
+      align-items: center;
+      // border: 2px solid lightgrey;
+      // width: 100px;
+      &__text {
+        font-size: 3rem;
+      }
+      &__arrow {
+        font-size: 2.8rem !important;
+        cursor: pointer;
+      }
+    }
+    &__dropdown {
+      border: 2px solid lightgrey;
+      border-radius: 5px;
+      margin: 0.5rem;
+      background-color: white;
+      color: black;
+
+      padding: 1rem 4rem;
+      &__item {
+        display: flex;
+        flex-direction: row;
+        // justify-content: center;
+
+        align-items: center;
+        margin-bottom: 1rem;
+
+        &__text {
+          margin-left: 1rem;
+          font-size: 26px;
+        }
+        &__checkbox {
+          cursor: pointer;
+        }
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  &__close {
+    position: absolute;
+    top: 7px;
+    right: 6px;
+    font-size: 28px !important;
+    font-weight: bold !important;
+    color: black;
+    cursor: pointer;
+  }
+}
+
+.header {
+  background: #4f005f;
+  padding: 1rem;
+}
+
+.header h2 {
+  margin: 0;
+  color: white;
+}
+
+.content {
+  padding: 1rem;
+}
+
+.actions {
+  padding: 1rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.editModal {
+  position: fixed;
+  padding: 2rem;
+  top: 20vh;
+  left: 10%;
+  z-index: 100;
+  max-height: 50rem;
+  width: 900px;
+
+  background-color: $color-primary;
+  color: $color-white;
+  &__Header {
+    font-size: 28px;
+    letter-spacing: 0.06rem;
+  }
+}
+
+// edit form css
+.editModal__Form {
+  // border: 2px solid red;
+  margin-top: 1rem;
+
+  &__Control {
+    // border: 2px solid grey;
+
+    &__Button {
+      // border: 2px solid red;
+      display: flex;
+      justify-content: flex-end;
+
+      &__Edit {
+        background-color: #008000;
+        margin-left: 1rem;
+        font-size: 18px;
+        padding: 10px 25px;
+        color: #fff;
+        border: none;
+        width: 10rem;
+        transition: all 0.3s ease;
+        &:hover {
+          box-shadow: inset 0 0 15px 15px rgba(0, 0, 0, 0.25);
+          cursor: pointer;
+        }
+      }
+      &__Cancel {
+        width: 10rem;
+        background-color: #9b9b9b;
+        margin-left: 1rem;
+        font-size: 18px;
+        padding: 10px 25px;
+        color: #fff;
+        border: none;
+        transition: all 0.3s ease;
+        &:hover {
+          box-shadow: inset 0 0 15px 15px rgba(0, 0, 0, 0.25);
+          cursor: pointer;
+        }
+      }
+    }
+
+    &__Label {
+      display: flex;
+      font-size: 18px;
+      margin-bottom: 0.8rem;
+    }
+    &__Input {
+      width: 100%;
+      font-size: 18px;
+      padding: 2px 6px;
+      height: 5rem;
+    }
+
+    &__Div {
+      // border: 2px solid green;
+      margin-bottom: 2rem;
+      &__Name {
+        margin-bottom: 2rem;
+        // border: 2px solid blue;
+        display: flex;
+        justify-content: space-between;
+        &__First {
+          flex: 1;
+        }
+        &__Last {
+          flex: 1;
+          margin-left: 0.5rem;
+        }
+      }
+    }
+  }
+}
+// edit form css
+
+@media (min-width: 768px) {
+  .modal {
+    left: calc(50% - 20rem);
+    width: 50rem;
+  }
+  .editModal {
+    left: calc(50% - 20rem);
+    width: 57rem;
+  }
+}
+
+.custom-file-input::-webkit-file-upload-button {
+  visibility: hidden;
+}
+.custom-file-input::before {
+  content: "Select some files";
+  display: inline-block;
+  background: linear-gradient(top, #f9f9f9, #e3e3e3);
+  border: 1px solid #999;
+  border-radius: 3px;
+  padding: 5px 8px;
+  outline: none;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  cursor: pointer;
+  text-shadow: 1px 1px #fff;
+  font-weight: 700;
+  font-size: 10pt;
+  opacity: 0;
+}
+.custom-file-input:hover::before {
+  border-color: black;
+}
+.custom-file-input:active::before {
+  background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+}
+
+.CENTER {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+  opacity: 0.6;
+}
+
+@media only screen and (max-width: 500px) {
+  .Profile__Box__Top {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,499 @@
+.QuestionFeed {
+  width: 100%;
+  min-width: 30rem;
+  height: auto;
+  border-bottom: 0.2rem solid $color-grey-light-2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 0;
+  position: relative;
+
+  &__Box {
+    margin-bottom:1rem;
+    width: 95%;
+    height: 100%;
+    &__Top {
+      min-height: 10rem;
+      height: auto;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      &__Left {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        &__ProfileImage {
+          width: 6rem;
+          height: 6rem;
+          border-radius: 50%;
+          background: $color-white;
+          margin-right: 2rem;
+          border: 0.3rem solid $color-primary;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: relative;
+          &__Image {
+            height: 5rem;
+            width: 5rem;
+            border-radius: 50%;
+            object-fit: cover;
+            transition: all 0.5s;
+          }
+          &__Caption {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, 0);
+            color: $color-white;
+            text-transform: uppercase;
+            text-align: center;
+            font-size: 1.1rem;
+            opacity: 0;
+            transition: all 0.5s;
+          }
+          &:hover &__Caption {
+            opacity: 1;
+            transform: translate(-50%, -50%);
+          }
+          &:hover &__Image {
+            filter: blur(3px);
+          }
+        }
+        &__AboutQuestion {
+          // background:orange;
+          margin-left:2rem;
+          flex: 1;
+          height: auto;
+          &__Top {
+            width: auto;
+            height: auto;
+            font-size: 1.6rem;
+
+            &__QuestionData {
+              width: auto;
+              display: flex;
+              //    background:red;
+              align-items: center;
+              justify-content: flex-start;
+              &__Time {
+                margin-right: 3rem;
+              }
+              &__Title {
+                color: $color-primary;
+                text-align: left;
+              }
+            }
+          }
+          &__Title {
+            color: $color-black;
+            font-size: 1.5rem;
+            // background:green;
+            text-align: left;
+          }
+        }
+      }
+      &__Right {
+        height: 5rem;
+        width: 4rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        &__Delete {
+          position: absolute;
+          bottom: 0;
+          top: 5rem;
+          height: 7rem;
+          right: -2rem;
+          border-radius: 0.5rem;
+          width: 11rem;
+          background: white;
+          z-index: 10;
+          display: flex;
+          align-items: center;
+          flex-direction: column;
+          justify-content: space-around;
+          box-shadow: 0 0 0.2rem 0.2rem rgba(0, 0, 0, 0.1);
+          &__Box {
+            width: 100%;
+
+            height: 4rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #000000de;
+            text-decoration: none;
+            transition: all 0.4s ease;
+            &:hover {
+              cursor: pointer;
+              box-shadow: inset 0 0 10rem 10rem rgba(0, 0, 0, 0.05);
+            }
+          }
+        }
+        &__ThreeDots {
+          cursor: pointer;
+          font-size: 3rem !important;
+          color: $color-grey-light-3;
+          margin-left: 1rem;
+          height: 5rem;
+          width: 5rem;
+          padding: 0 1rem;
+          border-radius: 50%;
+
+          &:hover {
+            background: $color-grey-light-2;
+            border-radius: 50%;
+          }
+        }
+        &__Bookmark {
+          cursor: pointer;
+          font-size: 3rem !important;
+          color: $color-grey-light-3;
+          margin-right: 1rem;
+        }
+        &__Primary {
+          cursor: pointer;
+          font-size: 3rem !important;
+          color: $color-secondary;
+          margin-right: 1rem;
+          // background:$color-secondary;
+        }
+      }
+    }
+    &__Main {
+      height: auto;
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+      &__Upvotes {
+        // background:#008000;
+        flex: 0 0 auto;
+        min-width: 6rem;
+        height: auto;
+        min-height: 12rem;
+        margin-right: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        &__Likes {
+          height: 3rem;
+          width: 3rem;
+          // background:red;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          &__Logo {
+            height: 3rem;
+            width: 3rem;
+            transition: all 0.4s ease;
+
+            &:hover {
+              cursor: pointer;
+              color: blue;
+              transform: scale(1.2);
+            }
+            &:active {
+              cursor: pointer;
+              color: blue;
+              transform: translateY(2px);
+            }
+          }
+        }
+        &__Box {
+          // background:orange;
+          height: 4rem;
+          width: auto;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 1.4rem;
+        }
+        &__Dislikes {
+          height: 3rem;
+          width: 3rem;
+          // background:black;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          &__Logo {
+            height: 3rem;
+            width: 3rem;
+            transition: all 0.4s ease;
+            &:hover {
+              cursor: pointer;
+              color: rgb(246, 27, 27);
+              transform: scale(1.2);
+            }
+            &:active {
+              cursor: pointer;
+              color: rgb(246, 27, 27);
+              transform: translateY(-2px);
+            }
+          }
+        }
+      }
+      &__AboutQuestion {
+        // background:orange;
+        margin-left:2rem;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        flex: 1;
+        &__Question {
+          flex: 1;
+          width: 100%;
+          text-align: left;
+          // background:green;
+          margin-bottom: 2rem;
+          color: $color-grey-light-3;
+          font-size: 1.6rem;
+        }
+        &__QuestionStatistics {
+          flex: 0 0 7rem;
+          width: 100%;
+          // background: $color-grey-light-1;
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          &__Left {
+            // background:green;
+            height: 7rem;
+            flex: 0 0 auto;
+            justify-self: stretch;
+            display: flex;
+            align-items: center;
+
+            &__Answers {
+              // background:red;
+              width: auto;
+              height: 5rem;
+              border: 0.1rem solid $color-grey-light-3;
+              cursor: pointer;
+              border-radius: 0.5rem;
+              display: flex;
+              align-items: center;
+              justify-content: flex-start;
+
+              &__Logo {
+                height: 4rem;
+                width: 4rem;
+                // margin: 0 1rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                &__Logo {
+                  height: 3rem;
+                  width: 3rem;
+                  transition: all 0.4s ease;
+                  &:hover {
+                    color: #057777;
+                    transform: scale(1.2);
+                  }
+                  &:active {
+                    color: #057777;
+                    transform: scale(1);
+                  }
+                }
+              }
+              &__Text {
+                font-size: 1.7rem;
+                color: $color-grey-light-3;
+                margin-right: 1rem;
+                width: auto;
+              }
+            }
+            &__Views {
+              margin-left: 2rem;
+              // background:rebeccapurple;
+              height: 5rem;
+              width: auto;
+              border: 0.1rem solid $color-grey-light-3;
+              border-radius: 0.5rem;
+              display: flex;
+              align-items: center;
+              justify-content: flex-start;
+              &__Logo {
+                height: 4rem;
+                width: 4rem;
+                // margin: 0 1rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                &__Logo {
+                  height: 3rem;
+                  width: 3rem;
+                  transition: all 0.4s ease;
+                  &:hover {
+                    color: #057777;
+                    transform: scale(1.2);
+                  }
+                }
+              }
+              &__Text {
+                font-size: 1.7rem;
+                color: $color-grey-light-3;
+                margin-right: 1rem;
+                width: auto;
+              }
+            }
+          }
+          &__Right {
+            // background:red;
+            flex: 0 0 auto;
+            height: 6rem;
+            margin-right: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            &__Button {
+              height: 5rem;
+              width: auto;
+              background: $color-white;
+              padding: 0 2rem;
+              font-size: 2rem;
+              color: $color-secondary;
+              border: 0.2rem solid $color-secondary;
+              outline: none;
+              border-radius: 0.5rem;
+              &:hover {
+                cursor: pointer;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  &__Bottom {
+    width: 95%;
+    height: 7rem;
+    // background-color: red;
+    border-top: 0.3rem solid $color-grey-light-2;
+    padding-top: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &__Left {
+      height: 5rem;
+      // background:green;
+      flex: 0 0 auto;
+      display: flex;
+      align-items: center;
+      &__Content {
+        width: auto;
+        height: 3rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 1.4rem;
+        padding: 0 1rem;
+        cursor: pointer;
+        transition: all 0.4s ease;
+        &:hover {
+          color: red;
+        }
+
+        &:hover:first-child {
+          color: #5388b4;
+        }
+        &:hover:last-child {
+          color: #d3d308;
+        }
+        &:not(:last-child) {
+          border-right: 0.1rem solid $color-grey-light-3;
+        }
+
+        &__Logo {
+          width: 3rem;
+          height: 3rem;
+          margin-right: 0.5rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          &__Logo {
+            width: 2.5rem;
+            height: 2.5rem;
+          }
+        }
+      }
+    }
+    &__Right {
+      height: 6rem;
+      // background:orange;
+      flex: 0 0 auto;
+      display: flex;
+      align-items: center;
+
+      &__Content {
+        width: auto;
+        height: 4rem;
+        // background:red;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 1.4rem;
+        padding: 0 1rem;
+        margin: 0 0.3rem;
+        cursor: pointer;
+        transition: all 0.4s ease;
+
+        &:hover:nth-child(2) {
+          color: #4267b2;
+        }
+        &:hover:first-child {
+          color: #057777;
+        }
+        &:hover:last-child {
+          color: #00acee;
+        }
+        &__Logo {
+          width: 3rem;
+          height: 3rem;
+          margin-right: 0.5rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          &__Logo {
+            width: 2.5rem;
+            height: 2.5rem;
+          }
+        }
+        &__Logos {
+          height: 2.5rem;
+          width: 2.5rem;
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 500px) {
+  .QuestionFeed {
+    padding: 2rem 0;
+  }
+  .QuestionFeed__Box {
+    width: 100%;
+    padding: 0 1rem;
+  }
+}
+@media only screen and (max-width: 396px) {
+  .QuestionFeed__Box {
+    width: 100%;
+    padding: 0 0.5rem;
+  }
+  .QuestionFeed__Box__Top {
+    padding: 0 0.5rem;
+  }
+  .QuestionFeed__Box__Top__Left__AboutQuestion__Top__QuestionData__Time {
+    font-size: 10px;
+  }
+}

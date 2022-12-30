@@ -1,0 +1,94 @@
+.MessagesSidebar {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  &__User {
+    text-decoration: none;
+    height: 8rem;
+    width: 97%;
+    font-size: 1.5rem;
+    color: $color-black;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 1rem;
+    border-radius: 0.5rem;
+    &:hover {
+      background: $color-grey-light-1;
+      cursor: pointer;
+    }
+    &__Image {
+      height: 6rem;
+      width: 6rem;
+      border-radius: 100%;
+      overflow: hidden;
+      background: grey;
+      margin-right: 1rem;
+    }
+    &__Text {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      height: auto;
+      flex: 1;
+      @media screen and (max-width: $medium-breakpoints) {
+        display: none;
+      }
+      &__ChatInfo {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 0 1rem;
+        border-radius: 0.5rem;
+        &__Image {
+          height: 6rem;
+          width: 6rem;
+          border-radius: 100%;
+          overflow: hidden;
+          background: grey;
+          margin-right: 1rem;
+          &__Img {
+            height: 6rem;
+            width: 6rem;
+          }
+        }
+        &__Text {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          height: auto;
+          flex: 1;
+          &__ChatInfo {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  .message {
+    display: flex;
+    justify-content: flex-end;
+    &__image {
+      display: flex;
+      align-items: flex-end;
+      margin: 1rem 0.5rem;
+      &__right {
+        margin-right: 5rem;
+      }
+      & img {
+        height: 4rem;
+        width: 4rem;
+        border-radius: 50%;
+        object-fit: cover;
+        background-color: white;
+      }
+    }
+  }
+}

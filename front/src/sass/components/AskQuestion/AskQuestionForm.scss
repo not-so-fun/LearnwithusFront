@@ -1,0 +1,343 @@
+// .AskQuestionForm {
+//   background: $color-white;
+
+//   width: 100%;
+//   height: auto;
+//   border-radius: 0.6rem;
+//   // overflow: scroll;
+//   // height: auto;
+//   // border: 2px solid red;
+//   padding: 1rem;
+
+//   &__Heading {
+//     height: auto;
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     justify-content: flex-end;
+//     color: #4b4b4b;
+
+//     &__Title {
+//       height: 5rem;
+//       // background:red;
+//       display: flex;
+//       align-items: center;
+//       justify-content: center;
+//       font-size: 2.5rem;
+//       color: #4b4b4b;
+
+//       font-weight: 600;
+//     }
+//   }
+//   &__Title {
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: flex-start;
+//     align-items: flex-start;
+//     color: #4b4b4b;
+
+//     &__Heading {
+//       // height: 6rem;
+//       font-size: 2.3rem;
+//       font-weight: 600;
+//       letter-spacing: 0.07rem;
+//       width: 10rem;
+//       display: flex;
+//       align-items: center;
+//       justify-content: flex-start;
+//       color: #4b4b4b;
+//     }
+//     &__HelperText {
+//       font-size: 1.5rem;
+//       color: $color-black;
+//       color: #4b4b4b;
+
+//       // background:green;
+//     }
+//   }
+//   &__TitleInput {
+//     height: 14rem;
+//     width: 100%;
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: space-between;
+//     align-items: center;
+//     margin-top: 0.5rem;
+//     padding: 1rem 0;
+//     padding-bottom: 0;
+//     &__Title {
+//       border: 0.2rem solid lightgrey;
+//       border-radius: 0.5rem;
+//       height: 5rem;
+//       width: 100%;
+//       padding: 0 1rem;
+//       font-size: 1.5rem;
+//       display: flex;
+//       align-items: center;
+//       outline: none;
+
+//       &__Logos {
+//         height: 4rem;
+//         width: 4rem;
+
+//         margin-left: -4rem;
+//       }
+//     }
+//     &__InputBox {
+//       height: 7rem;
+//       width: 100%;
+//       display: flex;
+//       justify-content: flex-start;
+//       align-items: center;
+
+//       &__Div {
+//         // width: 100px;
+//         width: 100%;
+//         display: flex;
+
+//         &__Select {
+//           width: 36.3rem;
+//           background: $color-white;
+//           width: 100%;
+//           border-radius: 0.5rem;
+//           height: 5rem;
+//           //   flex: 1;
+//           display: flex;
+//           align-items: center;
+//           padding: 0px 1rem;
+//           border: 0.2rem solid lightgrey;
+//           cursor: pointer;
+//           color: $color-grey-dark;
+//           &:last-child {
+//             // color: red;
+//             margin-left: 0.5rem;
+//           }
+//         }
+//       }
+
+//       &__Title {
+//         background: #4b4b4b;
+//         border-radius: 0.5rem;
+//         height: 5rem;
+//         flex: 1;
+//         display: flex;
+//         align-items: center;
+//         position: relative;
+//         &:not(:first-child) {
+//           margin-left: 0.5rem;
+//         }
+//         &:not(:last-child) {
+//           margin-right: 0.5rem;
+//         }
+
+//         &__Box {
+//           width: 100%;
+//           height: 30rem;
+//           background: $color-grey-light-2;
+//           // border-radius:5px;
+//           position: absolute;
+//           top: 5.6rem;
+//           left: 0;
+//           display: flex;
+//           flex-direction: column;
+//           align-items: center;
+//           justify-content: flex-start;
+//           overflow-y: scroll;
+//           &__Topics {
+//             font-size: 2rem;
+//             color: $color-black;
+//             // background:red;
+//             height: 5rem;
+//             width: 95%;
+//             margin: 0.5rem 0;
+
+//             display: flex;
+//             align-items: center;
+//             justify-content: flex-start;
+//             padding: 0.4rem 1rem;
+//             &:hover {
+//               cursor: pointer;
+//               background: $color-grey-light-1;
+//             }
+//           }
+//         }
+//         &__Input {
+//           font-size: 1.5rem;
+//           width: 100%;
+//           height: 5rem;
+//           border: none;
+//           outline: none;
+//           border-radius: 5px;
+//           padding-right: 3.5rem;
+//           // background: green;
+//           padding-left: 1rem;
+//         }
+//       }
+//       &__Footer {
+//         // background:green;
+//         height: 5rem;
+//         width: 100%;
+//         display: flex;
+//         align-items: center;
+//         justify-content: flex-end;
+//         padding: 0 1rem;
+//         &__Button {
+//           height: 4rem;
+//           border-radius: 0.5rem;
+//           padding: 0 1rem;
+//           flex: 0 0 20%;
+//           font-size: 1.5rem;
+//           font-weight: 600;
+//           background: $color-grey-light-2;
+//           margin-bottom: 1rem;
+//           // background:red;
+//           &:hover {
+//             cursor: pointer;
+//             background: $color-grey-light-1;
+//           }
+//         }
+//       }
+//     }
+//   }
+//   &__Body {
+//     // background:red;
+//     height: auto;
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: flex-start;
+
+//     &__Heading {
+//       // background:red;
+//       width: 10rem;
+//       height: 4rem;
+//       font-size: 2.3rem;
+//       font-weight: 600;
+//       display: flex;
+//       align-items: center;
+//       justify-content: flex-start;
+//       color: #4b4b4b;
+//     }
+//     &__Input {
+//       height: 33rem;
+//       border-radius: 0.5rem;
+//       overflow-y: scroll;
+//       padding: 1rem;
+//       outline: none;
+//       color: #4b4b4b;
+//       font-size: 1.5rem;
+//       border: 0.5rem;
+//       background-color: #e3e3e3;
+//       // border: 2px solid #717171;
+//       margin: 0 1rem;
+//       resize: none;
+//     }
+//   }
+//   &__Footer {
+//     // background:;
+//     height: 5rem;
+//     width: 100%;
+//     display: flex;
+//     align-items: center;
+//     justify-content: flex-end;
+//     padding: 0 1rem;
+//     &__Button {
+//       height: 4rem;
+//       width: auto;
+//       border-radius: 0.5rem;
+//       margin-top: 2rem;
+//       margin-bottom: 1rem;
+//       padding: 0 1rem;
+//       border: none;
+//       font-size: 1.5rem;
+//       font-weight: 600;
+//       background: $color-primary;
+//       color: #f7f7f7;
+//       &:hover {
+//         cursor: pointer;
+//         box-shadow: inset 5em 5em rgba(0, 0, 0, 0.2);
+//       }
+//     }
+//   }
+// }
+.AskQuestionForm {
+  background-color: white;
+  height: auto;
+  padding-bottom: 1rem;
+  &__Title {
+    // border: 2px solid red;
+    font-size: 2rem;
+    color: black;
+  }
+  &__Main {
+    &__Form {
+      text-align: left;
+      &__Item {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 0.5rem;
+        padding: 0 2rem;
+
+        &__Label {
+          color: #444444;
+          font-size: 1.2rem;
+          font-weight: 600;
+          letter-spacing: 0.05rem;
+          margin-bottom: 0.2rem;
+        }
+        &__Input {
+          height: 3.8rem;
+          padding: 0px 0.9rem;
+          font-size: 1.4rem;
+          &:focus {
+            outline: none;
+          }
+        }
+        &__Span {
+          margin-top: 0.2rem;
+          font-size: 1.1rem;
+        }
+        &__SelectTag {
+          &__Select {
+            width: 100%;
+          }
+          &:focus {
+            outline: none;
+          }
+        }
+      }
+    }
+  }
+  &__Footer {
+    margin: 0 2rem;
+    &__Button {
+      width: 100% !important;
+      background-color: #1433bb;
+      border: none;
+      color: $color-white;
+      padding: 0.5rem 0px;
+      cursor: pointer;
+      font-size: 1.8rem;
+      font-weight: 600;
+      &:hover {
+        background-color: rgba(20, 51, 187, 0.9);
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .AskQuestion__Right__Bottom__Right {
+    display: none;
+    flex: 0;
+  }
+  .AskQuestion__Right__Bottom__Left {
+    flex: 1 !important;
+    width: 100%;
+  }
+  .AskQuestion__Right__Bottom__Left__Main__Form {
+    width: 100%;
+  }
+  .AskQuestionForm {
+    height: 100vh;
+  }
+}
